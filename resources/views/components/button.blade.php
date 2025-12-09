@@ -1,16 +1,24 @@
-@props(['variant' => 'primary', 'href' => '#'])
+@props(['variant' => 'primary', 'size' => 'md', 'href' => null])
 
 @php
-    $baseClasses = 'inline-flex items-center px-6 py-3 border border-transparent text-sm font-mono font-medium rounded-sm shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900';
+    $baseClasses = 'inline-flex items-center justify-center font-mono font-bold tracking-wide transition-all duration-300 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-lab-bg';
+
     $variants = [
-        'primary' => 'bg-lab-neon text-slate-950 hover:bg-cyan-400 focus:ring-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]',
-        'outline' => 'bg-transparent border-lab-neon text-lab-neon hover:bg-lab-neon/10 focus:ring-cyan-500',
-        'secondary' => 'bg-lab-accent text-white hover:bg-blue-500 focus:ring-blue-600',
+        'primary' => 'bg-lab-accent border-lab-accent text-white hover:bg-blue-700 hover:border-blue-700 focus:ring-lab-accent',
+        'neon' => 'bg-transparent border-lab-neon text-lab-neon hover:bg-lab-neon/10 shadow-[0_0_10px_rgba(6,182,212,0.2)] hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] focus:ring-lab-neon',
+        'outline' => 'bg-transparent border-gray-600 text-gray-300 hover:border-white hover:text-white focus:ring-gray-500',
     ];
-    $classes = $baseClasses . ' ' . ($variants[$variant] ?? $variants['primary']);
+
+    $sizes = [
+        'sm' => 'px-4 py-2 text-xs',
+        'md' => 'px-6 py-3 text-sm',
+        'lg' => 'px-8 py-4 text-base',
+    ];
+
+    $classes = $baseClasses . ' ' . $variants[$variant] . ' ' . $sizes[$size];
 @endphp
 
-@if($attributes->has('href'))
+@if($href)
     <a href="{{ $href }}" {{ $attributes->merge(['class' => $classes]) }}>
         {{ $slot }}
     </a>
