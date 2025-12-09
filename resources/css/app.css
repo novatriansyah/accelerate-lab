@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+    --color-lab-bg: #020617;
+    --color-lab-neon: #06b6d4;
+    --color-lab-accent: #2563eb;
+
+    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+    body {
+        background-color: var(--color-lab-bg);
+        color: #cbd5e1; /* slate-300 */
+    }
+}

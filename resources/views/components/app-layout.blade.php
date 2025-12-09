@@ -15,7 +15,7 @@
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-lab-bg text-slate-300 font-sans antialiased selection:bg-lab-neon selection:text-lab-bg overflow-x-hidden">
+<body class="bg-slate-950 bg-lab-bg text-slate-300 font-sans antialiased selection:bg-lab-neon selection:text-lab-bg min-h-screen overflow-x-hidden">
 
     <x-navbar />
 
