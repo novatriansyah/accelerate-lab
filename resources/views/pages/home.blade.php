@@ -35,10 +35,10 @@
                 <h2 class="text-3xl font-bold text-white mb-6">Nova Triansyah Azis</h2>
                 <div class="prose prose-invert text-slate-400">
                     <p class="mb-4">
-                        Founder & Lead Architect at Accelerate Lab. I believe that modern software engineering has become unnecessarily complex.
+                        Founder & Lead Architect at Accelerate Lab. I believe that modern software engineering is about choosing the right tool for the job.
                     </p>
                     <p>
-                        My <strong>"High-Efficiency" Methodology</strong> prioritizes <strong>Monolithic Architecture</strong> using Laravel to deliver robust, scalable applications in record time. We strip away the overhead of microservices to focus on pure velocity and clean, maintainable code.
+                        My <strong>"High-Efficiency" Methodology</strong> prioritizes <strong>Engineering Velocity</strong>. Whether you need a rapid Monolith for a startup MVP or a complex Microservices architecture for enterprise scale, we deliver robust, scalable solutions tailored to your specific needs.
                     </p>
                 </div>
                 <div class="mt-8 grid grid-cols-2 gap-4">
@@ -67,8 +67,8 @@ class Architect extends Human
     public function build(): Solution
     {
         return $this->focus('High-Efficiency')
-                    ->leverage('Laravel Monolith')
-                    ->avoid('Complexity')
+                    ->adapt('To Requirements')
+                    ->solve('Complexity')
                     ->deliver('Velocity');
     }
 }
@@ -92,9 +92,9 @@ class Architect extends Human
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                 </div>
-                <h4 class="text-xl font-bold text-white mb-3">Monolith Architecture</h4>
+                <h4 class="text-xl font-bold text-white mb-3">Custom Architecture</h4>
                 <p class="text-slate-400 text-sm">
-                    We build unified, robust applications using Laravel. Easier to maintain, faster to deploy, and scalable enough for 99% of use cases.
+                    We don't believe in one-size-fits-all. From unified Monoliths to distributed Microservices, we build the architecture that fits your scale and business goals.
                 </p>
             </x-card>
 
