@@ -155,7 +155,7 @@ class PrincipalEngineer extends Architect
             </a>
 
             <!-- Project 2: AccelerateLab CRM -->
-            <a href="#" class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all block">
+            <a href="https://crm.acceleratelab.id" target="_blank" class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all block">
                 <img src="{{ asset('images/crm-dashboard.png') }}" alt="AccelerateLab CRM" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90 group-hover:opacity-0 transition-opacity duration-500"></div>
 
@@ -222,16 +222,20 @@ class PrincipalEngineer extends Architect
         </div>
 
         <div class="max-w-xl mx-auto bg-slate-900/50 p-8 rounded-lg border border-slate-800 backdrop-blur-sm">
-            <form class="space-y-6">
+            <form action="mailto:nova@acceleratelab.id" method="post" enctype="text/plain" class="space-y-6">
                 <div>
-                    <label for="email" class="block text-sm font-mono text-slate-400">Email Address</label>
-                    <input type="email" id="email" class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3">
+                    <label for="email" class="block text-sm font-mono text-slate-400">Your Email</label>
+                    <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3">
+                </div>
+                <div>
+                    <label for="subject" class="block text-sm font-mono text-slate-400">Subject</label>
+                    <input type="text" name="subject" id="subject" value="Project Inquiry" class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3">
                 </div>
                 <div>
                     <label for="message" class="block text-sm font-mono text-slate-400">Message</label>
-                    <textarea id="message" rows="4" class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3"></textarea>
+                    <textarea name="message" id="message" rows="4" required class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3"></textarea>
                 </div>
-                <x-button class="w-full justify-center">
+                <x-button type="submit" class="w-full justify-center">
                     Send Transmission
                 </x-button>
             </form>
