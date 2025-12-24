@@ -8,20 +8,20 @@
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="font-mono text-lab-neon text-sm md:text-base mb-4 tracking-widest uppercase animate-pulse">
-                &lt;System_Online /&gt;
+                &lt;Principal-Led_Engineering /&gt;
             </h1>
             <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
-                Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-lab-neon to-lab-accent">Velocity.</span>
+                Constructing <span class="text-transparent bg-clip-text bg-gradient-to-r from-lab-neon to-lab-accent">Digital Velocity.</span>
             </h2>
             <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">
-                Enterprise Quality at Startup Speed. We build high-performance monoliths that scale.
+                Scientific precision meets startup agility. We architect scalable systems that drive business momentum.
             </p>
             <div class="mt-10 flex justify-center gap-4">
                 <x-button href="#contact" variant="primary">
-                    Initiate Project
+                    Start Protocol
                 </x-button>
                 <x-button href="#portfolio" variant="outline">
-                    View Blueprint
+                    Examine Blueprints
                 </x-button>
             </div>
         </div>
@@ -35,10 +35,10 @@
                 <h2 class="text-3xl font-bold text-white mb-6">Nova Triansyah Azis</h2>
                 <div class="prose prose-invert text-slate-400">
                     <p class="mb-4">
-                        Founder & Lead Architect at Accelerate Lab. I believe that modern software engineering is about choosing the right tool for the job.
+                        Founder & Principal Engineer at Accelerate Lab. I operate at the intersection of rigorous engineering and business strategy.
                     </p>
                     <p>
-                        My <strong>"High-Efficiency" Methodology</strong> prioritizes <strong>Engineering Velocity</strong>. Whether you need a rapid Monolith for a startup MVP or a complex Microservices architecture for enterprise scale, we deliver robust, scalable solutions tailored to your specific needs.
+                        As a <strong>"Principal-Led" firm</strong>, you work directly with the architect who designs your system. My methodology treats software as a scientific blueprint—every component is justified, every line of code serves a purpose. Whether deploying a high-velocity monolith or orchestrating a distributed system, the goal remains constant: <strong>Maximum Efficiency, Zero Friction.</strong>
                     </p>
                 </div>
                 <div class="mt-8 grid grid-cols-2 gap-4">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="border-l-2 border-lab-accent pl-4">
                         <span class="block text-2xl font-bold text-white">100%</span>
-                        <span class="text-sm text-slate-500 font-mono">Delivery Rate</span>
+                        <span class="text-sm text-slate-500 font-mono">Success Rate</span>
                     </div>
                 </div>
             </div>
@@ -56,20 +56,20 @@
                 <div class="absolute inset-0 bg-lab-neon/20 blur-3xl rounded-full opacity-20"></div>
                 <div class="relative bg-slate-900 border border-slate-800 rounded-lg p-8">
                     <div class="absolute top-0 right-0 -mt-3 -mr-3 px-2 py-1 bg-lab-accent text-xs font-mono text-white rounded">
-                        Arch.php
+                        Blueprint.php
                     </div>
                     <pre class="font-mono text-xs text-lab-neon overflow-x-auto">
-class Architect extends Human
+class PrincipalEngineer extends Architect
 {
     /**
-     * Define the methodology.
+     * Execution Strategy.
      */
-    public function build(): Solution
+    public function deploy(): System
     {
-        return $this->focus('High-Efficiency')
-                    ->adapt('To Requirements')
-                    ->solve('Complexity')
-                    ->deliver('Velocity');
+        return $this->analyze('Requirements')
+                    ->architect('Scalability')
+                    ->implement('Precision')
+                    ->ensure('Velocity');
     }
 }
                     </pre>
@@ -132,36 +132,80 @@ class Architect extends Human
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Project 1 -->
-            <div class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all">
-                <div class="absolute inset-0 flex items-center justify-center bg-slate-900">
-                    <span class="font-mono text-slate-600">Project Alpha</span>
-                </div>
-                <div class="absolute inset-0 bg-slate-950/90 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <h4 class="text-white font-bold">E-Commerce Core</h4>
-                    <p class="text-xs text-slate-400 mt-1">Laravel 10 / Stripe / MySQL</p>
-                </div>
-            </div>
+            <!-- Project 1: Sahabat Farm -->
+            <a href="https://sahabatfarmindonesia.com/" target="_blank" class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all block">
+                <img src="{{ asset('images/sahabat-farm.png') }}" alt="Sahabat Farm" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90 group-hover:opacity-0 transition-opacity duration-500"></div>
 
-            <!-- Project 2 -->
-            <div class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all">
-                <div class="absolute inset-0 flex items-center justify-center bg-slate-900">
-                    <span class="font-mono text-slate-600">Project Beta</span>
+                <div class="absolute inset-0 flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="bg-slate-950/90 p-4 rounded-lg border border-slate-800 backdrop-blur-sm">
+                        <h4 class="text-white font-bold text-lg group-hover:text-lab-neon transition-colors">Sahabat Farm Indonesia</h4>
+                        <p class="text-xs text-lab-neon font-mono mt-1">IoT Ecosystem / AgriTech</p>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            Integrated IoT ecosystem for precision farming. Features real-time sensor monitoring, automated control systems, and data analytics for agricultural optimization.
+                        </p>
+                        <div class="mt-2 flex items-center text-xs text-lab-neon opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="mr-1">View Deployment</span>
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="absolute inset-0 bg-slate-950/90 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <h4 class="text-white font-bold">SaaS Dashboard</h4>
-                    <p class="text-xs text-slate-400 mt-1">Laravel / Tailwind / Charts</p>
-                </div>
-            </div>
+            </a>
 
-            <!-- Project 3 -->
-            <div class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all">
-                <div class="absolute inset-0 flex items-center justify-center bg-slate-900">
-                    <span class="font-mono text-slate-600">Project Gamma</span>
+            <!-- Project 2: AccelerateLab CRM -->
+            <a href="#" class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all block">
+                <img src="{{ asset('images/crm-dashboard.png') }}" alt="AccelerateLab CRM" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90 group-hover:opacity-0 transition-opacity duration-500"></div>
+
+                <div class="absolute inset-0 flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="bg-slate-950/90 p-4 rounded-lg border border-slate-800 backdrop-blur-sm">
+                        <h4 class="text-white font-bold text-lg group-hover:text-lab-neon transition-colors">Agency CRM System</h4>
+                        <p class="text-xs text-lab-neon font-mono mt-1">Laravel 11 / Tailwind / Workflow</p>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            Comprehensive agency management system handling client pipelines, project tracking, invoicing, and performance analytics in a unified dashboard.
+                        </p>
+                        <div class="mt-2 flex items-center text-xs text-lab-neon opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="mr-1">View Deployment</span>
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
-                <div class="absolute inset-0 bg-slate-950/90 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <h4 class="text-white font-bold">Logistics Tracker</h4>
-                    <p class="text-xs text-slate-400 mt-1">Laravel / Maps API</p>
+            </a>
+
+            <!-- Project 3: ERP System (Internal/Confidential) -->
+            <div class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all">
+                <!-- Abstract Blueprint Visual -->
+                <div class="absolute inset-0 bg-slate-900 flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMWgydjJIMUMxeiIgZmlsbD0iIzA2YjZkNCIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+')]"></div>
+                    <div class="w-32 h-32 border-2 border-dashed border-lab-neon/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute w-24 h-24 border border-lab-accent/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <svg class="w-12 h-12 text-slate-500 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+
+                <div class="absolute inset-0 flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="bg-slate-950/90 p-4 rounded-lg border border-slate-800 backdrop-blur-sm">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Enterprise ERP Core</h4>
+                                <p class="text-xs text-lab-neon font-mono mt-1">BI / Finance / High-Performance</p>
+                            </div>
+                            <span class="px-2 py-1 bg-lab-accent/20 text-lab-accent text-[10px] font-mono rounded border border-lab-accent/30">INTERNAL</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            A high-performance monolithic ERP handling complex financial logic, inventory, and business intelligence. Optimized for millions of transactions.
+                        </p>
+                        <div class="mt-3">
+                            <button disabled class="text-xs border border-slate-700 text-slate-500 px-3 py-1 rounded cursor-not-allowed font-mono hover:bg-slate-900">
+                                Access Restricted // Request Demo
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

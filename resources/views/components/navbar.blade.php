@@ -3,8 +3,8 @@
         <div class="flex items-center justify-between h-16">
             <!-- Logo -->
             <div class="flex-shrink-0">
-                <a href="{{ route('home') }}" class="font-mono font-bold text-xl text-white tracking-tight">
-                    <span class="text-lab-neon">&lt;</span>Accelerate<span class="text-lab-neon">Lab</span><span class="text-lab-neon">/&gt;</span>
+                <a href="{{ route('home') }}" class="flex items-center gap-2">
+                    <img src="{{ asset('images/logo3.png') }}" alt="Accelerate Lab" class="h-12 w-auto">
                 </a>
             </div>
 
