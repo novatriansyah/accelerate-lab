@@ -1,478 +1,138 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Accelerate Lab - Digital Innovation Agency</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-300">
-<nav class="fixed w-full z-50 backdrop-blur-md bg-surface-light/80 dark:bg-background-dark/80 border-b border-gray-200 dark:border-gray-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-20">
-<div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-<span class="text-2xl font-bold tracking-tighter text-slate-700 dark:text-white">Accelerate</span>
-<span class="text-2xl font-light text-primary">/&gt;</span>
-<span class="text-2xl font-bold tracking-tighter text-slate-700 dark:text-white">Lab</span>
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Case Studies</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">The Lab</a>
-    @if (Route::has('login'))
-        @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm font-medium hover:text-primary transition-colors">Dashboard</a>
-        @else
-            <a href="{{ route('login') }}" class="text-sm font-medium hover:text-primary transition-colors">Log in</a>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="text-sm font-medium hover:text-primary transition-colors">Register</a>
-            @endif
-        @endauth
-    @endif
-<button class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">
-                        Contact Us
-                    </button>
-<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400">
-<span class="material-icons-round text-xl">brightness_4</span>
-</button>
-</div>
-<div class="md:hidden flex items-center">
-<button class="text-gray-500 hover:text-primary focus:outline-none">
-<span class="material-icons-round text-3xl">menu</span>
-</button>
-</div>
-</div>
-</div>
-</nav>
-<section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-grid-pattern">
-<div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] animate-pulse-slow -z-10"></div>
-<div class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] animate-pulse-slow -z-10"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-<div class="text-center lg:text-left animate-fade-in-up">
-<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm mb-8">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-</span>
-<span class="text-xs font-semibold text-slate-600 dark:text-slate-300 tracking-wide uppercase">System Operational</span>
-</div>
-<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-                        Build Faster. <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Scale Smarter.</span>
-</h1>
-<p class="mt-4 text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                        The digital innovation partner for forward-thinking enterprises. We engineer high-performance web applications that drive growth and optimize efficiency.
-                    </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-<button class="bg-primary hover:bg-primary-dark text-white text-lg font-semibold px-8 py-4 rounded-lg shadow-lg shadow-primary/30 transition-all hover:scale-105 flex items-center justify-center gap-2 group">
-                            Start Your Project
-                            <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-<button class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary text-lg font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-md flex items-center justify-center gap-2">
-                            View Case Studies
-                        </button>
-</div>
-<div class="mt-12 flex items-center justify-center lg:justify-start gap-8 border-t border-slate-200 dark:border-slate-800 pt-8 opacity-80">
-<div>
-<p class="text-3xl font-bold text-slate-900 dark:text-white">99.9<span class="text-primary text-xl">%</span></p>
-<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Uptime Guarantee</p>
-</div>
-<div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
-<div>
-<p class="text-3xl font-bold text-slate-900 dark:text-white">50<span class="text-primary text-xl">+</span></p>
-<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Enterprise Apps</p>
-</div>
-<div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
-<div>
-<p class="text-3xl font-bold text-slate-900 dark:text-white">4<span class="text-primary text-xl">yr</span></p>
-<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Avg Engagement</p>
-</div>
-</div>
-</div>
-<div class="relative hidden lg:block h-[600px] w-full [perspective:1000px]">
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-[500px] h-[500px] border border-slate-200/50 dark:border-slate-700/50 rounded-full animate-spin-slow dashed-border"></div>
-</div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-[#0d1117] rounded-xl shadow-2xl border border-slate-700 overflow-hidden animate-float z-20">
-<div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-700">
-<div class="flex space-x-2 mr-auto">
-<div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-<div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-<div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-</div>
-<span class="text-xs text-slate-500 font-mono">deploy.sh</span>
-</div>
-<div class="p-6 font-mono text-sm text-slate-300">
-<div class="flex gap-2 mb-2">
-<span class="text-primary font-bold">➜</span>
-<span>git push origin production</span>
-</div>
-<div class="flex gap-2 mb-2 text-slate-400">
-<span class="text-primary font-bold">➜</span>
-<span>Building optimizations...</span>
-</div>
-<div class="space-y-1 pl-5 mb-3 text-slate-500 text-xs border-l border-slate-700 ml-1">
-<p>✓ Minifying assets</p>
-<p>✓ Compressing images</p>
-<p>✓ Database migrations [OK]</p>
-</div>
-<div class="flex gap-2">
-<span class="text-primary font-bold">➜</span>
-<span class="text-green-400">Deployed successfully (124ms)</span>
-<span class="animate-pulse">_</span>
-</div>
-</div>
-</div>
-<div class="absolute top-1/4 right-0 w-64 bg-surface-light dark:bg-surface-dark rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-5 animate-float-delayed z-10 opacity-95 backdrop-blur-md">
-<div class="flex justify-between items-center mb-4">
-<div class="flex items-center gap-2">
-<span class="material-icons-round text-primary text-sm">speed</span>
-<h4 class="text-xs font-bold text-slate-500 uppercase">Velocity</h4>
-</div>
-<span class="text-green-500 text-xs font-mono font-bold">98/100</span>
-</div>
-<div class="flex items-end gap-2 h-20">
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative group overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[40%] animate-pulse"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[70%] animate-pulse delay-75"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[55%] animate-pulse delay-100"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[85%] animate-pulse delay-150"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[60%] animate-pulse delay-200"></div>
-</div>
-</div>
-</div>
-<div class="absolute bottom-1/4 left-0 w-auto bg-surface-light dark:bg-surface-dark rounded-full shadow-lg border border-slate-200 dark:border-slate-700 py-2 px-4 flex items-center gap-3 animate-float-delayed z-30">
-<div class="relative flex items-center justify-center">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-</div>
-<div class="text-xs font-medium text-slate-600 dark:text-slate-300">
-                            System Status: <span class="text-slate-900 dark:text-white font-bold">Optimized</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="w-full bg-white dark:bg-slate-900 border-y border-gray-100 dark:border-gray-800 py-10 overflow-hidden relative">
-<div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10"></div>
-<div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10"></div>
-<div class="flex whitespace-nowrap animate-marquee">
-<div class="flex items-center gap-16 mx-8">
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">AWS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">LARAVEL</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">REACT</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TAILWIND</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NEXT.JS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NODE</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">DOCKER</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TYPESCRIPT</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">AWS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">LARAVEL</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">REACT</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TAILWIND</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NEXT.JS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NODE</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">DOCKER</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TYPESCRIPT</span>
-</div>
-</div>
-</div>
-<section class="py-24 bg-background-light dark:bg-background-dark">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Core Capabilities</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">We don't just write code; we build resilient digital assets.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
-<div class="group relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all p-8 md:col-span-2">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-icons-round text-[150px] text-primary transform rotate-12">radar</span>
-</div>
-<div class="relative z-10 flex flex-col h-full justify-between">
-<div>
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-<span class="material-icons-round text-primary text-2xl">explore</span>
-</div>
-<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Product Strategy</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
-                                From MVP definition to enterprise scaling roadmaps. We validate market assumptions and architect scalable systems before writing a single line of code.
-                            </p>
-</div>
-<a class="inline-flex items-center text-primary font-semibold mt-8 group-hover:translate-x-2 transition-transform" href="#">
-                            Learn more <span class="material-icons-round ml-1 text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<div class="group relative overflow-hidden rounded-2xl bg-slate-900 text-white p-8 border border-slate-800 shadow-sm hover:shadow-xl transition-all">
-<div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950"></div>
-<div class="relative z-10 flex flex-col h-full justify-between">
-<div>
-<div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm">
-<span class="material-icons-round text-primary text-2xl">code</span>
-</div>
-<h3 class="text-2xl font-bold mb-3">Custom Development</h3>
-<p class="text-slate-300 leading-relaxed text-sm">
-                                We are not limited by a specific tech stack. Our versatile team leverages the best technologies for each project, ensuring capability, performance, and adaptability across any ecosystem.
-                            </p>
-</div>
-<div class="flex gap-2 mt-8 opacity-50">
-<div class="h-1.5 w-8 bg-primary rounded-full"></div>
-<div class="h-1.5 w-4 bg-white rounded-full"></div>
-<div class="h-1.5 w-12 bg-slate-500 rounded-full"></div>
-</div>
-</div>
-</div>
-<div class="group md:col-span-3 relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all p-8 flex items-center">
-<div class="grid grid-cols-1 sm:grid-cols-3 w-full gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-slate-700">
-<div class="text-center pt-4 sm:pt-0">
-<p class="text-4xl font-extrabold text-primary mb-1">98%</p>
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Client Retention</p>
-</div>
-<div class="text-center pt-4 sm:pt-0">
-<p class="text-4xl font-extrabold text-slate-900 dark:text-white mb-1">50+</p>
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Enterprise Apps</p>
-</div>
-<div class="text-center pt-4 sm:pt-0">
-<p class="text-4xl font-extrabold text-slate-900 dark:text-white mb-1">4yr</p>
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Avg Engagement</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
-<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[80px]"></div>
-<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-blue-600/5 rounded-full blur-[60px]"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="mb-16 text-center max-w-3xl mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Recent Projects</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg">
-                Delivering impact through engineering excellence. Here is a selection of our recent deployments.
-            </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">payments</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">FinTech</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">NeoBank Core System</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Legacy infrastructure causing high latency and transaction failures during peak loads.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Microservices architecture on AWS with real-time event processing via Kafka.</p>
-</div>
-</div>
-<button class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-primary/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-blue-500 transition-colors">local_shipping</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-blue-500 bg-blue-500/10 px-2 py-1 rounded">Logistics</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Global Fleet AI</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Inefficient routing leading to 30% excess fuel costs across 500+ vehicles.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">AI-driven route optimization engine using Google OR-Tools and predictive traffic modeling.</p>
-</div>
-</div>
-<button class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-blue-500/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-purple-500 transition-colors">health_and_safety</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-purple-500 bg-purple-500/10 px-2 py-1 rounded">HealthTech</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">TeleMed Secure</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Ensuring HIPAA compliance while scaling video consultations to 10k daily users.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">End-to-end encrypted WebRTC platform with automated compliance auditing.</p>
-</div>
-</div>
-<button class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-purple-500/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-24 bg-slate-950 relative overflow-hidden">
-<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
-<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
-<div class="lg:w-1/2">
-<div class="inline-block px-3 py-1 rounded border border-slate-700 bg-slate-900 text-xs font-mono text-primary mb-6">
-                    ~/source/core-values.js
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+        <!-- Styles -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body class="antialiased">
+        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+            @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                        @endif
+                    @endauth
                 </div>
-<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">The Lab</h2>
-<p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                    Innovation isn't accidental. It's engineered. Our "Lab" methodology combines agile sprints with deep technical research to solve problems others can't.
-                </p>
-<ul class="space-y-4">
-<li class="flex items-start">
-<span class="material-icons-round text-primary mr-3 mt-1">check_circle</span>
-<span class="text-slate-300">Clean, maintainable architecture</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons-round text-primary mr-3 mt-1">check_circle</span>
-<span class="text-slate-300">Security-first development lifecycle</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons-round text-primary mr-3 mt-1">check_circle</span>
-<span class="text-slate-300">Automated CI/CD pipelines</span>
-</li>
-</ul>
-</div>
-<div class="lg:w-1/2 w-full">
-<div class="rounded-xl overflow-hidden shadow-2xl bg-[#0d1117] border border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-<div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-800">
-<div class="flex space-x-2 mr-4">
-<div class="w-3 h-3 rounded-full bg-red-500"></div>
-<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-<div class="w-3 h-3 rounded-full bg-green-500"></div>
-</div>
-<div class="text-xs text-slate-500 font-mono">AccelerateLabController.ts</div>
-</div>
-<div class="p-6 overflow-x-auto code-scroll">
-<pre class="font-mono text-sm leading-relaxed"><span class="text-pink-400">import</span> { <span class="text-yellow-200">Innovation</span>, <span class="text-yellow-200">Scale</span> } <span class="text-pink-400">from</span> <span class="text-green-300">'@accelerate-lab/core'</span>;
-<span class="text-pink-400">class</span> <span class="text-blue-300">Project</span> <span class="text-pink-400">implements</span> <span class="text-yellow-200">DigitalTransformation</span> {
-  <span class="text-pink-400">private</span> <span class="text-blue-300">client</span>: <span class="text-yellow-200">Partner</span>;
-  <span class="text-pink-400">async</span> <span class="text-blue-300">execute</span>(<span class="text-orange-300">goals</span>: <span class="text-yellow-200">Metrics</span>[]): <span class="text-yellow-200">Promise</span>&lt;<span class="text-yellow-200">Growth</span>&gt; {
-    <span class="text-slate-500">// Optimize performance bottlenecks</span>
-    <span class="text-pink-400">const</span> <span class="text-white">strategy</span> = <span class="text-pink-400">await</span> <span class="text-blue-300">analyze</span>(<span class="text-orange-300">this</span>.client);
-    <span class="text-pink-400">return</span> <span class="text-blue-300">deploy</span>({
-      <span class="text-white">techStack:</span> [<span class="text-green-300">'React'</span>, <span class="text-green-300">'Laravel'</span>, <span class="text-green-300">'AWS'</span>],
-      <span class="text-white">velocity:</span> <span class="text-purple-400">100</span>,
-      <span class="text-white">quality:</span> <span class="text-yellow-200">Standards</span>.<span class="text-purple-400">ENTERPRISE</span>
-    });
-  }
-}
-                        </pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<footer class="bg-surface-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 pt-16 pb-8">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-<div class="space-y-4">
-<div class="flex items-center gap-1 text-slate-700 dark:text-white">
-<span class="text-xl font-bold tracking-tighter">Accelerate</span>
-<span class="text-xl font-light text-primary">/&gt;</span>
-<span class="text-xl font-bold tracking-tighter">Lab</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
-                        Building the future of digital products with precision, speed, and cutting-edge technology.
-                    </p>
-<div class="flex space-x-4 pt-2">
-<a class="text-slate-400 hover:text-primary transition-colors" href="#"><i class="material-icons-round text-xl">language</i></a>
-<a class="text-slate-400 hover:text-primary transition-colors" href="#"><i class="material-icons-round text-xl">code</i></a>
-<a class="text-slate-400 hover:text-primary transition-colors" href="#"><i class="material-icons-round text-xl">email</i></a>
-</div>
-</div>
-<div>
-<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-wider">Services</h4>
-<ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-<li><a class="hover:text-primary transition-colors" href="#">Web Application Dev</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Mobile Development</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Cloud Architecture</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">UI/UX Design</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-wider">Company</h4>
-<ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
-<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Case Studies</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-wider">Legal Entity</h4>
-<div class="flex items-start gap-3">
-<span class="material-icons-round text-slate-400">verified_user</span>
-<div>
-<p class="text-sm font-semibold text-slate-700 dark:text-slate-300">PT Akselerasi Digital Mandiri</p>
-<p class="text-xs text-slate-500 mt-1">Registered in Jakarta, Indonesia.</p>
-<p class="text-xs text-slate-500">Reg No: 2025-AL-ID</p>
-</div>
-</div>
-</div>
-</div>
-<div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-xs text-slate-500 text-center md:text-left">
-                    © 2025 Accelerate Lab. All rights reserved. <span class="hidden sm:inline">|</span> A brand by PT Akselerasi Digital Mandiri.
-                </p>
-<div class="flex space-x-6 text-xs text-slate-500">
-<a class="hover:text-slate-800 dark:hover:text-white transition-colors" href="#">Privacy Policy</a>
-<a class="hover:text-slate-800 dark:hover:text-white transition-colors" href="#">Terms of Service</a>
-</div>
-</div>
-</div>
-</footer>
-</body>
+            @endif
+
+            <div class="max-w-7xl mx-auto p-6 lg:p-8">
+                <div class="flex justify-center">
+                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
+                        <path d="M61.8548 14.6253C61.8548 14.332 61.8339 14.0381 61.7921 13.7442C61.7084 13.1565 61.5421 12.5895 61.2931 12.0432C61.0441 11.4962 60.7125 10.9899 60.3035 10.5239C59.8945 10.0579 59.4071 9.64259 58.8488 9.28787C58.2905 8.93247 57.6539 8.6476 56.9531 8.43231C56.2523 8.21702 55.4931 8.08212 54.6837 8.02024C53.8743 7.95836 53.0142 7.97893 52.1243 8.08212C50.9333 8.2471 49.7731 8.59247 48.653 9.1157C47.5336 9.63391 46.4638 10.3208 45.4533 11.166C44.4428 12.0112 43.5015 12.9975 42.6393 14.1126C41.7771 15.2277 41.0039 16.4616 40.3298 17.8042C39.6556 19.1468 39.0805 20.5898 38.6146 22.1223C38.1486 23.6548 37.7918 25.2673 37.553 26.9496C37.3141 28.632 37.1956 30.3671 37.1956 32.1449C37.1956 33.9227 37.3141 35.6578 37.553 37.3394C37.7918 39.0218 38.1486 40.635 38.6146 42.1675C39.0805 43.7008 39.6556 45.1431 40.3298 46.4857C41.0039 47.8283 41.7771 49.0622 42.6393 50.1773C43.5015 51.2924 44.4428 52.2787 45.4533 53.1239C46.4638 53.9691 47.5336 54.6567 48.653 55.1749C49.7731 55.6931 50.9333 56.0378 52.1243 56.2028C53.0142 56.306 53.8743 56.3265 54.6837 56.2647C55.4931 56.2028 56.2523 56.0679 56.9531 55.8526C57.6539 55.638 58.2905 55.3531 58.8488 54.9977C59.4071 54.6422 59.8945 54.2269 60.3035 53.7609C60.7125 53.2949 61.0441 52.7886 61.2931 52.2423C61.5421 51.696 61.7084 51.129 61.7921 50.5413C61.8339 50.2474 61.8548 49.9535 61.8548 49.6602V14.6253ZM54.062 13.3384C53.4866 13.212 52.8893 13.1678 52.2921 13.2062C51.6948 13.2453 51.107 13.3667 50.5398 13.567C49.9726 13.7673 49.4312 14.0427 48.9243 14.3881C48.4174 14.7342 47.9498 15.1458 47.5266 15.6182C47.1034 16.0906 46.7297 16.6223 46.4111 17.2045C46.0918 17.7867 45.8321 18.4119 45.6396 19.0709C45.4471 19.7299 45.3216 20.4184 45.2662 21.1276C45.2108 21.8368 45.2266 22.5533 45.3125 23.2682L21.2936 23.2682C21.4645 22.4439 21.7225 21.6443 22.0676 20.8732C22.4127 20.1028 22.8423 19.3731 23.3529 18.6912C23.8635 18.0093 24.4515 17.3807 25.1095 16.8113C25.7675 16.2412 26.4913 15.7337 27.271 15.2936C28.0507 14.8535 28.8831 14.4845 29.7583 14.192C30.6342 13.8988 31.5496 13.6861 32.4953 13.5582C33.441 13.4296 34.4152 13.3854 35.4085 13.4296C36.4018 13.4738 37.4087 13.6104 38.4148 13.8346L38.4148 32.1449L21.3252 32.1449C21.3252 33.1672 21.4224 34.1688 21.6169 35.1448C21.8114 36.1208 22.103 37.0654 22.4863 37.9713C22.8696 38.8779 23.3421 39.7395 23.8963 40.5488C24.4505 41.3581 25.0839 42.1125 25.7872 42.8054C26.4905 43.4983 27.2619 44.1243 28.0898 44.6758C28.9177 45.2273 29.8002 45.6983 30.722 46.0824C31.6438 46.4665 32.6024 46.7614 33.5841 46.9603C34.5658 47.1592 35.5681 47.2585 36.581 47.2546C37.5939 47.2507 38.6143 47.1432 39.6329 46.9328L39.6329 55.8879C38.6268 56.1121 37.62 56.2444 36.6139 56.2843C35.6078 56.3241 34.6041 56.2716 33.6063 56.1266C32.6085 55.9816 31.6214 55.7443 30.6542 55.4185C29.687 55.0927 28.7461 54.6808 27.8396 54.188C26.9331 53.6952 26.0669 53.1241 25.2498 52.4822C24.4327 51.8403 23.6723 51.1322 22.9754 50.3639C22.2785 49.5955 21.6517 48.7722 21.1027 47.9004C20.5537 47.0286 20.0883 46.1139 19.7135 45.1643C19.3387 44.2147 19.0573 43.2343 18.8752 42.228C18.6931 41.2217 18.6134 40.1947 18.6343 39.1535C18.6552 38.1123 18.7766 37.0671 18.9953 36.0254C19.214 34.9837 19.5284 33.9513 19.9328 32.938L19.9328 13.8346L18.6343 13.8346C18.6343 12.8123 18.7315 11.8107 18.926 10.8347C19.1205 9.8587 19.4121 8.9141 19.7954 8.00822C20.1787 7.10233 20.6511 6.24074 21.2054 5.43145C21.7596 4.62216 22.393 3.86777 23.0963 3.17487C23.7996 2.48197 24.571 1.85599 25.3989 1.30449C26.2268 0.752994 27.1093 0.28196 28.0311 0.108621L29.121 -0.0784912L29.121 13.8346L37.1956 13.8346L37.1956 8.05051C37.8283 8.05051 38.461 8.05051 39.0937 8.05051L39.0937 13.8346L44.0937 13.8346L44.0937 8.05051C44.7264 8.05051 45.3591 8.05051 45.9918 8.05051L45.9918 13.8346L50.9918 13.8346L50.9918 8.49962C51.666 8.58336 52.3292 8.74834 52.9716 8.99201C53.614 9.23636 54.2265 9.55509 54.7984 9.94094C55.3703 10.3268 55.8924 10.776 56.3543 11.2823C56.8162 11.7886 57.2155 12.3456 57.5451 12.9461C57.8754 13.5466 58.1321 14.1859 58.3094 14.8556L54.062 14.8556L54.062 13.3384Z" fill="#FF2D20" />
+                    </svg>
+                </div>
+
+                <div class="mt-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                            <div>
+                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                    </svg>
+                                </div>
+
+                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
+
+                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
+                                </p>
+                            </div>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                            </svg>
+                        </a>
+
+                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                            <div>
+                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
+                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </div>
+
+                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
+
+                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
+                                </p>
+                            </div>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                            </svg>
+                        </a>
+
+                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                            <div>
+                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 18V7.125C4.5 6.504 5.004 6 5.625 6H9" />
+                                    </svg>
+                                </div>
+
+                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
+
+                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
+                                </p>
+                            </div>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                            </svg>
+                        </a>
+
+                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                            <div>
+                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l-.775.387-1.255 1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-.775.387-1.255 1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-.775.387-1.255 1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-.775.387-1.255 1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-.775.387-1.255 1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-3.069 1.535c-.84.42-1.155 1.45-.825 2.286l.319.8, .319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387 1.255-1.255a3 3 0 013.182 0l.076.153c.217.433.132.956-.21 1.298l-1.348 1.348c-.21.21-.329.497-.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.775-.387-1.255-1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-.775.387-1.255 1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-3.069 1.535c-.84.42-1.155 1.45-.825 2.286l.319.8.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l-.775.387-1.255 1.255a3 3 0 01-3.182 0l-.076-.153c-.217-.433-.132-.956.21-1.298l1.348-1.348c.21-.21.329-.497.329-.795V14.5c0-.426-.24-.815-.622-1.006l-.153-.076c-.433-.217-.956-.132-1.298.21l-3.069 1.535c-.84.42-1.155 1.45-.825 2.286l.319.8z" />
+                                    </svg>
+                                </div>
+
+                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
+
+                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel-livewire.com" class="underline hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Livewire</a>, <a href="https://inertiajs.com" class="underline hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Inertia</a>, or <a href="https://alpinejs.dev" class="underline hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Alpine.js</a> for situations where you need to build dynamic user interfaces.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
+                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
+                        <div class="flex items-center gap-4">
+                            <a href="https://github.com/sponsors/taylorotwell" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="-mt-px mr-1 w-5 h-5 stroke-gray-400 dark:stroke-gray-600 group-hover:stroke-gray-600 dark:group-hover:stroke-gray-400">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                                </svg>
+                                Sponsor
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ml-4 text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
+                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
