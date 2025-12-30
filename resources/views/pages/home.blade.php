@@ -1,367 +1,263 @@
 <x-app-layout>
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-grid-pattern">
-<div class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] animate-pulse-slow -z-10"></div>
-<div class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] animate-pulse-slow -z-10"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-<div class="text-center lg:text-left animate-fade-in-up">
-<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm mb-8">
-<span class="relative flex h-2 w-2">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-</span>
-<span class="text-xs font-semibold text-slate-600 dark:text-slate-300 tracking-wide uppercase">System Operational</span>
-</div>
-<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-                        Build Faster. <br/>
-<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Scale Smarter.</span>
-</h1>
-<p class="mt-4 text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                        The digital innovation partner for forward-thinking enterprises. We engineer high-performance web applications that drive growth and optimize efficiency.
-                    </p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-<button class="bg-primary hover:bg-primary-dark text-white text-lg font-semibold px-8 py-4 rounded-lg shadow-lg shadow-primary/30 transition-all hover:scale-105 flex items-center justify-center gap-2 group">
-                            Start Your Project
-                            <span class="material-icons-round group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-<button class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary text-lg font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-md flex items-center justify-center gap-2">
-                            View Case Studies
-                        </button>
-</div>
-<div class="mt-12 flex items-center justify-center lg:justify-start gap-8 border-t border-slate-200 dark:border-slate-800 pt-8 opacity-80">
-<div>
-<p class="text-3xl font-bold text-slate-900 dark:text-white">99.9<span class="text-primary text-xl">%</span></p>
-<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Uptime Guarantee</p>
-</div>
-<div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
-<div>
-<p class="text-3xl font-bold text-slate-900 dark:text-white">50<span class="text-primary text-xl">+</span></p>
-<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Enterprise Apps</p>
-</div>
-<div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
-<div>
-<p class="text-3xl font-bold text-slate-900 dark:text-white">4<span class="text-primary text-xl">yr</span></p>
-<p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Avg Engagement</p>
-</div>
-</div>
-</div>
-<div class="relative hidden lg:block h-[600px] w-full [perspective:1000px]">
-<div class="absolute inset-0 flex items-center justify-center">
-<div class="w-[500px] h-[500px] border border-slate-200/50 dark:border-slate-700/50 rounded-full animate-spin-slow dashed-border"></div>
-</div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-[#0d1117] rounded-xl shadow-2xl border border-slate-700 overflow-hidden animate-float z-20">
-<div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-700">
-<div class="flex space-x-2 mr-auto">
-<div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-<div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-<div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-</div>
-<span class="text-xs text-slate-500 font-mono">deploy.sh</span>
-</div>
-<div class="p-6 font-mono text-sm text-slate-300">
-<div class="flex gap-2 mb-2">
-<span class="text-primary font-bold">➜</span>
-<span>git push origin production</span>
-</div>
-<div class="flex gap-2 mb-2 text-slate-400">
-<span class="text-primary font-bold">➜</span>
-<span>Building optimizations...</span>
-</div>
-<div class="space-y-1 pl-5 mb-3 text-slate-500 text-xs border-l border-slate-700 ml-1">
-<p>✓ Minifying assets</p>
-<p>✓ Compressing images</p>
-<p>✓ Database migrations [OK]</p>
-</div>
-<div class="flex gap-2">
-<span class="text-primary font-bold">➜</span>
-<span class="text-green-400">Deployed successfully (124ms)</span>
-<span class="animate-pulse">_</span>
-</div>
-</div>
-</div>
-<div class="absolute top-1/4 right-0 w-64 bg-surface-light dark:bg-surface-dark rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-5 animate-float-delayed z-10 opacity-95 backdrop-blur-md">
-<div class="flex justify-between items-center mb-4">
-<div class="flex items-center gap-2">
-<span class="material-icons-round text-primary text-sm">speed</span>
-<h4 class="text-xs font-bold text-slate-500 uppercase">Velocity</h4>
-</div>
-<span class="text-green-500 text-xs font-mono font-bold">98/100</span>
-</div>
-<div class="flex items-end gap-2 h-20">
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative group overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[40%] animate-pulse"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[70%] animate-pulse delay-75"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[55%] animate-pulse delay-100"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[85%] animate-pulse delay-150"></div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-<div class="absolute bottom-0 w-full bg-primary/80 h-[60%] animate-pulse delay-200"></div>
-</div>
-</div>
-</div>
-<div class="absolute bottom-1/4 left-0 w-auto bg-surface-light dark:bg-surface-dark rounded-full shadow-lg border border-slate-200 dark:border-slate-700 py-2 px-4 flex items-center gap-3 animate-float-delayed z-30">
-<div class="relative flex items-center justify-center">
-<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-<span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-</div>
-<div class="text-xs font-medium text-slate-600 dark:text-slate-300">
-                            System Status: <span class="text-slate-900 dark:text-white font-bold">Optimized</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="w-full bg-white dark:bg-slate-900 border-y border-gray-100 dark:border-gray-800 py-10 overflow-hidden relative">
-<div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10"></div>
-<div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10"></div>
-<div class="flex whitespace-nowrap animate-marquee">
-<div class="flex items-center gap-16 mx-8">
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">AWS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">LARAVEL</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">REACT</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TAILWIND</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NEXT.JS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NODE</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">DOCKER</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TYPESCRIPT</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">AWS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">LARAVEL</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">REACT</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TAILWIND</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NEXT.JS</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NODE</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">DOCKER</span>
-<span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TYPESCRIPT</span>
-</div>
-</div>
-</div>
-<section class="py-24 bg-background-light dark:bg-background-dark">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Core Capabilities</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">We don't just write code; we build resilient digital assets.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
-<div class="group relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all p-8 md:col-span-2">
-<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-<span class="material-icons-round text-[150px] text-primary transform rotate-12">radar</span>
-</div>
-<div class="relative z-10 flex flex-col h-full justify-between">
-<div>
-<div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-<span class="material-icons-round text-primary text-2xl">explore</span>
-</div>
-<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Product Strategy</h3>
-<p class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
-                                From MVP definition to enterprise scaling roadmaps. We validate market assumptions and architect scalable systems before writing a single line of code.
-                            </p>
-</div>
-<a class="inline-flex items-center text-primary font-semibold mt-8 group-hover:translate-x-2 transition-transform" href="#">
-                            Learn more <span class="material-icons-round ml-1 text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<div class="group relative overflow-hidden rounded-2xl bg-slate-900 text-white p-8 border border-slate-800 shadow-sm hover:shadow-xl transition-all">
-<div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-950"></div>
-<div class="relative z-10 flex flex-col h-full justify-between">
-<div>
-<div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm">
-<span class="material-icons-round text-primary text-2xl">code</span>
-</div>
-<h3 class="text-2xl font-bold mb-3">Custom Development</h3>
-<p class="text-slate-300 leading-relaxed text-sm">
-                                We are not limited by a specific tech stack. Our versatile team leverages the best technologies for each project, ensuring capability, performance, and adaptability across any ecosystem.
-                            </p>
-</div>
-<div class="flex gap-2 mt-8 opacity-50">
-<div class="h-1.5 w-8 bg-primary rounded-full"></div>
-<div class="h-1.5 w-4 bg-white rounded-full"></div>
-<div class="h-1.5 w-12 bg-slate-500 rounded-full"></div>
-</div>
-</div>
-</div>
-<div class="group md:col-span-3 relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all p-8 flex items-center">
-<div class="grid grid-cols-1 sm:grid-cols-3 w-full gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-slate-700">
-<div class="text-center pt-4 sm:pt-0">
-<p class="text-4xl font-extrabold text-primary mb-1">98%</p>
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Client Retention</p>
-</div>
-<div class="text-center pt-4 sm:pt-0">
-<p class="text-4xl font-extrabold text-slate-900 dark:text-white mb-1">50+</p>
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Enterprise Apps</p>
-</div>
-<div class="text-center pt-4 sm:pt-0">
-<p class="text-4xl font-extrabold text-slate-900 dark:text-white mb-1">4yr</p>
-<p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Avg Engagement</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
-<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[80px]"></div>
-<div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-blue-600/5 rounded-full blur-[60px]"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-<div class="mb-16 text-center max-w-3xl mx-auto">
-<h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Recent Projects</h2>
-<p class="text-slate-600 dark:text-slate-400 text-lg">
-                Delivering impact through engineering excellence. Here is a selection of our recent deployments.
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+        <!-- Grid Background -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBMMCAwTDQwIDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAzMDcxNyIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPjwvc3ZnPg==')] opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-lab-bg"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-mono text-lab-neon text-sm md:text-base mb-4 tracking-widest uppercase animate-pulse">
+                &lt;Principal-Led_Engineering /&gt;
+            </h1>
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+                Constructing <span class="text-transparent bg-clip-text bg-gradient-to-r from-lab-neon to-lab-accent">Digital Velocity.</span>
+            </h2>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-400">
+                Scientific precision meets startup agility. We architect scalable systems that drive business momentum.
             </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">payments</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">FinTech</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">NeoBank Core System</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Legacy infrastructure causing high latency and transaction failures during peak loads.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Microservices architecture on AWS with real-time event processing via Kafka.</p>
-</div>
-</div>
-<button class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-primary/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-blue-500 transition-colors">local_shipping</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-blue-500 bg-blue-500/10 px-2 py-1 rounded">Logistics</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Global Fleet AI</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Inefficient routing leading to 30% excess fuel costs across 500+ vehicles.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">AI-driven route optimization engine using Google OR-Tools and predictive traffic modeling.</p>
-</div>
-</div>
-<button class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-blue-500/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-purple-500 transition-colors">health_and_safety</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-purple-500 bg-purple-500/10 px-2 py-1 rounded">HealthTech</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">TeleMed Secure</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Ensuring HIPAA compliance while scaling video consultations to 10k daily users.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">End-to-end encrypted WebRTC platform with automated compliance auditing.</p>
-</div>
-</div>
-<button class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-purple-500/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-24 bg-slate-950 relative overflow-hidden">
-<div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
-<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
-<div class="lg:w-1/2">
-<div class="inline-block px-3 py-1 rounded border border-slate-700 bg-slate-900 text-xs font-mono text-primary mb-6">
-                    ~/source/core-values.js
+            <div class="mt-10 flex justify-center gap-4">
+                <x-button href="#contact" variant="primary">
+                    Start Protocol
+                </x-button>
+                <x-button href="#portfolio" variant="outline">
+                    Examine Blueprints
+                </x-button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <x-section id="about" class="bg-slate-950">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="font-mono text-lab-neon text-lg mb-2">01. The Architect</h3>
+                <h2 class="text-3xl font-bold text-white mb-6">Nova Triansyah Azis</h2>
+                <div class="prose prose-invert text-slate-400">
+                    <p class="mb-4">
+                        Founder & Principal Engineer at Accelerate Lab. I operate at the intersection of rigorous engineering and business strategy.
+                    </p>
+                    <p>
+                        As a <strong>"Principal-Led" firm</strong>, you work directly with the architect who designs your system. My methodology treats software as a scientific blueprint—every component is justified, every line of code serves a purpose. Whether deploying a high-velocity monolith or orchestrating a distributed system, the goal remains constant: <strong>Maximum Efficiency, Zero Friction.</strong>
+                    </p>
                 </div>
-<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">The Lab</h2>
-<p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                    Innovation isn't accidental. It's engineered. Our "Lab" methodology combines agile sprints with deep technical research to solve problems others can't.
-                </p>
-<ul class="space-y-4">
-<li class="flex items-start">
-<span class="material-icons-round text-primary mr-3 mt-1">check_circle</span>
-<span class="text-slate-300">Clean, maintainable architecture</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons-round text-primary mr-3 mt-1">check_circle</span>
-<span class="text-slate-300">Security-first development lifecycle</span>
-</li>
-<li class="flex items-start">
-<span class="material-icons-round text-primary mr-3 mt-1">check_circle</span>
-<span class="text-slate-300">Automated CI/CD pipelines</span>
-</li>
-</ul>
-</div>
-<div class="lg:w-1/2 w-full">
-<div class="rounded-xl overflow-hidden shadow-2xl bg-[#0d1117] border border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-<div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-800">
-<div class="flex space-x-2 mr-4">
-<div class="w-3 h-3 rounded-full bg-red-500"></div>
-<div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-<div class="w-3 h-3 rounded-full bg-green-500"></div>
-</div>
-<div class="text-xs text-slate-500 font-mono">AccelerateLabController.ts</div>
-</div>
-<div class="p-6 overflow-x-auto code-scroll">
-<pre class="font-mono text-sm leading-relaxed"><span class="text-pink-400">import</span> { <span class="text-yellow-200">Innovation</span>, <span class="text-yellow-200">Scale</span> } <span class="text-pink-400">from</span> <span class="text-green-300">'@accelerate-lab/core'</span>;
-<span class="text-pink-400">class</span> <span class="text-blue-300">Project</span> <span class="text-pink-400">implements</span> <span class="text-yellow-200">DigitalTransformation</span> {
-  <span class="text-pink-400">private</span> <span class="text-blue-300">client</span>: <span class="text-yellow-200">Partner</span>;
-  <span class="text-pink-400">async</span> <span class="text-blue-300">execute</span>(<span class="text-orange-300">goals</span>: <span class="text-yellow-200">Metrics</span>[]): <span class="text-yellow-200">Promise</span>&lt;<span class="text-yellow-200">Growth</span>&gt; {
-    <span class="text-slate-500">// Optimize performance bottlenecks</span>
-    <span class="text-pink-400">const</span> <span class="text-white">strategy</span> = <span class="text-pink-400">await</span> <span class="text-blue-300">analyze</span>(<span class="text-orange-300">this</span>.client);
-    <span class="text-pink-400">return</span> <span class="text-blue-300">deploy</span>({
-      <span class="text-white">techStack:</span> [<span class="text-green-300">'React'</span>, <span class="text-green-300">'Laravel'</span>, <span class="text-green-300">'AWS'</span>],
-      <span class="text-white">velocity:</span> <span class="text-purple-400">100</span>,
-      <span class="text-white">quality:</span> <span class="text-yellow-200">Standards</span>.<span class="text-purple-400">ENTERPRISE</span>
-    });
-  }
+                <div class="mt-8 grid grid-cols-2 gap-4">
+                    <div class="border-l-2 border-lab-neon pl-4">
+                        <span class="block text-2xl font-bold text-white">5+</span>
+                        <span class="text-sm text-slate-500 font-mono">Years Exp.</span>
+                    </div>
+                    <div class="border-l-2 border-lab-accent pl-4">
+                        <span class="block text-2xl font-bold text-white">100%</span>
+                        <span class="text-sm text-slate-500 font-mono">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute inset-0 bg-lab-neon/20 blur-3xl rounded-full opacity-20"></div>
+                <div class="relative bg-slate-900 border border-slate-800 rounded-lg p-8">
+                    <div class="absolute top-0 right-0 -mt-3 -mr-3 px-2 py-1 bg-lab-accent text-xs font-mono text-white rounded">
+                        Blueprint.php
+                    </div>
+                    <pre class="font-mono text-xs text-lab-neon overflow-x-auto">
+class PrincipalEngineer extends Architect
+{
+    /**
+     * Execution Strategy.
+     */
+    public function deploy(): System
+    {
+        return $this->analyze('Requirements')
+                    ->architect('Scalability')
+                    ->implement('Precision')
+                    ->ensure('Velocity');
+    }
 }
-                        </pre>
-</div>
-</div>
-</div>
-</div>
-</section>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </x-section>
+
+    <!-- Services Section -->
+    <x-section id="services">
+        <div class="text-center mb-16">
+            <h3 class="font-mono text-lab-neon text-lg mb-2">02. Services</h3>
+            <h2 class="text-3xl font-bold text-white">Core Capabilities</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <x-card>
+                <div class="h-12 w-12 bg-lab-neon/10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-lab-neon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">Custom Architecture</h4>
+                <p class="text-slate-400 text-sm">
+                    We don't believe in one-size-fits-all. From unified Monoliths to distributed Microservices, we build the architecture that fits your scale and business goals.
+                </p>
+            </x-card>
+
+            <x-card>
+                <div class="h-12 w-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">Speed & Velocity</h4>
+                <p class="text-slate-400 text-sm">
+                    Our "Speed Monolith" standard ensures lightning-fast load times and rapid development cycles. We ship features, not boilerplate.
+                </p>
+            </x-card>
+
+            <x-card>
+                <div class="h-12 w-12 bg-lab-accent/10 rounded-lg flex items-center justify-center mb-6">
+                    <svg class="w-6 h-6 text-lab-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h4 class="text-xl font-bold text-white mb-3">Rapid MVP</h4>
+                <p class="text-slate-400 text-sm">
+                    From concept to launch in weeks. We validate your business ideas with production-grade code that doesn't need a rewrite.
+                </p>
+            </x-card>
+        </div>
+    </x-section>
+
+    <!-- Portfolio Section -->
+    <x-section id="portfolio" class="bg-slate-950">
+        <div class="text-center mb-16">
+            <h3 class="font-mono text-lab-neon text-lg mb-2">03. Portfolio</h3>
+            <h2 class="text-3xl font-bold text-white">Recent Deployments</h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1: Sahabat Farm -->
+            <a href="https://sahabatfarmindonesia.com/" target="_blank" class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all block">
+                <img src="{{ asset('images/sahabat-farm.png') }}" alt="Sahabat Farm" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90 group-hover:opacity-0 transition-opacity duration-500"></div>
+
+                <div class="absolute inset-0 flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="bg-slate-950/90 p-4 rounded-lg border border-slate-800 backdrop-blur-sm">
+                        <h4 class="text-white font-bold text-lg group-hover:text-lab-neon transition-colors">Sahabat Farm Indonesia</h4>
+                        <p class="text-xs text-lab-neon font-mono mt-1">IoT Ecosystem / AgriTech</p>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            Integrated IoT ecosystem for precision farming. Features real-time sensor monitoring, automated control systems, and data analytics for agricultural optimization.
+                        </p>
+                        <div class="mt-2 flex items-center text-xs text-lab-neon opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="mr-1">View Deployment</span>
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 2: AccelerateLab CRM -->
+            <a href="https://crm.acceleratelab.id" target="_blank" class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all block">
+                <img src="{{ asset('images/crm-dashboard.png') }}" alt="AccelerateLab CRM" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-all duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent opacity-90 group-hover:opacity-0 transition-opacity duration-500"></div>
+
+                <div class="absolute inset-0 flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="bg-slate-950/90 p-4 rounded-lg border border-slate-800 backdrop-blur-sm">
+                        <h4 class="text-white font-bold text-lg group-hover:text-lab-neon transition-colors">Agency CRM System</h4>
+                        <p class="text-xs text-lab-neon font-mono mt-1">Laravel 11 / Tailwind / Workflow</p>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            Comprehensive agency management system handling client pipelines, project tracking, invoicing, and performance analytics in a unified dashboard.
+                        </p>
+                        <div class="mt-2 flex items-center text-xs text-lab-neon opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="mr-1">View Deployment</span>
+                            <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Project 3: ERP System (Internal/Confidential) -->
+            <div class="group relative aspect-video bg-slate-900 rounded-lg overflow-hidden border border-slate-800 hover:border-lab-neon transition-all">
+                <!-- Abstract Blueprint Visual -->
+                <div class="absolute inset-0 bg-slate-900 flex items-center justify-center overflow-hidden">
+                    <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMWgydjJIMUMxeiIgZmlsbD0iIzA2YjZkNCIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+')]"></div>
+                    <div class="w-32 h-32 border-2 border-dashed border-lab-neon/30 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute w-24 h-24 border border-lab-accent/30 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <svg class="w-12 h-12 text-slate-500 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+
+                <div class="absolute inset-0 flex flex-col justify-end p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div class="bg-slate-950/90 p-4 rounded-lg border border-slate-800 backdrop-blur-sm">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Enterprise ERP Core</h4>
+                                <p class="text-xs text-lab-neon font-mono mt-1">BI / Finance / High-Performance</p>
+                            </div>
+                            <span class="px-2 py-1 bg-lab-accent/20 text-lab-accent text-[10px] font-mono rounded border border-lab-accent/30">INTERNAL</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2 line-clamp-2">
+                            A high-performance monolithic ERP handling complex financial logic, inventory, and business intelligence. Optimized for millions of transactions.
+                        </p>
+                        <div class="mt-3">
+                            <button disabled class="text-xs border border-slate-700 text-slate-500 px-3 py-1 rounded cursor-not-allowed font-mono hover:bg-slate-900">
+                                Access Restricted // Request Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </x-section>
+
+    <!-- Contact Section -->
+    <x-section id="contact">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+            <h3 class="font-mono text-lab-neon text-lg mb-2">04. Contact</h3>
+            <h2 class="text-3xl font-bold text-white">Start the Reaction</h2>
+            <p class="mt-4 text-slate-400">
+                Ready to accelerate your project? Send a transmission.
+            </p>
+        </div>
+
+        <div class="max-w-xl mx-auto bg-slate-900/50 p-8 rounded-lg border border-slate-800 backdrop-blur-sm">
+            <form action="mailto:nova@acceleratelab.id" method="post" enctype="text/plain" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-mono text-slate-400">Your Email</label>
+                    <input type="email" name="email" id="email" required class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3">
+                </div>
+                <div>
+                    <label for="subject" class="block text-sm font-mono text-slate-400">Subject</label>
+                    <input type="text" name="subject" id="subject" value="Project Inquiry" class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-mono text-slate-400">Message</label>
+                    <textarea name="message" id="message" rows="4" required class="mt-1 block w-full rounded-md bg-slate-950 border-slate-800 text-white focus:border-lab-neon focus:ring-lab-neon sm:text-sm p-3"></textarea>
+                </div>
+                <x-button type="submit" class="w-full justify-center">
+                    Send Transmission
+                </x-button>
+            </form>
+
+            <div class="mt-8 pt-8 border-t border-slate-800 text-center">
+                <p class="text-slate-500 text-sm mb-4">Or connect directly:</p>
+                <div class="flex justify-center space-x-6">
+                     <a href="https://wa.me/6281234567890" target="_blank" class="flex items-center space-x-2 text-green-500 hover:text-green-400 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        <span class="font-mono">WhatsApp</span>
+                    </a>
+                    <a href="mailto:nova@acceleratelab.id" class="flex items-center space-x-2 text-lab-neon hover:text-white transition-colors font-mono">
+                        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </x-section>
+
 </x-app-layout>

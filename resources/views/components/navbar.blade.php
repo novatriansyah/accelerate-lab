@@ -1,38 +1,33 @@
-<nav class="fixed w-full z-50 backdrop-blur-md bg-surface-light/80 dark:bg-background-dark/80 border-b border-gray-200 dark:border-gray-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-20">
-<div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-<span class="text-2xl font-bold tracking-tighter text-slate-700 dark:text-white">Accelerate</span>
-<span class="text-2xl font-light text-primary">/&gt;</span>
-<span class="text-2xl font-bold tracking-tighter text-slate-700 dark:text-white">Lab</span>
-</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Case Studies</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">The Lab</a>
-    @if (Route::has('login'))
-        @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm font-medium hover:text-primary transition-colors">Dashboard</a>
-        @else
-            <a href="{{ route('login') }}" class="text-sm font-medium hover:text-primary transition-colors">Log in</a>
+<nav class="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-lab-bg/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="{{ route('home') }}" class="flex items-center gap-2">
+                    <img src="{{ asset('images/logo3.png') }}" alt="Accelerate Lab" class="h-12 w-auto">
+                </a>
+            </div>
 
-            @if (Route::has('register'))
-                <a href="{{ route('register') }}" class="text-sm font-medium hover:text-primary transition-colors">Register</a>
-            @endif
-        @endauth
-    @endif
-<button class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">
-                        Contact Us
-                    </button>
-<button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400">
-<span class="material-icons-round text-xl">brightness_4</span>
-</button>
-</div>
-<div class="md:hidden flex items-center">
-<button class="text-gray-500 hover:text-primary focus:outline-none">
-<span class="material-icons-round text-3xl">menu</span>
-</button>
-</div>
-</div>
-</div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-8">
+                    <a href="#about" class="font-mono text-sm hover:text-lab-neon transition-colors">01. About</a>
+                    <a href="#services" class="font-mono text-sm hover:text-lab-neon transition-colors">02. Services</a>
+                    <a href="#portfolio" class="font-mono text-sm hover:text-lab-neon transition-colors">03. Portfolio</a>
+                    <a href="#contact" class="font-mono text-sm hover:text-lab-neon transition-colors">04. Contact</a>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Button (Simplified for now) -->
+            <div class="-mr-2 flex md:hidden">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <!-- Icon -->
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
 </nav>
