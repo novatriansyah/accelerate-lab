@@ -2,9 +2,9 @@
 
 @section('content')
 <main class="flex-grow">
-<section class="relative isolate overflow-hidden bg-background-light px-6 py-24 sm:py-32 lg:px-8">
-<div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.teal.100),white)] opacity-20"></div>
-<div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background-light shadow-xl shadow-teal-600/10 ring-1 ring-teal-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+<section class="relative isolate overflow-hidden bg-background-light dark:bg-background-dark px-6 py-24 sm:py-32 lg:px-8">
+<div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.teal.100),white)] opacity-20 dark:opacity-5"></div>
+<div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background-light dark:bg-background-dark shadow-xl shadow-teal-600/10 ring-1 ring-teal-50 dark:ring-teal-900/20 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
 <div class="mx-auto max-w-7xl text-center">
 <div class="mx-auto max-w-2xl">
 <div class="mb-8 flex justify-center">
@@ -12,10 +12,10 @@
                                 Pioneering Digital Solutions <a class="font-semibold text-primary" href="/blog"><span aria-hidden="true" class="absolute inset-0"></span>Read our manifesto <span aria-hidden="true">→</span></a>
 </div>
 </div>
-<h1 class="text-4xl font-black tracking-tight text-text-main sm:text-6xl">
+<h1 class="text-4xl font-black tracking-tight text-text-main dark:text-white sm:text-6xl">
                             Engineering the Future
                         </h1>
-<p class="mt-6 text-lg leading-8 text-text-main/70">
+<p class="mt-6 text-lg leading-8 text-text-main/70 dark:text-gray-300">
                             Explore our portfolio of high-performance web applications. We blend futurism with professional minimalism to deliver digital excellence.
                         </p>
 </div>

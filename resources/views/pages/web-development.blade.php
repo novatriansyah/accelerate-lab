@@ -10,10 +10,10 @@
 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
 <span class="text-xs font-semibold uppercase tracking-wider text-text-secondary">Web Development</span>
 </div>
-<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-text-main">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-text-main dark:text-white">
                             High-Performance <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-600">Web Applications</span> for the Future
                         </h1>
-<p class="text-lg text-text-secondary max-w-lg leading-relaxed">
+<p class="text-lg text-text-secondary dark:text-gray-300 max-w-lg leading-relaxed">
                             Scalable, secure, and lightning-fast web solutions tailored for your business growth. We build digital products that accelerate your success using cutting-edge architecture.
                         </p>
 <div class="flex flex-col sm:flex-row gap-4 mt-2">
@@ -21,7 +21,7 @@
                                 Start Your Project
                                 <span class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
-<a href="/case-studies" class="flex items-center justify-center h-12 px-6 rounded-lg border border-border-medium bg-transparent hover:bg-border-light text-text-main text-base font-semibold transition-colors">
+<a href="/case-studies" class="flex items-center justify-center h-12 px-6 rounded-lg border border-border-medium dark:border-slate-700 bg-transparent hover:bg-border-light dark:hover:bg-slate-800 text-text-main dark:text-white text-base font-semibold transition-colors">
                                 View Case Studies
                             </a>
 </div>
@@ -56,26 +56,26 @@
 </div>
 </div>
 </section>
-<section class="border-y border-border-light bg-white py-10">
+<section class="border-y border-border-light dark:border-slate-800 bg-white dark:bg-surface-dark py-10">
 <div class="max-w-7xl mx-auto px-4 md:px-10">
-<p class="text-center text-sm font-semibold text-text-secondary uppercase tracking-widest mb-8">Powered by Modern Technologies</p>
+<p class="text-center text-sm font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-widest mb-8">Powered by Modern Technologies</p>
 <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale transition-all duration-500 hover:grayscale-0">
-<div class="flex items-center gap-2 font-bold text-xl text-slate-700">
+<div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
 <span class="material-symbols-outlined text-3xl">code_blocks</span> React
                         </div>
-<div class="flex items-center gap-2 font-bold text-xl text-slate-700">
+<div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
 <span class="material-symbols-outlined text-3xl">dns</span> Node.js
                         </div>
-<div class="flex items-center gap-2 font-bold text-xl text-slate-700">
+<div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
 <span class="material-symbols-outlined text-3xl">cloud</span> AWS
                         </div>
-<div class="flex items-center gap-2 font-bold text-xl text-slate-700">
+<div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
 <span class="material-symbols-outlined text-3xl">terminal</span> Python
                         </div>
-<div class="flex items-center gap-2 font-bold text-xl text-slate-700">
+<div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
 <span class="material-symbols-outlined text-3xl">database</span> PostgreSQL
                         </div>
-<div class="flex items-center gap-2 font-bold text-xl text-slate-700">
+<div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
 <span class="material-symbols-outlined text-3xl">layers</span> Next.js
                         </div>
 </div>
@@ -84,43 +84,43 @@
 <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 md:px-10">
 <div class="flex flex-col gap-10">
 <div class="flex flex-col gap-4 max-w-2xl">
-<h2 class="text-3xl md:text-4xl font-black leading-tight text-text-main">
+<h2 class="text-3xl md:text-4xl font-black leading-tight text-text-main dark:text-white">
                             Why Choose Accelerate Lab?
                         </h2>
-<p class="text-text-secondary text-lg">
+<p class="text-text-secondary dark:text-gray-300 text-lg">
                             We combine engineering excellence with modern design principles to deliver products that stand out.
                         </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="group flex flex-col gap-4 rounded-xl border border-border-medium bg-white p-6 transition-all hover:shadow-lg hover:border-primary/30">
+<div class="group flex flex-col gap-4 rounded-xl border border-border-medium dark:border-slate-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg hover:border-primary/30">
 <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-2xl">bolt</span>
 </div>
 <div>
-<h3 class="text-lg font-bold text-text-main mb-2">Lightning Speed</h3>
-<p class="text-text-secondary text-sm leading-relaxed">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Lightning Speed</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
                                     Optimized specifically for Core Web Vitals and performance metrics that matter to your users and SEO rankings.
                                 </p>
 </div>
 </div>
-<div class="group flex flex-col gap-4 rounded-xl border border-border-medium bg-white p-6 transition-all hover:shadow-lg hover:border-primary/30">
+<div class="group flex flex-col gap-4 rounded-xl border border-border-medium dark:border-slate-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg hover:border-primary/30">
 <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-2xl">verified_user</span>
 </div>
 <div>
-<h3 class="text-lg font-bold text-text-main mb-2">Bank-Grade Security</h3>
-<p class="text-text-secondary text-sm leading-relaxed">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Bank-Grade Security</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
                                     Enterprise-level security protocols, encryption, and compliance standards (GDPR, SOC2) built-in from day one.
                                 </p>
 </div>
 </div>
-<div class="group flex flex-col gap-4 rounded-xl border border-border-medium bg-white p-6 transition-all hover:shadow-lg hover:border-primary/30">
+<div class="group flex flex-col gap-4 rounded-xl border border-border-medium dark:border-slate-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg hover:border-primary/30">
 <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-2xl">trending_up</span>
 </div>
 <div>
-<h3 class="text-lg font-bold text-text-main mb-2">Infinite Scalability</h3>
-<p class="text-text-secondary text-sm leading-relaxed">
+<h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Infinite Scalability</h3>
+<p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
                                     Cloud-native architectures designed to grow with your business, handling millions of requests without breaking a sweat.
                                 </p>
 </div>
@@ -128,25 +128,25 @@
 </div>
 </div>
 </section>
-<section class="bg-white py-16 md:py-24 border-y border-border-light">
+<section class="bg-white dark:bg-surface-dark py-16 md:py-24 border-y border-border-light dark:border-slate-800">
 <div class="max-w-7xl mx-auto px-4 md:px-10">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 <div class="flex flex-col gap-8">
 <div>
-<h2 class="text-3xl font-bold text-text-main mb-4">Our Expertise</h2>
-<p class="text-text-secondary">Comprehensive development services covering every layer of the stack.</p>
+<h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">Our Expertise</h2>
+<p class="text-text-secondary dark:text-gray-300">Comprehensive development services covering every layer of the stack.</p>
 </div>
 <div class="flex flex-col gap-3">
-<details class="group rounded-lg border border-border-medium bg-background-light open:bg-white open:shadow-sm">
+<details class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
 <div class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary">html</span>
-<p class="text-text-main text-sm font-bold">Frontend Development</p>
+<p class="text-text-main dark:text-white text-sm font-bold">Frontend Development</p>
 </div>
-<span class="material-symbols-outlined text-text-main transition-transform group-open:rotate-180">expand_more</span>
+<span class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="px-4 pb-4 pl-[3.25rem]">
-<p class="text-text-secondary text-sm leading-relaxed">
+<p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
                                             We craft responsive, interactive, and pixel-perfect user interfaces using React, Vue, and Angular. We focus on accessibility and fluid animations.
                                         </p>
 </div>
