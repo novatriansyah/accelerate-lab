@@ -1,8 +1,15 @@
 import './bootstrap';
 
-function initTheme() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
+function toggleTheme() {
+    document.documentElement.classList.toggle('dark');
+    if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+}
 
+function initTheme() {
     // Check local storage or system preference
     if (localStorage.getItem('theme') === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -11,23 +18,34 @@ function initTheme() {
         document.documentElement.classList.remove('dark');
     }
 
+    // Desktop Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
     if (themeToggleBtn) {
-        // Remove existing listener to avoid duplicates if re-initialized
+        // Clone to remove existing listeners
         const newBtn = themeToggleBtn.cloneNode(true);
         themeToggleBtn.parentNode.replaceChild(newBtn, themeToggleBtn);
+        newBtn.addEventListener('click', toggleTheme);
+    }
 
-        newBtn.addEventListener('click', () => {
-            console.log('Theme toggle clicked');
-            document.documentElement.classList.toggle('dark');
+    // Mobile Toggle
+    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
+    if (mobileThemeToggleBtn) {
+         const newMobileBtn = mobileThemeToggleBtn.cloneNode(true);
+         mobileThemeToggleBtn.parentNode.replaceChild(newMobileBtn, mobileThemeToggleBtn);
+         newMobileBtn.addEventListener('click', toggleTheme);
+    }
 
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    } else {
-        console.warn('Theme toggle button not found');
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+         const newMenuBtn = mobileMenuBtn.cloneNode(true);
+         mobileMenuBtn.parentNode.replaceChild(newMenuBtn, mobileMenuBtn);
+
+         newMenuBtn.addEventListener('click', () => {
+             mobileMenu.classList.toggle('hidden');
+         });
     }
 }
 
