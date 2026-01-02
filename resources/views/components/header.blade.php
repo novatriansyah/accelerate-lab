@@ -18,7 +18,7 @@
                 </button>
             </div>
             <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-gray-500 hover:text-primary focus:outline-none">
+                <button id="mobile-menu-btn" type="button" class="text-gray-500 hover:text-primary focus:outline-none">
                     <span class="material-icons-round text-3xl">menu</span>
                 </button>
             </div>
