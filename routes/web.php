@@ -1,17 +1,14 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages.home', ['title' => 'Accelerate Lab - Digital Innovation Agency']);
-});
+Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/case-studies', [PageController::class, 'caseStudies'])->name('case-studies');
 
 Route::get('/services', function () {
     return view('pages.services', ['title' => 'Accelerate Lab - Services']);
-});
-
-Route::get('/case-studies', function () {
-    return view('pages.case-studies', ['title' => 'Accelerate Lab - Case Studies']);
 });
 
 Route::get('/the-lab', function () {
@@ -21,6 +18,7 @@ Route::get('/the-lab', function () {
 Route::get('/contact', function () {
     return view('pages.contact', ['title' => 'Contact Accelerate Lab']);
 });
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/web-development', function () {
     return view('pages.web-development', ['title' => 'Accelerate Lab - Web Application Development']);
