@@ -35,10 +35,10 @@
 </div>
 </div>
 </section>
+@if($featuredProject)
 <section class="py-12 md:py-16">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary dark:text-gray-400 mb-6">Featured Project</h3>
-@if($featuredProject)
+    <h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary dark:text-gray-400 mb-6">Featured Project</h3>
 <div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-lg transition-all hover:shadow-xl border border-gray-100 dark:border-slate-700">
 <div class="flex flex-col lg:flex-row">
 <div class="flex flex-1 flex-col justify-center p-8 lg:p-12 order-2 lg:order-1">
@@ -81,9 +81,9 @@
 </div>
 </div>
 </div>
-@endif
 </div>
 </section>
+@endif
 <section class="py-12 bg-white dark:bg-background-dark border-t border-gray-200 dark:border-slate-800">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

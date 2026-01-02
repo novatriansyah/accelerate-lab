@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller; // Import base controller
+use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Article;
 use App\Models\Service;
@@ -24,6 +25,7 @@ class PageController extends Controller
 
         return view('frontend.pages.home', [
             'title' => 'Accelerate Lab - Digital Innovation Agency',
+            'description' => 'Accelerate Lab is a full-service digital innovation agency offering custom software, cloud solutions, and strategic design.',
             'recentProjects' => $recentProjects,
             'heroStats' => $heroStats,
             'capabilityStats' => $capabilityStats,
@@ -67,6 +69,9 @@ class PageController extends Controller
 
         return view('frontend.pages.article', [
             'title' => $article->title . ' - Accelerate Lab',
+            'description' => \Illuminate\Support\Str::limit(strip_tags($article->content), 160),
+            'ogType' => 'article',
+            'ogImage' => $article->image_path ? \Illuminate\Support\Facades\Storage::url($article->image_path) : null,
             'article' => $article
         ]);
     }
@@ -99,6 +104,7 @@ class PageController extends Controller
     {
         return view('frontend.pages.service', [
             'title' => $service->title . ' - Accelerate Lab',
+            'description' => $service->short_description ?? \Illuminate\Support\Str::limit(strip_tags($service->content), 160),
             'service' => $service
         ]);
     }
@@ -152,9 +158,6 @@ class PageController extends Controller
             ->sort();
             
         $featuredProject = Project::where('is_featured', true)->latest()->first();
-        if (!$featuredProject) {
-            $featuredProject = Project::latest()->first();
-        }
 
         return view('frontend.pages.case-studies', [
             'title' => 'Accelerate Lab - Case Studies',
@@ -169,6 +172,8 @@ class PageController extends Controller
     {
         return view('frontend.pages.project', [
             'title' => $project->title . ' - Case Study',
+            'description' => $project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge), 160),
+            'ogImage' => $project->image_path ? \Illuminate\Support\Facades\Storage::url($project->image_path) : null,
             'project' => $project
         ]);
     }
