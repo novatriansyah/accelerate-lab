@@ -12,6 +12,13 @@ export default {
                 "surface-dark": "#1E293B",
                 "text-light": "#334155", // Slate-700
                 "text-dark": "#E2E8F0", // Slate-200
+
+                // Added based on usage in views
+                "text-main": "#334155", // Slate-700
+                "text-secondary": "#64748B", // Slate-500
+                "text-muted": "#94A3B8", // Slate-400
+                "border-light": "#E2E8F0", // Slate-200
+                "border-medium": "#CBD5E1", // Slate-300
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
