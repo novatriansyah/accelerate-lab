@@ -88,103 +88,34 @@
 <section class="py-12 bg-white dark:bg-background-dark">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50 dark:hover:bg-slate-800/50">
-<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Futuristic mobile banking interface on a dark background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUn2yrN2nwf_FI2BRlAA4Cw44NXILSN11F-AurWmOKP6squyX2jxru9pG_h1eG6jVUrlv1GqMXunYm8CYbbK3-hSUY7awHLhO_14Qi67Zy2FXjF9b6irWvUiYqeTc7D5qPPDuHRRY2ueI_xUCwbs0YShJ9FYCcjRAlnJ2R_ZkPOKkRl9VRTv7pK9qoPhr5bMN-p-C7r5XSvp3Om9eNkjJRbapqzh9L4yJXApZf7BXL3mFJY6iWqmTjsBtHn8Y6Yi1PFdZ7psKeLAs");'></div>
-<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex flex-wrap gap-2">
-<span class="text-xs font-semibold uppercase tracking-wider text-primary">Fintech</span>
-<span class="text-xs text-gray-400">•</span>
-<span class="text-xs text-gray-500">React Native</span>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">NovaFin App Modernization</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
-                                    Transforming a legacy banking infrastructure into a sleek, user-centric mobile experience that increased user retention by 25%.
-                                </p>
-</div>
-</div>
-<div class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50 dark:hover:bg-slate-800/50">
-<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="AI visualization dashboard with medical data charts" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAaT074JvFTrXT8HWORsxXZjeVIQY_j9vh1og-TmyGT7ni4RzUexFkKytFApkx-FBDZ76YKfM3v3XgYA1P0odwBlJo0J2lLA4qc74uVEuRuObxHGnGxulG9DbvMNwnFo6ECaY_gnHGKsc7ccYdrNhq311EHWhYhQXQi62ioT_VKH6bEtyIVCUusgdViGBOhdK4JioBtS6nDwDptuop2zQGA90RfybQaWlwfUhz_lU90_GU2VIYpTK5fbpRI0GID3Lde6-6I38W35Nk");'></div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex flex-wrap gap-2">
-<span class="text-xs font-semibold uppercase tracking-wider text-primary">Healthcare</span>
-<span class="text-xs text-gray-400">•</span>
-<span class="text-xs text-gray-500">Python / TensorFlow</span>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">MediGuard AI Portal</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
-                                    Implementing AI-driven diagnostic tools to assist clinicians in early detection anomalies, reducing diagnosis time by 15%.
-                                </p>
-</div>
-</div>
-<div class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50 dark:hover:bg-slate-800/50">
-<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="E-commerce dashboard on laptop screen showing analytics" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC___BuhP9_ZJSmYULUSR3mEvDewJJF-APLmKVvZyexftlXAMyIpFVOa94_TFcfK8zEuRMAT_zX1KY0iID-pAyWV3SDK7aQbfrgRVZCa4KyROINU6UsGRyRTnN7ZuSr5KBVehMxydF4RLOgl1w8qYpKMFxtjUk7gwvm6_R3gnefA0ltJMabZDkVrSAbqjODyznkh_tgOSQrlBtfBPSOdX0nVWLzwwQNxl7fLiPCMCB7sXxIxz6sMEdKAK4mEgaJChYk32E3Lq02opU");'></div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex flex-wrap gap-2">
-<span class="text-xs font-semibold uppercase tracking-wider text-primary">Retail</span>
-<span class="text-xs text-gray-400">•</span>
-<span class="text-xs text-gray-500">Next.js</span>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">ShopFlow Headless Commerce</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
-                                    A headless commerce solution delivering sub-second load times and a 40% increase in mobile conversion rates.
-                                </p>
-</div>
-</div>
-<div class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50 dark:hover:bg-slate-800/50">
-<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Abstract digital block chain visualization in blue and green" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_5NDSnhYmMkmJwc_sqtnvU0SskzOnwbW6JtREXajmLse--p1D8qRDm0SB2IFAMdknSOOTJM340xoDPyDGrK-mDAbF9sh9T5fjlrSn2_IQxiPzcEWHnPjMNREP0UmpteiUU2ZDQHHTmQ7MfVqIWxCttrZD9Y5wFHdhNTIywo02uqO0w1DOhv7HuqtjOSH7aFQq5k3XOGUVpJ62XdsDeODQ9TDz15iyLGVnor6EjqftK2FgSab5Kpwr9gvU33HwQ4XLJGpQE3rG5R0");'></div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex flex-wrap gap-2">
-<span class="text-xs font-semibold uppercase tracking-wider text-primary">Blockchain</span>
-<span class="text-xs text-gray-400">•</span>
-<span class="text-xs text-gray-500">Rust</span>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">SecureChain Wallet</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
-                                    Developing a decentralized exchange interface with bank-grade security protocols and biometric authentication.
-                                </p>
-</div>
-</div>
-<div class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50 dark:hover:bg-slate-800/50">
-<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Smart city conceptual digital overlay on urban night cityscape" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7N068f3ro7elB1A31u7WGJvGNqyckxRRMPoEMw_hWXM2hN2ASqjvf64paCRvJXq3uCzBr2mRkXNYjGHhGvs4OFq5tdZOqdNFpBdw_FGc0PzLdBZc8jLPaAVgu6l7F_8yeMxmOTiRl9N8Mor7DAJFRW-aiowOWPdTgKFr5N_yJ10faOSgPVDvlAkkmvd1El5od9i9cZvsNtOs5qFY3HhWvKlG5DnsSt5yqiEKCuFiwS1wZWglb38WHEQ2vnX-KgQ8NNnCnH6OhoFA");'></div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex flex-wrap gap-2">
-<span class="text-xs font-semibold uppercase tracking-wider text-primary">IoT</span>
-<span class="text-xs text-gray-400">•</span>
-<span class="text-xs text-gray-500">Node.js</span>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">UrbanPulse Dashboard</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
-                                    Real-time aggregation of smart city sensors into a unified command center dashboard for municipal operators.
-                                </p>
-</div>
-</div>
-<div class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50 dark:hover:bg-slate-800/50">
-<div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Student using tablet with educational software interface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRg0zOLskOpivB3HvcKJReNm4nKrPqw9Jyqprswq20jc11nyrIFBIaFfiXABzBfqyXUQZDdBjVHd5J6Oo0U_8VgCQnbndn5rkh75Hs8IFD06lOx90mfeWt03FruhusULQ1_XfmI5CtxwGGX5hTToGllU4Rr8T_63IBFPuqEaO228foD-FoklOjhp1FEwkHn7E2O1nBx1_oA9cLuTPl1-6RIQsls6WmQ96Y1mTZ_0eqXnHLwtHs-LNxgJFIjxOfpZviHrHLa_mjMak");'></div>
-</div>
-<div class="flex flex-col gap-2">
-<div class="flex flex-wrap gap-2">
-<span class="text-xs font-semibold uppercase tracking-wider text-primary">EdTech</span>
-<span class="text-xs text-gray-400">•</span>
-<span class="text-xs text-gray-500">Vue.js</span>
-</div>
-<h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">EduStream LMS</h3>
-<p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
-                                    An interactive learning management system designed for universities to handle 50k+ concurrent student streams.
-                                </p>
-</div>
-</div>
+    @foreach($projects as $project)
+    <div class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50">
+        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100">
+            @if($project->image_path)
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("{{ Storage::url($project->image_path) }}");'></div>
+            @else
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 bg-slate-800 flex items-center justify-center">
+                <span class="material-icons-round text-6xl text-slate-600">{{ $project->icon ?? 'image' }}</span>
+            </div>
+            @endif
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <div class="flex flex-wrap gap-2">
+                @if($project->technology_tags)
+                    @foreach(array_slice($project->technology_tags, 0, 2) as $tag)
+                        <span class="text-xs font-semibold uppercase tracking-wider text-{{ $project->color ?? 'primary' }}">{{ $tag }}</span>
+                        @if(!$loop->last) <span class="text-xs text-gray-400">•</span> @endif
+                    @endforeach
+                @endif
+            </div>
+            <h3 class="text-xl font-bold text-text-main group-hover:text-primary transition-colors">{{ $project->title }}</h3>
+            <p class="text-sm text-text-secondary line-clamp-2">
+                {{ $project->description }}
+            </p>
+        </div>
+    </div>
+    @endforeach
 </div>
 <div class="mt-16 flex justify-center">
 <button class="flex items-center gap-2 rounded-full border border-gray-200 dark:border-slate-700 px-6 py-3 text-sm font-semibold text-text-main dark:text-white transition-colors hover:border-primary hover:text-primary">

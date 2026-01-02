@@ -219,93 +219,45 @@
             </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">payments</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">FinTech</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">NeoBank Core System</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Legacy infrastructure causing high latency and transaction failures during peak loads.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Microservices architecture on AWS with real-time event processing via Kafka.</p>
-</div>
-</div>
-<a href="/case-studies" class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-primary/30">
+    @foreach($recentProjects as $project)
+    <div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
+        <div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+            @if($project->image_path)
+                <img src="{{ Storage::url($project->image_path) }}" alt="{{ $project->title }}" class="w-full h-full object-cover">
+            @else
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-{{ $project->color ?? 'primary' }}/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-{{ $project->color ?? 'primary' }} transition-colors">{{ $project->icon ?? 'layers' }}</span>
+                </div>
+            @endif
+        </div>
+        <div class="p-8 flex flex-col flex-grow">
+            <div class="mb-4">
+                @if($project->technology_tags)
+                    @foreach(array_slice($project->technology_tags, 0, 1) as $tag)
+                        <span class="text-xs font-mono text-{{ $project->color ?? 'primary' }} bg-{{ $project->color ?? 'primary' }}/10 px-2 py-1 rounded">{{ $tag }}</span>
+                    @endforeach
+                @endif
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">{{ $project->title }}</h3>
+            <div class="space-y-4 mb-8 flex-grow">
+                <div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">{{ $project->challenge }}</p>
+                </div>
+                <div>
+                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">{{ $project->solution }}</p>
+                </div>
+            </div>
+            <a href="/case-studies" class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-{{ $project->color ?? 'primary' }}/30">
                         View Case Study
                         <span class="material-icons-round text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-blue-500 transition-colors">local_shipping</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-blue-500 bg-blue-500/10 px-2 py-1 rounded">Logistics</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Global Fleet AI</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Inefficient routing leading to 30% excess fuel costs across 500+ vehicles.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">AI-driven route optimization engine using Google OR-Tools and predictive traffic modeling.</p>
-</div>
-</div>
-<a href="/case-studies" class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-blue-500/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-<div class="group bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/50 transition-all duration-300 flex flex-col h-full">
-<div class="h-48 bg-slate-100 dark:bg-slate-800 relative overflow-hidden group-hover:opacity-90 transition-opacity">
-<div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-purple-500 transition-colors">health_and_safety</span>
-</div>
-</div>
-<div class="p-8 flex flex-col flex-grow">
-<div class="mb-4">
-<span class="text-xs font-mono text-purple-500 bg-purple-500/10 px-2 py-1 rounded">HealthTech</span>
-</div>
-<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">TeleMed Secure</h3>
-<div class="space-y-4 mb-8 flex-grow">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">Ensuring HIPAA compliance while scaling video consultations to 10k daily users.</p>
-</div>
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-<p class="text-sm text-slate-600 dark:text-slate-400">End-to-end encrypted WebRTC platform with automated compliance auditing.</p>
-</div>
-</div>
-<a href="/case-studies" class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-purple-500/30">
-                        View Case Study
-                        <span class="material-icons-round text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
+            </a>
+        </div>
+    </div>
+    @endforeach
 </div>
 </div>
 </section>
