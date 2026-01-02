@@ -113,6 +113,20 @@
                             <p class="text-sm text-gray-500 dark:text-gray-400">In-depth analysis of competitors and target demographics.</p>
                         </div>
                     </div>
+                    <div class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
+                        <span class="material-symbols-outlined text-primary text-3xl">map</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">MVP Planning</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Prioritizing features for a lean, effective market entry.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
+                        <span class="material-symbols-outlined text-primary text-3xl">brush</span>
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">UI/UX Design</h4>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Crafting intuitive interfaces that users love.</p>
+                        </div>
+                    </div>
                 @endif
             </div>
         </div>
