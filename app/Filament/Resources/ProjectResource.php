@@ -40,6 +40,9 @@ class ProjectResource extends Resource
                             ->unique(ignoreRecord: true),
                         TextInput::make('client')
                             ->label('Client Name'),
+                        TextInput::make('industry')
+                            ->label('Industry / Sector')
+                            ->placeholder('e.g. Fintech, Healthcare'),
                         TextInput::make('color')
                             ->label('Accent Color (e.g., blue, purple, primary)')
                             ->placeholder('primary'),
@@ -69,6 +72,7 @@ class ProjectResource extends Resource
                             ->directory('projects')
                             ->columnSpanFull(),
                         TagsInput::make('technology_tags')
+                            ->label('Tech Stack')
                             ->suggestions(['Laravel', 'React', 'Vue', 'AWS', 'Tailwind', 'Docker']),
                         Repeater::make('stats')
                             ->schema([
@@ -87,6 +91,7 @@ class ProjectResource extends Resource
                 ImageColumn::make('image_path')->label('Image'),
                 TextColumn::make('title')->searchable()->sortable(),
                 TextColumn::make('client')->searchable(),
+                TextColumn::make('industry')->searchable()->sortable(),
                 TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->filters([
