@@ -64,52 +64,58 @@
                             Send us a Message
                             <span class="material-symbols-outlined text-primary">edit_square</span>
 </h2>
-<form class="flex flex-col gap-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<label class="flex flex-col flex-1">
-<span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Full Name</span>
-<input class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="Jane Doe" type="text"/>
-</label>
-<label class="flex flex-col flex-1">
-<span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Work Email</span>
-<input class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="jane@company.com" type="email"/>
-</label>
+@if(session('success'))
+<div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+  <span class="block sm:inline">{{ session('success') }}</span>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<label class="flex flex-col flex-1">
-<span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Company</span>
-<input class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="Acme Corp" type="text"/>
-</label>
-<label class="flex flex-col flex-1">
-<span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Project Type</span>
-<div class="relative">
-<select class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-<option disabled="" selected="" value="">Select an option</option>
-<option value="web-app">Web Application</option>
-<option value="mobile-app">Mobile App</option>
-<option value="consulting">Consulting &amp; Strategy</option>
-<option value="design">UI/UX Design</option>
-</select>
-<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-primary">
-<span class="material-symbols-outlined">expand_more</span>
+@endif
+
+@if($errors->any())
+<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+  <ul>
+    @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+    @endforeach
+  </ul>
 </div>
-</div>
-</label>
-</div>
-<label class="flex flex-col flex-1">
-<span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Message</span>
-<textarea class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white min-h-[160px] p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400 resize-y" placeholder="Tell us about your project goals, timeline, and budget..."></textarea>
-</label>
-<div class="pt-2">
-<button class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 overflow-hidden" type="button">
-<div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
-<span class="flex items-center gap-2 relative z-10">
+@endif
+
+<form class="flex flex-col gap-6" method="POST" action="{{ action([\App\Http\Controllers\ContactController::class, 'store']) }}">
+    @csrf
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <label class="flex flex-col flex-1">
+            <span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Full Name *</span>
+            <input name="name" required class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="Jane Doe" type="text" value="{{ old('name') }}"/>
+        </label>
+        <label class="flex flex-col flex-1">
+            <span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Work Email *</span>
+            <input name="email" required class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="jane@company.com" type="email" value="{{ old('email') }}"/>
+        </label>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <label class="flex flex-col flex-1">
+            <span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Company</span>
+            <input name="company" class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="Acme Corp" type="text" value="{{ old('company') }}"/>
+        </label>
+        <label class="flex flex-col flex-1">
+            <span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Phone</span>
+            <input name="phone" class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-12 px-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400" placeholder="+1 (555) 000-0000" type="text" value="{{ old('phone') }}"/>
+        </label>
+    </div>
+    <label class="flex flex-col flex-1">
+        <span class="text-text-main dark:text-gray-200 text-sm font-semibold uppercase tracking-wider mb-2">Message *</span>
+        <textarea name="message" required class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white min-h-[160px] p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400 resize-y" placeholder="Tell us about your project goals, timeline, and budget...">{{ old('message') }}</textarea>
+    </label>
+    <div class="pt-2">
+        <button class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 overflow-hidden" type="submit">
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            <span class="flex items-center gap-2 relative z-10">
                                         Send Message
                                         <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
-</span>
-</button>
-</div>
-<p class="text-xs text-center text-gray-500 mt-2">
+            </span>
+        </button>
+    </div>
+    <p class="text-xs text-center text-gray-500 mt-2">
                                 By submitting this form, you agree to our <a class="underline hover:text-primary" href="/privacy-policy">Privacy Policy</a>.
                             </p>
 </form>
