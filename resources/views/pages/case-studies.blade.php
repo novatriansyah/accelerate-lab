@@ -24,27 +24,14 @@
 <section class="sticky top-16 z-40 border-b border-gray-100 bg-background-light/95 backdrop-blur-sm py-4">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
-<button class="shrink-0 rounded-full bg-primary text-white px-5 py-2 text-sm font-medium shadow-sm transition-all hover:bg-teal-600">
-                            All Industries
-                        </button>
-<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
-                            Fintech
-                        </button>
-<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
-                            Healthcare
-                        </button>
-<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
-                            Logistics
-                        </button>
-<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
-                            AI/ML
-                        </button>
-<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
-                            E-commerce
-                        </button>
-<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
-                            Blockchain
-                        </button>
+    <a href="{{ route('case-studies') }}" class="shrink-0 rounded-full {{ !$currentIndustry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white border border-gray-200 text-text-main hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
+        All Industries
+    </a>
+    @foreach($industries as $industry)
+    <a href="{{ route('case-studies', ['industry' => $industry]) }}" class="shrink-0 rounded-full {{ $currentIndustry === $industry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white border border-gray-200 text-text-main hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
+        {{ $industry }}
+    </a>
+    @endforeach
 </div>
 </div>
 </section>
@@ -101,11 +88,18 @@
             <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
         </div>
         <div class="flex flex-col gap-2">
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 items-center">
+                @if($project->industry)
+                    <span class="text-xs font-bold uppercase tracking-wider text-{{ $project->color ?? 'primary' }}">{{ $project->industry }}</span>
+                @endif
+
+                @if($project->industry && $project->technology_tags)
+                    <span class="text-xs text-gray-400">•</span>
+                @endif
+
                 @if($project->technology_tags)
-                    @foreach(array_slice(is_array($project->technology_tags) ? $project->technology_tags : explode(',', $project->technology_tags), 0, 2) as $tag)
-                        <span class="text-xs font-semibold uppercase tracking-wider text-{{ $project->color ?? 'primary' }}">{{ $tag }}</span>
-                        @if(!$loop->last) <span class="text-xs text-gray-400">•</span> @endif
+                    @foreach(array_slice(is_array($project->technology_tags) ? $project->technology_tags : explode(',', $project->technology_tags), 0, 1) as $tag)
+                        <span class="text-xs text-gray-500 font-medium">{{ $tag }}</span>
                     @endforeach
                 @endif
             </div>

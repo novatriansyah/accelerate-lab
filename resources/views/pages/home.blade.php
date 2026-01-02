@@ -233,11 +233,9 @@
             @endif
         </div>
         <div class="p-8 flex flex-col flex-grow">
-            <div class="mb-4">
-                @if($project->technology_tags)
-                    @foreach(array_slice(is_array($project->technology_tags) ? $project->technology_tags : explode(',', $project->technology_tags), 0, 1) as $tag)
-                        <span class="text-xs font-mono text-{{ $project->color ?? 'primary' }} bg-{{ $project->color ?? 'primary' }}/10 px-2 py-1 rounded">{{ $tag }}</span>
-                    @endforeach
+            <div class="mb-4 flex flex-wrap gap-2 items-center">
+                @if($project->industry)
+                    <span class="text-xs font-mono text-{{ $project->color ?? 'primary' }} bg-{{ $project->color ?? 'primary' }}/10 px-2 py-1 rounded">{{ $project->industry }}</span>
                 @endif
             </div>
             <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">{{ $project->title }}</h3>

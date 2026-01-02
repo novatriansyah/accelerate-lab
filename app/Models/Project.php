@@ -10,6 +10,7 @@ class Project extends Model
         'title',
         'slug',
         'client',
+        'industry',
         'description',
         'challenge',
         'solution',

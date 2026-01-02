@@ -17,12 +17,29 @@ class PageController extends Controller
         ]);
     }
 
-    public function caseStudies()
+    public function caseStudies(Request $request)
     {
-        $projects = Project::latest()->get();
+        $query = Project::latest();
+
+        if ($request->has('industry') && $request->industry != '') {
+            $query->where('industry', $request->industry);
+        }
+
+        $projects = $query->get();
+
+        // Get unique industries for the filter bar
+        $industries = Project::select('industry')
+            ->distinct()
+            ->whereNotNull('industry')
+            ->where('industry', '!=', '')
+            ->pluck('industry')
+            ->sort();
+
         return view('pages.case-studies', [
             'title' => 'Accelerate Lab - Case Studies',
-            'projects' => $projects
+            'projects' => $projects,
+            'industries' => $industries,
+            'currentIndustry' => $request->industry
         ]);
     }
 }
