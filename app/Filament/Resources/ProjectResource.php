@@ -69,7 +69,6 @@ class ProjectResource extends Resource
                             ->directory('projects')
                             ->columnSpanFull(),
                         TagsInput::make('technology_tags')
-                            ->separator(',')
                             ->suggestions(['Laravel', 'React', 'Vue', 'AWS', 'Tailwind', 'Docker']),
                         Repeater::make('stats')
                             ->schema([

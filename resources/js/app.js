@@ -1,15 +1,8 @@
 import './bootstrap';
 
-function toggleTheme() {
-    document.documentElement.classList.toggle('dark');
-    if (document.documentElement.classList.contains('dark')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-}
-
 function initTheme() {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
     // Check local storage or system preference
     if (localStorage.getItem('theme') === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -17,27 +10,29 @@ function initTheme() {
     } else {
         document.documentElement.classList.remove('dark');
     }
+
+    if (themeToggleBtn) {
+        // Remove existing listener to avoid duplicates if re-initialized
+        const newBtn = themeToggleBtn.cloneNode(true);
+        themeToggleBtn.parentNode.replaceChild(newBtn, themeToggleBtn);
+
+        newBtn.addEventListener('click', () => {
+            console.log('Theme toggle clicked');
+            document.documentElement.classList.toggle('dark');
+
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    } else {
+        console.warn('Theme toggle button not found');
+    }
 }
 
-// Event Delegation for robustness
-document.addEventListener('click', (e) => {
-    // Theme Toggles (Desktop & Mobile)
-    if (e.target.closest('#theme-toggle') || e.target.closest('#mobile-theme-toggle')) {
-        toggleTheme();
-    }
-
-    // Mobile Menu Toggle
-    const menuBtn = e.target.closest('#mobile-menu-btn');
-    if (menuBtn) {
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu) {
-            mobileMenu.classList.toggle('hidden');
-        }
-    }
-});
-
-// Initialize theme on load
+// Initialize on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', initTheme);
 
-// Expose to window for debugging if needed
+// Expose to window for debugging
 window.initTheme = initTheme;

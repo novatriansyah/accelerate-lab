@@ -235,7 +235,7 @@
         <div class="p-8 flex flex-col flex-grow">
             <div class="mb-4">
                 @if($project->technology_tags)
-                    @foreach(array_slice($project->technology_tags, 0, 1) as $tag)
+                    @foreach(array_slice(is_array($project->technology_tags) ? $project->technology_tags : explode(',', $project->technology_tags), 0, 1) as $tag)
                         <span class="text-xs font-mono text-{{ $project->color ?? 'primary' }} bg-{{ $project->color ?? 'primary' }}/10 px-2 py-1 rounded">{{ $tag }}</span>
                     @endforeach
                 @endif
