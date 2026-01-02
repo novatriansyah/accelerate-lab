@@ -21,28 +21,28 @@
 </div>
 </div>
 </section>
-<section class="sticky top-16 z-40 border-b border-gray-100 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm py-4">
+<section class="sticky top-16 z-40 border-b border-gray-100 bg-background-light/95 backdrop-blur-sm py-4">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
 <button class="shrink-0 rounded-full bg-primary text-white px-5 py-2 text-sm font-medium shadow-sm transition-all hover:bg-teal-600">
                             All Industries
                         </button>
-<button class="shrink-0 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-text-main dark:text-white px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                             Fintech
                         </button>
-<button class="shrink-0 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-text-main dark:text-white px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                             Healthcare
                         </button>
-<button class="shrink-0 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-text-main dark:text-white px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                             Logistics
                         </button>
-<button class="shrink-0 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-text-main dark:text-white px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                             AI/ML
                         </button>
-<button class="shrink-0 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-text-main dark:text-white px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                             E-commerce
                         </button>
-<button class="shrink-0 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-text-main dark:text-white px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+<button class="shrink-0 rounded-full bg-white border border-gray-200 text-text-main px-5 py-2 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                             Blockchain
                         </button>
 </div>
@@ -50,26 +50,26 @@
 </section>
 <section class="py-12 md:py-16">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary dark:text-gray-400 mb-6">Featured Project</h3>
-<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-lg transition-all hover:shadow-xl border border-gray-100 dark:border-slate-700">
+<h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary mb-6">Featured Project</h3>
+<div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg transition-all hover:shadow-xl border border-gray-100">
 <div class="flex flex-col lg:flex-row">
 <div class="flex flex-1 flex-col justify-center p-8 lg:p-12 order-2 lg:order-1">
 <div class="flex items-center gap-2 mb-4">
 <span class="inline-flex items-center rounded-md bg-teal-50 px-2 py-1 text-xs font-medium text-teal-700 ring-1 ring-inset ring-teal-600/20">Logistics</span>
 <span class="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">Cloud Native</span>
 </div>
-<h2 class="text-2xl font-bold text-text-main dark:text-white sm:text-3xl mb-4">OmniScale Logistics Platform</h2>
-<p class="text-text-secondary dark:text-gray-300 mb-6 leading-relaxed">
+<h2 class="text-2xl font-bold text-text-main sm:text-3xl mb-4">OmniScale Logistics Platform</h2>
+<p class="text-text-secondary mb-6 leading-relaxed">
                                     We replaced legacy systems with a cloud-native microservices architecture. The result was a seamless scalability solution handling millions of transactions daily.
                                 </p>
-<div class="grid grid-cols-2 gap-6 mb-8 border-t border-gray-100 dark:border-slate-700 pt-6">
+<div class="grid grid-cols-2 gap-6 mb-8 border-t border-gray-100 pt-6">
 <div>
 <p class="text-3xl font-black text-primary">300%</p>
-<p class="text-sm font-medium text-text-secondary dark:text-gray-400">ROI Year 1</p>
+<p class="text-sm font-medium text-text-secondary">ROI Year 1</p>
 </div>
 <div>
 <p class="text-3xl font-black text-primary">40%</p>
-<p class="text-sm font-medium text-text-secondary dark:text-gray-400">Faster Processing</p>
+<p class="text-sm font-medium text-text-secondary">Faster Processing</p>
 </div>
 </div>
 <a class="inline-flex w-fit items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark group-hover:gap-3 transition-all" href="/case-studies">
@@ -85,7 +85,7 @@
 </div>
 </div>
 </section>
-<section class="py-12 bg-white dark:bg-background-dark">
+<section class="py-12 bg-white">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     @foreach($projects as $project)
@@ -103,7 +103,7 @@
         <div class="flex flex-col gap-2">
             <div class="flex flex-wrap gap-2">
                 @if($project->technology_tags)
-                    @foreach(array_slice($project->technology_tags, 0, 2) as $tag)
+                    @foreach(array_slice(is_array($project->technology_tags) ? $project->technology_tags : explode(',', $project->technology_tags), 0, 2) as $tag)
                         <span class="text-xs font-semibold uppercase tracking-wider text-{{ $project->color ?? 'primary' }}">{{ $tag }}</span>
                         @if(!$loop->last) <span class="text-xs text-gray-400">•</span> @endif
                     @endforeach
@@ -118,7 +118,7 @@
     @endforeach
 </div>
 <div class="mt-16 flex justify-center">
-<button class="flex items-center gap-2 rounded-full border border-gray-200 dark:border-slate-700 px-6 py-3 text-sm font-semibold text-text-main dark:text-white transition-colors hover:border-primary hover:text-primary">
+<button class="flex items-center gap-2 rounded-full border border-gray-200 px-6 py-3 text-sm font-semibold text-text-main transition-colors hover:border-primary hover:text-primary">
                             View More Projects <span class="material-symbols-outlined text-lg">expand_more</span>
 </button>
 </div>
