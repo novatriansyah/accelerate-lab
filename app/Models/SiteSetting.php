@@ -10,5 +10,6 @@ class SiteSetting extends Model
         'key',
         'value',
         'group',
+        'is_display',
     ];
 }

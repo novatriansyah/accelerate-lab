@@ -18,44 +18,44 @@
                         </p>
 </div>
 <div class="flex flex-col gap-6 py-6 border-y border-border-light dark:border-border-dark">
-<div class="flex items-start gap-4 group">
-<div class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[20px]">location_on</span>
+                <div class="flex items-start gap-4 group">
+                    <div class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[20px]">location_on</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-text-main dark:text-white">Visit HQ</h3>
+                        <p class="text-text-secondary dark:text-gray-400 text-sm mt-1">{{ $settings['contact_address'] ?? '123 Innovation Blvd, Tech City, TC 90210' }}</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 group">
+                    <div class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[20px]">mail</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-text-main dark:text-white">Email Us</h3>
+                        <a class="text-text-secondary dark:text-gray-400 text-sm mt-1 hover:text-primary transition-colors" href="mailto:{{ $settings['contact_email'] ?? 'hello@acceleratelab.io' }}">{{ $settings['contact_email'] ?? 'hello@acceleratelab.io' }}</a>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 group">
+                    <div class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-[20px]">call</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-text-main dark:text-white">Call Us</h3>
+                        <p class="text-text-secondary dark:text-gray-400 text-sm mt-1">{{ $settings['contact_phone'] ?? '+1 (555) 019-2834' }}</p>
+                    </div>
+                </div>
 </div>
-<div>
-<h3 class="font-bold text-text-main dark:text-white">Visit HQ</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">123 Innovation Blvd, Tech City, TC 90210</p>
-</div>
-</div>
-<div class="flex items-start gap-4 group">
-<div class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[20px]">mail</span>
-</div>
-<div>
-<h3 class="font-bold text-text-main dark:text-white">Email Us</h3>
-<a class="text-text-secondary dark:text-gray-400 text-sm mt-1 hover:text-primary transition-colors" href="mailto:hello@acceleratelab.io">hello@acceleratelab.io</a>
-</div>
-</div>
-<div class="flex items-start gap-4 group">
-<div class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[20px]">call</span>
-</div>
-<div>
-<h3 class="font-bold text-text-main dark:text-white">Call Us</h3>
-<p class="text-text-secondary dark:text-gray-400 text-sm mt-1">+1 (555) 019-2834</p>
-</div>
-</div>
-</div>
-<div class="relative w-full h-48 rounded-xl overflow-hidden shadow-md group cursor-pointer">
-<div class="absolute inset-0 bg-primary/10 z-10 group-hover:bg-primary/5 transition-colors"></div>
-<img alt="Map view of city streets in grayscale" class="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Map view of city streets in grayscale" data-location="Tech City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYdvnhSbOfyr5ux-RS6isr_D6Q68rMA_hiQKu14Z4_d_c7yqladIBCiTLgAG0D3dCndcn9Re--q8Q1wz1Khe6HIZ4R_xMJ9e_U-bRRioeAJbRmJwdcm5O73hpRVt5QJZr9MFodpF3N4ZxdNG-oVSVa2F2MHvtHlX2MqOL7xKOdmWshVlcS1JzKMwmVaOOGS_3RwxAnDE3ndku7gu-znVOQATk7lYiqdbh2KijVmS1xnlVaqlVZ3G9O_bTjEYtgR2pGH--hZaLYRgA"/>
-<div class="absolute bottom-3 left-3 z-20 bg-white/90 dark:bg-black/80 px-3 py-1 rounded-md backdrop-blur-sm">
-<span class="text-xs font-bold flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px] text-primary">near_me</span>
-                                Open Maps
-                            </span>
-</div>
-</div>
+                <a href="{{ $settings['contact_google_maps_link'] ?? '#' }}" target="_blank" rel="noopener noreferrer" class="relative w-full h-48 rounded-xl overflow-hidden shadow-md group cursor-pointer block">
+                    <div class="absolute inset-0 bg-primary/10 z-10 group-hover:bg-primary/5 transition-colors"></div>
+                    <img alt="Map view of {{ $settings['contact_address'] ?? 'HQ' }}" class="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYdvnhSbOfyr5ux-RS6isr_D6Q68rMA_hiQKu14Z4_d_c7yqladIBCiTLgAG0D3dCndcn9Re--q8Q1wz1Khe6HIZ4R_xMJ9e_U-bRRioeAJbRmJwdcm5O73hpRVt5QJZr9MFodpF3N4ZxdNG-oVSVa2F2MHvtHlX2MqOL7xKOdmWshVlcS1JzKMwmVaOOGS_3RwxAnDE3ndku7gu-znVOQATk7lYiqdbh2KijVmS1xnlVaqlVZ3G9O_bTjEYtgR2pGH--hZaLYRgA"/>
+                    <div class="absolute bottom-3 left-3 z-20 bg-white/90 dark:bg-black/80 px-3 py-1 rounded-md backdrop-blur-sm">
+                        <span class="text-xs font-bold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[14px] text-primary">near_me</span>
+                            Open Maps
+                        </span>
+                    </div>
+                </a>
 </div>
 <div class="lg:col-span-7">
 <div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none border border-border-light dark:border-border-dark p-6 sm:p-10 relative overflow-hidden">
@@ -80,7 +80,7 @@
 </div>
 @endif
 
-<form class="flex flex-col gap-6" method="POST" action="{{ action([\App\Http\Controllers\ContactController::class, 'store']) }}">
+<form class="flex flex-col gap-6" method="POST" action="{{ route('contact.store') }}">
     @csrf
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <label class="flex flex-col flex-1">

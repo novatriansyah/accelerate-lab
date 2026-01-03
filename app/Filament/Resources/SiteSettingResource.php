@@ -39,6 +39,10 @@ class SiteSettingResource extends Resource
                             ])
                             ->required()
                             ->default('general'),
+                            
+                        Forms\Components\Toggle::make('is_display')
+                            ->label('Display on Site')
+                            ->default(true),
 
                         Forms\Components\Textarea::make('value')
                             ->columnSpanFull(),
@@ -59,6 +63,8 @@ class SiteSettingResource extends Resource
                     ->limit(50),
                 Tables\Columns\TextColumn::make('group')
                     ->badge(),
+                Tables\Columns\ToggleColumn::make('is_display')
+                    ->label('Display?'),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable(),

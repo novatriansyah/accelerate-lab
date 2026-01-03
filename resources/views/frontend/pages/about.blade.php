@@ -326,6 +326,7 @@
 <span class="text-2xl font-bold text-slate-400 hover:text-[#06B6D4] transition-colors cursor-default">Tailwind</span>
 <span class="text-2xl font-bold text-slate-400 hover:text-[#FF9900] transition-colors cursor-default">AWS</span>
 <span class="text-2xl font-bold text-slate-400 hover:text-[#000000] dark:hover:text-white transition-colors cursor-default">Next.js</span>
+<span class="text-2xl font-bold text-slate-400 hover:text-[#000000] dark:hover:text-white transition-colors cursor-default">Laravel</span>
 </div>
 </div>
 </section>

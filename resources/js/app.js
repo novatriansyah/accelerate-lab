@@ -1,7 +1,7 @@
 import './bootstrap';
 
 function initTheme() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
 
     // Check local storage or system preference
     if (localStorage.getItem('theme') === 'dark' ||
@@ -11,23 +11,25 @@ function initTheme() {
         document.documentElement.classList.remove('dark');
     }
 
-    if (themeToggleBtn) {
-        // Remove existing listener to avoid duplicates if re-initialized
-        const newBtn = themeToggleBtn.cloneNode(true);
-        themeToggleBtn.parentNode.replaceChild(newBtn, themeToggleBtn);
+    if (themeToggleBtns.length > 0) {
+        themeToggleBtns.forEach(btn => {
+            // Clone to remove old listeners
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
 
-        newBtn.addEventListener('click', () => {
-            console.log('Theme toggle clicked');
-            document.documentElement.classList.toggle('dark');
+            newBtn.addEventListener('click', () => {
+                console.log('Theme toggle clicked');
+                document.documentElement.classList.toggle('dark');
 
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
         });
     } else {
-        console.warn('Theme toggle button not found');
+        console.warn('No theme toggle buttons found');
     }
 }
 

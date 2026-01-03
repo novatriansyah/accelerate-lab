@@ -40,19 +40,28 @@
             </div>
             <div>
                 <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-wider">Legal Entity</h4>
+                @if(isset($settings['legal_name']))
                 <div class="flex items-start gap-3">
                     <span class="material-icons-round text-slate-400">verified_user</span>
                     <div>
-                        <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}</p>
-                        <p class="text-xs text-slate-500 mt-1">Registered in {{ $settings['registered_city'] ?? 'Jakarta, Indonesia' }}.</p>
-                        <p class="text-xs text-slate-500">{{ $settings['reg_number'] ?? 'Reg No: 2025-AL-ID' }}</p>
+                        <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">{{ $settings['legal_name'] }}</p>
+                        @if(isset($settings['registered_city']))
+                        <p class="text-xs text-slate-500 mt-1">Registered in {{ $settings['registered_city'] }}.</p>
+                        @endif
+                        @if(isset($settings['reg_number']))
+                        <p class="text-xs text-slate-500">{{ $settings['reg_number'] }}</p>
+                        @endif
                     </div>
                 </div>
+                @endif
             </div>
         </div>
         <div class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-xs text-slate-500 text-center md:text-left">
-                © {{ date('Y') }} Accelerate Lab. All rights reserved. <span class="hidden sm:inline">|</span> A brand by {{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}.
+                © {{ date('Y') }} Accelerate Lab. All rights reserved. 
+                @if(isset($settings['legal_name']))
+                <span class="hidden sm:inline">|</span> A brand by {{ $settings['legal_name'] }}.
+                @endif
             </p>
             <div class="flex space-x-6 text-xs text-slate-500">
                 <a class="hover:text-slate-800 dark:hover:text-white transition-colors" href="/privacy-policy">Privacy Policy</a>

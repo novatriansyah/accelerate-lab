@@ -17,9 +17,25 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        if (\App\Models\User::count() === 0) {
+            User::factory()->create([
+                'name' => 'Test User',
+                'email' => 'test@example.com',
+            ]);
+        }
+        
+        $settings = [
+            ['key' => 'contact_address', 'value' => '123 Innovation Blvd, Tech City, TC 90210', 'group' => 'contact'],
+            ['key' => 'contact_email', 'value' => 'hello@acceleratelab.io', 'group' => 'contact'],
+            ['key' => 'contact_phone', 'value' => '+1 (555) 019-2834', 'group' => 'contact'],
+            ['key' => 'contact_google_maps_link', 'value' => 'https://maps.google.com/?q=Tech+City', 'group' => 'contact'],
+        ];
+
+        foreach ($settings as $setting) {
+            \App\Models\SiteSetting::firstOrCreate(
+                ['key' => $setting['key']],
+                $setting
+            );
+        }
     }
 }
