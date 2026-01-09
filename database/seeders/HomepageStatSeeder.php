@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\HomepageStat;
+use Illuminate\Database\Seeder;
 
 class HomepageStatSeeder extends Seeder
 {
@@ -24,7 +23,7 @@ class HomepageStatSeeder extends Seeder
             'label' => 'Uptime Guarantee',
             'sort_order' => 0,
         ]);
-        
+
         HomepageStat::create([
             'section' => 'hero',
             'value' => '50',

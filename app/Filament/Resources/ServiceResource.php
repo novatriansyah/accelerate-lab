@@ -3,21 +3,19 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ServiceResource extends Resource
 {
     protected static ?string $model = Service::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-wrench-screwdriver';
+
     protected static ?string $navigationGroup = 'Services Page';
 
     public static function form(Form $form): Form
@@ -43,6 +41,11 @@ class ServiceResource extends Resource
                             ->numeric()
                             ->default(0),
 
+                        Forms\Components\FileUpload::make('hero_image')
+                            ->image()
+                            ->directory('services')
+                            ->columnSpanFull(),
+
                         Forms\Components\Textarea::make('short_description')
                             ->columnSpanFull(),
 
@@ -60,7 +63,7 @@ class ServiceResource extends Resource
                         Forms\Components\TextInput::make('headline')
                             ->label('Section Headline')
                             ->placeholder('e.g. Turning Chaos into Order'),
-                            
+
                         Forms\Components\TextInput::make('cta_text')
                             ->label('Custom CTA Text')
                             ->placeholder('e.g. Start Your Project'),

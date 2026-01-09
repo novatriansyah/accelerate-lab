@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ProjectsIndustryChart extends ChartWidget
 {
     protected static ?string $heading = 'Projects by Industry';
-    
+
     protected static ?int $sort = 3;
 
     protected function getData(): array
@@ -25,7 +25,7 @@ class ProjectsIndustryChart extends ChartWidget
                     'label' => 'Projects',
                     'data' => $data->pluck('total'),
                     'backgroundColor' => [
-                        '#f59e0b', '#3b82f6', '#10b981', '#6366f1', '#ec4899', '#8b5cf6'
+                        '#f59e0b', '#3b82f6', '#10b981', '#6366f1', '#ec4899', '#8b5cf6',
                     ],
                 ],
             ],

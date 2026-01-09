@@ -43,28 +43,26 @@
 <div class="relative lg:ml-auto w-full max-w-lg lg:max-w-none">
 <div class="absolute -top-12 -right-12 size-64 rounded-full bg-primary/10 blur-3xl"></div>
 <div class="absolute -bottom-12 -left-12 size-64 rounded-full bg-blue-500/10 blur-3xl"></div>
-<div class="relative aspect-square sm:aspect-video lg:aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-2xl ring-1 ring-slate-900/10 dark:bg-slate-800 dark:ring-white/10" data-alt="Abstract network connections representing cloud infrastructure" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWfiBl1JNzc_9ylNu09B1gO-izPj9mBbniq9_98wupVEQS4gSwsyYW6Terbqfa8gWa6ZBimaEKEH8DEK8Q1ehsux4px5pYtrP26QbBjGIcCSRqpFk3mTSytqUsVGgtplt4sBE8oxotUjPH7WAi7q4G8sJpwpD9oHGvu4a--WXGH8_HSYrU1n3nVNkDY9rB86YJ4wwAqdwrMs1RXsWi6DRG_lzrp-1nMK4EDcC6ozRq2e-Wpgv4AJLI-0ZrsoewCYSShdEeJA-nEmY'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-gradient-to-tr from-slate-900/60 to-primary/30 mix-blend-multiply"></div>
-<div class="absolute bottom-6 left-6 right-6 p-4 bg-white/90 backdrop-blur rounded-xl shadow-lg border border-white/20 dark:bg-slate-900/90 dark:border-slate-700">
-<div class="flex items-center justify-between">
-<div>
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider dark:text-slate-400">System Status</p>
-<p class="text-sm font-bold text-text-header flex items-center gap-2 mt-1 dark:text-white">
-<span class="size-2 rounded-full bg-green-500 animate-pulse"></span>
-                            All Systems Operational
-                        </p>
-</div>
-<div class="text-right">
-<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider dark:text-slate-400">Uptime</p>
-<p class="text-sm font-bold text-primary mt-1">99.99%</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+            <div class="relative mt-8 md:mt-0">
+                <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-border-light shadow-2xl">
+                    @if($service->hero_image)
+                        <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
+                    @else
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-border-medium">
+                            <div class="w-3/4 h-3/4 flex flex-col gap-4 opacity-50 -rotate-6 scale-110">
+                                <div class="h-16 w-full bg-primary/10 rounded-xl"></div>
+                                <div class="flex gap-4 h-full">
+                                    <div class="w-1/3 bg-slate-200 rounded-xl"></div>
+                                    <div class="w-2/3 bg-primary/5 rounded-xl"></div>
+                                </div>
+                                <div class="h-20 w-full bg-slate-300 rounded-xl"></div>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
 <section class="py-10 border-y border-slate-100 bg-white dark:bg-background-dark dark:border-slate-800">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8">Trusted Technology Partners</p>

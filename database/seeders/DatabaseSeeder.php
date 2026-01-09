@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
                 'email' => 'test@example.com',
             ]);
         }
-        
+
         $settings = [
             ['key' => 'contact_address', 'value' => '123 Innovation Blvd, Tech City, TC 90210', 'group' => 'contact'],
             ['key' => 'contact_email', 'value' => 'hello@acceleratelab.io', 'group' => 'contact'],

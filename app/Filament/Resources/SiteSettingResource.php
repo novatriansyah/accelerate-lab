@@ -3,21 +3,19 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\SiteSettingResource\Pages;
-use App\Filament\Resources\SiteSettingResource\RelationManagers;
 use App\Models\SiteSetting;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SiteSettingResource extends Resource
 {
     protected static ?string $model = SiteSetting::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
+
     protected static ?string $navigationGroup = 'Settings';
 
     public static function form(Form $form): Form
@@ -39,7 +37,7 @@ class SiteSettingResource extends Resource
                             ])
                             ->required()
                             ->default('general'),
-                            
+
                         Forms\Components\Toggle::make('is_display')
                             ->label('Display on Site')
                             ->default(true),

@@ -29,22 +29,25 @@
 </a>
 </div>
 </div>
-<div class="w-full flex-1 aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group" data-alt="Abstract sleek mobile phone interface mockup floating with geometric shapes">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10"></div>
-<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAicYLCUClxs-ZEUF84de2qDQLq6uAL-u9Prz_lyYLCU9K4B71i1-4v4MKo0uOxcpLFoCLNERe-xRxnuL-yfaXsqHrgJXdkj_HtfhyFZU2Sj4HKfVG3vZ_eSrHoSOQf43IrVKEVz3nIbmaCN3kdSs2q0u0aKV4fQxXhcjPZvpMXOvbJQ1Y8cHIqMoOY18coDIYD1PbWpkuxk52T4lw3FIuNDMuWeT1Z0ba7M6Qw92xrLUubWo7FIU1Id77lw2BXSCDaUVFDIdJn8W4');">
-</div>
-<div class="absolute bottom-6 left-6 right-6 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur p-4 rounded-xl shadow-lg border border-white/20 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-<div class="flex items-center gap-3">
-<div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">rocket_launch</span>
-</div>
-<div>
-<p class="text-xs text-text-sub-light dark:text-text-sub-dark font-medium">Performance Score</p>
-<p class="text-lg font-bold text-text-main-light dark:text-text-main-dark">99/100</p>
-</div>
-</div>
-</div>
-</div>
+                            <div class="w-full h-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group">
+                                @if($service->hero_image)
+                                    <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                                @else
+                                    <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10"></div>
+                                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAicYLCUClxs-ZEUF84de2qDQLq6uAL-u9Prz_lyYLCU9K4B71i1-4v4MKo0uOxcpLFoCLNERe-xRxnuL-yfaXsqHrgJXdkj_HtfhyFZU2Sj4HKfVG3vZ_eSrHoSOQf43IrVKEVz3nIbmaCN3kdSs2q0u0aKV4fQxXhcjPZvpMXOvbJQ1Y8cHIqMoOY18coDIYD1PbWpkuxk52T4lw3FIuNDMuWeT1Z0ba7M6Qw92xrLUubWo7FIU1Id77lw2BXSCDaUVFDIdJn8W4');"></div>
+                                    <div class="absolute bottom-6 left-6 right-6 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur p-4 rounded-xl shadow-lg border border-white/20 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                                        <div class="flex items-center gap-3">
+                                            <div class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                                <span class="material-symbols-outlined">rocket_launch</span>
+                                            </div>
+                                            <div>
+                                                <p class="text-xs text-text-sub-light dark:text-text-sub-dark font-medium">Performance Score</p>
+                                                <p class="text-lg font-bold text-text-main-light dark:text-text-main-dark">99/100</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
 </div>
 </div>
 </div>

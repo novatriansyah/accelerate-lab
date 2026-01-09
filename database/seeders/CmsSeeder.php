@@ -2,15 +2,14 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use App\Models\Category;
 use App\Models\Article;
-use App\Models\Service;
+use App\Models\Category;
 use App\Models\JobPosting;
+use App\Models\Service;
 use App\Models\SiteSetting;
 use App\Models\Technology;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
 class CmsSeeder extends Seeder
@@ -47,7 +46,7 @@ class CmsSeeder extends Seeder
 
         // 3. Articles (Sample Content)
         $engineering = Category::where('slug', 'engineering')->first();
-        
+
         Article::firstOrCreate(
             ['slug' => 'future-of-laravel'],
             [
@@ -60,7 +59,7 @@ class CmsSeeder extends Seeder
             ]
         );
 
-         Article::firstOrCreate(
+        Article::firstOrCreate(
             ['slug' => 'tailwind-v4-deep-dive'],
             [
                 'title' => 'Tailwind CSS v4: A Deep Dive',
@@ -79,28 +78,28 @@ class CmsSeeder extends Seeder
                 'icon' => 'code',
                 'sort_order' => 1,
                 'short_description' => 'Scalable, secure, and high-performance web solutions.',
-                'content' => '<p>We build robust web applications using Laravel, React, and Vue.js...</p>'
+                'content' => '<p>We build robust web applications using Laravel, React, and Vue.js...</p>',
             ],
             [
                 'title' => 'Mobile App Development',
                 'icon' => 'smartphone',
                 'sort_order' => 2,
                 'short_description' => 'Native and cross-platform mobile experiences.',
-                'content' => '<p>From Flutter to React Native, we deliver smooth mobile experiences...</p>'
+                'content' => '<p>From Flutter to React Native, we deliver smooth mobile experiences...</p>',
             ],
             [
                 'title' => 'UI/UX Design',
                 'icon' => 'brush',
                 'sort_order' => 3,
                 'short_description' => 'User-centric design that converts.',
-                'content' => '<p>Our design process involves deep user research and iterative prototyping...</p>'
+                'content' => '<p>Our design process involves deep user research and iterative prototyping...</p>',
             ],
             [
                 'title' => 'Cloud Architecture',
                 'icon' => 'cloud',
                 'sort_order' => 4,
                 'short_description' => 'Infrastructure as Code and DevOps automation.',
-                'content' => '<p>We leverage AWS and Google Cloud to ensure your app scales effortlessly...</p>'
+                'content' => '<p>We leverage AWS and Google Cloud to ensure your app scales effortlessly...</p>',
             ],
         ];
 
@@ -151,7 +150,7 @@ class CmsSeeder extends Seeder
                 $setting
             );
         }
-        
+
         // 7. Technologies
         $technologies = [
             ['name' => 'Laravel', 'category' => 'Backend'],
@@ -160,7 +159,7 @@ class CmsSeeder extends Seeder
             ['name' => 'Docker', 'category' => 'DevOps'],
             ['name' => 'Figma', 'category' => 'Design'],
         ];
-        
+
         foreach ($technologies as $tech) {
             Technology::firstOrCreate(
                 ['name' => $tech['name']],

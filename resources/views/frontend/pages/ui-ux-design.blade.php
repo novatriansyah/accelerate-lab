@@ -36,28 +36,32 @@
 <p class="text-sm font-medium text-text-main dark:text-gray-300">Trusted by 100+ innovators</p>
 </div>
 </div>
-<div class="lg:w-1/2 relative group perspective-1000">
-<div class="absolute -inset-4 bg-gradient-to-r from-primary to-teal-400 rounded-xl blur-2xl opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
-<div class="relative w-full aspect-[4/3] bg-background-light dark:bg-background-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden transform transition-transform hover:scale-[1.01] hover:-rotate-1">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract 3D teal geometric shapes representing modern design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFQZzmzeLMH89ZmaEBLnQ8ToEms7v4TMy1JcKuWv7uZR_oOlVltFXtULqyZMCuGVNlV11kHWOa8s6SdN4gO6TfdYQJy31F0HZFUhlmZGQ2tosOf0GoyT4fyKjV-hD0gMhWjP9DdRfqcVo8BKHA15OIi4GuYcg5kETO8WJv60XabNk3eFCm1kXHTMnia9REUBx_oMJdMM_Jk3NcwHlhNMCdN1vE4RX89xJOqQ6aOWsb9X1v2DbkdJBnUvY_34xmUHWRA6QmULXi7_k");'></div>
-<div class="absolute bottom-8 left-8 right-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur p-4 rounded-lg shadow-lg border border-white/20">
-<div class="flex items-center gap-3 mb-3">
-<div class="size-8 rounded-full bg-primary flex items-center justify-center text-white">
-<span class="material-symbols-outlined text-sm">analytics</span>
-</div>
-<div>
-<div class="h-2 w-24 bg-gray-200 dark:bg-gray-700 rounded mb-1"></div>
-<div class="h-2 w-16 bg-gray-200 dark:bg-gray-700 rounded"></div>
-</div>
-</div>
-<div class="flex gap-2">
-<div class="h-20 flex-1 bg-gray-100 dark:bg-gray-800 rounded"></div>
-<div class="h-20 flex-1 bg-gray-100 dark:bg-gray-800 rounded"></div>
-<div class="h-20 flex-1 bg-primary/10 rounded border border-primary/20"></div>
-</div>
-</div>
-</div>
-</div>
+                    <div class="lg:w-1/2 relative group perspective-1000">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-teal-400 rounded-xl blur-2xl opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+                        <div class="relative w-full aspect-[4/3] bg-background-light dark:bg-background-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden transform transition-transform hover:scale-[1.01] hover:-rotate-1">
+                            @if($service->hero_image)
+                                <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
+                            @else
+                                <div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract 3D teal geometric shapes representing modern design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFQZzmzeLMH89ZmaEBLnQ8ToEms7v4TMy1JcKuWv7uZR_oOlVltFXtULqyZMCuGVNlV11kHWOa8s6SdN4gO6TfdYQJy31F0HZFUhlmZGQ2tosOf0GoyT4fyKjV-hD0gMhWjP9DdRfqcVo8BKHA15OIi4GuYcg5kETO8WJv60XabNk3eFCm1kXHTMnia9REUBx_oMJdMM_Jk3NcwHlhNMCdN1vE4RX89xJOqQ6aOWsb9X1v2DbkdJBnUvY_34xmUHWRA6QmULXi7_k");'></div>
+                                <div class="absolute bottom-8 left-8 right-8 bg-white/90 dark:bg-gray-900/90 backdrop-blur p-4 rounded-lg shadow-lg border border-white/20">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        <div class="size-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                            <span class="material-symbols-outlined text-sm">analytics</span>
+                                        </div>
+                                        <div>
+                                            <div class="h-2 w-24 bg-gray-200 dark:bg-gray-700 rounded mb-1"></div>
+                                            <div class="h-2 w-16 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <div class="h-20 flex-1 bg-gray-100 dark:bg-gray-800 rounded"></div>
+                                        <div class="h-20 flex-1 bg-gray-100 dark:bg-gray-800 rounded"></div>
+                                        <div class="h-20 flex-1 bg-primary/10 rounded border border-primary/20"></div>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
 </div>
 </div>
 </div>

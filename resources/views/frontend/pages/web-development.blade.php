@@ -26,36 +26,28 @@
                             </a>
 </div>
 </div>
-<div class="md:w-1/2 relative mt-8 md:mt-0">
-<div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-border-light shadow-2xl">
-<div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-border-medium" data-alt="Abstract 3D illustration representing code structure and digital architecture in teal and grey tones">
-<div class="w-3/4 h-3/4 grid grid-cols-6 grid-rows-6 gap-2 opacity-50 rotate-[-12deg] scale-110">
-<div class="col-span-2 row-span-2 bg-primary/10 rounded-lg"></div>
-<div class="col-span-1 row-span-1 bg-primary/20 rounded-lg"></div>
-<div class="col-span-3 row-span-1 bg-slate-200 rounded-lg"></div>
-<div class="col-span-1 row-span-3 bg-primary/30 rounded-lg"></div>
-<div class="col-span-2 row-span-2 bg-slate-300 rounded-lg"></div>
-<div class="col-span-2 row-span-2 bg-primary/20 rounded-lg col-start-4 row-start-3"></div>
-<div class="col-span-3 row-span-1 bg-slate-200 rounded-lg col-start-2 row-start-5"></div>
-</div>
-</div>
-<div class="absolute bottom-6 left-6 right-12 p-4 bg-white/90 backdrop-blur-sm rounded-xl border border-border-light shadow-lg">
-<div class="flex items-center gap-3 mb-3">
-<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-sm">bolt</span>
-</div>
-<div>
-<div class="h-2 w-24 bg-slate-200 rounded mb-1"></div>
-<div class="h-1.5 w-16 bg-slate-100 rounded"></div>
-</div>
-</div>
-<div class="h-2 w-full bg-slate-100 rounded mb-2"></div>
-<div class="h-2 w-2/3 bg-slate-100 rounded"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
+            <div class="md:w-1/2 relative mt-8 md:mt-0">
+                <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-border-light shadow-2xl">
+                    @if($service->hero_image)
+                        <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
+                    @else
+                        <!-- Fallback Abstract Art -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-border-medium" data-alt="Abstract 3D illustration">
+                            <div class="w-3/4 h-3/4 grid grid-cols-6 grid-rows-6 gap-2 opacity-50 rotate-[-12deg] scale-110">
+                                <div class="col-span-2 row-span-2 bg-primary/10 rounded-lg"></div>
+                                <div class="col-span-1 row-span-1 bg-primary/20 rounded-lg"></div>
+                                <div class="col-span-3 row-span-1 bg-slate-200 rounded-lg"></div>
+                                <div class="col-span-1 row-span-3 bg-primary/30 rounded-lg"></div>
+                                <div class="col-span-2 row-span-2 bg-slate-300 rounded-lg"></div>
+                                <div class="col-span-2 row-span-2 bg-primary/20 rounded-lg col-start-4 row-start-3"></div>
+                                <div class="col-span-3 row-span-1 bg-slate-200 rounded-lg col-start-2 row-start-5"></div>
+                            </div>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
+    </section>
 <section class="border-y border-border-light dark:border-slate-800 bg-white dark:bg-surface-dark py-10">
 <div class="max-w-7xl mx-auto px-4 md:px-10">
 <p class="text-center text-sm font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-widest mb-8">Powered by Modern Technologies</p>

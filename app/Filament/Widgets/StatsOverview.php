@@ -2,10 +2,9 @@
 
 namespace App\Filament\Widgets;
 
-
+use App\Models\JobPosting;
 use App\Models\Lead;
 use App\Models\Project;
-use App\Models\JobPosting;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 

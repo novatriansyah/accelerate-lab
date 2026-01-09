@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\JobPostingResource\Pages;
 
 use App\Filament\Resources\JobPostingResource;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateJobPosting extends CreateRecord

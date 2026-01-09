@@ -29,22 +29,25 @@
             </div>
             <div class="md:w-1/2 relative mt-8 md:mt-0">
                 <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-border-light dark:border-slate-700 shadow-2xl flex items-center justify-center">
-                    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-border-medium dark:text-slate-700">
-                        <span class="material-symbols-outlined text-[15rem] text-primary/10">{{ $service->icon ?? 'layers' }}</span>
-                    </div>
-                    
-                    @if(isset($service->features) && count($service->features) > 0)
-                    <div class="absolute bottom-6 left-6 right-12 p-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl border border-border-light dark:border-slate-700 shadow-lg">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                                <span class="material-symbols-outlined text-sm">{{ $service->features[0]['icon'] ?? 'check_circle' }}</span>
+                    @if($service->hero_image)
+                        <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
+                    @else
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-border-medium dark:text-slate-700">
+                            <span class="material-symbols-outlined text-[15rem] text-primary/10">{{ $service->icon ?? 'layers' }}</span>
+                        </div>
+                        @if(isset($service->features) && count($service->features) > 0)
+                        <div class="absolute bottom-6 left-6 right-12 p-4 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-xl border border-border-light dark:border-slate-700 shadow-lg">
+                            <div class="flex items-center gap-3 mb-2">
+                                <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-sm">{{ $service->features[0]['icon'] ?? 'check_circle' }}</span>
+                                </div>
+                                <span class="font-bold text-text-main dark:text-white text-sm">{{ $service->features[0]['title'] ?? 'Top Feature' }}</span>
                             </div>
-                            <span class="font-bold text-text-main dark:text-white text-sm">{{ $service->features[0]['title'] ?? 'Top Feature' }}</span>
+                            <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded overflow-hidden">
+                                <div class="h-full bg-primary w-3/4"></div>
+                            </div>
                         </div>
-                        <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded overflow-hidden">
-                            <div class="h-full bg-primary w-3/4"></div>
-                        </div>
-                    </div>
+                        @endif
                     @endif
                 </div>
             </div>

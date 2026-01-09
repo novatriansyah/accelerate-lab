@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\PageController;
+use App\Http\Controllers\Frontend\ServicePageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
@@ -21,19 +22,16 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/the-lab', function () {
     return view('frontend.pages.the-lab', ['title' => 'The Lab - Accelerate Lab']);
 });
-Route::get('/web-development', function () {
-    return view('frontend.pages.web-development', ['title' => 'Accelerate Lab - Web Application Development']);
-});
-Route::get('/mobile-development', function () {
-    return view('frontend.pages.mobile-development', ['title' => 'Accelerate Lab Mobile Dev']);
-});
-Route::get('/cloud-architecture', function () {
-    return view('frontend.pages.cloud-architecture', ['title' => 'Accelerate Lab - Cloud Architecture']);
-});
-Route::get('/ui-ux-design', function () {
-    return view('frontend.pages.ui-ux-design', ['title' => 'Accelerate Lab - UI/UX Design']);
-});
 
+$serviceSlugs = [
+    'web-development',
+    'mobile-development',
+    'cloud-architecture',
+    'ui-ux-design',
+];
+
+Route::get('/{slug}', [ServicePageController::class, 'show'])
+    ->whereIn('slug', $serviceSlugs);
 
 Route::get('/privacy-policy', function () {
     return view('frontend.pages.privacy-policy', ['title' => 'Accelerate Lab - Privacy Policy']);

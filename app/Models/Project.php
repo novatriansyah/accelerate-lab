@@ -36,4 +36,14 @@ class Project extends Model
     {
         return $this->belongsToMany(Technology::class, 'project_technology');
     }
+
+    public function getPlainChallengeAttribute()
+    {
+        return strip_tags(html_entity_decode($this->challenge));
+    }
+
+    public function getPlainSolutionAttribute()
+    {
+        return strip_tags(html_entity_decode($this->solution));
+    }
 }

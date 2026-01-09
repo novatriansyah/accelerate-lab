@@ -265,11 +265,11 @@
             <div class="space-y-4 mb-8 flex-grow">
                 <div>
                     <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge</p>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">{{ strip_tags(html_entity_decode($project->challenge)) }}</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">{{ $project->plain_challenge }}</p>
                 </div>
                 <div>
                     <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution</p>
-                    <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">{{ strip_tags(html_entity_decode($project->solution)) }}</p>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">{{ $project->plain_solution }}</p>
                 </div>
             </div>
             <a href="/case-studies" class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-{{ $project->color ?? 'primary' }}/30">
