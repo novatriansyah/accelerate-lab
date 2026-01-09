@@ -37,10 +37,10 @@
 <img alt="Team member" class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-slate-800" data-alt="Portrait of a male team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdFd91ICBQePElhDbLb71UozDVDcF6QAcMroIdnyDeEIjNj63zdQkHz6mooCnYGFvytFy4Mih_GoP9RVu1fulLT5_u_X1-ZifX7yevGxIBRyjBQA1hnaFWEwNxARG1vmrbQi1b5zORmNYxEOv-e5AXyPyOuX5Ufs2NYCXFMpd5l7e8BCP45gXbg0KQrjA1nFtvPXsWVUon6B3DS71AOzFb88MoDer9dJjggVia3S4KVFW4YTEyI9vanf_Lfi7SrCz9-PyGbd2NbM0"/>
 <img alt="Team member" class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-slate-800" data-alt="Portrait of a male team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdk-kfPyAQixSybXoui2xU38F_oXzgfnTi1-qPXlXdtKMEWr4O7nFSoaU9qOM72v_u4m97Y0Ztrply10Y1TDZVCz9zaUGMaDJUybZf863i8F59Rs0p7cnpBV6H0IkR9EZVZQn1t-e-8Mm_KQ4T1oUjHqXcFo3mAW5J14E1nBU8dMrL4O-Evyy6F-vmbwTUCsoEG-NuQuO4bAzR7vodZYjZ-qlCRXa25FOzuVNsGWiNb8iCX-X7W5vDsi2dbTZwerBxukXJL-CDzuk"/>
 </div>
-<div class="flex flex-col">
+<!-- <div class="flex flex-col">
 <span class="text-sm font-bold text-text-main dark:text-white">60+ Experts</span>
 <span class="text-xs text-text-muted dark:text-slate-400">Global Remote Team</span>
-</div>
+</div> -->
 </div>
 </div>
 </div>
