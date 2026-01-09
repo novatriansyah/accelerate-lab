@@ -1,7 +1,7 @@
 @extends('frontend.components.layout')
 
 @section('content')
-<section class="relative w-full overflow-hidden py-12 md:py-20 lg:py-24">
+<section class="relative w-full overflow-hidden py-12 pt-20 md:py-20 lg:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid gap-12 lg:grid-cols-2 items-center">
             <div class="flex flex-col gap-6">
