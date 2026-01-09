@@ -23,15 +23,16 @@ Route::get('/the-lab', function () {
     return view('frontend.pages.the-lab', ['title' => 'The Lab - Accelerate Lab']);
 });
 
-$serviceSlugs = [
-    'web-development',
-    'mobile-development',
-    'cloud-architecture',
-    'ui-ux-design',
-];
 
-Route::get('/{slug}', [ServicePageController::class, 'show'])
-    ->whereIn('slug', $serviceSlugs);
+// Fetch services that have custom pages enabled
+$customPageSlugs = \Illuminate\Support\Facades\Schema::hasTable('services')
+    ? \App\Models\Service::where('has_custom_page', true)->pluck('slug')->all()
+    : [];
+
+if (!empty($customPageSlugs)) {
+    Route::get('/{slug}', [ServicePageController::class, 'show'])
+        ->whereIn('slug', $customPageSlugs);
+}
 
 Route::get('/privacy-policy', function () {
     return view('frontend.pages.privacy-policy', ['title' => 'Accelerate Lab - Privacy Policy']);

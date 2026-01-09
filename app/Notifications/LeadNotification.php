@@ -50,12 +50,12 @@ class LeadNotification extends Notification implements ShouldQueue
         $webhookUrl = config('services.whatsapp.webhook_url');
 
         if (! $webhookUrl) {
-            Log::info('WhatsApp Webhook URL not configured. Skipping WhatsApp notification for lead: '.$this->lead->id);
+            Log::info('WhatsApp Webhook URL not configured. Skipping WhatsApp notification for lead: ' . $this->lead->id);
 
             return;
         }
 
-        $message = 'New Lead: '.$this->lead->name.' ('.$this->lead->email.') - '.substr($this->lead->message, 0, 50).'...';
+        $message = 'New Lead: ' . $this->lead->name . ' (' . $this->lead->email . ') - ' . substr($this->lead->message, 0, 50) . '...';
 
         try {
             // Example for a generic webhook. Adapters for specific providers can be added here.
@@ -64,7 +64,7 @@ class LeadNotification extends Notification implements ShouldQueue
                 'chat_id' => config('services.whatsapp.chat_id'), // Optional, depending on provider
             ]);
         } catch (\Exception $e) {
-            Log::error('Failed to send WhatsApp notification: '.$e->getMessage());
+            Log::error('Failed to send WhatsApp notification: ' . $e->getMessage());
         }
     }
 }
