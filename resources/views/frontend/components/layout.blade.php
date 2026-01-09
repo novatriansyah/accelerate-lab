@@ -8,6 +8,7 @@
     <meta name="keywords" content="{{ $keywords ?? 'software development, digital agency, cloud architecture, ui/ux design, laravel, vue.js, react' }}">
     <meta name="author" content="Accelerate Lab">
     <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
