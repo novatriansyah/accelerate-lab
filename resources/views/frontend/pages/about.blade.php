@@ -1,7 +1,7 @@
 @extends('frontend.components.layout')
 
 @section('content')
-<section class="relative pt-16 pb-20 lg:pt-24 lg:pb-28">
+<section class="relative pt-24 pb-20 lg:pt-32 lg:pb-28">
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
 <div class="flex flex-col justify-center space-y-8">
