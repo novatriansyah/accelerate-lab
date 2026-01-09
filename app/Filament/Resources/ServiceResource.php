@@ -43,6 +43,11 @@ class ServiceResource extends Resource
                             ->numeric()
                             ->default(0),
 
+                        Forms\Components\FileUpload::make('hero_image')
+                            ->image()
+                            ->directory('services')
+                            ->columnSpanFull(),
+
                         Forms\Components\Textarea::make('short_description')
                             ->columnSpanFull(),
 

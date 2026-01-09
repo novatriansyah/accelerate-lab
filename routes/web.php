@@ -22,16 +22,32 @@ Route::get('/the-lab', function () {
     return view('frontend.pages.the-lab', ['title' => 'The Lab - Accelerate Lab']);
 });
 Route::get('/web-development', function () {
-    return view('frontend.pages.web-development', ['title' => 'Accelerate Lab - Web Application Development']);
+    $service = \App\Models\Service::where('slug', 'web-development')->first();
+    return view('frontend.pages.web-development', [
+        'title' => 'Accelerate Lab - Web Application Development',
+        'service' => $service
+    ]);
 });
 Route::get('/mobile-development', function () {
-    return view('frontend.pages.mobile-development', ['title' => 'Accelerate Lab Mobile Dev']);
+    $service = \App\Models\Service::where('slug', 'mobile-development')->first();
+    return view('frontend.pages.mobile-development', [
+        'title' => 'Accelerate Lab Mobile Dev',
+        'service' => $service
+    ]);
 });
 Route::get('/cloud-architecture', function () {
-    return view('frontend.pages.cloud-architecture', ['title' => 'Accelerate Lab - Cloud Architecture']);
+    $service = \App\Models\Service::where('slug', 'cloud-architecture')->first();
+    return view('frontend.pages.cloud-architecture', [
+        'title' => 'Accelerate Lab - Cloud Architecture',
+        'service' => $service
+    ]);
 });
 Route::get('/ui-ux-design', function () {
-    return view('frontend.pages.ui-ux-design', ['title' => 'Accelerate Lab - UI/UX Design']);
+    $service = \App\Models\Service::where('slug', 'ui-ux-design')->first();
+    return view('frontend.pages.ui-ux-design', [
+        'title' => 'Accelerate Lab - UI/UX Design',
+        'service' => $service
+    ]);
 });
 
 
