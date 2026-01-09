@@ -27,6 +27,8 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandLogo(asset('images/logo.png'))
+            ->brandLogoHeight('3.5rem')
             ->brandName('Accelerate Lab CMS')
             ->colors([
                 'primary' => Color::Amber,

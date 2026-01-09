@@ -2,9 +2,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <a href="/" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                <span class="text-2xl font-bold tracking-tighter text-slate-700 dark:text-white">Accelerate</span>
-                <span class="text-2xl font-light text-primary">/&gt;</span>
-                <span class="text-2xl font-bold tracking-tighter text-slate-700 dark:text-white">Lab</span>
+                <img src="{{ asset('images/logo.png') }}" alt="Accelerate Lab" class="h-14 w-auto">
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a class="text-sm font-medium hover:text-primary transition-colors" href="/services">Services</a>
