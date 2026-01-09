@@ -35,4 +35,4 @@ Route::get('/terms-of-service', function () {
 // Catch-all for custom service pages
 // NOTE: This must be the last route in the file to avoid intercepting other routes.
 // It relies on ServicePageController to 404 if the slug is not a valid custom page.
-Route::get('/{slug}', [ServicePageController::class, 'show']);
+Route::get('/{slug}', [ServicePageController::class, 'show'])->name('custom-service-page');
