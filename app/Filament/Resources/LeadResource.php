@@ -20,6 +20,7 @@ class LeadResource extends Resource
     protected static ?string $model = Lead::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-inbox';
+    protected static ?string $navigationGroup = 'Admin';
 
     protected static ?string $navigationLabel = 'Leads / Inbox';
 

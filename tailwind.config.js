@@ -13,6 +13,10 @@ export default {
                 "text-light": "#334155", // Slate-700
                 "text-dark": "#E2E8F0", // Slate-200
 
+                // Project Identity Colors (Jules)
+                "lab-bg": "#020617", // Slate-950
+                "lab-neon": "#06b6d4", // Cyan-500
+                "lab-accent": "#2563eb", // Blue-600
                 // Added based on usage in views
                 "text-main": "#334155", // Slate-700
                 "text-secondary": "#64748B", // Slate-500
