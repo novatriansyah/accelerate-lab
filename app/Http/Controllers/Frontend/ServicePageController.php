@@ -16,7 +16,9 @@ class ServicePageController extends Controller
 
     public function show($slug)
     {
-        $service = Service::where('slug', $slug)->firstOrFail();
+        $service = Service::where('slug', $slug)
+            ->where('has_custom_page', true)
+            ->firstOrFail();
         $title = $this->servicePageTitles[$slug] ?? $service->title;
 
         if (!view()->exists("frontend.pages.{$slug}")) {

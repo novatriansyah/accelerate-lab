@@ -24,16 +24,6 @@ Route::get('/the-lab', function () {
 });
 
 
-// Fetch services that have custom pages enabled
-$customPageSlugs = \Illuminate\Support\Facades\Schema::hasTable('services')
-    ? \App\Models\Service::where('has_custom_page', true)->pluck('slug')->all()
-    : [];
-
-if (!empty($customPageSlugs)) {
-    Route::get('/{slug}', [ServicePageController::class, 'show'])
-        ->whereIn('slug', $customPageSlugs);
-}
-
 Route::get('/privacy-policy', function () {
     return view('frontend.pages.privacy-policy', ['title' => 'Accelerate Lab - Privacy Policy']);
 });
@@ -41,3 +31,8 @@ Route::get('/privacy-policy', function () {
 Route::get('/terms-of-service', function () {
     return view('frontend.pages.terms-of-service', ['title' => 'Accelerate Lab - Terms of Service']);
 });
+
+// Catch-all for custom service pages
+// NOTE: This must be the last route in the file to avoid intercepting other routes.
+// It relies on ServicePageController to 404 if the slug is not a valid custom page.
+Route::get('/{slug}', [ServicePageController::class, 'show']);
