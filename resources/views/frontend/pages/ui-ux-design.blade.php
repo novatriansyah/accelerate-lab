@@ -39,7 +39,7 @@
                     <div class="lg:w-1/2 relative group perspective-1000">
                         <div class="absolute -inset-4 bg-gradient-to-r from-primary to-teal-400 rounded-xl blur-2xl opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
                         <div class="relative w-full aspect-[4/3] bg-background-light dark:bg-background-dark rounded-xl border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden transform transition-transform hover:scale-[1.01] hover:-rotate-1">
-                            @if(isset($service) && $service->hero_image)
+                            @if($service->hero_image)
                                 <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
                             @else
                                 <div class="absolute inset-0 bg-cover bg-center" data-alt="Abstract 3D teal geometric shapes representing modern design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFQZzmzeLMH89ZmaEBLnQ8ToEms7v4TMy1JcKuWv7uZR_oOlVltFXtULqyZMCuGVNlV11kHWOa8s6SdN4gO6TfdYQJy31F0HZFUhlmZGQ2tosOf0GoyT4fyKjV-hD0gMhWjP9DdRfqcVo8BKHA15OIi4GuYcg5kETO8WJv60XabNk3eFCm1kXHTMnia9REUBx_oMJdMM_Jk3NcwHlhNMCdN1vE4RX89xJOqQ6aOWsb9X1v2DbkdJBnUvY_34xmUHWRA6QmULXi7_k");'></div>

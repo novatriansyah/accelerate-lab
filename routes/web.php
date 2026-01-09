@@ -21,20 +21,17 @@ Route::post('/contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/the-lab', function () {
     return view('frontend.pages.the-lab', ['title' => 'The Lab - Accelerate Lab']);
 });
-// Custom Service Pages
-$servicePages = [
-    'web-development' => 'Accelerate Lab - Web Application Development',
-    'mobile-development' => 'Accelerate Lab Mobile Dev',
-    'cloud-architecture' => 'Accelerate Lab - Cloud Architecture',
-    'ui-ux-design' => 'Accelerate Lab - UI/UX Design',
+use App\Http\Controllers\Frontend\ServicePageController;
+
+$serviceSlugs = [
+    'web-development',
+    'mobile-development',
+    'cloud-architecture',
+    'ui-ux-design',
 ];
 
-foreach ($servicePages as $slug => $title) {
-    Route::get("/{$slug}", function () use ($slug, $title) {
-        $service = \App\Models\Service::where('slug', $slug)->firstOrFail();
-        return view("frontend.pages.{$slug}", compact('service', 'title'));
-    });
-}
+Route::get('/{slug}', [ServicePageController::class, 'show'])
+    ->whereIn('slug', $serviceSlugs);
 
 
 Route::get('/privacy-policy', function () {

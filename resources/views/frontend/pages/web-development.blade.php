@@ -28,7 +28,7 @@
 </div>
             <div class="md:w-1/2 relative mt-8 md:mt-0">
                 <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-border-light shadow-2xl">
-                    @if(isset($service) && $service->hero_image)
+                    @if($service->hero_image)
                         <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
                     @else
                         <!-- Fallback Abstract Art -->

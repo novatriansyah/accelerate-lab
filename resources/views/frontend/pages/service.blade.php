@@ -29,7 +29,7 @@
             </div>
             <div class="md:w-1/2 relative mt-8 md:mt-0">
                 <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-border-light dark:border-slate-700 shadow-2xl flex items-center justify-center">
-                    @if(isset($service) && $service->hero_image)
+                    @if($service->hero_image)
                         <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
                     @else
                         <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-border-medium dark:text-slate-700">

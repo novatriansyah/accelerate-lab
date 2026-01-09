@@ -43,9 +43,9 @@
 <div class="relative lg:ml-auto w-full max-w-lg lg:max-w-none">
 <div class="absolute -top-12 -right-12 size-64 rounded-full bg-primary/10 blur-3xl"></div>
 <div class="absolute -bottom-12 -left-12 size-64 rounded-full bg-blue-500/10 blur-3xl"></div>
-            <div class="md:w-1/2 relative mt-8 md:mt-0">
+            <div class="relative mt-8 md:mt-0">
                 <div class="relative w-full aspect-square md:aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-border-light shadow-2xl">
-                    @if(isset($service) && $service->hero_image)
+                    @if($service->hero_image)
                         <img src="{{ Storage::url($service->hero_image) }}" alt="{{ $service->title }}" class="absolute inset-0 w-full h-full object-cover">
                     @else
                         <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-border-medium">
