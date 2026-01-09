@@ -29,7 +29,7 @@ class NewLeadReceived extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Lead: '.$this->lead->name.' - Accelerate Lab',
+            subject: 'New Lead: ' . $this->lead->name . ' - Accelerate Lab',
         );
     }
 

@@ -19,6 +19,10 @@ class ServicePageController extends Controller
         $service = Service::where('slug', $slug)->firstOrFail();
         $title = $this->servicePageTitles[$slug] ?? $service->title;
 
+        if (!view()->exists("frontend.pages.{$slug}")) {
+            abort(404);
+        }
+
         return view("frontend.pages.{$slug}", compact('service', 'title'));
     }
 }

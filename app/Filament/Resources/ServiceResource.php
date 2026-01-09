@@ -44,7 +44,14 @@ class ServiceResource extends Resource
                         Forms\Components\FileUpload::make('hero_image')
                             ->image()
                             ->directory('services')
+                            ->maxSize(2048)
+                            ->label('Hero Image')
+                            ->helperText('Recommended size: 1200x800px. Used in service page headers.')
                             ->columnSpanFull(),
+
+                        Forms\Components\Toggle::make('has_custom_page')
+                            ->label('Has Custom Page')
+                            ->helperText('If enabled, this service will use a custom Blade view matching its slug (e.g., frontend.pages.slug).'),
 
                         Forms\Components\Textarea::make('short_description')
                             ->columnSpanFull(),

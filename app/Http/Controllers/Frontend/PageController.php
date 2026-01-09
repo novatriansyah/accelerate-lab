@@ -68,7 +68,7 @@ class PageController extends Controller
         }
 
         return view('frontend.pages.article', [
-            'title' => $article->title.' - Accelerate Lab',
+            'title' => $article->title . ' - Accelerate Lab',
             'description' => \Illuminate\Support\Str::limit(strip_tags($article->content), 160),
             'ogType' => 'article',
             'ogImage' => $article->image_path ? \Illuminate\Support\Facades\Storage::url($article->image_path) : null,
@@ -103,7 +103,7 @@ class PageController extends Controller
     public function service(Service $service)
     {
         return view('frontend.pages.service', [
-            'title' => $service->title.' - Accelerate Lab',
+            'title' => $service->title . ' - Accelerate Lab',
             'description' => $service->short_description ?? \Illuminate\Support\Str::limit(strip_tags($service->content), 160),
             'service' => $service,
         ]);
@@ -172,7 +172,7 @@ class PageController extends Controller
     public function project(Project $project)
     {
         return view('frontend.pages.project', [
-            'title' => $project->title.' - Case Study',
+            'title' => $project->title . ' - Case Study',
             'description' => $project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge), 160),
             'ogImage' => $project->image_path ? \Illuminate\Support\Facades\Storage::url($project->image_path) : null,
             'project' => $project,
