@@ -22,12 +22,16 @@ class Service extends Model
         'category',
         'headline',
         'benefits',
+        'hero_image',
+        'has_custom_page',
     ];
 
     protected $casts = [
         'features' => 'array',
         'technologies' => 'array',
         'process' => 'array',
+        'process' => 'array',
         'benefits' => 'array',
+        'has_custom_page' => 'boolean',
     ];
 }

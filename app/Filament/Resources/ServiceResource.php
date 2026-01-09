@@ -129,6 +129,8 @@ class ServiceResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\ToggleColumn::make('has_custom_page')
+                    ->label('Custom Page'),
                 Tables\Columns\TextColumn::make('icon'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
