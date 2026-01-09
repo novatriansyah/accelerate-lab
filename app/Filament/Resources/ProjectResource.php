@@ -53,6 +53,7 @@ class ProjectResource extends Resource
                                     ->placeholder('e.g. rocket_launch'),
 
                                 Forms\Components\Textarea::make('description')
+                                    ->required()
                                     ->columnSpanFull(),
 
                                 Forms\Components\RichEditor::make('challenge')
