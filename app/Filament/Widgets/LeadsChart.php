@@ -10,10 +10,10 @@ use Flowframe\Trend\TrendValue;
 class LeadsChart extends ChartWidget
 {
     protected static ?string $heading = 'Leads Growth';
-    
+
     protected static ?int $sort = 2;
-    
-    protected int | string | array $columnSpan = 'full';
+
+    protected int|string|array $columnSpan = 'full';
 
     protected function getData(): array
     {

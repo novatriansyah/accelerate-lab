@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
-use Illuminate\Http\Request;
 
 class ServicePageController extends Controller
 {
@@ -19,7 +18,7 @@ class ServicePageController extends Controller
     {
         $service = Service::where('slug', $slug)->firstOrFail();
         $title = $this->servicePageTitles[$slug] ?? $service->title;
-        
+
         return view("frontend.pages.{$slug}", compact('service', 'title'));
     }
 }

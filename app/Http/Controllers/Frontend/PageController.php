@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller; // Import base controller
-use Illuminate\Http\Request;
-use App\Models\Project;
 use App\Models\Article;
-use App\Models\Service;
-use App\Models\JobPosting;
-use App\Models\HomepageStat;
-use App\Models\TeamMember;
 use App\Models\CompanyMilestone;
 use App\Models\CoreValue;
+use App\Models\HomepageStat;
+use App\Models\JobPosting;
+use App\Models\Project;
+use App\Models\Service;
+use App\Models\TeamMember;
+use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -19,7 +19,7 @@ class PageController extends Controller
     {
         // Get 3 recent projects for the homepage
         $recentProjects = Project::latest()->take(3)->get();
-        
+
         $heroStats = HomepageStat::where('section', 'hero')->orderBy('sort_order')->take(3)->get();
         $capabilityStats = HomepageStat::where('section', 'capabilities')->orderBy('sort_order')->take(3)->get();
 
@@ -41,7 +41,7 @@ class PageController extends Controller
             ->first();
 
         // If no featured, just take the latest one
-        if (!$featured) {
+        if (! $featured) {
             $featured = Article::with(['category', 'author'])
                 ->where('published_at', '<=', now())
                 ->latest('published_at')
@@ -57,7 +57,7 @@ class PageController extends Controller
         return view('frontend.pages.blog', [
             'title' => 'Insights & Innovation - Accelerate Lab',
             'featured' => $featured,
-            'latest' => $latest
+            'latest' => $latest,
         ]);
     }
 
@@ -68,18 +68,18 @@ class PageController extends Controller
         }
 
         return view('frontend.pages.article', [
-            'title' => $article->title . ' - Accelerate Lab',
+            'title' => $article->title.' - Accelerate Lab',
             'description' => \Illuminate\Support\Str::limit(strip_tags($article->content), 160),
             'ogType' => 'article',
             'ogImage' => $article->image_path ? \Illuminate\Support\Facades\Storage::url($article->image_path) : null,
-            'article' => $article
+            'article' => $article,
         ]);
     }
 
     public function services()
     {
         $services = Service::orderBy('sort_order')->get();
-        
+
         $strategyService = $services->firstWhere('category', 'strategy');
         $developmentServices = $services->where('category', 'development');
 
@@ -96,25 +96,26 @@ class PageController extends Controller
             'services' => $services, // Keep all for safety or other uses
             'strategyService' => $strategyService,
             'developmentServices' => $developmentServices,
-            'techStack' => $techStack
+            'techStack' => $techStack,
         ]);
     }
 
     public function service(Service $service)
     {
         return view('frontend.pages.service', [
-            'title' => $service->title . ' - Accelerate Lab',
+            'title' => $service->title.' - Accelerate Lab',
             'description' => $service->short_description ?? \Illuminate\Support\Str::limit(strip_tags($service->content), 160),
-            'service' => $service
+            'service' => $service,
         ]);
     }
 
     public function careers()
     {
         $jobs = JobPosting::where('is_active', true)->latest()->get();
+
         return view('frontend.pages.careers', [
             'title' => 'Careers - Accelerate Lab',
-            'jobs' => $jobs
+            'jobs' => $jobs,
         ]);
     }
 
@@ -156,7 +157,7 @@ class PageController extends Controller
             ->where('industry', '!=', '')
             ->pluck('industry')
             ->sort();
-            
+
         $featuredProject = Project::where('is_featured', true)->latest()->first();
 
         return view('frontend.pages.case-studies', [
@@ -164,17 +165,17 @@ class PageController extends Controller
             'projects' => $projects,
             'industries' => $industries,
             'currentIndustry' => $request->industry,
-            'featuredProject' => $featuredProject
+            'featuredProject' => $featuredProject,
         ]);
     }
 
     public function project(Project $project)
     {
         return view('frontend.pages.project', [
-            'title' => $project->title . ' - Case Study',
+            'title' => $project->title.' - Case Study',
             'description' => $project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge), 160),
             'ogImage' => $project->image_path ? \Illuminate\Support\Facades\Storage::url($project->image_path) : null,
-            'project' => $project
+            'project' => $project,
         ]);
     }
 }

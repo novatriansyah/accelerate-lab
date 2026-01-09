@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Lead;
-use App\Models\User; // Import User model
-use App\Notifications\LeadNotification; // Import Notification
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Notification;
 use App\Http\Controllers\Controller;
+use App\Models\Lead; // Import User model
+use App\Models\User; // Import Notification
+use App\Notifications\LeadNotification;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {

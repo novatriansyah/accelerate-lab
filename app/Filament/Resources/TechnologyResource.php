@@ -3,21 +3,19 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TechnologyResource\Pages;
-use App\Filament\Resources\TechnologyResource\RelationManagers;
 use App\Models\Technology;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TechnologyResource extends Resource
 {
     protected static ?string $model = Technology::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-cpu-chip';
+
     protected static ?string $navigationGroup = 'Services Page';
 
     public static function form(Form $form): Form

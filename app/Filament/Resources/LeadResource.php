@@ -5,21 +5,21 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\LeadResource\Pages;
 use App\Models\Lead;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\BadgeColumn;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Select;
+use Filament\Tables\Table;
 
 class LeadResource extends Resource
 {
     protected static ?string $model = Lead::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-inbox';
+
     protected static ?string $navigationGroup = 'Admin';
 
     protected static ?string $navigationLabel = 'Leads / Inbox';
@@ -43,7 +43,7 @@ class LeadResource extends Resource
                             ->required(),
                         Textarea::make('message')
                             ->columnSpanFull(),
-                    ])->columns(2)
+                    ])->columns(2),
             ]);
     }
 

@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Notification::extend('whatsapp', function ($app) {
-            return new \App\Channels\WhatsAppChannel();
+            return new \App\Channels\WhatsAppChannel;
         });
 
         try {

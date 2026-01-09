@@ -3,21 +3,19 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\JobPostingResource\Pages;
-use App\Filament\Resources\JobPostingResource\RelationManagers;
 use App\Models\JobPosting;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class JobPostingResource extends Resource
 {
     protected static ?string $model = JobPosting::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
     protected static ?string $navigationGroup = 'Careers Page';
 
     public static function form(Form $form): Form
