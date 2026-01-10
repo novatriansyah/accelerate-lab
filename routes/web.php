@@ -3,9 +3,11 @@
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\ServicePageController;
+use App\Http\Controllers\Frontend\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [PageController::class, 'services'])->name('services');
 Route::get('/services/{service:slug}', [PageController::class, 'service'])->name('service');
