@@ -89,8 +89,8 @@
                         </div>
                     </div>
                     <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-[#0d1117] rounded-xl shadow-2xl border border-slate-700 overflow-hidden animate-float z-20">
-                        <div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-700">
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white dark:bg-[#0d1117] rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-float z-20">
+                        <div class="flex items-center px-4 py-3 bg-slate-50 dark:bg-[#161b22] border-b border-slate-200 dark:border-slate-700">
                             <div class="flex space-x-2 mr-auto">
                                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
@@ -98,16 +98,16 @@
                             </div>
                             <span class="text-xs text-slate-500 font-mono">deploy.sh</span>
                         </div>
-                        <div class="p-6 font-mono text-sm text-slate-300">
+                        <div class="p-6 font-mono text-sm text-slate-600 dark:text-slate-300">
                             <div class="flex gap-2 mb-2">
                                 <span class="text-primary font-bold">➜</span>
                                 <span>git push origin production</span>
                             </div>
-                            <div class="flex gap-2 mb-2 text-slate-400">
+                            <div class="flex gap-2 mb-2 text-slate-500 dark:text-slate-400">
                                 <span class="text-primary font-bold">➜</span>
                                 <span>Building optimizations...</span>
                             </div>
-                            <div class="space-y-1 pl-5 mb-3 text-slate-500 text-xs border-l border-slate-700 ml-1">
+                            <div class="space-y-1 pl-5 mb-3 text-slate-500 text-xs border-l border-slate-200 dark:border-slate-700 ml-1">
                                 <p>✓ Minifying assets</p>
                                 <p>✓ Compressing images</p>
                                 <p>✓ Database migrations [OK]</p>
