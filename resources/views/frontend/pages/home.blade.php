@@ -219,16 +219,15 @@
                     </div>
                 </div>
                 <div
-                    class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-950 opacity-100 dark:opacity-100 -z-0"></div>
+                    class="group relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all p-8 flex flex-col justify-between">
                     <div class="relative z-10 flex flex-col h-full justify-between">
                         <div>
                             <div
-                                class="w-12 h-12 bg-primary/10 dark:bg-white/10 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm">
+                                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                                 <span class="material-icons-round text-primary text-2xl">code</span>
                             </div>
-                            <h3 class="text-2xl font-bold mb-3">Custom Development</h3>
-                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Custom Development</h3>
+                            <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
                                 We are not limited by a specific tech stack. Our versatile team leverages the best
                                 technologies for each project, ensuring capability, performance, and adaptability across any
                                 ecosystem.
@@ -346,7 +345,7 @@
             </div>
         </div>
     </section>
-    <section class="py-24 bg-white dark:bg-slate-950 relative overflow-hidden">
+    <section class="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
