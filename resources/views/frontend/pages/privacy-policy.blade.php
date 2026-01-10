@@ -6,4 +6,3 @@
         <p class="mt-4">This is the privacy policy page.</p>
     </div>
 @endsection
-
