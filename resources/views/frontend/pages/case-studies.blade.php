@@ -167,8 +167,8 @@
                 </div>
             </div>
         </section>
-        <section class="relative isolate overflow-hidden bg-white dark:bg-slate-900 py-16 sm:py-24 lg:py-32">
-            <div class="absolute inset-0 -z-10 h-full w-full object-cover opacity-10 dark:opacity-20"
+        <section class="relative isolate overflow-hidden bg-slate-50 dark:bg-slate-900 py-16 sm:py-24 lg:py-32">
+            <div class="absolute inset-0 -z-10 h-full w-full object-cover opacity-5 dark:opacity-20"
                 data-alt="Abstract dark technological geometric patterns"
                 style="background-image: radial-gradient(#14b8a7 1px, transparent 1px); background-size: 32px 32px;"></div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">

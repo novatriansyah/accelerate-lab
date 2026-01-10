@@ -89,7 +89,7 @@
                         </div>
                     </div>
                     <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white dark:bg-[#0d1117] rounded-xl shadow-xl dark:shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-float z-20">
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white dark:bg-[#0d1117] rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-float z-20">
                         <div class="flex items-center px-4 py-3 bg-slate-50 dark:bg-[#161b22] border-b border-slate-200 dark:border-slate-700">
                             <div class="flex space-x-2 mr-auto">
                                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
@@ -98,7 +98,7 @@
                             </div>
                             <span class="text-xs text-slate-500 font-mono">deploy.sh</span>
                         </div>
-                        <div class="p-6 font-mono text-sm text-slate-700 dark:text-slate-300">
+                        <div class="p-6 font-mono text-sm text-slate-600 dark:text-slate-300">
                             <div class="flex gap-2 mb-2">
                                 <span class="text-primary font-bold">➜</span>
                                 <span>git push origin production</span>
@@ -107,15 +107,14 @@
                                 <span class="text-primary font-bold">➜</span>
                                 <span>Building optimizations...</span>
                             </div>
-                            <div
-                                class="space-y-1 pl-5 mb-3 text-slate-500 dark:text-slate-500 text-xs border-l border-slate-200 dark:border-slate-700 ml-1">
+                            <div class="space-y-1 pl-5 mb-3 text-slate-500 text-xs border-l border-slate-200 dark:border-slate-700 ml-1">
                                 <p>✓ Minifying assets</p>
                                 <p>✓ Compressing images</p>
                                 <p>✓ Database migrations [OK]</p>
                             </div>
                             <div class="flex gap-2">
                                 <span class="text-primary font-bold">➜</span>
-                                <span class="text-green-500 dark:text-green-400">Deployed successfully (124ms)</span>
+                                <span class="text-green-400">Deployed successfully (124ms)</span>
                                 <span class="animate-pulse">_</span>
                             </div>
                         </div>
@@ -221,11 +220,11 @@
                 </div>
                 <div
                     class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white p-8 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
-                    <div class="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-100 dark:from-slate-800 dark:to-slate-950 opacity-0 dark:opacity-100 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-950 opacity-100 dark:opacity-100 -z-0"></div>
                     <div class="relative z-10 flex flex-col h-full justify-between">
                         <div>
                             <div
-                                class="w-12 h-12 bg-slate-100 dark:bg-white/10 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm">
+                                class="w-12 h-12 bg-primary/10 dark:bg-white/10 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm">
                                 <span class="material-icons-round text-primary text-2xl">code</span>
                             </div>
                             <h3 class="text-2xl font-bold mb-3">Custom Development</h3>
@@ -237,8 +236,8 @@
                         </div>
                         <div class="flex gap-2 mt-8 opacity-50">
                             <div class="h-1.5 w-8 bg-primary rounded-full"></div>
-                            <div class="h-1.5 w-4 bg-slate-900 dark:bg-white rounded-full"></div>
-                            <div class="h-1.5 w-12 bg-slate-400 dark:bg-slate-500 rounded-full"></div>
+                            <div class="h-1.5 w-4 bg-white rounded-full"></div>
+                            <div class="h-1.5 w-12 bg-slate-500 rounded-full"></div>
                         </div>
                     </div>
                 </div>
@@ -378,7 +377,7 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <div
-                    class="rounded-xl overflow-hidden shadow-xl dark:shadow-2xl bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+                    class="rounded-xl overflow-hidden shadow-2xl bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                     <div class="flex items-center px-4 py-3 bg-slate-50 dark:bg-[#161b22] border-b border-slate-200 dark:border-slate-800">
                         <div class="flex space-x-2 mr-4">
                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -392,7 +391,7 @@
 <span class="text-pink-600 dark:text-pink-400">class</span> <span class="text-blue-600 dark:text-blue-300">Project</span> <span class="text-pink-600 dark:text-pink-400">implements</span> <span class="text-yellow-600 dark:text-yellow-200">DigitalTransformation</span> {
   <span class="text-pink-600 dark:text-pink-400">private</span> <span class="text-blue-600 dark:text-blue-300">client</span>: <span class="text-yellow-600 dark:text-yellow-200">Partner</span>;
   <span class="text-pink-600 dark:text-pink-400">async</span> <span class="text-blue-600 dark:text-blue-300">execute</span>(<span class="text-orange-600 dark:text-orange-300">goals</span>: <span class="text-yellow-600 dark:text-yellow-200">Metrics</span>[]): <span class="text-yellow-600 dark:text-yellow-200">Promise</span>&lt;<span class="text-yellow-600 dark:text-yellow-200">Growth</span>&gt; {
-    <span class="text-slate-500">// Optimize performance bottlenecks</span>
+    <span class="text-slate-500 dark:text-slate-500">// Optimize performance bottlenecks</span>
     <span class="text-pink-600 dark:text-pink-400">const</span> <span class="text-slate-900 dark:text-white">strategy</span> = <span class="text-pink-600 dark:text-pink-400">await</span> <span class="text-blue-600 dark:text-blue-300">analyze</span>(<span class="text-orange-600 dark:text-orange-300">this</span>.client);
     <span class="text-pink-600 dark:text-pink-400">return</span> <span class="text-blue-600 dark:text-blue-300">deploy</span>({
       <span class="text-slate-900 dark:text-white">techStack:</span> [<span class="text-green-600 dark:text-green-300">'React'</span>, <span class="text-green-600 dark:text-green-300">'Laravel'</span>, <span class="text-green-600 dark:text-green-300">'AWS'</span>],
