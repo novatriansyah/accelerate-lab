@@ -26,6 +26,7 @@ class HomepageStatResource extends Resource
                             ->options([
                                 'hero' => 'Hero Section',
                                 'capabilities' => 'Capabilities Section',
+                                'about' => 'About Page',
                             ])
                             ->required()
                             ->default('hero'),
@@ -66,6 +67,7 @@ class HomepageStatResource extends Resource
                     ->colors([
                         'primary' => 'hero',
                         'success' => 'capabilities',
+                        'info' => 'about',
                     ])
                     ->sortable(),
                 Tables\Columns\TextColumn::make('sort_order')
@@ -84,6 +86,7 @@ class HomepageStatResource extends Resource
                     ->options([
                         'hero' => 'Hero Section',
                         'capabilities' => 'Capabilities Section',
+                        'about' => 'About Page',
                     ]),
             ])
             ->actions([
