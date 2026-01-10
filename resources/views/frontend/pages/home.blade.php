@@ -89,8 +89,8 @@
                         </div>
                     </div>
                     <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white dark:bg-[#0d1117] rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-float z-20">
-                        <div class="flex items-center px-4 py-3 bg-slate-50 dark:bg-[#161b22] border-b border-slate-200 dark:border-slate-700">
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-float z-20">
+                        <div class="flex items-center px-4 py-3 bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
                             <div class="flex space-x-2 mr-auto">
                                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
@@ -355,7 +355,7 @@
                     class="inline-block px-3 py-1 rounded border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-xs font-mono text-primary mb-6">
                     ~/source/core-values.js
                 </div>
-                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">The Lab</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">The Lab</h2>
                 <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
                     Innovation isn't accidental. It's engineered. Our "Lab" methodology combines agile sprints with deep
                     technical research to solve problems others can't.
