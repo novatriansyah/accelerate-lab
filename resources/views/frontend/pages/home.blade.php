@@ -378,8 +378,8 @@
             </div>
             <div class="lg:w-1/2 w-full">
                 <div
-                    class="rounded-xl overflow-hidden shadow-2xl bg-[#0d1117] border border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-800">
+                    class="rounded-xl overflow-hidden shadow-xl dark:shadow-2xl bg-white dark:bg-[#0d1117] border border-slate-200 dark:border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+                    <div class="flex items-center px-4 py-3 bg-slate-50 dark:bg-[#161b22] border-b border-slate-200 dark:border-slate-800">
                         <div class="flex space-x-2 mr-4">
                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
                             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -388,16 +388,16 @@
                         <div class="text-xs text-slate-500 font-mono">AccelerateLabController.ts</div>
                     </div>
                     <div class="p-6 overflow-x-auto code-scroll">
-                        <pre class="font-mono text-sm leading-relaxed"><span class="text-pink-400">import</span> { <span class="text-yellow-200">Innovation</span>, <span class="text-yellow-200">Scale</span> } <span class="text-pink-400">from</span> <span class="text-green-300">'@accelerate-lab/core'</span>;
-<span class="text-pink-400">class</span> <span class="text-blue-300">Project</span> <span class="text-pink-400">implements</span> <span class="text-yellow-200">DigitalTransformation</span> {
-  <span class="text-pink-400">private</span> <span class="text-blue-300">client</span>: <span class="text-yellow-200">Partner</span>;
-  <span class="text-pink-400">async</span> <span class="text-blue-300">execute</span>(<span class="text-orange-300">goals</span>: <span class="text-yellow-200">Metrics</span>[]): <span class="text-yellow-200">Promise</span>&lt;<span class="text-yellow-200">Growth</span>&gt; {
+                        <pre class="font-mono text-sm leading-relaxed"><span class="text-pink-600 dark:text-pink-400">import</span> { <span class="text-yellow-600 dark:text-yellow-200">Innovation</span>, <span class="text-yellow-600 dark:text-yellow-200">Scale</span> } <span class="text-pink-600 dark:text-pink-400">from</span> <span class="text-green-600 dark:text-green-300">'@accelerate-lab/core'</span>;
+<span class="text-pink-600 dark:text-pink-400">class</span> <span class="text-blue-600 dark:text-blue-300">Project</span> <span class="text-pink-600 dark:text-pink-400">implements</span> <span class="text-yellow-600 dark:text-yellow-200">DigitalTransformation</span> {
+  <span class="text-pink-600 dark:text-pink-400">private</span> <span class="text-blue-600 dark:text-blue-300">client</span>: <span class="text-yellow-600 dark:text-yellow-200">Partner</span>;
+  <span class="text-pink-600 dark:text-pink-400">async</span> <span class="text-blue-600 dark:text-blue-300">execute</span>(<span class="text-orange-600 dark:text-orange-300">goals</span>: <span class="text-yellow-600 dark:text-yellow-200">Metrics</span>[]): <span class="text-yellow-600 dark:text-yellow-200">Promise</span>&lt;<span class="text-yellow-600 dark:text-yellow-200">Growth</span>&gt; {
     <span class="text-slate-500">// Optimize performance bottlenecks</span>
-    <span class="text-pink-400">const</span> <span class="text-white">strategy</span> = <span class="text-pink-400">await</span> <span class="text-blue-300">analyze</span>(<span class="text-orange-300">this</span>.client);
-    <span class="text-pink-400">return</span> <span class="text-blue-300">deploy</span>({
-      <span class="text-white">techStack:</span> [<span class="text-green-300">'React'</span>, <span class="text-green-300">'Laravel'</span>, <span class="text-green-300">'AWS'</span>],
-      <span class="text-white">velocity:</span> <span class="text-purple-400">100</span>,
-      <span class="text-white">quality:</span> <span class="text-yellow-200">Standards</span>.<span class="text-purple-400">ENTERPRISE</span>
+    <span class="text-pink-600 dark:text-pink-400">const</span> <span class="text-slate-900 dark:text-white">strategy</span> = <span class="text-pink-600 dark:text-pink-400">await</span> <span class="text-blue-600 dark:text-blue-300">analyze</span>(<span class="text-orange-600 dark:text-orange-300">this</span>.client);
+    <span class="text-pink-600 dark:text-pink-400">return</span> <span class="text-blue-600 dark:text-blue-300">deploy</span>({
+      <span class="text-slate-900 dark:text-white">techStack:</span> [<span class="text-green-600 dark:text-green-300">'React'</span>, <span class="text-green-600 dark:text-green-300">'Laravel'</span>, <span class="text-green-600 dark:text-green-300">'AWS'</span>],
+      <span class="text-slate-900 dark:text-white">velocity:</span> <span class="text-purple-600 dark:text-purple-400">100</span>,
+      <span class="text-slate-900 dark:text-white">quality:</span> <span class="text-yellow-600 dark:text-yellow-200">Standards</span>.<span class="text-purple-600 dark:text-purple-400">ENTERPRISE</span>
     });
   }
 }
