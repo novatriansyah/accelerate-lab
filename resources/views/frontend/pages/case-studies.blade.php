@@ -167,13 +167,13 @@
                 </div>
             </div>
         </section>
-        <section class="relative isolate overflow-hidden bg-text-main py-16 sm:py-24 lg:py-32">
-            <div class="absolute inset-0 -z-10 h-full w-full object-cover opacity-20"
+        <section class="relative isolate overflow-hidden bg-white dark:bg-slate-900 py-16 sm:py-24 lg:py-32">
+            <div class="absolute inset-0 -z-10 h-full w-full object-cover opacity-10 dark:opacity-20"
                 data-alt="Abstract dark technological geometric patterns"
                 style="background-image: radial-gradient(#14b8a7 1px, transparent 1px); background-size: 32px 32px;"></div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to accelerate your vision?</h2>
-                <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">Ready to accelerate your vision?</h2>
+                <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-gray-300">
                     Let's build something extraordinary together. Our team of experts is ready to take your digital product
                     to the next level.
                 </p>
@@ -182,7 +182,7 @@
                         href="/contact">
                         Get Started
                     </a>
-                    <a class="text-sm font-semibold leading-6 text-white hover:text-primary transition-colors"
+                    <a class="text-sm font-semibold leading-6 text-slate-900 dark:text-white hover:text-primary transition-colors"
                         href="/contact">
                         Contact Sales <span aria-hidden="true">→</span>
                     </a>
