@@ -34,7 +34,8 @@ Route::get('/terms-of-service', function () {
     return view('frontend.pages.terms-of-service', ['title' => 'Accelerate Lab - Terms of Service']);
 });
 
-// Catch-all for custom service pages
-// NOTE: This must be the last route in the file to avoid intercepting other routes.
-// It relies on ServicePageController to 404 if the slug is not a valid custom page.
-Route::get('/{slug}', [ServicePageController::class, 'show'])->name('custom-service-page');
+Route::get('/robots.txt', function () {
+    $content = "User-agent: *\nDisallow: /admin\nDisallow: /nova\nAllow: /\nSitemap: " . url('sitemap.xml');
+    return response($content, 200)
+        ->header('Content-Type', 'text/plain');
+});

@@ -44,7 +44,9 @@
 <body
     class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-300">
     @include('frontend.components.header')
-    @yield('content')
+    <main class="flex-grow">
+        @yield('content')
+    </main>
     @include('frontend.components.footer')
 </body>
 
