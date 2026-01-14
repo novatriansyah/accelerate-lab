@@ -102,6 +102,24 @@ class PageController extends Controller
 
     public function service(Service $service)
     {
+        if ($service->has_custom_page) {
+            $view = "frontend.pages.{$service->slug}";
+            
+            // Hardcoded titles from previous controller to maintain compatibility
+            // or we could add a meta_title column to services table later.
+            $customTitles = [
+                'web-application-development' => 'Accelerate Lab - Web Application Development',
+                'mobile-app-development' => 'Accelerate Lab Mobile Dev',
+                'cloud-architecture' => 'Accelerate Lab - Cloud Architecture',
+                'ui-ux-design' => 'Accelerate Lab - UI/UX Design',
+            ];
+
+            return view($view, [
+                'service' => $service,
+                'title' => $customTitles[$service->slug] ?? $service->title . ' - Accelerate Lab',
+            ]);
+        }
+
         return view('frontend.pages.service', [
             'title' => $service->title . ' - Accelerate Lab',
             'description' => $service->short_description ?? \Illuminate\Support\Str::limit(strip_tags($service->content), 160),

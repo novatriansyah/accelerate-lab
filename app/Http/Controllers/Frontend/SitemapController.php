@@ -24,11 +24,7 @@ class SitemapController extends Controller
 
         // Services
         Service::all()->each(function (Service $service) use ($sitemap) {
-            if ($service->has_custom_page) {
-                $sitemap->add(Url::create("/{$service->slug}"));
-            } else {
-                $sitemap->add(Url::create("/services/{$service->slug}"));
-            }
+            $sitemap->add(Url::create("/services/{$service->slug}"));
         });
 
         // Projects
