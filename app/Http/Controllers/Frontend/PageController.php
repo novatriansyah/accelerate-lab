@@ -104,6 +104,10 @@ class PageController extends Controller
     {
         if ($service->has_custom_page) {
             $view = "frontend.pages.{$service->slug}";
+
+            if (! view()->exists($view)) {
+                abort(404);
+            }
             
             // Hardcoded titles from previous controller to maintain compatibility
             // or we could add a meta_title column to services table later.
