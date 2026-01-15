@@ -142,6 +142,7 @@ class CmsSeeder extends Seeder
             ['key' => 'reg_number', 'value' => 'Reg No: 2025-AL-ID', 'group' => 'general'],
             ['key' => 'contact_email', 'value' => 'hello@acceleratelab.io', 'group' => 'contact'],
             ['key' => 'linkedin_url', 'value' => 'https://linkedin.com/company/accelerate-lab', 'group' => 'social'],
+            ['key' => 'site_logo', 'value' => 'images/logo.webp', 'group' => 'general'],
         ];
 
         foreach ($settings as $setting) {
