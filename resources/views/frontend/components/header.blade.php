@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20">
             <a href="/" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                <img src="{{ asset('images/logo.png') }}" alt="Accelerate Lab" class="h-14 w-auto" width="200" height="56">
+                <img src="{{ asset('images/logo.png') }}" alt="Accelerate Lab" class="h-14 w-auto" width="200" height="56" fetchpriority="high">
             </a>
             <div class="hidden md:flex items-center space-x-8">
                 <a class="text-sm font-medium hover:text-primary transition-colors" href="/services">Services</a>
