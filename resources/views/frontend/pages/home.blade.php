@@ -3,10 +3,10 @@
 @section('content')
     <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-grid-pattern">
         <div
-            class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] animate-pulse-slow -z-10">
+            class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse-slow -z-10">
         </div>
         <div
-            class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] animate-pulse-slow -z-10">
+            class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse-slow -z-10">
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -301,7 +301,7 @@
                             <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
                             @if ($project->image_path)
                                 <img src="{{ Storage::url($project->image_path) }}" alt="{{ $project->title }}"
-                                    class="w-full h-full object-cover">
+                                    class="w-full h-full object-cover" loading="lazy">
                             @else
                                 <div
                                     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-{{ $project->color ?? 'primary' }}/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500">
