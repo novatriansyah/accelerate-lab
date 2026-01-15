@@ -34,8 +34,4 @@ Route::get('/terms-of-service', function () {
     return view('frontend.pages.terms-of-service', ['title' => 'Accelerate Lab - Terms of Service']);
 });
 
-Route::get('/robots.txt', function () {
-    $content = "User-agent: *\nDisallow: /admin\nDisallow: /nova\nAllow: /\nSitemap: " . url('sitemap.xml');
-    return response($content, 200)
-        ->header('Content-Type', 'text/plain');
-});
+Route::get('/robots.txt', [\App\Http\Controllers\Frontend\RobotsController::class, 'index']);
