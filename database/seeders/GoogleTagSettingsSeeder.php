@@ -12,34 +12,21 @@ class GoogleTagSettingsSeeder extends Seeder
      */
     public function run(): void
     {
-        $settings = [
-            [
-                'key' => 'google_tag_head',
-                'value' => "<!-- Google tag (gtag.js) -->
-<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-GYEYS89WC3\"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        $googleTagId = env('GOOGLE_TAG_ID');
 
-  gtag('config', 'G-GYEYS89WC3');
-</script>",
-                'group' => 'seo',
-                'is_display' => true,
-            ],
-            [
-                'key' => 'google_tag_body',
-                'value' => '<!-- Google Tag Manager (Body) - Not needed for gtag.js -->',
-                'group' => 'seo',
-                'is_display' => true,
-            ],
-        ];
-
-        foreach ($settings as $setting) {
+        if ($googleTagId) {
             SiteSetting::updateOrCreate(
-                ['key' => $setting['key']],
-                $setting
+                ['key' => 'google_tag_id'],
+                [
+                    'key' => 'google_tag_id',
+                    'value' => $googleTagId,
+                    'group' => 'seo',
+                    'is_display' => true,
+                ]
             );
         }
+
+        // Remove obsolete settings
+        SiteSetting::whereIn('key', ['google_tag_head', 'google_tag_body'])->delete();
     }
 }
