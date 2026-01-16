@@ -40,4 +40,8 @@ return [
         'chat_id' => env('WHATSAPP_CHAT_ID'),
     ],
 
+    'google' => [
+        'tag_id' => env('GOOGLE_TAG_ID'),
+    ],
+
 ];
