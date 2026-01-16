@@ -48,10 +48,16 @@
     </noscript>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if (isset($settings['google_tag_head']))
+        {!! $settings['google_tag_head'] !!}
+    @endif
 </head>
 
 <body
     class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-300">
+    @if (isset($settings['google_tag_body']))
+        {!! $settings['google_tag_body'] !!}
+    @endif
     @include('frontend.components.header')
     <main class="flex-grow">
         @yield('content')
