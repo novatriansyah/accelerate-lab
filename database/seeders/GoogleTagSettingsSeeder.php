@@ -12,13 +12,12 @@ class GoogleTagSettingsSeeder extends Seeder
      */
     public function run(): void
     {
-        $googleTagId = env('GOOGLE_TAG_ID');
+        $googleTagId = config('services.google.tag_id');
 
         if ($googleTagId) {
             SiteSetting::updateOrCreate(
                 ['key' => 'google_tag_id'],
                 [
-                    'key' => 'google_tag_id',
                     'value' => $googleTagId,
                     'group' => 'seo',
                     'is_display' => true,
