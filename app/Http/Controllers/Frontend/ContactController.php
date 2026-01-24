@@ -19,7 +19,7 @@ class ContactController extends Controller
             'email' => 'required|email|max:255',
             'company' => 'nullable|string|max:255',
             'phone' => 'nullable|string|max:20',
-            'message' => 'required|string',
+            'message' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -35,6 +35,7 @@ class ContactController extends Controller
             'phone' => $request->phone,
             'message' => $request->message,
             'status' => 'new',
+            'source' => 'Web Form',
         ]);
 
         // Send Notification to Admin
