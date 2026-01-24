@@ -35,6 +35,7 @@ class ContactController extends Controller
             'phone' => $request->phone,
             'message' => $request->message,
             'status' => 'new',
+            'source' => 'Web Form',
         ]);
 
         // Send Notification to Admin

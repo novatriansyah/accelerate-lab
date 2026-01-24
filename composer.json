@@ -14,6 +14,8 @@
         "flowframe/laravel-trend": "^0.4.0",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "mokhosh/filament-kanban": "*",
+        "openspout/openspout": "^4.32",
         "spatie/laravel-sitemap": "^7.3"
     },
     "require-dev": {
