@@ -83,37 +83,13 @@ class LeadResource extends Resource
                         ->exporter(\App\Filament\Exports\LeadExporter::class)
                         ->formats([\Filament\Actions\Exports\Enums\ExportFormat::Csv])
                         ->icon('heroicon-o-document-text')
-                        ->before(function ($action, $livewire) {
-                            $count = $livewire->getFilteredTableQuery()->count();
-                            if ($count === 0) {
-                                \Filament\Notifications\Notification::make()
-                                    ->warning()
-                                    ->title('Export Failed')
-                                    ->body('No rows found to export. If you need the template, please use the "Download Template" button.')
-                                    ->persistent()
-                                    ->send();
-                                
-                                $action->halt();
-                            }
-                        }),
+                        ->before(fn ($action, $livewire) => self::checkEmptyExport($action, $livewire)),
                     Tables\Actions\ExportAction::make('exportXlsx')
                         ->label('Export as Excel')
                         ->exporter(\App\Filament\Exports\LeadExporter::class)
                         ->formats([\Filament\Actions\Exports\Enums\ExportFormat::Xlsx])
                         ->icon('heroicon-o-table-cells')
-                        ->before(function ($action, $livewire) {
-                            $count = $livewire->getFilteredTableQuery()->count();
-                            if ($count === 0) {
-                                \Filament\Notifications\Notification::make()
-                                    ->warning()
-                                    ->title('Export Failed')
-                                    ->body('No rows found to export. If you need the template, please use the "Download Template" button.')
-                                    ->persistent()
-                                    ->send();
-                                
-                                $action->halt();
-                            }
-                        }),
+                        ->before(fn ($action, $livewire) => self::checkEmptyExport($action, $livewire)),
                 ])
                 ->label('Export')
                 ->icon('heroicon-o-arrow-down-tray')
@@ -143,6 +119,21 @@ class LeadResource extends Resource
                     }),
             ])
             ->defaultSort('created_at', 'desc');
+    }
+
+    private static function checkEmptyExport($action, $livewire): void
+    {
+        $count = $livewire->getFilteredTableQuery()->count();
+        if ($count === 0) {
+            \Filament\Notifications\Notification::make()
+                ->warning()
+                ->title('Export Failed')
+                ->body('No rows found to export. If you need the template, please use the "Download Template" button.')
+                ->persistent()
+                ->send();
+            
+            $action->halt();
+        }
     }
 
     public static function getRelations(): array

@@ -39,10 +39,6 @@ class LeadExporter extends Exporter
 
     public static function getCompletedNotificationTitle(Export $export): string
     {
-        if ($export->successful_rows === 0 && $export->getFailedRowsCount() === 0) {
-           return 'Export Failed';
-        }
-        
         if ($export->successful_rows === 0) {
             return 'Export Failed';
         }

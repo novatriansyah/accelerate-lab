@@ -53,13 +53,13 @@ class LeadsKanbanBoard extends KanbanBoard
 
     protected function getEditModalRecordData(int | string $recordId, array $data): array
     {
-        return Lead::with('notes')->find($recordId)->toArray();
+        return Lead::with('notes')->findOrFail($recordId)->toArray();
     }
 
     protected function editRecord(int | string $recordId, array $data, array $state): void
     {
         if (!empty($data['new_note'])) {
-            Lead::find($recordId)->notes()->create([
+            Lead::findOrFail($recordId)->notes()->create([
                 'content' => $data['new_note'],
             ]);
         }
@@ -84,6 +84,6 @@ class LeadsKanbanBoard extends KanbanBoard
 
     public function onStatusChanged(int|string $recordId, string $status, array $fromOrderedIds, array $toOrderedIds): void
     {
-        Lead::find($recordId)->update(['status' => $status]);
+        Lead::findOrFail($recordId)->update(['status' => $status]);
     }
 }
