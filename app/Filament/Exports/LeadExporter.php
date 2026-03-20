@@ -2,6 +2,7 @@
 
 namespace App\Filament\Exports;
 
+use App\Enums\LeadStatus;
 use App\Models\Lead;
 use Filament\Actions\Exports\Enums\ExportFormat;
 use Filament\Actions\Exports\ExportColumn;
@@ -31,7 +32,8 @@ class LeadExporter extends Exporter
             ExportColumn::make('phone')
                 ->formatStateUsing(fn ($state) => "\t" . $state),
             ExportColumn::make('message'),
-            ExportColumn::make('status'),
+            ExportColumn::make('status')
+                ->formatStateUsing(fn ($state) => $state?->getLabel() ?? $state?->value ?? ''),
             ExportColumn::make('created_at'),
             ExportColumn::make('updated_at'),
         ];
