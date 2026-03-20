@@ -18,33 +18,33 @@ class LeadImporter extends Importer
                 ->requiredMapping()
                 ->rules(['required', 'max:255']),
             ImportColumn::make('email')
-                ->rules(['email', 'max:255', 'unique:leads,email']),
+                ->rules(['email', 'max:255']),
             ImportColumn::make('company')
                 ->rules(['max:255']),
             ImportColumn::make('phone')
-                ->rules(['max:255']),
+                ->rules(['max:255'])
+                ->castStateUsing(fn ($state) => trim($state)),
             ImportColumn::make('message'),
             ImportColumn::make('status')
                 ->requiredMapping()
-                ->rules(['required', 'max:255']),
+                ->rules(['required', 'max:255'])
+                ->castStateUsing(fn ($state) => strtolower(trim($state)) ?: 'new'),
         ];
     }
 
     public function resolveRecord(): ?Lead
     {
-        // Normalize status to lowercase to match Enum
-        if (isset($this->data['status'])) {
-            $this->data['status'] = strtolower($this->data['status']);
-        }
+        if (!empty($this->data['email'])) {
+            $existing = Lead::where('email', $this->data['email'])->first();
 
-        // Sanitize phone number to remove tab character if present from export
-        if (isset($this->data['phone'])) {
-            $this->data['phone'] = trim($this->data['phone']);
+            if ($existing) {
+                return $existing;
+            }
         }
 
         $lead = new Lead();
         $lead->source = 'Import';
-        
+
         return $lead;
     }
 
