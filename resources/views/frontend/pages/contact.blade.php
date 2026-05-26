@@ -163,22 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-20 pt-10 border-t border-border-light dark:border-border-dark">
-                <p
-                    class="text-center text-sm font-medium text-text-secondary dark:text-gray-500 mb-6 uppercase tracking-widest">
-                    Trusted by industry leaders</p>
-                <div
-                    class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-                    <div class="text-xl font-bold flex items-center gap-2"><span
-                            class="material-symbols-outlined text-3xl">token</span> NextGen</div>
-                    <div class="text-xl font-bold flex items-center gap-2"><span
-                            class="material-symbols-outlined text-3xl">diamond</span> Apex</div>
-                    <div class="text-xl font-bold flex items-center gap-2"><span
-                            class="material-symbols-outlined text-3xl">bolt</span> VoltSys</div>
-                    <div class="text-xl font-bold flex items-center gap-2"><span
-                            class="material-symbols-outlined text-3xl">hub</span> Nexus</div>
-                </div>
-            </div>
         </div>
     </main>
 @endsection
+

@@ -135,7 +135,7 @@
                                 <div class="flex flex-wrap gap-2 items-center">
                                     @if ($project->industry)
                                         <span
-                                            class="text-xs font-bold uppercase tracking-wider text-{{ $project->color ?? 'primary' }}">{{ $project->industry }}</span>
+                                            class="text-xs font-bold uppercase tracking-wider text-primary">{{ $project->industry }}</span>
                                     @endif
 
                                     @if ($project->industry && $project->technology_tags)

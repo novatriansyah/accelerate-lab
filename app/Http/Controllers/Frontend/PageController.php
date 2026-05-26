@@ -11,17 +11,18 @@ use App\Models\JobPosting;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\TeamMember;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function home()
     {
-        // Get 3 recent projects for the homepage
         $recentProjects = Project::latest()->take(3)->get();
 
         $heroStats = HomepageStat::where('section', 'hero')->orderBy('sort_order')->take(3)->get();
         $capabilityStats = HomepageStat::where('section', 'capabilities')->orderBy('sort_order')->take(3)->get();
+        $testimonials = Testimonial::active()->orderBy('sort_order')->take(3)->get();
 
         return view('frontend.pages.home', [
             'title' => 'Accelerate Lab - Digital Innovation Agency',
@@ -29,6 +30,7 @@ class PageController extends Controller
             'recentProjects' => $recentProjects,
             'heroStats' => $heroStats,
             'capabilityStats' => $capabilityStats,
+            'testimonials' => $testimonials,
         ]);
     }
 
@@ -108,19 +110,10 @@ class PageController extends Controller
             if (! view()->exists($view)) {
                 abort(404);
             }
-            
-            // Hardcoded titles from previous controller to maintain compatibility
-            // or we could add a meta_title column to services table later.
-            $customTitles = [
-                'web-application-development' => 'Accelerate Lab - Web Application Development',
-                'mobile-app-development' => 'Accelerate Lab Mobile Dev',
-                'cloud-architecture' => 'Accelerate Lab - Cloud Architecture',
-                'ui-ux-design' => 'Accelerate Lab - UI/UX Design',
-            ];
 
             return view($view, [
                 'service' => $service,
-                'title' => $customTitles[$service->slug] ?? $service->title . ' - Accelerate Lab',
+                'title' => $service->meta_title ?? $service->title . ' - Accelerate Lab',
             ]);
         }
 
@@ -198,6 +191,20 @@ class PageController extends Controller
             'description' => $project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge), 160),
             'ogImage' => $project->image_path ? \Illuminate\Support\Facades\Storage::url($project->image_path) : null,
             'project' => $project,
+        ]);
+    }
+
+    public function privacyPolicy()
+    {
+        return view('frontend.pages.privacy-policy', [
+            'title' => 'Privacy Policy - Accelerate Lab',
+        ]);
+    }
+
+    public function termsOfService()
+    {
+        return view('frontend.pages.terms-of-service', [
+            'title' => 'Terms of Service - Accelerate Lab',
         ]);
     }
 }

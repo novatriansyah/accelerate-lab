@@ -8,13 +8,12 @@ class Service extends Model
 {
     protected $fillable = [
         'title',
+        'meta_title',
         'slug',
         'icon',
         'short_description',
         'content',
         'sort_order',
-        'features',
-        'technologies',
         'features',
         'technologies',
         'process',
@@ -29,7 +28,6 @@ class Service extends Model
     protected $casts = [
         'features' => 'array',
         'technologies' => 'array',
-        'process' => 'array',
         'process' => 'array',
         'benefits' => 'array',
         'has_custom_page' => 'boolean',
