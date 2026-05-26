@@ -14,9 +14,18 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 $projectRoot = dirname(__DIR__);
 $envPath = $projectRoot . '/.env';
 if (!file_exists($envPath)) {
-    $persistentEnv = dirname($projectRoot) . '/accelerate-config/.env';
-    if (file_exists($persistentEnv)) {
-        copy($persistentEnv, $envPath);
+    $candidates = [
+        dirname($projectRoot) . '/accelerate-config/.env',
+        dirname($projectRoot, 2) . '/accelerate-config/.env',
+        dirname($projectRoot, 3) . '/accelerate-config/.env',
+        '/home/' . get_current_user() . '/accelerate-config/.env',
+        (isset($_SERVER['HOME']) ? $_SERVER['HOME'] . '/accelerate-config/.env' : ''),
+    ];
+    foreach ($candidates as $candidate) {
+        if (!empty($candidate) && file_exists($candidate)) {
+            copy($candidate, $envPath);
+            break;
+        }
     }
 }
 
