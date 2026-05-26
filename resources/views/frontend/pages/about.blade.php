@@ -34,11 +34,11 @@
                 <div class="relative lg:h-full">
                     <div
                         class="relative aspect-square lg:aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800 shadow-2xl">
-                        <div class="absolute inset-0 bg-cover bg-center"
-                            data-alt="A diverse team of developers and designers collaborating in a modern, sunlit office with glass walls"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUq5VunczmLYJ9BFmu-JOS-h6JBnUIj0XrBYi07rW2dbosnGhvU6zxkOEj5bub7lo3nMhbuFCysaaRGZjCux74Qk0rDZLEOrTn3X1AeKSSBjkfYcFDAtaBrT325m6mQt_GOa88_lwbCuGGzxXNg_93k5Jy7UKTd9zhpViP7hD-DDzaGu4U4g2RJxescPRhTFc0QQpF1XO4E1esUpViuOYEU2qPX-3HCyuAIhxgSDuMaMKsBbNannAzTdYxmw382R7KGPAHTyC0DA4');">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply">
+                        <img src="{{ asset('images/pages/about-team-office.jpg') }}"
+                            alt="A diverse team of developers and designers collaborating in a modern, sunlit office with glass walls"
+                            class="absolute inset-0 w-full h-full object-cover"
+                            width="600" height="450" loading="eager" decoding="async">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply" aria-hidden="true">
                         </div>
                     </div>
                     <div
@@ -103,7 +103,7 @@
                     @endforeach
                 @else
                     <div class="md:col-span-3">
-                        <x-frontend.components.empty-state
+                        <x-empty-state
                             icon="emoji_objects"
                             title="Values Being Defined"
                             description="Our core values are being crafted. Check back soon."
@@ -124,10 +124,10 @@
                         forward in our capabilities and our commitment to excellence.
                     </p>
                     <div class="relative h-64 w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
-                        <div class="absolute inset-0 bg-cover bg-center"
-                            data-alt="A group of people brainstorming on a whiteboard in a modern office setting"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZMOipHja_Go0V-SmWmU0jzMdN8iR1yJyN0MfWFFjc4X4ium_2ZTKOcVlDzKMYdog0mq51DqcFWobmnoXvUiEmoKKjrXwHoz4uXdrw5Yaqw2juk9-O7Z9cWOaVcDJB_sS1GZR1zYX0aCC-ppEO3SJy_VvvCxFeMtSfZMMX1m6vhV4FtZb4kg-9CGpz-nhvLW7W--Cm6Rc4rnK7x1QfYOM-BGuPZYyC3TAsdf__jpcdtzzwle_0SIOcnHPu1VvdZfUqD8PDEPUjm-g');">
-                        </div>
+                        <img src="{{ asset('images/pages/about-collaboration.jpg') }}"
+                            alt="A group of people brainstorming on a whiteboard in a modern office setting"
+                            class="absolute inset-0 w-full h-full object-cover"
+                            width="600" height="256" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="lg:col-span-7 pl-0 lg:pl-12">
@@ -162,7 +162,7 @@
                             @endforeach
                         @else
                             <div class="col-span-2">
-                                <x-frontend.components.empty-state
+                                <x-empty-state
                                     icon="timeline"
                                     title="Our Story is Being Written"
                                     description="Company milestones will appear here as we grow."
@@ -191,12 +191,13 @@
                     <div class="group relative">
                         <div class="aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
                             @if ($member->image_path)
-                                <div class="h-full w-full bg-cover bg-center transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
-                                    data-alt="Portrait of {{ $member->name }}"
-                                    style="background-image: url('{{ Storage::url($member->image_path) }}');"></div>
+                                <img src="{{ Storage::url($member->image_path) }}"
+                                    alt="Portrait of {{ $member->name }}"
+                                    class="h-full w-full object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
+                                    loading="lazy" width="300" height="375" decoding="async">
                             @else
                                 <div class="h-full w-full bg-slate-100 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-6xl text-slate-300">person</span>
+                                    <span class="material-symbols-outlined text-6xl text-slate-300" aria-hidden="true">person</span>
                                 </div>
                             @endif
                         </div>

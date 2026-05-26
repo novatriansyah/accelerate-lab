@@ -23,7 +23,7 @@
                         <div class="flex items-start gap-4 group">
                             <div
                                 class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[20px]">location_on</span>
+                                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">location_on</span>
                             </div>
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Visit HQ</h3>
@@ -34,7 +34,7 @@
                         <div class="flex items-start gap-4 group">
                             <div
                                 class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[20px]">mail</span>
+                                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">mail</span>
                             </div>
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Email Us</h3>
@@ -45,7 +45,7 @@
                         <div class="flex items-start gap-4 group">
                             <div
                                 class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[20px]">call</span>
+                                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">call</span>
                             </div>
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Call Us</h3>
@@ -59,6 +59,7 @@
                         <div class="absolute inset-0 bg-primary/10 z-10 group-hover:bg-primary/5 transition-colors"></div>
                         <img alt="Map view of {{ $settings['contact_address'] ?? 'HQ' }}"
                             class="w-full h-full object-cover grayscale opacity-60 group-hover:scale-105 transition-transform duration-700"
+                            width="600" height="192" loading="lazy" decoding="async"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYdvnhSbOfyr5ux-RS6isr_D6Q68rMA_hiQKu14Z4_d_c7yqladIBCiTLgAG0D3dCndcn9Re--q8Q1wz1Khe6HIZ4R_xMJ9e_U-bRRioeAJbRmJwdcm5O73hpRVt5QJZr9MFodpF3N4ZxdNG-oVSVa2F2MHvtHlX2MqOL7xKOdmWshVlcS1JzKMwmVaOOGS_3RwxAnDE3ndku7gu-znVOQATk7lYiqdbh2KijVmS1xnlVaqlVZ3G9O_bTjEYtgR2pGH--hZaLYRgA" />
                         <div
                             class="absolute bottom-3 left-3 z-20 bg-white/90 dark:bg-black/80 px-3 py-1 rounded-md backdrop-blur-sm">
@@ -77,7 +78,7 @@
                         </div>
                         <h2 class="text-2xl font-bold text-text-main dark:text-white mb-8 flex items-center gap-2">
                             Send us a Message
-                            <span class="material-symbols-outlined text-primary">edit_square</span>
+                            <span class="material-symbols-outlined text-primary" aria-hidden="true">edit_square</span>
                         </h2>
                         @if (session('success'))
                             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
@@ -151,7 +152,7 @@
                                     <span class="flex items-center gap-2 relative z-10">
                                         Send Message
                                         <span
-                                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">send</span>
+                                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform" aria-hidden="true">send</span>
                                     </span>
                                 </button>
                             </div>

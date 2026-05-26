@@ -85,18 +85,18 @@
                                 @endif
                                 <a class="inline-flex w-fit items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark group-hover:gap-3 transition-all"
                                     href="{{ route('project', $featuredProject) }}">
-                                    Read Case Study <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                                    Read Case Study <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
                                 </a>
                             </div>
                             <div
                                 class="relative h-64 w-full flex-1 bg-gray-100 dark:bg-slate-800 lg:h-auto order-1 lg:order-2 overflow-hidden">
                                 @if ($featuredProject->image_path)
-                                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                        data-alt="{{ $featuredProject->title }}"
-                                        style='background-image: url("{{ Storage::url($featuredProject->image_path) }}");'>
-                                        <div
-                                            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:to-black/10">
-                                        </div>
+                                    <img src="{{ Storage::url($featuredProject->image_path) }}"
+                                        alt="{{ $featuredProject->title }}"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        loading="eager" width="600" height="400" decoding="async">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:to-black/10" aria-hidden="true">
                                     </div>
                                 @else
                                     <div
@@ -120,13 +120,15 @@
                             <div
                                 class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
                                 @if ($project->image_path)
-                                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                        style='background-image: url("{{ Storage::url($project->image_path) }}");'></div>
+                                    <img src="{{ Storage::url($project->image_path) }}"
+                                        alt="{{ $project->title }}"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        loading="lazy" width="400" height="300" decoding="async">
                                 @else
                                     <div
-                                        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110 bg-slate-800 flex items-center justify-center">
+                                        class="absolute inset-0 bg-slate-800 flex items-center justify-center">
                                         <span
-                                            class="material-icons-round text-6xl text-slate-600">{{ $project->icon ?? 'image' }}</span>
+                                            class="material-icons-round text-6xl text-slate-600" aria-hidden="true">{{ $project->icon ?? 'image' }}</span>
                                     </div>
                                 @endif
                                 <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>

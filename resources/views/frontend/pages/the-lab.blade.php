@@ -35,10 +35,10 @@
                         <div
                             class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent mix-blend-overlay z-10">
                         </div>
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Abstract visualization of server data nodes and geometric tech patterns connected by light"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBn6VlxoqYrIOjU9dEDYcjp3h6UQqyWHH58CvnBLAskQTNaQiE05eO8suxzjIaVCN_hY9q6QSwO7SWWcPhsta0x9V-irhgnlZJ0pjt4Z_hrW-lLA4vYcYDQv08Xf3AUr0dU3H42KIpWN9o1u3lpNVkKeBfAYL1NVwwCwW0xSj1IreDw1diDzyAYgspP04dpQJA3U8gNxcr56ikMEE068BbQhmQVCJgRw07cZWmr_lhEeSsXrKqb_awg79adi00VmCSDyYxji7hCEaM');">
-                        </div>
+                        <img src="{{ asset('images/pages/the-lab-hero.jpg') }}"
+                            alt="Abstract visualization of server data nodes and geometric tech patterns connected by light"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            width="600" height="500" loading="eager" decoding="async">
                         <div
                             class="absolute bottom-6 left-6 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 dark:border-slate-700 shadow-lg">
                             <div class="flex items-center gap-3">
@@ -137,10 +137,10 @@
                 </div>
                 <div
                     class="relative min-h-[300px] md:min-h-full bg-slate-900 flex items-center justify-center overflow-hidden">
-                    <div class="absolute inset-0 opacity-40"
-                        data-alt="Computer screen displaying complex code syntax in a dark theme editor"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA7Oes3VGQsFaamh-5z0KlbrkPMOOaHLGSWyrmxWAXNfPLd0ivsIIW8JAK7DiidWJjSFb30cxFLkL5kVvpj9XARCX7BBckhU3XLok2CU2vlhgA0pHbtkc0wZsxFGBkoJbKWdD9KljvGM8l99Ox49mqZlfs5JB-G2QGCJtoQOmEu-ppiktXGIlj_zW5YJjN_pUcFq2wGwfNjYMZer6TvhqUY35RV3KuFeGpeWkOmFCWEJxQ6EgxbKYk6mM76fHbh65qZkhvqjbv0iRo'); background-size: cover; background-position: center;">
-                    </div>
+                    <img src="{{ asset('images/pages/the-lab-code-editor.jpg') }}"
+                        alt="Computer screen displaying complex code syntax in a dark theme editor"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40"
+                        width="600" height="300" loading="lazy" decoding="async">
                     <div
                         class="relative z-10 bg-slate-800/80 backdrop-blur-md border border-slate-700 rounded-lg p-6 max-w-sm shadow-2xl transform rotate-1 md:-rotate-1">
                         <div class="flex gap-2 mb-3">
@@ -188,7 +188,7 @@
                     </p>
                     <div
                         class="flex items-center text-primary text-sm font-bold gap-1 mt-auto group-hover:gap-2 transition-all">
-                        Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        Read Article <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
                     </div>
                 </div>
             </article>
@@ -216,7 +216,7 @@
                     </p>
                     <div
                         class="flex items-center text-primary text-sm font-bold gap-1 mt-auto group-hover:gap-2 transition-all">
-                        Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        Read Article <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
                     </div>
                 </div>
             </article>
@@ -244,7 +244,7 @@
                     </p>
                     <div
                         class="flex items-center text-primary text-sm font-bold gap-1 mt-auto group-hover:gap-2 transition-all">
-                        Read Article <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        Read Article <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
                     </div>
                 </div>
             </article>

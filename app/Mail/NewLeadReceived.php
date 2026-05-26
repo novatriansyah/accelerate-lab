@@ -39,7 +39,7 @@ class NewLeadReceived extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.new-lead',
+            markdown: 'frontend.emails.new-lead',
         );
     }
 

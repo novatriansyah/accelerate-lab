@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller; // Import base controller
-use App\Models\Article;
+use App\Http\Controllers\Controller;
 use App\Models\CompanyMilestone;
 use App\Models\CoreValue;
 use App\Models\HomepageStat;
@@ -12,7 +11,6 @@ use App\Models\Project;
 use App\Models\Service;
 use App\Models\TeamMember;
 use App\Models\Testimonial;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -34,50 +32,6 @@ class PageController extends Controller
         ]);
     }
 
-    public function blog()
-    {
-        $featured = Article::with(['category', 'author'])
-            ->where('is_featured', true)
-            ->where('published_at', '<=', now())
-            ->latest('published_at')
-            ->first();
-
-        // If no featured, just take the latest one
-        if (! $featured) {
-            $featured = Article::with(['category', 'author'])
-                ->where('published_at', '<=', now())
-                ->latest('published_at')
-                ->first();
-        }
-
-        $latest = Article::with(['category', 'author'])
-            ->where('published_at', '<=', now())
-            ->where('id', '!=', $featured?->id)
-            ->latest('published_at')
-            ->paginate(9);
-
-        return view('frontend.pages.blog', [
-            'title' => 'Insights & Innovation - Accelerate Lab',
-            'featured' => $featured,
-            'latest' => $latest,
-        ]);
-    }
-
-    public function article(Article $article)
-    {
-        if ($article->published_at > now()) {
-            abort(404);
-        }
-
-        return view('frontend.pages.article', [
-            'title' => $article->title . ' - Accelerate Lab',
-            'description' => \Illuminate\Support\Str::limit(strip_tags($article->content), 160),
-            'ogType' => 'article',
-            'ogImage' => $article->image_path ? \Illuminate\Support\Facades\Storage::url($article->image_path) : null,
-            'article' => $article,
-        ]);
-    }
-
     public function services()
     {
         $services = Service::orderBy('sort_order')->get();
@@ -94,7 +48,8 @@ class PageController extends Controller
             ->values();
 
         return view('frontend.pages.services', [
-            'title' => 'Our Services - Accelerate Lab',
+            'title' => 'Our Services - Custom Software, Cloud & Design | Accelerate Lab',
+            'description' => 'From product strategy and UI/UX design to custom web and mobile development, cloud architecture, and API integrations. Explore how Accelerate Lab engineers digital solutions.',
             'services' => $services, // Keep all for safety or other uses
             'strategyService' => $strategyService,
             'developmentServices' => $developmentServices,
@@ -114,6 +69,7 @@ class PageController extends Controller
             return view($view, [
                 'service' => $service,
                 'title' => $service->meta_title ?? $service->title . ' - Accelerate Lab',
+                'description' => $service->short_description ?? \Illuminate\Support\Str::limit(strip_tags($service->content), 160),
             ]);
         }
 
@@ -129,7 +85,8 @@ class PageController extends Controller
         $jobs = JobPosting::where('is_active', true)->latest()->get();
 
         return view('frontend.pages.careers', [
-            'title' => 'Careers - Accelerate Lab',
+            'title' => 'Careers at Accelerate Lab - Join Our Engineering Team',
+            'description' => 'Join Accelerate Lab and build cutting-edge digital products. Browse open positions in engineering, design, and strategy.',
             'jobs' => $jobs,
         ]);
     }
@@ -142,7 +99,8 @@ class PageController extends Controller
         $stats = HomepageStat::where('section', 'about')->orderBy('sort_order')->get();
 
         return view('frontend.pages.about', [
-            'title' => 'About Accelerate Lab',
+            'title' => 'About Accelerate Lab - Our Story, Mission & Team',
+            'description' => 'Learn about Accelerate Lab, a digital innovation agency founded by Nova Triansyah Azis. Discover our mission, core values, and engineering philosophy.',
             'teamMembers' => $teamMembers,
             'milestones' => $milestones,
             'coreValues' => $coreValues,
@@ -152,45 +110,9 @@ class PageController extends Controller
 
     public function contact()
     {
-        return view('frontend.pages.contact', ['title' => 'Contact Us']);
-    }
-
-    public function caseStudies(Request $request)
-    {
-        $query = Project::latest();
-
-        if ($request->has('industry') && $request->industry != '') {
-            $query->where('industry', $request->industry);
-        }
-
-        $projects = $query->get();
-
-        // Get unique industries for the filter bar
-        $industries = Project::select('industry')
-            ->distinct()
-            ->whereNotNull('industry')
-            ->where('industry', '!=', '')
-            ->pluck('industry')
-            ->sort();
-
-        $featuredProject = Project::where('is_featured', true)->latest()->first();
-
-        return view('frontend.pages.case-studies', [
-            'title' => 'Accelerate Lab - Case Studies',
-            'projects' => $projects,
-            'industries' => $industries,
-            'currentIndustry' => $request->industry,
-            'featuredProject' => $featuredProject,
-        ]);
-    }
-
-    public function project(Project $project)
-    {
-        return view('frontend.pages.project', [
-            'title' => $project->title . ' - Case Study',
-            'description' => $project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge), 160),
-            'ogImage' => $project->image_path ? \Illuminate\Support\Facades\Storage::url($project->image_path) : null,
-            'project' => $project,
+        return view('frontend.pages.contact', [
+            'title' => 'Contact Us - Accelerate Lab',
+            'description' => 'Get in touch with Accelerate Lab. Start a project, request a consultation, or ask about our custom software development and cloud services.',
         ]);
     }
 
@@ -198,6 +120,7 @@ class PageController extends Controller
     {
         return view('frontend.pages.privacy-policy', [
             'title' => 'Privacy Policy - Accelerate Lab',
+            'description' => 'Read Accelerate Lab\'s privacy policy. Learn how we collect, use, and protect your personal information.',
         ]);
     }
 
@@ -205,6 +128,8 @@ class PageController extends Controller
     {
         return view('frontend.pages.terms-of-service', [
             'title' => 'Terms of Service - Accelerate Lab',
+            'description' => 'Read the terms of service for Accelerate Lab. Understand the conditions that apply when using our digital services and website.',
         ]);
     }
 }
+

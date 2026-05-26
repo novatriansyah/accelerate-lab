@@ -258,10 +258,10 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-96">
                 <div class="md:col-span-2 relative rounded-2xl overflow-hidden h-full group">
                     <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
-                    <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                        data-alt="Server rack aisle in a modern data center with blue LED lights"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBkKPurenLPzO6jElHX1SH6Zjqb0_8icM7LlXFroJ9GKdjGZxLUcJVbN2WzkcIcdBGaHDL5wo_MXDh45RfqfCsK_2OVEaq727JJzpsZ7YHfPqwsMUqzmZjc8t_3n_04nBkIaQX8nYdVtimb8eDuOPjDszDV39pQV4WFexYtUX3VoGsL7clRqboo0WNjSOOHIqYs99lpfcVD581j8QYIFW-pBAiT8Q3JLs2N-ulwc01xj6BIJfWIMCdLT8W-4X8NDUYwcetYeIerfc');">
-                    </div>
+                    <img src="{{ asset('images/pages/cloud-datacenter.jpg') }}"
+                        alt="Server rack aisle in a modern data center with blue LED lights"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        width="600" height="384" loading="lazy" decoding="async">
                     <div class="absolute bottom-4 left-4 z-20">
                         <span
                             class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Data
@@ -271,10 +271,10 @@
                 <div class="grid grid-rows-2 gap-4 h-full">
                     <div class="relative rounded-2xl overflow-hidden h-full group">
                         <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Abstract digital network visualization representing cyber security"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdplJVGjqaWlW3dbuEGUJ0O8rnT6b9b-i57-gYfZVJcm2k_gTjXXsPSjBPqzkoZ8n3l4EStzvE0P1y9p-jRzdbKKmN94vCc4L9oFyatbqHkCEoSrCw-xs9b3Pyc1rDfFJGYaBZHayq5iOeB5_CBNfBuzcW47BuAYDKO6-6GcNkKeoM8HhQlsJ-y5_ekfe9Ud5KLfd8oLd5esTa30zq9FknMiRT5qdFHYvVrV1bytp3CtBlRabZOAE6Pbz1zpPWIWgXFlhDX_NlNt0');">
-                        </div>
+                        <img src="{{ asset('images/pages/cloud-cybersecurity.jpg') }}"
+                            alt="Abstract digital network visualization representing cyber security"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            width="300" height="192" loading="lazy" decoding="async">
                         <div class="absolute bottom-4 left-4 z-20">
                             <span
                                 class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Security
@@ -283,10 +283,10 @@
                     </div>
                     <div class="relative rounded-2xl overflow-hidden h-full group">
                         <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Digital matrix code overlay on a dark background"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCyv2CiMpFJbzSRrwLZxC3EmtwGhW794sgKN6b9Oi-xFIzhZaLyuRM2pQ6KpsOXV1l3_PVgEMjk7x86naFgPEDeLttzyt8921UX2zE053f9xRXUD2iNrDyZReH-EazUxsLV5iDBn1ZnvOreFfTDyg1X1ts0j_I_IyHGZgDv6bQ-GsgiJVtHTvKOoX0T8AmNEVdB3qf66K8tsyqi3Q74jhXAdKxZKCusGFePiu5E32SyqCuf4rbAUj8ysYWnv2Qox4MdcCaiVxDv_Mg');">
-                        </div>
+                        <img src="{{ asset('images/pages/cloud-matrix.jpg') }}"
+                            alt="Digital matrix code overlay on a dark background"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            width="300" height="192" loading="lazy" decoding="async">
                         <div class="absolute bottom-4 left-4 z-20">
                             <span
                                 class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Code

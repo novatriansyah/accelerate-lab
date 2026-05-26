@@ -11,30 +11,20 @@ function initTheme() {
         document.documentElement.classList.remove('dark');
     }
 
-    if (themeToggleBtns.length > 0) {
-        themeToggleBtns.forEach(btn => {
-            // Clone to remove old listeners
-            const newBtn = btn.cloneNode(true);
-            btn.parentNode.replaceChild(newBtn, btn);
+    themeToggleBtns.forEach(btn => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
 
-            newBtn.addEventListener('click', () => {
-                console.log('Theme toggle clicked');
-                document.documentElement.classList.toggle('dark');
+        newBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
 
-                if (document.documentElement.classList.contains('dark')) {
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    localStorage.setItem('theme', 'light');
-                }
-            });
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
         });
-    } else {
-        console.warn('No theme toggle buttons found');
-    }
+    });
 }
 
-// Initialize on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', initTheme);
-
-// Expose to window for debugging
-window.initTheme = initTheme;

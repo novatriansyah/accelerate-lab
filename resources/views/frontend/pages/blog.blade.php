@@ -2,9 +2,9 @@
 
 @section('content')
     <main class="flex-1 flex flex-col items-center w-full">
-        <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-6">
+        <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-6" aria-labelledby="blog-heading">
             <div class="flex flex-col gap-4 max-w-3xl">
-                <h1
+                <h1 id="blog-heading"
                     class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-slate-dark dark:text-white">
                     Insights &amp; Innovation
                 </h1>
@@ -15,18 +15,19 @@
         </section>
 
         @if ($featured)
-            <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+            <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-6" aria-label="Featured article">
                 <a href="{{ route('article', $featured) }}"
                     class="group relative block overflow-hidden rounded-2xl bg-white dark:bg-white/5 border border-[#e7f3f2] dark:border-white/10 shadow-sm transition-all hover:shadow-md">
                     <div class="grid lg:grid-cols-2 gap-0">
                         <div class="relative h-64 lg:h-auto overflow-hidden">
                             @if ($featured->image_path)
-                                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                                    style='background-image: url("{{ Storage::url($featured->image_path) }}");'>
-                                </div>
+                                <img src="{{ Storage::url($featured->image_path) }}"
+                                    alt="{{ $featured->title }}"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    loading="eager" width="600" height="400" decoding="async">
                             @else
                                 <div
-                                    class="absolute inset-0 bg-gradient-to-br from-primary/20 to-slate-900 transition-transform duration-700 group-hover:scale-105">
+                                    class="absolute inset-0 bg-gradient-to-br from-primary/20 to-slate-900 transition-transform duration-700 group-hover:scale-105" aria-hidden="true">
                                 </div>
                             @endif
 
@@ -38,10 +39,10 @@
                         <div class="flex flex-col justify-center p-8 lg:p-12 gap-6">
                             <div class="flex items-center gap-3 text-sm text-slate-medium dark:text-slate-400">
                                 <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-[18px]">calendar_today</span>
+                                        class="material-symbols-outlined text-[18px]" aria-hidden="true">calendar_today</span>
                                     {{ $featured->published_at->format('M d, Y') }}</span>
                                 @if ($featured->category)
-                                    <span>•</span>
+                                    <span aria-hidden="true">•</span>
                                     <span class="font-bold text-primary">{{ $featured->category->name }}</span>
                                 @endif
                             </div>
@@ -55,7 +56,7 @@
                             <div class="flex items-center gap-4 pt-2">
                                 <div
                                     class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-slate-400">person</span>
+                                    <span class="material-symbols-outlined text-slate-400" aria-hidden="true">person</span>
                                 </div>
                                 <div class="text-sm">
                                     <p class="font-bold text-slate-dark dark:text-white">{{ $featured->author->name }}</p>
@@ -72,19 +73,20 @@
             <!-- Optional Category Filter could go here later -->
         </section>
 
-        <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-16">
+        <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-16" aria-label="Latest articles">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach ($latest as $article)
                     <article
                         class="group flex flex-col bg-white dark:bg-white/5 rounded-xl border border-[#e7f3f2] dark:border-white/10 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 hover:border-primary/50">
                         <a href="{{ route('article', $article) }}" class="relative h-48 overflow-hidden block">
                             @if ($article->image_path)
-                                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                    style='background-image: url("{{ Storage::url($article->image_path) }}");'>
-                                </div>
+                                <img src="{{ Storage::url($article->image_path) }}"
+                                    alt="{{ $article->title }}"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    loading="lazy" width="400" height="192" decoding="async">
                             @else
                                 <div
-                                    class="absolute inset-0 bg-gradient-to-br from-primary/10 to-slate-800 transition-transform duration-500 group-hover:scale-110">
+                                    class="absolute inset-0 bg-gradient-to-br from-primary/10 to-slate-800 transition-transform duration-500 group-hover:scale-110" aria-hidden="true">
                                 </div>
                             @endif
 
@@ -97,7 +99,7 @@
                         </a>
                         <div class="flex flex-col flex-1 p-6">
                             <div class="flex items-center gap-2 text-xs text-slate-medium mb-3">
-                                <span>{{ $article->published_at->format('M d, Y') }}</span>
+                                <time datetime="{{ $article->published_at->toDateString() }}">{{ $article->published_at->format('M d, Y') }}</time>
                             </div>
                             <a href="{{ route('article', $article) }}" class="block">
                                 <h3
@@ -111,7 +113,7 @@
                             <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-white/10">
                                 <div
                                     class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-xs text-slate-400">person</span>
+                                    <span class="material-symbols-outlined text-xs text-slate-400" aria-hidden="true">person</span>
                                 </div>
                                 <span
                                     class="text-xs font-medium text-slate-dark dark:text-white">{{ $article->author->name }}</span>
