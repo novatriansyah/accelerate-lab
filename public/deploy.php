@@ -16,22 +16,41 @@
  */
 
 // ──────────────────────────────────────────────
-// SECURITY: Change this token to something random
+// SECURITY: Token is read from DEPLOY_TOKEN env var.
+// Set it in ~/accelerate-config/.env:
+//   DEPLOY_TOKEN=your_random_token_here
 // Generate one: php -r "echo bin2hex(random_bytes(32));"
 // ──────────────────────────────────────────────
-define('DEPLOY_TOKEN', '8799881c6765d53e6833203c5ba440a87ba6ed43203335e6dcfb0fde88a9aab1');
+$deployToken = '';
+
+// Try environment variable first
+if (!empty(getenv('DEPLOY_TOKEN'))) {
+    $deployToken = getenv('DEPLOY_TOKEN');
+} else {
+    // Fallback: parse from persistent .env (before Laravel bootstraps)
+    $envFile = dirname(dirname(__DIR__)) . '/accelerate-config/.env';
+    if (file_exists($envFile)) {
+        foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
+            if (str_starts_with(trim($line), '#')) continue;
+            if (str_starts_with($line, 'DEPLOY_TOKEN=')) {
+                $deployToken = trim(substr($line, strlen('DEPLOY_TOKEN=')), '"\'');
+                break;
+            }
+        }
+    }
+}
 
 // ──────────────────────────────────────────────
 // Auth check
 // ──────────────────────────────────────────────
 $providedToken = $_GET['token'] ?? $_SERVER['HTTP_X_DEPLOY_TOKEN'] ?? '';
 
-if (DEPLOY_TOKEN === 'CHANGE_ME_TO_A_RANDOM_STRING') {
+if (empty($deployToken)) {
     http_response_code(500);
-    die('[DEPLOY] ERROR: You must set a DEPLOY_TOKEN in deploy.php before using it.');
+    die('[DEPLOY] ERROR: DEPLOY_TOKEN not configured. Set it in ~/accelerate-config/.env');
 }
 
-if (!hash_equals(DEPLOY_TOKEN, $providedToken)) {
+if (!hash_equals($deployToken, $providedToken)) {
     http_response_code(403);
     die('[DEPLOY] Unauthorized.');
 }

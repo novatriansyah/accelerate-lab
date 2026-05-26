@@ -26,11 +26,11 @@
                 </div>
                 <div
                     class="relative w-full aspect-square lg:aspect-auto lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-                    <div class="absolute inset-0 bg-cover bg-center"
-                        data-alt="Abstract 3D geometric shapes in teal and dark grey lighting"
-                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvySTrtvvgD4OohUjm5pfRf9-rE1nr_6Bhpg0Jf6lEyqGl_fAC0rMBFGLw0VWP5VJ9lMKd44LD4bYpigmZmv5SaqWmZk0zxcvbwYVDwuX7UhWA7amTvLTtKKN89ahm1SRt2nXu3v2pC2GLfO2HzrnxEt2AyYwRsilqN6BBuoXvdfeMSLX-BrR2v69EG9O9mJwNYNiuRu1QjOzlsBQeaVuE8hIl4uCTYaBZM56Cdi_JVMcvkU_fyQ-bfVG65pZ97QeYX5mgdCePKn8');">
-                    </div>
-                    <div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+                    <img src="{{ asset('images/pages/services-hero.jpg') }}"
+                        alt="Abstract 3D geometric shapes in teal and dark grey lighting"
+                        class="absolute inset-0 w-full h-full object-cover"
+                        width="600" height="500" loading="eager" decoding="async">
+                    <div class="absolute inset-0 bg-primary/10 mix-blend-overlay" aria-hidden="true"></div>
                 </div>
             </div>
         </div>
