@@ -10,6 +10,24 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
     require $maintenance;
 }
 
+// Self-healing: restore .env and storage symlink if deleted by Hostinger Git deployment
+$projectRoot = dirname(__DIR__);
+$envPath = $projectRoot . '/.env';
+if (!file_exists($envPath)) {
+    $persistentEnv = dirname($projectRoot) . '/accelerate-config/.env';
+    if (file_exists($persistentEnv)) {
+        copy($persistentEnv, $envPath);
+    }
+}
+
+$storageLink = $projectRoot . '/public/storage';
+if (is_link($storageLink) && !file_exists($storageLink)) {
+    @unlink($storageLink);
+}
+if (!file_exists($storageLink)) {
+    @symlink($projectRoot . '/storage/app/public', $storageLink);
+}
+
 // Register the Composer autoloader...
 require __DIR__.'/../vendor/autoload.php';
 
