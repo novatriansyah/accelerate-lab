@@ -20,18 +20,9 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-// Legacy/Static Routes - Kept for reference or redirection if needed
-Route::get('/the-lab', function () {
-    return view('frontend.pages.the-lab', ['title' => 'The Lab - Accelerate Lab']);
-});
-
-
-Route::get('/privacy-policy', function () {
-    return view('frontend.pages.privacy-policy', ['title' => 'Accelerate Lab - Privacy Policy']);
-});
-
-Route::get('/terms-of-service', function () {
-    return view('frontend.pages.terms-of-service', ['title' => 'Accelerate Lab - Terms of Service']);
-});
+Route::get('/the-lab', fn () => redirect('/blog', 301));
+Route::get('/privacy-policy', [PageController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('/terms-of-service', [PageController::class, 'termsOfService'])->name('terms-of-service');
 
 Route::get('/robots.txt', [\App\Http\Controllers\Frontend\RobotsController::class, 'index']);
+

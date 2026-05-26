@@ -73,26 +73,6 @@
                                 class="mt-2 text-sm font-medium text-text-muted dark:text-slate-400">{{ $stat->label }}</span>
                         </div>
                     @endforeach
-                @else
-                    <!-- Fallback Stats -->
-                    <div class="flex flex-col items-center justify-center text-center">
-                        <span class="text-4xl font-black text-primary">50+</span>
-                        <span class="mt-2 text-sm font-medium text-text-muted dark:text-slate-400">Enterprise
-                            Projects</span>
-                    </div>
-                    <div class="flex flex-col items-center justify-center text-center">
-                        <span class="text-4xl font-black text-primary">98%</span>
-                        <span class="mt-2 text-sm font-medium text-text-muted dark:text-slate-400">Client Retention</span>
-                    </div>
-                    <div class="flex flex-col items-center justify-center text-center">
-                        <span class="text-4xl font-black text-primary">6</span>
-                        <span class="mt-2 text-sm font-medium text-text-muted dark:text-slate-400">Years of
-                            Innovation</span>
-                    </div>
-                    <div class="flex flex-col items-center justify-center text-center">
-                        <span class="text-4xl font-black text-primary">24/7</span>
-                        <span class="mt-2 text-sm font-medium text-text-muted dark:text-slate-400">System Uptime</span>
-                    </div>
                 @endif
             </div>
         </div>
@@ -122,42 +102,12 @@
                         </div>
                     @endforeach
                 @else
-                    <!-- Fallback Values -->
-                    <div
-                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-8 shadow-sm ring-1 ring-slate-200 dark:ring-slate-800 transition-all hover:shadow-md hover:-translate-y-1">
-                        <div
-                            class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-3xl">speed</span>
-                        </div>
-                        <h3 class="mb-3 text-xl font-bold text-text-main dark:text-white">Velocity</h3>
-                        <p class="text-text-muted dark:text-slate-400 leading-relaxed">
-                            Rapid deployment without compromising quality. We utilize CI/CD pipelines and agile
-                            methodologies to deliver value faster.
-                        </p>
-                    </div>
-                    <div
-                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-8 shadow-sm ring-1 ring-slate-200 dark:ring-slate-800 transition-all hover:shadow-md hover:-translate-y-1">
-                        <div
-                            class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-3xl">my_location</span>
-                        </div>
-                        <h3 class="mb-3 text-xl font-bold text-text-main dark:text-white">Precision</h3>
-                        <p class="text-text-muted dark:text-slate-400 leading-relaxed">
-                            Pixel-perfect execution in every interface. Our QA process is rigorous, ensuring zero-defect
-                            delivery for critical systems.
-                        </p>
-                    </div>
-                    <div
-                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-8 shadow-sm ring-1 ring-slate-200 dark:ring-slate-800 transition-all hover:shadow-md hover:-translate-y-1">
-                        <div
-                            class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                            <span class="material-symbols-outlined text-3xl">visibility</span>
-                        </div>
-                        <h3 class="mb-3 text-xl font-bold text-text-main dark:text-white">Transparency</h3>
-                        <p class="text-text-muted dark:text-slate-400 leading-relaxed">
-                            Open communication at every stage. We view our clients as partners, sharing insights,
-                            challenges, and victories openly.
-                        </p>
+                    <div class="md:col-span-3">
+                        <x-frontend.components.empty-state
+                            icon="emoji_objects"
+                            title="Values Being Defined"
+                            description="Our core values are being crafted. Check back soon."
+                        />
                     </div>
                 @endif
             </div>
@@ -211,73 +161,12 @@
                                 </div>
                             @endforeach
                         @else
-                            <!-- Fallback Timeline -->
-                            <div class="flex flex-col items-center gap-1 pt-1">
-                                <div
-                                    class="flex size-8 items-center justify-center rounded-full bg-primary/20 text-primary">
-                                    <span class="material-symbols-outlined text-lg">rocket_launch</span>
-                                </div>
-                                <div class="w-[2px] bg-slate-200 dark:bg-slate-700 h-full min-h-[60px]"></div>
-                            </div>
-                            <div class="flex flex-col pb-8">
-                                <div class="flex items-center justify-between mb-1">
-                                    <h3 class="text-lg font-bold text-text-main dark:text-white">Founded</h3>
-                                    <span class="text-sm font-bold text-primary">2018</span>
-                                </div>
-                                <p class="text-text-muted dark:text-slate-400">Started with a team of 3 in a small
-                                    co-working space, focused on React development.</p>
-                            </div>
-
-                            <div class="flex flex-col items-center gap-1">
-                                <div class="w-[2px] bg-slate-200 dark:bg-slate-700 h-2"></div>
-                                <div
-                                    class="flex size-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-text-main dark:text-slate-400">
-                                    <span class="material-symbols-outlined text-lg">handshake</span>
-                                </div>
-                                <div class="w-[2px] bg-slate-200 dark:bg-slate-700 h-full min-h-[60px]"></div>
-                            </div>
-                            <div class="flex flex-col pb-8 pt-2">
-                                <div class="flex items-center justify-between mb-1">
-                                    <h3 class="text-lg font-bold text-text-main dark:text-white">First Enterprise Client
-                                    </h3>
-                                    <span class="text-sm font-bold text-primary">2020</span>
-                                </div>
-                                <p class="text-text-muted dark:text-slate-400">Secured partnership with a Fortune 500
-                                    retailer to rebuild their e-commerce infrastructure.</p>
-                            </div>
-
-                            <div class="flex flex-col items-center gap-1">
-                                <div class="w-[2px] bg-slate-200 dark:bg-slate-700 h-2"></div>
-                                <div
-                                    class="flex size-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-text-main dark:text-slate-400">
-                                    <span class="material-symbols-outlined text-lg">memory</span>
-                                </div>
-                                <div class="w-[2px] bg-slate-200 dark:bg-slate-700 h-full min-h-[60px]"></div>
-                            </div>
-                            <div class="flex flex-col pb-8 pt-2">
-                                <div class="flex items-center justify-between mb-1">
-                                    <h3 class="text-lg font-bold text-text-main dark:text-white">Expansion to AI Services
-                                    </h3>
-                                    <span class="text-sm font-bold text-primary">2022</span>
-                                </div>
-                                <p class="text-text-muted dark:text-slate-400">Launched a dedicated machine learning
-                                    division to support predictive analytics projects.</p>
-                            </div>
-
-                            <div class="flex flex-col items-center gap-1">
-                                <div class="w-[2px] bg-slate-200 dark:bg-slate-700 h-2"></div>
-                                <div
-                                    class="flex size-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-text-main dark:text-slate-400">
-                                    <span class="material-symbols-outlined text-lg">public</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-col pt-2">
-                                <div class="flex items-center justify-between mb-1">
-                                    <h3 class="text-lg font-bold text-text-main dark:text-white">Global Remote Team</h3>
-                                    <span class="text-sm font-bold text-primary">2024</span>
-                                </div>
-                                <p class="text-text-muted dark:text-slate-400">Transitioned to a fully distributed model
-                                    with talent across 12 countries.</p>
+                            <div class="col-span-2">
+                                <x-frontend.components.empty-state
+                                    icon="timeline"
+                                    title="Our Story is Being Written"
+                                    description="Company milestones will appear here as we grow."
+                                />
                             </div>
                         @endif
                     </div>
@@ -285,6 +174,7 @@
             </div>
         </div>
     </section>
+    @if (isset($teamMembers) && count($teamMembers) > 0)
     <section class="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -292,95 +182,40 @@
                     <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">Meet the
                         Innovators</h2>
                     <p class="mt-4 text-lg text-text-muted dark:text-slate-400">
-                        The brilliant minds behind the code. A diverse mix of strategists, developers, and creatives.
+                        The brilliant minds behind the code.
                     </p>
                 </div>
-                <a class="text-primary font-bold hover:text-primary-dark transition-colors inline-flex items-center gap-1"
-                    href="/about">
-                    View All Members <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                @if (isset($teamMembers) && count($teamMembers) > 0)
-                    @foreach ($teamMembers as $member)
-                        <div class="group relative">
-                            <div class="aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
-                                @if ($member->image_path)
-                                    <div class="h-full w-full bg-cover bg-center transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
-                                        data-alt="Portrait of {{ $member->name }}"
-                                        style="background-image: url('{{ Storage::url($member->image_path) }}');"></div>
-                                @else
-                                    <div class="h-full w-full bg-slate-100 flex items-center justify-center">
-                                        <span class="material-symbols-outlined text-6xl text-slate-300">person</span>
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="mt-4">
-                                <h3 class="text-lg font-bold text-text-main dark:text-white">{{ $member->name }}</h3>
-                                <p class="text-sm font-medium text-primary">{{ $member->role }}</p>
-                                @if ($member->linkedin_url)
-                                    <a href="{{ $member->linkedin_url }}" target="_blank"
-                                        class="mt-2 inline-flex items-center text-xs text-slate-500 hover:text-primary transition-colors">
-                                        LinkedIn <span class="material-symbols-outlined text-xs ml-0.5">open_in_new</span>
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    @endforeach
-                @else
-                    <!-- Fallback Team -->
+                @foreach ($teamMembers as $member)
                     <div class="group relative">
                         <div class="aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
-                            <div class="h-full w-full bg-cover bg-center transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
-                                data-alt="Portrait of James Chen, CEO"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACJqf2gPD0zcQiuOazCkJFZU-zEww7Vyy7AQlRU8_KWeytayuWf8mYG0vjIGxESrLzxGidnyKxkRDrzeTuRTy9caRDkc4iKavpUk_NvXQ-3507n7EFymA5eyUQZklMel8LN6atUc1tvY-iYJFHY_aDQLomAhdGo29JMFUBUfGjM61Ha89LVMJAhyofe-3hAhsMW3RfBaPRKSjdYW2Li86jb3VNAVzOs6_O0xk7H_aLvD8PYkeYPumuXp5lWQSJvwn9w-iWNefujEc');">
-                            </div>
+                            @if ($member->image_path)
+                                <div class="h-full w-full bg-cover bg-center transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
+                                    data-alt="Portrait of {{ $member->name }}"
+                                    style="background-image: url('{{ Storage::url($member->image_path) }}');"></div>
+                            @else
+                                <div class="h-full w-full bg-slate-100 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-6xl text-slate-300">person</span>
+                                </div>
+                            @endif
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-lg font-bold text-text-main dark:text-white">James Chen</h3>
-                            <p class="text-sm font-medium text-primary">CEO &amp; Founder</p>
+                            <h3 class="text-lg font-bold text-text-main dark:text-white">{{ $member->name }}</h3>
+                            <p class="text-sm font-medium text-primary">{{ $member->role }}</p>
+                            @if ($member->linkedin_url)
+                                <a href="{{ $member->linkedin_url }}" target="_blank"
+                                    class="mt-2 inline-flex items-center text-xs text-slate-500 hover:text-primary transition-colors">
+                                    LinkedIn <span class="material-symbols-outlined text-xs ml-0.5">open_in_new</span>
+                                </a>
+                            @endif
                         </div>
                     </div>
-                    <div class="group relative">
-                        <div class="aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
-                            <div class="h-full w-full bg-cover bg-center transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
-                                data-alt="Portrait of Sarah Miller, CTO"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCGNIzkQnLbVFNrxefS_VK-oke1TF25UufKIi32uYvhcyZZhuJ15qeDA9MsNoZoz6QvUdQ2jtj0X7gD_PbI9Y4S62aSkg9w_oCInGWgMd9G_Ny_aTFDG7CvIYGbliQIBknwk9RnOTHcbLz8mKLLEDSNDTIf0e_rrz_Orr1IaOLQcLjpRQkLta6EM0zeKR4EGcwvFp1ez_ZluG5alHkyRNV7oS54YW5sDc24VJV5JeYkCzIEOIpeTuTUBFqnMn3vJFfrJxducqcpYE');">
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="text-lg font-bold text-text-main dark:text-white">Sarah Miller</h3>
-                            <p class="text-sm font-medium text-primary">Chief Technology Officer</p>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <div class="aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
-                            <div class="h-full w-full bg-cover bg-center transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
-                                data-alt="Portrait of David Okonjo, Lead Designer"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtrEQDVEmfENKUFGzAb3SaW6BXu6Px-okaBf48wDjbWXQ2YnXaHnDPu0ChZ64_jIhhQxKNktZNZ9fssgZJl38t7lAmCs51Y-iM5yt_xvgoSP9e_umcLSdsLzC4V0_lE15r1b3J1zFcGroadcz3Ji91la6q2Iiv2sIe0uE2vpd67GbiNxR-Pdgkg1nPgLlGwrbIXQNehojNwheOeXSadXu0JYpKo2eGi1s6P6o69goHbvPlsedhJDozC9r6LIMc1mEH040r85Cs5as');">
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="text-lg font-bold text-text-main dark:text-white">David Okonjo</h3>
-                            <p class="text-sm font-medium text-primary">Head of Product Design</p>
-                        </div>
-                    </div>
-                    <div class="group relative">
-                        <div class="aspect-[4/5] w-full overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
-                            <div class="h-full w-full bg-cover bg-center transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
-                                data-alt="Portrait of Emily Zhang, VP of Engineering"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApSlJ1jqHPOGXLfjAAJfs9_sR-dPpIQxscoq-qmGArSULZHSEBXg6XEcE9vP3l_IiH__OZgs5OpIMLVAL2bwpNSI6bVAB4DQV4B39w6C3-uRVd9PAeF4Bx-CDDQtJ4CsIcCfs4LEqVcUeXKtlycNLhWYpn1KKdvxCtmDoVMD7LVLTCo7mWv43Ul_T1lfVTQ8NeI3RDE2AVCnHaJhxe4h4JssGuaOwoxgL3YnkAO12TF26XjRkjgGgu60BYekBK1QSMSaA4Z1RbNMU');">
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="text-lg font-bold text-text-main dark:text-white">Emily Zhang</h3>
-                            <p class="text-sm font-medium text-primary">VP of Engineering</p>
-                        </div>
-                    </div>
-                @endif
+                @endforeach
             </div>
         </div>
     </section>
+    @endif
     <section class="py-16 border-t border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-sm font-semibold uppercase tracking-wider text-text-muted dark:text-slate-500 mb-8">Powered by

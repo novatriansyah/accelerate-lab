@@ -45,9 +45,9 @@
                             View Case Studies
                         </a>
                     </div>
+                    @if (isset($heroStats) && count($heroStats) > 0)
                     <div
                         class="mt-12 flex items-center justify-center lg:justify-start gap-8 border-t border-slate-200 dark:border-slate-800 pt-8 opacity-80">
-                        @if (isset($heroStats) && count($heroStats) > 0)
                             @foreach ($heroStats as $stat)
                                 <div>
                                     <p class="text-3xl font-bold text-slate-900 dark:text-white">{{ $stat->value }}<span
@@ -59,28 +59,8 @@
                                     <div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
                                 @endif
                             @endforeach
-                        @else
-                            <!-- Fallback Hero Stats -->
-                            <div>
-                                <p class="text-3xl font-bold text-slate-900 dark:text-white">99.9<span
-                                        class="text-primary text-xl">%</span></p>
-                                <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Uptime Guarantee
-                                </p>
-                            </div>
-                            <div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
-                            <div>
-                                <p class="text-3xl font-bold text-slate-900 dark:text-white">50<span
-                                        class="text-primary text-xl">+</span></p>
-                                <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Enterprise Apps</p>
-                            </div>
-                            <div class="h-8 w-px bg-slate-200 dark:bg-slate-700"></div>
-                            <div>
-                                <p class="text-3xl font-bold text-slate-900 dark:text-white">4<span
-                                        class="text-primary text-xl">yr</span></p>
-                                <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Avg Engagement</p>
-                            </div>
-                        @endif
                     </div>
+                    @endif
                 </div>
                 <div class="relative hidden lg:block h-[600px] w-full [perspective:1000px]">
                     <div class="absolute inset-0 flex items-center justify-center">
@@ -242,9 +222,9 @@
                 </div>
                 <div
                     class="group md:col-span-3 relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all p-8 flex items-center">
-                    <div
-                        class="grid grid-cols-1 sm:grid-cols-3 w-full gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-slate-700">
                         @if (isset($capabilityStats) && count($capabilityStats) > 0)
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-3 w-full gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-slate-700">
                             @foreach ($capabilityStats as $stat)
                                 <div class="text-center pt-4 sm:pt-0">
                                     <p class="text-4xl font-extrabold text-slate-900 dark:text-white mb-1">
@@ -255,29 +235,66 @@
                                         {{ $stat->label }}</p>
                                 </div>
                             @endforeach
-                        @else
-                            <!-- Fallback Capability Stats -->
-                            <div class="text-center pt-4 sm:pt-0">
-                                <p class="text-4xl font-extrabold text-primary mb-1">98%</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">
-                                    Client Retention</p>
-                            </div>
-                            <div class="text-center pt-4 sm:pt-0">
-                                <p class="text-4xl font-extrabold text-slate-900 dark:text-white mb-1">50+</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">
-                                    Enterprise Apps</p>
-                            </div>
-                            <div class="text-center pt-4 sm:pt-0">
-                                <p class="text-4xl font-extrabold text-slate-900 dark:text-white mb-1">4yr</p>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">
-                                    Avg Engagement</p>
-                            </div>
+                        </div>
                         @endif
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    {{-- How We Work --}}
+    <section class="py-16 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-bold text-slate-900 dark:text-white">How We Work</h2>
+                <p class="mt-2 text-slate-500 dark:text-slate-400">A proven process, from concept to deployment.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="relative flex flex-col items-center text-center p-6">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">search</span>
+                    </div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 1</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Discover</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">We analyze your requirements, audience, and business goals.</p>
+                    <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+                <div class="relative flex flex-col items-center text-center p-6">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">palette</span>
+                    </div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 2</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Design</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">We craft wireframes, prototypes, and a polished UI/UX system.</p>
+                    <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+                <div class="relative flex flex-col items-center text-center p-6">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">code</span>
+                    </div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 3</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Develop</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">We build with modern stacks, agile sprints, and CI/CD pipelines.</p>
+                    <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center text-center p-6">
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary text-2xl">rocket_launch</span>
+                    </div>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 4</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Deploy</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">We launch, monitor, and iterate based on real-world data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="py-24 bg-white dark:bg-slate-900 relative overflow-hidden">
         <div
             class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-[80px]">
@@ -304,11 +321,11 @@
                                     class="w-full h-full object-cover" loading="lazy">
                             @else
                                 <div
-                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-{{ $project->color ?? 'primary' }}/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500">
+                                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500">
                                 </div>
                                 <div class="absolute inset-0 flex items-center justify-center">
                                     <span
-                                        class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-{{ $project->color ?? 'primary' }} transition-colors">{{ $project->icon ?? 'layers' }}</span>
+                                        class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors">{{ $project->icon ?? 'layers' }}</span>
                                 </div>
                             @endif
                         </div>
@@ -316,7 +333,7 @@
                             <div class="mb-4 flex flex-wrap gap-2 items-center">
                                 @if ($project->industry)
                                     <span
-                                        class="text-xs font-mono text-{{ $project->color ?? 'primary' }} bg-{{ $project->color ?? 'primary' }}/10 px-2 py-1 rounded">{{ $project->industry }}</span>
+                                        class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">{{ $project->industry }}</span>
                                 @endif
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">{{ $project->title }}</h3>
@@ -335,7 +352,7 @@
                                 </div>
                             </div>
                             <a href="/case-studies"
-                                class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-{{ $project->color ?? 'primary' }}/30">
+                                class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-primary/30">
                                 View Case Study
                                 <span class="material-icons-round text-sm">arrow_forward</span>
                             </a>
@@ -402,6 +419,70 @@
                         </pre>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Testimonials --}}
+    @if (isset($testimonials) && count($testimonials) > 0)
+    <section class="py-20 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white">What Our Clients Say</h2>
+                <p class="mt-3 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">Real feedback from teams we've partnered with.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @foreach ($testimonials as $testimonial)
+                <div class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                    <div class="flex items-center gap-1 mb-4">
+                        @for ($i = 0; $i < 5; $i++)
+                        <span class="material-symbols-outlined text-amber-400 text-lg">star</span>
+                        @endfor
+                    </div>
+                    <blockquote class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                        "{{ $testimonial->quote }}"
+                    </blockquote>
+                    <div class="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-700">
+                        @if ($testimonial->avatar_path)
+                        <img src="{{ Storage::url($testimonial->avatar_path) }}" alt="{{ $testimonial->client_name }}"
+                            class="w-10 h-10 rounded-full object-cover">
+                        @else
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-lg">person</span>
+                        </div>
+                        @endif
+                        <div>
+                            <p class="text-sm font-bold text-slate-900 dark:text-white">{{ $testimonial->client_name }}</p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">
+                                {{ $testimonial->client_role }}{{ $testimonial->client_company ? ', ' . $testimonial->client_company : '' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
+
+    {{-- Closing CTA --}}
+    <section class="relative isolate overflow-hidden bg-slate-900 py-16 sm:py-24">
+        <div class="absolute inset-0 -z-10 h-full w-full" style="background-image: radial-gradient(#14b8a7 1px, transparent 1px); background-size: 32px 32px; opacity: 0.08;"></div>
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/15 to-transparent skew-x-12 pointer-events-none"></div>
+        <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to Accelerate?</h2>
+            <p class="mx-auto mt-4 max-w-xl text-lg leading-8 text-slate-300">
+                Let's turn your vision into a high-performance digital product. Start a conversation today.
+            </p>
+            <div class="mt-10 flex items-center justify-center gap-x-6">
+                <a class="rounded-lg bg-primary px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/25 hover:bg-teal-500 transition-all"
+                    href="/contact">
+                    Start a Project
+                </a>
+                <a class="text-sm font-semibold leading-6 text-white hover:text-primary transition-colors"
+                    href="/case-studies">
+                    View Our Work <span aria-hidden="true">→</span>
+                </a>
             </div>
         </div>
     </section>

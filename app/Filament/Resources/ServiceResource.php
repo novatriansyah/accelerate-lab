@@ -33,6 +33,12 @@ class ServiceResource extends Resource
                             ->required()
                             ->unique(Service::class, 'slug', ignoreRecord: true),
 
+                        Forms\Components\TextInput::make('meta_title')
+                            ->label('SEO Page Title')
+                            ->placeholder('e.g. Custom Web Development - Accelerate Lab')
+                            ->helperText('Override the browser tab title. Falls back to service title if empty.')
+                            ->columnSpanFull(),
+
                         Forms\Components\TextInput::make('icon')
                             ->label('Material Icon Name')
                             ->placeholder('e.g. database'),
