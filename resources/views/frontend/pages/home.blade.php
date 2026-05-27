@@ -3,13 +3,13 @@
 @push('schema')
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@@context": "https://schema.org",
+    "@@type": "WebSite",
     "name": "Accelerate Lab",
     "url": "{{ url('/') }}",
     "description": "The digital innovation partner for forward-thinking enterprises. We engineer high-performance web applications that drive growth.",
     "potentialAction": {
-        "@type": "SearchAction",
+        "@@type": "SearchAction",
         "target": "{{ url('/blog') }}?q={search_term_string}",
         "query-input": "required name=search_term_string"
     }
