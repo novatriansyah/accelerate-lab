@@ -62,18 +62,18 @@
     <!-- JSON-LD Structured Data (SEO) -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Organization",
+        "@@context": "https://schema.org",
+        "@@type": "Organization",
         "name": "Accelerate Lab",
         "url": "{{ url('/') }}",
         "logo": "{{ isset($settings['site_logo']) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp') }}",
         "description": "Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.",
         "founder": {
-            "@type": "Person",
+            "@@type": "Person",
             "name": "Nova Triansyah Azis"
         },
         "contactPoint": {
-            "@type": "ContactPoint",
+            "@@type": "ContactPoint",
             "contactType": "sales",
             "url": "{{ url('/contact') }}"
         },
