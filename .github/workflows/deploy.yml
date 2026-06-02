@@ -5,6 +5,9 @@ on:
     branches:
       - Development
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -38,14 +41,9 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Add Hostinger to Known Hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -p ${{ secrets.SSH_PORT || '65002' }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-
       - name: Deploy with rsync
         run: |
-          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT || '65002' }}" \
+          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT || '65002' }} -o StrictHostKeyChecking=no" \
             --exclude='.git/' \
             --exclude='.github/' \
             --exclude='.env' \
@@ -60,7 +58,7 @@ jobs:
 
       - name: Post-deployment commands
         run: |
-          ssh -p ${{ secrets.SSH_PORT || '65002' }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          ssh -p ${{ secrets.SSH_PORT || '65002' }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ${{ secrets.DEPLOY_PATH }}
 
             # Ensure correct storage symlink is present
