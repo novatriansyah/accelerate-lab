@@ -12,6 +12,10 @@ class ContactController extends Controller
 {
     public function store(StoreContactRequest $request)
     {
+        if (!empty($request->input('my_favorite_color'))) {
+            return redirect()->back()->with('success', 'Thank you! We have received your message and will be in touch shortly.');
+        }
+
         $validated = $request->validated();
 
         $lead = Lead::create([

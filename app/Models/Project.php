@@ -32,6 +32,11 @@ class Project extends Model
         'is_featured' => 'boolean',
     ];
 
+    public function technologies()
+    {
+        return $this->belongsToMany(Technology::class, 'project_technology');
+    }
+
     /**
      * Technology tags stored as JSON (no pivot table needed).
      * Access via $project->technology_tags
