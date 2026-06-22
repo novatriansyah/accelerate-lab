@@ -148,7 +148,7 @@
                                 <input type="text" name="my_favorite_color" tabindex="-1" autocomplete="off" />
                             </div>
 
-                            <!-- Cloudflare Turnstile -->
+                            <!-- Cloudflare Turnstile (Key: {{ config('services.turnstile.site_key') ?? 'NOT_SET' }}) -->
                             @if(config('services.turnstile.site_key'))
                                 <div class="cf-turnstile mb-2" data-sitekey="{{ config('services.turnstile.site_key') }}" data-theme="auto"></div>
                                 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
