@@ -25,6 +25,26 @@ class StoreContactRequest extends FormRequest
             'company' => 'nullable|string|max:255',
             'phone' => 'nullable|string|max:20',
             'message' => 'nullable|string|max:5000',
+            'my_favorite_color' => 'nullable|string',
+            'cf-turnstile-response' => [
+                config('services.turnstile.secret_key') ? 'required' : 'nullable',
+                function ($attribute, $value, $fail) {
+                    $secret = config('services.turnstile.secret_key');
+                    if (empty($secret)) {
+                        return;
+                    }
+
+                    $response = \Illuminate\Support\Facades\Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+                        'secret' => $secret,
+                        'response' => $value,
+                        'remoteip' => request()->ip(),
+                    ]);
+
+                    if (!$response->successful() || !$response->json('success')) {
+                        $fail('The CAPTCHA verification failed. Please try again.');
+                    }
+                }
+            ],
         ];
     }
 

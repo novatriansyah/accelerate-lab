@@ -142,6 +142,18 @@
                                     class="w-full rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white min-h-[160px] p-4 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all placeholder:text-gray-400 resize-y"
                                     placeholder="Tell us about your project goals, timeline, and budget...">{{ old('message') }}</textarea>
                             </label>
+
+                            <!-- Honeypot -->
+                            <div class="hidden" aria-hidden="true" style="display: none;">
+                                <input type="text" name="my_favorite_color" tabindex="-1" autocomplete="off" />
+                            </div>
+
+                            <!-- Cloudflare Turnstile -->
+                            @if(config('services.turnstile.site_key'))
+                                <div class="cf-turnstile mb-2" data-sitekey="{{ config('services.turnstile.site_key') }}" data-theme="auto"></div>
+                                <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                            @endif
+
                             <div class="pt-2">
                                 <button
                                     class="group relative w-full flex justify-center py-4 px-6 border border-transparent text-base font-bold rounded-lg text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all shadow-lg shadow-primary/30 hover:shadow-primary/50 overflow-hidden"

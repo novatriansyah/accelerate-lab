@@ -8,4 +8,11 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateProject extends CreateRecord
 {
     protected static string $resource = ProjectResource::class;
+
+    protected function afterCreate(): void
+    {
+        $this->record->update([
+            'technology_tags' => $this->record->technologies()->pluck('name')->toArray()
+        ]);
+    }
 }
