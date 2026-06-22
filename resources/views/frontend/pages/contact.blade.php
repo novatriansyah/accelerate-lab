@@ -28,7 +28,8 @@
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Visit HQ</h3>
                                 <p class="text-text-secondary dark:text-gray-400 text-sm mt-1">
-                                    {{ $settings['contact_address'] ?? '123 Innovation Blvd, Tech City, TC 90210' }}</p>
+                                    {{ $settings['contact_address'] ?? '123 Innovation Blvd, Tech City, TC 90210' }}
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 group">
@@ -39,7 +40,8 @@
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Email Us</h3>
                                 <a class="text-text-secondary dark:text-gray-400 text-sm mt-1 hover:text-primary transition-colors"
-                                    href="mailto:{{ $settings['contact_email'] ?? 'hello@acceleratelab.io' }}">{{ $settings['contact_email'] ?? 'hello@acceleratelab.io' }}</a>
+                                    href="mailto:{{ $settings['contact_email'] ?? 'hello@acceleratelab.io' }}">{{
+                                    $settings['contact_email'] ?? 'hello@acceleratelab.io' }}</a>
                             </div>
                         </div>
                         <div class="flex items-start gap-4 group">
@@ -50,7 +52,8 @@
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Call Us</h3>
                                 <p class="text-text-secondary dark:text-gray-400 text-sm mt-1">
-                                    {{ $settings['contact_phone'] ?? '+1 (555) 019-2834' }}</p>
+                                    {{ $settings['contact_phone'] ?? '+1 (555) 019-2834' }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -148,9 +151,10 @@
                                 <input type="text" name="my_favorite_color" tabindex="-1" autocomplete="off" />
                             </div>
 
-                            <!-- Cloudflare Turnstile (Key: {{ config('services.turnstile.site_key') ?? 'NOT_SET' }}) -->
+                            <!-- Cloudflare Turnstile -->
                             @if(config('services.turnstile.site_key'))
-                                <div class="cf-turnstile mb-2" data-sitekey="{{ config('services.turnstile.site_key') }}" data-theme="auto"></div>
+                                <div class="cf-turnstile mb-2" data-sitekey="{{ config('services.turnstile.site_key') }}"
+                                    data-theme="auto"></div>
                                 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
                             @endif
 
@@ -164,7 +168,8 @@
                                     <span class="flex items-center gap-2 relative z-10">
                                         Send Message
                                         <span
-                                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform" aria-hidden="true">send</span>
+                                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                                            aria-hidden="true">send</span>
                                     </span>
                                 </button>
                             </div>
@@ -179,4 +184,3 @@
         </div>
     </main>
 @endsection
-
