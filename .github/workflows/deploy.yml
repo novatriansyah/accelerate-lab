@@ -120,15 +120,15 @@ jobs:
             cd '${RELEASE_PATH}'
 
             # Link persistent environment file
-            ln -sf ../../shared/.env .env
+            ln -sf '${SHARED_DIR}/.env' .env
 
             # Link persistent storage directory
             rm -rf storage
-            ln -sf ../../shared/storage storage
+            ln -sf '${SHARED_DIR}/storage' storage
 
-            # Create storage symlink in public directory (bypassing PHP exec restriction)
+            # Create storage symlink in public directory using absolute shared target path
             rm -rf public/storage
-            ln -sf ../../shared/storage/app/public public/storage
+            ln -sf '${SHARED_DIR}/storage/app/public' public/storage
 
             # Run database migrations
             php artisan migrate --force
