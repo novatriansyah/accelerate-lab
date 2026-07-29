@@ -255,8 +255,8 @@
                 <p class="mt-4 text-text-main max-w-2xl mx-auto dark:text-slate-300">See how our infrastructure supports
                     global operations.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-96">
-                <div class="md:col-span-2 relative rounded-2xl overflow-hidden h-full group">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:h-96 min-h-[24rem] h-auto">
+                <div class="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[240px] md:h-full group">
                     <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
                     <img src="{{ asset('images/pages/cloud-datacenter.jpg') }}"
                         alt="Server rack aisle in a modern data center with blue LED lights"
@@ -264,12 +264,12 @@
                         width="600" height="384" loading="lazy" decoding="async">
                     <div class="absolute bottom-4 left-4 z-20">
                         <span
-                            class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Data
+                            class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 dark:text-white backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Data
                             Centers</span>
                     </div>
                 </div>
-                <div class="grid grid-rows-2 gap-4 h-full">
-                    <div class="relative rounded-2xl overflow-hidden h-full group">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 md:grid-rows-2 gap-4 h-full">
+                    <div class="relative rounded-2xl overflow-hidden min-h-[180px] md:h-full group">
                         <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
                         <img src="{{ asset('images/pages/cloud-cybersecurity.jpg') }}"
                             alt="Abstract digital network visualization representing cyber security"
@@ -277,11 +277,11 @@
                             width="300" height="192" loading="lazy" decoding="async">
                         <div class="absolute bottom-4 left-4 z-20">
                             <span
-                                class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Security
+                                class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 dark:text-white backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Security
                                 Layer</span>
                         </div>
                     </div>
-                    <div class="relative rounded-2xl overflow-hidden h-full group">
+                    <div class="relative rounded-2xl overflow-hidden min-h-[180px] md:h-full group">
                         <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
                         <img src="{{ asset('images/pages/cloud-matrix.jpg') }}"
                             alt="Digital matrix code overlay on a dark background"
@@ -289,7 +289,7 @@
                             width="300" height="192" loading="lazy" decoding="async">
                         <div class="absolute bottom-4 left-4 z-20">
                             <span
-                                class="px-3 py-1 bg-white/90 backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Code
+                                class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 dark:text-white backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Code
                                 Efficiency</span>
                         </div>
                     </div>

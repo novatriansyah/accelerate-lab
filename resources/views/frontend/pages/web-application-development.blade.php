@@ -175,51 +175,51 @@
                                 </div>
                             </details>
                             <details
-                                class="group rounded-lg border border-border-medium bg-background-light open:bg-white open:shadow-sm">
+                                class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-primary">storage</span>
-                                        <p class="text-text-main text-sm font-bold">Backend Architecture</p>
+                                        <p class="text-text-main dark:text-white text-sm font-bold">Backend Architecture</p>
                                     </div>
                                     <span
-                                        class="material-symbols-outlined text-text-main transition-transform group-open:rotate-180">expand_more</span>
+                                        class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
-                                    <p class="text-text-secondary text-sm leading-relaxed">
+                                    <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
                                         Robust server-side logic using Node.js, Python, or Go. We design efficient databases
                                         and microservices that power your business logic.
                                     </p>
                                 </div>
                             </details>
                             <details
-                                class="group rounded-lg border border-border-medium bg-background-light open:bg-white open:shadow-sm">
+                                class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-primary">api</span>
-                                        <p class="text-text-main text-sm font-bold">API Integration &amp; Development</p>
+                                        <p class="text-text-main dark:text-white text-sm font-bold">API Integration &amp; Development</p>
                                     </div>
                                     <span
-                                        class="material-symbols-outlined text-text-main transition-transform group-open:rotate-180">expand_more</span>
+                                        class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
-                                    <p class="text-text-secondary text-sm leading-relaxed">
+                                    <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
                                         Seamless connections between your systems. We build RESTful and GraphQL APIs that
                                         are well-documented and secure.
                                     </p>
                                 </div>
                             </details>
                             <details
-                                class="group rounded-lg border border-border-medium bg-background-light open:bg-white open:shadow-sm">
+                                class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
                                         <span class="material-symbols-outlined text-primary">cloud_queue</span>
-                                        <p class="text-text-main text-sm font-bold">Cloud Solutions (AWS/Azure)</p>
+                                        <p class="text-text-main dark:text-white text-sm font-bold">Cloud Solutions (AWS/Azure)</p>
                                     </div>
                                     <span
-                                        class="material-symbols-outlined text-text-main transition-transform group-open:rotate-180">expand_more</span>
+                                        class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
-                                    <p class="text-text-secondary text-sm leading-relaxed">
+                                    <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
                                         Cloud-native deployment, serverless computing, and containerization using Docker and
                                         Kubernetes for maximum uptime.
                                     </p>
@@ -229,36 +229,36 @@
                     </div>
                     <div class="flex flex-col gap-8">
                         <div>
-                            <h2 class="text-3xl font-bold text-text-main mb-4">How We Build</h2>
-                            <p class="text-text-secondary">A transparent, agile process from concept to deployment.</p>
+                            <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">How We Build</h2>
+                            <p class="text-text-secondary dark:text-gray-300">A transparent, agile process from concept to deployment.</p>
                         </div>
-                        <div class="relative pl-4 border-l border-border-medium space-y-8">
+                        <div class="relative pl-4 border-l border-border-medium dark:border-slate-700 space-y-8">
                             <div class="relative pl-8">
                                 <span
-                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-white"></span>
-                                <h3 class="text-lg font-bold text-text-main">Discovery &amp; Strategy</h3>
-                                <p class="mt-1 text-sm text-text-secondary">We dive deep into your business goals, user
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-white dark:ring-slate-900"></span>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Discovery &amp; Strategy</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">We dive deep into your business goals, user
                                     needs, and technical requirements to create a roadmap.</p>
                             </div>
                             <div class="relative pl-8">
                                 <span
-                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium ring-4 ring-white"></span>
-                                <h3 class="text-lg font-bold text-text-main">Design &amp; Prototyping</h3>
-                                <p class="mt-1 text-sm text-text-secondary">Creating high-fidelity wireframes and
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Design &amp; Prototyping</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">Creating high-fidelity wireframes and
                                     interactive prototypes to visualize the end product.</p>
                             </div>
                             <div class="relative pl-8">
                                 <span
-                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium ring-4 ring-white"></span>
-                                <h3 class="text-lg font-bold text-text-main">Agile Development</h3>
-                                <p class="mt-1 text-sm text-text-secondary">Iterative coding sprints with regular updates,
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Agile Development</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">Iterative coding sprints with regular updates,
                                     ensuring we build exactly what you need.</p>
                             </div>
                             <div class="relative pl-8">
                                 <span
-                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium ring-4 ring-white"></span>
-                                <h3 class="text-lg font-bold text-text-main">Launch &amp; Scale</h3>
-                                <p class="mt-1 text-sm text-text-secondary">Rigorous testing, deployment to production, and
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">Launch &amp; Scale</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">Rigorous testing, deployment to production, and
                                     ongoing support for future growth.</p>
                             </div>
                         </div>
@@ -269,8 +269,8 @@
         <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 md:px-10">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                 <div class="max-w-xl">
-                    <h2 class="text-3xl md:text-4xl font-black text-text-main mb-4">Selected Work</h2>
-                    <p class="text-text-secondary text-lg">See how we help industry leaders transform their digital
+                    <h2 class="text-3xl md:text-4xl font-black text-text-main dark:text-white mb-4">Selected Work</h2>
+                    <p class="text-text-secondary dark:text-gray-300 text-lg">See how we help industry leaders transform their digital
                         presence.</p>
                 </div>
                 <a class="text-primary font-bold hover:text-primary-dark inline-flex items-center gap-1 group"
@@ -281,7 +281,7 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="group cursor-pointer flex flex-col gap-4">
-                    <div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light relative">
+                    <div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light dark:bg-slate-800 relative">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                             data-alt="Modern fintech dashboard interface screenshot showing graphs and financial data"
                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB95VzzHJTpQ74P4aEkEtZF7y08iKWC9m3_ekcKd3VjBWXUdOiahEWYn9KmnovwvzdrV0XIER5YTRMgj3FRNzK_6ZFwNtNxuBwKDM4SNDPq5BPlT_rkDM3Oy330eNz8VJEztnbAZPhxo0llLLhCvgHAkwh9yUAbv7GRpyhAwILfE3XVTjzTEa7j1nR4udy01JSuAVPJ-UcF2oOrtO7zO3Cf9ELMhoroJDn_On86eHMPpSnbNGqw1JgdPAjRVzcF-FzySdtJgvjVpEM");'>
@@ -290,18 +290,18 @@
                     <div class="flex flex-col gap-2">
                         <div class="flex gap-2">
                             <span
-                                class="px-2 py-1 bg-background-surface border border-border-medium rounded text-xs font-semibold text-text-secondary">FinTech</span>
+                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">FinTech</span>
                             <span
-                                class="px-2 py-1 bg-background-surface border border-border-medium rounded text-xs font-semibold text-text-secondary">React</span>
+                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">React</span>
                         </div>
-                        <h3 class="text-xl font-bold text-text-main group-hover:text-primary transition-colors">Nova
+                        <h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Nova
                             Financial Platform</h3>
-                        <p class="text-sm text-text-secondary line-clamp-2">Reimagining the investment experience with a
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">Reimagining the investment experience with a
                             high-speed, real-time trading dashboard handling millions of transactions.</p>
                     </div>
                 </div>
                 <div class="group cursor-pointer flex flex-col gap-4">
-                    <div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light relative">
+                    <div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light dark:bg-slate-800 relative">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                             data-alt="SaaS analytics platform interface screenshot showcasing data visualization widgets"
                             style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0_DrP2wx_9cY2Df8grTID9Hj2MkoGuCG2l1hlglVMZwhCLNnUDkX5VSjD1IA8LAZSRmrkuHv1uX1qk24Nn1NFIZzfYwKnT3ifVemh2EuU9g2wzH9OXvWqEP-Ub5Hc0AgqZKyx9Cx3HFer71pMrAxouYSWYMVuOvm-n0SAtMw0Bmnjh8LchfnjQuemyzBOoCpe-hJFNxLTAs4u9uFJ9NvC-p4xhyxlA9oMgnwwrAG3ltN_FuZpYKJiY4GlTvuXgypBjC8NyXkXilQ");'>
@@ -310,13 +310,13 @@
                     <div class="flex flex-col gap-2">
                         <div class="flex gap-2">
                             <span
-                                class="px-2 py-1 bg-background-surface border border-border-medium rounded text-xs font-semibold text-text-secondary">SaaS</span>
+                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">SaaS</span>
                             <span
-                                class="px-2 py-1 bg-background-surface border border-border-medium rounded text-xs font-semibold text-text-secondary">Python</span>
+                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">Python</span>
                         </div>
-                        <h3 class="text-xl font-bold text-text-main group-hover:text-primary transition-colors">Orbital
+                        <h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Orbital
                             Analytics</h3>
-                        <p class="text-sm text-text-secondary line-clamp-2">A scalable data analytics tool for enterprise
+                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">A scalable data analytics tool for enterprise
                             marketing teams, featuring automated reporting and AI insights.</p>
                     </div>
                 </div>

@@ -15,11 +15,11 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="/contact"
-                            class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-slate-dark font-bold text-base hover:bg-teal-400 transition-colors shadow-lg shadow-primary/20">
+                            class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white font-bold text-base hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
                             Start a Project
                         </a>
                         <a href="/case-studies"
-                            class="flex items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 text-slate-dark dark:text-white font-bold text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                            class="flex items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 text-slate-900 dark:text-white font-bold text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                             View Case Studies
                         </a>
                     </div>

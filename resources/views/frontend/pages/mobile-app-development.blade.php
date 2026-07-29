@@ -17,11 +17,11 @@
                                             First Innovation</span>
                                     </div>
                                     <h1
-                                        class="text-text-main-light dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        class="text-text-main dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
                                         Mobile Experiences,<br class="hidden md:block" /> Accelerated.
                                     </h1>
                                     <h2
-                                        class="text-text-sub-light dark:text-text-sub-dark text-lg font-normal leading-relaxed">
+                                        class="text-text-secondary dark:text-gray-300 text-lg font-normal leading-relaxed">
                                         We build high-performance mobile applications using cutting-edge technologies.
                                         Experience the future of mobile interaction with precision engineering.
                                     </h2>
@@ -32,7 +32,7 @@
                                         <span class="truncate">Start Your Project</span>
                                     </a>
                                     <a href="/case-studies"
-                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-text-main-light dark:text-white transition-all text-base font-bold leading-normal tracking-[0.015em]">
+                                        class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary text-text-main dark:text-white transition-all text-base font-bold leading-normal tracking-[0.015em]">
                                         <span class="truncate">View Work</span>
                                     </a>
                                 </div>
@@ -56,9 +56,9 @@
                                                 <span class="material-symbols-outlined">rocket_launch</span>
                                             </div>
                                             <div>
-                                                <p class="text-xs text-text-sub-light dark:text-text-sub-dark font-medium">
+                                                <p class="text-xs text-text-secondary dark:text-gray-400 font-medium">
                                                     Performance Score</p>
-                                                <p class="text-lg font-bold text-text-main-light dark:text-text-main-dark">
+                                                <p class="text-lg font-bold text-text-main dark:text-white">
                                                     99/100</p>
                                             </div>
                                         </div>
@@ -80,10 +80,10 @@
                         <div>
                             <h2 class="text-primary font-bold tracking-wider uppercase text-sm mb-2">Our Mobile Arsenal</h2>
                             <h3
-                                class="text-text-main-light dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">
-                                Technologies We Master</h3>
+                                 class="text-text-main dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em]">
+                                 Technologies We Master</h3>
                         </div>
-                        <p class="text-text-sub-light dark:text-text-sub-dark max-w-md text-right md:text-left">
+                        <p class="text-text-secondary dark:text-gray-400 max-w-md text-right md:text-left">
                             From native mastery to cross-platform efficiency, we leverage the best tools for the job.
                         </p>
                     </div>
@@ -95,9 +95,9 @@
                                 <span class="material-symbols-outlined text-3xl">code_blocks</span>
                             </div>
                             <div class="flex flex-col gap-2">
-                                <h2 class="text-text-main-light dark:text-white text-lg font-bold leading-tight">React
+                                <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">React
                                     Native</h2>
-                                <p class="text-text-sub-light dark:text-text-sub-dark text-sm font-normal leading-normal">
+                                <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">
                                     Cross-platform efficiency with near-native performance using JavaScript.</p>
                             </div>
                         </div>
@@ -108,9 +108,9 @@
                                 <span class="material-symbols-outlined text-3xl">layers</span>
                             </div>
                             <div class="flex flex-col gap-2">
-                                <h2 class="text-text-main-light dark:text-white text-lg font-bold leading-tight">Flutter
+                                <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">Flutter
                                 </h2>
-                                <p class="text-text-sub-light dark:text-text-sub-dark text-sm font-normal leading-normal">
+                                <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">
                                     Beautiful, natively compiled applications from a single codebase.</p>
                             </div>
                         </div>
@@ -121,9 +121,9 @@
                                 <span class="material-symbols-outlined text-3xl">phone_iphone</span>
                             </div>
                             <div class="flex flex-col gap-2">
-                                <h2 class="text-text-main-light dark:text-white text-lg font-bold leading-tight">Native iOS
+                                <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">Native iOS
                                 </h2>
-                                <p class="text-text-sub-light dark:text-text-sub-dark text-sm font-normal leading-normal">
+                                <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">
                                     High-performance Swift development for the Apple ecosystem.</p>
                             </div>
                         </div>
@@ -134,9 +134,9 @@
                                 <span class="material-symbols-outlined text-3xl">android</span>
                             </div>
                             <div class="flex flex-col gap-2">
-                                <h2 class="text-text-main-light dark:text-white text-lg font-bold leading-tight">Native
+                                <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">Native
                                     Android</h2>
-                                <p class="text-text-sub-light dark:text-text-sub-dark text-sm font-normal leading-normal">
+                                <p class="text-text-secondary dark:text-gray-400 text-sm font-normal leading-normal">
                                     Robust Kotlin solutions for the diverse Android market.</p>
                             </div>
                         </div>
@@ -151,9 +151,9 @@
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                     <div class="text-center mb-16">
                         <h2
-                            class="text-text-main-light dark:text-white text-3xl font-black leading-tight tracking-[-0.015em] mb-4">
+                            class="text-text-main dark:text-white text-3xl font-black leading-tight tracking-[-0.015em] mb-4">
                             The Acceleration Process</h2>
-                        <p class="text-text-sub-light dark:text-text-sub-dark max-w-2xl mx-auto">From concept to deployment,
+                        <p class="text-text-secondary dark:text-gray-400 max-w-2xl mx-auto">From concept to deployment,
                             our workflow is designed for speed without compromising quality.</p>
                     </div>
                     <div class="relative">
@@ -166,38 +166,38 @@
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <span class="material-symbols-outlined text-primary">search</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">Discovery</h3>
-                                <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Understanding your core
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Discovery</h3>
+                                <p class="text-sm text-text-secondary dark:text-gray-400">Understanding your core
                                     metrics and user needs.</p>
                             </div>
                             <div class="flex flex-col items-center text-center group">
                                 <div
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-gray-200 dark:border-gray-700 group-hover:border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <span
-                                        class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark group-hover:text-primary">design_services</span>
+                                        class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary">design_services</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">Design</h3>
-                                <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Crafting intuitive,
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Design</h3>
+                                <p class="text-sm text-text-secondary dark:text-gray-400">Crafting intuitive,
                                     pixel-perfect user interfaces.</p>
                             </div>
                             <div class="flex flex-col items-center text-center group">
                                 <div
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-gray-200 dark:border-gray-700 group-hover:border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <span
-                                        class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark group-hover:text-primary">terminal</span>
+                                        class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary">terminal</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">Develop</h3>
-                                <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Agile sprints with regular
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Develop</h3>
+                                <p class="text-sm text-text-secondary dark:text-gray-400">Agile sprints with regular
                                     builds and testing.</p>
                             </div>
                             <div class="flex flex-col items-center text-center group">
                                 <div
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-gray-200 dark:border-gray-700 group-hover:border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                                     <span
-                                        class="material-symbols-outlined text-text-sub-light dark:text-text-sub-dark group-hover:text-primary">rocket_launch</span>
+                                        class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary">rocket_launch</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-text-main-light dark:text-white mb-2">Launch</h3>
-                                <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Seamless deployment to App
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Launch</h3>
+                                <p class="text-sm text-text-secondary dark:text-gray-400">Seamless deployment to App
                                     Store &amp; Play Store.</p>
                             </div>
                         </div>
@@ -211,61 +211,61 @@
             <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-20">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
                     <h2
-                        class="text-text-main-light dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-8">
+                        class="text-text-main dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] pb-8">
                         Extended Capabilities</h2>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="material-symbols-outlined text-primary">smartphone</span>
-                                <h3 class="font-bold text-text-main-light dark:text-white">App Strategy</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">App Strategy</h3>
                             </div>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Market research, user persona
+                            <p class="text-sm text-text-secondary dark:text-gray-400">Market research, user persona
                                 definition, and roadmap planning to ensure product-market fit.</p>
                         </div>
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="material-symbols-outlined text-primary">palette</span>
-                                <h3 class="font-bold text-text-main-light dark:text-white">UI/UX Design</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">UI/UX Design</h3>
                             </div>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Creating engaging, intuitive,
+                            <p class="text-sm text-text-secondary dark:text-gray-400">Creating engaging, intuitive,
                                 and brand-consistent interfaces that users love.</p>
                         </div>
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="material-symbols-outlined text-primary">cloud_sync</span>
-                                <h3 class="font-bold text-text-main-light dark:text-white">Cloud Integration</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">Cloud Integration</h3>
                             </div>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Seamless connectivity with AWS,
+                            <p class="text-sm text-text-secondary dark:text-gray-400">Seamless connectivity with AWS,
                                 Azure, or Firebase for scalable backend solutions.</p>
                         </div>
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="material-symbols-outlined text-primary">bug_report</span>
-                                <h3 class="font-bold text-text-main-light dark:text-white">QA &amp; Testing</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">QA &amp; Testing</h3>
                             </div>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Rigorous automated and manual
+                            <p class="text-sm text-text-secondary dark:text-gray-400">Rigorous automated and manual
                                 testing to ensure crash-free experiences.</p>
                         </div>
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="material-symbols-outlined text-primary">update</span>
-                                <h3 class="font-bold text-text-main-light dark:text-white">Maintenance</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">Maintenance</h3>
                             </div>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Ongoing support, updates, and
+                            <p class="text-sm text-text-secondary dark:text-gray-400">Ongoing support, updates, and
                                 optimization to keep your app ahead of the curve.</p>
                         </div>
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
                                 <span class="material-symbols-outlined text-primary">security</span>
-                                <h3 class="font-bold text-text-main-light dark:text-white">App Security</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">App Security</h3>
                             </div>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Implementing banking-grade
+                            <p class="text-sm text-text-secondary dark:text-gray-400">Implementing banking-grade
                                 security protocols to protect user data.</p>
                         </div>
                     </div>
@@ -286,20 +286,20 @@
                 </div>
                 <div class="flex-1 flex flex-col gap-6 order-1 md:order-2">
                     <h4 class="text-primary font-bold uppercase tracking-wider text-sm">Case Study</h4>
-                    <h2 class="text-3xl font-black text-text-main-light dark:text-white leading-tight">FinTech App Renewal
+                    <h2 class="text-3xl font-black text-text-main dark:text-white leading-tight">FinTech App Renewal
                     </h2>
-                    <p class="text-text-sub-light dark:text-text-sub-dark">
+                    <p class="text-text-secondary dark:text-gray-400">
                         We helped a leading financial startup reduce their load times by 40% and increase user retention by
                         redesigning their core mobile architecture using Flutter.
                     </p>
                     <div class="flex gap-8 mt-4">
                         <div>
-                            <p class="text-3xl font-black text-text-main-light dark:text-white">40%</p>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">Faster Load</p>
+                            <p class="text-3xl font-black text-text-main dark:text-white">40%</p>
+                            <p class="text-sm text-text-secondary dark:text-gray-400">Faster Load</p>
                         </div>
                         <div>
-                            <p class="text-3xl font-black text-text-main-light dark:text-white">2.5x</p>
-                            <p class="text-sm text-text-sub-light dark:text-text-sub-dark">User Retention</p>
+                            <p class="text-3xl font-black text-text-main dark:text-white">2.5x</p>
+                            <p class="text-sm text-text-secondary dark:text-gray-400">User Retention</p>
                         </div>
                     </div>
                     <a class="text-primary font-bold flex items-center gap-2 mt-2 hover:gap-3 transition-all"
@@ -312,9 +312,9 @@
     </div>
     <div class="relative w-full py-24 bg-background-light dark:bg-background-dark">
         <div class="layout-container flex flex-col items-center justify-center px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-black text-text-main-light dark:text-white mb-6 tracking-tight">Ready to
+            <h2 class="text-4xl md:text-5xl font-black text-text-main dark:text-white mb-6 tracking-tight">Ready to
                 Accelerate?</h2>
-            <p class="text-lg text-text-sub-light dark:text-text-sub-dark max-w-2xl mb-10">
+            <p class="text-lg text-text-secondary dark:text-gray-400 max-w-2xl mb-10">
                 Let's turn your mobile app idea into a high-performance reality. Our team is ready to onboard your project
                 today.
             </p>

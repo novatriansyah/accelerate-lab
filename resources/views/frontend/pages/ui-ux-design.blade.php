@@ -424,36 +424,43 @@
                         </div>
                     </div>
                 </div>
-                <div
+                <div x-data="{
+                    visitors: 50000,
+                    conversion: 25,
+                    get projectedRevenue() {
+                        const calculated = Math.round(this.visitors * (this.conversion / 100) * 10);
+                        return '$' + calculated.toLocaleString('en-US');
+                    }
+                }"
                     class="md:w-1/2 w-full bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700">
                     <h4 class="text-lg font-bold text-text-main dark:text-white mb-6">Estimate your potential growth</h4>
                     <div class="mb-6">
                         <div class="flex justify-between mb-2">
                             <label class="text-sm font-medium text-text-secondary dark:text-gray-300">Current Monthly
                                 Visitors</label>
-                            <span class="text-sm font-bold text-primary">50,000</span>
+                            <span class="text-sm font-bold text-primary" x-text="Number(visitors).toLocaleString('en-US')">50,000</span>
                         </div>
-                        <input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-                            max="100000" min="1000" type="range" />
+                        <input x-model.number="visitors" class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary"
+                            max="100000" min="1000" step="1000" type="range" value="50000" />
                     </div>
                     <div class="mb-8">
                         <div class="flex justify-between mb-2">
                             <label class="text-sm font-medium text-text-secondary dark:text-gray-300">Conversion Increase
                                 Target</label>
-                            <span class="text-sm font-bold text-primary">25%</span>
+                            <span class="text-sm font-bold text-primary" x-text="conversion + '%'">25%</span>
                         </div>
-                        <input class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-                            max="50" min="1" type="range" value="25" />
+                        <input x-model.number="conversion" class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary"
+                            max="50" min="1" step="1" type="range" value="25" />
                     </div>
-                    <div class="bg-primary/5 rounded-xl p-4 flex items-center justify-between border border-primary/20">
+                    <div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-4 flex items-center justify-between border border-primary/20">
                         <div>
                             <p class="text-xs text-text-secondary dark:text-gray-400 uppercase font-semibold">Projected
                                 Annual Revenue Increase</p>
-                            <p class="text-2xl font-black text-primary">$125,000</p>
+                            <p class="text-2xl font-black text-primary" x-text="projectedRevenue">$125,000</p>
                         </div>
                         <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2 text-center">*Estimates based on industry standards</p>
+                    <p class="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">*Estimates based on industry standards</p>
                 </div>
             </div>
         </div>
