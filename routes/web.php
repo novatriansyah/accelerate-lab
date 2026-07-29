@@ -30,10 +30,16 @@ Route::get('/robots.txt', [\App\Http\Controllers\Frontend\RobotsController::clas
 // Fallback route to serve storage files without symlinks (secured against path traversal)
 Route::get('/storage/{path}', function (string $path) {
     $basePath = storage_path('app/public');
+    $realBasePath = realpath($basePath);
+
+    if ($realBasePath === false) {
+        abort(404);
+    }
+
     $filePath = $basePath . '/' . $path;
     $realPath = realpath($filePath);
 
-    if ($realPath === false || !str_starts_with($realPath, realpath($basePath))) {
+    if ($realPath === false || !str_starts_with($realPath, $realBasePath)) {
         abort(403);
     }
 

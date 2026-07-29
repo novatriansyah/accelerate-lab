@@ -60,7 +60,8 @@ class PageController extends Controller
     public function service(Service $service)
     {
         if ($service->has_custom_page) {
-            $view = "frontend.pages.{$service->slug}";
+            $cleanSlug = preg_replace('/[^a-z0-9\-]/', '', strtolower($service->slug));
+            $view = "frontend.pages.{$cleanSlug}";
 
             if (! view()->exists($view)) {
                 abort(404);

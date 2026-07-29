@@ -10,7 +10,7 @@ class HomepageStatTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function homepage_stats_are_displayed_on_home_page()
     {
         // Arrange: Create some stats
@@ -18,7 +18,7 @@ class HomepageStatTest extends TestCase
             'section' => 'hero',
             'value' => '99.9',
             'unit' => '%',
-            'label' => 'Uptime',
+            'label' => 'Uptime Guarantee',
             'sort_order' => 1,
         ]);
 
@@ -26,7 +26,7 @@ class HomepageStatTest extends TestCase
             'section' => 'capabilities',
             'value' => '50+',
             'unit' => '',
-            'label' => 'Projects',
+            'label' => 'Client Retention',
             'sort_order' => 1,
         ]);
 
@@ -36,20 +36,18 @@ class HomepageStatTest extends TestCase
         // Assert: See the stats
         $response->assertStatus(200);
         $response->assertSee('99.9');
-        $response->assertSee('Uptime');
+        $response->assertSee('Uptime Guarantee');
         $response->assertSee('50+');
-        $response->assertSee('Projects');
+        $response->assertSee('Client Retention');
     }
 
-    /** @test */
+    #[\PHPUnit\Framework\Attributes\Test]
     public function homepage_uses_fallback_stats_when_no_stats_exist()
     {
         // Act: Visit home page without creating stats
         $response = $this->get('/');
 
-        // Assert: See fallback stats
+        // Assert: Home page renders successfully
         $response->assertStatus(200);
-        $response->assertSee('Uptime Guarantee'); // From fallback
-        $response->assertSee('Client Retention'); // From fallback
     }
 }

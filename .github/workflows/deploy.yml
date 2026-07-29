@@ -1,4 +1,4 @@
-name: Deploy to Hostinger
+name: Master CD (Deploy to Hostinger)
 
 on:
   push:
@@ -10,10 +10,11 @@ env:
 
 jobs:
   deploy:
+    name: Build & Zero-Downtime Deploy
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Setup PHP
@@ -21,8 +22,17 @@ jobs:
         with:
           php-version: '8.3'
           extensions: mbstring, xml, ctype, iconv, mysql, zip
+          tools: composer:v2
 
-      - name: Install Composer Dependencies
+      - name: Cache Composer Dependencies
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Production Composer Dependencies
         run: |
           composer install --no-dev --optimize-autoloader --no-interaction
 
@@ -30,51 +40,96 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      - name: Install & Build NPM Assets
+      - name: Install & Build Production NPM Assets
         run: |
           npm ci
           npm run build
 
-      - name: Setup SSH
+      - name: Setup SSH Authentication
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy with rsync
+      - name: Execute Zero-Downtime Release Deployment
         run: |
-          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT || '65002' }} -o StrictHostKeyChecking=no" \
+          set -e
+          RELEASE_NAME=$(date +'%Y%m%d%H%M%S')
+          DEPLOY_PATH="${{ secrets.DEPLOY_PATH }}"
+          SHARED_DIR="${DEPLOY_PATH}/shared"
+          RELEASES_DIR="${DEPLOY_PATH}/releases"
+          RELEASE_PATH="${RELEASES_DIR}/${RELEASE_NAME}"
+          SSH_PORT="${{ secrets.SSH_PORT || '65002' }}"
+          SSH_USER="${{ secrets.SSH_USER }}"
+          SSH_HOST="${{ secrets.SSH_HOST }}"
+
+          echo "🚀 Starting release deployment: ${RELEASE_NAME}"
+
+          # Ensure persistent shared directories and releases root exist
+          ssh -p ${SSH_PORT} -o StrictHostKeyChecking=no ${SSH_USER}@${SSH_HOST} "
+            set -e
+            mkdir -p ${SHARED_DIR}/storage/app/public
+            mkdir -p ${SHARED_DIR}/storage/framework/cache
+            mkdir -p ${SHARED_DIR}/storage/framework/sessions
+            mkdir -p ${SHARED_DIR}/storage/framework/views
+            mkdir -p ${SHARED_DIR}/storage/logs
+            mkdir -p ${RELEASES_DIR}/${RELEASE_NAME}
+          "
+
+          # Rsync application code to release directory
+          rsync -avz -e "ssh -p ${SSH_PORT} -o StrictHostKeyChecking=no" \
             --exclude='.git/' \
             --exclude='.github/' \
             --exclude='.env' \
             --exclude='node_modules/' \
+            --exclude='storage/' \
             --exclude='public/storage' \
-            --exclude='storage/logs/' \
-            --exclude='storage/framework/cache/' \
-            --exclude='storage/framework/sessions/' \
-            --exclude='storage/framework/views/' \
-            --delete \
-            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.DEPLOY_PATH }}
+            ./ ${SSH_USER}@${SSH_HOST}:${RELEASE_PATH}/
 
-      - name: Post-deployment commands
-        run: |
-          ssh -p ${{ secrets.SSH_PORT || '65002' }} -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            cd ${{ secrets.DEPLOY_PATH }}
+          # Execute release configuration, migrations, symlinking, and release retention
+          ssh -p ${SSH_PORT} -o StrictHostKeyChecking=no ${SSH_USER}@${SSH_HOST} "
+            set -e
 
-            # Ensure correct storage symlink is present
-            if [ ! -L public/storage ]; then
-              php artisan storage:link --force
+            # Ensure shared environment configuration exists
+            if [ ! -f '${SHARED_DIR}/.env' ]; then
+              if [ -f '${DEPLOY_PATH}/.env' ]; then
+                cp '${DEPLOY_PATH}/.env' '${SHARED_DIR}/.env'
+              else
+                touch '${SHARED_DIR}/.env'
+              fi
             fi
-            
-            # Run migrations
+
+            cd '${RELEASE_PATH}'
+
+            # Link persistent environment file
+            ln -sf ../../shared/.env .env
+
+            # Link persistent storage directory
+            rm -rf storage
+            ln -sf ../../shared/storage storage
+
+            # Create storage symlink in public directory
+            php artisan storage:link --force
+
+            # Run database migrations
             php artisan migrate --force
-            
-            # Cache optimization
+
+            # Optimize application caches
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
             php artisan event:cache
-            
-            # Permissions
+
+            # Set file permissions on shared storage and bootstrap/cache
             chmod -R 775 storage bootstrap/cache
-          EOF
+
+            # Atomically switch 'current' symlink to new release
+            cd '${DEPLOY_PATH}'
+            ln -nfs 'releases/${RELEASE_NAME}' current
+
+            # Prune old releases, keeping only the 5 most recent
+            cd '${RELEASES_DIR}'
+            ls -1t | tail -n +6 | xargs -r rm -rf
+          "
+          echo "✅ Release ${RELEASE_NAME} deployed successfully!"

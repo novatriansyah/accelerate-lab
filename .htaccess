@@ -1,12 +1,12 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # 1. Block access to sensitive files
+    # 1. Block access to sensitive files & directories
     <FilesMatch "^\.">
         Order allow,deny
         Deny from all
     </FilesMatch>
-    <FilesMatch "(composer\.json|composer\.lock|package\.json|package-lock\.json|webpack\.mix\.js|yarn\.lock)$">
+    <FilesMatch "(composer\.json|composer\.lock|package\.json|package-lock\.json|vite\.config\.js|yarn\.lock)$">
         Order allow,deny
         Deny from all
     </FilesMatch>
@@ -15,6 +15,14 @@
         Deny from all
     </FilesMatch>
 
-    # 2. Redirect all requests to the public/ folder
+    # 2. Redirect requests to current active release's public folder (Zero-Downtime Releases)
+    # If using 'current' symlink directory structure:
+    RewriteCond %{DOCUMENT_ROOT}/current/public -d
+    RewriteCond %{REQUEST_URI} !^/current/public/
+    RewriteRule ^(.*)$ current/public/$1 [L]
+
+    # Fallback to direct public/ directory if not using releases structure
+    RewriteCond %{DOCUMENT_ROOT}/current/public !-d
+    RewriteCond %{REQUEST_URI} !^/public/
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
