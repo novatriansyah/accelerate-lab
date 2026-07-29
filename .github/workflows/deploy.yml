@@ -126,8 +126,9 @@ jobs:
             rm -rf storage
             ln -sf ../../shared/storage storage
 
-            # Create storage symlink in public directory
-            php artisan storage:link --force
+            # Create storage symlink in public directory (bypassing PHP exec restriction)
+            rm -rf public/storage
+            ln -sf ../../shared/storage/app/public public/storage
 
             # Run database migrations
             php artisan migrate --force
