@@ -73,12 +73,20 @@ class ProjectResource extends Resource
                                 Forms\Components\FileUpload::make('image_path')
                                     ->label('Featured Image')
                                     ->image()
-                                    ->directory('projects'),
+                                    ->disk('public')
+                                    ->visibility('public')
+                                    ->directory('projects')
+                                    ->maxSize(5120)
+                                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml']),
 
                                 Forms\Components\FileUpload::make('gallery')
                                     ->multiple()
                                     ->image()
+                                    ->disk('public')
+                                    ->visibility('public')
                                     ->directory('projects/gallery')
+                                    ->maxSize(5120)
+                                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'])
                                     ->reorderable(),
                             ]),
                     ])

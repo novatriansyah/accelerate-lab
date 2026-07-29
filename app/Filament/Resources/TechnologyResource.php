@@ -40,7 +40,11 @@ class TechnologyResource extends Resource
 
                         Forms\Components\FileUpload::make('icon')
                             ->image()
+                            ->disk('public')
+                            ->visibility('public')
                             ->directory('technologies')
+                            ->maxSize(5120)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'])
                             ->columnSpanFull(),
                     ])
                     ->columns(2),

@@ -42,8 +42,13 @@ class ArticleResource extends Resource
                                     ->columnSpanFull(),
 
                                 Forms\Components\FileUpload::make('image_path')
+                                    ->label('Featured Image')
                                     ->image()
+                                    ->disk('public')
+                                    ->visibility('public')
                                     ->directory('articles')
+                                    ->maxSize(5120)
+                                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'])
                                     ->columnSpanFull(),
                             ])
                             ->columns(2),

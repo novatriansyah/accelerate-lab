@@ -89,6 +89,7 @@
     </FilesMatch>
     <FilesMatch "\.(webp|png|jpg|jpeg|gif|ico|svg)$">
         Header set Cache-Control "public, max-age=31536000, immutable"
+        Header always set Access-Control-Allow-Origin "*"
     </FilesMatch>
     <FilesMatch "\.(woff2|woff|ttf)$">
         Header set Cache-Control "public, max-age=31536000, immutable"

@@ -49,8 +49,11 @@ class ServiceResource extends Resource
 
                         Forms\Components\FileUpload::make('hero_image')
                             ->image()
+                            ->disk('public')
+                            ->visibility('public')
                             ->directory('services')
-                            ->maxSize(2048)
+                            ->maxSize(5120)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'])
                             ->label('Hero Image')
                             ->helperText('Recommended size: 1200x800px. Used in service page headers.')
                             ->columnSpanFull(),

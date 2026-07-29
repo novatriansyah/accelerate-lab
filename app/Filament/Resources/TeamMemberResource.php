@@ -33,7 +33,11 @@ class TeamMemberResource extends Resource
                         Forms\Components\FileUpload::make('image_path')
                             ->label('Photo')
                             ->image()
+                            ->disk('public')
+                            ->visibility('public')
                             ->directory('team-members')
+                            ->maxSize(5120)
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'])
                             ->columnSpanFull(),
                         Forms\Components\Textarea::make('bio')
                             ->rows(3)
