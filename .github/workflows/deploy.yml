@@ -142,10 +142,10 @@ jobs:
             # Set file permissions on shared storage and bootstrap/cache
             chmod -R 775 storage bootstrap/cache
 
-            # Atomically switch 'current' symlink to new release
+            # Ensure 'current' is a direct symlink pointing to the latest release
             cd '${DEPLOY_PATH}'
-            ln -sfn "releases/${RELEASE_NAME}" current.tmp
-            mv -Tf current.tmp current
+            rm -rf current
+            ln -sfn "releases/${RELEASE_NAME}" current
 
             # Prune old releases, keeping only the 5 most recent
             cd '${RELEASES_DIR}'
