@@ -43,7 +43,7 @@ class ProjectController extends Controller
         return view('frontend.pages.project', [
             'title' => $project->title . ' - Case Study | Accelerate Lab',
             'description' => $project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge), 160),
-            'ogImage' => $project->image_path ? \Illuminate\Support\Facades\Storage::url($project->image_path) : null,
+            'ogImage' => $project->image_path ? url(\Illuminate\Support\Facades\Storage::url($project->image_path)) : null,
             'project' => $project,
         ]);
     }

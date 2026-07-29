@@ -34,14 +34,18 @@ class StoreContactRequest extends FormRequest
                         return;
                     }
 
-                    $response = \Illuminate\Support\Facades\Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
-                        'secret' => $secret,
-                        'response' => $value,
-                        'remoteip' => request()->ip(),
-                    ]);
+                    try {
+                        $response = \Illuminate\Support\Facades\Http::asForm()->timeout(5)->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+                            'secret' => $secret,
+                            'response' => $value,
+                            'remoteip' => request()->ip(),
+                        ]);
 
-                    if (!$response->successful() || !$response->json('success')) {
-                        $fail('The CAPTCHA verification failed. Please try again.');
+                        if (!$response->successful() || !$response->json('success')) {
+                            $fail('The CAPTCHA verification failed. Please try again.');
+                        }
+                    } catch (\Throwable $e) {
+                        \Illuminate\Support\Facades\Log::warning('Turnstile verification network failure: ' . $e->getMessage());
                     }
                 }
             ],

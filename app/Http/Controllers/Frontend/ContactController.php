@@ -29,7 +29,9 @@ class ContactController extends Controller
         ]);
 
         // Send Notification to Admin
-        $admin = User::where('email', 'admin@accelerate.lab')->first();
+        $admin = User::where('email', 'nova@acceleratelab.id')->first()
+            ?? User::where('email', 'admin@accelerate.lab')->first()
+            ?? User::first();
 
         if ($admin) {
             $admin->notify(new LeadNotification($lead));

@@ -117,8 +117,8 @@
                     @foreach ($projects as $project)
                         <div
                             class="group flex flex-col gap-4 rounded-xl p-4 transition-all hover:bg-gray-50 dark:hover:bg-slate-800/50">
-                            <div
-                                class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800">
+                            <a href="{{ route('project', $project) }}"
+                                class="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-slate-800 block">
                                 @if ($project->image_path)
                                     <img src="{{ Storage::url($project->image_path) }}"
                                         alt="{{ $project->title }}"
@@ -132,7 +132,7 @@
                                     </div>
                                 @endif
                                 <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
-                            </div>
+                            </a>
                             <div class="flex flex-col gap-2">
                                 <div class="flex flex-wrap gap-2 items-center">
                                     @if ($project->industry)
@@ -151,12 +151,17 @@
                                         @endforeach
                                     @endif
                                 </div>
-                                <h3
-                                    class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">
-                                    {{ $project->title }}</h3>
+                                <a href="{{ route('project', $project) }}">
+                                    <h3
+                                        class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">
+                                        {{ $project->title }}</h3>
+                                </a>
                                 <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
                                     {{ $project->description }}
                                 </p>
+                                <a href="{{ route('project', $project) }}" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-primary-dark mt-1 transition-all">
+                                    Read Case Study <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                                </a>
                             </div>
                         </div>
                     @endforeach

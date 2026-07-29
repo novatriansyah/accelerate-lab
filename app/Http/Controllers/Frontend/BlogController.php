@@ -48,7 +48,7 @@ class BlogController extends Controller
             'title' => $article->title . ' - Accelerate Lab',
             'description' => \Illuminate\Support\Str::limit(strip_tags($article->content), 160),
             'ogType' => 'article',
-            'ogImage' => $article->image_path ? \Illuminate\Support\Facades\Storage::url($article->image_path) : null,
+            'ogImage' => $article->image_path ? url(\Illuminate\Support\Facades\Storage::url($article->image_path)) : null,
             'article' => $article,
         ]);
     }

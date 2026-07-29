@@ -23,8 +23,8 @@ class DatabaseSeeder extends Seeder
 
         if (\App\Models\User::count() === 0) {
             User::factory()->create([
-                'name' => 'Test User',
-                'email' => 'test@example.com',
+                'name' => 'Nova Triansyah Azis',
+                'email' => 'nova@acceleratelab.id',
             ]);
         }
 
