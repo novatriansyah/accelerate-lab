@@ -42,4 +42,14 @@ class PageRoutesTest extends TestCase
         $response->assertHeader('X-Content-Type-Options', 'nosniff');
         $response->assertHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
     }
+
+    #[Test]
+    public function whatsapp_button_is_rendered_on_pages()
+    {
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
+        $response->assertSee('id="whatsapp-floating-trigger"', false);
+        $response->assertSee('wa.me', false);
+    }
 }

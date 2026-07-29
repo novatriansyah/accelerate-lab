@@ -32,6 +32,8 @@ class DatabaseSeeder extends Seeder
             ['key' => 'contact_address', 'value' => '123 Innovation Blvd, Tech City, TC 90210', 'group' => 'contact'],
             ['key' => 'contact_email', 'value' => 'hello@acceleratelab.io', 'group' => 'contact'],
             ['key' => 'contact_phone', 'value' => '+1 (555) 019-2834', 'group' => 'contact'],
+            ['key' => 'contact_whatsapp', 'value' => '+6281234567890', 'group' => 'contact'],
+            ['key' => 'whatsapp_default_message', 'value' => 'Hello Accelerate Lab! I would like to inquire about your services.', 'group' => 'contact'],
             ['key' => 'contact_google_maps_link', 'value' => 'https://maps.google.com/?q=Tech+City', 'group' => 'contact'],
         ];
 

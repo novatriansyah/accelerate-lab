@@ -106,6 +106,7 @@
         @yield('content')
     </main>
     @include('frontend.components.footer')
+    @include('frontend.components.whatsapp-button')
 </body>
 
 </html>

@@ -141,6 +141,8 @@ class CmsSeeder extends Seeder
             ['key' => 'registered_city', 'value' => 'Jakarta, Indonesia', 'group' => 'general'],
             ['key' => 'reg_number', 'value' => 'Reg No: 2025-AL-ID', 'group' => 'general'],
             ['key' => 'contact_email', 'value' => 'hello@acceleratelab.io', 'group' => 'contact'],
+            ['key' => 'contact_whatsapp', 'value' => '+6281234567890', 'group' => 'contact'],
+            ['key' => 'whatsapp_default_message', 'value' => 'Hello Accelerate Lab! I would like to inquire about your services.', 'group' => 'contact'],
             ['key' => 'linkedin_url', 'value' => 'https://linkedin.com/company/accelerate-lab', 'group' => 'social'],
             ['key' => 'site_logo', 'value' => 'images/logo.webp', 'group' => 'general'],
         ];
