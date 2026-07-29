@@ -144,7 +144,8 @@ jobs:
 
             # Atomically switch 'current' symlink to new release
             cd '${DEPLOY_PATH}'
-            ln -nfs 'releases/${RELEASE_NAME}' current
+            ln -sfn "releases/${RELEASE_NAME}" current.tmp
+            mv -Tf current.tmp current
 
             # Prune old releases, keeping only the 5 most recent
             cd '${RELEASES_DIR}'
