@@ -17,6 +17,23 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Verify Required Deployment Secrets
+        run: |
+          MISSING_SECRETS=""
+          if [ -z "${{ secrets.SSH_PRIVATE_KEY }}" ]; then MISSING_SECRETS="${MISSING_SECRETS} SSH_PRIVATE_KEY"; fi
+          if [ -z "${{ secrets.SSH_HOST }}" ]; then MISSING_SECRETS="${MISSING_SECRETS} SSH_HOST"; fi
+          if [ -z "${{ secrets.SSH_USER }}" ]; then MISSING_SECRETS="${MISSING_SECRETS} SSH_USER"; fi
+          if [ -z "${{ secrets.DEPLOY_PATH }}" ]; then MISSING_SECRETS="${MISSING_SECRETS} DEPLOY_PATH"; fi
+
+          if [ -n "${MISSING_SECRETS}" ]; then
+            echo "::error::Missing GitHub Secrets:${MISSING_SECRETS}"
+            echo "--------------------------------------------------------------------------------"
+            echo "Action Required: Go to GitHub Repository -> Settings -> Secrets and variables -> Actions"
+            echo "Add the following secrets:${MISSING_SECRETS}"
+            echo "--------------------------------------------------------------------------------"
+            exit 1
+          fi
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
