@@ -8,7 +8,7 @@
                     <div class="flex-1 space-y-6 md:pr-10 z-10">
                         <div
                             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
-                            <span class="material-symbols-outlined text-[16px]">science</span>
+                            <x-app-icon name="science" class="w-4 h-4" />
                             Research &amp; Development
                         </div>
                         <h1
@@ -43,7 +43,7 @@
                             class="absolute bottom-6 left-6 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 dark:border-slate-700 shadow-lg">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
-                                    <span class="material-symbols-outlined">code</span>
+                                    <x-app-icon name="code" class="w-5 h-5" />
                                 </div>
                                 <div>
                                     <p class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Latest Drop
@@ -117,7 +117,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="p-8 md:p-12 flex flex-col justify-center gap-6">
                     <div class="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider">
-                        <span class="material-symbols-outlined text-lg">star</span>
+                        <x-app-icon name="star" class="w-5 h-5" />
                         Spotlight
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
@@ -188,7 +188,7 @@
                     </p>
                     <div
                         class="flex items-center text-primary text-sm font-bold gap-1 mt-auto group-hover:gap-2 transition-all">
-                        Read Article <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                        Read Article <x-app-icon name="arrow_forward" class="w-4 h-4" />
                     </div>
                 </div>
             </article>
@@ -216,7 +216,7 @@
                     </p>
                     <div
                         class="flex items-center text-primary text-sm font-bold gap-1 mt-auto group-hover:gap-2 transition-all">
-                        Read Article <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                        Read Article <x-app-icon name="arrow_forward" class="w-4 h-4" />
                     </div>
                 </div>
             </article>
@@ -244,7 +244,7 @@
                     </p>
                     <div
                         class="flex items-center text-primary text-sm font-bold gap-1 mt-auto group-hover:gap-2 transition-all">
-                        Read Article <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                        Read Article <x-app-icon name="arrow_forward" class="w-4 h-4" />
                     </div>
                 </div>
             </article>
@@ -253,7 +253,7 @@
             <button
                 class="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary font-medium transition-colors">
                 Load More Articles
-                <span class="material-symbols-outlined text-lg">expand_more</span>
+                <x-app-icon name="expand_more" class="w-5 h-5" />
             </button>
         </div>
     </div>
@@ -263,7 +263,7 @@
         </div>
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div class="inline-flex items-center justify-center p-3 rounded-full bg-slate-800 mb-6">
-                <span class="material-symbols-outlined text-primary text-2xl">mail</span>
+                <x-app-icon name="mail" class="w-6 h-6 text-primary" />
             </div>
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Join the Lab Reports</h2>
             <p class="text-slate-400 mb-10 max-w-lg mx-auto">Get our latest research, design resources, and engineering

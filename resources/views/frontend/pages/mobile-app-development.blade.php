@@ -118,7 +118,7 @@
                             class="group flex flex-1 gap-4 rounded-xl border border-[#d0e7e4] dark:border-[#2d4544] bg-surface-light dark:bg-surface-dark p-6 flex-col hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-default">
                             <div
                                 class="h-12 w-12 rounded-lg bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-700 dark:text-gray-300 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined text-3xl">phone_iphone</span>
+                                <x-app-icon name="phone_iphone" class="w-7 h-7" />
                             </div>
                             <div class="flex flex-col gap-2">
                                 <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">Native iOS
@@ -131,7 +131,7 @@
                             class="group flex flex-1 gap-4 rounded-xl border border-[#d0e7e4] dark:border-[#2d4544] bg-surface-light dark:bg-surface-dark p-6 flex-col hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-default">
                             <div
                                 class="h-12 w-12 rounded-lg bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined text-3xl">android</span>
+                                <x-app-icon name="android" class="w-7 h-7" />
                             </div>
                             <div class="flex flex-col gap-2">
                                 <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">Native
@@ -164,7 +164,7 @@
                             <div class="flex flex-col items-center text-center group">
                                 <div
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <span class="material-symbols-outlined text-primary">search</span>
+                                    <x-app-icon name="search" class="w-6 h-6 text-primary" />
                                 </div>
                                 <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Discovery</h3>
                                 <p class="text-sm text-text-secondary dark:text-gray-400">Understanding your core
@@ -173,8 +173,7 @@
                             <div class="flex flex-col items-center text-center group">
                                 <div
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-gray-200 dark:border-gray-700 group-hover:border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <span
-                                        class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary">design_services</span>
+                                    <x-app-icon name="design_services" class="w-6 h-6 text-text-secondary dark:text-gray-400 group-hover:text-primary" />
                                 </div>
                                 <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Design</h3>
                                 <p class="text-sm text-text-secondary dark:text-gray-400">Crafting intuitive,
@@ -183,8 +182,7 @@
                             <div class="flex flex-col items-center text-center group">
                                 <div
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-gray-200 dark:border-gray-700 group-hover:border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <span
-                                        class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary">terminal</span>
+                                    <x-app-icon name="terminal" class="w-6 h-6 text-text-secondary dark:text-gray-400 group-hover:text-primary" />
                                 </div>
                                 <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Develop</h3>
                                 <p class="text-sm text-text-secondary dark:text-gray-400">Agile sprints with regular
@@ -193,8 +191,7 @@
                             <div class="flex flex-col items-center text-center group">
                                 <div
                                     class="w-16 h-16 rounded-full bg-surface-light dark:bg-surface-dark border-4 border-gray-200 dark:border-gray-700 group-hover:border-primary shadow-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <span
-                                        class="material-symbols-outlined text-text-secondary dark:text-gray-400 group-hover:text-primary">rocket_launch</span>
+                                    <x-app-icon name="rocket_launch" class="w-6 h-6 text-text-secondary dark:text-gray-400 group-hover:text-primary" />
                                 </div>
                                 <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Launch</h3>
                                 <p class="text-sm text-text-secondary dark:text-gray-400">Seamless deployment to App
@@ -217,7 +214,7 @@
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-primary">smartphone</span>
+                                <x-app-icon name="smartphone" class="w-5 h-5 text-primary" />
                                 <h3 class="font-bold text-text-main dark:text-white">App Strategy</h3>
                             </div>
                             <p class="text-sm text-text-secondary dark:text-gray-400">Market research, user persona
@@ -226,7 +223,7 @@
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-primary">palette</span>
+                                <x-app-icon name="palette" class="w-5 h-5 text-primary" />
                                 <h3 class="font-bold text-text-main dark:text-white">UI/UX Design</h3>
                             </div>
                             <p class="text-sm text-text-secondary dark:text-gray-400">Creating engaging, intuitive,
@@ -235,7 +232,7 @@
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-primary">cloud_sync</span>
+                                <x-app-icon name="cloud_sync" class="w-5 h-5 text-primary" />
                                 <h3 class="font-bold text-text-main dark:text-white">Cloud Integration</h3>
                             </div>
                             <p class="text-sm text-text-secondary dark:text-gray-400">Seamless connectivity with AWS,
@@ -244,7 +241,7 @@
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-primary">bug_report</span>
+                                <x-app-icon name="bug_report" class="w-5 h-5 text-primary" />
                                 <h3 class="font-bold text-text-main dark:text-white">QA &amp; Testing</h3>
                             </div>
                             <p class="text-sm text-text-secondary dark:text-gray-400">Rigorous automated and manual
@@ -253,7 +250,7 @@
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-primary">update</span>
+                                <x-app-icon name="update" class="w-5 h-5 text-primary" />
                                 <h3 class="font-bold text-text-main dark:text-white">Maintenance</h3>
                             </div>
                             <p class="text-sm text-text-secondary dark:text-gray-400">Ongoing support, updates, and
@@ -262,7 +259,7 @@
                         <div
                             class="bg-surface-light dark:bg-surface-dark p-6 rounded-lg border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow">
                             <div class="flex items-center gap-3 mb-4">
-                                <span class="material-symbols-outlined text-primary">security</span>
+                                <x-app-icon name="security" class="w-5 h-5 text-primary" />
                                 <h3 class="font-bold text-text-main dark:text-white">App Security</h3>
                             </div>
                             <p class="text-sm text-text-secondary dark:text-gray-400">Implementing banking-grade
@@ -304,7 +301,7 @@
                     </div>
                     <a class="text-primary font-bold flex items-center gap-2 mt-2 hover:gap-3 transition-all"
                         href="/case-studies">
-                        Read Full Case Study <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        Read Full Case Study <x-app-icon name="arrow_forward" class="w-4 h-4" />
                     </a>
                 </div>
             </div>

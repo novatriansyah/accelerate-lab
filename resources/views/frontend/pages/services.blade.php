@@ -80,7 +80,7 @@
                         <ul class="flex flex-col gap-4 mt-2">
                             @foreach ($strategyService->benefits as $benefit)
                                 <li class="flex items-center gap-3">
-                                    <span class="material-symbols-outlined text-primary">check_circle</span>
+                                    <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
                                     <span class="text-slate-dark dark:text-gray-200">{{ $benefit }}</span>
                                 </li>
                             @endforeach
@@ -89,15 +89,15 @@
                         <!-- Fallback benefits if none provided -->
                         <ul class="flex flex-col gap-4 mt-2">
                             <li class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
                                 <span class="text-slate-dark dark:text-gray-200">Data-driven decision making</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
                                 <span class="text-slate-dark dark:text-gray-200">Clear roadmap & MVP definition</span>
                             </li>
                             <li class="flex items-center gap-3">
-                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
                                 <span class="text-slate-dark dark:text-gray-200">User-centric design focus</span>
                             </li>
                         </ul>
@@ -121,7 +121,7 @@
                         <!-- Fallback features -->
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+                            <x-app-icon name="lightbulb" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Discovery Workshops</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400">Collaborative sessions to define core
@@ -130,7 +130,7 @@
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+                            <x-app-icon name="analytics" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Market Research</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400">In-depth analysis of competitors and
@@ -139,7 +139,7 @@
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">map</span>
+                            <x-app-icon name="map" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">MVP Planning</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400">Prioritizing features for a lean,
@@ -148,7 +148,7 @@
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">brush</span>
+                            <x-app-icon name="brush" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">UI/UX Design</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400">Crafting intuitive interfaces that users
@@ -176,7 +176,7 @@
                     <div class="flex flex-col items-center text-center group">
                         <div
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
-                            <span class="material-symbols-outlined text-primary text-2xl">search</span>
+                            <x-app-icon name="search" class="w-6 h-6 text-primary" />
                         </div>
                         <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">1. Define</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">Scoping requirements and setting KPIs.</p>
@@ -184,7 +184,7 @@
                     <div class="flex flex-col items-center text-center group">
                         <div
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
-                            <span class="material-symbols-outlined text-primary text-2xl">design_services</span>
+                            <x-app-icon name="design_services" class="w-6 h-6 text-primary" />
                         </div>
                         <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">2. Design</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">Prototyping and high-fidelity visuals.</p>
@@ -192,7 +192,7 @@
                     <div class="flex flex-col items-center text-center group">
                         <div
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
-                            <span class="material-symbols-outlined text-primary text-2xl">code</span>
+                            <x-app-icon name="code" class="w-6 h-6 text-primary" />
                         </div>
                         <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">3. Develop</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">Iterative coding sprints and QA testing.</p>
@@ -200,7 +200,7 @@
                     <div class="flex flex-col items-center text-center group">
                         <div
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
-                            <span class="material-symbols-outlined text-primary text-2xl">rocket_launch</span>
+                            <x-app-icon name="rocket_launch" class="w-6 h-6 text-primary" />
                         </div>
                         <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">4. Deploy</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-400">Launch, monitor, and scale.</p>
@@ -237,7 +237,7 @@
                         <!-- Fallback Development Services -->
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">devices</span>
+                            <x-app-icon name="devices" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Web Applications</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400">Scalable, responsive web apps using
@@ -246,7 +246,7 @@
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">smartphone</span>
+                            <x-app-icon name="smartphone" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Mobile Development</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400">Native and cross-platform solutions for
@@ -255,7 +255,7 @@
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">api</span>
+                            <x-app-icon name="api" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">API Integration</h4>
                                 <p class="text-sm text-gray-500 dark:text-gray-400">Seamless connection between your
@@ -264,7 +264,7 @@
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                            <span class="material-symbols-outlined text-primary text-3xl">cloud_sync</span>
+                            <x-app-icon name="cloud_sync" class="w-8 h-8 text-primary" />
                             <div>
                                 <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Cloud Infrastructure
                                 </h4>

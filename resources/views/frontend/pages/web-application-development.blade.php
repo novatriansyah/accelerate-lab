@@ -208,11 +208,10 @@
                                 class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-primary">cloud_queue</span>
+                                        <x-app-icon name="cloud_queue" class="w-5 h-5 text-primary" />
                                         <p class="text-text-main dark:text-white text-sm font-bold">Cloud Solutions (AWS/Azure)</p>
                                     </div>
-                                    <span
-                                        class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
+                                    <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
@@ -271,8 +270,7 @@
                 </div>
                 <a class="text-primary font-bold hover:text-primary-dark inline-flex items-center gap-1 group"
                     href="/case-studies">
-                    View all projects <span
-                        class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    View all projects <x-app-icon name="arrow_forward" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">

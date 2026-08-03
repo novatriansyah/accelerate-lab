@@ -30,5 +30,19 @@ class PerformanceCheckTest extends TestCase
         $response->assertStatus(200);
         $response->assertDontSee('material-icons-round', false);
         $response->assertDontSee('material-symbols-outlined', false);
+        $response->assertDontSee('material-icons', false);
+    }
+
+    public function test_no_unrendered_material_font_spans_across_all_frontend_pages(): void
+    {
+        $routes = ['/', '/about', '/services', '/case-studies', '/contact', '/blog', '/careers', '/privacy-policy', '/terms-of-service'];
+
+        foreach ($routes as $route) {
+            $response = $this->get($route);
+            $response->assertStatus(200);
+            $response->assertDontSee('material-icons-round', false);
+            $response->assertDontSee('material-symbols-outlined', false);
+            $response->assertDontSee('material-icons', false);
+        }
     }
 }

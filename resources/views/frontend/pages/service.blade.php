@@ -25,8 +25,7 @@
                         <a href="/contact"
                             class="flex items-center justify-center h-12 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white text-base font-bold transition-all shadow-lg shadow-primary/20 group">
                             {{ $service->cta_text ?? 'Start Your Project' }}
-                            <span
-                                class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <x-app-icon name="arrow_forward" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a href="/case-studies"
                             class="flex items-center justify-center h-12 px-6 rounded-lg border border-border-medium dark:border-slate-700 bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 text-text-main dark:text-white text-base font-semibold transition-colors">

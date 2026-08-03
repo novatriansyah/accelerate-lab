@@ -73,7 +73,7 @@
                                         <div class="flex items-center gap-3 mb-3">
                                             <div
                                                 class="size-8 rounded-full bg-primary flex items-center justify-center text-white">
-                                                <span class="material-symbols-outlined text-sm">analytics</span>
+                                                <x-app-icon name="analytics" class="w-4 h-4 text-white" />
                                             </div>
                                             <div>
                                                 <div class="h-2 w-24 bg-gray-200 dark:bg-gray-700 rounded mb-1"></div>
@@ -100,16 +100,11 @@
                 Prototyping Arsenal</p>
             <div
                 class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><span
-                        class="material-symbols-outlined">design_services</span> Figma</div>
-                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><span
-                        class="material-symbols-outlined">diamond</span> Sketch</div>
-                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><span
-                        class="material-symbols-outlined">layers</span> Adobe XD</div>
-                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><span
-                        class="material-symbols-outlined">bolt</span> Framer</div>
-                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><span
-                        class="material-symbols-outlined">draw</span> Illustrator</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><x-app-icon name="design_services" class="w-5 h-5" /> Figma</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><x-app-icon name="diamond" class="w-5 h-5" /> Sketch</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><x-app-icon name="layers" class="w-5 h-5" /> Adobe XD</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><x-app-icon name="bolt" class="w-5 h-5" /> Framer</div>
+                <div class="flex items-center gap-2 font-bold text-xl text-gray-600 dark:text-gray-400"><x-app-icon name="draw" class="w-5 h-5" /> Illustrator</div>
             </div>
         </div>
     </div>
@@ -133,8 +128,7 @@
                             <a href="/about"
                                 class="flex w-fit items-center gap-2 text-primary font-bold hover:text-primary-dark group transition-colors">
                                 <span>Learn about our values</span>
-                                <span
-                                    class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                                <x-app-icon name="arrow_forward" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </a>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:w-2/3">
@@ -142,7 +136,7 @@
                                 class="flex flex-col gap-4 rounded-xl border border-[#d0e7e4] dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow">
                                 <div
                                     class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
-                                    <span class="material-symbols-outlined">person_search</span>
+                                    <x-app-icon name="person_search" class="w-6 h-6" />
                                 </div>
                                 <h4 class="text-text-main dark:text-white text-lg font-bold leading-tight">User-Centric
                                     Design</h4>
@@ -154,7 +148,7 @@
                                 class="flex flex-col gap-4 rounded-xl border border-[#d0e7e4] dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow">
                                 <div
                                     class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
-                                    <span class="material-symbols-outlined">accessibility_new</span>
+                                    <x-app-icon name="accessibility_new" class="w-6 h-6" />
                                 </div>
                                 <h4 class="text-text-main dark:text-white text-lg font-bold leading-tight">Accessibility
                                     First</h4>
@@ -166,7 +160,7 @@
                                 class="flex flex-col gap-4 rounded-xl border border-[#d0e7e4] dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow">
                                 <div
                                     class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
-                                    <span class="material-symbols-outlined">bar_chart</span>
+                                    <x-app-icon name="bar_chart" class="w-6 h-6" />
                                 </div>
                                 <h4 class="text-text-main dark:text-white text-lg font-bold leading-tight">Data-Driven
                                     Decisions</h4>
@@ -178,7 +172,7 @@
                                 class="flex flex-col gap-4 rounded-xl border border-[#d0e7e4] dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow">
                                 <div
                                     class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-2">
-                                    <span class="material-symbols-outlined">devices</span>
+                                    <x-app-icon name="devices" class="w-6 h-6" />
                                 </div>
                                 <h4 class="text-text-main dark:text-white text-lg font-bold leading-tight">Scalable Systems
                                 </h4>
@@ -218,7 +212,7 @@
                         </div>
                         <div class="pt-4 pr-4">
                             <div class="text-primary mb-2">
-                                <span class="material-symbols-outlined text-3xl">search</span>
+                                <x-app-icon name="search" class="w-7 h-7" />
                             </div>
                             <h4 class="text-text-main dark:text-white text-xl font-bold mb-2">Discover</h4>
                             <p class="text-text-secondary dark:text-gray-400 text-sm">Deep dive into user research,
@@ -234,7 +228,7 @@
                         </div>
                         <div class="pt-4 pr-4">
                             <div class="text-primary mb-2">
-                                <span class="material-symbols-outlined text-3xl">edit_note</span>
+                                <x-app-icon name="edit_note" class="w-7 h-7" />
                             </div>
                             <h4 class="text-text-main dark:text-white text-xl font-bold mb-2">Define</h4>
                             <p class="text-text-secondary dark:text-gray-400 text-sm">Structuring the blueprint with
@@ -250,7 +244,7 @@
                         </div>
                         <div class="pt-4 pr-4">
                             <div class="text-primary mb-2">
-                                <span class="material-symbols-outlined text-3xl">brush</span>
+                                <x-app-icon name="brush" class="w-7 h-7" />
                             </div>
                             <h4 class="text-text-main dark:text-white text-xl font-bold mb-2">Design</h4>
                             <p class="text-text-secondary dark:text-gray-400 text-sm">Crafting high-fidelity UI,
@@ -265,7 +259,7 @@
                         </div>
                         <div class="pt-4 pr-4">
                             <div class="text-primary mb-2">
-                                <span class="material-symbols-outlined text-3xl">rocket_launch</span>
+                                <x-app-icon name="rocket_launch" class="w-7 h-7" />
                             </div>
                             <h4 class="text-text-main dark:text-white text-xl font-bold mb-2">Deliver</h4>
                             <p class="text-text-secondary dark:text-gray-400 text-sm">Creating comprehensive design systems
@@ -332,7 +326,7 @@
                     <a href="/case-studies"
                         class="hidden md:flex items-center gap-2 text-text-main dark:text-white font-medium hover:text-primary transition-colors">
                         <span>View All Projects</span>
-                        <span class="material-symbols-outlined">arrow_right_alt</span>
+                        <x-app-icon name="arrow_right_alt" class="w-5 h-5" />
                     </a>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
@@ -458,7 +452,7 @@
                                 Annual Revenue Increase</p>
                             <p class="text-2xl font-black text-primary" x-text="projectedRevenue">$125,000</p>
                         </div>
-                        <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+                        <x-app-icon name="trending_up" class="w-8 h-8 text-primary" />
                     </div>
                     <p class="text-xs text-gray-400 dark:text-gray-500 mt-2 text-center">*Estimates based on industry standards</p>
                 </div>
