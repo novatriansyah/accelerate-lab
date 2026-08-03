@@ -12,12 +12,12 @@
     <meta name="author" content="Accelerate Lab">
     <meta name="robots" content="{{ $robots ?? 'index, follow' }}">
     <meta name="theme-color" content="#00BFA5">
-    <link rel="canonical" href="{{ $canonical ?? url()->current() }}">
+    <link rel="canonical" href="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
-    <meta property="og:url" content="{{ $canonical ?? url()->current() }}">
+    <meta property="og:url" content="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
     <meta property="og:title" content="{{ $title ?? 'Accelerate Lab - Digital Innovation Agency' }}">
     <meta property="og:description"
         content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.' }}">
@@ -27,7 +27,7 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ $canonical ?? url()->current() }}">
+    <meta property="twitter:url" content="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
     <meta property="twitter:title" content="{{ $title ?? 'Accelerate Lab - Digital Innovation Agency' }}">
     <meta property="twitter:description"
         content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.' }}">
