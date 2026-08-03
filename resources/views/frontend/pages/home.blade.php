@@ -54,8 +54,7 @@
                         <a href="/contact" id="hero-cta-primary"
                             class="bg-primary hover:bg-primary-dark text-white text-lg font-semibold px-8 py-4 rounded-lg shadow-lg shadow-primary/30 transition-all hover:scale-105 flex items-center justify-center gap-2 group">
                             Start Your Project
-                            <span
-                                class="material-icons-round group-hover:translate-x-1 transition-transform" aria-hidden="true">arrow_forward</span>
+                            <x-app-icon name="arrow_forward" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a href="/case-studies" id="hero-cta-secondary"
                             class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary text-lg font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-md flex items-center justify-center gap-2">
@@ -120,7 +119,7 @@
                         class="absolute top-1/4 right-0 w-64 bg-surface-light dark:bg-surface-dark rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-5 animate-float-delayed z-10 opacity-95 backdrop-blur-md">
                         <div class="flex justify-between items-center mb-4">
                             <div class="flex items-center gap-2">
-                                <span class="material-icons-round text-primary text-sm">speed</span>
+                                <x-app-icon name="speed" class="w-4 h-4 text-primary" />
                                 <h4 class="text-xs font-bold text-slate-500 uppercase">Velocity</h4>
                             </div>
                             <span class="text-green-500 text-xs font-mono font-bold">98/100</span>
@@ -196,12 +195,12 @@
                 <div
                     class="group relative overflow-hidden rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all p-8 md:col-span-2">
                     <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity" aria-hidden="true">
-                        <span class="material-icons-round text-[150px] text-primary transform rotate-12">radar</span>
+                        <x-app-icon name="radar" class="w-[150px] h-[150px] text-primary transform rotate-12" />
                     </div>
                     <div class="relative z-10 flex flex-col h-full justify-between">
                         <div>
                             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                                <span class="material-icons-round text-primary text-2xl" aria-hidden="true">explore</span>
+                                <x-app-icon name="explore" class="w-6 h-6 text-primary" />
                             </div>
                             <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Product Strategy</h3>
                             <p class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
@@ -211,7 +210,7 @@
                         </div>
                         <a class="inline-flex items-center text-primary font-semibold mt-8 group-hover:translate-x-2 transition-transform"
                             href="/services">
-                            Learn more <span class="material-icons-round ml-1 text-sm" aria-hidden="true">arrow_forward</span>
+                            Learn more <x-app-icon name="arrow_forward" class="w-4 h-4 ml-1" />
                         </a>
                     </div>
                 </div>
@@ -221,7 +220,7 @@
                         <div>
                             <div
                                 class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
-                                <span class="material-icons-round text-primary text-2xl" aria-hidden="true">code</span>
+                                <x-app-icon name="code" class="w-6 h-6 text-primary" />
                             </div>
                             <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Custom Development</h3>
                             <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
@@ -269,40 +268,40 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="relative flex flex-col items-center text-center p-6">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">search</span>
+                        <x-app-icon name="search" class="w-6 h-6 text-primary" />
                     </div>
                     <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 1</span>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Discover</h3>
                     <p class="text-sm text-slate-500 dark:text-slate-400">We analyze your requirements, audience, and business goals.</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
                 </div>
                 <div class="relative flex flex-col items-center text-center p-6">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">palette</span>
+                        <x-app-icon name="palette" class="w-6 h-6 text-primary" />
                     </div>
                     <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 2</span>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Design</h3>
                     <p class="text-sm text-slate-500 dark:text-slate-400">We craft wireframes, prototypes, and a polished UI/UX system.</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
                 </div>
                 <div class="relative flex flex-col items-center text-center p-6">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">code</span>
+                        <x-app-icon name="code" class="w-6 h-6 text-primary" />
                     </div>
                     <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 3</span>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Develop</h3>
                     <p class="text-sm text-slate-500 dark:text-slate-400">We build with modern stacks, agile sprints, and CI/CD pipelines.</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
-                        <span class="material-symbols-outlined">chevron_right</span>
+                        <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
                 </div>
                 <div class="flex flex-col items-center text-center p-6">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <span class="material-symbols-outlined text-primary text-2xl" aria-hidden="true">rocket_launch</span>
+                        <x-app-icon name="rocket_launch" class="w-6 h-6 text-primary" />
                     </div>
                     <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 4</span>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Deploy</h3>
@@ -341,8 +340,7 @@
                                     class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-primary/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500" aria-hidden="true">
                                 </div>
                                 <div class="absolute inset-0 flex items-center justify-center">
-                                    <span
-                                        class="material-icons-round text-4xl text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors" aria-hidden="true">{{ $project->icon ?? 'layers' }}</span>
+                                    <x-app-icon :name="$project->icon ?? 'layers'" class="w-10 h-10 text-slate-400 dark:text-slate-500 group-hover:text-primary transition-colors" />
                                 </div>
                             @endif
                         </div>
@@ -371,7 +369,7 @@
                             <a href="/case-studies"
                                 class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-primary/30">
                                 View Case Study
-                                <span class="material-icons-round text-sm" aria-hidden="true">arrow_forward</span>
+                                <x-app-icon name="arrow_forward" class="w-4 h-4" />
                             </a>
                         </div>
                     </article>
@@ -395,15 +393,15 @@
                 </p>
                 <ul class="space-y-4">
                     <li class="flex items-start">
-                        <span class="material-icons-round text-primary mr-3 mt-1" aria-hidden="true">check_circle</span>
+                        <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
                         <span class="text-slate-700 dark:text-slate-300">Clean, maintainable architecture</span>
                     </li>
                     <li class="flex items-start">
-                        <span class="material-icons-round text-primary mr-3 mt-1" aria-hidden="true">check_circle</span>
+                        <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
                         <span class="text-slate-700 dark:text-slate-300">Security-first development lifecycle</span>
                     </li>
                     <li class="flex items-start">
-                        <span class="material-icons-round text-primary mr-3 mt-1" aria-hidden="true">check_circle</span>
+                        <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
                         <span class="text-slate-700 dark:text-slate-300">Automated CI/CD pipelines</span>
                     </li>
                 </ul>
@@ -453,7 +451,7 @@
                 <article class="bg-white dark:bg-surface-dark rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                     <div class="flex items-center gap-1 mb-4" aria-label="5 out of 5 stars">
                         @for ($i = 0; $i < 5; $i++)
-                        <span class="material-symbols-outlined text-amber-400 text-lg" aria-hidden="true">star</span>
+                        <x-app-icon name="star" class="w-4 h-4 text-amber-400" />
                         @endfor
                     </div>
                     <blockquote class="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
@@ -465,7 +463,7 @@
                             class="w-10 h-10 rounded-full object-cover" loading="lazy" width="40" height="40" decoding="async">
                         @else
                         <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">person</span>
+                            <x-app-icon name="person" class="w-5 h-5 text-primary" />
                         </div>
                         @endif
                         <div>

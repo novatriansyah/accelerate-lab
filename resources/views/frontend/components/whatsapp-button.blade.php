@@ -38,7 +38,7 @@
             <button @click="open = false" 
                     aria-label="Close chat preview" 
                     class="text-white/80 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors">
-                <span class="material-symbols-outlined text-[20px]">close</span>
+                <x-app-icon name="close" class="w-5 h-5" />
             </button>
         </div>
 

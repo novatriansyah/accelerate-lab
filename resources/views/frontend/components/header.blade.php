@@ -57,7 +57,7 @@
                 <button
                     class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400"
                     aria-label="Toggle dark mode">
-                    <span class="material-icons-round text-xl" aria-hidden="true">brightness_4</span>
+                    <x-app-icon name="brightness_4" class="w-5 h-5 text-gray-500 dark:text-gray-400" />
                 </button>
             </div>
             <div class="pt-4 mt-4 border-t border-gray-100 dark:border-gray-800">
