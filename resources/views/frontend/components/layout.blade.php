@@ -21,7 +21,7 @@
     <meta property="og:title" content="{{ $title ?? 'Accelerate Lab - Digital Innovation Agency' }}">
     <meta property="og:description"
         content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.' }}">
-    <meta property="og:image" content="{{ $ogImage ?? (isset($settings['site_logo']) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp')) }}">
+    <meta property="og:image" content="{{ $ogImage ?? (!empty($settings['site_logo'] ?? null) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp')) }}">
     <meta property="og:site_name" content="Accelerate Lab">
     <meta property="og:locale" content="en_US">
 
@@ -31,7 +31,7 @@
     <meta property="twitter:title" content="{{ $title ?? 'Accelerate Lab - Digital Innovation Agency' }}">
     <meta property="twitter:description"
         content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.' }}">
-    <meta property="twitter:image" content="{{ $ogImage ?? (isset($settings['site_logo']) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp')) }}">
+    <meta property="twitter:image" content="{{ $ogImage ?? (!empty($settings['site_logo'] ?? null) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp')) }}">
 
     <!-- Preconnect to font origins (performance) -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -47,18 +47,18 @@
     <!-- JSON-LD Structured Data (SEO) -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "Organization",
+        "{{ '@' }}context": "https://schema.org",
+        "{{ '@' }}type": "Organization",
         "name": "Accelerate Lab",
         "url": "{{ config('app.url') }}",
-        "logo": "{{ isset($settings['site_logo']) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp') }}",
+        "logo": "{{ !empty($settings['site_logo'] ?? null) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp') }}",
         "description": "Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.",
         "founder": {
-            "@type": "Person",
+            "{{ '@' }}type": "Person",
             "name": "Nova Triansyah Azis"
         },
         "contactPoint": {
-            "@type": "ContactPoint",
+            "{{ '@' }}type": "ContactPoint",
             "contactType": "sales",
             "url": "{{ url('/contact') }}"
         },
@@ -67,7 +67,7 @@
     </script>
     @stack('schema')
 
-    @if (!empty($settings['google_tag_id']))
+    @if (!empty($settings['google_tag_id'] ?? null))
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ $settings['google_tag_id'] }}"></script>
         <script>
@@ -75,7 +75,7 @@
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', '{{ $settings['google_tag_id'] }}');
+          gtag('config', '{{ $settings["google_tag_id"] }}');
         </script>
     @endif
 </head>

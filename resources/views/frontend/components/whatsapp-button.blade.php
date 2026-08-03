@@ -1,7 +1,7 @@
 @php
-    $rawPhone = $settings['contact_whatsapp'] ?? $settings['contact_phone'] ?? '+6281234567890';
+    $rawPhone = ($settings['contact_whatsapp'] ?? null) ?: (($settings['contact_phone'] ?? null) ?: '+6281234567890');
     $cleanPhone = preg_replace('/[^0-9]/', '', $rawPhone);
-    $defaultMsg = $settings['whatsapp_default_message'] ?? 'Hello Accelerate Lab! I would like to inquire about your services.';
+    $defaultMsg = ($settings['whatsapp_default_message'] ?? null) ?: 'Hello Accelerate Lab! I would like to inquire about your services.';
     $waUrl = "https://wa.me/{$cleanPhone}?text=" . urlencode($defaultMsg);
 @endphp
 

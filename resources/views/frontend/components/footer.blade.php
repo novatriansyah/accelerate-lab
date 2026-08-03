@@ -46,17 +46,17 @@
             <div>
                 <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-wider">Legal Entity
                 </h4>
-                @if (isset($settings['legal_name']))
+                @if (!empty($settings['legal_name'] ?? null))
                     <div class="flex items-start gap-3">
                         <span class="material-icons-round text-slate-400" aria-hidden="true">verified_user</span>
                         <div>
                             <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">
                                 {{ $settings['legal_name'] }}</p>
-                            @if (isset($settings['registered_city']))
+                            @if (!empty($settings['registered_city'] ?? null))
                                 <p class="text-xs text-slate-500 mt-1">Registered in {{ $settings['registered_city'] }}.
                                 </p>
                             @endif
-                            @if (isset($settings['reg_number']))
+                            @if (!empty($settings['reg_number'] ?? null))
                                 <p class="text-xs text-slate-500">{{ $settings['reg_number'] }}</p>
                             @endif
                         </div>
@@ -68,7 +68,7 @@
             class="border-t border-gray-200 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-xs text-slate-500 text-center md:text-left">
                 © {{ date('Y') }} Accelerate Lab. All rights reserved.
-                @if (isset($settings['legal_name']))
+                @if (!empty($settings['legal_name'] ?? null))
                     <span class="hidden sm:inline">|</span> A brand by {{ $settings['legal_name'] }}.
                 @endif
             </p>

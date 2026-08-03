@@ -24,7 +24,7 @@ class ArticleFactory extends Factory
             'category_id' => Category::factory(),
             'user_id' => User::factory(),
             'is_featured' => false,
-            'published_at' => now(),
+            'published_at' => now()->subMinute(),
         ];
     }
 
