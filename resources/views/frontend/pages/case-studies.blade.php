@@ -85,7 +85,7 @@
                                 @endif
                                 <a class="inline-flex w-fit items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark group-hover:gap-3 transition-all"
                                     href="{{ route('project', $featuredProject) }}">
-                                    Read Case Study <span class="material-symbols-outlined text-lg" aria-hidden="true">arrow_forward</span>
+                                    Read Case Study <x-app-icon name="arrow_forward" class="w-4 h-4" />
                                 </a>
                             </div>
                             <div
@@ -99,10 +99,9 @@
                                         class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:to-black/10" aria-hidden="true">
                                     </div>
                                 @else
-                                    <div
+                                     <div
                                         class="absolute inset-0 bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
-                                        <span
-                                            class="material-icons-round text-8xl text-slate-300 dark:text-slate-600">{{ $featuredProject->icon ?? 'image' }}</span>
+                                        <x-app-icon :name="$featuredProject->icon ?? 'image'" class="w-16 h-16 text-slate-300 dark:text-slate-600" />
                                     </div>
                                 @endif
                             </div>
@@ -125,10 +124,9 @@
                                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                         loading="lazy" width="400" height="300" decoding="async">
                                 @else
-                                    <div
+                                     <div
                                         class="absolute inset-0 bg-slate-800 flex items-center justify-center">
-                                        <span
-                                            class="material-icons-round text-6xl text-slate-600" aria-hidden="true">{{ $project->icon ?? 'image' }}</span>
+                                        <x-app-icon :name="$project->icon ?? 'image'" class="w-12 h-12 text-slate-600" />
                                     </div>
                                 @endif
                                 <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
@@ -160,7 +158,7 @@
                                     {{ $project->description }}
                                 </p>
                                 <a href="{{ route('project', $project) }}" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-primary-dark mt-1 transition-all">
-                                    Read Case Study <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+                                    Read Case Study <x-app-icon name="arrow_forward" class="w-4 h-4" />
                                 </a>
                             </div>
                         </div>
@@ -169,7 +167,7 @@
                 <div class="mt-16 flex justify-center">
                     <button
                         class="flex items-center gap-2 rounded-full border border-gray-200 dark:border-slate-700 px-6 py-3 text-sm font-semibold text-text-main dark:text-white transition-colors hover:border-primary hover:text-primary">
-                        View More Projects <span class="material-symbols-outlined text-lg">expand_more</span>
+                        View More Projects <x-app-icon name="expand_more" class="w-5 h-5" />
                     </button>
                 </div>
             </div>

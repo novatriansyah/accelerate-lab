@@ -12,7 +12,7 @@
                     </span>
                     <span>•</span>
                     <span class="flex items-center gap-1">
-                        <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        <x-app-icon name="calendar_today" class="w-4 h-4" />
                         {{ $article->published_at->format('M d, Y') }}
                     </span>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="flex items-center gap-4 pt-2">
                     <div class="size-12 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
                         <!-- Placeholder or User Avatar if we had one -->
-                        <span class="material-symbols-outlined text-4xl text-slate-400">person</span>
+                        <x-app-icon name="person" class="w-8 h-8 text-slate-400" />
                     </div>
                     <div class="text-sm">
                         <p class="font-bold text-slate-dark dark:text-white">{{ $article->author->name }}</p>
@@ -55,7 +55,7 @@
         <!-- Back to Blog -->
         <section class="w-full max-w-3xl px-4 sm:px-6 lg:px-8 pb-16 pt-8 border-t border-gray-100 dark:border-white/10">
             <a href="{{ route('blog') }}" class="flex items-center gap-2 text-primary font-bold hover:underline">
-                <span class="material-symbols-outlined">arrow_back</span>
+                <x-app-icon name="arrow_back" class="w-4 h-4" />
                 Back to Insights
             </a>
         </section>

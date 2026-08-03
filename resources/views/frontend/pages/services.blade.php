@@ -109,8 +109,7 @@
                         @foreach ($strategyService->features as $feature)
                             <div
                                 class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
-                                <span
-                                    class="material-symbols-outlined text-primary text-3xl">{{ $feature['icon'] ?? 'star' }}</span>
+                                <x-app-icon :name="$feature['icon'] ?? 'star'" class="w-8 h-8 text-primary" />
                                 <div>
                                     <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">
                                         {{ $feature['title'] }}</h4>
@@ -223,8 +222,7 @@
                         @foreach ($developmentServices as $service)
                             <a href="{{ route('service', $service) }}"
                                 class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300 group">
-                                <span
-                                    class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">{{ $service->icon ?? 'layers' }}</span>
+                                <x-app-icon :name="$service->icon ?? 'layers'" class="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
                                 <div>
                                     <h4
                                         class="text-lg font-bold text-slate-dark dark:text-white mb-1 group-hover:text-primary transition-colors">

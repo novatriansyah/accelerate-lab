@@ -27,11 +27,11 @@
                                     </h3>
                                     <div class="flex items-center gap-4 text-sm text-slate-medium dark:text-slate-400">
                                         <span class="flex items-center gap-1">
-                                            <span class="material-symbols-outlined text-[18px]">apartment</span>
+                                            <x-app-icon name="apartment" class="w-4 h-4" />
                                             {{ $job->department }}
                                         </span>
                                         <span class="flex items-center gap-1">
-                                            <span class="material-symbols-outlined text-[18px]">location_on</span>
+                                            <x-app-icon name="location_on" class="w-4 h-4" />
                                             {{ $job->location }}
                                         </span>
                                         <span
@@ -51,7 +51,7 @@
             @else
                 <div
                     class="text-center py-12 bg-slate-50 dark:bg-white/5 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700">
-                    <span class="material-symbols-outlined text-4xl text-slate-400 mb-4">search_off</span>
+                    <x-app-icon name="search_off" class="w-10 h-10 text-slate-400 mb-4" />
                     <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">No Openings Currently</h3>
                     <p class="text-slate-medium dark:text-slate-400">
                         We don't have any active listings right now, but we're always happy to hear from talented people.

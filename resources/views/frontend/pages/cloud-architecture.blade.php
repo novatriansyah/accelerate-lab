@@ -31,15 +31,15 @@
                     </div>
                     <div class="mt-8 flex items-center gap-6 text-sm text-slate-500 font-medium dark:text-slate-400">
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
                             <span>AWS Certified</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
                             <span>Azure Partners</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
                             <span>GCP Experts</span>
                         </div>
                     </div>
@@ -76,16 +76,11 @@
                 Partners</p>
             <div
                 class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><span
-                        class="material-symbols-outlined">cloud</span> AWS</span>
-                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><span
-                        class="material-symbols-outlined">window</span> Azure</span>
-                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><span
-                        class="material-symbols-outlined">circle</span> Google Cloud</span>
-                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><span
-                        class="material-symbols-outlined">deployed_code</span> Docker</span>
-                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><span
-                        class="material-symbols-outlined">anchor</span> Kubernetes</span>
+                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><x-app-icon name="cloud" class="w-5 h-5" /> AWS</span>
+                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><x-app-icon name="window" class="w-5 h-5" /> Azure</span>
+                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><x-app-icon name="circle" class="w-5 h-5" /> Google Cloud</span>
+                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><x-app-icon name="deployed_code" class="w-5 h-5" /> Docker</span>
+                <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><x-app-icon name="anchor" class="w-5 h-5" /> Kubernetes</span>
             </div>
         </div>
     </section>
@@ -106,7 +101,7 @@
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
                     <div
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">cloud_upload</span>
+                        <x-app-icon name="cloud_upload" class="w-6 h-6" />
                     </div>
                     <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Cloud Migration</h3>
                     <p class="text-text-main leading-relaxed dark:text-slate-300">Seamlessly move legacy systems to modern
@@ -116,7 +111,7 @@
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
                     <div
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">bolt</span>
+                        <x-app-icon name="bolt" class="w-6 h-6" />
                     </div>
                     <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Serverless Architecture</h3>
                     <p class="text-text-main leading-relaxed dark:text-slate-300">Build scalable applications without
@@ -126,7 +121,7 @@
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
                     <div
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">settings_suggest</span>
+                        <x-app-icon name="settings_suggest" class="w-6 h-6" />
                     </div>
                     <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">DevOps Automation</h3>
                     <p class="text-text-main leading-relaxed dark:text-slate-300">Streamline deployment with robust CI/CD
@@ -136,7 +131,7 @@
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
                     <div
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">security</span>
+                        <x-app-icon name="security" class="w-6 h-6" />
                     </div>
                     <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Security &amp; Compliance</h3>
                     <p class="text-text-main leading-relaxed dark:text-slate-300">Enterprise-grade security protocols,
@@ -146,7 +141,7 @@
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
                     <div
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">hub</span>
+                        <x-app-icon name="hub" class="w-6 h-6" />
                     </div>
                     <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Hybrid Cloud Solutions</h3>
                     <p class="text-text-main leading-relaxed dark:text-slate-300">Integrate on-premise and cloud resources
@@ -156,7 +151,7 @@
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
                     <div
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">trending_up</span>
+                        <x-app-icon name="trending_up" class="w-6 h-6" />
                     </div>
                     <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Cost Optimization</h3>
                     <p class="text-text-main leading-relaxed dark:text-slate-300">Maximize performance while minimizing
@@ -180,7 +175,7 @@
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
-                                <span class="material-symbols-outlined text-[20px]">search</span>
+                                <x-app-icon name="search" class="w-5 h-5" />
                             </span>
                             <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 1: Assessment</h3>
                             <p class="text-text-main mt-1 text-sm dark:text-slate-400">Deep dive into current
@@ -189,7 +184,7 @@
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
-                                <span class="material-symbols-outlined text-[20px]">design_services</span>
+                                <x-app-icon name="design_services" class="w-5 h-5" />
                             </span>
                             <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 2: Strategy Design</h3>
                             <p class="text-text-main mt-1 text-sm dark:text-slate-400">Architecting the solution blueprint,
@@ -198,7 +193,7 @@
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
-                                <span class="material-symbols-outlined text-[20px]">construction</span>
+                                <x-app-icon name="construction" class="w-5 h-5" />
                             </span>
                             <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 3: Execution</h3>
                             <p class="text-text-main mt-1 text-sm dark:text-slate-400">Agile implementation of the cloud
@@ -207,7 +202,7 @@
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
-                                <span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+                                <x-app-icon name="rocket_launch" class="w-5 h-5" />
                             </span>
                             <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 4: Optimization</h3>
                             <p class="text-text-main mt-1 text-sm dark:text-slate-400">Ongoing monitoring, scaling, and
@@ -220,12 +215,12 @@
                         <div class="space-y-4">
                             <div
                                 class="rounded-xl bg-slate-50 p-6 shadow-sm border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
-                                <span class="material-symbols-outlined text-4xl text-primary mb-2">speed</span>
+                                <x-app-icon name="speed" class="w-8 h-8 text-primary mb-2" />
                                 <div class="text-3xl font-black text-text-header dark:text-white">3x</div>
                                 <div class="text-sm font-medium text-slate-500 dark:text-slate-400">Faster Deployment</div>
                             </div>
                             <div class="rounded-xl bg-primary p-6 shadow-sm text-white">
-                                <span class="material-symbols-outlined text-4xl text-white/80 mb-2">savings</span>
+                                <x-app-icon name="savings" class="w-8 h-8 text-white/80 mb-2" />
                                 <div class="text-3xl font-black">40%</div>
                                 <div class="text-sm font-medium text-white/80">Avg. Cost Reduction</div>
                             </div>
@@ -233,12 +228,12 @@
                         <div class="space-y-4 mt-8">
                             <div
                                 class="rounded-xl bg-slate-50 p-6 shadow-sm border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
-                                <span class="material-symbols-outlined text-4xl text-primary mb-2">shield_lock</span>
+                                <x-app-icon name="shield_lock" class="w-8 h-8 text-primary mb-2" />
                                 <div class="text-3xl font-black text-text-header dark:text-white">99.9%</div>
                                 <div class="text-sm font-medium text-slate-500 dark:text-slate-400">SLA Guarantee</div>
                             </div>
                             <div class="rounded-xl bg-slate-900 p-6 shadow-sm text-white border border-slate-800 h-full">
-                                <span class="material-symbols-outlined text-4xl text-primary mb-2">support_agent</span>
+                                <x-app-icon name="support_agent" class="w-8 h-8 text-primary mb-2" />
                                 <div class="text-3xl font-black">24/7</div>
                                 <div class="text-sm font-medium text-slate-400">Support Coverage</div>
                             </div>

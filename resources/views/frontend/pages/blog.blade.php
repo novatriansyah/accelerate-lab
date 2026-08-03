@@ -38,8 +38,7 @@
                         </div>
                         <div class="flex flex-col justify-center p-8 lg:p-12 gap-6">
                             <div class="flex items-center gap-3 text-sm text-slate-medium dark:text-slate-400">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-symbols-outlined text-[18px]" aria-hidden="true">calendar_today</span>
+                                <span class="flex items-center gap-1"><x-app-icon name="calendar_today" class="w-4 h-4" />
                                     {{ $featured->published_at->format('M d, Y') }}</span>
                                 @if ($featured->category)
                                     <span aria-hidden="true">•</span>
@@ -56,7 +55,7 @@
                             <div class="flex items-center gap-4 pt-2">
                                 <div
                                     class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-slate-400" aria-hidden="true">person</span>
+                                    <x-app-icon name="person" class="w-5 h-5 text-slate-400" />
                                 </div>
                                 <div class="text-sm">
                                     <p class="font-bold text-slate-dark dark:text-white">{{ $featured->author->name }}</p>
@@ -113,7 +112,7 @@
                             <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-white/10">
                                 <div
                                     class="size-8 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-xs text-slate-400" aria-hidden="true">person</span>
+                                    <x-app-icon name="person" class="w-4 h-4 text-slate-400" />
                                 </div>
                                 <span
                                     class="text-xs font-medium text-slate-dark dark:text-white">{{ $article->author->name }}</span>

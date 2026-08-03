@@ -93,7 +93,7 @@
                             class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-8 shadow-sm ring-1 ring-slate-200 dark:ring-slate-800 transition-all hover:shadow-md hover:-translate-y-1">
                             <div
                                 class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                                <span class="material-symbols-outlined text-3xl">{{ $value->icon ?? 'star' }}</span>
+                                <x-app-icon :name="$value->icon ?? 'star'" class="w-6 h-6" />
                             </div>
                             <h3 class="mb-3 text-xl font-bold text-text-main dark:text-white">{{ $value->title }}</h3>
                             <p class="text-text-muted dark:text-slate-400 leading-relaxed">
@@ -142,7 +142,7 @@
 
                                     <div
                                         class="flex size-8 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-text-main dark:text-slate-400 {{ $loop->first ? 'bg-primary/20 text-primary' : '' }}">
-                                        <span class="material-symbols-outlined text-lg">{{ $milestone->icon }}</span>
+                                        <x-app-icon :name="$milestone->icon ?? 'timeline'" class="w-4 h-4" />
                                     </div>
 
                                     @if (!$loop->last)
@@ -197,7 +197,7 @@
                                     loading="lazy" width="300" height="375" decoding="async">
                             @else
                                 <div class="h-full w-full bg-slate-100 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-6xl text-slate-300" aria-hidden="true">person</span>
+                                    <x-app-icon name="person" class="w-12 h-12 text-slate-300" />
                                 </div>
                             @endif
                         </div>
@@ -207,7 +207,7 @@
                             @if ($member->linkedin_url)
                                 <a href="{{ $member->linkedin_url }}" target="_blank"
                                     class="mt-2 inline-flex items-center text-xs text-slate-500 hover:text-primary transition-colors">
-                                    LinkedIn <span class="material-symbols-outlined text-xs ml-0.5">open_in_new</span>
+                                    LinkedIn <x-app-icon name="open_in_new" class="w-3.5 h-3.5 ml-0.5" />
                                 </a>
                             @endif
                         </div>

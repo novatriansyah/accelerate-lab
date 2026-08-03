@@ -43,8 +43,7 @@
                         @else
                             <div
                                 class="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 flex items-center justify-center text-border-medium dark:text-slate-700">
-                                <span
-                                    class="material-symbols-outlined text-[15rem] text-primary/10">{{ $service->icon ?? 'layers' }}</span>
+                                <x-app-icon :name="$service->icon ?? 'layers'" class="w-48 h-48 text-primary/10" />
                             </div>
                             @if (isset($service->features) && count($service->features) > 0)
                                 <div
@@ -52,8 +51,7 @@
                                     <div class="flex items-center gap-3 mb-2">
                                         <div
                                             class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                                            <span
-                                                class="material-symbols-outlined text-sm">{{ $service->features[0]['icon'] ?? 'check_circle' }}</span>
+                                            <x-app-icon :name="$service->features[0]['icon'] ?? 'check_circle'" class="w-4 h-4" />
                                         </div>
                                         <span
                                             class="font-bold text-text-main dark:text-white text-sm">{{ $service->features[0]['title'] ?? 'Top Feature' }}</span>
@@ -80,7 +78,7 @@
                         class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale transition-all duration-500 hover:grayscale-0">
                         @foreach ($service->technologies as $tech)
                             <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
-                                <span class="material-symbols-outlined text-3xl">{{ $tech['icon'] }}</span>
+                                <x-app-icon :name="$tech['icon'] ?? 'code'" class="w-7 h-7" />
                                 {{ $tech['name'] }}
                             </div>
                         @endforeach
@@ -109,7 +107,7 @@
                                 class="group flex flex-col gap-4 rounded-xl border border-border-medium dark:border-slate-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg hover:border-primary/30">
                                 <div
                                     class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <span class="material-symbols-outlined text-2xl">{{ $feature['icon'] }}</span>
+                                    <x-app-icon :name="$feature['icon'] ?? 'check_circle'" class="w-6 h-6" />
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">

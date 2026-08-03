@@ -26,8 +26,7 @@
                         <a href="/contact"
                             class="flex items-center justify-center h-12 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white text-base font-bold transition-all shadow-lg shadow-primary/20 group">
                             Start Your Project
-                            <span
-                                class="material-symbols-outlined ml-2 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <x-app-icon name="arrow_forward" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a href="/case-studies"
                             class="flex items-center justify-center h-12 px-6 rounded-lg border border-border-medium dark:border-slate-700 bg-transparent hover:bg-border-light dark:hover:bg-slate-800 text-text-main dark:text-white text-base font-semibold transition-colors">
@@ -71,22 +70,22 @@
                 <div
                     class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale transition-all duration-500 hover:grayscale-0">
                     <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
-                        <span class="material-symbols-outlined text-3xl">code_blocks</span> React
+                        <x-app-icon name="code_blocks" class="w-7 h-7" /> React
                     </div>
                     <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
-                        <span class="material-symbols-outlined text-3xl">dns</span> Node.js
+                        <x-app-icon name="dns" class="w-7 h-7" /> Node.js
                     </div>
                     <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
-                        <span class="material-symbols-outlined text-3xl">cloud</span> AWS
+                        <x-app-icon name="cloud" class="w-7 h-7" /> AWS
                     </div>
                     <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
-                        <span class="material-symbols-outlined text-3xl">terminal</span> Python
+                        <x-app-icon name="terminal" class="w-7 h-7" /> Python
                     </div>
                     <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
-                        <span class="material-symbols-outlined text-3xl">database</span> PostgreSQL
+                        <x-app-icon name="database" class="w-7 h-7" /> PostgreSQL
                     </div>
                     <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
-                        <span class="material-symbols-outlined text-3xl">layers</span> Next.js
+                        <x-app-icon name="layers" class="w-7 h-7" /> Next.js
                     </div>
                 </div>
             </div>
@@ -106,7 +105,7 @@
                         class="group flex flex-col gap-4 rounded-xl border border-border-medium dark:border-slate-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg hover:border-primary/30">
                         <div
                             class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-2xl">bolt</span>
+                            <x-app-icon name="bolt" class="w-6 h-6" />
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Lightning Speed</h3>
@@ -120,7 +119,7 @@
                         class="group flex flex-col gap-4 rounded-xl border border-border-medium dark:border-slate-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg hover:border-primary/30">
                         <div
                             class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-2xl">verified_user</span>
+                            <x-app-icon name="verified_user" class="w-6 h-6" />
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Bank-Grade Security</h3>
@@ -134,7 +133,7 @@
                         class="group flex flex-col gap-4 rounded-xl border border-border-medium dark:border-slate-700 bg-white dark:bg-surface-dark p-6 transition-all hover:shadow-lg hover:border-primary/30">
                         <div
                             class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                            <span class="material-symbols-outlined text-2xl">trending_up</span>
+                            <x-app-icon name="trending_up" class="w-6 h-6" />
                         </div>
                         <div>
                             <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Infinite Scalability</h3>
@@ -161,11 +160,10 @@
                                 class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-primary">html</span>
+                                        <x-app-icon name="html" class="w-5 h-5 text-primary" />
                                         <p class="text-text-main dark:text-white text-sm font-bold">Frontend Development</p>
                                     </div>
-                                    <span
-                                        class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
+                                    <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
@@ -178,11 +176,10 @@
                                 class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-primary">storage</span>
+                                        <x-app-icon name="storage" class="w-5 h-5 text-primary" />
                                         <p class="text-text-main dark:text-white text-sm font-bold">Backend Architecture</p>
                                     </div>
-                                    <span
-                                        class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
+                                    <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
@@ -195,11 +192,10 @@
                                 class="group rounded-lg border border-border-medium dark:border-slate-700 bg-background-light dark:bg-slate-900/50 open:bg-white dark:open:bg-slate-800 open:shadow-sm">
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
-                                        <span class="material-symbols-outlined text-primary">api</span>
+                                        <x-app-icon name="api" class="w-5 h-5 text-primary" />
                                         <p class="text-text-main dark:text-white text-sm font-bold">API Integration &amp; Development</p>
                                     </div>
-                                    <span
-                                        class="material-symbols-outlined text-text-main dark:text-white transition-transform group-open:rotate-180">expand_more</span>
+                                    <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">

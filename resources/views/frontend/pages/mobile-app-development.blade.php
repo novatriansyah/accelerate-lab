@@ -53,7 +53,7 @@
                                         <div class="flex items-center gap-3">
                                             <div
                                                 class="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
-                                                <span class="material-symbols-outlined">rocket_launch</span>
+                                                <x-app-icon name="rocket_launch" class="w-5 h-5 text-primary" />
                                             </div>
                                             <div>
                                                 <p class="text-xs text-text-secondary dark:text-gray-400 font-medium">
@@ -92,7 +92,7 @@
                             class="group flex flex-1 gap-4 rounded-xl border border-[#d0e7e4] dark:border-[#2d4544] bg-surface-light dark:bg-surface-dark p-6 flex-col hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-default">
                             <div
                                 class="h-12 w-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-500 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined text-3xl">code_blocks</span>
+                                <x-app-icon name="code_blocks" class="w-7 h-7" />
                             </div>
                             <div class="flex flex-col gap-2">
                                 <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">React
@@ -105,7 +105,7 @@
                             class="group flex flex-1 gap-4 rounded-xl border border-[#d0e7e4] dark:border-[#2d4544] bg-surface-light dark:bg-surface-dark p-6 flex-col hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-default">
                             <div
                                 class="h-12 w-12 rounded-lg bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center text-cyan-500 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined text-3xl">layers</span>
+                                <x-app-icon name="layers" class="w-7 h-7" />
                             </div>
                             <div class="flex flex-col gap-2">
                                 <h2 class="text-text-main dark:text-white text-lg font-bold leading-tight">Flutter

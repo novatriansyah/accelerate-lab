@@ -23,7 +23,7 @@
                         <div class="flex items-start gap-4 group">
                             <div
                                 class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">location_on</span>
+                                <x-app-icon name="location_on" class="w-5 h-5" />
                             </div>
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Visit HQ</h3>
@@ -35,7 +35,7 @@
                         <div class="flex items-start gap-4 group">
                             <div
                                 class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">mail</span>
+                                <x-app-icon name="mail" class="w-5 h-5" />
                             </div>
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Email Us</h3>
@@ -47,7 +47,7 @@
                         <div class="flex items-start gap-4 group">
                             <div
                                 class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
-                                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">call</span>
+                                <x-app-icon name="call" class="w-5 h-5" />
                             </div>
                             <div>
                                 <h3 class="font-bold text-text-main dark:text-white">Call Us</h3>
@@ -74,7 +74,7 @@
                                 <a href="{{ $contactWaUrl }}" target="_blank" rel="noopener noreferrer" 
                                    class="text-[#25D366] hover:underline font-semibold text-sm mt-1 inline-flex items-center gap-1">
                                     Chat on WhatsApp
-                                    <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+                                    <x-app-icon name="open_in_new" class="w-4 h-4" />
                                 </a>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                         <div
                             class="absolute bottom-3 left-3 z-20 bg-white/90 dark:bg-black/80 px-3 py-1 rounded-md backdrop-blur-sm">
                             <span class="text-xs font-bold flex items-center gap-1">
-                                <span class="material-symbols-outlined text-[14px] text-primary">near_me</span>
+                                <x-app-icon name="near_me" class="w-3.5 h-3.5 text-primary" />
                                 Open Maps
                             </span>
                         </div>
@@ -103,7 +103,7 @@
                         </div>
                         <h2 class="text-2xl font-bold text-text-main dark:text-white mb-8 flex items-center gap-2">
                             Send us a Message
-                            <span class="material-symbols-outlined text-primary" aria-hidden="true">edit_square</span>
+                            <x-app-icon name="edit_square" class="w-6 h-6 text-primary" />
                         </h2>
                         @if (session('success'))
                             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4"
@@ -189,9 +189,7 @@
                                     </div>
                                     <span class="flex items-center gap-2 relative z-10">
                                         Send Message
-                                        <span
-                                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-                                            aria-hidden="true">send</span>
+                                        <x-app-icon name="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </span>
                                 </button>
                             </div>
