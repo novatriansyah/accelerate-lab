@@ -33,15 +33,6 @@
         content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.' }}">
     <meta property="twitter:image" content="{{ $ogImage ?? (!empty($settings['site_logo'] ?? null) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp')) }}">
 
-    <!-- Preconnect to font origins (performance) -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-
-    <!-- Consolidated non-blocking Google Fonts with display=swap -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Material+Icons+Round&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- JSON-LD Structured Data (SEO) -->

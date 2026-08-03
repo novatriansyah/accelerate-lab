@@ -20,10 +20,10 @@
 @section('content')
     <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-grid-pattern" aria-labelledby="hero-heading">
         <div
-            class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse-slow -z-10" aria-hidden="true">
+            class="hidden sm:block absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse-slow -z-10" aria-hidden="true">
         </div>
         <div
-            class="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse-slow -z-10" aria-hidden="true">
+            class="hidden sm:block absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[60px] lg:blur-[100px] animate-pulse-slow -z-10" aria-hidden="true">
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

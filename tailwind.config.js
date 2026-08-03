@@ -21,8 +21,8 @@ export default {
                 "border-medium": "#CBD5E1", // Slate-300
             },
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                mono: ['JetBrains Mono', 'monospace'],
+                sans: ['ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+                mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
             },
             borderRadius: {
                 DEFAULT: "0.5rem",

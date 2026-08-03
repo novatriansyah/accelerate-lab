@@ -16,17 +16,17 @@
                     Contact Us
                 </a>
                 <button
-                    class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400"
+                    class="theme-toggle-btn p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300"
                     aria-label="Toggle dark mode">
-                    <span class="material-icons-round text-xl" aria-hidden="true">brightness_4</span>
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
                 </button>
             </div>
             <div class="md:hidden flex items-center">
                 <button @click="isOpen = !isOpen"
-                    class="text-gray-500 hover:text-primary focus:outline-none"
+                    class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none p-2"
                     aria-label="Toggle navigation menu"
                     x-bind:aria-expanded="isOpen.toString()">
-                    <span class="material-icons-round text-3xl" aria-hidden="true">menu</span>
+                    <svg class="w-7 h-7 fill-none stroke-current stroke-2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
