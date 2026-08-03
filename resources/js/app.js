@@ -1,4 +1,9 @@
 import './bootstrap';
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+Alpine.start();
+
 
 function initTheme() {
     const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');

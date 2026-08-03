@@ -13,21 +13,23 @@ class SitemapController extends Controller
 {
     public function index()
     {
+        $baseUrl = rtrim(config('app.url'), '/');
+
         $sitemap = Sitemap::create()
-            ->add(Url::create('/')->setPriority(1.0)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
-            ->add(Url::create('/about')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
-            ->add(Url::create('/services')->setPriority(0.9)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
-            ->add(Url::create('/case-studies')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
-            ->add(Url::create('/blog')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY))
-            ->add(Url::create('/careers')->setPriority(0.6)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
-            ->add(Url::create('/contact')->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
-            ->add(Url::create('/privacy-policy')->setPriority(0.3)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
-            ->add(Url::create('/terms-of-service')->setPriority(0.3)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY));
+            ->add(Url::create($baseUrl . '/')->setPriority(1.0)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+            ->add(Url::create($baseUrl . '/about')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+            ->add(Url::create($baseUrl . '/services')->setPriority(0.9)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+            ->add(Url::create($baseUrl . '/case-studies')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+            ->add(Url::create($baseUrl . '/blog')->setPriority(0.8)->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY))
+            ->add(Url::create($baseUrl . '/careers')->setPriority(0.6)->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY))
+            ->add(Url::create($baseUrl . '/contact')->setPriority(0.7)->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY))
+            ->add(Url::create($baseUrl . '/privacy-policy')->setPriority(0.3)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY))
+            ->add(Url::create($baseUrl . '/terms-of-service')->setPriority(0.3)->setChangeFrequency(Url::CHANGE_FREQUENCY_YEARLY));
 
         // Services
-        Service::all()->each(function (Service $service) use ($sitemap) {
+        Service::all()->each(function (Service $service) use ($sitemap, $baseUrl) {
             $sitemap->add(
-                Url::create("/services/{$service->slug}")
+                Url::create("{$baseUrl}/services/{$service->slug}")
                     ->setPriority(0.7)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                     ->setLastModificationDate($service->updated_at)
@@ -35,9 +37,9 @@ class SitemapController extends Controller
         });
 
         // Projects
-        Project::all()->each(function (Project $project) use ($sitemap) {
+        Project::all()->each(function (Project $project) use ($sitemap, $baseUrl) {
             $sitemap->add(
-                Url::create("/case-studies/{$project->slug}")
+                Url::create("{$baseUrl}/case-studies/{$project->slug}")
                     ->setPriority(0.7)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                     ->setLastModificationDate($project->updated_at)
@@ -45,9 +47,9 @@ class SitemapController extends Controller
         });
 
         // Articles
-        Article::where('published_at', '<=', now())->get()->each(function (Article $article) use ($sitemap) {
+        Article::where('published_at', '<=', now())->get()->each(function (Article $article) use ($sitemap, $baseUrl) {
             $sitemap->add(
-                Url::create("/blog/{$article->slug}")
+                Url::create("{$baseUrl}/blog/{$article->slug}")
                     ->setPriority(0.6)
                     ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
                     ->setLastModificationDate($article->updated_at)
