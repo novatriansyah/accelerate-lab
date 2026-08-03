@@ -55,4 +55,30 @@ class SitemapAndRobotsTest extends TestCase
         $response->assertSee('User-agent: *');
         $response->assertSee('Sitemap:');
     }
+
+    #[Test]
+    public function every_url_in_sitemap_returns_http_200()
+    {
+        Article::factory()->create();
+        Project::factory()->create();
+        Service::factory()->create(['has_custom_page' => false]);
+
+        $response = $this->get('/sitemap.xml');
+        $response->assertStatus(200);
+
+        $xml = simplexml_load_string($response->getContent());
+        $urls = [];
+
+        foreach ($xml->url as $urlElement) {
+            $urls[] = (string) $urlElement->loc;
+        }
+
+        $this->assertNotEmpty($urls);
+
+        foreach ($urls as $url) {
+            $path = parse_url($url, PHP_URL_PATH);
+            $pageResponse = $this->get($path);
+            $pageResponse->assertStatus(200);
+        }
+    }
 }
