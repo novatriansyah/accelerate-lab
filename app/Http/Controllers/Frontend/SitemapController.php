@@ -28,6 +28,13 @@ class SitemapController extends Controller
 
         // Services
         Service::all()->each(function (Service $service) use ($sitemap, $baseUrl) {
+            if ($service->has_custom_page) {
+                $cleanSlug = preg_replace('/[^a-z0-9\-]/', '', strtolower($service->slug));
+                if (! view()->exists("frontend.pages.{$cleanSlug}")) {
+                    return;
+                }
+            }
+
             $sitemap->add(
                 Url::create("{$baseUrl}/services/{$service->slug}")
                     ->setPriority(0.7)
