@@ -1,59 +1,107 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Accelerate Lab — Engineering Velocity
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Accelerate Lab is a modern digital technology agency delivering high-performance, enterprise-grade digital products at startup velocity. Operating under the tagline **"Engineering Velocity,"** the agency utilizes a clean, scalable monolithic architecture built with Laravel 12, Tailwind CSS v4, Filament v3, and Alpine.js.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Tech Stack
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Backend Framework:** Laravel 12.x (PHP 8.3+)
+- **Frontend & Templating:** Blade components, Alpine.js, Tailwind CSS v4
+- **Asset Bundler:** Vite 7 with `@tailwindcss/vite`
+- **CMS & Admin Panel:** Filament v3
+- **Iconography:** 100% Inline SVG via `<x-app-icon>` (0 blocking font stylesheets)
+- **Testing Framework:** PHPUnit 11 with Laravel Testing Suite
+- **CI/CD:** GitHub Actions (Automated Test Gates & Zero-Downtime Hostinger Deployment)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🧪 Strict Test-Driven Development (TDD) Standard
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+This repository enforces **Strict Test-Driven Development (TDD)** across all backend logic, API endpoints, database models, and **frontend UI/UX engineering**.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Every feature, enhancement, or bug fix must follow the 3-step cycle:
+1. **RED:** Write a failing unit, feature, or UI/UX test first. Confirm the test fails.
+2. **GREEN:** Write the minimal implementation code to make the test pass.
+3. **REFACTOR:** Polish, clean, and optimize while maintaining 100% test pass rate.
 
-## Laravel Sponsors
+### Full-Stack TDD Guidelines:
+- **Backend Models & Logic:** Test accessors, enum casts, notification delivery channels, mailers, and query scopes.
+- **Frontend & UI/UX:** Test semantic HTML (`<h1>` hierarchy, `<main>`, `<header>`, `<footer>`), accessibility (`aria-label`, image `alt`), dark mode tokens, and inline SVG iconography.
+- **CI/CD Quality Gate:** All pull requests and deployments to production are automatically blocked if any test fails.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠️ Local Development Setup
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 1. Prerequisites
+- PHP 8.3+ with `pdo_mysql`, `pdo_sqlite`, `mbstring`, `xml`, `ctype`, `iconv`, `curl` extensions
+- Composer 2.x
+- Node.js 20+ & NPM
 
-## Contributing
+### 2. Installation
+```bash
+# Clone the repository
+git clone https://github.com/novatriansyah/accelerate-lab.git
+cd accelerate-lab
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Install PHP dependencies
+composer install
 
-## Code of Conduct
+# Install Node dependencies
+npm install
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Setup environment
+cp .env.example .env
+php artisan key:generate
 
-## Security Vulnerabilities
+# Run database migrations and seeders
+php artisan migrate --seed
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Create storage symlink
+php artisan storage:link
+```
 
-## License
+### 3. Running the Application
+```bash
+# Terminal 1: Run Vite dev server
+npm run dev
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Terminal 2: Run Laravel local server
+php artisan serve
+```
+
+---
+
+## 🧪 Running Automated Tests
+
+Run the complete test suite:
+```bash
+php artisan test
+```
+
+Run specific test suites:
+```bash
+# Run unit tests
+php artisan test --testsuite=Unit
+
+# Run feature & UI/UX tests
+php artisan test --testsuite=Feature
+
+# Run a specific test class or method
+php artisan test --filter=UiUxDesignSystemTest
+php artisan test --filter=ContactFormTest
+```
+
+---
+
+## 🚢 CI/CD & Deployment
+
+- **Development Pipeline (`.github/workflows/development.yml`):** Runs automated test suite and asset builds on all pushes and pull requests to `development` and `master`.
+- **Production Pipeline (`.github/workflows/deploy.yml`):** Enforces automated test verification as a strict deployment gate prior to building production assets and performing atomic, zero-downtime SSH/rsync releases to Hostinger.
+
+---
+
+## 📄 License
+
+Proprietary — PT Akselerasi Digital Mandiri. All rights reserved.

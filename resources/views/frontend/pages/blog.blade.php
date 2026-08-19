@@ -58,7 +58,7 @@
                                     <x-app-icon name="person" class="w-5 h-5 text-slate-400" />
                                 </div>
                                 <div class="text-sm">
-                                    <p class="font-bold text-slate-dark dark:text-white">{{ $featured->author->name }}</p>
+                                    <p class="font-bold text-slate-dark dark:text-white">{{ $featured->author?->name ?? 'Accelerate Lab' }}</p>
                                     <p class="text-slate-medium dark:text-slate-500">Author</p>
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                                     <x-app-icon name="person" class="w-4 h-4 text-slate-400" />
                                 </div>
                                 <span
-                                    class="text-xs font-medium text-slate-dark dark:text-white">{{ $article->author->name }}</span>
+                                    class="text-xs font-medium text-slate-dark dark:text-white">{{ $article->author?->name ?? 'Accelerate Lab' }}</span>
                             </div>
                         </div>
                     </article>

@@ -15,13 +15,14 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="/contact"
-                            class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white font-bold text-base hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
-                            Start a Project
+                            class="flex items-center justify-center rounded-xl h-12 px-6 bg-primary text-white font-bold text-base hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
+                            Estimate Your Project
                         </a>
-                        <a href="/case-studies"
-                            class="flex items-center justify-center rounded-lg h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 text-slate-900 dark:text-white font-bold text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                            View Case Studies
-                        </a>
+                        <button type="button" 
+                            @click="$dispatch('open-consultation-modal')"
+                            class="flex items-center justify-center rounded-xl h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 text-slate-900 dark:text-white font-bold text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                            Book 15-Min Free Call
+                        </button>
                     </div>
                 </div>
                 <div
@@ -336,22 +337,22 @@
         </div>
     </section>
 
-    <section class="py-20 bg-slate-50 dark:bg-[#0b1615]">
+    <section class="py-20 bg-slate-50 dark:bg-surface-dark border-t border-border-light dark:border-border-dark">
         <div class="mx-auto max-w-4xl px-4 text-center">
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-dark dark:text-white mb-6">Ready to accelerate your
-                growth?</h2>
-            <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
-                Whether you need a full product team or expert consultation, we are here to help you build the future.
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-dark dark:text-white mb-4">Ready to launch or upgrade your software?</h2>
+            <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
+                Whether you have a new app idea or need to modernize an existing system, get an honest evaluation and timeline from our Principal Architect.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="/contact"
-                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-primary text-slate-dark text-lg font-bold hover:bg-teal-400 transition-colors shadow-xl shadow-primary/20">
-                    Schedule a Consultation
+                    class="flex items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold hover:bg-primary-hover transition-colors shadow-xl shadow-primary/20">
+                    Estimate Your Project
                 </a>
-                <a href="/contact"
-                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-white dark:bg-gray-800 text-slate-dark dark:text-white border border-gray-200 dark:border-gray-700 text-lg font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                    Contact Us
-                </a>
+                <button type="button" 
+                    @click="$dispatch('open-consultation-modal')"
+                    class="flex items-center justify-center rounded-xl h-14 px-8 bg-white dark:bg-gray-800 text-slate-900 dark:text-white border border-gray-200 dark:border-gray-700 text-base font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    Book Free 15-Min Call
+                </button>
             </div>
         </div>
     </section>

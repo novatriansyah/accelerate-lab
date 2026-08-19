@@ -51,4 +51,22 @@ class ArticleTest extends TestCase
 
         $response->assertStatus(404);
     }
+
+    #[Test]
+    public function article_and_blog_views_render_safely_with_nullsafe_author_and_category()
+    {
+        $article = Article::factory()->create([
+            'title' => 'Architecture Insights',
+            'category_id' => null,
+        ]);
+
+        $detailResponse = $this->get('/blog/' . $article->slug);
+        $detailResponse->assertStatus(200);
+        $detailResponse->assertSee('Architecture Insights');
+        $detailResponse->assertSee('Uncategorized');
+
+        $blogResponse = $this->get('/blog');
+        $blogResponse->assertStatus(200);
+        $blogResponse->assertSee('Architecture Insights');
+    }
 }

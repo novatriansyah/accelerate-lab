@@ -28,7 +28,7 @@
                         <x-app-icon name="person" class="w-8 h-8 text-slate-400" />
                     </div>
                     <div class="text-sm">
-                        <p class="font-bold text-slate-dark dark:text-white">{{ $article->author->name }}</p>
+                        <p class="font-bold text-slate-dark dark:text-white">{{ $article->author?->name ?? 'Accelerate Lab' }}</p>
                         <p class="text-slate-medium dark:text-slate-500">Author</p>
                     </div>
                 </div>

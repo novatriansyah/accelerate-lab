@@ -23,8 +23,12 @@ class StoreContactRequest extends FormRequest
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'company' => 'nullable|string|max:255',
-            'phone' => 'nullable|string|max:20',
+            'phone' => 'nullable|string|max:30',
             'message' => 'nullable|string|max:5000',
+            'service_interest' => 'nullable|string|max:255',
+            'project_stage' => 'nullable|string|max:255',
+            'timeline' => 'nullable|string|max:255',
+            'tech_preference' => 'nullable|string|max:255',
             'my_favorite_color' => 'nullable|string',
             'cf-turnstile-response' => [
                 config('services.turnstile.secret_key') ? 'required' : 'nullable',

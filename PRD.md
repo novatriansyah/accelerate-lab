@@ -86,3 +86,9 @@ To protect the contact form from spam and automated submissions:
 ### 5.3 Technical Constraints
 * **No Unapproved Frameworks:** Use of Bootstrap, custom CSS files, React/Vue for frontend, or the Aramaho framework is strictly prohibited.
 * **Task Management:** Linear is used exclusively for project management tracking.
+
+### 5.4 Engineering & Quality Standards (Strict TDD Adoption)
+* **Mandatory Red-Green-Refactor Lifecycle:** All development—including backend business logic, database models, controllers, middleware, Blade UI/UX components, styling, and accessibility contracts—must strictly follow Test-Driven Development (TDD).
+* **Test-First Requirement:** A failing test (`tests/Unit/` or `tests/Feature/`) must be authored and verified before writing or updating production code or views.
+* **UI/UX TDD Standards:** UI changes must be verified against automated tests for semantic HTML (`<h1>` hierarchy, `<main>`, `<header>`, `<footer>`), accessibility (`aria-label`, image `alt`), dark mode tokens, and 100% inline SVG icon component `<x-app-icon>` usage (0 blocking font stylesheets).
+* **Automated CI/CD Quality Gate:** 100% test suite pass rate is a mandatory blocking prerequisite for all pull requests and zero-downtime production deployments.

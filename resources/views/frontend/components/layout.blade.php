@@ -83,6 +83,7 @@
     </main>
     @include('frontend.components.footer')
     @include('frontend.components.whatsapp-button')
+    <x-consultation-modal :settings="$settings ?? []" />
 </body>
 
 </html>

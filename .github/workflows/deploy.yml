@@ -38,7 +38,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.3'
-          extensions: mbstring, xml, ctype, iconv, mysql, zip
+          extensions: mbstring, xml, ctype, iconv, sqlite3, pdo_sqlite, mysql, zip
+          coverage: none
           tools: composer:v2
 
       - name: Cache Composer Dependencies
@@ -49,7 +50,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
-      - name: Install Production Composer Dependencies
+      - name: Copy Testing Environment Configuration
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+
+      - name: Install Development Dependencies for Test Gate
+        run: composer install --prefer-dist --no-progress --no-interaction
+
+      - name: Generate Application Key
+        run: php artisan key:generate
+
+      - name: Strict TDD Verification - Run Automated Test Suite
+        run: php artisan test
+
+      - name: Install Production Composer Dependencies (Prune Dev)
         run: |
           composer install --no-dev --optimize-autoloader --no-interaction
 

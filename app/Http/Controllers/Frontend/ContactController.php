@@ -18,14 +18,25 @@ class ContactController extends Controller
 
         $validated = $request->validated();
 
+        $scopingSummary = [];
+        if (!empty($validated['service_interest'])) $scopingSummary[] = "Interest: " . $validated['service_interest'];
+        if (!empty($validated['project_stage'])) $scopingSummary[] = "Stage: " . $validated['project_stage'];
+        if (!empty($validated['timeline'])) $scopingSummary[] = "Timeline: " . $validated['timeline'];
+        if (!empty($validated['tech_preference'])) $scopingSummary[] = "Tech Pref: " . $validated['tech_preference'];
+
+        $formattedMessage = implode("\n", array_filter([
+            !empty($scopingSummary) ? implode(" | ", $scopingSummary) : null,
+            $validated['message'] ?? null,
+        ]));
+
         $lead = Lead::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
             'company' => $validated['company'] ?? null,
             'phone' => $validated['phone'] ?? null,
-            'message' => $validated['message'] ?? null,
+            'message' => $formattedMessage ?: 'Inquiry received from website.',
             'status' => 'new',
-            'source' => 'Web Form',
+            'source' => !empty($scopingSummary) ? 'Project Estimator Wizard' : 'Web Form',
         ]);
 
         // Send Notification to Admin

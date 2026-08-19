@@ -29,37 +29,37 @@
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <div class="text-center lg:text-left animate-fade-in-up">
                     <div
-                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-700 shadow-sm mb-8">
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 shadow-sm mb-8">
                         <span class="relative flex h-2 w-2" aria-hidden="true">
                             <span
                                 class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                         </span>
                         <span
-                            class="text-xs font-semibold text-slate-600 dark:text-slate-300 tracking-wide uppercase">System
-                            Operational</span>
+                            class="text-xs font-bold text-primary tracking-wide uppercase">{{ __('Ready for New Projects') }}</span>
                     </div>
                     <h1 id="hero-heading"
                         class="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-                        Build Faster. <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Scale
-                            Smarter.</span>
+                        {{ __('Launch & Scale') }} <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">{{ __('With Velocity.') }}</span>
                     </h1>
                     <p
                         class="mt-4 text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                        The digital innovation partner for forward-thinking enterprises. We engineer high-performance web
-                        applications that drive growth and optimize efficiency.
+                        {{ __('We design, engineer, and launch high-performance web platforms, mobile apps, and custom software—tailored to your budget and goals on any modern technology stack.') }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="/contact" id="hero-cta-primary"
-                            class="bg-primary hover:bg-primary-dark text-white text-lg font-semibold px-8 py-4 rounded-lg shadow-lg shadow-primary/30 transition-all hover:scale-105 flex items-center justify-center gap-2 group">
-                            Start Your Project
+                            class="bg-primary hover:bg-primary-dark text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg shadow-primary/30 transition-all hover:scale-105 flex items-center justify-center gap-2 group">
+                            <span>{{ __('Estimate Your Project') }}</span>
                             <x-app-icon name="arrow_forward" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <a href="/case-studies" id="hero-cta-secondary"
-                            class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary text-lg font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-md flex items-center justify-center gap-2">
-                            View Case Studies
-                        </a>
+                        <button type="button" 
+                            @click="$dispatch('open-consultation-modal')" 
+                            id="hero-cta-secondary"
+                            class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary text-lg font-bold px-8 py-4 rounded-xl transition-all hover:shadow-md flex items-center justify-center gap-2">
+                            <x-app-icon name="calendar_today" class="w-5 h-5 text-primary" />
+                            <span>{{ __('15-Min Free Call') }}</span>
+                        </button>
                     </div>
                     @if (isset($heroStats) && count($heroStats) > 0)
                     <div
@@ -306,6 +306,70 @@
                     <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 4</span>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Deploy</h3>
                     <p class="text-sm text-slate-500 dark:text-slate-400">We launch, monitor, and iterate based on real-world data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Enterprise Guarantees --}}
+    <section class="py-20 bg-background-light dark:bg-background-dark relative overflow-hidden" aria-labelledby="guarantees-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                    <x-app-icon name="verified" class="w-3.5 h-3.5" />
+                    {{ __('Our Commitment') }}
+                </span>
+                <h2 id="guarantees-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    {{ __('Clear Guarantees. Zero Surprises.') }}
+                </h2>
+                <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+                    {{ __('We eliminate the typical frustrations of hiring an agency with transparent, client-first standards.') }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Guarantee 1 -->
+                <div class="p-6 rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-4">
+                        <x-app-icon name="lock" class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('100% Full IP Ownership') }}</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {{ __('You own all source code, designs, and deployment configurations forever with zero vendor lock-in.') }}
+                    </p>
+                </div>
+
+                <!-- Guarantee 2 -->
+                <div class="p-6 rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center mb-4">
+                        <x-app-icon name="person" class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Direct Architect Oversight') }}</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {{ __('Every project is engineered and reviewed directly by Principal Architects—no unsupervised junior handoffs.') }}
+                    </p>
+                </div>
+
+                <!-- Guarantee 3 -->
+                <div class="p-6 rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center mb-4">
+                        <x-app-icon name="check_circle" class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Tested for High Reliability') }}</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {{ __('Every feature is backed by automated tests before release so your application won\'t break on your users.') }}
+                    </p>
+                </div>
+
+                <!-- Guarantee 4 -->
+                <div class="p-6 rounded-2xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4">
+                        <x-app-icon name="payments" class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Transparent Milestone Pricing') }}</h3>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {{ __('Clear sprint deliverables and fixed milestone pricing with zero surprise hourly bills or creeping fees.') }}
+                    </p>
                 </div>
             </div>
         </div>

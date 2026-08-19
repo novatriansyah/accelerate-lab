@@ -138,19 +138,20 @@
     <!-- Footer CTA -->
     <section class="py-20 bg-primary text-slate-900">
         <div class="mx-auto max-w-4xl px-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-black mb-6">Inspired by this project?</h2>
-            <p class="text-xl font-medium opacity-90 mb-10 max-w-2xl mx-auto">
-                Let's discuss how we can build something similar for you.
+            <h2 class="text-3xl md:text-5xl font-black mb-6">Building something similar?</h2>
+            <p class="text-lg md:text-xl font-medium opacity-90 mb-10 max-w-2xl mx-auto">
+                We can architect, design, and launch a tailored version for your business. Get a fast scope and timeline estimate in 30 seconds.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="/contact"
-                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-white text-slate-900 text-lg font-bold hover:bg-slate-100 transition-colors shadow-xl">
-                    Start a Conversation
+                    class="flex items-center justify-center rounded-xl h-14 px-8 bg-slate-900 text-white text-base font-bold hover:bg-slate-800 transition-colors shadow-xl">
+                    Estimate Your Project
                 </a>
-                <a href="{{ route('case-studies') }}"
-                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-transparent border-2 border-slate-900 text-slate-900 text-lg font-bold hover:bg-slate-900 hover:text-white transition-colors">
-                    View More Cases
-                </a>
+                <button type="button" 
+                    @click="$dispatch('open-consultation-modal')"
+                    class="flex items-center justify-center rounded-xl h-14 px-8 bg-white text-slate-900 text-base font-bold hover:bg-slate-100 transition-colors shadow-md">
+                    Book 15-Min Free Call
+                </button>
             </div>
         </div>
     </section>

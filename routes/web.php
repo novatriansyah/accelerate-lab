@@ -19,6 +19,14 @@ Route::get('/blog/{article:slug}', [BlogController::class, 'show'])->name('artic
 Route::get('/careers', [PageController::class, 'careers'])->name('careers');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 
+Route::get('/lang/{locale}', function (string $locale) {
+    if (in_array($locale, ['id', 'en'])) {
+        session(['locale' => $locale]);
+        cookie()->queue('accelerate_locale', $locale, 60 * 24 * 365);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
 Route::post('/contact', [ContactController::class, 'store'])->middleware('throttle:5,1')->name('contact.store');
 
 Route::get('/the-lab', fn () => redirect('/blog', 301));
