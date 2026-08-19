@@ -7,21 +7,20 @@
                 <div class="flex flex-col gap-6">
                     <h1
                         class="text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl text-slate-dark dark:text-white">
-                        Digital Innovation, <span class="text-primary">Delivered.</span>
+                        {{ __('Digital Innovation, Delivered.') }}
                     </h1>
                     <p class="text-lg text-gray-600 dark:text-gray-300 max-w-lg">
-                        We transform complex business challenges into elegant, scalable software solutions. From strategy to
-                        deployment, we engineer the future of your product.
+                        {{ __('We transform complex business challenges into elegant, scalable software solutions. From strategy to deployment, we engineer the future of your product.') }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
                         <a href="/contact"
                             class="flex items-center justify-center rounded-xl h-12 px-6 bg-primary text-white font-bold text-base hover:bg-primary-dark transition-colors shadow-lg shadow-primary/20">
-                            Estimate Your Project
+                            {{ __('Estimate Your Project') }}
                         </a>
                         <button type="button" 
                             @click="$dispatch('open-consultation-modal')"
                             class="flex items-center justify-center rounded-xl h-12 px-6 bg-transparent border border-gray-300 dark:border-gray-700 text-slate-900 dark:text-white font-bold text-base hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-                            Book 15-Min Free Call
+                            {{ __('Book 15-Min Free Call') }}
                         </button>
                     </div>
                 </div>
@@ -165,9 +164,8 @@
     <section class="bg-slate-100 dark:bg-gray-900 py-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold text-slate-dark dark:text-white mb-4">Our Methodology</h2>
-                <p class="text-gray-600 dark:text-gray-400">An agile process refined over dozens of successful product
-                    launches.</p>
+                <h2 class="text-3xl font-bold text-slate-dark dark:text-white mb-4">{{ __('Our Methodology') }}</h2>
+                <p class="text-gray-600 dark:text-gray-400">{{ __('An agile process refined over dozens of successful product launches.') }}</p>
             </div>
             <div class="relative">
                 <div
@@ -179,32 +177,32 @@
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
                             <x-app-icon name="search" class="w-6 h-6 text-primary" />
                         </div>
-                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">1. Define</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Scoping requirements and setting KPIs.</p>
+                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">{{ __('1. Define') }}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('Scoping requirements and setting KPIs.') }}</p>
                     </div>
                     <div class="flex flex-col items-center text-center group">
                         <div
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
                             <x-app-icon name="design_services" class="w-6 h-6 text-primary" />
                         </div>
-                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">2. Design</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Prototyping and high-fidelity visuals.</p>
+                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">{{ __('2. Design') }}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('Prototyping and high-fidelity visuals.') }}</p>
                     </div>
                     <div class="flex flex-col items-center text-center group">
                         <div
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
                             <x-app-icon name="code" class="w-6 h-6 text-primary" />
                         </div>
-                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">3. Develop</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Iterative coding sprints and QA testing.</p>
+                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">{{ __('3. Develop') }}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('Iterative coding sprints and QA testing.') }}</p>
                     </div>
                     <div class="flex flex-col items-center text-center group">
                         <div
                             class="w-16 h-16 rounded-full bg-white dark:bg-gray-800 border-4 border-primary flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform duration-300">
                             <x-app-icon name="rocket_launch" class="w-6 h-6 text-primary" />
                         </div>
-                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">4. Deploy</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Launch, monitor, and scale.</p>
+                        <h3 class="text-xl font-bold text-slate-dark dark:text-white mb-2">{{ __('4. Deploy') }}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ __('Launch, monitor, and scale.') }}</p>
                     </div>
                 </div>
             </div>

@@ -45,7 +45,7 @@
                     </h1>
                     <p
                         class="mt-4 text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                        {{ __('We design, engineer, and launch high-performance web platforms, mobile apps, and custom software—tailored to your budget and goals on any modern technology stack.') }}
+                        {{ __('We design, engineer, and launch high-performance web platforms, mobile apps, and custom software, tailored to your budget and goals on any modern technology stack.') }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="/contact" id="hero-cta-primary"
@@ -262,8 +262,8 @@
     <section class="py-16 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800" aria-labelledby="how-we-work-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 id="how-we-work-heading" class="text-2xl font-bold text-slate-900 dark:text-white">How We Work</h2>
-                <p class="mt-2 text-slate-500 dark:text-slate-400">A proven process, from concept to deployment.</p>
+                <h2 id="how-we-work-heading" class="text-2xl font-bold text-slate-900 dark:text-white">{{ __('How We Work') }}</h2>
+                <p class="mt-2 text-slate-500 dark:text-slate-400">{{ __('A proven process, from concept to deployment.') }}</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="relative flex flex-col items-center text-center p-6">
@@ -346,7 +346,7 @@
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Direct Architect Oversight') }}</h3>
                     <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        {{ __('Every project is engineered and reviewed directly by Principal Architects—no unsupervised junior handoffs.') }}
+                        {{ __('Every project is engineered and reviewed directly by Principal Architects, with no unsupervised junior handoffs.') }}
                     </p>
                 </div>
 
@@ -384,9 +384,9 @@
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="mb-16 text-center max-w-3xl mx-auto">
-                <h2 id="projects-heading" class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Recent Projects</h2>
+                <h2 id="projects-heading" class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ __('Our Recent Projects') }}</h2>
                 <p class="text-slate-600 dark:text-slate-400 text-lg">
-                    Delivering impact through engineering excellence. Here is a selection of our recent deployments.
+                    {{ __('Delivering impact through engineering excellence. Here is a selection of our recent deployments.') }}
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

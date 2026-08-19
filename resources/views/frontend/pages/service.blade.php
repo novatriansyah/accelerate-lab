@@ -29,7 +29,7 @@
                         </a>
                         <a href="/case-studies"
                             class="flex items-center justify-center h-12 px-6 rounded-lg border border-border-medium dark:border-slate-700 bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800 text-text-main dark:text-white text-base font-semibold transition-colors">
-                            View Case Studies
+                            {{ __('Case Studies') }}
                         </a>
                     </div>
                 </div>

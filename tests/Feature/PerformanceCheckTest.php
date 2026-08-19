@@ -45,4 +45,17 @@ class PerformanceCheckTest extends TestCase
             $response->assertDontSee('material-icons', false);
         }
     }
+
+    public function test_no_em_dash_in_any_rendered_page_in_both_locales(): void
+    {
+        $routes = ['/', '/about', '/services', '/case-studies', '/contact', '/blog', '/careers', '/privacy-policy', '/terms-of-service'];
+
+        foreach (['en', 'id'] as $locale) {
+            foreach ($routes as $route) {
+                $response = $this->withSession(['locale' => $locale])->get($route);
+                $response->assertStatus(200);
+                $response->assertDontSee('—', false);
+            }
+        }
+    }
 }

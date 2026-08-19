@@ -4,7 +4,7 @@
     <main class="flex-1 flex flex-col items-center w-full">
         <section class="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pt-32 pb-20">
             <h1 class="text-4xl font-black leading-tight tracking-[-0.033em] text-slate-900 dark:text-white mb-8">
-                Terms of Service
+                {{ __('Terms of Service') }}
             </h1>
             <p class="text-sm text-slate-500 dark:text-slate-400 mb-12">Last updated: May 26, 2026</p>
 

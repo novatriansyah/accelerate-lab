@@ -15,17 +15,16 @@
                     <div class="mb-8 flex justify-center">
                         <div
                             class="relative rounded-full px-3 py-1 text-sm leading-6 text-text-secondary ring-1 ring-text-secondary/20 hover:ring-text-secondary/40">
-                            Pioneering Digital Solutions <a class="font-semibold text-primary" href="/blog"><span
-                                    aria-hidden="true" class="absolute inset-0"></span>Read our manifesto <span
+                            {{ __('Pioneering Digital Solutions') }} <a class="font-semibold text-primary" href="/blog"><span
+                                    aria-hidden="true" class="absolute inset-0"></span>{{ __('Read our manifesto') }} <span
                                     aria-hidden="true">→</span></a>
                         </div>
                     </div>
                     <h1 class="text-4xl font-black tracking-tight text-text-main dark:text-white sm:text-6xl">
-                        Engineering the Future
+                        {{ __('Engineering the Future') }}
                     </h1>
                     <p class="mt-6 text-lg leading-8 text-text-main/70 dark:text-gray-300">
-                        Explore our portfolio of high-performance web applications. We blend futurism with professional
-                        minimalism to deliver digital excellence.
+                        {{ __('Real Results & Measurable Impact') }}. {{ __('Delivering impact through engineering excellence. Here is a selection of our recent deployments.') }}
                     </p>
                 </div>
             </div>
@@ -36,7 +35,7 @@
                 <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
                     <a href="{{ route('case-studies') }}"
                         class="shrink-0 rounded-full {{ !$currentIndustry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white dark:bg-surface-dark border border-gray-200 dark:border-slate-700 text-text-main dark:text-white hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
-                        All Industries
+                        {{ __('All Industries') }}
                     </a>
                     @foreach ($industries as $industry)
                         <a href="{{ route('case-studies', ['industry' => $industry]) }}"

@@ -72,7 +72,7 @@
                                     class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400">
                                     <x-app-icon name="crisis_alert" class="w-5 h-5" />
                                 </span>
-                                The Challenge
+                                {{ __('The Challenge') }}
                             </h2>
                             <div class="prose prose-lg prose-slate dark:prose-invert text-gray-600 dark:text-gray-300">
                                 {!! $project->challenge !!}
@@ -87,7 +87,7 @@
                                     class="flex items-center justify-center w-8 h-8 rounded-lg bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400">
                                     <x-app-icon name="lightbulb" class="w-5 h-5" />
                                 </span>
-                                The Solution
+                                {{ __('The Solution') }}
                             </h2>
                             <div class="prose prose-lg prose-slate dark:prose-invert text-gray-600 dark:text-gray-300">
                                 {!! $project->solution !!}
@@ -102,7 +102,7 @@
                     @if ($project->technology_tags && count($project->technology_tags) > 0)
                         <div
                             class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-700">
-                            <h3 class="text-lg font-bold text-slate-dark dark:text-white mb-4">Tech Stack</h3>
+                            <h3 class="text-lg font-bold text-slate-dark dark:text-white mb-4">{{ __('Tech Stack') }}</h3>
                             <div class="flex flex-wrap gap-2">
                                 @foreach ($project->technology_tags as $tech)
                                     <span
@@ -122,7 +122,7 @@
     @if ($project->gallery && count($project->gallery) > 0)
         <section class="py-16 md:py-24 bg-slate-50 dark:bg-[#0b1615]">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-center text-slate-dark dark:text-white mb-12">Project Gallery</h2>
+                <h2 class="text-3xl font-bold text-center text-slate-dark dark:text-white mb-12">{{ __('Project Gallery') }}</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     @foreach ($project->gallery as $image)
                         <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-slate-800">
@@ -138,19 +138,19 @@
     <!-- Footer CTA -->
     <section class="py-20 bg-primary text-slate-900">
         <div class="mx-auto max-w-4xl px-4 text-center">
-            <h2 class="text-3xl md:text-5xl font-black mb-6">Building something similar?</h2>
+            <h2 class="text-3xl md:text-5xl font-black mb-6">{{ __('Building something similar?') }}</h2>
             <p class="text-lg md:text-xl font-medium opacity-90 mb-10 max-w-2xl mx-auto">
-                We can architect, design, and launch a tailored version for your business. Get a fast scope and timeline estimate in 30 seconds.
+                {{ __('We can architect, design, and launch a tailored version for your business. Get a fast scope and timeline estimate in 30 seconds.') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="/contact"
                     class="flex items-center justify-center rounded-xl h-14 px-8 bg-slate-900 text-white text-base font-bold hover:bg-slate-800 transition-colors shadow-xl">
-                    Estimate Your Project
+                    {{ __('Estimate Your Project') }}
                 </a>
                 <button type="button" 
                     @click="$dispatch('open-consultation-modal')"
                     class="flex items-center justify-center rounded-xl h-14 px-8 bg-white text-slate-900 text-base font-bold hover:bg-slate-100 transition-colors shadow-md">
-                    Book 15-Min Free Call
+                    {{ __('Book 15-Min Free Call') }}
                 </button>
             </div>
         </div>

@@ -8,15 +8,14 @@
                     <div class="flex flex-col gap-4">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 w-fit">
                             <span class="block size-2 rounded-full bg-primary animate-pulse"></span>
-                            <span class="text-primary text-xs font-bold uppercase tracking-wider">Contact Us</span>
+                            <span class="text-primary text-xs font-bold uppercase tracking-wider">{{ __('Contact Us') }}</span>
                         </div>
                         <h1
                             class="text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em] text-text-main dark:text-white">
-                            Let's Build <br /> <span class="text-primary">The Future</span>
+                            {{ __('Let\'s Build') }} <br /> <span class="text-primary">{{ __('The Future') }}</span>
                         </h1>
                         <p class="text-text-secondary dark:text-gray-400 text-lg leading-relaxed max-w-md">
-                            Ready to innovate? Whether you have a groundbreaking idea or need technical expertise, our team
-                            is ready to accelerate your vision.
+                            {{ __('Ready to innovate? Whether you have a groundbreaking idea or need technical expertise, our team is ready to accelerate your vision.') }}
                         </p>
                     </div>
                     <div class="flex flex-col gap-6 py-6 border-y border-border-light dark:border-border-dark">
@@ -26,7 +25,7 @@
                                 <x-app-icon name="location_on" class="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 class="font-bold text-text-main dark:text-white">Visit HQ</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">{{ __('Visit HQ') }}</h3>
                                 <p class="text-text-secondary dark:text-gray-400 text-sm mt-1">
                                     {{ $settings['contact_address'] ?? '123 Innovation Blvd, Tech City, TC 90210' }}
                                 </p>
@@ -38,7 +37,7 @@
                                 <x-app-icon name="mail" class="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 class="font-bold text-text-main dark:text-white">Email Us</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">{{ __('Email Us') }}</h3>
                                 <a class="text-text-secondary dark:text-gray-400 text-sm mt-1 hover:text-primary transition-colors"
                                     href="mailto:{{ $settings['contact_email'] ?? 'hello@acceleratelab.io' }}">{{
                                     $settings['contact_email'] ?? 'hello@acceleratelab.io' }}</a>
@@ -50,7 +49,7 @@
                                 <x-app-icon name="call" class="w-5 h-5" />
                             </div>
                             <div>
-                                <h3 class="font-bold text-text-main dark:text-white">Call Us</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">{{ __('Call Us') }}</h3>
                                 <p class="text-text-secondary dark:text-gray-400 text-sm mt-1">
                                     {{ $settings['contact_phone'] ?? '+1 (555) 019-2834' }}
                                 </p>
@@ -59,7 +58,10 @@
                         @php
                             $contactWaRaw = $settings['contact_whatsapp'] ?? $settings['contact_phone'] ?? '+6281234567890';
                             $contactWaClean = preg_replace('/[^0-9]/', '', $contactWaRaw);
-                            $contactWaMsg = $settings['whatsapp_default_message'] ?? 'Hello Accelerate Lab! I would like to inquire about your services.';
+                            $locale = app()->getLocale();
+                            $contactWaMsg = $locale === 'id' 
+                                ? 'Halo Accelerate Lab! Saya ingin bertanya mengenai layanan dan solusi rekayasa teknologi Anda.'
+                                : ($settings['whatsapp_default_message'] ?? 'Hello Accelerate Lab! I would like to inquire about your services.');
                             $contactWaUrl = "https://wa.me/{$contactWaClean}?text=" . urlencode($contactWaMsg);
                         @endphp
                         <div class="flex items-start gap-4 group">
@@ -70,10 +72,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="font-bold text-text-main dark:text-white">WhatsApp Direct</h3>
+                                <h3 class="font-bold text-text-main dark:text-white">{{ __('WhatsApp Direct') }}</h3>
                                 <a href="{{ $contactWaUrl }}" target="_blank" rel="noopener noreferrer" 
                                    class="text-[#25D366] hover:underline font-semibold text-sm mt-1 inline-flex items-center gap-1">
-                                    Chat on WhatsApp
+                                    {{ __('Chat on WhatsApp') }}
                                     <x-app-icon name="open_in_new" class="w-4 h-4" />
                                 </a>
                             </div>
@@ -90,7 +92,7 @@
                             class="absolute bottom-3 left-3 z-20 bg-white/90 dark:bg-black/80 px-3 py-1 rounded-md backdrop-blur-sm">
                             <span class="text-xs font-bold flex items-center gap-1">
                                 <x-app-icon name="near_me" class="w-3.5 h-3.5 text-primary" />
-                                Open Maps
+                                {{ __('Open Maps') }}
                             </span>
                         </div>
                     </a>

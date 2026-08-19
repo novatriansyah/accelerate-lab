@@ -9,25 +9,24 @@
                         <div
                             class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
                             <span class="mr-1 h-2 w-2 rounded-full bg-primary"></span>
-                            Establishing Digital Excellence
+                            {{ __('Establishing Digital Excellence') }}
                         </div>
                         <h1
                             class="text-4xl font-black tracking-tighter text-text-main dark:text-white sm:text-5xl xl:text-6xl">
-                            Architects of Digital <span class="text-primary">Innovation</span>
+                            {{ __('Architects of Digital Innovation') }}
                         </h1>
                         <p class="max-w-[600px] text-lg text-text-muted dark:text-slate-400 leading-relaxed">
-                            Accelerate Lab isn't just a software house; we are a collective of dreamers, engineers, and
-                            designers dedicated to pushing the boundaries of what's possible on the web.
+                            {{ __('Accelerate Lab isn\'t just a software house; we are a collective of dreamers, engineers, and designers dedicated to pushing the boundaries of what\'s possible on the web.') }}
                         </p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="/careers"
                             class="h-12 rounded-lg bg-text-main dark:bg-white px-8 text-base font-bold text-white dark:text-text-main shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center">
-                            Join Our Team
+                            {{ __('Join Our Team') }}
                         </a>
                         <a href="/about"
                             class="h-12 rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent px-8 text-base font-bold text-text-main dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-center">
-                            View Our Story
+                            {{ __('View Our Story') }}
                         </a>
                     </div>
                 </div>
@@ -95,9 +94,9 @@
                                 class="mb-6 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                                 <x-app-icon :name="$value->icon ?? 'star'" class="w-6 h-6" />
                             </div>
-                            <h3 class="mb-3 text-xl font-bold text-text-main dark:text-white">{{ $value->title }}</h3>
+                            <h3 class="mb-3 text-xl font-bold text-text-main dark:text-white">{{ __($value->title) }}</h3>
                             <p class="text-text-muted dark:text-slate-400 leading-relaxed">
-                                {{ $value->description }}
+                                {{ __($value->description) }}
                             </p>
                         </div>
                     @endforeach
@@ -105,8 +104,8 @@
                     <div class="md:col-span-3">
                         <x-empty-state
                             icon="emoji_objects"
-                            title="Values Being Defined"
-                            description="Our core values are being crafted. Check back soon."
+                            title="{{ __('Values Being Defined') }}"
+                            description="{{ __('Our core values are being crafted. Check back soon.') }}"
                         />
                     </div>
                 @endif
@@ -117,11 +116,9 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
                 <div class="lg:col-span-5">
-                    <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl mb-6">Our
-                        Evolution</h2>
+                    <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl mb-6">{{ __('Our Evolution') }}</h2>
                     <p class="text-lg text-text-muted dark:text-slate-400 mb-8">
-                        From a small garage startup to a global digital innovation agency. Every milestone represents a leap
-                        forward in our capabilities and our commitment to excellence.
+                        {{ __('From a small garage startup to a global digital innovation agency. Every milestone represents a leap forward in our capabilities and our commitment to excellence.') }}
                     </p>
                     <div class="relative h-64 w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
                         <img src="{{ asset('images/pages/about-collaboration.jpg') }}"
@@ -154,10 +151,10 @@
                                 <div class="flex flex-col pb-8 {{ $loop->first ? '' : 'pt-2' }}">
                                     <div class="flex items-center justify-between mb-1">
                                         <h3 class="text-lg font-bold text-text-main dark:text-white">
-                                            {{ $milestone->title }}</h3>
+                                            {{ __($milestone->title) }}</h3>
                                         <span class="text-sm font-bold text-primary">{{ $milestone->year }}</span>
                                     </div>
-                                    <p class="text-text-muted dark:text-slate-400">{{ $milestone->description }}</p>
+                                    <p class="text-text-muted dark:text-slate-400">{{ __($milestone->description) }}</p>
                                 </div>
                             @endforeach
                         @else
@@ -203,7 +200,7 @@
                         </div>
                         <div class="mt-4">
                             <h3 class="text-lg font-bold text-text-main dark:text-white">{{ $member->name }}</h3>
-                            <p class="text-sm font-medium text-primary">{{ $member->role }}</p>
+                            <p class="text-sm font-medium text-primary">{{ __($member->role) }}</p>
                             @if ($member->linkedin_url)
                                 <a href="{{ $member->linkedin_url }}" target="_blank"
                                     class="mt-2 inline-flex items-center text-xs text-slate-500 hover:text-primary transition-colors">

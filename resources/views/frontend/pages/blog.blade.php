@@ -6,10 +6,10 @@
             <div class="flex flex-col gap-4 max-w-3xl">
                 <h1 id="blog-heading"
                     class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-slate-dark dark:text-white">
-                    Insights &amp; Innovation
+                    {{ __('Articles & Tech Insights') }}
                 </h1>
                 <p class="text-lg text-slate-medium dark:text-slate-400 font-normal leading-relaxed">
-                    Exploring the future of web technology, engineering patterns, and digital product design.
+                    {{ __('Explore insights, tutorials, and engineering best practices from our team.') }}
                 </p>
             </div>
         </section>

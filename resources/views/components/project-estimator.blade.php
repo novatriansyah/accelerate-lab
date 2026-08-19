@@ -4,7 +4,7 @@
     $locale = app()->getLocale();
 
     $step1Options = [
-        ['id' => 'mvp', 'title' => __('Launch a New App Idea (MVP)'), 'desc' => __('Fast, working product built in 4–8 weeks to test the market.')],
+        ['id' => 'mvp', 'title' => __('Launch a New App Idea (MVP)'), 'desc' => __('Fast, working product built in 4 to 8 weeks to test the market.')],
         ['id' => 'web', 'title' => __('Web Platform or Customer Portal'), 'desc' => __('Custom dashboard, client portal, booking system, or SaaS.')],
         ['id' => 'mobile', 'title' => __('Mobile App (iOS & Android)'), 'desc' => __('Fast smartphone app for consumer or internal workforce.')],
         ['id' => 'upgrade', 'title' => __('Fix or Upgrade Existing Software'), 'desc' => __('Speed optimization, modern redesign, or adding new features.')],

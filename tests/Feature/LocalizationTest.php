@@ -35,9 +35,9 @@ class LocalizationTest extends TestCase
     {
         $response = $this->withSession(['locale' => 'id'])->get('/');
         $response->assertStatus(200);
-        $response->assertSee('Estimasi Proyek', false);
-        $response->assertSee('Konsultasi Gratis 15-Menit', false);
-        $response->assertSee('100% Hak Milik Source Code', false);
+        $response->assertSee('Estimasi Proyek Anda');
+        $response->assertSee('Konsultasi Gratis 15-Menit');
+        $response->assertSee('100% Kepemilikan Hak Cipta & Kode');
     }
 
     #[Test]

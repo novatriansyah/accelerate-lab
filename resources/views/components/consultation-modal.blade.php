@@ -67,15 +67,15 @@
             <div class="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-background-dark/60 border border-gray-100 dark:border-gray-800 space-y-2 text-xs">
                 <div class="flex items-center gap-2 text-slate-700 dark:text-gray-300">
                     <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span><strong>{{ $locale === 'id' ? '100% Gratis & Rahasia' : '100% Free & Confidential' }}</strong> — {{ $locale === 'id' ? 'Tanpa komitmen apapun' : 'Zero obligations' }}</span>
+                    <span><strong>{{ $locale === 'id' ? '100% Gratis & Rahasia' : '100% Free & Confidential' }}</strong>: {{ $locale === 'id' ? 'Tanpa komitmen apapun' : 'Zero obligations' }}</span>
                 </div>
                 <div class="flex items-center gap-2 text-slate-700 dark:text-gray-300">
                     <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span><strong>{{ $locale === 'id' ? 'Insight Arsitek Langsung' : 'Direct Architect Insight' }}</strong> — {{ $locale === 'id' ? 'Bukan account manager' : 'No junior account managers' }}</span>
+                    <span><strong>{{ $locale === 'id' ? 'Insight Arsitek Langsung' : 'Direct Architect Insight' }}</strong>: {{ $locale === 'id' ? 'Bukan account manager' : 'No junior account managers' }}</span>
                 </div>
                 <div class="flex items-center gap-2 text-slate-700 dark:text-gray-300">
                     <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span><strong>{{ $locale === 'id' ? 'Solusi Tepat Sesuai Budget' : 'Tech-Agnostic Advice' }}</strong> — {{ $locale === 'id' ? 'Teknologi terbaik untuk kebutuhan Anda' : 'Best tools for your budget' }}</span>
+                    <span><strong>{{ $locale === 'id' ? 'Solusi Tepat Sesuai Budget' : 'Tech-Agnostic Advice' }}</strong>: {{ $locale === 'id' ? 'Teknologi terbaik untuk kebutuhan Anda' : 'Best tools for your budget' }}</span>
                 </div>
             </div>
 
