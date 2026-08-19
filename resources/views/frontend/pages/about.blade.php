@@ -79,10 +79,9 @@
     <section class="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mb-16 md:text-center max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">Our DNA</h2>
+                <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">{{ __('Our DNA') }}</h2>
                 <p class="mt-4 text-lg text-text-muted dark:text-slate-400">
-                    Driven by core values that ensure every project is a masterpiece of engineering and design. We don't
-                    just write code; we solve problems.
+                    {{ __('Driven by core values that ensure every project is a masterpiece of engineering and design. We don\'t just write code; we solve problems.') }}
                 </p>
             </div>
             <div class="grid gap-8 md:grid-cols-3">
@@ -176,10 +175,9 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
                 <div class="max-w-2xl">
-                    <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">Meet the
-                        Innovators</h2>
+                    <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">{{ __('Meet the Innovators') }}</h2>
                     <p class="mt-4 text-lg text-text-muted dark:text-slate-400">
-                        The brilliant minds behind the code.
+                        {{ __('The brilliant minds behind the code.') }}
                     </p>
                 </div>
             </div>
@@ -216,8 +214,7 @@
     @endif
     <section class="py-16 border-t border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm font-semibold uppercase tracking-wider text-text-muted dark:text-slate-500 mb-8">Powered by
-                Modern Technology</p>
+            <p class="text-sm font-semibold uppercase tracking-wider text-text-muted dark:text-slate-500 mb-8">{{ __('Powered by Modern Technology') }}</p>
             <div
                 class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                 <span
@@ -242,20 +239,19 @@
         <div class="absolute -top-24 -right-24 h-96 w-96 rounded-full bg-primary/10 blur-3xl"></div>
         <div class="absolute -bottom-24 -left-24 h-96 w-96 rounded-full bg-primary/10 blur-3xl"></div>
         <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-black tracking-tight text-text-main dark:text-white sm:text-5xl">Ready to Accelerate?
+            <h2 class="text-3xl font-black tracking-tight text-text-main dark:text-white sm:text-5xl">{{ __('Ready to Accelerate?') }}
             </h2>
             <p class="mx-auto mt-6 max-w-xl text-lg text-text-muted dark:text-slate-400">
-                Let's discuss how we can transform your digital presence. Whether you need a new platform or an overhaul of
-                your existing stack, we are ready.
+                {{ __('Let\'s discuss how we can transform your digital presence. Whether you need a new platform or an overhaul of your existing stack, we are ready.') }}
             </p>
             <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
                 <a href="/contact"
                     class="flex h-12 w-full items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg hover:bg-primary-dark sm:w-auto transition-colors">
-                    Start Your Project
+                    {{ __('Start Your Project') }}
                 </a>
                 <a href="/contact"
                     class="flex h-12 w-full items-center justify-center rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent px-8 text-base font-bold text-text-main dark:text-white hover:bg-white dark:hover:bg-slate-800 sm:w-auto transition-colors">
-                    Schedule a Consultation
+                    {{ __('Schedule a Consultation') }}
                 </a>
             </div>
         </div>

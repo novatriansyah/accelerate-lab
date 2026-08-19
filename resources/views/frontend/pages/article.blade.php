@@ -8,7 +8,7 @@
                 <div class="flex items-center gap-3 text-sm text-slate-medium dark:text-slate-400">
                     <span
                         class="px-2 py-1 bg-[#e7f3f2] dark:bg-white/10 text-primary dark:text-primary-light rounded font-bold">
-                        {{ $article->category->name ?? 'Uncategorized' }}
+                        {{ __($article->category->name ?? 'Uncategorized') }}
                     </span>
                     <span>•</span>
                     <span class="flex items-center gap-1">
@@ -29,7 +29,7 @@
                     </div>
                     <div class="text-sm">
                         <p class="font-bold text-slate-dark dark:text-white">{{ $article->author?->name ?? 'Accelerate Lab' }}</p>
-                        <p class="text-slate-medium dark:text-slate-500">Author</p>
+                        <p class="text-slate-medium dark:text-slate-500">{{ __('Author') }}</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
         <section class="w-full max-w-3xl px-4 sm:px-6 lg:px-8 pb-16 pt-8 border-t border-gray-100 dark:border-white/10">
             <a href="{{ route('blog') }}" class="flex items-center gap-2 text-primary font-bold hover:underline">
                 <x-app-icon name="arrow_back" class="w-4 h-4" />
-                Back to Insights
+                {{ __('Back to Insights') }}
             </a>
         </section>
     </main>

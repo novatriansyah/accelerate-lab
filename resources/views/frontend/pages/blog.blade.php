@@ -33,7 +33,7 @@
 
                             <div
                                 class="absolute top-4 left-4 bg-primary text-slate-dark text-xs font-bold px-3 py-1 rounded-full">
-                                Featured
+                                {{ __('Featured') }}
                             </div>
                         </div>
                         <div class="flex flex-col justify-center p-8 lg:p-12 gap-6">
@@ -42,7 +42,7 @@
                                     {{ $featured->published_at->format('M d, Y') }}</span>
                                 @if ($featured->category)
                                     <span aria-hidden="true">•</span>
-                                    <span class="font-bold text-primary">{{ $featured->category->name }}</span>
+                                    <span class="font-bold text-primary">{{ __($featured->category->name) }}</span>
                                 @endif
                             </div>
                             <h2
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="text-sm">
                                     <p class="font-bold text-slate-dark dark:text-white">{{ $featured->author?->name ?? 'Accelerate Lab' }}</p>
-                                    <p class="text-slate-medium dark:text-slate-500">Author</p>
+                                    <p class="text-slate-medium dark:text-slate-500">{{ __('Author') }}</p>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                             @if ($article->category)
                                 <div
                                     class="absolute top-3 left-3 bg-white/90 dark:bg-black/80 backdrop-blur text-slate-dark dark:text-white text-xs font-bold px-2 py-1 rounded">
-                                    {{ $article->category->name }}
+                                    {{ __($article->category->name) }}
                                 </div>
                             @endif
                         </a>

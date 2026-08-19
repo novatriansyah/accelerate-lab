@@ -9,24 +9,22 @@
                     <div
                         class="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary w-fit">
                         <span class="flex h-2 w-2 rounded-full bg-primary mr-2 animate-pulse"></span>
-                        Cloud Architecture Services
+                        {{ __('Cloud Infrastructure') }}
                     </div>
                     <h1 class="text-4xl font-black tracking-tight text-text-header sm:text-5xl lg:text-6xl dark:text-white">
-                        Scalable. Secure. <br class="hidden lg:block" />
-                        <span class="text-primary">Future-Proof.</span>
+                        {{ __('Scalable. Secure. Future-Proof.') }}
                     </h1>
                     <p class="text-lg text-text-main max-w-xl leading-relaxed dark:text-slate-300">
-                        We design resilient cloud infrastructure that grows with your business, reducing latency and
-                        operational costs while maximizing performance.
+                        {{ __('We design resilient cloud infrastructure that grows with your business, reducing latency and operational costs while maximizing performance.') }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-2">
                         <a href="/contact"
                             class="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white transition-all hover:bg-primary-dark shadow-lg shadow-primary/20">
-                            Schedule a Cloud Audit
+                            {{ __('Estimate Your Project') }}
                         </a>
                         <a href="/case-studies"
                             class="flex h-12 items-center justify-center rounded-lg border border-slate-200 bg-white px-8 text-base font-semibold text-text-header transition-all hover:bg-slate-50 dark:bg-slate-800 dark:border-slate-700 dark:text-white dark:hover:bg-slate-700">
-                            View Case Studies
+                            {{ __('Case Studies') }}
                         </a>
                     </div>
                     <div class="mt-8 flex items-center gap-6 text-sm text-slate-500 font-medium dark:text-slate-400">
@@ -72,8 +70,7 @@
     </section>
     <section class="py-10 border-y border-slate-100 bg-white dark:bg-background-dark dark:border-slate-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8">Trusted Technology
-                Partners</p>
+            <p class="text-center text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8">{{ __('Powered by Modern Technologies') }}</p>
             <div
                 class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                 <span class="text-xl font-bold text-slate-600 dark:text-slate-300 flex items-center gap-2"><x-app-icon name="cloud" class="w-5 h-5" /> AWS</span>
@@ -87,13 +84,12 @@
     <section class="py-20 bg-background-light dark:bg-background-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mb-16 md:text-center max-w-3xl mx-auto">
-                <h2 class="text-base font-semibold uppercase tracking-wide text-primary">Core Capabilities</h2>
+                <h2 class="text-base font-semibold uppercase tracking-wide text-primary">{{ __('Core Capabilities') }}</h2>
                 <p class="mt-2 text-3xl font-black tracking-tight text-text-header sm:text-4xl dark:text-white">
-                    Enterprise Cloud Services
+                    {{ __('Cloud Infrastructure') }}
                 </p>
                 <p class="mt-4 text-lg text-text-main dark:text-slate-300">
-                    Our expert architects build the foundation for your digital success through a comprehensive suite of
-                    cloud solutions.
+                    {{ __('We don\'t just write code; we architect solutions that scale with your business. Our engineering team utilizes the latest technologies to ensure your product is fast, secure, and ready for the future.') }}
                 </p>
             </div>
             <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,9 +99,8 @@
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                         <x-app-icon name="cloud_upload" class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Cloud Migration</h3>
-                    <p class="text-text-main leading-relaxed dark:text-slate-300">Seamlessly move legacy systems to modern
-                        cloud environments with zero downtime strategies.</p>
+                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">{{ __('Cloud Infrastructure') }}</h3>
+                    <p class="text-text-main leading-relaxed dark:text-slate-300">{{ __('Robust backend architecture on AWS, Azure, or Google Cloud.') }}</p>
                 </div>
                 <div
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
@@ -113,9 +108,8 @@
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                         <x-app-icon name="bolt" class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Serverless Architecture</h3>
-                    <p class="text-text-main leading-relaxed dark:text-slate-300">Build scalable applications without
-                        managing server infrastructure, paying only for compute time.</p>
+                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">{{ __('Lightning Speed') }}</h3>
+                    <p class="text-text-main leading-relaxed dark:text-slate-300">{{ __('Optimized specifically for Core Web Vitals and performance metrics that matter to your users and SEO rankings.') }}</p>
                 </div>
                 <div
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
@@ -123,9 +117,8 @@
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                         <x-app-icon name="settings_suggest" class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">DevOps Automation</h3>
-                    <p class="text-text-main leading-relaxed dark:text-slate-300">Streamline deployment with robust CI/CD
-                        pipelines to release faster and more reliably.</p>
+                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">{{ __('Automated CI/CD pipelines') }}</h3>
+                    <p class="text-text-main leading-relaxed dark:text-slate-300">{{ __('Streamline deployment with robust CI/CD pipelines to release faster and more reliably.') }}</p>
                 </div>
                 <div
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
@@ -133,9 +126,8 @@
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                         <x-app-icon name="security" class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Security &amp; Compliance</h3>
-                    <p class="text-text-main leading-relaxed dark:text-slate-300">Enterprise-grade security protocols,
-                        encryption, and regulatory compliance baked in.</p>
+                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">{{ __('Bank-Grade Security') }}</h3>
+                    <p class="text-text-main leading-relaxed dark:text-slate-300">{{ __('Enterprise-level security protocols, encryption, and compliance standards (GDPR, SOC2) built-in from day one.') }}</p>
                 </div>
                 <div
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
@@ -143,9 +135,8 @@
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                         <x-app-icon name="hub" class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Hybrid Cloud Solutions</h3>
-                    <p class="text-text-main leading-relaxed dark:text-slate-300">Integrate on-premise and cloud resources
-                        for ultimate flexibility and control.</p>
+                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">{{ __('Infinite Scalability') }}</h3>
+                    <p class="text-text-main leading-relaxed dark:text-slate-300">{{ __('Cloud-native architectures designed to grow with your business, handling millions of requests without breaking a sweat.') }}</p>
                 </div>
                 <div
                     class="group relative rounded-xl border border-slate-200 bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800 dark:border-slate-700">
@@ -153,9 +144,8 @@
                         class="mb-4 inline-flex size-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                         <x-app-icon name="trending_up" class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">Cost Optimization</h3>
-                    <p class="text-text-main leading-relaxed dark:text-slate-300">Maximize performance while minimizing
-                        operational expenses through smart resource allocation.</p>
+                    <h3 class="text-xl font-bold text-text-header mb-2 dark:text-white">{{ __('Tested for High Reliability') }}</h3>
+                    <p class="text-text-main leading-relaxed dark:text-slate-300">{{ __('Every feature is backed by automated tests before release so your application won\'t break on your users.') }}</p>
                 </div>
             </div>
         </div>
@@ -165,11 +155,10 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-3xl font-black tracking-tight text-text-header sm:text-4xl mb-6 dark:text-white">
-                        Our Cloud Roadmap
+                        {{ __('How We Work') }}
                     </h2>
                     <p class="text-lg text-text-main mb-8 dark:text-slate-300">
-                        We follow a structured, four-phase methodology to ensure every cloud initiative delivers tangible
-                        business value.
+                        {{ __('A proven process, from concept to deployment.') }}
                     </p>
                     <div class="relative pl-8 border-l-2 border-slate-200 dark:border-slate-700 space-y-10">
                         <div class="relative">
@@ -177,36 +166,32 @@
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
                                 <x-app-icon name="search" class="w-5 h-5" />
                             </span>
-                            <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 1: Assessment</h3>
-                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">Deep dive into current
-                                infrastructure, identifying bottlenecks and opportunities.</p>
+                            <h3 class="text-lg font-bold text-text-header dark:text-white">{{ __('1. Define') }}</h3>
+                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">{{ __('Scoping requirements and setting KPIs.') }}</p>
                         </div>
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
                                 <x-app-icon name="design_services" class="w-5 h-5" />
                             </span>
-                            <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 2: Strategy Design</h3>
-                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">Architecting the solution blueprint,
-                                selecting tech stack, and planning migration.</p>
+                            <h3 class="text-lg font-bold text-text-header dark:text-white">{{ __('2. Design') }}</h3>
+                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">{{ __('Prototyping and high-fidelity visuals.') }}</p>
                         </div>
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
                                 <x-app-icon name="construction" class="w-5 h-5" />
                             </span>
-                            <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 3: Execution</h3>
-                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">Agile implementation of the cloud
-                                infrastructure with continuous testing.</p>
+                            <h3 class="text-lg font-bold text-text-header dark:text-white">{{ __('3. Develop') }}</h3>
+                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">{{ __('Iterative coding sprints and QA testing.') }}</p>
                         </div>
                         <div class="relative">
                             <span
                                 class="absolute -left-[41px] flex size-10 items-center justify-center rounded-full bg-white border-2 border-primary text-primary dark:bg-slate-900">
                                 <x-app-icon name="rocket_launch" class="w-5 h-5" />
                             </span>
-                            <h3 class="text-lg font-bold text-text-header dark:text-white">Phase 4: Optimization</h3>
-                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">Ongoing monitoring, scaling, and
-                                cost-refinement to ensure peak efficiency.</p>
+                            <h3 class="text-lg font-bold text-text-header dark:text-white">{{ __('4. Deploy') }}</h3>
+                            <p class="text-text-main mt-1 text-sm dark:text-slate-400">{{ __('Launch, monitor, and scale.') }}</p>
                         </div>
                     </div>
                 </div>
@@ -217,12 +202,12 @@
                                 class="rounded-xl bg-slate-50 p-6 shadow-sm border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
                                 <x-app-icon name="speed" class="w-8 h-8 text-primary mb-2" />
                                 <div class="text-3xl font-black text-text-header dark:text-white">3x</div>
-                                <div class="text-sm font-medium text-slate-500 dark:text-slate-400">Faster Deployment</div>
+                                <div class="text-sm font-medium text-slate-500 dark:text-slate-400">{{ __('Faster Delivery') }}</div>
                             </div>
                             <div class="rounded-xl bg-primary p-6 shadow-sm text-white">
                                 <x-app-icon name="savings" class="w-8 h-8 text-white/80 mb-2" />
                                 <div class="text-3xl font-black">40%</div>
-                                <div class="text-sm font-medium text-white/80">Avg. Cost Reduction</div>
+                                <div class="text-sm font-medium text-white/80">{{ __('Avg. Cost Reduction') }}</div>
                             </div>
                         </div>
                         <div class="space-y-4 mt-8">
@@ -230,62 +215,13 @@
                                 class="rounded-xl bg-slate-50 p-6 shadow-sm border border-slate-100 dark:bg-slate-800 dark:border-slate-700">
                                 <x-app-icon name="shield_lock" class="w-8 h-8 text-primary mb-2" />
                                 <div class="text-3xl font-black text-text-header dark:text-white">99.9%</div>
-                                <div class="text-sm font-medium text-slate-500 dark:text-slate-400">SLA Guarantee</div>
+                                <div class="text-sm font-medium text-slate-500 dark:text-slate-400">{{ __('SLA Guarantee') }}</div>
                             </div>
                             <div class="rounded-xl bg-slate-900 p-6 shadow-sm text-white border border-slate-800 h-full">
                                 <x-app-icon name="support_agent" class="w-8 h-8 text-primary mb-2" />
                                 <div class="text-3xl font-black">24/7</div>
-                                <div class="text-sm font-medium text-slate-400">Support Coverage</div>
+                                <div class="text-sm font-medium text-slate-400">{{ __('Support & Monitoring') }}</div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-20 bg-background-light dark:bg-background-dark">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-black text-text-header dark:text-white">Designed for Scale</h2>
-                <p class="mt-4 text-text-main max-w-2xl mx-auto dark:text-slate-300">See how our infrastructure supports
-                    global operations.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:h-96 min-h-[24rem] h-auto">
-                <div class="md:col-span-2 relative rounded-2xl overflow-hidden min-h-[240px] md:h-full group">
-                    <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
-                    <img src="{{ asset('images/pages/cloud-datacenter.jpg') }}"
-                        alt="Server rack aisle in a modern data center with blue LED lights"
-                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        width="600" height="384" loading="lazy" decoding="async">
-                    <div class="absolute bottom-4 left-4 z-20">
-                        <span
-                            class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 dark:text-white backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Data
-                            Centers</span>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 md:grid-rows-2 gap-4 h-full">
-                    <div class="relative rounded-2xl overflow-hidden min-h-[180px] md:h-full group">
-                        <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
-                        <img src="{{ asset('images/pages/cloud-cybersecurity.jpg') }}"
-                            alt="Abstract digital network visualization representing cyber security"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            width="300" height="192" loading="lazy" decoding="async">
-                        <div class="absolute bottom-4 left-4 z-20">
-                            <span
-                                class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 dark:text-white backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Security
-                                Layer</span>
-                        </div>
-                    </div>
-                    <div class="relative rounded-2xl overflow-hidden min-h-[180px] md:h-full group">
-                        <div class="absolute inset-0 bg-slate-900/20 group-hover:bg-slate-900/0 transition-all z-10"></div>
-                        <img src="{{ asset('images/pages/cloud-matrix.jpg') }}"
-                            alt="Digital matrix code overlay on a dark background"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                            width="300" height="192" loading="lazy" decoding="async">
-                        <div class="absolute bottom-4 left-4 z-20">
-                            <span
-                                class="px-3 py-1 bg-white/90 dark:bg-slate-900/90 dark:text-white backdrop-blur rounded text-xs font-bold text-slate-800 shadow">Code
-                                Efficiency</span>
                         </div>
                     </div>
                 </div>
@@ -297,20 +233,16 @@
             style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
         </div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-black text-white sm:text-4xl mb-6">Ready to Accelerate Your Infrastructure?</h2>
+            <h2 class="text-3xl font-black text-white sm:text-4xl mb-6">{{ __('Ready to Accelerate Your Digital Growth?') }}</h2>
             <p class="text-xl text-primary-50 max-w-2xl mx-auto mb-10">
-                Stop managing servers and start innovating. Let our team audit your current stack and propose a future-proof
-                roadmap.
+                {{ __('Let\'s build something extraordinary together. Schedule a free consultation with our engineering team.') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact"
+                <button type="button" 
+                    @click="$dispatch('open-consultation-modal')"
                     class="flex h-12 items-center justify-center rounded-lg bg-white px-8 text-base font-bold text-primary transition-all hover:bg-slate-100 shadow-xl">
-                    Get Started Now
-                </a>
-                <a href="/contact"
-                    class="flex h-12 items-center justify-center rounded-lg border border-white/30 bg-primary-dark/30 px-8 text-base font-semibold text-white transition-all hover:bg-primary-dark/50">
-                    Contact Sales
-                </a>
+                    {{ __('Book 15-Min Free Call') }}
+                </button>
             </div>
         </div>
     </section>

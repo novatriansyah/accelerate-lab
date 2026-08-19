@@ -10,12 +10,12 @@
                     @if ($project->industry)
                         <span
                             class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-400">
-                            {{ $project->industry }}
+                            {{ __($project->industry) }}
                         </span>
                     @endif
                     @if ($project->client)
                         <span class="text-sm font-medium text-gray-500 dark:text-gray-400">
-                            Client: {{ $project->client }}
+                            {{ __('Client') }}: {{ $project->client }}
                         </span>
                     @endif
                 </div>
@@ -51,7 +51,7 @@
                             class="p-8 rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-slate-800 shadow-sm text-center">
                             <div class="text-4xl md:text-5xl font-black text-primary mb-2">{{ $stat['value'] }}</div>
                             <div class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">
-                                {{ $stat['label'] }}</div>
+                                {{ __($stat['label']) }}</div>
                         </div>
                     @endforeach
                 </div>

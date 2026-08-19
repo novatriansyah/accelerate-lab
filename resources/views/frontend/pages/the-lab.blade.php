@@ -9,24 +9,23 @@
                         <div
                             class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
                             <x-app-icon name="science" class="w-4 h-4" />
-                            Research &amp; Development
+                            {{ __('The Lab') }}
                         </div>
                         <h1
                             class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
-                            The Lab: Where Innovation Meets Execution
+                            {{ __('The Lab: Where Innovation Meets Execution') }}
                         </h1>
                         <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-                            Exploring the bleeding edge of software engineering, digital product design, and architectural
-                            patterns. We build the future, then we share the blueprints.
+                            {{ __('Innovation isn\'t accidental. It\'s engineered. Our "Lab" methodology combines agile sprints with deep technical research to solve problems others can\'t.') }}
                         </p>
                         <div class="flex flex-wrap gap-4 pt-4">
                             <a href="/blog"
                                 class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-teal-600 transition-all shadow-lg shadow-primary/25">
-                                Explore Research
+                                {{ __('Blog') }}
                             </a>
                             <a href="/about"
                                 class="flex items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
-                                Meet the Team
+                                {{ __('About Us') }}
                             </a>
                         </div>
                     </div>

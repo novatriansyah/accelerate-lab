@@ -9,28 +9,24 @@
                 <div class="flex flex-col gap-6 md:w-1/2 lg:pr-12">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-border-light w-fit">
                         <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                        <span class="text-xs font-semibold uppercase tracking-wider text-text-secondary">Web
-                            Development</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-text-secondary">{{ __('Web Development') }}</span>
                     </div>
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-text-main dark:text-white">
-                        High-Performance <span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-600">Web
-                            Applications</span> for the Future
+                        {{ __('High-Performance Web Applications') }}
                     </h1>
                     <p class="text-lg text-text-secondary dark:text-gray-300 max-w-lg leading-relaxed">
-                        Scalable, secure, and lightning-fast web solutions tailored for your business growth. We build
-                        digital products that accelerate your success using cutting-edge architecture.
+                        {{ __('Scalable, secure, and lightning-fast web solutions tailored for your business growth. We build digital products that accelerate your success using cutting-edge architecture.') }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-2">
                         <a href="/contact"
                             class="flex items-center justify-center h-12 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white text-base font-bold transition-all shadow-lg shadow-primary/20 group">
-                            Start Your Project
+                            {{ __('Estimate Your Project') }}
                             <x-app-icon name="arrow_forward" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a href="/case-studies"
                             class="flex items-center justify-center h-12 px-6 rounded-lg border border-border-medium dark:border-slate-700 bg-transparent hover:bg-border-light dark:hover:bg-slate-800 text-text-main dark:text-white text-base font-semibold transition-colors">
-                            View Case Studies
+                            {{ __('Case Studies') }}
                         </a>
                     </div>
                 </div>
@@ -66,7 +62,7 @@
             <div class="max-w-7xl mx-auto px-4 md:px-10">
                 <p
                     class="text-center text-sm font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-widest mb-8">
-                    Powered by Modern Technologies</p>
+                    {{ __('Powered by Modern Technologies') }}</p>
                 <div
                     class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale transition-all duration-500 hover:grayscale-0">
                     <div class="flex items-center gap-2 font-bold text-xl text-slate-700 dark:text-gray-200">
@@ -94,10 +90,10 @@
             <div class="flex flex-col gap-10">
                 <div class="flex flex-col gap-4 max-w-2xl">
                     <h2 class="text-3xl md:text-4xl font-black leading-tight text-text-main dark:text-white">
-                        Why Choose Accelerate Lab?
+                        {{ __('Why Choose Accelerate Lab?') }}
                     </h2>
                     <p class="text-text-secondary dark:text-gray-300 text-lg">
-                        We combine engineering excellence with modern design principles to deliver products that stand out.
+                        {{ __('We combine engineering excellence with modern design principles to deliver products that stand out.') }}
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -108,10 +104,9 @@
                             <x-app-icon name="bolt" class="w-6 h-6" />
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Lightning Speed</h3>
+                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">{{ __('Lightning Speed') }}</h3>
                             <p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
-                                Optimized specifically for Core Web Vitals and performance metrics that matter to your users
-                                and SEO rankings.
+                                {{ __('Optimized specifically for Core Web Vitals and performance metrics that matter to your users and SEO rankings.') }}
                             </p>
                         </div>
                     </div>
@@ -122,10 +117,9 @@
                             <x-app-icon name="verified_user" class="w-6 h-6" />
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Bank-Grade Security</h3>
+                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">{{ __('Bank-Grade Security') }}</h3>
                             <p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
-                                Enterprise-level security protocols, encryption, and compliance standards (GDPR, SOC2)
-                                built-in from day one.
+                                {{ __('Enterprise-level security protocols, encryption, and compliance standards (GDPR, SOC2) built-in from day one.') }}
                             </p>
                         </div>
                     </div>
@@ -136,10 +130,9 @@
                             <x-app-icon name="trending_up" class="w-6 h-6" />
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">Infinite Scalability</h3>
+                            <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">{{ __('Infinite Scalability') }}</h3>
                             <p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
-                                Cloud-native architectures designed to grow with your business, handling millions of
-                                requests without breaking a sweat.
+                                {{ __('Cloud-native architectures designed to grow with your business, handling millions of requests without breaking a sweat.') }}
                             </p>
                         </div>
                     </div>
@@ -151,9 +144,8 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
                     <div class="flex flex-col gap-8">
                         <div>
-                            <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">Our Expertise</h2>
-                            <p class="text-text-secondary dark:text-gray-300">Comprehensive development services covering
-                                every layer of the stack.</p>
+                            <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">{{ __('Our Expertise') }}</h2>
+                            <p class="text-text-secondary dark:text-gray-300">{{ __('Comprehensive development services covering every layer of the stack.') }}</p>
                         </div>
                         <div class="flex flex-col gap-3">
                             <details
@@ -161,14 +153,13 @@
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
                                         <x-app-icon name="html" class="w-5 h-5 text-primary" />
-                                        <p class="text-text-main dark:text-white text-sm font-bold">Frontend Development</p>
+                                        <p class="text-text-main dark:text-white text-sm font-bold">{{ __('Frontend Development') }}</p>
                                     </div>
                                     <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
-                                        We craft responsive, interactive, and pixel-perfect user interfaces using React,
-                                        Vue, and Angular. We focus on accessibility and fluid animations.
+                                        {{ __('We craft responsive, interactive, and pixel-perfect user interfaces using modern frontend frameworks.') }}
                                     </p>
                                 </div>
                             </details>
@@ -177,14 +168,13 @@
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
                                         <x-app-icon name="storage" class="w-5 h-5 text-primary" />
-                                        <p class="text-text-main dark:text-white text-sm font-bold">Backend Architecture</p>
+                                        <p class="text-text-main dark:text-white text-sm font-bold">{{ __('Backend Architecture') }}</p>
                                     </div>
                                     <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
-                                        Robust server-side logic using Node.js, Python, or Go. We design efficient databases
-                                        and microservices that power your business logic.
+                                        {{ __('Robust server-side logic and scalable databases that securely power your core business workflows.') }}
                                     </p>
                                 </div>
                             </details>
@@ -193,14 +183,13 @@
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
                                         <x-app-icon name="api" class="w-5 h-5 text-primary" />
-                                        <p class="text-text-main dark:text-white text-sm font-bold">API Integration &amp; Development</p>
+                                        <p class="text-text-main dark:text-white text-sm font-bold">{{ __('API Integration') }}</p>
                                     </div>
                                     <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
-                                        Seamless connections between your systems. We build RESTful and GraphQL APIs that
-                                        are well-documented and secure.
+                                        {{ __('Seamless connection between your services and third-party tools.') }}
                                     </p>
                                 </div>
                             </details>
@@ -209,14 +198,13 @@
                                 <summary class="flex cursor-pointer items-center justify-between gap-6 p-4">
                                     <div class="flex items-center gap-3">
                                         <x-app-icon name="cloud_queue" class="w-5 h-5 text-primary" />
-                                        <p class="text-text-main dark:text-white text-sm font-bold">Cloud Solutions (AWS/Azure)</p>
+                                        <p class="text-text-main dark:text-white text-sm font-bold">{{ __('Cloud Infrastructure') }}</p>
                                     </div>
                                     <x-app-icon name="expand_more" class="w-5 h-5 text-text-main dark:text-white transition-transform group-open:rotate-180" />
                                 </summary>
                                 <div class="px-4 pb-4 pl-[3.25rem]">
                                     <p class="text-text-secondary dark:text-gray-300 text-sm leading-relaxed">
-                                        Cloud-native deployment, serverless computing, and containerization using Docker and
-                                        Kubernetes for maximum uptime.
+                                        {{ __('Robust backend architecture on AWS, Azure, or Google Cloud.') }}
                                     </p>
                                 </div>
                             </details>
@@ -224,99 +212,40 @@
                     </div>
                     <div class="flex flex-col gap-8">
                         <div>
-                            <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">How We Build</h2>
-                            <p class="text-text-secondary dark:text-gray-300">A transparent, agile process from concept to deployment.</p>
+                            <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">{{ __('How We Build') }}</h2>
+                            <p class="text-text-secondary dark:text-gray-300">{{ __('A transparent, agile process from concept to deployment.') }}</p>
                         </div>
                         <div class="relative pl-4 border-l border-border-medium dark:border-slate-700 space-y-8">
                             <div class="relative pl-8">
                                 <span
                                     class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-white dark:ring-slate-900"></span>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white">Discovery &amp; Strategy</h3>
-                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">We dive deep into your business goals, user
-                                    needs, and technical requirements to create a roadmap.</p>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">{{ __('1. Define') }}</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">{{ __('Scoping requirements and setting KPIs.') }}</p>
                             </div>
                             <div class="relative pl-8">
                                 <span
                                     class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white">Design &amp; Prototyping</h3>
-                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">Creating high-fidelity wireframes and
-                                    interactive prototypes to visualize the end product.</p>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">{{ __('2. Design') }}</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">{{ __('Prototyping and high-fidelity visuals.') }}</p>
                             </div>
                             <div class="relative pl-8">
                                 <span
                                     class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white">Agile Development</h3>
-                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">Iterative coding sprints with regular updates,
-                                    ensuring we build exactly what you need.</p>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">{{ __('3. Develop') }}</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">{{ __('Iterative coding sprints and QA testing.') }}</p>
                             </div>
                             <div class="relative pl-8">
                                 <span
                                     class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-border-medium dark:bg-slate-600 ring-4 ring-white dark:ring-slate-900"></span>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white">Launch &amp; Scale</h3>
-                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">Rigorous testing, deployment to production, and
-                                    ongoing support for future growth.</p>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white">{{ __('4. Deploy') }}</h3>
+                                <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">{{ __('Launch, monitor, and scale.') }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 md:px-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                <div class="max-w-xl">
-                    <h2 class="text-3xl md:text-4xl font-black text-text-main dark:text-white mb-4">Selected Work</h2>
-                    <p class="text-text-secondary dark:text-gray-300 text-lg">See how we help industry leaders transform their digital
-                        presence.</p>
-                </div>
-                <a class="text-primary font-bold hover:text-primary-dark inline-flex items-center gap-1 group"
-                    href="/case-studies">
-                    View all projects <x-app-icon name="arrow_forward" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="group cursor-pointer flex flex-col gap-4">
-                    <div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light dark:bg-slate-800 relative">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            data-alt="Modern fintech dashboard interface screenshot showing graphs and financial data"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB95VzzHJTpQ74P4aEkEtZF7y08iKWC9m3_ekcKd3VjBWXUdOiahEWYn9KmnovwvzdrV0XIER5YTRMgj3FRNzK_6ZFwNtNxuBwKDM4SNDPq5BPlT_rkDM3Oy330eNz8VJEztnbAZPhxo0llLLhCvgHAkwh9yUAbv7GRpyhAwILfE3XVTjzTEa7j1nR4udy01JSuAVPJ-UcF2oOrtO7zO3Cf9ELMhoroJDn_On86eHMPpSnbNGqw1JgdPAjRVzcF-FzySdtJgvjVpEM");'>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <div class="flex gap-2">
-                            <span
-                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">FinTech</span>
-                            <span
-                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">React</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Nova
-                            Financial Platform</h3>
-                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">Reimagining the investment experience with a
-                            high-speed, real-time trading dashboard handling millions of transactions.</p>
-                    </div>
-                </div>
-                <div class="group cursor-pointer flex flex-col gap-4">
-                    <div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light dark:bg-slate-800 relative">
-                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                            data-alt="SaaS analytics platform interface screenshot showcasing data visualization widgets"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0_DrP2wx_9cY2Df8grTID9Hj2MkoGuCG2l1hlglVMZwhCLNnUDkX5VSjD1IA8LAZSRmrkuHv1uX1qk24Nn1NFIZzfYwKnT3ifVemh2EuU9g2wzH9OXvWqEP-Ub5Hc0AgqZKyx9Cx3HFer71pMrAxouYSWYMVuOvm-n0SAtMw0Bmnjh8LchfnjQuemyzBOoCpe-hJFNxLTAs4u9uFJ9NvC-p4xhyxlA9oMgnwwrAG3ltN_FuZpYKJiY4GlTvuXgypBjC8NyXkXilQ");'>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <div class="flex gap-2">
-                            <span
-                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">SaaS</span>
-                            <span
-                                class="px-2 py-1 bg-background-surface dark:bg-slate-800 border border-border-medium dark:border-slate-700 rounded text-xs font-semibold text-text-secondary dark:text-gray-300">Python</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Orbital
-                            Analytics</h3>
-                        <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">A scalable data analytics tool for enterprise
-                            marketing teams, featuring automated reporting and AI insights.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="px-4 pb-12 md:pb-24 max-w-7xl mx-auto w-full">
+        <section class="px-4 pb-12 md:pb-24 max-w-7xl mx-auto w-full pt-16">
             <div class="bg-primary rounded-2xl p-10 md:p-20 text-center relative overflow-hidden">
                 <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                     <div class="absolute right-[-100px] top-[-100px] w-[300px] h-[300px] rounded-full bg-white blur-3xl">
@@ -325,14 +254,13 @@
                     </div>
                 </div>
                 <div class="relative z-10 flex flex-col items-center gap-6 max-w-2xl mx-auto">
-                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">Ready to Accelerate Your Digital
-                        Growth?</h2>
-                    <p class="text-white/90 text-lg">Let's build something extraordinary together. Schedule a free
-                        consultation with our engineering team.</p>
-                    <a href="/contact"
+                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">{{ __('Ready to Accelerate Your Digital Growth?') }}</h2>
+                    <p class="text-white/90 text-lg">{{ __('Let\'s build something extraordinary together. Schedule a free consultation with our engineering team.') }}</p>
+                    <button type="button" 
+                        @click="$dispatch('open-consultation-modal')"
                         class="mt-4 bg-white text-primary hover:bg-slate-50 font-bold py-4 px-8 rounded-lg shadow-xl shadow-black/10 transition-transform active:scale-95 text-lg">
-                        Book a Consultation
-                    </a>
+                        {{ __('Book 15-Min Free Call') }}
+                    </button>
                 </div>
             </div>
         </section>

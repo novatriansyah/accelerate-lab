@@ -187,9 +187,8 @@
     <section class="py-24 bg-background-light dark:bg-background-dark" aria-labelledby="capabilities-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-16">
-                <h2 id="capabilities-heading" class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Core Capabilities</h2>
-                <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">We don't just write code; we build
-                    resilient digital assets.</p>
+                <h2 id="capabilities-heading" class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ __('Core Capabilities') }}</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">{{ __('We don\'t just write code; we build resilient digital assets.') }}</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
                 <div
@@ -202,15 +201,14 @@
                             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                                 <x-app-icon name="explore" class="w-6 h-6 text-primary" />
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Product Strategy</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{{ __('Product Strategy') }}</h3>
                             <p class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
-                                From MVP definition to enterprise scaling roadmaps. We validate market assumptions and
-                                architect scalable systems before writing a single line of code.
+                                {{ __('From MVP definition to enterprise scaling roadmaps. We validate market assumptions and architect scalable systems before writing a single line of code.') }}
                             </p>
                         </div>
                         <a class="inline-flex items-center text-primary font-semibold mt-8 group-hover:translate-x-2 transition-transform"
                             href="/services">
-                            Learn more <x-app-icon name="arrow_forward" class="w-4 h-4 ml-1" />
+                            {{ __('Learn more') }} <x-app-icon name="arrow_forward" class="w-4 h-4 ml-1" />
                         </a>
                     </div>
                 </div>
@@ -222,11 +220,9 @@
                                 class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                                 <x-app-icon name="code" class="w-6 h-6 text-primary" />
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Custom Development</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{{ __('Custom Development') }}</h3>
                             <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                                We are not limited by a specific tech stack. Our versatile team leverages the best
-                                technologies for each project, ensuring capability, performance, and adaptability across any
-                                ecosystem.
+                                {{ __('We are not limited by a specific tech stack. Our versatile team leverages the best technologies for each project, ensuring capability, performance, and adaptability across any ecosystem.') }}
                             </p>
                         </div>
                         <div class="flex gap-2 mt-8 opacity-50" aria-hidden="true">
@@ -248,7 +244,7 @@
                                             class="text-primary text-2xl ml-1">{{ $stat->unit }}</span></p>
                                     <p
                                         class="text-sm text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">
-                                        {{ $stat->label }}</p>
+                                        {{ __($stat->label) }}</p>
                                 </div>
                             @endforeach
                         </div>
@@ -270,9 +266,9 @@
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="search" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 1</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Discover</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">We analyze your requirements, audience, and business goals.</p>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 1') }}</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Discover') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We analyze your requirements, audience, and business goals.') }}</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
                         <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
@@ -281,9 +277,9 @@
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="palette" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 2</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Design</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">We craft wireframes, prototypes, and a polished UI/UX system.</p>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 2') }}</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Design') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We craft wireframes, prototypes, and a polished UI/UX system.') }}</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
                         <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
@@ -292,9 +288,9 @@
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="code" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 3</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Develop</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">We build with modern stacks, agile sprints, and CI/CD pipelines.</p>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 3') }}</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Develop') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We build with modern stacks, agile sprints, and CI/CD pipelines.') }}</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
                         <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
@@ -303,9 +299,9 @@
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="rocket_launch" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step 4</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Deploy</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">We launch, monitor, and iterate based on real-world data.</p>
+                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 4') }}</span>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Deploy') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We launch, monitor, and iterate based on real-world data.') }}</p>
                 </div>
             </div>
         </div>
@@ -412,19 +408,19 @@
                             <div class="mb-4 flex flex-wrap gap-2 items-center">
                                 @if ($project->industry)
                                     <span
-                                        class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">{{ $project->industry }}</span>
+                                        class="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">{{ __($project->industry) }}</span>
                                 @endif
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">{{ $project->title }}</h3>
                             <div class="space-y-4 mb-8 flex-grow">
                                 <div>
-                                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Challenge
+                                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">{{ __('Challenge') }}
                                     </p>
                                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
                                         {{ $project->plain_challenge }}</p>
                                 </div>
                                 <div>
-                                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Solution
+                                    <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">{{ __('Solution') }}
                                     </p>
                                     <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
                                         {{ $project->plain_solution }}</p>
@@ -432,7 +428,7 @@
                             </div>
                             <a href="/case-studies"
                                 class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-primary/30">
-                                View Case Study
+                                {{ __('View Case Study') }}
                                 <x-app-icon name="arrow_forward" class="w-4 h-4" />
                             </a>
                         </div>
@@ -450,23 +446,22 @@
                     class="inline-block px-3 py-1 rounded border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-xs font-mono text-primary mb-6">
                     ~/source/core-values.js
                 </div>
-                <h2 id="lab-heading" class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">The Lab</h2>
+                <h2 id="lab-heading" class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{{ __('The Lab') }}</h2>
                 <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
-                    Innovation isn't accidental. It's engineered. Our "Lab" methodology combines agile sprints with deep
-                    technical research to solve problems others can't.
+                    {{ __('Innovation isn\'t accidental. It\'s engineered. Our "Lab" methodology combines agile sprints with deep technical research to solve problems others can\'t.') }}
                 </p>
                 <ul class="space-y-4">
                     <li class="flex items-start">
                         <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span class="text-slate-700 dark:text-slate-300">Clean, maintainable architecture</span>
+                        <span class="text-slate-700 dark:text-slate-300">{{ __('Clean, maintainable architecture') }}</span>
                     </li>
                     <li class="flex items-start">
                         <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span class="text-slate-700 dark:text-slate-300">Security-first development lifecycle</span>
+                        <span class="text-slate-700 dark:text-slate-300">{{ __('Security-first development lifecycle') }}</span>
                     </li>
                     <li class="flex items-start">
                         <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span class="text-slate-700 dark:text-slate-300">Automated CI/CD pipelines</span>
+                        <span class="text-slate-700 dark:text-slate-300">{{ __('Automated CI/CD pipelines') }}</span>
                     </li>
                 </ul>
             </div>
@@ -507,8 +502,8 @@
     <section class="py-20 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800" aria-labelledby="testimonials-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 id="testimonials-heading" class="text-3xl font-bold text-slate-900 dark:text-white">What Our Clients Say</h2>
-                <p class="mt-3 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">Real feedback from teams we've partnered with.</p>
+                <h2 id="testimonials-heading" class="text-3xl font-bold text-slate-900 dark:text-white">{{ __('What Our Clients Say') }}</h2>
+                <p class="mt-3 text-slate-500 dark:text-slate-400 max-w-xl mx-auto">{{ __('Real feedback from teams we\'ve partnered with.') }}</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach ($testimonials as $testimonial)
@@ -533,7 +528,7 @@
                         <div>
                             <p class="text-sm font-bold text-slate-900 dark:text-white">{{ $testimonial->client_name }}</p>
                             <p class="text-xs text-slate-500 dark:text-slate-400">
-                                {{ $testimonial->client_role }}{{ $testimonial->client_company ? ', ' . $testimonial->client_company : '' }}
+                                {{ __($testimonial->client_role) }}{{ $testimonial->client_company ? ', ' . $testimonial->client_company : '' }}
                             </p>
                         </div>
                     </div>
@@ -549,18 +544,18 @@
         <div class="absolute inset-0 -z-10 h-full w-full" style="background-image: radial-gradient(#14b8a7 1px, transparent 1px); background-size: 32px 32px; opacity: 0.08;" aria-hidden="true"></div>
         <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/15 to-transparent skew-x-12 pointer-events-none" aria-hidden="true"></div>
         <div class="mx-auto max-w-4xl px-6 lg:px-8 text-center relative z-10">
-            <h2 id="cta-heading" class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to Accelerate?</h2>
+            <h2 id="cta-heading" class="text-3xl font-bold tracking-tight text-white sm:text-4xl">{{ __('Ready to Accelerate?') }}</h2>
             <p class="mx-auto mt-4 max-w-xl text-lg leading-8 text-slate-300">
-                Let's turn your vision into a high-performance digital product. Start a conversation today.
+                {{ __('Let\'s turn your vision into a high-performance digital product. Start a conversation today.') }}
             </p>
             <div class="mt-10 flex items-center justify-center gap-x-6">
                 <a class="rounded-lg bg-primary px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-primary/25 hover:bg-teal-500 transition-all"
                     href="/contact" id="cta-start-project">
-                    Start a Project
+                    {{ __('Estimate Your Project') }}
                 </a>
                 <a class="text-sm font-semibold leading-6 text-white hover:text-primary transition-colors"
                     href="/case-studies">
-                    View Our Work <span aria-hidden="true">→</span>
+                    {{ __('View Case Studies') }} <span aria-hidden="true">→</span>
                 </a>
             </div>
         </div>

@@ -20,12 +20,33 @@ class LocalizationScreensTest extends TestCase
     #[Test]
     public function home_page_all_sections_render_indonesian_translations()
     {
+        Project::create([
+            'title' => 'Fintech Engine',
+            'slug' => 'fintech-engine',
+            'description' => 'Fast payment system',
+            'challenge' => 'Legacy payment bottlenecks',
+            'solution' => 'High throughput microservices',
+            'industry' => 'Fintech',
+            'is_active' => true,
+            'is_featured' => true,
+            'order' => 1,
+        ]);
+
         $response = $this->withSession(['locale' => 'id'])->get('/');
         $response->assertStatus(200);
         $response->assertSee('Cara Kami Bekerja');
         $response->assertSee('Proyek Terbaru Kami');
         $response->assertSee('Estimasi Proyek Anda');
         $response->assertSee('Konsultasi Gratis 15-Menit');
+        $response->assertSee('Kapabilitas Utama');
+        $response->assertSee('Strategi Produk');
+        $response->assertSee('Pengembangan Kustom');
+        $response->assertSee('Pelajari selengkapnya');
+        $response->assertSee('Langkah 1');
+        $response->assertSee('Eksplorasi');
+        $response->assertSee('Tantangan');
+        $response->assertSee('Solusi');
+        $response->assertSee('Siap Mengakselerasi?');
     }
 
     #[Test]
@@ -128,12 +149,45 @@ class LocalizationScreensTest extends TestCase
     }
 
     #[Test]
-    public function footer_renders_indonesian_translations()
+    public function terms_of_service_renders_english_content()
     {
-        $response = $this->withSession(['locale' => 'id'])->get('/');
+        $response = $this->withSession(['locale' => 'id'])->get('/terms-of-service');
         $response->assertStatus(200);
-        $response->assertSee('Hak Cipta Dilindungi');
-        $response->assertSee('Kebijakan Privasi');
-        $response->assertSee('Ketentuan Layanan');
+        $response->assertSee('Terms of Service');
+        $response->assertSee('1. Agreement to Terms');
+    }
+
+    #[Test]
+    public function privacy_policy_renders_english_content()
+    {
+        $response = $this->withSession(['locale' => 'id'])->get('/privacy-policy');
+        $response->assertStatus(200);
+        $response->assertSee('Privacy Policy');
+        $response->assertSee('Personal Information');
+    }
+
+    #[Test]
+    public function project_detail_renders_indonesian_translations()
+    {
+        $project = Project::create([
+            'title' => 'E-Commerce Engine',
+            'slug' => 'ecommerce-engine',
+            'description' => 'Scalable storefront',
+            'challenge' => 'Slow checkout',
+            'solution' => 'Micro frontend architecture',
+            'industry' => 'E-Commerce',
+            'client' => 'Retail Corp',
+            'is_active' => true,
+            'is_featured' => true,
+            'order' => 1,
+        ]);
+
+        $response = $this->withSession(['locale' => 'id'])->get('/case-studies/' . $project->slug);
+        $response->assertStatus(200);
+        $response->assertSee('Klien');
+        $response->assertSee('Tantangan Proyek');
+        $response->assertSee('Solusi Rekayasa');
+        $response->assertSee('E-Commerce');
     }
 }
+

@@ -11,28 +11,25 @@
                                 <div
                                     class="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 w-fit">
                                     <span class="size-2 rounded-full bg-primary animate-pulse"></span>
-                                    <span class="text-xs font-semibold uppercase tracking-wide text-primary">UI/UX Design
-                                        Agency</span>
+                                    <span class="text-xs font-semibold uppercase tracking-wide text-primary">{{ __('UI/UX Design') }}</span>
                                 </div>
                                 <h1
                                     class="text-text-main dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl lg:text-6xl">
-                                    Designing Digital Experiences that <span
-                                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-400">Convert</span>
+                                    {{ __('Designing Digital Experiences that Convert') }}
                                 </h1>
                                 <h2
                                     class="text-text-main/80 dark:text-gray-300 text-lg font-normal leading-relaxed max-w-xl">
-                                    We blend data-driven research with pixel-perfect aesthetics to build products users
-                                    love. Transform your complex ideas into intuitive interfaces.
+                                    {{ __('We blend data-driven research with pixel-perfect aesthetics to build products users love. Transform your complex ideas into intuitive interfaces.') }}
                                 </h2>
                             </div>
                             <div class="flex flex-col sm:flex-row gap-4 pt-4">
                                 <a href="/contact"
                                     class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary-dark transition-all hover:scale-105 shadow-xl shadow-primary/25">
-                                    <span class="truncate">Start Your Design Journey</span>
+                                    <span class="truncate">{{ __('Estimate Your Project') }}</span>
                                 </a>
                                 <a href="/case-studies"
                                     class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-text-main dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-gray-50 dark:hover:bg-gray-700 transition-all">
-                                    <span class="truncate">View Portfolio</span>
+                                    <span class="truncate">{{ __('Case Studies') }}</span>
                                 </a>
                             </div>
                             <div class="flex items-center gap-4 pt-4 opacity-70">

@@ -42,13 +42,13 @@
             <div class="flex gap-8 overflow-x-auto no-scrollbar">
                 <a class="group flex flex-col items-center justify-center border-b-[3px] border-b-primary pb-3 pt-4 px-2"
                     href="#strategy">
-                    <p class="text-slate-dark dark:text-white text-sm font-bold tracking-[0.015em]">Product Strategy</p>
+                    <p class="text-slate-dark dark:text-white text-sm font-bold tracking-[0.015em]">{{ __('Product Strategy') }}</p>
                 </a>
                 <a class="group flex flex-col items-center justify-center border-b-[3px] border-b-transparent hover:border-b-primary/50 pb-3 pt-4 px-2 transition-colors"
                     href="#development">
                     <p
                         class="text-[#4e9790] group-hover:text-primary dark:text-gray-400 dark:group-hover:text-white text-sm font-bold tracking-[0.015em]">
-                        Custom Development</p>
+                        {{ __('Custom Development') }}</p>
                 </a>
             </div>
         </div>
@@ -57,22 +57,20 @@
     <section class="py-16 md:py-24" id="strategy">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col gap-2 mb-12">
-                <span class="text-primary font-bold uppercase tracking-wider text-sm">Discover & Define</span>
+                <span class="text-primary font-bold uppercase tracking-wider text-sm">{{ __('Discover & Define') }}</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-dark dark:text-white">
-                    {{ $strategyService->title ?? 'Product Strategy' }}</h2>
+                    {{ __($strategyService->title ?? 'Product Strategy') }}</h2>
             </div>
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 <div class="flex flex-col gap-6">
                     <h3 class="text-2xl font-bold text-slate-dark dark:text-white">
-                        {{ $strategyService->headline ?? 'Turning Chaos into Order' }}</h3>
+                        {{ __($strategyService->headline ?? 'Turning Chaos into Order') }}</h3>
                     <div
                         class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed prose prose-slate dark:prose-invert max-w-none">
                         @if ($strategyService)
                             {!! $strategyService->content !!}
                         @else
-                            Our strategy phase lays the foundation for success. We align business goals with user needs to
-                            define a clear roadmap. We don't just build what you ask for; we build what your users actually
-                            need.
+                            {{ __('Our strategy phase lays the foundation for success. We align business goals with user needs to define a clear roadmap. We don\'t just build what you ask for; we build what your users actually need.') }}
                         @endif
                     </div>
 
@@ -81,7 +79,7 @@
                             @foreach ($strategyService->benefits as $benefit)
                                 <li class="flex items-center gap-3">
                                     <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
-                                    <span class="text-slate-dark dark:text-gray-200">{{ $benefit }}</span>
+                                    <span class="text-slate-dark dark:text-gray-200">{{ __($benefit) }}</span>
                                 </li>
                             @endforeach
                         </ul>
@@ -90,15 +88,15 @@
                         <ul class="flex flex-col gap-4 mt-2">
                             <li class="flex items-center gap-3">
                                 <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
-                                <span class="text-slate-dark dark:text-gray-200">Data-driven decision making</span>
+                                <span class="text-slate-dark dark:text-gray-200">{{ __('Data-driven decision making') }}</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
-                                <span class="text-slate-dark dark:text-gray-200">Clear roadmap & MVP definition</span>
+                                <span class="text-slate-dark dark:text-gray-200">{{ __('Clear roadmap & MVP definition') }}</span>
                             </li>
                             <li class="flex items-center gap-3">
                                 <x-app-icon name="check_circle" class="w-5 h-5 text-primary" />
-                                <span class="text-slate-dark dark:text-gray-200">User-centric design focus</span>
+                                <span class="text-slate-dark dark:text-gray-200">{{ __('User-centric design focus') }}</span>
                             </li>
                         </ul>
                     @endif
@@ -112,8 +110,8 @@
                                 <x-app-icon :name="$feature['icon'] ?? 'star'" class="w-8 h-8 text-primary" />
                                 <div>
                                     <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">
-                                        {{ $feature['title'] }}</h4>
-                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ $feature['description'] }}</p>
+                                        {{ __($feature['title']) }}</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __($feature['description']) }}</p>
                                 </div>
                             </div>
                         @endforeach
@@ -123,36 +121,32 @@
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="lightbulb" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Discovery Workshops</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Collaborative sessions to define core
-                                    problems and solutions.</p>
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('Discovery Workshops') }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Collaborative sessions to define core problems and solutions.') }}</p>
                             </div>
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="analytics" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Market Research</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">In-depth analysis of competitors and
-                                    target demographics.</p>
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('Market Research') }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('In-depth analysis of competitors and target demographics.') }}</p>
                             </div>
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="map" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">MVP Planning</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Prioritizing features for a lean,
-                                    effective market entry.</p>
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('MVP Planning') }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Prioritizing features for a lean, effective market entry.') }}</p>
                             </div>
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="brush" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">UI/UX Design</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Crafting intuitive interfaces that users
-                                    love.</p>
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('UI/UX Design') }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Crafting intuitive interfaces that users love.') }}</p>
                             </div>
                         </div>
                     @endif
@@ -225,9 +219,9 @@
                                 <div>
                                     <h4
                                         class="text-lg font-bold text-slate-dark dark:text-white mb-1 group-hover:text-primary transition-colors">
-                                        {{ $service->title }}</h4>
+                                        {{ __($service->title) }}</h4>
                                     <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
-                                        {{ $service->short_description ?? Str::limit(strip_tags($service->content), 80) }}
+                                        {{ __($service->short_description ?? Str::limit(strip_tags($service->content), 80)) }}
                                     </p>
                                 </div>
                             </a>
@@ -238,50 +232,45 @@
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="devices" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Web Applications</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Scalable, responsive web apps using
-                                    modern frameworks.</p>
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('Web Applications') }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Scalable, responsive web apps using modern frameworks.') }}</p>
                             </div>
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="smartphone" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Mobile Development</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Native and cross-platform solutions for
-                                    iOS and Android.</p>
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('Mobile Development') }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Native and cross-platform solutions for iOS and Android.') }}</p>
                             </div>
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="api" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">API Integration</h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Seamless connection between your
-                                    services and third-party tools.</p>
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('API Integration') }}</h4>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Seamless connection between your services and third-party tools.') }}</p>
                             </div>
                         </div>
                         <div
                             class="flex flex-col gap-3 rounded-xl border border-[#d0e7e4] dark:border-gray-800 bg-white dark:bg-gray-900/50 p-6 hover:shadow-lg transition-shadow duration-300">
                             <x-app-icon name="cloud_sync" class="w-8 h-8 text-primary" />
                             <div>
-                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">Cloud Infrastructure
+                                <h4 class="text-lg font-bold text-slate-dark dark:text-white mb-1">{{ __('Cloud Infrastructure') }}
                                 </h4>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Robust backend architecture on AWS,
-                                    Azure, or Google Cloud.</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('Robust backend architecture on AWS, Azure, or Google Cloud.') }}</p>
                             </div>
                         </div>
                     @endif
                 </div>
                 <div class="order-1 lg:order-2 flex flex-col gap-6 lg:sticky lg:top-32">
-                    <h3 class="text-2xl font-bold text-slate-dark dark:text-white">Engineering for Growth</h3>
+                    <h3 class="text-2xl font-bold text-slate-dark dark:text-white">{{ __('Engineering for Growth') }}</h3>
                     <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                        We don't just write code; we architect solutions that scale with your business. Our engineering team
-                        utilizes the latest technologies to ensure your product is fast, secure, and ready for the future.
+                        {{ __('We don\'t just write code; we architect solutions that scale with your business. Our engineering team utilizes the latest technologies to ensure your product is fast, secure, and ready for the future.') }}
                     </p>
                     <div
                         class="p-6 bg-slate-100 dark:bg-gray-800/50 rounded-lg border border-slate-200 dark:border-gray-700">
-                        <h4 class="font-bold text-slate-dark dark:text-white mb-4">Tech Stack Highlights</h4>
+                        <h4 class="font-bold text-slate-dark dark:text-white mb-4">{{ __('Tech Stack Highlights') }}</h4>
                         <div class="flex flex-wrap gap-2">
                             @if (isset($techStack) && $techStack->count() > 0)
                                 @foreach ($techStack as $tech)
@@ -317,19 +306,19 @@
                 class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x-0 md:divide-x divide-slate-100 dark:divide-gray-800">
                 <div class="p-4">
                     <div class="text-4xl md:text-5xl font-black text-primary mb-2">50+</div>
-                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">Products Launched</div>
+                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">{{ __('Products Launched') }}</div>
                 </div>
                 <div class="p-4">
                     <div class="text-4xl md:text-5xl font-black text-primary mb-2">99%</div>
-                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">Client Retention</div>
+                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">{{ __('Client Retention') }}</div>
                 </div>
                 <div class="p-4">
                     <div class="text-4xl md:text-5xl font-black text-primary mb-2">2x</div>
-                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">Faster Delivery</div>
+                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">{{ __('Faster Delivery') }}</div>
                 </div>
                 <div class="p-4">
                     <div class="text-4xl md:text-5xl font-black text-primary mb-2">24/7</div>
-                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">Support & Monitoring</div>
+                    <div class="text-sm font-medium text-slate-dark dark:text-gray-400">{{ __('Support & Monitoring') }}</div>
                 </div>
             </div>
         </div>
@@ -337,19 +326,19 @@
 
     <section class="py-20 bg-slate-50 dark:bg-surface-dark border-t border-border-light dark:border-border-dark">
         <div class="mx-auto max-w-4xl px-4 text-center">
-            <h2 class="text-3xl sm:text-4xl font-black text-slate-dark dark:text-white mb-4">Ready to launch or upgrade your software?</h2>
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-dark dark:text-white mb-4">{{ __('Ready to launch or upgrade your software?') }}</h2>
             <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
-                Whether you have a new app idea or need to modernize an existing system, get an honest evaluation and timeline from our Principal Architect.
+                {{ __('Whether you have a new app idea or need to modernize an existing system, get an honest evaluation and timeline from our Principal Architect.') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="/contact"
                     class="flex items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold hover:bg-primary-hover transition-colors shadow-xl shadow-primary/20">
-                    Estimate Your Project
+                    {{ __('Estimate Your Project') }}
                 </a>
                 <button type="button" 
                     @click="$dispatch('open-consultation-modal')"
                     class="flex items-center justify-center rounded-xl h-14 px-8 bg-white dark:bg-gray-800 text-slate-900 dark:text-white border border-gray-200 dark:border-gray-700 text-base font-bold hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
-                    Book Free 15-Min Call
+                    {{ __('Book 15-Min Free Call') }}
                 </button>
             </div>
         </div>

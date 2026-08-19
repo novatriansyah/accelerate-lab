@@ -12,19 +12,19 @@
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
                         <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                         <span
-                            class="text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400">Service</span>
+                            class="text-xs font-semibold uppercase tracking-wider text-text-secondary dark:text-gray-400">{{ __('Services') }}</span>
                     </div>
                     <h1
                         class="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-text-main dark:text-white">
-                        {{ $service->title }}
+                        {{ __($service->title) }}
                     </h1>
                     <p class="text-lg text-text-secondary dark:text-gray-300 max-w-lg leading-relaxed">
-                        {{ $service->short_description }}
+                        {{ __($service->short_description) }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mt-2">
                         <a href="/contact"
                             class="flex items-center justify-center h-12 px-6 rounded-lg bg-primary hover:bg-primary-dark text-white text-base font-bold transition-all shadow-lg shadow-primary/20 group">
-                            {{ $service->cta_text ?? 'Start Your Project' }}
+                            {{ __($service->cta_text ?? 'Estimate Your Project') }}
                             <x-app-icon name="arrow_forward" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a href="/case-studies"
@@ -53,7 +53,7 @@
                                             <x-app-icon :name="$service->features[0]['icon'] ?? 'check_circle'" class="w-4 h-4" />
                                         </div>
                                         <span
-                                            class="font-bold text-text-main dark:text-white text-sm">{{ $service->features[0]['title'] ?? 'Top Feature' }}</span>
+                                            class="font-bold text-text-main dark:text-white text-sm">{{ __($service->features[0]['title'] ?? 'Top Feature') }}</span>
                                     </div>
                                     <div class="h-1 w-full bg-slate-100 dark:bg-slate-700 rounded overflow-hidden">
                                         <div class="h-full bg-primary w-3/4"></div>
@@ -72,7 +72,7 @@
                 <div class="max-w-7xl mx-auto px-4 md:px-10">
                     <p
                         class="text-center text-sm font-semibold text-text-secondary dark:text-gray-400 uppercase tracking-widest mb-8">
-                        Powered by Modern Technologies</p>
+                        {{ __('Powered by Modern Technologies') }}</p>
                     <div
                         class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale transition-all duration-500 hover:grayscale-0">
                         @foreach ($service->technologies as $tech)
@@ -91,7 +91,7 @@
             <div class="flex flex-col gap-10">
                 <div class="flex flex-col gap-4 max-w-2xl">
                     <h2 class="text-3xl md:text-4xl font-black leading-tight text-text-main dark:text-white">
-                        Why Choose Accelerate Lab?
+                        {{ __('Why Choose Accelerate Lab?') }}
                     </h2>
                     <div
                         class="prose prose-lg prose-slate dark:prose-invert max-w-none text-text-secondary dark:text-gray-300">
@@ -110,9 +110,9 @@
                                 </div>
                                 <div>
                                     <h3 class="text-lg font-bold text-text-main dark:text-white mb-2">
-                                        {{ $feature['title'] }}</h3>
+                                        {{ __($feature['title']) }}</h3>
                                     <p class="text-text-secondary dark:text-gray-400 text-sm leading-relaxed">
-                                        {{ $feature['description'] }}
+                                        {{ __($feature['description']) }}
                                     </p>
                                 </div>
                             </div>
@@ -129,18 +129,17 @@
                 <div class="max-w-7xl mx-auto px-4 md:px-10">
                     <div class="flex flex-col gap-8">
                         <div>
-                            <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">How We Build</h2>
-                            <p class="text-text-secondary dark:text-gray-300">A transparent, agile process from concept to
-                                deployment.</p>
+                            <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">{{ __('How We Build') }}</h2>
+                            <p class="text-text-secondary dark:text-gray-300">{{ __('A transparent, agile process from concept to deployment.') }}</p>
                         </div>
                         <div class="relative pl-4 border-l border-border-medium dark:border-slate-700 space-y-8">
                             @foreach ($service->process as $step)
                                 <div class="relative pl-8">
                                     <span
                                         class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-white dark:ring-slate-900"></span>
-                                    <h3 class="text-lg font-bold text-text-main dark:text-white">{{ $step['title'] }}</h3>
+                                    <h3 class="text-lg font-bold text-text-main dark:text-white">{{ __($step['title']) }}</h3>
                                     <p class="mt-1 text-sm text-text-secondary dark:text-gray-400">
-                                        {{ $step['description'] }}</p>
+                                        {{ __($step['description']) }}</p>
                                 </div>
                             @endforeach
                         </div>
@@ -159,14 +158,13 @@
                     </div>
                 </div>
                 <div class="relative z-10 flex flex-col items-center gap-6 max-w-2xl mx-auto">
-                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">Ready to Accelerate Your Digital
-                        Growth?</h2>
-                    <p class="text-white/90 text-lg">Let's build something extraordinary together. Schedule a free
-                        consultation with our engineering team.</p>
-                    <a href="/contact"
+                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">{{ __('Ready to Accelerate Your Digital Growth?') }}</h2>
+                    <p class="text-white/90 text-lg">{{ __('Let\'s build something extraordinary together. Schedule a free consultation with our engineering team.') }}</p>
+                    <button type="button"
+                        @click="$dispatch('open-consultation-modal')"
                         class="mt-4 bg-white text-primary hover:bg-slate-50 font-bold py-4 px-8 rounded-lg shadow-xl shadow-black/10 transition-transform active:scale-95 text-lg">
-                        Book a Consultation
-                    </a>
+                        {{ __('Book 15-Min Free Call') }}
+                    </button>
                 </div>
             </div>
         </section>

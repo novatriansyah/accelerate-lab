@@ -40,7 +40,7 @@
                     @foreach ($industries as $industry)
                         <a href="{{ route('case-studies', ['industry' => $industry]) }}"
                             class="shrink-0 rounded-full {{ $currentIndustry === $industry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white dark:bg-surface-dark border border-gray-200 dark:border-slate-700 text-text-main dark:text-white hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
-                            {{ $industry }}
+                            {{ __($industry) }}
                         </a>
                     @endforeach
                 </div>
@@ -50,7 +50,7 @@
             <section class="py-12 md:py-16">
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary dark:text-gray-400 mb-6">
-                        Featured Project</h3>
+                        {{ __('Featured Project') }}</h3>
                     <div
                         class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-lg transition-all hover:shadow-xl border border-gray-100 dark:border-slate-700">
                         <div class="flex flex-col lg:flex-row">
@@ -58,7 +58,7 @@
                                 <div class="flex items-center gap-2 mb-4">
                                     @if ($featuredProject->industry)
                                         <span
-                                            class="inline-flex items-center rounded-md bg-teal-50 dark:bg-teal-900/30 px-2 py-1 text-xs font-medium text-teal-700 dark:text-teal-400 ring-1 ring-inset ring-teal-600/20 dark:ring-teal-400/20">{{ $featuredProject->industry }}</span>
+                                            class="inline-flex items-center rounded-md bg-teal-50 dark:bg-teal-900/30 px-2 py-1 text-xs font-medium text-teal-700 dark:text-teal-400 ring-1 ring-inset ring-teal-600/20 dark:ring-teal-400/20">{{ __($featuredProject->industry) }}</span>
                                     @endif
                                     @if ($featuredProject->technology_tags && count($featuredProject->technology_tags) > 0)
                                         <span
@@ -77,14 +77,14 @@
                                             <div>
                                                 <p class="text-3xl font-black text-primary">{{ $stat['value'] }}</p>
                                                 <p class="text-sm font-medium text-text-secondary dark:text-gray-400">
-                                                    {{ $stat['label'] }}</p>
+                                                    {{ __($stat['label']) }}</p>
                                             </div>
                                         @endforeach
                                     </div>
                                 @endif
                                 <a class="inline-flex w-fit items-center gap-2 text-sm font-bold text-primary hover:text-primary-dark group-hover:gap-3 transition-all"
                                     href="{{ route('project', $featuredProject) }}">
-                                    Read Case Study <x-app-icon name="arrow_forward" class="w-4 h-4" />
+                                    {{ __('Read Case Study') }} <x-app-icon name="arrow_forward" class="w-4 h-4" />
                                 </a>
                             </div>
                             <div
@@ -134,7 +134,7 @@
                                 <div class="flex flex-wrap gap-2 items-center">
                                     @if ($project->industry)
                                         <span
-                                            class="text-xs font-bold uppercase tracking-wider text-primary">{{ $project->industry }}</span>
+                                            class="text-xs font-bold uppercase tracking-wider text-primary">{{ __($project->industry) }}</span>
                                     @endif
 
                                     @if ($project->industry && $project->technology_tags)
@@ -157,7 +157,7 @@
                                     {{ $project->description }}
                                 </p>
                                 <a href="{{ route('project', $project) }}" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-primary-dark mt-1 transition-all">
-                                    Read Case Study <x-app-icon name="arrow_forward" class="w-4 h-4" />
+                                    {{ __('Read Case Study') }} <x-app-icon name="arrow_forward" class="w-4 h-4" />
                                 </a>
                             </div>
                         </div>
@@ -166,7 +166,7 @@
                 <div class="mt-16 flex justify-center">
                     <button
                         class="flex items-center gap-2 rounded-full border border-gray-200 dark:border-slate-700 px-6 py-3 text-sm font-semibold text-text-main dark:text-white transition-colors hover:border-primary hover:text-primary">
-                        View More Projects <x-app-icon name="expand_more" class="w-5 h-5" />
+                        {{ __('View More Projects') }} <x-app-icon name="expand_more" class="w-5 h-5" />
                     </button>
                 </div>
             </div>
@@ -176,20 +176,20 @@
                 data-alt="Abstract dark technological geometric patterns"
                 style="background-image: radial-gradient(#14b8a7 1px, transparent 1px); background-size: 32px 32px;"></div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">Ready to accelerate your vision?</h2>
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">{{ __('Ready to launch or upgrade your software?') }}</h2>
                 <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-gray-300">
-                    Let's build something extraordinary together. Our team of experts is ready to take your digital product
-                    to the next level.
+                    {{ __('Whether you have a new app idea or need to modernize an existing system, get an honest evaluation and timeline from our Principal Architect.') }}
                 </p>
                 <div class="mt-10 flex items-center justify-center gap-x-6">
                     <a class="rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400 transition-all"
                         href="/contact">
-                        Get Started
+                        {{ __('Estimate Your Project') }}
                     </a>
-                    <a class="text-sm font-semibold leading-6 text-slate-900 dark:text-white hover:text-primary transition-colors"
-                        href="/contact">
-                        Contact Sales <span aria-hidden="true">→</span>
-                    </a>
+                    <button type="button" 
+                        @click="$dispatch('open-consultation-modal')"
+                        class="text-sm font-semibold leading-6 text-slate-900 dark:text-white hover:text-primary transition-colors">
+                        {{ __('Book 15-Min Free Call') }} <span aria-hidden="true">→</span>
+                    </button>
                 </div>
             </div>
         </section>
