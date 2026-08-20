@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             HomepageStatSeeder::class,
+            DemoSeeder::class,
         ]);
 
         if (\App\Models\User::count() === 0) {
