@@ -1,4 +1,4 @@
-# Client Demo Feature — DM&P Advocates Prototype
+# Client Demo CMS & Dual-Mode Presentation System — Design Spec
 
 **Date:** 2026-08-20  
 **Status:** Approved  
@@ -8,49 +8,87 @@
 
 ## 1. Overview & Objectives
 
-Accelerate Lab requires a dedicated, isolated demo mechanism within the monolithic Laravel 12 application to showcase client prototypes and bespoke interactive web designs. This feature introduces the first client prototype: **DM&P Advocates (Dhoni Martien & Partners)** corporate law firm website.
+Accelerate Lab requires a dynamic, CMS-driven client demo platform built into the monolithic Laravel 12 application. This allows agency leadership to rapidly create, manage, and present bespoke interactive client prototypes (starting with **DM&P Advocates**) with complete styling isolation and interactive presentation tooling.
 
 ### Key Objectives:
-- Provide an accessible demo URL (`/demos/dmp-advocates`) for high-stakes client presentation.
-- Guarantee 100% CSS and JS style isolation so the client's bespoke styling, typography (Google Fonts Montserrat & Playfair Display), and scripts are not modified or overridden by Accelerate Lab's global Tailwind CSS and Alpine.js configurations.
-- Maintain adherence to Strict Test-Driven Development (TDD) and clean controller-based routing.
+- **Filament CMS Integration:** Dedicated `Client Demos` resource (`DemoResource`) to create, update, and manage prototypes with dynamic HTML storage, passcode gating, and quick actions.
+- **Dual-Mode Presentation:**
+  - **Mode 1 (Showcase Frame — `/demos/{slug}`):** Interactive presentation frame equipped with an Accelerate Lab branded toolbar, client badge, smooth responsive device switcher (**Desktop / Tablet 768px / Mobile 375px**), and fullscreen launcher.
+  - **Mode 2 (Pure Standalone — `/demos/{slug}/preview` or `/fullscreen`):** 100% isolated rendering of the client's bespoke HTML/CSS/JS without any master layout, Tailwind CSS, or Vite script leakage.
+- **Initial Seed Data:** Out-of-the-box seeding with the complete **DM&P Advocates** corporate law firm prototype.
+- **Strict TDD Compliance:** Red-Green-Refactor test coverage across database migrations, models, Filament admin resource, and frontend dual-mode routes.
 
 ---
 
-## 2. Architecture & Components
+## 2. Architecture & Database Schema
 
-### 2.1 Routing & Controller
-- **Route:** `GET /demos/dmp-advocates` defined in `routes/web.php`
-- **Route Name:** `demos.dmp-advocates`
-- **Controller:** `App\Http\Controllers\Frontend\DemoController`
-- **Action:** `dmpAdvocates()`
-- **Response:** Renders `demos.dmp-advocates` Blade template without middleware restrictions.
+### 2.1 Database Table: `demos`
+```php
+Schema::create('demos', function (Blueprint $table) {
+    $table->id();
+    $table->string('title');
+    $table->string('slug')->unique();
+    $table->string('client_name')->nullable();
+    $table->string('industry')->nullable();
+    $table->text('description')->nullable();
+    $table->longText('html_content');
+    $table->string('access_passcode')->nullable();
+    $table->string('default_device')->default('desktop'); // desktop, tablet, mobile
+    $table->boolean('is_active')->default(true);
+    $table->timestamps();
+});
+```
 
-### 2.2 View & Asset Architecture
-- **View Location:** `resources/views/demos/dmp-advocates.blade.php`
-- **Isolation Constraints:**
-  - Standalone HTML document structure (`<!DOCTYPE html>`, `<html>`, `<head>`, `<body>`).
-  - No inheritance of `@extends('layouts.app')` or master layouts.
-  - No inclusion of `@vite(...)` application bundles to prevent style bleed.
-  - Self-contained `<style>` block preserving original CSS custom properties, responsive breakpoints, animations, and micro-interactions.
-  - Preserved vanilla JavaScript for tab navigation (`switchTab`), practice area filtering, lawyer directory rank filter (`filterLawyers`), language toggling, and consultation form intake simulation.
-- **Visual Assets:**
-  - Embedded SVG / fallback graphic for `DM&P Advocates` seal and logo to prevent broken image references during client demos.
+### 2.2 Model: `App\Models\Demo`
+- Fillable: `title`, `slug`, `client_name`, `industry`, `description`, `html_content`, `access_passcode`, `default_device`, `is_active`.
+- Casts: `is_active` => `'boolean'`.
+- Scopes: `scopeActive($query)`.
+
+### 2.3 Filament Admin: `App\Filament\Resources\DemoResource`
+- **Form Schema:**
+  - Section 1: General Info (`title`, `slug`, `client_name`, `industry`, `is_active`, `access_passcode`, `default_device`).
+  - Section 2: Prototype Source (`html_content` with full CodeEditor / LongText).
+- **Table Columns & Actions:**
+  - Columns: `title`, `client_name`, `slug`, `is_active`, `created_at`.
+  - Actions: Edit, Delete, and direct Action links:
+    - *"Open Showcase"* $\rightarrow$ `/demos/{slug}`
+    - *"Open Fullscreen"* $\rightarrow$ `/demos/{slug}/preview`
 
 ---
 
-## 3. Strict TDD & Verification Plan
+## 3. Frontend Routing & Dual-Mode Views
 
-In alignment with workspace standards:
-- **Test File:** `tests/Feature/Frontend/DemoControllerTest.php`
-- **Test Scenarios:**
-  1. `test_dmp_advocates_demo_page_loads_successfully()`: Asserts `GET /demos/dmp-advocates` returns HTTP status 200.
-  2. `test_dmp_advocates_demo_page_contains_expected_client_branding()`: Asserts presence of key texts such as `"DM&P Advocates"`, `"Dhoni Martien"`, `"Pacific Century Place"`, and practice area labels.
-  3. `test_dmp_advocates_demo_page_is_isolated_from_main_agency_layout()`: Asserts that main agency layout markers (such as Accelerate Lab's navigation header or agency slogan) are NOT rendered on this demo page.
+### 3.1 Routes (`routes/web.php`)
+```php
+Route::get('/demos/{demo:slug}', [DemoController::class, 'showcase'])->name('demos.showcase');
+Route::get('/demos/{demo:slug}/preview', [DemoController::class, 'preview'])->name('demos.preview');
+Route::post('/demos/{demo:slug}/verify', [DemoController::class, 'verifyPasscode'])->name('demos.verify');
+```
+
+### 3.2 View 1: Showcase Frame (`resources/views/frontend/demos/showcase.blade.php`)
+- Ultra-clean, modern dark/light Accelerate Lab presentation bar:
+  - Agency Logo & Back Link to Accelerate Lab (`/case-studies` or `/`).
+  - Client Tag: `{{ $demo->title }} — {{ $demo->client_name }}`.
+  - Interactive Device Switcher pills:
+    - 🖥️ **Desktop** (100% width)
+    - 📱 **Tablet** (768px centered container with realistic shadow/border)
+    - 📱 **Mobile** (375px centered container)
+  - 🔄 Reload frame button.
+  - ↗️ **"Open Fullscreen"** link pointing to `demos.preview`.
+- Embedded sandboxed `<iframe>` pointing to route `demos.preview`.
+
+### 3.3 View 2: Pure Preview (`resources/views/frontend/demos/preview.blade.php` / Direct Controller Response)
+- Streams raw `$demo->html_content` directly as `text/html`.
+- 100% zero interference from application styles.
 
 ---
 
-## 4. Scope & Non-Goals
+## 4. Strict TDD & Verification Plan
 
-- **In Scope:** Standalone view rendering, route definition, clean controller implementation, and full test suite coverage.
-- **Out of Scope (Non-Goals):** Database persistence for the mock consultation form (handled via client-side interactive alert for prototype demo purposes) and admin CMS management of static client prototypes.
+### Test Suite: `tests/Feature/Frontend/ClientDemoTest.php`
+1. `test_demo_can_be_stored_in_database()`
+2. `test_showcase_mode_loads_with_device_switcher_and_client_metadata()`
+3. `test_preview_mode_renders_pure_isolated_html_content()`
+4. `test_inactive_demo_returns_404_or_redirect()`
+5. `test_passcode_protected_demo_requires_passcode_verification()`
+6. `test_dmp_advocates_is_properly_seeded_and_functional()`
