@@ -2,10 +2,15 @@
 
 use App\Http\Controllers\Frontend\BlogController;
 use App\Http\Controllers\Frontend\ContactController;
+use App\Http\Controllers\Frontend\DemoController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\ProjectController;
 use App\Http\Controllers\Frontend\SitemapController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/demos/{slug}', [DemoController::class, 'showcase'])->name('demos.showcase');
+Route::get('/demos/{slug}/preview', [DemoController::class, 'preview'])->name('demos.preview');
+Route::post('/demos/{slug}/verify', [DemoController::class, 'verifyPasscode'])->name('demos.verify');
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
