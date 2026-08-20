@@ -61,4 +61,4 @@ jobs:
           npm run build
 
       - name: Execute Automated Test Suite
-        run: php artisan test --parallel
+        run: php artisan test
