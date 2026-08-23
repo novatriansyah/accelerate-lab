@@ -1,5 +1,49 @@
 @extends('frontend.components.layout')
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "Service",
+    "name": {!! json_encode($service->title ?? 'Mobile App Development') !!},
+    "serviceType": {!! json_encode($service->category ?? 'Mobile Applications') !!},
+    "description": {!! json_encode($service->short_description ?? 'Native and cross-platform mobile application development.') !!},
+    "provider": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "url": "{{ config('app.url') }}"
+    },
+    "areaServed": "Worldwide"
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "{{ url('/services') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($service->title ?? 'Mobile App Development') !!},
+            "item": "{{ url('/services/' . ($service->slug ?? 'mobile-app-development')) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
     <div class="relative flex h-auto w-full flex-col">
         <div class="layout-container flex h-full grow flex-col">

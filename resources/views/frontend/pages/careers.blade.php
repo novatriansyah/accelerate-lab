@@ -1,5 +1,56 @@
 @extends('frontend.components.layout')
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Careers",
+            "item": "{{ url('/careers') }}"
+        }
+    ]
+}
+</script>
+@if (isset($jobs) && $jobs->count() > 0)
+@foreach ($jobs as $job)
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "JobPosting",
+    "title": {!! json_encode($job->title) !!},
+    "description": {!! json_encode($job->description ?? ($job->title . ' at Accelerate Lab')) !!},
+    "datePosted": "{{ $job->created_at?->toIso8601String() ?? now()->toIso8601String() }}",
+    "employmentType": {!! json_encode(strtoupper(str_replace(' ', '_', $job->type ?? 'FULL_TIME'))) !!},
+    "hiringOrganization": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "sameAs": "{{ config('app.url') }}",
+        "logo": "{{ asset('images/logo.webp') }}"
+    },
+    "jobLocation": {
+        "{{ '@' }}type": "Place",
+        "address": {
+            "{{ '@' }}type": "PostalAddress",
+            "addressLocality": {!! json_encode($job->location ?? 'Remote') !!},
+            "addressCountry": "ID"
+        }
+    }
+}
+</script>
+@endforeach
+@endif
+@endpush
+
 @section('content')
     <main class="flex-1 flex flex-col items-center w-full">
         <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-12 text-center">

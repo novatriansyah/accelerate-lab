@@ -1,5 +1,49 @@
 @extends('frontend.components.layout')
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "Service",
+    "name": {!! json_encode($service->title ?? 'Custom Web Application Development') !!},
+    "serviceType": {!! json_encode($service->category ?? 'Web Engineering') !!},
+    "description": {!! json_encode($service->short_description ?? 'Enterprise-grade custom web application engineering with high velocity and performance.') !!},
+    "provider": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "url": "{{ config('app.url') }}"
+    },
+    "areaServed": "Worldwide"
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "{{ url('/services') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($service->title ?? 'Web Application Development') !!},
+            "item": "{{ url('/services/' . ($service->slug ?? 'web-application-development')) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
     <main class="flex-grow">
         <section class="relative px-4 py-12 md:py-20 lg:py-28 max-w-7xl mx-auto w-full">

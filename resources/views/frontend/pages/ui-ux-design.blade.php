@@ -1,5 +1,49 @@
 @extends('frontend.components.layout')
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "Service",
+    "name": {!! json_encode($service->title ?? 'UI/UX Design & Design Systems') !!},
+    "serviceType": {!! json_encode($service->category ?? 'Design & Prototyping') !!},
+    "description": {!! json_encode($service->short_description ?? 'Human-centric UI/UX design, wireframing, design systems, and rapid interactive prototypes.') !!},
+    "provider": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "url": "{{ config('app.url') }}"
+    },
+    "areaServed": "Worldwide"
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "{{ url('/services') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($service->title ?? 'UI/UX Design') !!},
+            "item": "{{ url('/services/' . ($service->slug ?? 'ui-ux-design')) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
     <div class="layout-container flex w-full flex-col">
         <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">

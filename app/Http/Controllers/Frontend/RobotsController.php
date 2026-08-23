@@ -12,6 +12,8 @@ class RobotsController extends Controller
         $content = "User-agent: *\n";
         $content .= "Disallow: /admin\n";
         $content .= "Disallow: /nova\n";
+        $content .= "Disallow: /demos\n";
+        $content .= "Disallow: /demos/\n";
         $content .= "Allow: /\n";
         $content .= "Sitemap: " . url('sitemap.xml');
 

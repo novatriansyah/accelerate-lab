@@ -1,5 +1,61 @@
 @extends('frontend.components.layout')
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BlogPosting",
+    "headline": {!! json_encode($article->title) !!},
+    "description": {!! json_encode(\Illuminate\Support\Str::limit(strip_tags($article->content), 160)) !!},
+    "image": {!! json_encode($article->image_path ? url(\Illuminate\Support\Facades\Storage::url($article->image_path)) : asset('images/logo.webp')) !!},
+    "datePublished": "{{ $article->published_at?->toIso8601String() }}",
+    "dateModified": "{{ $article->updated_at?->toIso8601String() }}",
+    "author": {
+        "{{ '@' }}type": "Person",
+        "name": {!! json_encode($article->author?->name ?? 'Nova Triansyah Azis') !!}
+    },
+    "publisher": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "logo": {
+            "{{ '@' }}type": "ImageObject",
+            "url": "{{ asset('images/logo.webp') }}"
+        }
+    },
+    "mainEntityOfPage": {
+        "{{ '@' }}type": "WebPage",
+        "{{ '@' }}id": "{{ url('/blog/' . $article->slug) }}"
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "{{ url('/blog') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($article->title) !!},
+            "item": "{{ url('/blog/' . $article->slug) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
     <main class="flex-1 flex flex-col items-center w-full">
         <!-- Hero / Header -->

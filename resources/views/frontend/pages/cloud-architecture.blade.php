@@ -1,5 +1,49 @@
 @extends('frontend.components.layout')
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "Service",
+    "name": {!! json_encode($service->title ?? 'Cloud Architecture & DevOps') !!},
+    "serviceType": {!! json_encode($service->category ?? 'Cloud Infrastructure') !!},
+    "description": {!! json_encode($service->short_description ?? 'Scalable, secure, and future-proof cloud infrastructure engineering.') !!},
+    "provider": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "url": "{{ config('app.url') }}"
+    },
+    "areaServed": "Worldwide"
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "{{ url('/services') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($service->title ?? 'Cloud Architecture') !!},
+            "item": "{{ url('/services/' . ($service->slug ?? 'cloud-architecture')) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
     <section class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 hero-gradient bg-grid-pattern">
         <div class="absolute inset-0 bg-white/60 dark:bg-background-dark/90 pointer-events-none"></div>

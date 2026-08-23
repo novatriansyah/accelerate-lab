@@ -31,21 +31,23 @@ class AppServiceProvider extends ServiceProvider
         });
 
         try {
-            $settings = Cache::remember('site_settings', 300, function () {
-                if (!\Illuminate\Support\Facades\Schema::hasTable('site_settings')) {
-                    return collect();
-                }
-                return \App\Models\SiteSetting::where('is_display', true)->pluck('value', 'key');
-            });
-            \Illuminate\Support\Facades\View::share('settings', $settings);
+            \Illuminate\Support\Facades\View::composer('*', function ($view) {
+                $settings = Cache::remember('site_settings', 300, function () {
+                    if (!\Illuminate\Support\Facades\Schema::hasTable('site_settings')) {
+                        return collect();
+                    }
+                    return \App\Models\SiteSetting::where('is_display', true)->pluck('value', 'key');
+                });
+                $view->with('settings', $settings);
 
-            $globalServices = Cache::remember('global_services', 300, function () {
-                if (!\Illuminate\Support\Facades\Schema::hasTable('services')) {
-                    return collect();
-                }
-                return \App\Models\Service::orderBy('sort_order')->get(['title', 'slug']);
+                $globalServices = Cache::remember('global_services', 300, function () {
+                    if (!\Illuminate\Support\Facades\Schema::hasTable('services')) {
+                        return collect();
+                    }
+                    return \App\Models\Service::orderBy('sort_order')->get(['title', 'slug']);
+                });
+                $view->with('globalServices', $globalServices);
             });
-            \Illuminate\Support\Facades\View::share('globalServices', $globalServices);
         } catch (\Exception $e) {
             // Failsafe for initial migration
         }

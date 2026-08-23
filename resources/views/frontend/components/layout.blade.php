@@ -11,6 +11,9 @@
         content="{{ $keywords ?? 'software development, digital agency, cloud architecture, ui/ux design, laravel, vue.js, react' }}">
     <meta name="author" content="Accelerate Lab">
     <meta name="robots" content="{{ $robots ?? 'index, follow' }}">
+    @if (!empty($settings['google_site_verification'] ?? null))
+    <meta name="google-site-verification" content="{{ $settings['google_site_verification'] }}">
+    @endif
     <meta name="theme-color" content="#00BFA5">
     <link rel="canonical" href="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">

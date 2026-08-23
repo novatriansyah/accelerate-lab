@@ -1,5 +1,52 @@
 @extends('frontend.components.layout')
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "CreativeWork",
+    "name": {!! json_encode($project->title) !!},
+    "headline": {!! json_encode($project->title) !!},
+    "description": {!! json_encode($project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge ?? ''), 160)) !!},
+    "image": {!! json_encode($project->image_path ? url(\Illuminate\Support\Facades\Storage::url($project->image_path)) : asset('images/logo.webp')) !!},
+    "creator": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab"
+    },
+    "mainEntityOfPage": {
+        "{{ '@' }}type": "WebPage",
+        "{{ '@' }}id": "{{ url('/case-studies/' . $project->slug) }}"
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "{{ url('/case-studies') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($project->title) !!},
+            "item": "{{ url('/case-studies/' . $project->slug) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 overflow-hidden bg-background-light dark:bg-background-dark">
