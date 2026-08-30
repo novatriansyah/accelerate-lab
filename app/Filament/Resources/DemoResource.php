@@ -57,7 +57,7 @@ class DemoResource extends Resource
                                     ->rows(20)
                                     ->required()
                                     ->columnSpanFull()
-                                    ->helperText('Paste the complete standalone HTML including <head>, <style>, and <script>. It will render completely isolated.'),
+                                    ->helperText('Paste standalone HTML. Supports auto-placeholders: {{CLIENT_LOGO}}, {{CLIENT_NAME}}, {{CLIENT_THUMBNAIL}}, {{TITLE}}.'),
                             ]),
                     ])
                     ->columnSpan(['lg' => 2]),
@@ -73,7 +73,7 @@ class DemoResource extends Resource
                                     ->directory('demos/logos')
                                     ->imageResizeMode('contain')
                                     ->maxSize(2048)
-                                    ->helperText('Displayed in showcase toolbar & passcode lock screen.'),
+                                    ->helperText('Shown in toolbar & passcode screen. Auto-injected in HTML via {{CLIENT_LOGO}}.'),
 
                                 Forms\Components\FileUpload::make('thumbnail')
                                     ->label('Cover / Thumbnail')

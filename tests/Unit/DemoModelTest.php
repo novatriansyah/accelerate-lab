@@ -85,5 +85,49 @@ class DemoModelTest extends TestCase
         $this->assertCount(2, $demo->assets);
         $this->assertEquals('demos/assets/banner.webp', $demo->assets[0]);
     }
+
+    #[Test]
+    public function demo_model_replaces_placeholders_in_html_content()
+    {
+        $rawHtml = '<div><img src="{{CLIENT_LOGO}}" alt="{{CLIENT_NAME}}"><h1>{{TITLE}}</h1><meta cover="{{CLIENT_THUMBNAIL}}"></div>';
+        $demo = Demo::create([
+            'title' => 'Law Office Showcase',
+            'slug' => 'law-office',
+            'client_name' => 'FFH & Partner',
+            'client_logo' => 'demos/logos/ffh-logo.webp',
+            'thumbnail' => 'demos/thumbnails/ffh-cover.webp',
+            'html_content' => $rawHtml,
+            'is_active' => true,
+        ]);
+
+        $processed = $demo->getProcessedHtmlContent();
+
+        $this->assertStringContainsString(asset('storage/demos/logos/ffh-logo.webp'), $processed);
+        $this->assertStringContainsString('FFH &amp; Partner', $processed);
+        $this->assertStringContainsString('Law Office Showcase', $processed);
+        $this->assertStringContainsString(asset('storage/demos/thumbnails/ffh-cover.webp'), $processed);
+        $this->assertStringNotContainsString('{{CLIENT_LOGO}}', $processed);
+        $this->assertStringNotContainsString('{{CLIENT_NAME}}', $processed);
+    }
+
+    #[Test]
+    public function demo_model_handles_empty_placeholders_gracefully()
+    {
+        $rawHtml = '<div><img src="{{CLIENT_LOGO}}" alt="{{CLIENT_NAME}}"></div>';
+        $demo = Demo::create([
+            'title' => 'Empty Branding Demo',
+            'slug' => 'empty-branding',
+            'client_name' => null,
+            'client_logo' => null,
+            'html_content' => $rawHtml,
+            'is_active' => true,
+        ]);
+
+        $processed = $demo->getProcessedHtmlContent();
+
+        $this->assertStringNotContainsString('{{CLIENT_LOGO}}', $processed);
+        $this->assertStringNotContainsString('{{CLIENT_NAME}}', $processed);
+        $this->assertEquals('<div><img src="" alt=""></div>', $processed);
+    }
 }
 

@@ -49,4 +49,38 @@ class Demo extends Model
 
         return !empty($passcode) && hash_equals((string) $this->access_passcode, (string) $passcode);
     }
+
+    public function getProcessedHtmlContent(): string
+    {
+        $html = (string) ($this->html_content ?? '');
+
+        $logoUrl = $this->client_logo ? asset('storage/' . $this->client_logo) : '';
+        $thumbnailUrl = $this->thumbnail ? asset('storage/' . $this->thumbnail) : '';
+        $clientName = $this->client_name ? e($this->client_name) : '';
+        $title = $this->title ? e($this->title) : '';
+
+        $replacements = [
+            '{{CLIENT_LOGO}}' => $logoUrl,
+            '{{ CLIENT_LOGO }}' => $logoUrl,
+            '{{client_logo}}' => $logoUrl,
+            '{{ client_logo }}' => $logoUrl,
+
+            '{{CLIENT_THUMBNAIL}}' => $thumbnailUrl,
+            '{{ CLIENT_THUMBNAIL }}' => $thumbnailUrl,
+            '{{client_thumbnail}}' => $thumbnailUrl,
+            '{{ client_thumbnail }}' => $thumbnailUrl,
+
+            '{{CLIENT_NAME}}' => $clientName,
+            '{{ CLIENT_NAME }}' => $clientName,
+            '{{client_name}}' => $clientName,
+            '{{ client_name }}' => $clientName,
+
+            '{{TITLE}}' => $title,
+            '{{ TITLE }}' => $title,
+            '{{title}}' => $title,
+            '{{ title }}' => $title,
+        ];
+
+        return strtr($html, $replacements);
+    }
 }

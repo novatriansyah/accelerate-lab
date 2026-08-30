@@ -37,7 +37,7 @@ class DemoController extends Controller
             return redirect()->route('demos.showcase', $demo->slug);
         }
 
-        return response($demo->html_content, 200, [
+        return response($demo->getProcessedHtmlContent(), 200, [
             'Content-Type' => 'text/html; charset=UTF-8',
         ]);
     }

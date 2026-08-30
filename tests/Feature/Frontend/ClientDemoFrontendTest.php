@@ -129,5 +129,24 @@ class ClientDemoFrontendTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee(asset('storage/demos/logos/brand.png'));
     }
+
+    #[Test]
+    public function preview_mode_renders_processed_html_with_injected_placeholders()
+    {
+        $demo = Demo::factory()->create([
+            'slug' => 'preview-dynamic-demo',
+            'client_name' => 'FFH Advocates',
+            'client_logo' => 'demos/logos/ffh-custom.png',
+            'html_content' => '<!DOCTYPE html><html><body><img id="logo" src="{{CLIENT_LOGO}}"><h1>{{CLIENT_NAME}}</h1></body></html>',
+        ]);
+
+        $response = $this->get('/demos/' . $demo->slug . '/preview');
+
+        $response->assertStatus(200);
+        $response->assertSee(asset('storage/demos/logos/ffh-custom.png'));
+        $response->assertSee('FFH Advocates');
+        $response->assertDontSee('{{CLIENT_LOGO}}');
+        $response->assertDontSee('{{CLIENT_NAME}}');
+    }
 }
 
