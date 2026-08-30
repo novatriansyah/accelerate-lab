@@ -14,9 +14,12 @@ class Demo extends Model
         'title',
         'slug',
         'client_name',
+        'client_logo',
+        'thumbnail',
         'industry',
         'description',
         'html_content',
+        'assets',
         'access_passcode',
         'default_device',
         'is_active',
@@ -24,7 +27,9 @@ class Demo extends Model
 
     protected $casts = [
         'is_active' => 'boolean',
+        'assets' => 'array',
     ];
+
 
     public function scopeActive(Builder $query): Builder
     {

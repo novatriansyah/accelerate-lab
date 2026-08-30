@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="{{ $demo->description ?: 'Interactive client prototype by Accelerate Lab.' }}">
+    
+    <!-- Open Graph & Social Cards (WhatsApp, Telegram, Slack, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $demo->title }} — Prototype Showcase | Accelerate Lab">
+    <meta property="og:description" content="{{ $demo->description ?: 'Interactive client prototype by Accelerate Lab.' }}">
+    <meta property="og:url" content="{{ route('demos.showcase', $demo->slug) }}">
+    @if($demo->thumbnail)
+        <meta property="og:image" content="{{ asset('storage/' . $demo->thumbnail) }}">
+        <meta name="twitter:image" content="{{ asset('storage/' . $demo->thumbnail) }}">
+    @endif
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $demo->title }} — Prototype Showcase">
+    <meta name="twitter:description" content="{{ $demo->description ?: 'Interactive client prototype by Accelerate Lab.' }}">
+
     <title>{{ $demo->title }} — Prototype Showcase | Accelerate Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,6 +72,18 @@
             align-items: center;
             gap: 10px;
         }
+
+        .demo-client-logo {
+            height: 28px;
+            width: auto;
+            max-width: 100px;
+            object-fit: contain;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
 
         .demo-title {
             font-size: 13.5px;
@@ -212,12 +239,16 @@
                 <span>Accelerate Lab</span>
             </a>
             <div class="demo-meta">
+                @if($demo->client_logo)
+                    <img src="{{ asset('storage/' . $demo->client_logo) }}" alt="{{ $demo->client_name ?? $demo->title }}" class="demo-client-logo">
+                @endif
                 <span class="demo-title">{{ $demo->title }}</span>
                 @if($demo->client_name)
                     <span class="demo-client-badge">{{ $demo->client_name }}</span>
                 @endif
             </div>
         </div>
+
 
         <div class="device-switcher" role="group" aria-label="Device Viewport Switcher">
             <button class="device-btn active" id="btn-desktop" onclick="setDevice('desktop')" aria-label="Desktop View">

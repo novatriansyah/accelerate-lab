@@ -94,4 +94,40 @@ class ClientDemoFrontendTest extends TestCase
         $this->get('/demos/' . $demo->slug)->assertSee('Open Fullscreen');
         $this->get('/demos/' . $demo->slug . '/preview')->assertSee('Confidential Mandate');
     }
+
+    #[Test]
+    public function showcase_renders_client_logo_and_opengraph_meta_tags()
+    {
+        $demo = Demo::factory()->create([
+            'title' => 'Nexus Enterprise',
+            'client_name' => 'Nexus Global Inc.',
+            'slug' => 'nexus-enterprise',
+            'client_logo' => 'demos/logos/nexus-logo.png',
+            'thumbnail' => 'demos/thumbnails/nexus-og.jpg',
+            'description' => 'Flagship enterprise dashboard for Nexus.',
+        ]);
+
+        $response = $this->get('/demos/' . $demo->slug);
+
+        $response->assertStatus(200);
+        $response->assertSee(asset('storage/demos/logos/nexus-logo.png'));
+        $response->assertSee(asset('storage/demos/thumbnails/nexus-og.jpg'));
+        $response->assertSee('og:image', false);
+        $response->assertSee('twitter:image', false);
+    }
+
+    #[Test]
+    public function passcode_view_renders_client_logo_when_present()
+    {
+        $demo = Demo::factory()->protected('secret2026')->create([
+            'slug' => 'protected-branded-demo',
+            'client_logo' => 'demos/logos/brand.png',
+        ]);
+
+        $response = $this->get('/demos/' . $demo->slug);
+
+        $response->assertStatus(200);
+        $response->assertSee(asset('storage/demos/logos/brand.png'));
+    }
 }
+

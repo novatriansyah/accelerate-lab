@@ -64,6 +64,39 @@ class DemoResource extends Resource
 
                 Forms\Components\Group::make()
                     ->schema([
+                        Forms\Components\Section::make('Branding & Visuals')
+                            ->schema([
+                                Forms\Components\FileUpload::make('client_logo')
+                                    ->label('Client Logo')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('demos/logos')
+                                    ->imageResizeMode('contain')
+                                    ->maxSize(2048)
+                                    ->helperText('Displayed in showcase toolbar & passcode lock screen.'),
+
+                                Forms\Components\FileUpload::make('thumbnail')
+                                    ->label('Cover / Thumbnail')
+                                    ->image()
+                                    ->disk('public')
+                                    ->directory('demos/thumbnails')
+                                    ->maxSize(4096)
+                                    ->helperText('Used for WhatsApp link preview (og:image) & table.'),
+                            ]),
+
+                        Forms\Components\Section::make('Prototype Media Assets')
+                            ->schema([
+                                Forms\Components\FileUpload::make('assets')
+                                    ->label('Uploaded Assets / Files')
+                                    ->multiple()
+                                    ->disk('public')
+                                    ->directory('demos/assets')
+                                    ->reorderable()
+                                    ->downloadable()
+                                    ->openable()
+                                    ->helperText('Upload images, icons, or mockups. Reference in HTML as /storage/demos/assets/filename'),
+                            ]),
+
                         Forms\Components\Section::make('Access & Settings')
                             ->schema([
                                 Forms\Components\Toggle::make('is_active')
@@ -96,10 +129,21 @@ class DemoResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('thumbnail')
+                    ->label('Cover')
+                    ->square()
+                    ->disk('public'),
+
+                Tables\Columns\ImageColumn::make('client_logo')
+                    ->label('Logo')
+                    ->height(24)
+                    ->disk('public'),
+
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
                     ->sortable()
                     ->weight('bold'),
+
 
                 Tables\Columns\TextColumn::make('client_name')
                     ->searchable(),

@@ -58,4 +58,32 @@ class DemoModelTest extends TestCase
         $this->assertCount(1, Demo::active()->get());
         $this->assertEquals('active-demo', Demo::active()->first()->slug);
     }
+
+    #[Test]
+    public function demo_model_supports_branding_and_assets_attributes()
+    {
+        $demo = Demo::create([
+            'title' => 'Branded Demo',
+            'slug' => 'branded-demo',
+            'html_content' => '<p>Branded</p>',
+            'client_logo' => 'demos/logos/client.png',
+            'thumbnail' => 'demos/thumbnails/mockup.jpg',
+            'assets' => [
+                'demos/assets/banner.webp',
+                'demos/assets/chart.svg',
+            ],
+            'is_active' => true,
+        ]);
+
+        $this->assertDatabaseHas('demos', [
+            'slug' => 'branded-demo',
+            'client_logo' => 'demos/logos/client.png',
+            'thumbnail' => 'demos/thumbnails/mockup.jpg',
+        ]);
+
+        $this->assertIsArray($demo->assets);
+        $this->assertCount(2, $demo->assets);
+        $this->assertEquals('demos/assets/banner.webp', $demo->assets[0]);
+    }
 }
+

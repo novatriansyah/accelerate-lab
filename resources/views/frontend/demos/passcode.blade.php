@@ -11,6 +11,7 @@
         body { font-family: 'Inter', sans-serif; background: #090d16; color: #f8fafc; display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
         .card { background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 36px; max-width: 420px; width: 100%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
         .icon { width: 48px; height: 48px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; color: #38bdf8; }
+        .card-logo { max-height: 48px; max-width: 160px; object-fit: contain; margin-bottom: 20px; background: rgba(255, 255, 255, 0.04); padding: 6px 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08); }
         h1 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
         p { font-size: 13.5px; color: #94a3b8; line-height: 1.5; margin-bottom: 24px; }
         .form-group { margin-bottom: 20px; }
@@ -24,8 +25,13 @@
 </head>
 <body>
     <div class="card">
-        <div class="icon">🔒</div>
+        @if($demo->client_logo)
+            <img src="{{ asset('storage/' . $demo->client_logo) }}" alt="{{ $demo->client_name ?? $demo->title }}" class="card-logo">
+        @else
+            <div class="icon">🔒</div>
+        @endif
         <h1>Protected Client Demo</h1>
+
         <p>This prototype for <strong>{{ $demo->title }}</strong> is confidential. Please enter the passcode provided by Accelerate Lab to view.</p>
 
         @if($errors->has('passcode'))
