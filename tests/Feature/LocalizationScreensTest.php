@@ -36,14 +36,14 @@ class LocalizationScreensTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Cara Kami Bekerja');
         $response->assertSee('Proyek Terbaru Kami');
-        $response->assertSee('Estimasi Proyek Anda');
+        $response->assertSee('Hitung Estimasi Kebutuhan');
         $response->assertSee('Konsultasi Gratis 15-Menit');
         $response->assertSee('Kapabilitas Utama');
         $response->assertSee('Strategi Produk');
         $response->assertSee('Pengembangan Kustom');
         $response->assertSee('Pelajari selengkapnya');
-        $response->assertSee('Langkah 1');
-        $response->assertSee('Eksplorasi');
+        $response->assertSee('Audit Alur Kerja');
+        $response->assertSee('Pemetaan Masalah');
         $response->assertSee('Tantangan');
         $response->assertSee('Solusi');
         $response->assertSee('Siap Mengakselerasi?');
@@ -65,7 +65,7 @@ class LocalizationScreensTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Inovasi Digital, Terwujud Nyata.');
         $response->assertSee('Metodologi Kami');
-        $response->assertSee('Estimasi Proyek Anda');
+        $response->assertSee('Hitung Estimasi Kebutuhan');
     }
 
     #[Test]
@@ -73,7 +73,7 @@ class LocalizationScreensTest extends TestCase
     {
         $response = $this->withSession(['locale' => 'id'])->get('/case-studies');
         $response->assertStatus(200);
-        $response->assertSee('Rekayasa Masa Depan');
+        $response->assertSee('Studi Kasus & Hasil Nyata');
         $response->assertSee('Semua Industri');
         $response->assertSee('Solusi Digital Terdepan');
     }
@@ -91,7 +91,7 @@ class LocalizationScreensTest extends TestCase
         $response = $this->withSession(['locale' => 'id'])->get('/about');
         $response->assertStatus(200);
         $response->assertSee('Arsitek Inovasi Digital');
-        $response->assertSee('Bergabung Bersama Kami');
+        $response->assertSee('Jadwalkan Diskusi Proyek');
         // Executive position remains familiar professional title in Indonesian context
         $response->assertSee('CEO & Founder');
     }
@@ -188,6 +188,28 @@ class LocalizationScreensTest extends TestCase
         $response->assertSee('Tantangan Proyek');
         $response->assertSee('Solusi Rekayasa');
         $response->assertSee('E-Commerce');
+    }
+
+    #[Test]
+    public function about_page_presents_authentic_principal_architect_model_without_stock_assets()
+    {
+        $this->seed(\Database\Seeders\DatabaseSeeder::class);
+
+        $response = $this->get('/about');
+        $response->assertStatus(200);
+
+        // Banned stock assets
+        $response->assertDontSee('about-team-office.jpg');
+        $response->assertDontSee('lh3.googleusercontent.com/aida-public');
+
+        // Required authentic presentation
+        $response->assertSee('Nova Triansyah Azis');
+        $response->assertSee('Principal Technology Architect');
+        $response->assertSee('Komunikasi Langsung dengan Senior Architect');
+
+        // Conversion CTAs
+        $response->assertSee('Jadwalkan Diskusi Proyek');
+        $response->assertDontSee('Join Our Team');
     }
 }
 

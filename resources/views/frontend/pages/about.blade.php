@@ -20,41 +20,95 @@
                         </p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="/careers"
-                            class="h-12 rounded-lg bg-text-main dark:bg-white px-8 text-base font-bold text-white dark:text-text-main shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center">
-                            {{ __('Join Our Team') }}
-                        </a>
-                        <a href="/about"
+                        <button type="button" @click="$dispatch('open-consultation-modal')"
+                            class="h-12 rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg hover:bg-primary-dark transition-colors flex items-center justify-center cursor-pointer">
+                            {{ __('Jadwalkan Diskusi Proyek') }}
+                        </button>
+                        <a href="/case-studies"
                             class="h-12 rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent px-8 text-base font-bold text-text-main dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-center">
-                            {{ __('View Our Story') }}
+                            {{ __('Pelajari Studi Kasus') }}
                         </a>
                     </div>
                 </div>
-                <div class="relative lg:h-full">
-                    <div
-                        class="relative aspect-square lg:aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 dark:bg-slate-800 shadow-2xl">
-                        <img src="{{ asset('images/pages/about-team-office.jpg') }}"
-                            alt="A diverse team of developers and designers collaborating in a modern, sunlit office with glass walls"
-                            class="absolute inset-0 w-full h-full object-cover"
-                            width="600" height="450" loading="eager" decoding="async">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply" aria-hidden="true">
+                <div class="relative">
+                    <div class="relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-6 sm:p-8 shadow-xl">
+                        <div class="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800 pb-5">
+                            <div class="flex items-center gap-3">
+                                <div class="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                    <x-app-icon name="verified_user" class="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold uppercase tracking-wider text-text-muted dark:text-slate-400">
+                                        {{ __('Engineer-Led Boutique Studio') }}
+                                    </div>
+                                    <h3 class="text-base font-bold text-text-main dark:text-white">
+                                        {{ __('Komunikasi Langsung dengan Senior Architect') }}
+                                    </h3>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center rounded-full bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                                <span class="mr-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                                {{ __('Senior Only') }}
+                            </span>
                         </div>
-                    </div>
-                    <div
-                        class="absolute -bottom-6 -left-6 hidden md:flex items-center gap-4 rounded-xl bg-surface-light dark:bg-surface-dark p-4 shadow-xl border border-slate-100 dark:border-slate-700">
-                        <div class="flex -space-x-3">
-                            <img alt="Team member"
-                                class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-slate-800"
-                                data-alt="Portrait of a female team member"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCtwRLkrGKVDNfu52YZqgFv8R63b2R2n6e7P1mdEvXgMImvVZja23fFGV6NMbgAamTC1oa3Te99jPoqM_m6GJmbJFE9NGZpcMEDEUrfsQGE3yga96GpiqzPBVS72OQTEKOdG34_oUGYb1tiCAbeIxZtvunpmQJsc1L4xFHYjVqYxXiWRF2v9rzBBODM4IKNxLTtXS_bIEUDHg3V6PE8DVHdDASFKGiy7Q0k5a32FWspx-yIH8LvJL374PPg1rbRt8beZoGjecRRQ0" />
-                            <img alt="Team member"
-                                class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-slate-800"
-                                data-alt="Portrait of a male team member"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdFd91ICBQePElhDbLb71UozDVDcF6QAcMroIdnyDeEIjNj63zdQkHz6mooCnYGFvytFy4Mih_GoP9RVu1fulLT5_u_X1-ZifX7yevGxIBRyjBQA1hnaFWEwNxARG1vmrbQi1b5zORmNYxEOv-e5AXyPyOuX5Ufs2NYCXFMpd5l7e8BCP45gXbg0KQrjA1nFtvPXsWVUon6B3DS71AOzFb88MoDer9dJjggVia3S4KVFW4YTEyI9vanf_Lfi7SrCz9-PyGbd2NbM0" />
-                            <img alt="Team member"
-                                class="inline-block h-10 w-10 rounded-full ring-2 ring-white dark:ring-slate-800"
-                                data-alt="Portrait of a male team member"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdk-kfPyAQixSybXoui2xU38F_oXzgfnTi1-qPXlXdtKMEWr4O7nFSoaU9qOM72v_u4m97Y0Ztrply10Y1TDZVCz9zaUGMaDJUybZf863i8F59Rs0p7cnpBV6H0IkR9EZVZQn1t-e-8Mm_KQ4T1oUjHqXcFo3mAW5J14E1nBU8dMrL4O-Evyy6F-vmbwTUCsoEG-NuQuO4bAzR7vodZYjZ-qlCRXa25FOzuVNsGWiNb8iCX-X7W5vDsi2dbTZwerBxukXJL-CDzuk" />
+
+                        <div class="mt-6 space-y-4">
+                            <div class="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/50 p-4 transition-all hover:border-primary/30">
+                                <div class="flex items-start gap-3">
+                                    <div class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                                        <x-app-icon name="person" class="h-5 w-5" />
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-sm font-bold text-text-main dark:text-white">
+                                            Nova Triansyah Azis
+                                        </div>
+                                        <div class="text-xs font-semibold text-primary">
+                                            {{ __('Principal Technology Architect') }} &amp; CEO / Founder
+                                        </div>
+                                        <p class="mt-1.5 text-xs text-text-muted dark:text-slate-400 leading-relaxed">
+                                            {{ __('6+ tahun pengalaman merancang arsitektur sistem operasional bisnis, integrasi enterprise, dan rekayasa perangkat lunak berskala tinggi.') }}
+                                        </p>
+                                        <a href="https://www.linkedin.com/in/novatriansyah/" target="_blank" rel="noopener noreferrer"
+                                            class="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
+                                            <span>Profil LinkedIn Terverifikasi</span>
+                                            <x-app-icon name="open_in_new" class="h-3.5 w-3.5" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div class="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/50 p-3.5">
+                                    <div class="flex items-center gap-2 text-xs font-bold text-text-main dark:text-white">
+                                        <x-app-icon name="check_circle" class="h-4 w-4 text-emerald-500" />
+                                        {{ __('Tanpa Perantara Sales') }}
+                                    </div>
+                                    <p class="mt-1 text-xs text-text-muted dark:text-slate-400">
+                                        {{ __('Diskusi spesifikasi teknis langsung dengan arsitek yang membangun kode.') }}
+                                    </p>
+                                </div>
+
+                                <div class="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/50 p-3.5">
+                                    <div class="flex items-center gap-2 text-xs font-bold text-text-main dark:text-white">
+                                        <x-app-icon name="check_circle" class="h-4 w-4 text-emerald-500" />
+                                        {{ __('100% Hak Cipta & Source Code') }}
+                                    </div>
+                                    <p class="mt-1 text-xs text-text-muted dark:text-slate-400">
+                                        {{ __('Aset kode, database, dan konfigurasi server sepenuhnya milik bisnis Anda.') }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/50 p-3.5">
+                                <div class="flex items-center justify-between text-xs text-text-muted dark:text-slate-400">
+                                    <span class="font-medium">{{ __('Jaminan Kualitas Rekayasa') }}</span>
+                                    <span class="font-bold text-primary">Strict TDD & Clean Architecture</span>
+                                </div>
+                                <div class="mt-2 flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                                    <x-app-icon name="verified" class="h-4 w-4" />
+                                    <span>{{ __('Setiap modul dilindungi automated testing sebelum serah terima') }}</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -119,11 +173,30 @@
                     <p class="text-lg text-text-muted dark:text-slate-400 mb-8">
                         {{ __('From a small garage startup to a global digital innovation agency. Every milestone represents a leap forward in our capabilities and our commitment to excellence.') }}
                     </p>
-                    <div class="relative h-64 w-full rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800">
-                        <img src="{{ asset('images/pages/about-collaboration.jpg') }}"
-                            alt="A group of people brainstorming on a whiteboard in a modern office setting"
-                            class="absolute inset-0 w-full h-full object-cover"
-                            width="600" height="256" loading="lazy" decoding="async">
+                    <div class="relative rounded-2xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-6 shadow-md">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="flex size-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                                <x-app-icon name="verified" class="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-text-main dark:text-white">{{ __('Prinsip Rekayasa Accelerate Lab') }}</h4>
+                                <p class="text-xs text-text-muted dark:text-slate-400">{{ __('Standar kualitas teruji di setiap iterasi') }}</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-start gap-2.5 text-text-main dark:text-slate-200">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                <span>{{ __('Arsitektur modular siap scale-up tanpa kebutuhan refactor besar-besaran.') }}</span>
+                            </div>
+                            <div class="flex items-start gap-2.5 text-text-main dark:text-slate-200">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                <span>{{ __('Dokumentasi sistem lengkap dan skema basis data terstruktur.') }}</span>
+                            </div>
+                            <div class="flex items-start gap-2.5 text-text-main dark:text-slate-200">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                                <span>{{ __('Garansi pendampingan pasca-peluncuran dan transfer pengetahuan tim.') }}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="lg:col-span-7 pl-0 lg:pl-12">
@@ -214,23 +287,17 @@
     @endif
     <section class="py-16 border-t border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm font-semibold uppercase tracking-wider text-text-muted dark:text-slate-500 mb-8">{{ __('Powered by Modern Technology') }}</p>
-            <div
-                class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <span
-                    class="text-2xl font-bold text-slate-400 hover:text-[#61DAFB] transition-colors cursor-default">React</span>
-                <span
-                    class="text-2xl font-bold text-slate-400 hover:text-[#3178C6] transition-colors cursor-default">TypeScript</span>
-                <span
-                    class="text-2xl font-bold text-slate-400 hover:text-[#3C873A] transition-colors cursor-default">Node.js</span>
-                <span
-                    class="text-2xl font-bold text-slate-400 hover:text-[#06B6D4] transition-colors cursor-default">Tailwind</span>
-                <span
-                    class="text-2xl font-bold text-slate-400 hover:text-[#FF9900] transition-colors cursor-default">AWS</span>
-                <span
-                    class="text-2xl font-bold text-slate-400 hover:text-[#000000] dark:hover:text-white transition-colors cursor-default">Next.js</span>
-                <span
-                    class="text-2xl font-bold text-slate-400 hover:text-[#000000] dark:hover:text-white transition-colors cursor-default">Laravel</span>
+            <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-text-muted dark:text-slate-500 mb-6">{{ __('Standar Rekayasa & Keamanan Enterprise') }}</p>
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">
+                <span class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-surface-dark/50 px-3.5 py-2">{{ __('Arsitektur Bersih') }}</span>
+                <span class="text-slate-300 dark:text-slate-700 hidden sm:inline">•</span>
+                <span class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-surface-dark/50 px-3.5 py-2">{{ __('Keamanan Data & Privasi') }}</span>
+                <span class="text-slate-300 dark:text-slate-700 hidden sm:inline">•</span>
+                <span class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-surface-dark/50 px-3.5 py-2">{{ __('Otomasi Pengujian') }}</span>
+                <span class="text-slate-300 dark:text-slate-700 hidden sm:inline">•</span>
+                <span class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-surface-dark/50 px-3.5 py-2">{{ __('Performa & Kecepatan Tinggi') }}</span>
+                <span class="text-slate-300 dark:text-slate-700 hidden sm:inline">•</span>
+                <span class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-surface-dark/50 px-3.5 py-2">{{ __('Skalabilitas Awan') }}</span>
             </div>
         </div>
     </section>
@@ -245,13 +312,13 @@
                 {{ __('Let\'s discuss how we can transform your digital presence. Whether you need a new platform or an overhaul of your existing stack, we are ready.') }}
             </p>
             <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-                <a href="/contact"
-                    class="flex h-12 w-full items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg hover:bg-primary-dark sm:w-auto transition-colors">
-                    {{ __('Start Your Project') }}
-                </a>
+                <button type="button" @click="$dispatch('open-consultation-modal')"
+                    class="flex h-12 w-full items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg hover:bg-primary-dark sm:w-auto transition-colors cursor-pointer">
+                    {{ __('Jadwalkan Diskusi Proyek') }}
+                </button>
                 <a href="/contact"
                     class="flex h-12 w-full items-center justify-center rounded-lg border border-slate-300 dark:border-slate-600 bg-transparent px-8 text-base font-bold text-text-main dark:text-white hover:bg-white dark:hover:bg-slate-800 sm:w-auto transition-colors">
-                    {{ __('Schedule a Consultation') }}
+                    {{ __('Hitung Estimasi Kebutuhan') }}
                 </a>
             </div>
         </div>
