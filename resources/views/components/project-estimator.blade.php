@@ -4,33 +4,68 @@
     $locale = app()->getLocale();
 
     $step1Options = [
-        ['id' => 'mvp', 'title' => __('Launch a New App Idea (MVP)'), 'desc' => __('Fast, working product built in 4 to 8 weeks to test the market.')],
-        ['id' => 'web', 'title' => __('Web Platform or Customer Portal'), 'desc' => __('Custom dashboard, client portal, booking system, or SaaS.')],
-        ['id' => 'mobile', 'title' => __('Mobile App (iOS & Android)'), 'desc' => __('Fast smartphone app for consumer or internal workforce.')],
-        ['id' => 'upgrade', 'title' => __('Fix or Upgrade Existing Software'), 'desc' => __('Speed optimization, modern redesign, or adding new features.')],
-        ['id' => 'advice', 'title' => __('Free Scoping & Consultation'), 'desc' => __('Unsure where to start? Let us analyze your requirements.')]
+        [
+            'id' => 'portal',
+            'title' => __('Portal Operasional & Dashboard Manajemen'),
+            'desc' => __('Sistem terpusat untuk kelola data internal, multi-cabang, dan analisa performa real-time.')
+        ],
+        [
+            'id' => 'inventory',
+            'title' => __('Sistem Inventori, Penjualan, & Penagihan'),
+            'desc' => __('Otomasi stok barang gudang, kasir/POS, penerbitan invoice instan, dan rekonsiliasi pembayaran.')
+        ],
+        [
+            'id' => 'partner',
+            'title' => __('Portal Layanan Mandiri Pelanggan / Mitra'),
+            'desc' => __('Akses khusus klien, reseller, atau vendor untuk tracking pesanan dan transaksi mandiri.')
+        ],
+        [
+            'id' => 'mobile',
+            'title' => __('Aplikasi Mobile Tim Lapangan'),
+            'desc' => __('Aplikasi smartphone yang praktis dan responsif untuk tim penjualan atau operasional lapangan.')
+        ],
+        [
+            'id' => 'modernize',
+            'title' => __('Modernisasi Software Lama yang Lambat'),
+            'desc' => __('Perbaikan performa, peremajaan antarmuka, atau migrasi data tanpa mengganggu operasional.')
+        ]
     ];
 
     $step2Options = [
-        ['id' => 'notes', 'title' => __('Just an idea in notes'), 'desc' => __('Concept stage. We help scope requirements & architecture.')],
-        ['id' => 'design', 'title' => __('Figma / Design mockups ready'), 'desc' => __('UI is designed. Ready to turn designs into working code.')],
-        ['id' => 'existing', 'title' => __('Existing codebase needs work'), 'desc' => __('Need experienced engineers to fix, scale, or improve.')],
-        ['id' => 'ready', 'title' => __('Ready to build immediately'), 'desc' => __('Clear scope and ready for fast sprint execution.')]
+        [
+            'id' => 'spreadsheet',
+            'title' => __('Masih menggunakan spreadsheet / catatan manual'),
+            'desc' => __('Proses bisnis masih dicatat di Excel, Google Sheets, atau buku catatan fisik.')
+        ],
+        [
+            'id' => 'ready',
+            'title' => __('Alur kerja dan desain sudah siap dibangun'),
+            'desc' => __('Kebutuhan fitur sudah jelas, siap untuk fase perancangan arsitektur dan coding.')
+        ],
+        [
+            'id' => 'existing',
+            'title' => __('Sistem lama berjalan tapi sering bermasalah'),
+            'desc' => __('Aplikasi lambat, sering error, atau sulit ditambah fitur baru sesuai pertumbuhan bisnis.')
+        ],
+        [
+            'id' => 'consultation',
+            'title' => __('Butuh konsultasi pemetaan alur kerja'),
+            'desc' => __('Ingin berdiskusi dulu dengan Principal Architect untuk menentukan roadmap terbaik.')
+        ]
     ];
 
     $timelineOptions = [
-        $locale === 'id' ? '⚡ Kurang dari 1 Bulan (Cepat)' : '⚡ Within 1 Month (Fast-Track)',
-        $locale === 'id' ? '🗓️ 2 hingga 3 Bulan (Standar)' : '🗓️ 2 to 3 Months (Standard)',
-        $locale === 'id' ? '☕ Fleksibel / Tahap Diskusi' : '☕ Flexible / Scoping'
+        $locale === 'id' ? '⚡ Cepat (3-5 Minggu)' : '⚡ Fast-Track (3-5 Weeks)',
+        $locale === 'id' ? '🗓️ Standar (2-3 Bulan)' : '🗓️ Standard (2-3 Months)',
+        $locale === 'id' ? '☕ Fleksibel / Tahap Diskusi' : '☕ Flexible / Phased Roadmaps'
     ];
 
     $techOptions = [
-        __('Recommend Best Stack'),
-        'Laravel Monolith',
-        'React / Next.js',
-        'Vue / Nuxt',
-        'Mobile (Flutter / Native)',
-        'Node / Python / Go'
+        __('Rekomendasi Arsitek Terbaik'),
+        __('Cloud Web App Terpusat'),
+        __('Aplikasi Mobile iOS & Android'),
+        __('Integrasi Database Lokal / On-Premise'),
+        __('Sistem Multi-Platform Terpadu')
     ];
 @endphp
 
@@ -100,6 +135,28 @@
     <form method="POST" action="{{ route('contact.store') }}" @submit="prepareSubmission">
         @csrf
         
+        <!-- Accessible / Crawler Scoping Overview for Screen Readers & SEO -->
+        <div class="sr-only">
+            <h3>{{ __('Pilihan Kebutuhan Rekayasa:') }}</h3>
+            <ul>
+                @foreach ($step1Options as $option)
+                    <li>{{ $option['title'] }}</li>
+                @endforeach
+            </ul>
+            <h3>{{ __('Tahap Kesiapan Bisnis:') }}</h3>
+            <ul>
+                @foreach ($step2Options as $option)
+                    <li>{{ $option['title'] }}</li>
+                @endforeach
+            </ul>
+            <h3>{{ __('Opsi Deployment & Arsitektur:') }}</h3>
+            <ul>
+                @foreach ($techOptions as $option)
+                    <li>{{ $option }}</li>
+                @endforeach
+            </ul>
+        </div>
+
         <!-- Hidden Scoping Fields for Backend Submission -->
         <input type="hidden" name="service_interest" :value="formData.service_interest">
         <input type="hidden" name="project_stage" :value="formData.project_stage">
@@ -211,9 +268,9 @@
                 <div class="pt-2">
                     <div class="flex items-center justify-between mb-2">
                         <label class="text-xs font-bold uppercase tracking-wider text-text-secondary dark:text-gray-300">
-                            {{ __('Technology Preference') }} <span class="text-gray-400 lowercase font-normal">({{ __('optional') }})</span>
+                            {{ __('Tipe Sistem & Deployment') }} <span class="text-gray-400 lowercase font-normal">({{ __('optional') }})</span>
                         </label>
-                        <span class="text-[11px] text-primary font-medium">100% Tech-Agnostic</span>
+                        <span class="text-[11px] text-primary font-medium">Boutique Architecture</span>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
                         <template x-for="tech in techOptions" :key="tech">
@@ -248,22 +305,42 @@
                 <p class="text-xs text-text-secondary dark:text-gray-400">{{ __('Receive your estimate via direct WhatsApp or email:') }}</p>
             </div>
 
+            <!-- Turnaround Guidance Card -->
+            <div class="rounded-xl border border-primary/20 bg-primary/5 dark:bg-primary/10 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div class="flex items-center gap-3">
+                    <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                        <x-app-icon name="schedule" class="w-5 h-5" />
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-primary">
+                            {{ __('Estimasi Waktu Pengerjaan') }}
+                        </div>
+                        <p class="text-xs text-text-muted dark:text-slate-400">
+                            {{ __('Rata-rata turnaround MVP & modul operasional siap uji:') }}
+                        </p>
+                    </div>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-primary text-white text-xs font-bold px-3 py-1 shadow-sm shrink-0">
+                    {{ __('Target Waktu: 3-5 Minggu') }}
+                </span>
+            </div>
+
             <!-- Scoping Summary Box -->
             <div class="p-4 rounded-xl bg-slate-50 dark:bg-background-dark border border-border-light dark:border-border-dark text-xs space-y-1.5">
                 <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
-                    <span>{{ $locale === 'id' ? 'Tujuan:' : 'Project:' }}</span>
+                    <span>{{ $locale === 'id' ? 'Kebutuhan:' : 'Project Scope:' }}</span>
                     <strong class="text-text-main dark:text-white" x-text="formData.service_interest"></strong>
                 </div>
                 <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
-                    <span>{{ $locale === 'id' ? 'Tahap:' : 'Stage:' }}</span>
+                    <span>{{ $locale === 'id' ? 'Tahap Kesiapan:' : 'Readiness Stage:' }}</span>
                     <strong class="text-text-main dark:text-white" x-text="formData.project_stage"></strong>
                 </div>
                 <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
-                    <span>{{ $locale === 'id' ? 'Target Waktu:' : 'Timeline:' }}</span>
+                    <span>{{ $locale === 'id' ? 'Estimasi Waktu Pengerjaan:' : 'Estimated Turnaround:' }}</span>
                     <strong class="text-text-main dark:text-white" x-text="formData.timeline"></strong>
                 </div>
                 <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
-                    <span>{{ $locale === 'id' ? 'Preferensi Stack:' : 'Tech Preference:' }}</span>
+                    <span>{{ $locale === 'id' ? 'Tipe Deployment:' : 'Deployment Type:' }}</span>
                     <strong class="text-primary font-bold" x-text="formData.tech_preference"></strong>
                 </div>
             </div>
@@ -346,10 +423,10 @@ function projectEstimator(config) {
         timelineOptions: config.timelineOptions || [],
         techOptions: config.techOptions || [],
         formData: {
-            service_interest: config.step1Options && config.step1Options[0] ? config.step1Options[0].title : 'Launch a New App Idea (MVP)',
-            project_stage: config.step2Options && config.step2Options[0] ? config.step2Options[0].title : 'Just an idea in notes',
-            timeline: config.timelineOptions && config.timelineOptions[0] ? config.timelineOptions[0] : 'Within 1 Month',
-            tech_preference: config.techOptions && config.techOptions[0] ? config.techOptions[0] : 'Recommend Best Stack',
+            service_interest: config.step1Options && config.step1Options[0] ? config.step1Options[0].title : 'Portal Operasional & Dashboard Manajemen',
+            project_stage: config.step2Options && config.step2Options[0] ? config.step2Options[0].title : 'Masih menggunakan spreadsheet / catatan manual',
+            timeline: config.timelineOptions && config.timelineOptions[0] ? config.timelineOptions[0] : '⚡ Cepat (3-5 Minggu)',
+            tech_preference: config.techOptions && config.techOptions[0] ? config.techOptions[0] : 'Rekomendasi Arsitek Terbaik',
             name: '',
             email: '',
             phone: '',
@@ -371,10 +448,10 @@ function projectEstimator(config) {
             let nameStr = this.formData.name ? (isId ? ` Nama saya ${this.formData.name}.` : ` My name is ${this.formData.name}.`) : '';
             
             if (isId) {
-                return `Halo Accelerate Lab!${nameStr}\n\nSaya menggunakan kalkulator estimasi di website Anda:\n• Tujuan: ${this.formData.service_interest}\n• Tahap: ${this.formData.project_stage}\n• Target Waktu: ${this.formData.timeline}\n• Preferensi Tech: ${this.formData.tech_preference}\n\nBisa kita jadwalkan diskusi untuk estimasi kebutuhan dan biaya?`;
+                return `Halo Accelerate Lab!${nameStr}\n\nSaya menggunakan kalkulator estimasi di website Anda:\n• Kebutuhan: ${this.formData.service_interest}\n• Kesiapan: ${this.formData.project_stage}\n• Target Waktu: ${this.formData.timeline}\n• Tipe Sistem: ${this.formData.tech_preference}\n\nBisa kita jadwalkan diskusi untuk estimasi kebutuhan dan biaya?`;
             }
 
-            return `Hello Accelerate Lab!${nameStr}\n\nI used the project estimator on your website:\n• Goal: ${this.formData.service_interest}\n• Stage: ${this.formData.project_stage}\n• Timeline: ${this.formData.timeline}\n• Tech Preference: ${this.formData.tech_preference}\n\nCan we discuss scope and pricing?`;
+            return `Hello Accelerate Lab!${nameStr}\n\nI used the project estimator on your website:\n• Scope: ${this.formData.service_interest}\n• Stage: ${this.formData.project_stage}\n• Timeline: ${this.formData.timeline}\n• Deployment: ${this.formData.tech_preference}\n\nCan we discuss scope and pricing?`;
         },
         openWhatsApp() {
             let msg = encodeURIComponent(this.compileWhatsAppMessage());

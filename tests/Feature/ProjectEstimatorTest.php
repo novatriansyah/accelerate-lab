@@ -50,9 +50,25 @@ class ProjectEstimatorTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('projectEstimator', false);
-        $response->assertSee('Launch a New App Idea', false);
-        $response->assertSee('Web Platform', false);
-        $response->assertSee('Mobile App', false);
         $response->assertSee('WhatsApp', false);
+    }
+
+    #[Test]
+    public function project_estimator_presents_business_options_without_developer_framework_jargon()
+    {
+        $response = $this->get('/contact');
+        $response->assertStatus(200);
+
+        // Business scoping options
+        $response->assertSee('Portal Operasional & Dashboard Manajemen');
+        $response->assertSee('Sistem Inventori, Penjualan, & Penagihan');
+
+        // Banned technical framework options in client wizard
+        $response->assertDontSee('Laravel Monolith');
+        $response->assertDontSee('Vue / Nuxt');
+        $response->assertDontSee('Node / Python / Go');
+
+        // Turnaround guidance
+        $response->assertSee('Estimasi Waktu Pengerjaan');
     }
 }
