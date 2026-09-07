@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8" />
@@ -26,7 +26,7 @@
         content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.' }}">
     <meta property="og:image" content="{{ $ogImage ?? (!empty($settings['site_logo'] ?? null) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp')) }}">
     <meta property="og:site_name" content="Accelerate Lab">
-    <meta property="og:locale" content="en_US">
+    <meta property="og:locale" content="{{ app()->getLocale() === 'id' ? 'id_ID' : 'en_US' }}">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -56,7 +56,11 @@
             "contactType": "sales",
             "url": "{{ url('/contact') }}"
         },
-        "sameAs": []
+        "sameAs": [
+            @if (!empty($settings['linkedin_url'] ?? null))
+                "{{ $settings['linkedin_url'] }}"
+            @endif
+        ]
     }
     </script>
     @stack('schema')

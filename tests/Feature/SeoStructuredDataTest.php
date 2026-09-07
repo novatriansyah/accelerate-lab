@@ -127,4 +127,21 @@ class SeoStructuredDataTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('<meta name="google-site-verification" content="google-verification-token-abc123xyz">', false);
     }
+
+    #[Test]
+    public function organization_schema_includes_social_links_when_configured(): void
+    {
+        SiteSetting::create([
+            'key' => 'linkedin_url',
+            'value' => 'https://linkedin.com/company/accelerate-lab',
+            'group' => 'social',
+            'is_display' => true,
+        ]);
+
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
+        $response->assertSee('"sameAs": [', false);
+        $response->assertSee('"https://linkedin.com/company/accelerate-lab"', false);
+    }
 }
