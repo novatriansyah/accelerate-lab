@@ -17,7 +17,7 @@ class Custom404PageTest extends TestCase
 
         $response->assertStatus(404);
         $response->assertSee('404');
-        $response->assertSee('Page Not Found');
-        $response->assertSee('Back to Home');
+        $response->assertSee('Halaman Tidak Ditemukan');
+        $response->assertSee('Kembali ke Beranda');
     }
 }

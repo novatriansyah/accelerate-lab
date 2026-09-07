@@ -35,9 +35,9 @@ class LocalizationTest extends TestCase
     {
         $response = $this->withSession(['locale' => 'id'])->get('/');
         $response->assertStatus(200);
-        $response->assertSee('Estimasi Proyek Anda');
-        $response->assertSee('Konsultasi Gratis 15-Menit');
-        $response->assertSee('100% Kepemilikan Hak Cipta & Kode');
+        $response->assertSee('Hitung Estimasi Kebutuhan');
+        $response->assertSee('Konsultasi Gratis via WhatsApp');
+        $response->assertSee('Kepemilikan Penuh Tanpa Keterikatan');
     }
 
     #[Test]
@@ -54,10 +54,10 @@ class LocalizationTest extends TestCase
     {
         $response = $this->withSession(['locale' => 'id'])->get('/contact');
         $response->assertStatus(200);
-        $response->assertSee('Kalkulator Estimasi Interaktif', false);
-        $response->assertSee('Ide Aplikasi Baru (MVP)', false);
-        $response->assertSee('Portal Pelanggan', false);
-        $response->assertSee('Kirim via WhatsApp', false);
+        $response->assertSee('Kalkulator Estimasi Interaktif');
+        $response->assertSee('Portal Operasional & Dashboard Manajemen');
+        $response->assertSee('Sistem Inventori, Penjualan, & Penagihan');
+        $response->assertSee('Kirim via WhatsApp');
     }
 
     #[Test]
