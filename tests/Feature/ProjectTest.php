@@ -65,4 +65,25 @@ class ProjectTest extends TestCase
         $response->assertStatus(200);
         $response->assertSee('Enterprise Payment Engine');
     }
+
+    #[Test]
+    public function case_studies_page_highlights_business_roi_and_sme_blueprints()
+    {
+        $this->seed(\Database\Seeders\DatabaseSeeder::class);
+
+        $response = $this->get('/case-studies');
+        $response->assertStatus(200);
+
+        // Verifies business ROI metrics are highlighted
+        $response->assertSee('Efisiensi Operasional');
+        $response->assertSee('35%');
+
+        // Verifies SME operational blueprints exist
+        $response->assertSee('Blueprint Solusi Operasional');
+        $response->assertSee('Inventori Multi-Gudang');
+        $response->assertSee('Invoicing Otomatis');
+
+        // Verifies DM&P Lawfirm interactive demo preview card exists
+        $response->assertSee('/demos/dmp-lawfirm');
+    }
 }

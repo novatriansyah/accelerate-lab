@@ -21,10 +21,10 @@
                         </div>
                     </div>
                     <h1 class="text-4xl font-black tracking-tight text-text-main dark:text-white sm:text-6xl">
-                        {{ __('Engineering the Future') }}
+                        {{ __('Studi Kasus & Hasil Nyata') }}
                     </h1>
                     <p class="mt-6 text-lg leading-8 text-text-main/70 dark:text-gray-300">
-                        {{ __('Real Results & Measurable Impact') }}. {{ __('Delivering impact through engineering excellence. Here is a selection of our recent deployments.') }}
+                        {{ __('Meningkatkan efisiensi operasional dan keandalan sistem bisnis melalui rekayasa software kustom yang tepat sasaran.') }}
                     </p>
                 </div>
             </div>
@@ -55,14 +55,19 @@
                         class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-lg transition-all hover:shadow-xl border border-gray-100 dark:border-slate-700">
                         <div class="flex flex-col lg:flex-row">
                             <div class="flex flex-1 flex-col justify-center p-8 lg:p-12 order-2 lg:order-1">
-                                <div class="flex items-center gap-2 mb-4">
+                                <div class="flex flex-wrap items-center gap-2 mb-4">
                                     @if ($featuredProject->industry)
                                         <span
                                             class="inline-flex items-center rounded-md bg-teal-50 dark:bg-teal-900/30 px-2 py-1 text-xs font-medium text-teal-700 dark:text-teal-400 ring-1 ring-inset ring-teal-600/20 dark:ring-teal-400/20">{{ __($featuredProject->industry) }}</span>
                                     @endif
-                                    @if ($featuredProject->technology_tags && count($featuredProject->technology_tags) > 0)
-                                        <span
-                                            class="inline-flex items-center rounded-md bg-gray-50 dark:bg-gray-800 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-300 ring-1 ring-inset ring-gray-500/10 dark:ring-gray-600/30">{{ $featuredProject->technology_tags[0] }}</span>
+                                    @if ($featuredProject->slug === 'livestock-management-system')
+                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                            +35% {{ __('Efisiensi Operasional') }}
+                                        </span>
+                                    @elseif ($featuredProject->slug === 'telaah')
+                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                                            &lt;30 Detik Kecepatan Audit
+                                        </span>
                                     @endif
                                 </div>
                                 <h2 class="text-2xl font-bold text-text-main dark:text-white sm:text-3xl mb-4">
@@ -137,8 +142,14 @@
                                             class="text-xs font-bold uppercase tracking-wider text-primary">{{ __($project->industry) }}</span>
                                     @endif
 
-                                    @if ($project->industry && $project->technology_tags)
-                                        <span class="text-xs text-gray-400">•</span>
+                                    @if ($project->slug === 'livestock-management-system')
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                            +35% {{ __('Efisiensi Operasional') }}
+                                        </span>
+                                    @elseif ($project->slug === 'telaah')
+                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                                            &lt;30 Detik Kecepatan Audit
+                                        </span>
                                     @endif
 
                                     @if ($project->technology_tags)
@@ -162,12 +173,205 @@
                             </div>
                         </div>
                     @endforeach
+
+                    <!-- Interactive Client Demo Showcase Card -->
+                    <div class="group flex flex-col gap-4 rounded-2xl p-5 transition-all hover:bg-teal-50/50 dark:hover:bg-slate-800/80 border-2 border-dashed border-primary/40 bg-primary/5">
+                        <a href="/demos/dmp-lawfirm" class="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-900 block flex items-center justify-center p-6 text-center group">
+                            <div class="space-y-3">
+                                <div class="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                                    <x-app-icon name="laptop_mac" class="w-6 h-6" />
+                                </div>
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-primary text-white">Live Prototype Demo</span>
+                                <p class="text-xs text-slate-400">Klik untuk menjelajahi prototipe</p>
+                            </div>
+                        </a>
+                        <div class="flex flex-col gap-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold uppercase tracking-wider text-primary">Legal Tech & Operasional</span>
+                                <span class="text-xs text-gray-400">•</span>
+                                <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">Siap Diuji</span>
+                            </div>
+                            <a href="/demos/dmp-lawfirm">
+                                <h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">
+                                    DM&P Lawfirm Portal
+                                </h3>
+                            </a>
+                            <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
+                                Prototipe interaktif portal manajemen firma hukum dengan administrasi perkara, portal klien mandiri, dan integrasi penagihan.
+                            </p>
+                            <a href="/demos/dmp-lawfirm" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-dark mt-2 transition-all">
+                                <span>Coba Demo Interaktif</span>
+                                <x-app-icon name="arrow_forward" class="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-16 flex justify-center">
-                    <button
-                        class="flex items-center gap-2 rounded-full border border-gray-200 dark:border-slate-700 px-6 py-3 text-sm font-semibold text-text-main dark:text-white transition-colors hover:border-primary hover:text-primary">
-                        {{ __('View More Projects') }} <x-app-icon name="expand_more" class="w-5 h-5" />
-                    </button>
+            </div>
+        </section>
+
+        {{-- Blueprint Solusi Operasional UKM --}}
+        <section class="py-20 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800" aria-labelledby="blueprints-heading" x-data="{ activeTab: 'inventory' }">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                        <x-app-icon name="architecture" class="w-3.5 h-3.5" />
+                        {{ __('Arsitektur Siap Pakai') }}
+                    </span>
+                    <h2 id="blueprints-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                        {{ __('Blueprint Solusi Operasional') }}
+                    </h2>
+                    <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+                        {{ __('Pola arsitektur software teruji yang dapat kami sesuaikan dan implementasikan dengan cepat untuk kebutuhan unik operasional bisnis Anda.') }}
+                    </p>
+                </div>
+
+                <div class="flex justify-center mb-10">
+                    <div class="inline-flex p-1.5 bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm gap-2">
+                        <button @click="activeTab = 'inventory'" :class="activeTab === 'inventory' ? 'bg-primary text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-primary'" class="px-5 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
+                            <x-app-icon name="inventory_2" class="w-4 h-4" />
+                            <span>{{ __('Inventori Multi-Gudang') }}</span>
+                        </button>
+                        <button @click="activeTab = 'invoicing'" :class="activeTab === 'invoicing' ? 'bg-primary text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-primary'" class="px-5 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
+                            <x-app-icon name="receipt_long" class="w-4 h-4" />
+                            <span>{{ __('Invoicing Otomatis') }}</span>
+                        </button>
+                        <button @click="activeTab = 'monitoring'" :class="activeTab === 'monitoring' ? 'bg-primary text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-primary'" class="px-5 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
+                            <x-app-icon name="monitoring" class="w-4 h-4" />
+                            <span>{{ __('Monitoring Cabang') }}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'inventory'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-surface-dark rounded-2xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-primary">Modul Logistik &amp; Gudang</span>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Alur Inventori Multi-Gudang &amp; Barcode Scanner</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Kontrol penuh pergerakan stok antar-lokasi tanpa selisih. Staf gudang cukup memindai barcode menggunakan kamera handphone atau scanner nirkabel.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Penerimaan barang dan mutasi antar-gudang tercatat seketika</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Peringatan otomatis saat stok mendekati batas minimum</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Riwayat audit perpindahan barang lengkap dengan penanggung jawab</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-xl border border-slate-100 dark:border-slate-800 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center text-slate-400 pb-2 border-b border-slate-200 dark:border-slate-700">
+                                <span>Alur Data Barang</span>
+                                <span class="text-emerald-500">Akurasi 99.8%</span>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Langkah 1</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Scan Barcode Barang Masuk</p>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Langkah 2</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Validasi Surat Jalan &amp; PO Otomatis</p>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Langkah 3</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Stok Terdistribusi ke Dashboard Cabang</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'invoicing'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-surface-dark rounded-2xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-primary">Modul Keuangan &amp; Penagihan</span>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Invoicing Otomatis &amp; Rekonsiliasi Instan</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Hentikan pembuatan invoice manual satu per satu. Sistem otomatis menerbitkan tagihan PDF ber-barcode dan mengirimkan pengingat jatuh tempo.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Penerbitan faktur dan tagihan resmi dalam hitungan detik</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Integrasi pembayaran QRIS dan Virtual Account per nomor tagihan</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Status piutang jatuh tempo termonitor dengan pengingat otomatis</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-xl border border-slate-100 dark:border-slate-800 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center text-slate-400 pb-2 border-b border-slate-200 dark:border-slate-700">
+                                <span>Alur Penagihan</span>
+                                <span class="text-emerald-500">Otomatis 100%</span>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Alur 1</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Order Selesai -&gt; Faktur Terbit Otomatis</p>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Alur 2</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Notifikasi Tagihan WhatsApp / Email ke Klien</p>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Alur 3</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Pembayaran Masuk -&gt; Rekonsiliasi Bank Otomatis</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'monitoring'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-surface-dark rounded-2xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-4">
+                            <span class="text-xs font-bold uppercase tracking-wider text-primary">Modul Eksekutif &amp; Manajemen</span>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Dashboard Monitoring Kinerja Cabang</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Pantau operasional seluruh titik usaha secara real-time dari satu aplikasi. Pemilik bisnis memiliki kepastian data harian tanpa perlu menunggu laporan manual.
+                            </p>
+                            <ul class="space-y-2.5 text-xs text-slate-700 dark:text-slate-300">
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Omzet dan arus kas kotor real-time per lokasi cabang</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Perbandingan performa tim operasional antar-cabang</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <x-app-icon name="check" class="w-4 h-4 text-emerald-500" />
+                                    <span>Akses aman berbasis peran staf operasional</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-800/60 p-6 rounded-xl border border-slate-100 dark:border-slate-800 space-y-3 font-mono text-xs">
+                            <div class="flex justify-between items-center text-slate-400 pb-2 border-b border-slate-200 dark:border-slate-700">
+                                <span>Metrik Utama</span>
+                                <span class="text-primary font-bold">Akses 24/7</span>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Real-Time Feed</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Omzet Gabungan &amp; Margin Bersih</p>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Peringatan</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Notifikasi Deviasi Biaya Operasional</p>
+                            </div>
+                            <div class="p-3 bg-white dark:bg-slate-900 rounded-lg shadow-sm">
+                                <p class="text-slate-500 text-[11px]">Ekspor</p>
+                                <p class="font-sans font-semibold text-slate-900 dark:text-white">Laporan Eksekutif Sekali Klik (PDF/Excel)</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
