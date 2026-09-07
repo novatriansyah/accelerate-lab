@@ -84,7 +84,7 @@ class UiUxDesignSystemTest extends TestCase
     #[Test]
     public function home_and_header_include_plain_english_consultation_triggers()
     {
-        $response = $this->get('/');
+        $response = $this->withSession(['locale' => 'en'])->get('/');
         $response->assertStatus(200);
         $response->assertSee('consultation-modal', false);
         $response->assertSee('15-Min', false);
@@ -93,7 +93,7 @@ class UiUxDesignSystemTest extends TestCase
     #[Test]
     public function plain_english_enterprise_guarantees_are_rendered()
     {
-        $response = $this->get('/');
+        $response = $this->withSession(['locale' => 'en'])->get('/');
         $response->assertStatus(200);
         $response->assertSee('100% Full IP Ownership', false);
         $response->assertSee('Tested for High Reliability', false);
@@ -106,13 +106,30 @@ class UiUxDesignSystemTest extends TestCase
             'title' => 'Fintech Core',
             'slug' => 'fintech-core',
         ]);
-        $response = $this->get('/case-studies/' . $project->slug);
+        $response = $this->withSession(['locale' => 'en'])->get('/case-studies/' . $project->slug);
         $response->assertStatus(200);
         $response->assertSee('Estimate', false);
         $response->assertSee('15-Min', false);
 
-        $servicesResponse = $this->get('/services');
+        $servicesResponse = $this->withSession(['locale' => 'en'])->get('/services');
         $servicesResponse->assertStatus(200);
         $servicesResponse->assertSee('Estimate Your Project', false);
+    }
+
+    #[Test]
+    public function home_hero_renders_business_dashboard_graphic_without_code_terminal_tells()
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+
+        // Banned AI Tells
+        $response->assertDontSee('deploy.sh');
+        $response->assertDontSee('git push origin production');
+        $response->assertDontSee('Building optimizations...');
+
+        // Required Business Dashboard Metrics
+        $response->assertSee('Akurasi Inventori');
+        $response->assertSee('Pesanan Terproses');
+        $response->assertSee('Sistem Aktif 24/7');
     }
 }

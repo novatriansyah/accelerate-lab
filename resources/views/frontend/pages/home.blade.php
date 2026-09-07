@@ -36,30 +36,27 @@
                             <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                         </span>
                         <span
-                            class="text-xs font-bold text-primary tracking-wide uppercase">{{ __('Ready for New Projects') }}</span>
+                            class="text-xs font-bold text-primary tracking-wide uppercase">{{ __('Tersedia untuk Proyek Baru Kuartal Ini') }}</span>
                     </div>
                     <h1 id="hero-heading"
-                        class="text-5xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-                        {{ __('Launch & Scale') }} <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">{{ __('With Velocity.') }}</span>
+                        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+                        {{ __('Software Kustom yang Beradaptasi Penuh dengan Alur Kerja Bisnis Anda') }}
                     </h1>
                     <p
-                        class="mt-4 text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                        {{ __('We design, engineer, and launch high-performance web platforms, mobile apps, and custom software, tailored to your budget and goals on any modern technology stack.') }}
+                        class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+                        {{ __('Hentikan spreadsheet yang tercecer dan sistem kaku yang membatasi pertumbuhan. Kami merancang dan membangun portal manajemen, dashboard operasional, dan aplikasi bisnis kustom yang rapi, cepat, dan menjadi aset milik Anda selamanya.') }}
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="/contact" id="hero-cta-primary"
-                            class="bg-primary hover:bg-primary-dark text-white text-lg font-bold px-8 py-4 rounded-xl shadow-lg shadow-primary/30 transition-all hover:scale-105 flex items-center justify-center gap-2 group">
-                            <span>{{ __('Estimate Your Project') }}</span>
-                            <x-app-icon name="arrow_forward" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        <a href="https://wa.me/6281234567890?text=Halo+Accelerate+Lab%21+Saya+ingin+konsultasi+mengenai+pembuatan+sistem+software+kustom+untuk+bisnis+saya." target="_blank" rel="noopener noreferrer" id="hero-cta-primary"
+                            class="bg-[#25D366] hover:bg-[#20ba5a] text-white text-base sm:text-lg font-bold px-7 py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2 group">
+                            <x-app-icon name="chat" class="w-5 h-5 fill-current" />
+                            <span>{{ __('Konsultasi Gratis via WhatsApp') }}</span>
                         </a>
-                        <button type="button" 
-                            @click="$dispatch('open-consultation-modal')" 
-                            id="hero-cta-secondary"
-                            class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary text-lg font-bold px-8 py-4 rounded-xl transition-all hover:shadow-md flex items-center justify-center gap-2">
-                            <x-app-icon name="calendar_today" class="w-5 h-5 text-primary" />
-                            <span>{{ __('15-Min Free Call') }}</span>
-                        </button>
+                        <a href="/contact" id="hero-cta-secondary"
+                            class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-primary text-base sm:text-lg font-bold px-7 py-4 rounded-xl transition-all hover:shadow-md flex items-center justify-center gap-2">
+                            <x-app-icon name="calculate" class="w-5 h-5 text-primary" />
+                            <span>{{ __('Hitung Estimasi Kebutuhan') }}</span>
+                        </a>
                     </div>
                     @if (isset($heroStats) && count($heroStats) > 0)
                     <div
@@ -78,109 +75,128 @@
                     </div>
                     @endif
                 </div>
-                <div class="relative hidden lg:block h-[600px] w-full [perspective:1000px]" aria-hidden="true">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div
-                            class="w-[500px] h-[500px] border border-slate-200/50 dark:border-slate-700/50 rounded-full animate-spin-slow dashed-border">
+                <div class="relative hidden lg:block w-full [perspective:1000px]" aria-hidden="true">
+                    <div class="relative w-full max-w-lg mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-float z-20">
+                        <div class="flex items-center justify-between px-6 py-4 bg-slate-50/80 dark:bg-slate-800/80 border-b border-slate-100 dark:border-slate-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <x-app-icon name="dashboard" class="w-4 h-4" />
+                                </div>
+                                <div>
+                                    <h2 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white">Portal Operasional Bisnis</h2>
+                                    <p class="text-[11px] text-slate-500">Sinkronisasi Multi-Gudang & Cabang</p>
+                                </div>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                Live Sync
+                            </span>
+                        </div>
+
+                        <div class="p-6 space-y-5">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                                    <p class="text-xs text-slate-500 font-medium mb-1">Pesanan Terproses</p>
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="text-2xl font-black text-slate-900 dark:text-white">1,420+</span>
+                                        <span class="text-xs font-bold text-emerald-500">+18% bln ini</span>
+                                    </div>
+                                    <div class="mt-2 w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full rounded-full" style="width: 82%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
+                                    <p class="text-xs text-slate-500 font-medium mb-1">Akurasi Inventori</p>
+                                    <div class="flex items-baseline gap-2">
+                                        <span class="text-2xl font-black text-slate-900 dark:text-white">99.8%</span>
+                                        <span class="text-xs font-bold text-emerald-500">Optimal</span>
+                                    </div>
+                                    <div class="mt-2 w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-500 h-full rounded-full" style="width: 99.8%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Aktivitas Sistem Real-Time</h3>
+                                <div class="space-y-2.5 font-sans text-xs">
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/60">
+                                        <div class="flex items-center gap-2.5">
+                                            <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                                            <span class="text-slate-700 dark:text-slate-300 font-medium">Invoicing otomatis terkirim</span>
+                                        </div>
+                                        <span class="text-[11px] text-slate-400 font-mono">Baru saja</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/60">
+                                        <div class="flex items-center gap-2.5">
+                                            <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                                            <span class="text-slate-700 dark:text-slate-300 font-medium">Notifikasi stok menipis</span>
+                                        </div>
+                                        <span class="text-[11px] text-amber-600 dark:text-amber-400 font-medium">12 item</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800/60">
+                                        <div class="flex items-center gap-2.5">
+                                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                                            <span class="text-slate-700 dark:text-slate-300 font-medium">Laporan bulanan siap unduh</span>
+                                        </div>
+                                        <span class="text-[11px] text-primary font-medium">PDF Siap</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div
-                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden animate-float z-20">
-                        <div class="flex items-center px-4 py-3 bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-                            <div class="flex space-x-2 mr-auto">
-                                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                            </div>
-                            <span class="text-xs text-slate-500 font-mono">deploy.sh</span>
-                        </div>
-                        <div class="p-6 font-mono text-sm text-slate-600 dark:text-slate-300">
-                            <div class="flex gap-2 mb-2">
-                                <span class="text-primary font-bold">➜</span>
-                                <span>git push origin production</span>
-                            </div>
-                            <div class="flex gap-2 mb-2 text-slate-500 dark:text-slate-400">
-                                <span class="text-primary font-bold">➜</span>
-                                <span>Building optimizations...</span>
-                            </div>
-                            <div class="space-y-1 pl-5 mb-3 text-slate-500 text-xs border-l border-slate-200 dark:border-slate-700 ml-1">
-                                <p>✓ Minifying assets</p>
-                                <p>✓ Compressing images</p>
-                                <p>✓ Database migrations [OK]</p>
-                            </div>
-                            <div class="flex gap-2">
-                                <span class="text-primary font-bold">➜</span>
-                                <span class="text-green-400">Deployed successfully (124ms)</span>
-                                <span class="animate-pulse">_</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute top-1/4 right-0 w-64 bg-surface-light dark:bg-surface-dark rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-5 animate-float-delayed z-10 opacity-95 backdrop-blur-md">
-                        <div class="flex justify-between items-center mb-4">
-                            <div class="flex items-center gap-2">
-                                <x-app-icon name="speed" class="w-4 h-4 text-primary" />
-                                <h4 class="text-xs font-bold text-slate-500 uppercase">Velocity</h4>
-                            </div>
-                            <span class="text-green-500 text-xs font-mono font-bold">98/100</span>
-                        </div>
-                        <div class="flex items-end gap-2 h-20">
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative group overflow-hidden">
-                                <div class="absolute bottom-0 w-full bg-primary/80 h-[40%] animate-pulse"></div>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-                                <div class="absolute bottom-0 w-full bg-primary/80 h-[70%] animate-pulse delay-75"></div>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-                                <div class="absolute bottom-0 w-full bg-primary/80 h-[55%] animate-pulse delay-100"></div>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-                                <div class="absolute bottom-0 w-full bg-primary/80 h-[85%] animate-pulse delay-150"></div>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-t-sm relative overflow-hidden">
-                                <div class="absolute bottom-0 w-full bg-primary/80 h-[60%] animate-pulse delay-200"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute bottom-1/4 left-0 w-auto bg-surface-light dark:bg-surface-dark rounded-full shadow-lg border border-slate-200 dark:border-slate-700 py-2 px-4 flex items-center gap-3 animate-float-delayed z-30">
+
+                    <div class="absolute -bottom-4 -left-6 bg-surface-light dark:bg-surface-dark rounded-full shadow-xl border border-slate-200 dark:border-slate-700 py-2.5 px-5 flex items-center gap-3 animate-float-delayed z-30">
                         <div class="relative flex items-center justify-center">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                         </div>
-                        <div class="text-xs font-medium text-slate-600 dark:text-slate-300">
-                            System Status: <span class="text-slate-900 dark:text-white font-bold">Optimized</span>
+                        <div class="text-xs font-semibold text-slate-700 dark:text-slate-200">
+                            Status: <span class="text-emerald-600 dark:text-emerald-400 font-bold">Sistem Aktif 24/7</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Industry Focus Marquee (Replacing Developer Tech Stack Logos) -->
     <div
-        class="w-full bg-white dark:bg-slate-900 border-y border-gray-100 dark:border-gray-800 py-10 overflow-hidden relative" aria-label="Technology partners" role="marquee">
+        class="w-full bg-white dark:bg-slate-900 border-y border-gray-100 dark:border-gray-800 py-6 overflow-hidden relative" aria-label="Fokus Solusi Industri" role="marquee">
         <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10" aria-hidden="true">
         </div>
         <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10" aria-hidden="true">
         </div>
         <div class="flex whitespace-nowrap animate-marquee">
-            <div class="flex items-center gap-16 mx-8">
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">AWS</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">LARAVEL</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">REACT</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TAILWIND</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NEXT.JS</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NODE</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">DOCKER</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TYPESCRIPT</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">AWS</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">LARAVEL</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">REACT</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TAILWIND</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NEXT.JS</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">NODE</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">DOCKER</span>
-                <span class="text-2xl font-bold text-gray-400 dark:text-gray-600 font-mono">TYPESCRIPT</span>
+            <div class="flex items-center gap-10 mx-6 text-sm sm:text-base font-bold text-slate-500 dark:text-slate-400 tracking-wider">
+                <span>DISTRIBUTOR & GROSIR</span>
+                <span class="text-primary">•</span>
+                <span>LOGISTIK & PENGIRIMAN</span>
+                <span class="text-primary">•</span>
+                <span>MANUFAKTUR</span>
+                <span class="text-primary">•</span>
+                <span>RETAIL & KULINER</span>
+                <span class="text-primary">•</span>
+                <span>JASA PROFESIONAL</span>
+                <span class="text-primary">•</span>
+                <span>KESEHATAN</span>
+                <span class="text-primary">•</span>
+                <span>LEGAL TECH</span>
+                <span class="text-primary">•</span>
+                <span>DISTRIBUTOR & GROSIR</span>
+                <span class="text-primary">•</span>
+                <span>LOGISTIK & PENGIRIMAN</span>
+                <span class="text-primary">•</span>
+                <span>MANUFAKTUR</span>
+                <span class="text-primary">•</span>
+                <span>RETAIL & KULINER</span>
+                <span class="text-primary">•</span>
+                <span>JASA PROFESIONAL</span>
+                <span class="text-primary">•</span>
+                <span>KESEHATAN</span>
+                <span class="text-primary">•</span>
+                <span>LEGAL TECH</span>
             </div>
         </div>
     </div>
