@@ -241,10 +241,9 @@
                                 {{ __('We are not limited by a specific tech stack. Our versatile team leverages the best technologies for each project, ensuring capability, performance, and adaptability across any ecosystem.') }}
                             </p>
                         </div>
-                        <div class="flex gap-2 mt-8 opacity-50" aria-hidden="true">
-                            <div class="h-1.5 w-8 bg-primary rounded-full"></div>
-                            <div class="h-1.5 w-4 bg-white rounded-full"></div>
-                            <div class="h-1.5 w-12 bg-slate-500 rounded-full"></div>
+                        <div class="mt-8 flex items-center gap-2 text-xs font-semibold text-primary">
+                            <x-app-icon name="check_circle" class="w-4 h-4" />
+                            <span>{{ __('100% Sesuai Kebutuhan Bisnis') }}</span>
                         </div>
                     </div>
                 </div>
@@ -270,54 +269,132 @@
         </div>
     </section>
 
+    {{-- Tantangan Manual vs. Sistem Kustom --}}
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800" aria-labelledby="comparison-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                    <x-app-icon name="compare_arrows" class="w-3.5 h-3.5" />
+                    {{ __('Transformasi Operasional Bisnis') }}
+                </span>
+                <h2 id="comparison-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    {{ __('Tantangan Manual vs. Sistem Kustom') }}
+                </h2>
+                <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+                    {{ __('Bandingkan bagaimana sistem kustom terintegrasi menyelesaikan kendala operasional yang sering menghambat bisnis berkembang.') }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Column 1: Manual / Spreadsheet Tercecer -->
+                <div class="p-8 rounded-2xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center">
+                            <x-app-icon name="warning" class="w-5 h-5" />
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ __('Tantangan Spreadsheet & Sistem Manual') }}</h3>
+                            <p class="text-xs text-rose-600 dark:text-rose-400 font-medium">{{ __('Membatasi kecepatan dan rawan human error') }}</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="close" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Spreadsheet Tercecer') }}</strong>: File bertumpuk di berbagai komputer, rawan terhapus atau tertukar versi rumus perhitungan.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="close" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Rekap Lambat') }}</strong>: Staf menghabiskan 2-3 jam setiap sore hanya untuk mencocokkan nota manual dan laporan omzet harian.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="close" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Stok Gudang Selisih') }}</strong>: Data barang di catatan admin tidak sesuai dengan kondisi riil di gudang fisik.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="close" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Visibilitas Buta') }}</strong>: Pemilik bisnis kesulitan memantau laba rugi dan kinerja cabang saat sedang berada di luar kantor.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Sistem Kustom Accelerate Lab -->
+                <div class="p-8 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
+                            <x-app-icon name="check_circle" class="w-5 h-5" />
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ __('Solusi Sistem Kustom Terintegrasi') }}</h3>
+                            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">{{ __('Otomatis, presisi, dan aset milik Anda 100%') }}</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Database Terpusat') }}</strong>: Seluruh transaksi tercatat otomatis di satu database aman dengan hak akses per karyawan.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Invoicing Otomatis') }}</strong>: Tagihan, surat jalan, dan laporan keuangan terbit seketika tanpa perlu rekap ulang manual.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Sinkronisasi Real-Time') }}</strong>: Stok berkurang otomatis begitu pesanan terkonfirmasi, terintegrasi barcode scanner.</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Pantau dari Handphone') }}</strong>: Dashboard pemilik bisnis dapat diakses 24/7 secara real-time dari mana saja.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- How We Work --}}
     <section class="py-16 bg-slate-50 dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800" aria-labelledby="how-we-work-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 id="how-we-work-heading" class="text-2xl font-bold text-slate-900 dark:text-white">{{ __('How We Work') }}</h2>
-                <p class="mt-2 text-slate-500 dark:text-slate-400">{{ __('A proven process, from concept to deployment.') }}</p>
+                <p class="mt-2 text-slate-500 dark:text-slate-400">{{ __('Alur Kerja Transparan dan Berorientasi Hasil') }}</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="relative flex flex-col items-center text-center p-6">
+                <div class="relative flex flex-col items-center text-center p-6 bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="search" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 1') }}</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Discover') }}</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We analyze your requirements, audience, and business goals.') }}</p>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Audit Alur Kerja & Pemetaan Masalah') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('Kami menganalisis alur operasional harian Anda secara detail untuk menemukan titik hambatan dan merancang solusi paling efektif.') }}</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
                         <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
                 </div>
-                <div class="relative flex flex-col items-center text-center p-6">
+                <div class="relative flex flex-col items-center text-center p-6 bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="palette" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 2') }}</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Design') }}</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We craft wireframes, prototypes, and a polished UI/UX system.') }}</p>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Prototipe Antarmuka yang Bisa Dicoba') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('Anda menguji langsung rancangan antarmuka dan alur sistem sebelum kode dibangun, memastikan kemudahan penggunaan tim Anda.') }}</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
                         <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
                 </div>
-                <div class="relative flex flex-col items-center text-center p-6">
+                <div class="relative flex flex-col items-center text-center p-6 bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="code" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 3') }}</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Develop') }}</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We build with modern stacks, agile sprints, and CI/CD pipelines.') }}</p>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Pembangunan Sistem & Uji Ketahanan') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('Sistem dibangun dengan arsitektur tangguh, pengujian otomatis berstandar industri, dan keamanan data teruji.') }}</p>
                     <div class="hidden lg:block absolute top-1/2 -right-3 w-6 text-slate-300 dark:text-slate-600" aria-hidden="true">
                         <x-app-icon name="chevron_right" class="w-6 h-6" />
                     </div>
                 </div>
-                <div class="flex flex-col items-center text-center p-6">
+                <div class="flex flex-col items-center text-center p-6 bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                     <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                         <x-app-icon name="rocket_launch" class="w-6 h-6 text-primary" />
                     </div>
-                    <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2">{{ __('Step 4') }}</span>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ __('Deploy') }}</h3>
-                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('We launch, monitor, and iterate based on real-world data.') }}</p>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">{{ __('Migrasi Data & Pelatihan Karyawan') }}</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">{{ __('Pendampingan menyeluruh saat peluncuran, pemindahan data lama tanpa kendala, dan pelatihan staf hingga lancar.') }}</p>
                 </div>
             </div>
         </div>
@@ -453,60 +530,80 @@
             </div>
         </div>
     </section>
-    <section class="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden" aria-labelledby="lab-heading">
+    <section class="py-24 bg-background-light dark:bg-background-dark relative overflow-hidden" aria-labelledby="standards-heading">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" aria-hidden="true"></div>
         <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]" aria-hidden="true"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
             <div class="lg:w-1/2">
-                <div
-                    class="inline-block px-3 py-1 rounded border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-900 text-xs font-mono text-primary mb-6">
-                    ~/source/core-values.js
-                </div>
-                <h2 id="lab-heading" class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{{ __('The Lab') }}</h2>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+                    <x-app-icon name="security" class="w-3.5 h-3.5" />
+                    {{ __('Standar Rekayasa & Keamanan Data') }}
+                </span>
+                <h2 id="standards-heading" class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{{ __('Dibangun dengan Disiplin Rekayasa Tanpa Celah') }}</h2>
                 <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
-                    {{ __('Innovation isn\'t accidental. It\'s engineered. Our "Lab" methodology combines agile sprints with deep technical research to solve problems others can\'t.') }}
+                    {{ __('Software bisnis Anda mengelola data transaksi, stok, dan keuangan bernilai tinggi. Kami menerapkan standar keamanan perbankan, pengujian otomatis, dan arsitektur stabil agar sistem tidak pernah down saat jam sibuk operasional.') }}
                 </p>
                 <ul class="space-y-4">
                     <li class="flex items-start">
                         <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span class="text-slate-700 dark:text-slate-300">{{ __('Clean, maintainable architecture') }}</span>
+                        <span class="text-slate-700 dark:text-slate-300"><strong>{{ __('Pengujian Otomatis Ketat') }}</strong>: Setiap fitur diuji dengan tes komprehensif sebelum pembaruan dirilis ke server bisnis Anda.</span>
                     </li>
                     <li class="flex items-start">
                         <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span class="text-slate-700 dark:text-slate-300">{{ __('Security-first development lifecycle') }}</span>
+                        <span class="text-slate-700 dark:text-slate-300"><strong>{{ __('Enkripsi & Backup Rutin') }}</strong>: Proteksi data sensitif dengan enkripsi modern dan cadangan otomatis berkala ke server cadangan.</span>
                     </li>
                     <li class="flex items-start">
                         <x-app-icon name="check_circle" class="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                        <span class="text-slate-700 dark:text-slate-300">{{ __('Automated CI/CD pipelines') }}</span>
+                        <span class="text-slate-700 dark:text-slate-300"><strong>{{ __('Kepemilikan Penuh Tanpa Keterikatan') }}</strong>: 100% kode sumber dan database diserahkan penuh sebagai aset tak berwujud milik perusahaan Anda.</span>
                     </li>
                 </ul>
             </div>
             <div class="lg:w-1/2 w-full" aria-hidden="true">
-                <div
-                    class="rounded-xl overflow-hidden shadow-2xl bg-[#0d1117] border border-slate-800 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <div class="flex items-center px-4 py-3 bg-[#161b22] border-b border-slate-800">
-                        <div class="flex space-x-2 mr-4">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                <div class="rounded-2xl p-8 bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                                <x-app-icon name="verified_user" class="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-slate-900 dark:text-white">Audit Keamanan & Kualitas Kode</h3>
+                                <p class="text-xs text-slate-500">Status Inspeksi Sistem Produksi</p>
+                            </div>
                         </div>
-                        <div class="text-xs text-slate-500 font-mono">AccelerateLabController.ts</div>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            100% Passed
+                        </span>
                     </div>
-                    <div class="p-6 overflow-x-auto code-scroll">
-                        <pre class="font-mono text-sm leading-relaxed"><span class="text-pink-400">import</span> { <span class="text-yellow-200">Innovation</span>, <span class="text-yellow-200">Scale</span> } <span class="text-pink-400">from</span> <span class="text-green-300">'@accelerate-lab/core'</span>;
-<span class="text-pink-400">class</span> <span class="text-blue-300">Project</span> <span class="text-pink-400">implements</span> <span class="text-yellow-200">DigitalTransformation</span> {
-  <span class="text-pink-400">private</span> <span class="text-blue-300">client</span>: <span class="text-yellow-200">Partner</span>;
-  <span class="text-pink-400">async</span> <span class="text-blue-300">execute</span>(<span class="text-orange-300">goals</span>: <span class="text-yellow-200">Metrics</span>[]): <span class="text-yellow-200">Promise</span>&lt;<span class="text-yellow-200">Growth</span>&gt; {
-    <span class="text-slate-500">// Optimize performance bottlenecks</span>
-    <span class="text-pink-400">const</span> <span class="text-white">strategy</span> = <span class="text-pink-400">await</span> <span class="text-blue-300">analyze</span>(<span class="text-orange-300">this</span>.client);
-    <span class="text-pink-400">return</span> <span class="text-blue-300">deploy</span>({
-      <span class="text-white">techStack:</span> [<span class="text-green-300">'React'</span>, <span class="text-green-300">'Laravel'</span>, <span class="text-green-300">'AWS'</span>],
-      <span class="text-white">velocity:</span> <span class="text-purple-400">100</span>,
-      <span class="text-white">quality:</span> <span class="text-yellow-200">Standards</span>.<span class="text-purple-400">ENTERPRISE</span>
-    });
-  }
-}
-                        </pre>
+
+                    <div class="space-y-4 text-xs font-sans">
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500" />
+                                <span class="font-medium text-slate-700 dark:text-slate-300">Uji Regresi Otomatis (Automated TDD)</span>
+                            </div>
+                            <span class="text-slate-500 font-mono">100% Lulus</span>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500" />
+                                <span class="font-medium text-slate-700 dark:text-slate-300">Proteksi SQL Injection & XSS Guard</span>
+                            </div>
+                            <span class="text-slate-500 font-mono">Aktif</span>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500" />
+                                <span class="font-medium text-slate-700 dark:text-slate-300">Waktu Muat Halaman (Speed Index)</span>
+                            </div>
+                            <span class="text-emerald-500 font-bold font-mono">&lt; 0.8 detik</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-primary/5 border border-primary/20 flex items-center gap-3 text-xs text-primary font-medium">
+                        <x-app-icon name="info" class="w-4 h-4 flex-shrink-0" />
+                        <span>Arsitektur clean monolith berkinerja tinggi, hemat biaya server bulanan, dan mudah dipelihara jangka panjang.</span>
                     </div>
                 </div>
             </div>

@@ -132,4 +132,26 @@ class UiUxDesignSystemTest extends TestCase
         $response->assertSee('Pesanan Terproses');
         $response->assertSee('Sistem Aktif 24/7');
     }
+
+    #[Test]
+    public function home_renders_operational_comparison_and_meaningful_process_flow()
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+
+        // Verifies spreadsheet comparison exists
+        $response->assertSee('Tantangan Manual vs. Sistem Kustom');
+        $response->assertSee('Spreadsheet Tercecer');
+        $response->assertSee('Database Terpusat');
+
+        // Verifies generic step labels are eliminated
+        $response->assertDontSee('Step 1');
+        $response->assertDontSee('Step 2');
+        $response->assertDontSee('Step 3');
+        $response->assertDontSee('Step 4');
+
+        // Verifies fake TS code snippet is removed
+        $response->assertDontSee('AccelerateLabController.ts');
+        $response->assertDontSee('@accelerate-lab/core');
+    }
 }
