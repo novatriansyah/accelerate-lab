@@ -19,7 +19,7 @@ class DemoSeederTest extends TestCase
 
         $this->assertDatabaseHas('demos', [
             'slug' => 'dmp-advocates',
-            'title' => 'DM&P Advocates — Corporate & Commercial Law Firm',
+            'title' => 'DM&P Advocates - Corporate & Commercial Law Firm',
             'client_name' => 'Dhoni Martien & Partners',
             'is_active' => 1,
         ]);

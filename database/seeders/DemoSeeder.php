@@ -10,6 +10,7 @@ class DemoSeeder extends Seeder
     public function run(): void
     {
         $htmlContent = <<<'HTML'
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -145,21 +146,6 @@ class DemoSeeder extends Seeder
       text-decoration: none;
     }
 
-    .logo-icon-badge {
-      height: 46px;
-      width: 46px;
-      border-radius: 4px;
-      background: var(--color-dblue);
-      color: #ffffff;
-      border: 1px solid var(--color-gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 17px;
-      letter-spacing: -0.02em;
-    }
-
     .logo-text-box {
       display: flex;
       flex-direction: column;
@@ -279,7 +265,7 @@ class DemoSeeder extends Seeder
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ==================== HERO SECTION ==================== */
+    /* ==================== HERO SECTION (SSEK FORMAT) ==================== */
     .hero-section {
       background: linear-gradient(180deg, #f7fbff 0%, #edf4fc 100%);
       padding: 90px 0 70px;
@@ -397,12 +383,12 @@ class DemoSeeder extends Seeder
       width: 54px;
       height: 54px;
       border-radius: 50%;
-      background: var(--color-dblue);
-      color: #ffffff;
+      background: var(--color-border);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
+      color: var(--color-dblue);
       font-size: 18px;
     }
 
@@ -946,7 +932,7 @@ class DemoSeeder extends Seeder
     <div class="container">
       <div class="header-wrapper">
         <a href="javascript:void(0)" class="logo-link" onclick="switchTab('home')">
-          <div class="logo-icon-badge">DM&P</div>
+          <img src="dmp_law_firm_logo.jpg" alt="DM&P Advocates Logo" style="height: 46px; width: 46px; border-radius: 4px; object-fit: cover; border: 1px solid var(--color-border);">
           <div class="logo-text-box">
             <div class="logo-title">DM<span class="gold">&</span>P Advocates</div>
             <div class="logo-subtitle">Dhoni Martien & Partners</div>
@@ -1195,6 +1181,42 @@ class DemoSeeder extends Seeder
             <p>Navigating the Positive Investment List (Perpres 10/2021), PT PMA incorporation, OSS-RBA licensing, and tax incentives.</p>
             <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Consult Partner →</a>
           </div>
+          <div class="practice-card">
+            <div class="practice-icon-box">07</div>
+            <h4>Energy, Power & Mining IPP</h4>
+            <p>Mining exploration IUP concessions, clean energy PPA agreements with PLN, and MEMR regulatory compliance.</p>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Consult Partner →</a>
+          </div>
+          <div class="practice-card">
+            <div class="practice-icon-box">08</div>
+            <h4>Antitrust & Business Competition (KPPU)</h4>
+            <p>Merger filing assessment, monopoly allegation investigations, and representation during KPPU tribunal hearings.</p>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Consult Partner →</a>
+          </div>
+          <div class="practice-card">
+            <div class="practice-icon-box">09</div>
+            <h4>Technology, Media & Telecommunications (TMT)</h4>
+            <p>Fintech licenses, e-commerce regulatory audits, personal data privacy under UU PDP, and cloud compliance.</p>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Consult Partner →</a>
+          </div>
+          <div class="practice-card">
+            <div class="practice-icon-box">10</div>
+            <h4>Employment & Labor Law</h4>
+            <p>Executive contracts, expatriate work permits (RPTKA/KITAS), company regulations (PP), and labor union negotiations.</p>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Consult Partner →</a>
+          </div>
+          <div class="practice-card">
+            <div class="practice-icon-box">11</div>
+            <h4>Real Estate, Land & Construction</h4>
+            <p>Hak Guna Bangunan (HGB) land acquisitions, FIDIC construction contracts, strata title zoning, and building permits.</p>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Consult Partner →</a>
+          </div>
+          <div class="practice-card">
+            <div class="practice-icon-box">12</div>
+            <h4>Intellectual Property Enforcement</h4>
+            <p>Trademark registration, patent defense, copyright protection, and anti-counterfeiting enforcement in Indonesia.</p>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Consult Partner →</a>
+          </div>
         </div>
       </div>
     </section>
@@ -1215,6 +1237,7 @@ class DemoSeeder extends Seeder
           <div class="filter-pill active" onclick="filterLawyers('all', this)">All Ranks</div>
           <div class="filter-pill" onclick="filterLawyers('managing', this)">Managing Partner</div>
           <div class="filter-pill" onclick="filterLawyers('partner', this)">Partners</div>
+          <div class="filter-pill" onclick="filterLawyers('counsel', this)">Counsel & Senior Advisors</div>
         </div>
         <div class="lawyers-grid">
           <div class="lawyer-card" data-rank="managing" onclick="switchTab('contact')">
@@ -1241,6 +1264,30 @@ class DemoSeeder extends Seeder
               <span class="email-link">ahmad@dmp-advocates.com</span>
             </div>
           </div>
+          <div class="lawyer-card" data-rank="partner" onclick="switchTab('contact')">
+            <div class="lawyer-photo-placeholder">
+              <span style="font-size: 38px; color: var(--color-dblue);">💼</span>
+              <span class="badge-rank">Partner</span>
+            </div>
+            <div class="lawyer-card-body">
+              <h4>Siti Nurhaliza, S.H., LL.M.</h4>
+              <span class="role">Partner</span>
+              <p class="specs">Commercial Disputes, Insolvency, PKPU Restructuring & Labor</p>
+              <span class="email-link">siti@dmp-advocates.com</span>
+            </div>
+          </div>
+          <div class="lawyer-card" data-rank="counsel" onclick="switchTab('contact')">
+            <div class="lawyer-photo-placeholder">
+              <span style="font-size: 38px; color: var(--color-dblue);">🌐</span>
+              <span class="badge-rank">Foreign Counsel</span>
+            </div>
+            <div class="lawyer-card-body">
+              <h4>Marcus Vance, J.D., LL.M.</h4>
+              <span class="role">Foreign Legal Counsel</span>
+              <p class="specs">International Joint Ventures, Energy IPP, Cross-Border Deals</p>
+              <span class="email-link">marcus@dmp-advocates.com</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1255,6 +1302,78 @@ class DemoSeeder extends Seeder
         <p class="hero-desc">Authoritative legal alerts, legislative briefs, and strategic whitepapers from DM&P Advocates.</p>
       </div>
     </section>
+    <section class="insights-section">
+      <div class="container">
+        <div class="insights-grid">
+          <div class="insight-card">
+            <div>
+              <div class="insight-meta">
+                <span class="cat">DATA PRIVACY</span>
+                <span>AUG 2026 • 5 MIN READ</span>
+              </div>
+              <h4>Mandatory Compliance Audit Under Indonesia's PDP Law Enforcement</h4>
+              <p>Critical steps for corporate data controllers regarding cross-border transfer mechanisms and mandatory Data Protection Officer (DPO) appointments.</p>
+            </div>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Read Full Article →</a>
+          </div>
+          <div class="insight-card">
+            <div>
+              <div class="insight-meta">
+                <span class="cat">ANTITRUST</span>
+                <span>JUL 2026 • 4 MIN READ</span>
+              </div>
+              <h4>KPPU's Stricter Digital Merger Thresholds & Post-Closing Notifications</h4>
+              <p>Key takeaways on asset calculation rules and penalty mitigations for multi-tier international acquisitions in Indonesia.</p>
+            </div>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Read Full Article →</a>
+          </div>
+          <div class="insight-card">
+            <div>
+              <div class="insight-meta">
+                <span class="cat">ENERGY IPP</span>
+                <span>JUN 2026 • 6 MIN READ</span>
+              </div>
+              <h4>Commercial Structures for Solar & Hydro Power Purchase Agreements (PPA)</h4>
+              <p>Analysis of Ministry of Energy & Mineral Resources tariffs, bankability clauses, and PLN grid off-take obligations.</p>
+            </div>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Read Full Article →</a>
+          </div>
+          <div class="insight-card">
+            <div>
+              <div class="insight-meta">
+                <span class="cat">BANKING & OJK</span>
+                <span>MAY 2026 • 5 MIN READ</span>
+              </div>
+              <h4>New OJK Regulations on Digital Banking Security & Risk Governance</h4>
+              <p>Requirements for cloud infrastructure hosting and operational resilience testing for financial institutions.</p>
+            </div>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Read Full Article →</a>
+          </div>
+          <div class="insight-card">
+            <div>
+              <div class="insight-meta">
+                <span class="cat">INSOLVENCY</span>
+                <span>APR 2026 • 4 MIN READ</span>
+              </div>
+              <h4>Navigating PKPU Restructuring: Practical Strategies for Secured Creditors</h4>
+              <p>How financial institutions can protect voting shares and asset collaterals during court-supervised composition proceedings.</p>
+            </div>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Read Full Article →</a>
+          </div>
+          <div class="insight-card">
+            <div>
+              <div class="insight-meta">
+                <span class="cat">FOREIGN INVESTMENT</span>
+                <span>MAR 2026 • 5 MIN READ</span>
+              </div>
+              <h4>OSS-RBA Implementation Nuances for Foreign Direct Investment (PT PMA)</h4>
+              <p>Resolving KBLI classification conflicts and sector-specific recommendation letters for foreign shareholders.</p>
+            </div>
+            <a href="javascript:void(0)" class="practice-card-link" onclick="switchTab('contact')">Read Full Article →</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- ==================== 5. RANKINGS VIEW ==================== -->
@@ -1264,6 +1383,30 @@ class DemoSeeder extends Seeder
         <span class="hero-tag">Directory Accolades</span>
         <h1 class="hero-title" style="font-size: 38px; margin-bottom: 12px;">Global Recognition & Industry Rankings</h1>
         <p class="hero-desc">Independent directory evaluations and client testimonials honoring our partner leadership.</p>
+      </div>
+    </section>
+    <section class="practices-section">
+      <div class="container">
+        <div class="practices-grid">
+          <div class="practice-card">
+            <div class="accolade-badge" style="width: fit-content; margin-bottom: 16px;">TIER 1 RANKING</div>
+            <h4>The Legal 500 Asia Pacific (2024–2026)</h4>
+            <p>"DM&P Advocates is recognized for its commercial acuity, rapid response times, and exceptional bench strength in cross-border transactions and contentious commercial litigation."</p>
+            <span style="font-size: 12px; color: var(--color-gold); font-weight: 700;">Ranked: Corporate & M&A, Dispute Resolution</span>
+          </div>
+          <div class="practice-card">
+            <div class="accolade-badge" style="width: fit-content; margin-bottom: 16px;">LEADING FIRM</div>
+            <h4>Chambers & Partners Asia-Pacific</h4>
+            <p>"Dhoni Martien and his partners demonstrate peerless strategic depth when handling intricate corporate restructuring and syndicated project facilities."</p>
+            <span style="font-size: 12px; color: var(--color-gold); font-weight: 700;">Ranked: Banking & Finance, Projects</span>
+          </div>
+          <div class="practice-card">
+            <div class="accolade-badge" style="width: fit-content; margin-bottom: 16px;">OUTSTANDING FIRM</div>
+            <h4>Asialaw Profiles</h4>
+            <p>"Highly commended for regulatory compliance, infrastructure concessions, and high-value domestic arbitration proceedings under BANI rules."</p>
+            <span style="font-size: 12px; color: var(--color-gold); font-weight: 700;">Ranked: Energy & Mining, Real Estate</span>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -1283,15 +1426,24 @@ class DemoSeeder extends Seeder
           <div class="contact-info-box">
             <h3>Headquarters & Consultation Desk</h3>
             <p>Our partners are available for confidential consultations regarding corporate mandates, regulatory compliance, and dispute resolution.</p>
+            
             <div class="hq-card">
               <h5>📍 Pacific Century Place SCBD</h5>
               <p>Level 17, Sudirman Central Business District (SCBD)<br>Jl. Jend. Sudirman Kav. 52-53, Jakarta Selatan 12190</p>
             </div>
+
             <div class="hq-card">
               <h5>📞 Direct Communication Channels</h5>
-              <p><strong>Telephone:</strong> +62 21 5088 8899<br><strong>Email:</strong> counsel@dmp-advocates.com</p>
+              <p><strong>Telephone:</strong> +62 21 5088 8899<br>
+              <strong>Email:</strong> counsel@dmp-advocates.com<br>
+              <strong>Office Hours:</strong> Mon – Fri: 08:30 – 18:00 WIB</p>
+            </div>
+
+            <div style="padding: 16px; background: rgba(34, 58, 118, 0.04); border-radius: 4px; font-size: 12.5px; color: var(--color-muted);">
+              🔒 <strong>Attorney-Client Privilege Notice:</strong> Any inquiry submitted through this portal is treated with strict confidentiality under Indonesian advocate ethics and data privacy regulations (UU PDP).
             </div>
           </div>
+
           <div class="form-box">
             <h4 style="font-size: 18px; font-weight: 700; color: var(--color-dblue); margin-bottom: 20px;">Confidential Consultation Inquiry</h4>
             <form onsubmit="handleFormSubmit(event)">
@@ -1306,6 +1458,23 @@ class DemoSeeder extends Seeder
               <div class="form-group">
                 <label>Corporate Email *</label>
                 <input type="email" class="form-control" placeholder="name@company.com" required>
+              </div>
+              <div class="form-group">
+                <label>Primary Legal Area *</label>
+                <select class="form-control" required>
+                  <option value="">Select practice area...</option>
+                  <option>Corporate & Cross-Border M&A</option>
+                  <option>Commercial Litigation & BANI Arbitration</option>
+                  <option>Banking, Finance & Fintech</option>
+                  <option>Energy, Mining & Infrastructure IPP</option>
+                  <option>TMT & Data Privacy Compliance (UU PDP)</option>
+                  <option>Employment & Industrial Relations</option>
+                  <option>Other Corporate Matter</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Summary of Mandate / Matter *</label>
+                <textarea class="form-control" rows="4" placeholder="Please provide a brief executive summary of the legal assistance required..." required></textarea>
               </div>
               <button type="submit" class="btn-cta" style="width: 100%; justify-content: center;">Submit Confidential Mandate Inquiry</button>
             </form>
@@ -1322,13 +1491,16 @@ class DemoSeeder extends Seeder
         <div class="footer-col">
           <div class="logo-title" style="color: #ffffff; margin-bottom: 6px;">DM<span class="gold">&</span>P Advocates</div>
           <div class="logo-subtitle" style="color: rgba(255, 255, 255, 0.6); margin-bottom: 18px;">Dhoni Martien & Partners</div>
-          <p>A premier Indonesian corporate and commercial law firm advising multinational enterprises and market leaders.</p>
+          <p>A premier Indonesian corporate and commercial law firm advising multinational enterprises, financial institutions, and market leaders on complex Indonesian legal mandates.</p>
         </div>
         <div class="footer-col">
           <h5>Core Practices</h5>
           <ul>
             <li><a href="javascript:void(0)" onclick="switchTab('practices')">Corporate & M&A</a></li>
             <li><a href="javascript:void(0)" onclick="switchTab('practices')">Commercial Litigation</a></li>
+            <li><a href="javascript:void(0)" onclick="switchTab('practices')">Banking & Project Finance</a></li>
+            <li><a href="javascript:void(0)" onclick="switchTab('practices')">Energy & Mining IPP</a></li>
+            <li><a href="javascript:void(0)" onclick="switchTab('practices')">Data Privacy (UU PDP)</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1337,11 +1509,16 @@ class DemoSeeder extends Seeder
             <li><a href="javascript:void(0)" onclick="switchTab('home')">Home</a></li>
             <li><a href="javascript:void(0)" onclick="switchTab('practices')">Practice Directory</a></li>
             <li><a href="javascript:void(0)" onclick="switchTab('lawyers')">Our Lawyers</a></li>
+            <li><a href="javascript:void(0)" onclick="switchTab('insights')">Legal Intelligence</a></li>
+            <li><a href="javascript:void(0)" onclick="switchTab('rankings')">Accolades & Rankings</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h5>SCBD Headquarters</h5>
-          <p>Pacific Century Place Level 17<br>SCBD Kav. 52-53, Jakarta Selatan 12190<br><br><strong>Tel:</strong> +62 21 5088 8899</p>
+          <p>Pacific Century Place Level 17<br>
+          SCBD Kav. 52-53, Jakarta Selatan 12190<br><br>
+          <strong>Tel:</strong> +62 21 5088 8899<br>
+          <strong>Email:</strong> counsel@dmp-advocates.com</p>
         </div>
       </div>
       <div class="footer-bottom">
@@ -1353,18 +1530,29 @@ class DemoSeeder extends Seeder
 
   <script>
     function switchTab(tabId) {
+      // Hide all views
       document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active-view'));
       document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+
+      // Show selected view
       const targetView = document.getElementById('view-' + tabId);
-      if (targetView) targetView.classList.add('active-view');
+      if (targetView) {
+        targetView.classList.add('active-view');
+      }
+
+      // Highlight active nav
       const targetNav = document.getElementById('nav-' + tabId);
-      if (targetNav) targetNav.classList.add('active');
+      if (targetNav) {
+        targetNav.classList.add('active');
+      }
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function filterLawyers(rank, btn) {
       document.querySelectorAll('.filter-pill').forEach(el => el.classList.remove('active'));
       btn.classList.add('active');
+
       document.querySelectorAll('.lawyer-card').forEach(card => {
         if (rank === 'all' || card.getAttribute('data-rank') === rank) {
           card.style.display = 'block';
@@ -1386,12 +1574,29 @@ class DemoSeeder extends Seeder
   </script>
 </body>
 </html>
+
 HTML;
 
+        // Production Demo
+        Demo::updateOrCreate(
+            ['slug' => 'dmp-lawfirm'],
+            [
+                'title' => 'DM&P Lawfirm',
+                'client_name' => 'Dhoni Martien & Partners',
+                'industry' => 'Corporate & Commercial Law',
+                'description' => 'Website Demos for DM&P Lawfirm',
+                'html_content' => $htmlContent,
+                'access_passcode' => 'dmplawfirm',
+                'default_device' => 'desktop',
+                'is_active' => true,
+            ]
+        );
+
+        // Demo alias for backward compatibility with existing tests
         Demo::updateOrCreate(
             ['slug' => 'dmp-advocates'],
             [
-                'title' => 'DM&P Advocates — Corporate & Commercial Law Firm',
+                'title' => 'DM&P Advocates - Corporate & Commercial Law Firm',
                 'client_name' => 'Dhoni Martien & Partners',
                 'industry' => 'Corporate & Commercial Law',
                 'description' => 'Bespoke high-stakes corporate law firm prototype based on SSEK & Makarim Tier-1 standards.',

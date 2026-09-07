@@ -11,38 +11,29 @@ class DatabaseSeeder extends Seeder
     use WithoutModelEvents;
 
     /**
-     * Seed the application's database.
+     * Seed the application's database with production-matched baseline.
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        $this->call([
-            HomepageStatSeeder::class,
-            DemoSeeder::class,
-        ]);
-
-        if (\App\Models\User::count() === 0) {
-            User::factory()->create([
+        if (User::where('email', 'nova@acceleratelab.id')->doesntExist()) {
+            User::create([
                 'name' => 'Nova Triansyah Azis',
                 'email' => 'nova@acceleratelab.id',
+                'password' => bcrypt('password'),
+                'email_verified_at' => now(),
             ]);
         }
 
-        $settings = [
-            ['key' => 'contact_address', 'value' => '123 Innovation Blvd, Tech City, TC 90210', 'group' => 'contact'],
-            ['key' => 'contact_email', 'value' => 'hello@acceleratelab.io', 'group' => 'contact'],
-            ['key' => 'contact_phone', 'value' => '+1 (555) 019-2834', 'group' => 'contact'],
-            ['key' => 'contact_whatsapp', 'value' => '+6281234567890', 'group' => 'contact'],
-            ['key' => 'whatsapp_default_message', 'value' => 'Hello Accelerate Lab! I would like to inquire about your services.', 'group' => 'contact'],
-            ['key' => 'contact_google_maps_link', 'value' => 'https://maps.google.com/?q=Tech+City', 'group' => 'contact'],
-        ];
-
-        foreach ($settings as $setting) {
-            \App\Models\SiteSetting::firstOrCreate(
-                ['key' => $setting['key']],
-                $setting
-            );
-        }
+        $this->call([
+            SiteSettingSeeder::class,
+            HomepageStatSeeder::class,
+            CategorySeeder::class,
+            TechnologySeeder::class,
+            ServiceSeeder::class,
+            ProjectSeeder::class,
+            TeamMemberSeeder::class,
+            CompanyMilestoneSeeder::class,
+            DemoSeeder::class,
+        ]);
     }
 }
