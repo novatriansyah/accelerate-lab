@@ -27,7 +27,7 @@ class LocalizationTest extends TestCase
     {
         $response = $this->get('/lang/invalid-lang');
         $response->assertRedirect();
-        $this->assertEquals(config('app.fallback_locale', 'en'), app()->getLocale());
+        $this->assertEquals(config('app.locale', 'id'), app()->getLocale());
     }
 
     #[Test]
@@ -58,5 +58,19 @@ class LocalizationTest extends TestCase
         $response->assertSee('Ide Aplikasi Baru (MVP)', false);
         $response->assertSee('Portal Pelanggan', false);
         $response->assertSee('Kirim via WhatsApp', false);
+    }
+
+    #[Test]
+    public function default_application_locale_is_indonesian_and_header_has_accessible_touch_targets()
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+
+        // Verify default page renders Indonesian commercial terms
+        $response->assertSee('Konsultasi Proyek');
+        $response->assertSee('Layanan');
+
+        // Verify touch target class for mobile language switcher
+        $response->assertSee('min-h-[44px]');
     }
 }

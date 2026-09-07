@@ -24,7 +24,7 @@
 
                 <a href="/contact" id="nav-contact-btn"
                     class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-primary-hover transition-all shadow-md shadow-primary/20">
-                    {{ __('Get an Estimate') }}
+                    {{ __('Project Consultation') }}
                 </a>
 
                 <!-- Language Switcher Toggle -->
@@ -50,8 +50,8 @@
             <div class="md:hidden flex items-center gap-2">
                 <!-- Mobile Language Switcher Toggle -->
                 <div class="inline-flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-full border border-slate-200 dark:border-slate-700 text-xs font-bold">
-                    <a href="/lang/id" class="px-2 py-0.5 rounded-full {{ $currentLocale === 'id' ? 'bg-white dark:bg-surface-dark text-primary shadow-sm' : 'text-slate-500' }}">ID</a>
-                    <a href="/lang/en" class="px-2 py-0.5 rounded-full {{ $currentLocale === 'en' ? 'bg-white dark:bg-surface-dark text-primary shadow-sm' : 'text-slate-500' }}">EN</a>
+                    <a href="/lang/id" aria-label="Switch language to Indonesian" class="min-h-[44px] min-w-[44px] flex items-center justify-center px-2 py-0.5 rounded-full {{ $currentLocale === 'id' ? 'bg-white dark:bg-surface-dark text-primary shadow-sm' : 'text-slate-500' }}">ID</a>
+                    <a href="/lang/en" aria-label="Switch language to English" class="min-h-[44px] min-w-[44px] flex items-center justify-center px-2 py-0.5 rounded-full {{ $currentLocale === 'en' ? 'bg-white dark:bg-surface-dark text-primary shadow-sm' : 'text-slate-500' }}">EN</a>
                 </div>
                 <button @click="isOpen = !isOpen"
                     class="text-gray-600 dark:text-gray-300 hover:text-primary focus:outline-none p-2"
@@ -99,7 +99,7 @@
                 </button>
                 <a href="/contact"
                     class="block w-full text-center bg-primary text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary/20" role="menuitem">
-                    {{ __('Get an Estimate') }}
+                    {{ __('Project Consultation') }}
                 </a>
             </div>
         </div>
