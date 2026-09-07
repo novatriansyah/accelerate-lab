@@ -52,6 +52,9 @@
                             </span>
                         </div>
 
+                        @php
+                            $founder = isset($teamMembers) && $teamMembers->isNotEmpty() ? $teamMembers->first() : null;
+                        @endphp
                         <div class="mt-6 space-y-4">
                             <div class="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/50 p-4 transition-all hover:border-primary/30">
                                 <div class="flex items-start gap-3">
@@ -60,19 +63,21 @@
                                     </div>
                                     <div class="flex-1 min-w-0">
                                         <div class="text-sm font-bold text-text-main dark:text-white">
-                                            Nova Triansyah Azis
+                                            {{ $founder?->name ?? 'Nova Triansyah Azis' }}
                                         </div>
                                         <div class="text-xs font-semibold text-primary">
-                                            {{ __('Principal Technology Architect') }} &amp; CEO / Founder
+                                            {{ __('Principal Technology Architect') }} &amp; {{ $founder?->role ? __($founder->role) : 'CEO & Founder' }}
                                         </div>
                                         <p class="mt-1.5 text-xs text-text-muted dark:text-slate-400 leading-relaxed">
-                                            {{ __('6+ tahun pengalaman merancang arsitektur sistem operasional bisnis, integrasi enterprise, dan rekayasa perangkat lunak berskala tinggi.') }}
+                                            {{ $founder?->bio ? __($founder->bio) : __('6+ tahun pengalaman merancang arsitektur sistem operasional bisnis, integrasi enterprise, dan rekayasa perangkat lunak berskala tinggi.') }}
                                         </p>
-                                        <a href="https://www.linkedin.com/in/novatriansyah/" target="_blank" rel="noopener noreferrer"
-                                            class="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
-                                            <span>Profil LinkedIn Terverifikasi</span>
-                                            <x-app-icon name="open_in_new" class="h-3.5 w-3.5" />
-                                        </a>
+                                        @if ($founder?->linkedin_url)
+                                            <a href="{{ $founder->linkedin_url }}" target="_blank" rel="noopener noreferrer"
+                                                class="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline">
+                                                <span>{{ __('Profil LinkedIn Terverifikasi') }}</span>
+                                                <x-app-icon name="open_in_new" class="h-3.5 w-3.5" />
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

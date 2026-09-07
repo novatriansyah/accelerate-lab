@@ -351,22 +351,23 @@ public function case_studies_page_highlights_business_roi_and_sme_blueprints()
     $response->assertSee('Inventori Multi-Gudang');
     $response->assertSee('Invoicing Otomatis');
 
-    // Verifies DM&P Lawfirm interactive demo preview card exists
-    $response->assertSee('/demos/dmp-lawfirm');
+    // Verifies prospective demo prototypes like DM&P are NOT leaked in public case studies
+    $response->assertDontSee('/demos/dmp-lawfirm');
+    $response->assertDontSee('DM&P Lawfirm Portal');
 }
 ```
 
-- [ ] **Step 2: Run test to verify it fails**
+- [ ] **Step 2: Run test to verify it passes**
 
 Run: `php artisan test --filter=ProjectTest`  
-Expected: FAIL because SME blueprints and DM&P Lawfirm demo card do not yet exist on the case studies page.
+Expected: PASS because SME blueprints are present and unclosed prospect DM&P is excluded from public case studies.
 
 - [ ] **Step 3: Implement case studies updates and blueprints section**
 
 In `resources/views/frontend/pages/case-studies.blade.php`:
 * Refine header text to emphasize measurable business outcomes.
-* Feature the 2 verified projects with prominent outcome badges (+35% efisiensi, <30 detik kecepatan audit).
-* Add the DM&P Lawfirm Interactive Demo card with direct link to `/demos/dmp-lawfirm`.
+* Feature verified projects dynamically with stats badges from database.
+* Keep prototype demos isolated in the private demos system rather than public case studies.
 * Add interactive tabbed "Blueprint Solusi Operasional UKM":
   1. *Inventori Multi-Gudang & Barcode*: Alur penerimaan, transfer antar-gudang, dan peringatan stok menipis.
   2. *Invoicing Otomatis & Pembayaran*: Tagihan terbit otomatis, integrasi QRIS/Virtual Account, dan rekonsiliasi instan.

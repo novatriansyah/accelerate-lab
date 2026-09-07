@@ -83,7 +83,8 @@ class ProjectTest extends TestCase
         $response->assertSee('Inventori Multi-Gudang');
         $response->assertSee('Invoicing Otomatis');
 
-        // Verifies DM&P Lawfirm interactive demo preview card exists
-        $response->assertSee('/demos/dmp-lawfirm');
+        // Verifies prospective demo prototypes like DM&P are NOT leaked in public case studies
+        $response->assertDontSee('/demos/dmp-lawfirm');
+        $response->assertDontSee('DM&P Lawfirm Portal');
     }
 }

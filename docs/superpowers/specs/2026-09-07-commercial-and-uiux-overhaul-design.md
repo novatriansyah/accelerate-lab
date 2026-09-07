@@ -101,9 +101,9 @@ Accelerate Lab possesses clean monolithic Laravel 12 architecture, Tailwind CSS 
 ### 3.4 Case Studies & Operational Blueprints (`case-studies.blade.php`)
 
 * **Filter Bar Normalization**:
-  * Replace the expansive industry filter bar with a cohesive project grid that presents both live deployments prominently.
-* **Interactive DM&P Lawfirm Demo Showcase**:
-  * Feature an interactive preview card directing to `/demos/dmp-lawfirm` with passcode guidance for prospective clients to test a real enterprise portal interface.
+  * Replace the expansive industry filter bar with a cohesive project grid that presents live deployments prominently with dynamic stats.
+* **Isolated Private Demos System**:
+  * Prototype demos (e.g. DM&P) remain in the dedicated `/demos/{slug}` subsystem for direct prospective client pitches with passcode security, completely isolated from public case studies.
 * **SME Operational Blueprints Section**:
   * Interactive tabbed blueprints showcasing common implementation workflows:
     * Blueprint A: *Sistem Inventori Multi-Gudang & Barcode*.

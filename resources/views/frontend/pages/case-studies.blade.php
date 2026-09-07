@@ -60,13 +60,9 @@
                                         <span
                                             class="inline-flex items-center rounded-md bg-teal-50 dark:bg-teal-900/30 px-2 py-1 text-xs font-medium text-teal-700 dark:text-teal-400 ring-1 ring-inset ring-teal-600/20 dark:ring-teal-400/20">{{ __($featuredProject->industry) }}</span>
                                     @endif
-                                    @if ($featuredProject->slug === 'livestock-management-system')
+                                    @if (!empty($featuredProject->stats) && is_array($featuredProject->stats) && isset($featuredProject->stats[0]))
                                         <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                                            +35% {{ __('Efisiensi Operasional') }}
-                                        </span>
-                                    @elseif ($featuredProject->slug === 'telaah')
-                                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
-                                            &lt;30 Detik Kecepatan Audit
+                                            {{ $featuredProject->stats[0]['value'] }} {{ __($featuredProject->stats[0]['label']) }}
                                         </span>
                                     @endif
                                 </div>
@@ -142,13 +138,9 @@
                                             class="text-xs font-bold uppercase tracking-wider text-primary">{{ __($project->industry) }}</span>
                                     @endif
 
-                                    @if ($project->slug === 'livestock-management-system')
+                                    @if (!empty($project->stats) && is_array($project->stats) && isset($project->stats[0]))
                                         <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                                            +35% {{ __('Efisiensi Operasional') }}
-                                        </span>
-                                    @elseif ($project->slug === 'telaah')
-                                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
-                                            &lt;30 Detik Kecepatan Audit
+                                            {{ $project->stats[0]['value'] }} {{ __($project->stats[0]['label']) }}
                                         </span>
                                     @endif
 
@@ -174,37 +166,7 @@
                         </div>
                     @endforeach
 
-                    <!-- Interactive Client Demo Showcase Card -->
-                    <div class="group flex flex-col gap-4 rounded-2xl p-5 transition-all hover:bg-teal-50/50 dark:hover:bg-slate-800/80 border-2 border-dashed border-primary/40 bg-primary/5">
-                        <a href="/demos/dmp-lawfirm" class="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-900 block flex items-center justify-center p-6 text-center group">
-                            <div class="space-y-3">
-                                <div class="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                                    <x-app-icon name="laptop_mac" class="w-6 h-6" />
-                                </div>
-                                <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-primary text-white">Live Prototype Demo</span>
-                                <p class="text-xs text-slate-400">Klik untuk menjelajahi prototipe</p>
-                            </div>
-                        </a>
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-bold uppercase tracking-wider text-primary">Legal Tech & Operasional</span>
-                                <span class="text-xs text-gray-400">•</span>
-                                <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">Siap Diuji</span>
-                            </div>
-                            <a href="/demos/dmp-lawfirm">
-                                <h3 class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">
-                                    DM&P Lawfirm Portal
-                                </h3>
-                            </a>
-                            <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
-                                Prototipe interaktif portal manajemen firma hukum dengan administrasi perkara, portal klien mandiri, dan integrasi penagihan.
-                            </p>
-                            <a href="/demos/dmp-lawfirm" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-dark mt-2 transition-all">
-                                <span>Coba Demo Interaktif</span>
-                                <x-app-icon name="arrow_forward" class="w-4 h-4" />
-                            </a>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </section>

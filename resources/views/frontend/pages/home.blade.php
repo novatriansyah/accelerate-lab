@@ -46,8 +46,12 @@
                         class="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
                         {{ __('Hentikan spreadsheet yang tercecer dan sistem kaku yang membatasi pertumbuhan. Kami merancang dan membangun portal manajemen, dashboard operasional, dan aplikasi bisnis kustom yang rapi, cepat, dan menjadi aset milik Anda selamanya.') }}
                     </p>
+                    @php
+                        $heroWaPhone = preg_replace('/[^0-9]/', '', ($settings['contact_whatsapp'] ?? null) ?: (($settings['contact_phone'] ?? null) ?: '6287721312985'));
+                        $heroWaMsg = __('Halo Accelerate Lab! Saya ingin konsultasi mengenai pembuatan sistem software kustom untuk bisnis saya.');
+                    @endphp
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="https://wa.me/6281234567890?text=Halo+Accelerate+Lab%21+Saya+ingin+konsultasi+mengenai+pembuatan+sistem+software+kustom+untuk+bisnis+saya." target="_blank" rel="noopener noreferrer" id="hero-cta-primary"
+                        <a href="https://wa.me/{{ $heroWaPhone }}?text={{ urlencode($heroWaMsg) }}" target="_blank" rel="noopener noreferrer" id="hero-cta-primary"
                             class="bg-[#25D366] hover:bg-[#20ba5a] text-white text-base sm:text-lg font-bold px-7 py-4 rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02] flex items-center justify-center gap-2 group">
                             <x-app-icon name="chat" class="w-5 h-5 fill-current" />
                             <span>{{ __('Konsultasi Gratis via WhatsApp') }}</span>
@@ -519,7 +523,7 @@
                                         {{ $project->plain_solution }}</p>
                                 </div>
                             </div>
-                            <a href="/case-studies"
+                            <a href="{{ route('project', $project) }}"
                                 class="w-full mt-auto py-3 px-4 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white text-sm font-semibold rounded-lg border border-slate-200 dark:border-slate-700 transition-colors flex items-center justify-center gap-2 group-hover:border-primary/30">
                                 {{ __('View Case Study') }}
                                 <x-app-icon name="arrow_forward" class="w-4 h-4" />
