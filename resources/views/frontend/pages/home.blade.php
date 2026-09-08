@@ -221,8 +221,8 @@
     <section class="py-24 bg-background-light dark:bg-background-dark" aria-labelledby="capabilities-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-16">
-                <h2 id="capabilities-heading" class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ __('Solusi Unggulan Kami') }}</h2>
-                <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">{{ __('Kami tidak sekadar menulis kode, kami membangun aset digital yang tangguh untuk bisnis Anda.') }}</p>
+                <h2 id="capabilities-heading" class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">{{ __('Core Capabilities') }}</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl">{{ __('We don\'t just write code; we build resilient digital assets.') }}</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(300px,auto)]">
                 <div
@@ -235,14 +235,14 @@
                             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                                 <x-app-icon name="explore" class="w-6 h-6 text-primary" />
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{{ __('Perancangan Solusi Digital') }}</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{{ __('Product Strategy') }}</h3>
                             <p class="text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
-                                {{ __('Dari validasi kebutuhan hingga peta jalan sistem berskala enterprise. Kami mematangkan arsitektur solusi bisnis sebelum satu baris kode ditulis.') }}
+                                {{ __('From MVP definition to enterprise scaling roadmaps. We validate market assumptions and architect scalable systems before writing a single line of code.') }}
                             </p>
                         </div>
                         <a class="inline-flex items-center text-primary font-semibold mt-8 group-hover:translate-x-2 transition-transform"
                             href="/services">
-                            {{ __('Pelajari Selengkapnya') }} <x-app-icon name="arrow_forward" class="w-4 h-4 ml-1" />
+                            {{ __('Learn more') }} <x-app-icon name="arrow_forward" class="w-4 h-4 ml-1" />
                         </a>
                     </div>
                 </div>
@@ -254,9 +254,9 @@
                                 class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
                                 <x-app-icon name="code" class="w-6 h-6 text-primary" />
                             </div>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{{ __('Pengembangan Web dan Aplikasi Kustom') }}</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{{ __('Custom Development') }}</h3>
                             <p class="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                                {{ __('Kami tidak terkunci pada satu teknologi kaku. Kami memilih arsitektur terbaik untuk setiap alur kerja bisnis, memastikan stabilitas, kecepatan, dan fleksibilitas penuh.') }}
+                                {{ __('We are not limited by a specific tech stack. Our versatile team leverages the best technologies for each project, ensuring capability, performance, and adaptability across any ecosystem.') }}
                             </p>
                         </div>
                         <div class="mt-8 flex items-center gap-2 text-xs font-semibold text-primary">

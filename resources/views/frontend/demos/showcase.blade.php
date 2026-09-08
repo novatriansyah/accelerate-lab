@@ -8,7 +8,7 @@
     
     <!-- Open Graph & Social Cards (WhatsApp, Telegram, Slack, LinkedIn) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ $demo->title }} — Prototype Showcase | Accelerate Lab">
+    <meta property="og:title" content="{{ $demo->title }} - Prototype Showcase | Accelerate Lab">
     <meta property="og:description" content="{{ $demo->description ?: 'Interactive client prototype by Accelerate Lab.' }}">
     <meta property="og:url" content="{{ route('demos.showcase', $demo->slug) }}">
     @if($demo->thumbnail)
@@ -16,10 +16,10 @@
         <meta name="twitter:image" content="{{ asset('storage/' . $demo->thumbnail) }}">
     @endif
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $demo->title }} — Prototype Showcase">
+    <meta name="twitter:title" content="{{ $demo->title }} - Prototype Showcase">
     <meta name="twitter:description" content="{{ $demo->description ?: 'Interactive client prototype by Accelerate Lab.' }}">
 
-    <title>{{ $demo->title }} — Prototype Showcase | Accelerate Lab</title>
+    <title>{{ $demo->title }} - Prototype Showcase | Accelerate Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">

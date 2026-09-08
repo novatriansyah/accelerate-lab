@@ -30,8 +30,8 @@ class CommercialRepositioningTest extends TestCase
         $response->assertStatus(200);
         $response->assertDontSee('Core Capabilities');
         $response->assertDontSee('Product Strategy');
-        $response->assertSee('Solusi Unggulan Kami');
-        $response->assertSee('Perancangan Solusi Digital');
+        $response->assertSee('Kapabilitas Utama');
+        $response->assertSee('Strategi Produk');
     }
 
     #[Test]
