@@ -9,14 +9,14 @@
                         <div
                             class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
                             <span class="mr-1 h-2 w-2 rounded-full bg-primary"></span>
-                            {{ __('Establishing Digital Excellence') }}
+                            {{ __('Standar Rekayasa Digital') }}
                         </div>
                         <h1
                             class="text-4xl font-black tracking-tighter text-text-main dark:text-white sm:text-5xl xl:text-6xl">
-                            {{ __('Architects of Digital Innovation') }}
+                            {{ __('Rekayasa Sistem dan Solusi Digital Berkinerja Tinggi') }}
                         </h1>
                         <p class="max-w-[600px] text-lg text-text-muted dark:text-slate-400 leading-relaxed">
-                            {{ __('Accelerate Lab isn\'t just a software house; we are a collective of dreamers, engineers, and designers dedicated to pushing the boundaries of what\'s possible on the web.') }}
+                            {{ __('Accelerate Lab adalah studio rekayasa perangkat lunak modern yang berdedikasi membangun sistem operasional dan aplikasi web berkinerja tinggi untuk bisnis berkembang.') }}
                         </p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4">
