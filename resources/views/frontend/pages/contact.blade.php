@@ -96,6 +96,15 @@
                             </span>
                         </div>
                     </a>
+                    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark p-5 shadow-sm space-y-2">
+                        <div class="flex items-center gap-2 text-slate-900 dark:text-white font-bold text-sm">
+                            <x-app-icon name="help" class="w-4 h-4 text-primary" />
+                            <span>{{ __('Pertanyaan Umum') }}</span>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            {{ __('Pengerjaan website express selesai dalam 24-48 jam, sistem kustom 2-6 minggu. Seluruh kode sumber dan basis data 100% menjadi hak milik Anda dengan kontrak resmi PT Akselerasi Digital Mandiri.') }}
+                        </p>
+                    </div>
                 </div>
                 <div class="lg:col-span-7">
                     <x-project-estimator :settings="$settings ?? []" />

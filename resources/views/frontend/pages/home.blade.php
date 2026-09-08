@@ -795,6 +795,74 @@
     </section>
     @endif
 
+    {{-- FAQ Section --}}
+    <section class="py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800" aria-labelledby="faq-heading">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                    <x-app-icon name="help" class="w-3.5 h-3.5" />
+                    {{ __('Transparansi Penuh') }}
+                </span>
+                <h2 id="faq-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    {{ __('Pertanyaan yang Sering Diajukan') }}
+                </h2>
+                <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+                    {{ __('Jawaban lugas atas hal-hal penting yang biasa ditanyakan sebelum memulai kerja sama.') }}
+                </p>
+            </div>
+
+            <div class="space-y-4" x-data="{ activeAccordion: null }">
+                <!-- FAQ 1 -->
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark overflow-hidden transition-all">
+                    <button type="button" @click="activeAccordion = (activeAccordion === 1 ? null : 1)"
+                        class="w-full py-5 px-6 text-left flex items-center justify-between font-bold text-slate-900 dark:text-white gap-4">
+                        <span class="text-base sm:text-lg">{{ __('Apakah ada biaya langganan bulanan tersembunyi?') }}</span>
+                        <span class="text-primary font-mono text-xl transition-transform duration-200" :class="{ 'rotate-180': activeAccordion === 1 }">↓</span>
+                    </button>
+                    <div x-show="activeAccordion === 1" x-collapse class="px-6 pb-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 pt-4">
+                        <p>{{ __('Tidak ada biaya langganan software tersembunyi. Kami bukan SaaS yang mengunci data bisnis Anda. Untuk paket express, domain dan hosting tahun pertama sudah termasuk. Untuk sistem operasional kustom, Anda hanya membayar biaya perancangan dan pembangunan awal, tanpa biaya sewa lisensi wajib.') }}</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark overflow-hidden transition-all">
+                    <button type="button" @click="activeAccordion = (activeAccordion === 2 ? null : 2)"
+                        class="w-full py-5 px-6 text-left flex items-center justify-between font-bold text-slate-900 dark:text-white gap-4">
+                        <span class="text-base sm:text-lg">{{ __('Berapa lama waktu pengerjaannya?') }}</span>
+                        <span class="text-primary font-mono text-xl transition-transform duration-200" :class="{ 'rotate-180': activeAccordion === 2 }">↓</span>
+                    </button>
+                    <div x-show="activeAccordion === 2" x-collapse class="px-6 pb-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 pt-4">
+                        <p>{{ __('Untuk Website Bisnis Express, waktu pengerjaan adalah 24 hingga 48 jam kerja setelah materi konten dikonfirmasi. Untuk portal sistem operasional kustom, timeline pengerjaan berkisar antara 2 hingga 6 minggu dengan tonggak pencapaian dan demo berkala yang dapat Anda pantau langsung.') }}</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark overflow-hidden transition-all">
+                    <button type="button" @click="activeAccordion = (activeAccordion === 3 ? null : 3)"
+                        class="w-full py-5 px-6 text-left flex items-center justify-between font-bold text-slate-900 dark:text-white gap-4">
+                        <span class="text-base sm:text-lg">{{ __('Siapa yang memegang hak cipta source code dan database?') }}</span>
+                        <span class="text-primary font-mono text-xl transition-transform duration-200" :class="{ 'rotate-180': activeAccordion === 3 }">↓</span>
+                    </button>
+                    <div x-show="activeAccordion === 3" x-collapse class="px-6 pb-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 pt-4">
+                        <p>{{ __('100% hak cipta seluruh kode sumber (source code), skema basis data, dan konfigurasi server diserahkan sepenuhnya kepada perusahaan Anda. Anda memiliki kendali penuh atas aset digital Anda tanpa ketergantungan sepihak pada pihak mana pun.') }}</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark overflow-hidden transition-all">
+                    <button type="button" @click="activeAccordion = (activeAccordion === 4 ? null : 4)"
+                        class="w-full py-5 px-6 text-left flex items-center justify-between font-bold text-slate-900 dark:text-white gap-4">
+                        <span class="text-base sm:text-lg">{{ __('Apakah kerja sama dilengkapi kontrak dan legalitas resmi?') }}</span>
+                        <span class="text-primary font-mono text-xl transition-transform duration-200" :class="{ 'rotate-180': activeAccordion === 4 }">↓</span>
+                    </button>
+                    <div x-show="activeAccordion === 4" x-collapse class="px-6 pb-6 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 pt-4">
+                        <p>{{ __('Tentu saja. Seluruh transaksi dan kerja sama dijalankan secara sah di bawah payung hukum PT Akselerasi Digital Mandiri. Kami menyediakan Surat Perjanjian Kerja Sama (SPK), faktur pajak resmi, dan Non-Disclosure Agreement (NDA) untuk melindungi kerahasiaan data operasional bisnis Anda.') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- Closing CTA --}}
     <section class="relative isolate overflow-hidden bg-slate-900 py-16 sm:py-24" aria-labelledby="cta-heading">
         <div class="absolute inset-0 -z-10 h-full w-full" style="background-image: radial-gradient(#14b8a7 1px, transparent 1px); background-size: 32px 32px; opacity: 0.08;" aria-hidden="true"></div>
