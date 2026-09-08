@@ -144,4 +144,22 @@ class SeoStructuredDataTest extends TestCase
         $response->assertSee('"sameAs": [', false);
         $response->assertSee('"https://linkedin.com/company/accelerate-lab"', false);
     }
+
+    #[Test]
+    public function organization_schema_includes_legal_name_and_alternate_names(): void
+    {
+        SiteSetting::create([
+            'key' => 'legal_name',
+            'value' => 'PT Akselerasi Digital Mandiri',
+            'group' => 'general',
+            'is_display' => true,
+        ]);
+
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
+        $response->assertSee('"legalName": "PT Akselerasi Digital Mandiri"', false);
+        $response->assertSee('"alternateName": [', false);
+        $response->assertSee('"PT Akselerasi Digital Mandiri"', false);
+    }
 }

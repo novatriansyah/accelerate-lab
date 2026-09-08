@@ -80,6 +80,21 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="flex items-start gap-4 group">
+                            <div
+                                class="size-10 rounded-full bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                                <x-app-icon name="verified_user" class="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-text-main dark:text-white">{{ __('Entitas Legal') }}</h3>
+                                <p class="text-text-secondary dark:text-gray-400 text-sm mt-1 font-medium">
+                                    {{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}
+                                </p>
+                                <p class="text-xs text-text-muted dark:text-slate-500 mt-0.5">
+                                    {{ __('Badan hukum resmi terdaftar untuk penagihan, kontrak SPK, & NDA') }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     <a href="{{ $settings['contact_google_maps_link'] ?? '#' }}" target="_blank" rel="noopener noreferrer"
                         class="relative w-full h-48 rounded-xl overflow-hidden shadow-md group cursor-pointer block">

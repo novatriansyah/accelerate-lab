@@ -104,6 +104,27 @@
                                 </div>
                             </div>
 
+                            <div class="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/50 p-4 transition-all hover:border-primary/30">
+                                <div class="flex items-start gap-3">
+                                    <div class="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                                        <x-app-icon name="verified_user" class="h-5 w-5" />
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="flex items-center justify-between gap-2">
+                                            <div class="text-sm font-bold text-text-main dark:text-white">
+                                                {{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}
+                                            </div>
+                                            <span class="inline-flex items-center rounded-full bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+                                                {{ __('Entitas Hukum Resmi') }}
+                                            </span>
+                                        </div>
+                                        <p class="mt-1.5 text-xs text-text-muted dark:text-slate-400 leading-relaxed">
+                                            {{ __('Seluruh kerja sama komersial bernaung secara sah di bawah PT Akselerasi Digital Mandiri dengan Surat Perjanjian Kerja Sama (SPK), Non-Disclosure Agreement (NDA), dan faktur pajak resmi.') }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="rounded-xl border border-slate-100 dark:border-slate-800/80 bg-slate-50/70 dark:bg-slate-900/50 p-3.5">
                                 <div class="flex items-center justify-between text-xs text-text-muted dark:text-slate-400">
                                     <span class="font-medium">{{ __('Jaminan Kualitas Rekayasa') }}</span>

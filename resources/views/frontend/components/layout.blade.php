@@ -44,6 +44,12 @@
         "{{ '@' }}context": "https://schema.org",
         "{{ '@' }}type": "Organization",
         "name": "Accelerate Lab",
+        "legalName": "{{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}",
+        "alternateName": [
+            "Accelerate Lab",
+            "AccelerateLab",
+            "{{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}"
+        ],
         "url": "{{ config('app.url') }}",
         "logo": "{{ !empty($settings['site_logo'] ?? null) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp') }}",
         "description": "Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.",

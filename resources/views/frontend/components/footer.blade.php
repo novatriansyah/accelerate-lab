@@ -49,22 +49,23 @@
             <div>
                 <h4 class="font-bold text-slate-900 dark:text-white mb-6 uppercase text-xs tracking-wider">{{ __('Legal Entity') }}
                 </h4>
-                @if (!empty($settings['legal_name'] ?? null))
-                    <div class="flex items-start gap-3">
-                        <svg class="w-5 h-5 fill-current text-slate-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-                        <div>
-                            <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">
-                                {{ $settings['legal_name'] }}</p>
-                            @if (!empty($settings['registered_city'] ?? null))
-                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">{{ __('Registered in') }} {{ $settings['registered_city'] }}.
-                                </p>
-                            @endif
-                            @if (!empty($settings['reg_number'] ?? null))
-                                <p class="text-xs text-slate-500 dark:text-slate-400">{{ $settings['reg_number'] }}</p>
-                            @endif
-                        </div>
+                <div class="flex items-start gap-3">
+                    <svg class="w-5 h-5 fill-current text-slate-400 flex-shrink-0 mt-0.5" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    <div>
+                        <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">
+                            {{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}</p>
+                        @if (!empty($settings['registered_city'] ?? null))
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">{{ __('Registered in') }} {{ $settings['registered_city'] }}.
+                            </p>
+                        @endif
+                        @if (!empty($settings['reg_number'] ?? null))
+                            <p class="text-xs text-slate-500 dark:text-slate-400">{{ $settings['reg_number'] }}</p>
+                        @endif
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
+                            {{ __('Accelerate Lab adalah merek dagang dan studio inovasi teknologi di bawah naungan PT Akselerasi Digital Mandiri.') }}
+                        </p>
                     </div>
-                @endif
+                </div>
             </div>
         </div>
         <div
