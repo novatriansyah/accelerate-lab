@@ -263,6 +263,14 @@
         </div>
 
         <div class="toolbar-right">
+            @php
+                $waPhone = preg_replace('/[^0-9]/', '', \App\Models\SiteSetting::get('contact_whatsapp') ?: \App\Models\SiteSetting::get('contact_phone', '6287721312985'));
+                $clientIdentifier = $demo->client_name ?: $demo->title;
+                $waMsg = 'Halo Accelerate Lab, saya tertarik mengaktifkan website demo ' . $clientIdentifier . ' ini dengan domain resmi .com.';
+            @endphp
+            <a href="https://wa.me/{{ $waPhone }}?text={{ urlencode($waMsg) }}" target="_blank" rel="noopener noreferrer" class="btn-action bg-emerald-600 hover:bg-emerald-500 text-white font-bold border-none" id="btn-claim-demo" aria-label="Klaim dan Aktifkan Website Ini via WhatsApp">
+                <span>Klaim Website Ini</span> ↗
+            </a>
             <button class="btn-action" onclick="reloadFrame()" aria-label="Reload Preview">
                 🔄 <span>Reload</span>
             </button>
