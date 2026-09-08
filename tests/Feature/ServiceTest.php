@@ -58,4 +58,21 @@ class ServiceTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    #[Test]
+    public function services_page_renders_whatsapp_cta_with_configured_phone()
+    {
+        \App\Models\SiteSetting::create([
+            'key' => 'contact_whatsapp',
+            'value' => '628999888777',
+            'group' => 'contact',
+            'is_display' => true,
+        ]);
+
+        $response = $this->get('/services');
+
+        $response->assertStatus(200);
+        $expectedUrl = 'https://wa.me/628999888777?text=' . urlencode('Halo Accelerate Lab, saya tertarik dengan paket Website Bisnis Express.');
+        $response->assertSee($expectedUrl, false);
+    }
 }

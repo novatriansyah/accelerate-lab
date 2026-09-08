@@ -264,7 +264,7 @@
 
         <div class="toolbar-right">
             @php
-                $waPhone = preg_replace('/[^0-9]/', '', \App\Models\SiteSetting::get('contact_whatsapp') ?: \App\Models\SiteSetting::get('contact_phone', '6287721312985'));
+                $waPhone = preg_replace('/[^0-9]/', '', ($settings['contact_whatsapp'] ?? null) ?: (($settings['contact_phone'] ?? null) ?: \App\Models\SiteSetting::get('contact_phone', '6287721312985')));
                 $clientIdentifier = $demo->client_name ?: $demo->title;
                 $waMsg = 'Halo Accelerate Lab, saya tertarik mengaktifkan website demo ' . $clientIdentifier . ' ini dengan domain resmi .com.';
             @endphp

@@ -322,6 +322,8 @@
                 </div>
             </div>
         </div>
+    </section>
+
     {{-- Service Tiers: Starter vs Enterprise --}}
     <section class="py-20 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -346,7 +348,7 @@
                     <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         {{ __('Cocok untuk UMKM dan bisnis jasa lokal yang butuh landing page modern, terhubung WhatsApp, dan cepat tayang dengan anggaran terjangkau.') }}
                     </p>
-                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', \App\Models\SiteSetting::get('contact_whatsapp') ?: \App\Models\SiteSetting::get('contact_phone', '6287721312985')) }}?text={{ urlencode('Halo Accelerate Lab, saya tertarik dengan paket Website Bisnis Express.') }}" target="_blank" rel="noopener noreferrer"
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', ($settings['contact_whatsapp'] ?? null) ?: (($settings['contact_phone'] ?? null) ?: \App\Models\SiteSetting::get('contact_phone', '6287721312985'))) }}?text={{ urlencode('Halo Accelerate Lab, saya tertarik dengan paket Website Bisnis Express.') }}" target="_blank" rel="noopener noreferrer"
                         class="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline">
                         {{ __('Pesan via WhatsApp') }} &rarr;
                     </a>
