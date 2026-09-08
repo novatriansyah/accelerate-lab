@@ -322,6 +322,52 @@
                 </div>
             </div>
         </div>
+    {{-- Service Tiers: Starter vs Enterprise --}}
+    <section class="py-20 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-gray-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold uppercase tracking-wider text-xs">{{ __('Paket Layanan Fleksibel') }}</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-dark dark:text-white mt-2">
+                    {{ __('Pilihan Tepat untuk Setiap Skala Usaha') }}
+                </h2>
+                <p class="mt-3 text-base text-gray-600 dark:text-gray-400">
+                    {{ __('Kami melayani kebutuhan dari peluncuran landing page instan hingga rekayasa arsitektur sistem operasional bisnis.') }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl bg-surface-light dark:bg-surface-dark border border-emerald-500/30 shadow-md">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                        {{ __('Peluncuran Cepat 24-48 Jam') }}
+                    </span>
+                    <h3 class="text-2xl font-bold text-slate-dark dark:text-white mt-4 mb-2">
+                        {{ __('Website Bisnis Express') }}
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        {{ __('Cocok untuk UMKM dan bisnis jasa lokal yang butuh landing page modern, terhubung WhatsApp, dan cepat tayang dengan anggaran terjangkau.') }}
+                    </p>
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', \App\Models\SiteSetting::get('contact_whatsapp') ?: \App\Models\SiteSetting::get('contact_phone', '6287721312985')) }}?text={{ urlencode('Halo Accelerate Lab, saya tertarik dengan paket Website Bisnis Express.') }}" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline">
+                        {{ __('Pesan via WhatsApp') }} &rarr;
+                    </a>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-surface-light dark:bg-surface-dark border border-primary/40 shadow-md">
+                    <span class="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                        {{ __('Arsitektur Mandiri 2-6 Minggu') }}
+                    </span>
+                    <h3 class="text-2xl font-bold text-slate-dark dark:text-white mt-4 mb-2">
+                        {{ __('Sistem Operasional Kustom') }}
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                        {{ __('Portal manajemen dan sistem operasional bisnis terpadu untuk distributor, manufaktur, dan perusahaan berkembang dengan alur kerja spesifik.') }}
+                    </p>
+                    <a href="/contact" class="inline-flex items-center text-primary font-bold text-sm hover:underline">
+                        {{ __('Hitung Estimasi Proyek') }} &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="py-20 bg-slate-50 dark:bg-surface-dark border-t border-border-light dark:border-border-dark">

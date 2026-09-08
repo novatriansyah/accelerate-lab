@@ -418,6 +418,131 @@
         </div>
     </section>
 
+    {{-- Offer Ladder Section --}}
+    <section class="py-24 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800" aria-labelledby="offer-ladder-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                    <x-app-icon name="layers" class="w-3.5 h-3.5" />
+                    {{ __('Pilihan Layanan') }}
+                </span>
+                <h2 id="offer-ladder-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    {{ __('Pilihan Solusi Sesuai Kebutuhan Bisnis Anda') }}
+                </h2>
+                <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+                    {{ __('Mulai dari kehadiran digital kilat untuk menjaring pelanggan lokal, hingga portal sistem mandiri yang mengotomasi seluruh alur operasional usaha.') }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                <!-- Tier 1: Website Bisnis Express -->
+                <div class="relative flex flex-col justify-between p-8 sm:p-10 rounded-2xl bg-surface-light dark:bg-surface-dark border border-emerald-500/30 shadow-lg hover:shadow-xl transition-all">
+                    <div class="absolute top-6 right-6">
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            {{ __('24-48 Jam Siap Tayang') }}
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-6">
+                            <x-app-icon name="bolt" class="w-6 h-6" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                            {{ __('Website Bisnis Express') }}
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            {{ __('Pondasi profil digital instan untuk katering, rental kendaraan, jasa profesional, dan toko lokal agar langsung dipercaya calon pelanggan.') }}
+                        </p>
+                        <div class="mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">{{ __('Investasi Mulai') }}</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">Rp 1.500.000</span>
+                                <span class="text-xs text-slate-500 font-medium">{{ __('all-in tahun pertama') }}</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300 mb-8">
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
+                                <span>{{ __('Desain responsif mobile super cepat dan elegan') }}</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
+                                <span>{{ __('Integrasi tombol pemesanan WhatsApp langsung') }}</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
+                                <span>{{ __('Gratis setup domain .com dan cloud hosting tahun pertama') }}</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
+                                <span>{{ __('Optimasi keterlihatan lokal di Google Maps dan Search') }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    @php
+                        $expressWaMsg = 'Halo Accelerate Lab, saya ingin memesan paket Website Bisnis Express Rp 1.500.000 untuk bisnis saya.';
+                    @endphp
+                    <a href="https://wa.me/{{ $heroWaPhone }}?text={{ urlencode($expressWaMsg) }}" target="_blank" rel="noopener noreferrer"
+                        class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-center flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg">
+                        <x-app-icon name="chat" class="w-4 h-4 fill-current" />
+                        <span>{{ __('Pesan Website Express via WhatsApp') }}</span>
+                    </a>
+                </div>
+
+                <!-- Tier 2: Portal Operasional dan Sistem Kustom -->
+                <div class="relative flex flex-col justify-between p-8 sm:p-10 rounded-2xl bg-surface-light dark:bg-surface-dark border border-primary/40 shadow-lg hover:shadow-xl transition-all">
+                    <div class="absolute top-6 right-6">
+                        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold bg-primary/10 text-primary border border-primary/20">
+                            <span class="w-2 h-2 rounded-full bg-primary"></span>
+                            {{ __('Pengerjaan: 2-6 Minggu') }}
+                        </span>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
+                            <x-app-icon name="settings_suggest" class="w-6 h-6" />
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                            {{ __('Portal Operasional dan Sistem Kustom') }}
+                        </h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            {{ __('Arsitektur sistem perangkat lunak mandiri untuk distributor, pabrik, dan logistik yang ingin menghentikan kekacauan pencatatan manual.') }}
+                        </p>
+                        <div class="mb-6 pb-6 border-b border-slate-200 dark:border-slate-800">
+                            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">{{ __('Investasi Proyek') }}</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">{{ __('Investasi Terukur') }}</span>
+                                <span class="text-xs text-slate-500 font-medium">{{ __('sesuai ruang lingkup') }}</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-3 text-sm text-slate-700 dark:text-slate-300 mb-8">
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-primary shrink-0" />
+                                <span>{{ __('Sinkronisasi data multi-gudang dan banyak cabang secara terpusat') }}</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-primary shrink-0" />
+                                <span>{{ __('Automasi invoicing, pencatatan transaksi, dan notifikasi stok') }}</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-primary shrink-0" />
+                                <span>{{ __('100% Hak cipta source code dan database tanpa biaya sewa lisensi') }}</span>
+                            </li>
+                            <li class="flex items-center gap-2.5">
+                                <x-app-icon name="check_circle" class="w-4 h-4 text-primary shrink-0" />
+                                <span>{{ __('Konsultasi dan perancangan langsung dengan Principal Architect') }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="/contact"
+                        class="w-full py-4 px-6 rounded-xl bg-primary hover:bg-primary-dark text-white font-bold text-center flex items-center justify-center gap-2 transition-all shadow-md hover:shadow-lg">
+                        <x-app-icon name="calculate" class="w-4 h-4 text-white" />
+                        <span>{{ __('Konsultasi Kebutuhan dan Hitung Estimasi') }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- Enterprise Guarantees --}}
     <section class="py-20 bg-background-light dark:bg-background-dark relative overflow-hidden" aria-labelledby="guarantees-heading">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
