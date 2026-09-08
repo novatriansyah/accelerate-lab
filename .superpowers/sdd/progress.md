@@ -1,13 +1,10 @@
-# SDD Progress Ledger - Commercial Repositioning and UI/UX Overhaul
+# SDD Progress Ledger
+Plan: docs/superpowers/plans/2026-09-08-commercial-alignment-and-conversion-engine.md
+Branch: development
+Started: 2026-09-08
 
-Plan: `docs/superpowers/plans/2026-09-07-commercial-and-uiux-overhaul.md`
-Status: COMPLETE
-
-- [x] Task 1: Database Seeders and Core Service Architecture (commit 4621a45)
-- [x] Task 2: Application Locale, Translation Dictionaries, and Header Navigation (commit 5065b62)
-- [x] Task 3: Homepage Hero and Real-Time Business Dashboard Graphic (commit 51660c6)
-- [x] Task 4: Homepage Bento Grid, "Tantangan Manual vs. Sistem Kustom", and Clean Process Flow (commit 1f925ca)
-- [x] Task 5: Case Studies Page and SME Operational Blueprints (commit 0599c92)
-- [x] Task 6: About Page Overhaul and Principal Architect Positioning (commit 01dd25b)
-- [x] Task 7: Interactive Project Estimator Wizard Refinement (commit 42ec521)
-- [x] Task 8: End-to-End Test Suite, Zero Em-Dash Verification, and Asset Compilation
+Task 1: complete (commit 8ea0f14, DemoShowcaseCtaTest passed, review clean)
+Task 2: complete (commit 1f97a50, CommercialRepositioningTest passed, review clean)
+Task 3: complete (commit d5a9b3b, OfferLadderTest passed, review clean)
+Task 4: complete (commit fb47e72, FaqSectionTest passed, review clean)
+Task 5: complete (commit 45806f2, full suite passed, asset build clean, em-dash audit 0)
