@@ -9,7 +9,7 @@
 @endphp
 
 {{-- ========================================================================
-     SERVICES HERO (70% Redox Header)
+     SERVICES HERO (Accelerate Studio Header)
      ======================================================================== --}}
 <section class="relative pt-6 pb-16 md:pt-12 md:pb-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@
 </section>
 
 {{-- ========================================================================
-     INTERACTIVE SERVICES MATRIX (30% NextSaaS Tab Filter + 70% Redox List)
+     INTERACTIVE SERVICES MATRIX (Accelerate Services Matrix)
      ======================================================================== --}}
 <section class="py-12 border-t border-slate-200/80 dark:border-white/5 relative"
          x-data="{ activeFilter: 'all' }">
@@ -129,7 +129,7 @@
 </section>
 
 {{-- ========================================================================
-     PROCESS STEPPER (70% Redox Numbered Methodology)
+     PROCESS STEPPER (Accelerate Architecture Methodology)
      ======================================================================== --}}
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 bg-slate-100/40 dark:bg-slate-950/40 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

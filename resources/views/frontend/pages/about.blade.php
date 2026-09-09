@@ -200,7 +200,7 @@
         </section>
     @endif
 
-    {{-- 70% Redox Full-Width CTA Banner --}}
+    {{-- Accelerate Studio Full-Width CTA Banner --}}
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="rounded-3xl p-8 sm:p-16 bg-gradient-to-r from-slate-900 via-[#0A1A2F] to-[#090D16] text-white border border-white/10 shadow-2xl relative overflow-hidden text-center">
             <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#00BFA5]/20 via-transparent to-transparent pointer-events-none"></div>

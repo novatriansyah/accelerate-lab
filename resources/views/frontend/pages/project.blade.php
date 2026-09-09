@@ -52,7 +52,7 @@
 @endphp
 
 {{-- ========================================================================
-     PROJECT CASE STUDY HERO (70% Redox Header)
+     PROJECT CASE STUDY HERO (Accelerate Studio Header)
      ======================================================================== --}}
 <section class="relative pt-6 pb-16 md:pt-12 md:pb-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,7 +104,7 @@
 </section>
 
 {{-- ========================================================================
-     CHALLENGE VS SOLUTION & STATS (30% NextSaaS Comparison Cards)
+     CHALLENGE VS SOLUTION & STATS (Accelerate Impact Cards)
      ======================================================================== --}}
 <section class="py-16 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

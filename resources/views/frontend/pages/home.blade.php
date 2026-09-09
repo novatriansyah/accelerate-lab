@@ -9,7 +9,7 @@
 @endphp
 
 {{-- ========================================================================
-     HERO SECTION (70% Redox Creative Agency + 30% NextSaaS Metric Bar)
+     HERO SECTION (Accelerate Studio Hero & Kinetic Metric Bar)
      ======================================================================== --}}
 <section class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,7 +105,7 @@
                 </div>
             </div>
 
-            {{-- Floating Metrics Bar (30% NextSaaS Blueprint) --}}
+            {{-- Accelerate Floating Metrics Bar --}}
             <div class="w-full max-w-4xl mt-10 p-4 sm:p-6 rounded-2xl bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
                 @forelse($heroStats as $stat)
                     <div class="flex flex-col items-center">
@@ -136,7 +136,7 @@
 
 
 {{-- ========================================================================
-     CAPABILITIES BENTO GRID (30% NextSaaS Asymmetric Bento + 70% Redox Index)
+     CAPABILITIES BENTO GRID (Accelerate Dynamic Bento Matrix)
      ======================================================================== --}}
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -223,7 +223,7 @@
 
 
 {{-- ========================================================================
-     INTERACTIVE ARCHITECTURE SWITCHER (30% NextSaaS Blueprint Tabber)
+     INTERACTIVE ARCHITECTURE SWITCHER (Accelerate Blueprint Matrix)
      ======================================================================== --}}
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 bg-slate-100/50 dark:bg-slate-950/40 relative"
          x-data="{ activeTab: 'web' }">
@@ -351,7 +351,7 @@ StreamBuilder<DeviceState>(
 
 
 {{-- ========================================================================
-     SELECTED WORK / CASE STUDIES (70% Redox Portfolio Grid)
+     SELECTED WORK / CASE STUDIES (Accelerate Portfolio Matrix)
      ======================================================================== --}}
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -427,7 +427,7 @@ StreamBuilder<DeviceState>(
 
 
 {{-- ========================================================================
-     CLIENT TESTIMONIALS (70% Redox Quote Cards)
+     CLIENT TESTIMONIALS (Accelerate Client Feedback Cards)
      ======================================================================== --}}
 @if($testimonials->isNotEmpty())
     <section class="py-20 border-t border-slate-200/80 dark:border-white/5 bg-slate-50/50 dark:bg-slate-950/20 relative">

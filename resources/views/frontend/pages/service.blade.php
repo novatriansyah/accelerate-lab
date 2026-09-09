@@ -53,7 +53,7 @@
 @endphp
 
 {{-- ========================================================================
-     SERVICE HERO (70% Redox Header)
+     SERVICE HERO (Accelerate Studio Header)
      ======================================================================== --}}
 <section class="relative pt-6 pb-16 md:pt-12 md:pb-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,7 +98,7 @@
 </section>
 
 {{-- ========================================================================
-     SERVICE CONTENT & BLUEPRINT (30% NextSaaS Container)
+     SERVICE CONTENT & BLUEPRINT (Accelerate Service Matrix)
      ======================================================================== --}}
 <section class="py-16 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

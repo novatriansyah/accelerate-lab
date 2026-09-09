@@ -9,7 +9,7 @@
 @endphp
 
 {{-- ========================================================================
-     PORTFOLIO HERO (70% Redox Header)
+     PORTFOLIO HERO (Accelerate Studio Header)
      ======================================================================== --}}
 <section class="relative pt-6 pb-16 md:pt-12 md:pb-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@
 </section>
 
 {{-- ========================================================================
-     PORTFOLIO GRID & FILTER BAR (30% NextSaaS Filter + 70% Redox Grid)
+     PORTFOLIO GRID & FILTER BAR (Accelerate Matrix Grid & Filter)
      ======================================================================== --}}
 <section class="py-12 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

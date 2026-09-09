@@ -4,7 +4,7 @@
 @endphp
 
 <footer class="relative mt-24 border-t border-slate-200/80 dark:border-white/10 bg-white/60 dark:bg-[#070A11] transition-colors duration-300">
-    {{-- Top Action Banner (70% Redox Big Headline + Kinetic CTA) --}}
+    {{-- Accelerate Studio Top Action Banner + Kinetic CTA --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14">
         <div class="bento-card relative overflow-hidden bg-slate-900 text-white p-8 sm:p-12 lg:p-16 border border-slate-800 shadow-2xl">
             <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#00BFA5]/20 blur-[100px] rounded-full pointer-events-none" aria-hidden="true"></div>

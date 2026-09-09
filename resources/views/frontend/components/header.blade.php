@@ -3,7 +3,7 @@
 @endphp
 
 <header role="banner" class="relative z-50">
-    {{-- Floating Island Capsule Navbar (70% Redox Floating Island) --}}
+    {{-- Accelerate Lab Floating Island Capsule Navbar --}}
     <div id="floating-island-navbar"
          x-data="{ isOpen: false }"
          class="fixed top-5 left-1/2 -translate-x-1/2 z-50 mx-auto flex w-[92%] max-w-[1140px] items-center justify-between rounded-full bg-white/85 dark:bg-[#090D16]/85 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 px-4 sm:px-6 py-2.5 shadow-xl shadow-slate-900/5 dark:shadow-2xl transition-all duration-300">
