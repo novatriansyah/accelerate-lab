@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Accelerate Lab Design System
+   70% Redox Creative Agency + 30% NextSaaS Platform
+   Primary Brand Accent: #00BFA5 (Electric Teal)
+   ========================================================================== */
+
+:root {
+    --primary: #00BFA5;
+    --primary-hover: #00D5B5;
+    --primary-active: #009688;
+    --primary-glow: rgba(0, 191, 165, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   Kinetic Button Engine (.rr-btn)
+   Double-text vertical slide micro-animation
+   -------------------------------------------------------------------------- */
+.rr-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 9999px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rr-btn .btn-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 1.2em;
+}
+
+.rr-btn .text-1,
+.rr-btn .text-2 {
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.rr-btn .text-2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.rr-btn:hover .text-1 {
+    transform: translateY(-100%);
+}
+
+.rr-btn:hover .text-2 {
+    transform: translateY(-100%);
+}
+
+/* Button Variants */
+.rr-btn-primary {
+    background-color: #00BFA5;
+    color: #090D16;
+    box-shadow: 0 4px 20px rgba(0, 191, 165, 0.25);
+}
+.rr-btn-primary:hover {
+    background-color: #00D5B5;
+    box-shadow: 0 6px 28px rgba(0, 191, 165, 0.4);
+}
+
+.rr-btn-border {
+    background-color: transparent;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    color: #0F172A;
+}
+:is(.dark) .rr-btn-border {
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+}
+.rr-btn-border:hover {
+    border-color: #00BFA5;
+    color: #00BFA5;
+}
+
+/* --------------------------------------------------------------------------
+   Rotating Brand Badge Emblem
+   -------------------------------------------------------------------------- */
+@keyframes spin-linear {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.badge-spin {
+    animation: spin-linear 20s linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Bento Container & NextSaaS Blueprint Cards
+   -------------------------------------------------------------------------- */
+.bento-card {
+    border-radius: 1.5rem; /* rounded-3xl */
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Subtle dot grid pattern */
+.bg-dot-grid {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+:is(.dark) .bg-dot-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
