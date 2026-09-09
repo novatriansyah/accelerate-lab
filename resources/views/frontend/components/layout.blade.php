@@ -66,6 +66,11 @@
 </head>
 <body class="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#090D16] text-slate-900 dark:text-white font-sans antialiased selection:bg-[#00BFA5]/20 selection:text-[#00BFA5] transition-colors duration-300">
 
+    {{-- Magnetic Cursor DOM --}}
+    <div class="cb-cursor" aria-hidden="true">
+        <div class="cb-cursor-text"></div>
+    </div>
+
     {{-- Ambient Canvas Radial Glow --}}
     <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[550px] pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
         <div class="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-gradient-to-b from-[#00BFA5]/10 via-[#00BFA5]/5 to-transparent blur-[120px] rounded-full"></div>
