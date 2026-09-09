@@ -1,43 +1,49 @@
 @extends('frontend.components.layout', [
-    'title' => '404 - Page Not Found | Accelerate Lab',
-    'description' => 'The page you are looking for does not exist or has been moved. Explore Accelerate Lab services, case studies, or return home.'
+    'title' => '404 - Halaman Tidak Ditemukan | Accelerate Lab',
+    'description' => 'Halaman yang Anda cari tidak ditemukan atau telah dipindahkan. Jelajahi layanan Accelerate Lab, studi kasus, atau kembali ke beranda.'
 ])
 
 @section('content')
-    <div class="relative min-h-[70vh] flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-950">
-        <!-- Background Glow Effects -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/3 left-1/3 w-64 h-64 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+    <div id="redox-error-container" class="relative min-h-[80vh] flex items-center justify-center py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-background-light dark:bg-background-dark">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none -z-10" aria-hidden="true"></div>
+        <div class="absolute top-1/3 left-1/3 w-72 h-72 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none -z-10" aria-hidden="true"></div>
 
-        <div class="relative z-10 max-w-2xl w-full text-center">
-            <!-- 404 Badge / Code -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-500/10 border border-primary-500/20 text-primary-400 text-sm font-semibold tracking-wide uppercase mb-6">
-                <span class="w-2 h-2 rounded-full bg-primary-400 animate-ping"></span>
-                {{ __('Error Code 404') }}
+        <div class="relative z-10 max-w-3xl w-full text-center space-y-8" data-reveal>
+            <!-- Error Status Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold tracking-wider uppercase">
+                <span class="w-2 h-2 rounded-full bg-primary animate-ping" aria-hidden="true"></span>
+                <span>{{ __('Error Code 404') }} : {{ __('Resource Not Found') }}</span>
             </div>
 
-            <h1 class="text-7xl sm:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 tracking-tight mb-4">
+            <!-- Massive Kinetic 404 Headline (Redox Inspired) -->
+            <h1 class="text-8xl sm:text-[11rem] lg:text-[13rem] font-black tracking-tighter text-slate-900 dark:text-white leading-none select-none">
                 404
             </h1>
 
-            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-                {{ __('Page Not Found') }}
-            </h2>
+            <div class="space-y-3 max-w-xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+                    {{ __('Halaman Tidak Ditemukan') }}
+                </h2>
 
-            <p class="text-slate-400 text-lg mb-8 max-w-lg mx-auto">
-                {{ __('Oops! The page you were looking for doesn\'t exist, has been moved, or is temporarily unavailable.') }}
-            </p>
+                <p class="text-slate-600 dark:text-slate-400 text-base sm:text-lg leading-relaxed">
+                    {{ __('Halaman yang Anda cari tidak tersedia, telah dipindahkan, atau alamat tautan yang dimasukkan salah.') }}
+                </p>
+            </div>
 
             <!-- Navigation Actions -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="{{ route('home') }}" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-gradient-to-r from-primary-600 to-cyan-600 text-white font-medium hover:from-primary-500 hover:to-cyan-500 transition-all duration-200 shadow-lg shadow-primary-500/20">
-                    {{ __('Back to Home') }}
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="{{ route('home') }}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary hover:bg-primary-dark text-slate-950 font-bold transition-all shadow-lg shadow-primary/20 hover:scale-[1.02] text-base">
+                    <x-app-icon name="home" class="w-5 h-5" />
+                    <span>{{ __('Kembali ke Beranda') }}</span>
                 </a>
-                <a href="{{ route('services') }}" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-medium hover:bg-slate-800 hover:text-white transition-all duration-200">
-                    {{ __('Explore Services') }}
+                <a href="{{ route('services') }}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white font-semibold hover:border-primary transition-all text-base">
+                    <x-app-icon name="explore" class="w-5 h-5 text-primary" />
+                    <span>{{ __('Eksplorasi Layanan') }}</span>
                 </a>
-                <a href="{{ route('contact') }}" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-medium hover:bg-slate-800 hover:text-white transition-all duration-200">
-                    {{ __('Contact Us') }}
+                <a href="{{ route('contact') }}" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-surface-light dark:bg-surface-dark border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-white font-semibold hover:border-primary transition-all text-base">
+                    <x-app-icon name="chat" class="w-5 h-5 text-primary" />
+                    <span>{{ __('Hubungi Tim Kami') }}</span>
                 </a>
             </div>
         </div>
