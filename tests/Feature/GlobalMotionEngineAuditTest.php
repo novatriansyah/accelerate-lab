@@ -37,4 +37,40 @@ class GlobalMotionEngineAuditTest extends TestCase
         $labResponse->assertStatus(301);
         $labResponse->assertRedirect('/blog');
     }
+
+    public function test_services_overview_and_blueprint_pages_contain_motion_hooks(): void
+    {
+        $services = [
+            'web-application-development' => 'Web Application Development',
+            'cloud-architecture' => 'Cloud Architecture & DevOps',
+            'mobile-app-development' => 'Mobile App Development',
+            'ui-ux-design' => 'UI/UX Product Design',
+        ];
+
+        foreach ($services as $slug => $title) {
+            \App\Models\Service::create([
+                'title' => $title,
+                'slug' => $slug,
+                'short_description' => 'Test description for ' . $title,
+                'content' => '<p>Detailed content</p>',
+                'has_custom_page' => true,
+                'category' => 'development',
+                'sort_order' => 1,
+            ]);
+        }
+
+        $overviewResponse = $this->get('/services');
+        $overviewResponse->assertStatus(200);
+        $overviewResponse->assertSee('fade-anim', false);
+        $overviewResponse->assertDontSee('—', false);
+        $overviewResponse->assertDontSee('–', false);
+
+        foreach (array_keys($services) as $slug) {
+            $blueprintResponse = $this->get('/services/' . $slug);
+            $blueprintResponse->assertStatus(200);
+            $blueprintResponse->assertSee('fade-anim', false);
+            $blueprintResponse->assertDontSee('—', false);
+            $blueprintResponse->assertDontSee('–', false);
+        }
+    }
 }

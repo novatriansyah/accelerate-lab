@@ -66,7 +66,7 @@
             <span class="text-[#00BFA5] uppercase">{{ $service->slug }}</span>
         </div>
 
-        <div class="max-w-4xl">
+        <div class="max-w-4xl fade-anim" data-direction="bottom">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-4">
                 <span>✦ {{ strtoupper($service->category ?? 'ENGINEERING') }}</span>
             </div>
@@ -102,7 +102,7 @@
      ======================================================================== --}}
 <section class="py-16 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 fade-anim" data-direction="bottom">
             {{-- Main Content Column --}}
             <div class="lg:col-span-2 flex flex-col gap-10">
                 @if(!empty($service->content))

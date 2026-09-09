@@ -66,7 +66,7 @@
             <span class="text-[#00BFA5]">CLOUD-ARCHITECTURE</span>
         </div>
 
-        <div class="max-w-4xl">
+        <div class="max-w-4xl fade-anim" data-direction="bottom">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-4">
                 <span>✦ INFRASTRUCTURE & DEVOPS</span>
             </div>
@@ -107,7 +107,7 @@
      ======================================================================== --}}
 <section class="py-16 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-anim" data-direction="bottom">
             {{-- Bento Card 1 --}}
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
                 <span class="text-xs font-mono text-[#00BFA5] uppercase">INFRASTRUKTUR TANGGUH</span>

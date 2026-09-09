@@ -13,7 +13,7 @@
      ======================================================================== --}}
 <section class="relative pt-6 pb-16 md:pt-12 md:pb-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
+        <div class="max-w-3xl fade-anim" data-direction="bottom">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-6">
                 <span>✦ CAPABILITIES & SPECIALIZATIONS</span>
             </div>
@@ -41,7 +41,7 @@
          x-data="{ activeFilter: 'all' }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Filter Bar --}}
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-12">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-12 fade-anim" data-direction="bottom">
             <div class="flex items-center gap-2">
                 <button @click="activeFilter = 'all'"
                         type="button"
@@ -70,7 +70,7 @@
             @foreach($services as $index => $service)
                 <div x-show="activeFilter === 'all' || activeFilter === '{{ $service->category }}'"
                      x-transition
-                     class="bento-card relative flex flex-col justify-between p-8 sm:p-10 bg-white/85 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-xl">
+                     class="bento-card relative flex flex-col justify-between p-8 sm:p-10 bg-white/85 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-xl fade-anim" data-direction="bottom">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="font-mono text-xs font-bold text-[#00BFA5]">
@@ -133,7 +133,7 @@
      ======================================================================== --}}
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 bg-slate-100/40 dark:bg-slate-950/40 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="text-center max-w-3xl mx-auto mb-16 fade-anim" data-direction="bottom">
             <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">
                 ENGINEERING METHODOLOGY
             </span>
@@ -142,7 +142,7 @@
             </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 fade-anim" data-direction="bottom">
             <div class="bento-card p-6 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10">
                 <span class="font-mono text-2xl font-bold text-[#00BFA5]">01</span>
                 <h3 class="font-instrumentsans text-lg font-bold text-slate-900 dark:text-white mt-2 mb-2">Technical Discovery</h3>
