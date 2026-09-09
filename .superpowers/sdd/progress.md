@@ -1,21 +1,20 @@
 # Subagent-Driven Development Progress Ledger
 
-## Sprint: CMS Integration & Motion Engine Activation
-- Plan: `docs/superpowers/plans/2026-09-10-cms-integration-and-motion-activation.md`
-- Base Commit: `5b0797d`
+## Sprint 4: Global Kinetic Motion Engine Activation Across All Pages
+- Plan: `docs/superpowers/plans/2026-09-10-global-motion-engine-activation.md`
+- Base Commit: `9a5cabd`
 - Current Status: Complete
 
 ### Tasks:
-- [x] Task 1: Fix Project Image Path & Wire Project Capabilities on Landing Page (complete, commit d954fa3)
-- [x] Task 2: Connect Contact Page to Existing CMS Data (ServiceResource & SiteSettingResource) (complete, commit 64ec8d2)
-- [x] Task 3: Connect Shell & Footer to SiteSettingResource (complete, commit 5de0a4d)
-- [x] Task 4: Showcase Latest Insights (ArticleResource) on Landing Page (complete, commit 00f6484)
-- [x] Task 5: Activate Kinetic Motion Engine (.fade-anim & .t-counter) on Landing & Contact Pages (complete, commit 01416b5)
-- [x] Task 6: Master Quality Gate, Production Build & Git Synchronization (complete)
+- [x] Task 1: About Us, Careers & The Lab Kinetic Motion Activation (complete, commit d782005)
+- [x] Task 2: Services Overview & 4 Blueprint Sub-Pages Kinetic Motion Activation (complete, commit 609b59a)
+- [x] Task 3: Case Studies, Project Detail, Blog, Article & Global Footer Kinetic Motion Activation (complete, commit b19e4a1)
+- [x] Task 4: Master Quality Gate, Production Build & Git Synchronization (complete)
 
 ---
 
 ### Previous Sprints (Archived):
+- Sprint 3 (CMS Integration & Motion Engine Activation): complete (commits d954fa3..9a5cabd)
 - Sprint 2 (Customer-Centric Copy, CMS Pruning, Motion Engine): complete (commits b7b24c6..5b0797d)
 - Task 0: complete (commit a321237, purge legacy assets and views)
 - Task 1: complete (commit 9b541d9, kinetic engine foundation and design tokens)
