@@ -1,11 +1,12 @@
 @php
-    $whatsappNumber = config('services.whatsapp.number', '6285156543820');
+    $whatsappNumber = \App\Models\SiteSetting::where('key', 'contact_whatsapp')->first()?->value ?? config('services.whatsapp.number', '6285156543820');
     $defaultMessage = urlencode("Halo Accelerate Lab, saya tertarik untuk mendiskusikan kebutuhan pengembangan teknologi untuk bisnis kami.");
 @endphp
 
 <div class="fixed bottom-6 right-6 z-40 group"
      x-data="{ showTooltip: false }">
     <a href="https://wa.me/{{ $whatsappNumber }}?text={{ $defaultMessage }}"
+       id="whatsapp-floating-trigger"
        target="_blank"
        rel="noopener noreferrer"
        @mouseenter="showTooltip = true"

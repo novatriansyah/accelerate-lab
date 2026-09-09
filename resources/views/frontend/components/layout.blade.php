@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +7,8 @@
 
     <title>{{ $title ?? 'Accelerate Lab - Digital Innovation Agency' }}</title>
     <meta name="description" content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency delivering bespoke software, high-performance cloud architectures, and user-centric design.' }}">
+    <meta property="og:locale" content="{{ app()->getLocale() === 'id' ? 'id_ID' : 'en_US' }}">
+    <link rel="canonical" href="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
 
     {{-- Anti-Flash Theme Pre-Hydration Engine --}}
     <script>
@@ -22,14 +24,44 @@
         })();
     </script>
 
-    {{-- Google Fonts --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    @if (!empty($settings['google_site_verification'] ?? null))
+    <meta name="google-site-verification" content="{{ $settings['google_site_verification'] }}">
+    @endif
 
     {{-- Vite Assets --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <!-- JSON-LD Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+        "{{ '@' }}context": "https://schema.org",
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "legalName": "{{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}",
+        "alternateName": [
+            "Accelerate Lab",
+            "AccelerateLab",
+            "{{ $settings['legal_name'] ?? 'PT Akselerasi Digital Mandiri' }}"
+        ],
+        "url": "{{ config('app.url') }}",
+        "logo": "{{ !empty($settings['site_logo'] ?? null) ? ((filter_var($settings['site_logo'], FILTER_VALIDATE_URL)) ? $settings['site_logo'] : asset($settings['site_logo'])) : asset('images/logo.webp') }}",
+        "description": "Accelerate Lab is a premier digital innovation agency specializing in custom software development, cloud architecture, and UI/UX design.",
+        "founder": {
+            "{{ '@' }}type": "Person",
+            "name": "Nova Triansyah Azis"
+        },
+        "contactPoint": {
+            "{{ '@' }}type": "ContactPoint",
+            "contactType": "sales",
+            "url": "{{ url('/contact') }}"
+        },
+        "sameAs": [
+            @if (!empty($settings['linkedin_url'] ?? null))
+                "{{ $settings['linkedin_url'] }}"
+            @endif
+        ]
+    }
+    </script>
     @stack('schema')
 </head>
 <body class="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#090D16] text-slate-900 dark:text-white font-sans antialiased selection:bg-[#00BFA5]/20 selection:text-[#00BFA5] transition-colors duration-300">

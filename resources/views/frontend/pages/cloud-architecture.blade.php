@@ -3,6 +3,50 @@
     'description' => 'Enterprise cloud architecture, container orchestration, automated CI/CD pipelines, and high-availability infrastructure engineered by Accelerate Lab.'
 ])
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "Service",
+    "name": "Cloud Architecture",
+    "serviceType": "Cloud Infrastructure & DevOps",
+    "description": "Enterprise cloud architecture, container orchestration, automated CI/CD pipelines, and high-availability infrastructure engineered by Accelerate Lab.",
+    "provider": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "url": "{{ config('app.url') }}"
+    },
+    "areaServed": "Worldwide"
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "{{ url('/services') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": "Cloud Architecture",
+            "item": "{{ url('/services/cloud-architecture') }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
 @php
     $currentLocale = app()->getLocale();

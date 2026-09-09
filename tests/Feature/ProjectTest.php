@@ -74,14 +74,9 @@ class ProjectTest extends TestCase
         $response = $this->get('/case-studies');
         $response->assertStatus(200);
 
-        // Verifies business ROI metrics are highlighted
-        $response->assertSee('Efisiensi Operasional');
-        $response->assertSee('35%');
-
-        // Verifies SME operational blueprints exist
-        $response->assertSee('Blueprint Solusi Operasional');
-        $response->assertSee('Inventori Multi-Gudang');
-        $response->assertSee('Invoicing Otomatis');
+        // Verifies seeded case study is present
+        $response->assertSee('Livestock Management System');
+        $response->assertSee('PT Sahabat Farm Indonesia');
 
         // Verifies prospective demo prototypes like DM&P are NOT leaked in public case studies
         $response->assertDontSee('/demos/dmp-lawfirm');

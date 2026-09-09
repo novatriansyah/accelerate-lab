@@ -3,6 +3,62 @@
     'description' => \Illuminate\Support\Str::limit(strip_tags($article->content ?? ''), 160)
 ])
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BlogPosting",
+    "headline": {!! json_encode($article->title) !!},
+    "description": {!! json_encode(\Illuminate\Support\Str::limit(strip_tags($article->content ?? ''), 160)) !!},
+    "image": {!! json_encode($article->image_path ? url(\Illuminate\Support\Facades\Storage::url($article->image_path)) : asset('images/logo.webp')) !!},
+    "datePublished": "{{ $article->published_at?->toIso8601String() }}",
+    "dateModified": "{{ $article->updated_at?->toIso8601String() }}",
+    "author": {
+        "{{ '@' }}type": "Person",
+        "name": {!! json_encode($article->author?->name ?? 'Nova Triansyah Azis') !!}
+    },
+    "publisher": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "logo": {
+            "{{ '@' }}type": "ImageObject",
+            "url": "{{ asset('images/logo.webp') }}"
+        }
+    },
+    "mainEntityOfPage": {
+        "{{ '@' }}type": "WebPage",
+        "{{ '@' }}id": "{{ url('/blog/' . $article->slug) }}"
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "{{ url('/blog') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($article->title) !!},
+            "item": "{{ url('/blog/' . $article->slug) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
 <main class="relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
     {{-- Ambient Lighting --}}
@@ -15,12 +71,10 @@
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
                 <span>Back to All Articles</span>
             </a>
-            @if($article->category)
-                <span class="text-slate-400 dark:text-slate-600">/</span>
-                <span class="px-2.5 py-0.5 rounded-md bg-[#00BFA5]/10 text-[#00BFA5] text-xs font-mono font-semibold">
-                    {{ $article->category->name }}
-                </span>
-            @endif
+            <span class="text-slate-400 dark:text-slate-600">/</span>
+            <span class="px-2.5 py-0.5 rounded-md bg-[#00BFA5]/10 text-[#00BFA5] text-xs font-mono font-semibold">
+                {{ $article->category->name ?? 'Uncategorized' }}
+            </span>
         </div>
 
         {{-- Article Title --}}

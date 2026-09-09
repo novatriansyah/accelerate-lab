@@ -55,9 +55,10 @@
                     <p class="text-slate-300 leading-relaxed text-base mb-6">
                         Most digital agencies rush MVP releases with fragile duct-tape code that falls apart under enterprise load. We take the opposite stance: mathematically sound architecture, strict test coverage, and clean craftsmanship from day one.
                     </p>
-                    <div class="flex items-center gap-4 text-xs font-mono text-[#00BFA5]">
+                    <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-[#00BFA5]">
                         <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">Zero Tech Debt Policy</span>
                         <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">Strict TDD Enforced</span>
+                        <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">Entitas Hukum Resmi: PT Akselerasi Digital Mandiri</span>
                     </div>
                 </div>
 

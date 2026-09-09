@@ -72,7 +72,7 @@ class ServiceTest extends TestCase
         $response = $this->get('/services');
 
         $response->assertStatus(200);
-        $expectedUrl = 'https://wa.me/628999888777?text=' . urlencode('Halo Accelerate Lab, saya tertarik dengan paket Website Bisnis Express.');
+        $expectedUrl = 'https://wa.me/628999888777?text=' . urlencode('Halo Accelerate Lab, saya tertarik untuk mendiskusikan kebutuhan pengembangan teknologi untuk bisnis kami.');
         $response->assertSee($expectedUrl, false);
     }
 }

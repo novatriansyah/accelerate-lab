@@ -61,6 +61,7 @@
                 <div class="text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1 pt-1 font-mono">
                     <span>Legal Entity: <strong>PT Akselerasi Digital Mandiri</strong></span>
                     <span>Locations: South Jakarta & Tangerang, Indonesia</span>
+                    <span class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">Accelerate Lab adalah merek dagang dan studio inovasi teknologi di bawah naungan PT Akselerasi Digital Mandiri.</span>
                 </div>
             </div>
 

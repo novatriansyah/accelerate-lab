@@ -304,5 +304,93 @@ class MonolithicDesignEngineTest extends TestCase
         $notFoundResponse->assertSee('404');
         $notFoundResponse->assertSee('rr-btn');
     }
+
+    public function test_strict_zero_legacy_tokens_and_perfect_theme_awareness(): void
+    {
+        // Seed required models for all routes
+        $service = \App\Models\Service::create([
+            'title' => 'Cloud Architecture',
+            'slug' => 'cloud-architecture',
+            'category' => 'development',
+            'has_custom_page' => true,
+            'sort_order' => 1,
+        ]);
+
+        $project = \App\Models\Project::create([
+            'title' => 'Core Banking Engine',
+            'slug' => 'core-banking-engine',
+            'client' => 'BANK CENTRAL',
+            'description' => 'Real-time high throughput core banking system.',
+            'sort_order' => 1,
+        ]);
+
+        $category = \App\Models\Category::create([
+            'name' => 'Systems',
+            'slug' => 'systems',
+        ]);
+
+        $author = \App\Models\User::factory()->create();
+
+        $article = \App\Models\Article::create([
+            'title' => 'Monolithic Resurgence',
+            'slug' => 'monolithic-resurgence',
+            'content' => '<p>Deep dive.</p>',
+            'category_id' => $category->id,
+            'user_id' => $author->id,
+            'published_at' => now()->subDay(),
+        ]);
+
+        $routes = [
+            '/',
+            '/about',
+            '/services',
+            '/services/cloud-architecture',
+            '/case-studies',
+            '/case-studies/core-banking-engine',
+            '/careers',
+            '/contact',
+            '/privacy-policy',
+            '/terms-of-service',
+            '/blog',
+            '/blog/monolithic-resurgence',
+        ];
+
+        $legacyTokens = [
+            '#d0e7e4',
+            '#0b1615',
+            '#4e9790',
+            'text-slate-dark',
+            'border-border-dark',
+            'bg-bg-dark',
+            'accent-teal-legacy',
+        ];
+
+        foreach ($routes as $url) {
+            $response = $this->get($url);
+            $response->assertStatus(200);
+
+            $content = $response->getContent();
+
+            // Assert absolute zero legacy tokens across all pages
+            foreach ($legacyTokens as $token) {
+                $this->assertStringNotContainsString(
+                    $token,
+                    $content,
+                    "Legacy token [{$token}] found in rendered response for [{$url}]."
+                );
+            }
+
+            // Assert authentic branding
+            $response->assertSee('Accelerate', false);
+            $response->assertSee('/&gt;', false);
+            $response->assertSee('Lab', false);
+
+            // Assert theme-aware navbar & footer entity
+            $response->assertSee('id="floating-island-navbar"', false);
+            $response->assertSee('theme-toggle-btn');
+            $response->assertSee('PT Akselerasi Digital Mandiri');
+        }
+    }
 }
+
 

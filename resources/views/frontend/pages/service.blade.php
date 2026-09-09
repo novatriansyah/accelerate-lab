@@ -3,6 +3,50 @@
     'description' => $description ?? ($service->short_description ?? 'Enterprise digital capabilities by Accelerate Lab.')
 ])
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "Service",
+    "name": {!! json_encode($service->title) !!},
+    "serviceType": {!! json_encode($service->category ?? $service->title) !!},
+    "description": {!! json_encode($service->short_description ?? \Illuminate\Support\Str::limit(strip_tags($service->content ?? ''), 160)) !!},
+    "provider": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab",
+        "url": "{{ config('app.url') }}"
+    },
+    "areaServed": "Worldwide"
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "{{ url('/services') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($service->title) !!},
+            "item": "{{ url('/services/' . $service->slug) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
 @php
     $currentLocale = app()->getLocale();

@@ -35,7 +35,7 @@
 
                     <div class="space-y-6">
                         <div>
-                            <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">Operating Entity</span>
+                            <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">Operating Entity / Entitas Legal</span>
                             <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">PT Akselerasi Digital Mandiri</h2>
                             <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">Accelerate Lab Engineering Studio</p>
                         </div>

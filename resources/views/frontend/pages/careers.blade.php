@@ -3,6 +3,37 @@
     'description' => $description ?? 'Join Accelerate Lab and build cutting-edge digital products. Browse open positions in engineering, design, and strategy.'
 ])
 
+@push('schema')
+@if(isset($jobs) && $jobs->isNotEmpty())
+    @foreach($jobs as $job)
+    <script type="application/ld+json">
+    {
+        "{{ '@' }}context": "https://schema.org",
+        "{{ '@' }}type": "JobPosting",
+        "title": {!! json_encode($job->title) !!},
+        "description": {!! json_encode($job->description ?? 'Engineering role at Accelerate Lab.') !!},
+        "datePosted": "{{ $job->created_at?->toIso8601String() ?? now()->toIso8601String() }}",
+        "validThrough": "{{ now()->addMonths(3)->toIso8601String() }}",
+        "employmentType": "FULL_TIME",
+        "hiringOrganization": {
+            "{{ '@' }}type": "Organization",
+            "name": "Accelerate Lab",
+            "sameAs": "{{ config('app.url') }}"
+        },
+        "jobLocation": {
+            "{{ '@' }}type": "Place",
+            "address": {
+                "{{ '@' }}type": "PostalAddress",
+                "addressLocality": "Jakarta",
+                "addressCountry": "ID"
+            }
+        }
+    }
+    </script>
+    @endforeach
+@endif
+@endpush
+
 @section('content')
 <main class="relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
     {{-- Ambient Glow --}}

@@ -18,7 +18,7 @@
             {{-- Status Pill Badge --}}
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-6">
                 <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
-                <span>✦ ACCELERATE LAB — DIGITAL INNOVATION AGENCY</span>
+                <span>✦ ACCELERATE LAB // DIGITAL INNOVATION AGENCY</span>
             </div>
 
             {{-- Display Headline (Instrument Sans) --}}
@@ -113,20 +113,20 @@
                             <span>{{ $stat->value }}</span>
                             <span class="text-sm font-mono text-[#00BFA5]">{{ $stat->unit }}</span>
                         </div>
-                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $stat->label }}</span>
+                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ __($stat->label) }}</span>
                     </div>
                 @empty
                     <div class="flex flex-col items-center">
                         <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">99.9%</span>
-                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">Uptime Guarantee</span>
+                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Garansi Uptime' : 'Uptime Guarantee' }}</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">50+</span>
-                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">Enterprise Deployments</span>
+                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Implementasi Enterprise' : 'Enterprise Deployments' }}</span>
                     </div>
                     <div class="flex flex-col items-center">
                         <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">100%</span>
-                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">Client Code Ownership</span>
+                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Kepemilikan Kode Klien' : 'Client Code Ownership' }}</span>
                     </div>
                 @endforelse
             </div>
@@ -140,6 +140,21 @@
      ======================================================================== --}}
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        @if(isset($capabilityStats) && $capabilityStats->isNotEmpty())
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10 p-4 rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/80 dark:border-white/10">
+                @foreach($capabilityStats as $cStat)
+                    <div class="text-center">
+                        <div class="font-instrumentsans text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+                            {{ $cStat->value }}{{ $cStat->unit }}
+                        </div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                            {{ __($cStat->label) }}
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @endif
+
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
                 <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">

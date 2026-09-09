@@ -3,6 +3,49 @@
     'description' => $description ?? ($project->description ?? 'Case study by Accelerate Lab.')
 ])
 
+@push('schema')
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "CreativeWork",
+    "name": {!! json_encode($project->title) !!},
+    "headline": {!! json_encode($project->title) !!},
+    "description": {!! json_encode($project->description ?? \Illuminate\Support\Str::limit(strip_tags($project->challenge ?? ''), 160)) !!},
+    "creator": {
+        "{{ '@' }}type": "Organization",
+        "name": "Accelerate Lab"
+    },
+    "customer": {!! json_encode($project->client ?? 'Confidential Enterprise Client') !!}
+}
+</script>
+<script type="application/ld+json">
+{
+    "{{ '@' }}context": "https://schema.org",
+    "{{ '@' }}type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ url('/') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 2,
+            "name": "Case Studies",
+            "item": "{{ url('/case-studies') }}"
+        },
+        {
+            "{{ '@' }}type": "ListItem",
+            "position": 3,
+            "name": {!! json_encode($project->title) !!},
+            "item": "{{ url('/case-studies/' . $project->slug) }}"
+        }
+    ]
+}
+</script>
+@endpush
+
 @section('content')
 @php
     $currentLocale = app()->getLocale();
