@@ -40,7 +40,7 @@
     <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#00BFA5]/15 via-[#00BFA5]/5 to-transparent blur-3xl -z-10"></div>
 
     {{-- Hero Section --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-20 lg:mb-28">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-20 lg:mb-28 fade-anim" data-direction="bottom">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00BFA5]/10 border border-[#00BFA5]/25 text-[#00BFA5] text-xs font-mono font-semibold tracking-wider uppercase mb-8 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
             <span>Join Our Engineering Cohort</span>
@@ -56,7 +56,7 @@
     </section>
 
     {{-- Engineering Culture Bento Grid --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32 fade-anim" data-direction="bottom">
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">The Operating System</span>
             <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">Why Work With Us</h2>
@@ -99,7 +99,7 @@
     </section>
 
     {{-- Dynamic Open Positions Section --}}
-    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32 fade-anim" data-direction="bottom">
         <div class="text-center max-w-2xl mx-auto mb-16">
             <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">Available Roles</span>
             <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">Open Positions</h2>
@@ -166,7 +166,7 @@
     </section>
 
     {{-- Bottom CTA --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-anim" data-direction="bottom">
         <div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-slate-900 via-[#0A1A2F] to-[#090D16] text-white border border-white/10 shadow-2xl text-center">
             <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">Want to Collaborate as a Client?</h2>
             <p class="text-slate-300 max-w-2xl mx-auto text-base mb-8">If you have a digital initiative that requires our engineering squad, start a conversation with us.</p>

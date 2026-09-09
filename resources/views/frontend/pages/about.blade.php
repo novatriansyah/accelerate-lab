@@ -9,7 +9,7 @@
     <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#00BFA5]/15 via-[#00BFA5]/5 to-transparent blur-3xl -z-10"></div>
 
     {{-- Hero Section --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-24 lg:mb-32">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-24 lg:mb-32 fade-anim" data-direction="bottom">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00BFA5]/10 border border-[#00BFA5]/25 text-[#00BFA5] text-xs font-mono font-semibold tracking-wider uppercase mb-8 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
             <span>Who We Are & Why We Build</span>
@@ -24,12 +24,12 @@
         </p>
 
         {{-- Dynamic Stats Grid --}}
-        @if(isset($stats) && $stats->isNotEmpty())
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-12 p-4 rounded-3xl bg-slate-900/5 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-12 p-4 rounded-3xl bg-slate-900/5 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-xl fade-anim" data-direction="bottom">
+            @if(isset($stats) && $stats->isNotEmpty())
                 @foreach($stats as $stat)
                     <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
                         <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
-                            <span>{{ $stat->value }}</span>
+                            <span class="t-counter">{{ $stat->value }}</span>
                             @if($stat->unit)
                                 <span class="text-sm font-mono text-[#00BFA5]">{{ $stat->unit }}</span>
                             @endif
@@ -37,12 +37,41 @@
                         <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">{{ $stat->label }}</div>
                     </div>
                 @endforeach
-            </div>
-        @endif
+            @else
+                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
+                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
+                        <span class="t-counter">99.9</span>
+                        <span class="text-sm font-mono text-[#00BFA5]">%</span>
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Uptime Reliability</div>
+                </div>
+                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
+                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
+                        <span class="t-counter">50</span>
+                        <span class="text-sm font-mono text-[#00BFA5]">+</span>
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Enterprise Releases</div>
+                </div>
+                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
+                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
+                        <span class="t-counter">15</span>
+                        <span class="text-sm font-mono text-[#00BFA5]">m</span>
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Mean Response Time</div>
+                </div>
+                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
+                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
+                        <span class="t-counter">100</span>
+                        <span class="text-sm font-mono text-[#00BFA5]">%</span>
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Client Code Ownership</div>
+                </div>
+            @endif
+        </div>
     </section>
 
     {{-- The Manifesto Section --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32 fade-anim" data-direction="bottom">
         <div class="rounded-3xl p-8 sm:p-12 lg:p-16 bg-gradient-to-br from-slate-900 via-[#0B132B] to-[#0A1020] text-white border border-white/10 shadow-2xl relative overflow-hidden">
             <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#00BFA5]/15 blur-3xl pointer-events-none"></div>
 
@@ -93,7 +122,7 @@
 
     {{-- Dynamic Core Values Section --}}
     @if(isset($coreValues) && $coreValues->isNotEmpty())
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32 fade-anim" data-direction="bottom">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">The Pillars</span>
                 <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">Core Values</h2>
@@ -124,7 +153,7 @@
 
     {{-- Company Milestones Timeline --}}
     @if(isset($milestones) && $milestones->isNotEmpty())
-        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+        <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32 fade-anim" data-direction="bottom">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">The Journey</span>
                 <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">Milestones</h2>
@@ -154,7 +183,7 @@
 
     {{-- Team / Leadership Section --}}
     @if(isset($teamMembers) && $teamMembers->isNotEmpty())
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32 fade-anim" data-direction="bottom">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">The Minds Behind Accelerate Lab</span>
                 <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">Leadership & Engineering</h2>
@@ -201,7 +230,7 @@
     @endif
 
     {{-- Accelerate Studio Full-Width CTA Banner --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-anim" data-direction="bottom">
         <div class="rounded-3xl p-8 sm:p-16 bg-gradient-to-r from-slate-900 via-[#0A1A2F] to-[#090D16] text-white border border-white/10 shadow-2xl relative overflow-hidden text-center">
             <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#00BFA5]/20 via-transparent to-transparent pointer-events-none"></div>
 

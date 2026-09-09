@@ -8,7 +8,7 @@
     {{-- Ambient Lighting --}}
     <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#00BFA5]/15 via-[#00BFA5]/5 to-transparent blur-3xl -z-10"></div>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-16 lg:mb-20">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-16 lg:mb-20 fade-anim" data-direction="bottom">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00BFA5]/10 border border-[#00BFA5]/25 text-[#00BFA5] text-xs font-mono font-semibold tracking-wider uppercase mb-8 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
             <span>R&D Solusi Digital</span>
