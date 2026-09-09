@@ -13,7 +13,7 @@
      ======================================================================== --}}
 <section class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div class="flex flex-col items-center text-center max-w-4xl mx-auto fade-anim" data-direction="bottom">
             
             {{-- Status Pill Badge --}}
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-6">
@@ -110,22 +110,22 @@
                 @forelse($heroStats as $stat)
                     <div class="flex flex-col items-center">
                         <div class="flex items-baseline gap-1 font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
-                            <span>{{ $stat->value }}</span>
+                            <span class="t-counter">{{ $stat->value }}</span>
                             <span class="text-sm font-mono text-[#00BFA5]">{{ $stat->unit }}</span>
                         </div>
                         <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ __($stat->label) }}</span>
                     </div>
                 @empty
                     <div class="flex flex-col items-center">
-                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">99.9%</span>
+                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white t-counter">99.9%</span>
                         <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Garansi Uptime' : 'Uptime Guarantee' }}</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">50+</span>
+                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white t-counter">50+</span>
                         <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Implementasi Enterprise' : 'Enterprise Deployments' }}</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">100%</span>
+                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white t-counter">100%</span>
                         <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Kepemilikan Kode Klien' : 'Client Code Ownership' }}</span>
                     </div>
                 @endforelse
@@ -155,7 +155,7 @@
             </div>
         @endif
 
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 fade-anim" data-direction="bottom">
             <div>
                 <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">
                     01 // {{ $currentLocale === 'id' ? 'KEAHLIAN TEKNIS' : 'CORE CAPABILITIES' }}
@@ -175,7 +175,7 @@
         {{-- Bento Grid Looped from CMS Services --}}
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($services as $index => $service)
-                <div class="bento-card relative flex flex-col justify-between p-7 sm:p-8 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg {{ $loop->first ? 'md:col-span-2 lg:col-span-2' : '' }}">
+                <div class="bento-card relative flex flex-col justify-between p-7 sm:p-8 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg fade-anim {{ $loop->first ? 'md:col-span-2 lg:col-span-2' : '' }}" data-direction="bottom">
                     <div>
                         <div class="flex items-center justify-between mb-6">
                             <span class="font-mono text-xs font-bold text-[#00BFA5]">
@@ -354,7 +354,7 @@ AnalitikAplikasi::evaluasi([
      ======================================================================== --}}
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 fade-anim" data-direction="bottom">
             <div>
                 <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">
                     02 // {{ $currentLocale === 'id' ? 'PORTFOLIO KAMI' : 'SELECTED PORTFOLIO' }}
@@ -374,7 +374,7 @@ AnalitikAplikasi::evaluasi([
         {{-- Projects Looped from CMS --}}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             @forelse($recentProjects as $project)
-                <div class="bento-card group relative overflow-hidden bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-xl">
+                <div class="bento-card group relative overflow-hidden bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-xl fade-anim" data-direction="bottom">
                     {{-- Project Image / Visual Container --}}
                     <div class="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-950">
                         @php
@@ -439,7 +439,7 @@ AnalitikAplikasi::evaluasi([
 @if(isset($latestArticles) && $latestArticles->isNotEmpty())
 <section class="py-20 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 fade-anim" data-direction="bottom">
             <div>
                 <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">
                     03 // {{ $currentLocale === 'id' ? 'WAWASAN & RISET' : 'LATEST INSIGHTS' }}
@@ -458,7 +458,7 @@ AnalitikAplikasi::evaluasi([
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             @foreach($latestArticles as $art)
-                <div class="bento-card p-6 sm:p-7 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg flex flex-col justify-between">
+                <div class="bento-card p-6 sm:p-7 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg flex flex-col justify-between fade-anim" data-direction="bottom">
                     <div>
                         <div class="flex items-center gap-2 mb-3 text-xs font-mono">
                             @if($art->category)

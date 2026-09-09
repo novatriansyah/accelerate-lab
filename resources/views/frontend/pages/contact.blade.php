@@ -37,7 +37,7 @@
             @endphp
 
             {{-- Left Column: Direct Contact & Entity Info --}}
-            <div class="lg:col-span-5 space-y-8">
+            <div class="lg:col-span-5 space-y-8 fade-anim" data-direction="left">
                 <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0E1526] border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-[#00BFA5]/10 rounded-full blur-2xl pointer-events-none"></div>
 
@@ -102,7 +102,7 @@
             </div>
 
             {{-- Right Column: Interactive Consultation Form --}}
-            <div class="lg:col-span-7">
+            <div class="lg:col-span-7 fade-anim" data-direction="right">
                 <div class="p-8 sm:p-12 rounded-3xl bg-white dark:bg-[#0E1526] border border-slate-200 dark:border-white/10 shadow-xl relative">
                     
                     @if(session('success'))
