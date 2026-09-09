@@ -77,34 +77,34 @@
         timelineOptions: {{ Js::from($timelineOptions) }},
         techOptions: {{ Js::from($techOptions) }}
      })" 
-     class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-xl shadow-gray-200/50 dark:shadow-none border border-border-light dark:border-border-dark p-6 sm:p-10 relative overflow-hidden">
+     class="bg-white dark:bg-slate-900/90 rounded-2xl shadow-xl border border-slate-200/80 dark:border-white/10 p-6 sm:p-10 relative overflow-hidden">
     
     <!-- Background Glow Effect -->
-    <div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    <div class="absolute -top-24 -right-24 w-48 h-48 bg-teal-500/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
 
     <!-- Header & Step Progress Bar -->
     <div class="mb-8">
         <div class="flex items-center justify-between mb-4">
             <div>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider">
-                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider">
+                    <span class="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
                     {{ __('Interactive Scoping Wizard') }}
                 </span>
-                <h2 class="text-2xl sm:text-3xl font-black text-text-main dark:text-white mt-2">
+                <h2 class="text-2xl sm:text-3xl font-black font-instrumentsans text-slate-900 dark:text-white mt-2">
                     {{ __('Estimate Your Project') }}
                 </h2>
-                <p class="text-text-secondary dark:text-gray-400 text-sm mt-1">
+                <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
                     {{ __('Plain language, zero jargon. Get a fast, tailored scope & cost estimate in 30 seconds.') }}
                 </p>
             </div>
             <div class="text-right">
-                <span class="text-xs font-bold text-primary" x-text="locale === 'id' ? `Langkah ${currentStep} dari 4` : `Step ${currentStep} of 4`"></span>
+                <span class="text-xs font-bold text-teal-600 dark:text-teal-400" x-text="locale === 'id' ? `Langkah ${currentStep} dari 4` : `Step ${currentStep} of 4`"></span>
             </div>
         </div>
 
         <!-- Progress Indicator -->
         <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div class="bg-gradient-to-r from-primary to-cyan-500 h-full transition-all duration-300 ease-out"
+            <div class="bg-gradient-to-r from-teal-500 to-cyan-500 h-full transition-all duration-300 ease-out"
                  :style="`width: ${(currentStep / 4) * 100}%`"></div>
         </div>
     </div>
@@ -171,8 +171,8 @@
         <!-- ================= STEP 1: What do you want to build? ================= -->
         <div x-show="currentStep === 1" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-6">
             <div>
-                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">{{ __('1. What would you like to build?') }}</h3>
-                <p class="text-xs text-text-secondary dark:text-gray-400">{{ __('Select the option that best describes your goal:') }}</p>
+                <h3 class="text-lg font-bold font-instrumentsans text-slate-900 dark:text-white mb-1">{{ __('1. What would you like to build?') }}</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400">{{ __('Select the option that best describes your goal:') }}</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -180,15 +180,15 @@
                     <button type="button" 
                             @click="formData.service_interest = option.title"
                             :class="formData.service_interest === option.title 
-                                ? 'border-primary bg-primary/5 dark:bg-primary/10 shadow-md ring-2 ring-primary/20' 
-                                : 'border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark hover:border-primary/50'"
+                                ? 'border-teal-500 bg-teal-500/10 shadow-md ring-2 ring-teal-500/20' 
+                                : 'border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-slate-800/60 hover:border-teal-500/50'"
                             class="p-4 rounded-xl border text-left transition-all duration-200 flex items-start gap-3 group">
-                        <div class="p-2 rounded-lg bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-primary shrink-0 group-hover:scale-105 transition-transform">
+                        <div class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 text-teal-600 dark:text-teal-400 shrink-0 group-hover:scale-105 transition-transform">
                             <x-app-icon name="rocket_launch" class="w-5 h-5" />
                         </div>
                         <div>
-                            <p class="font-bold text-sm text-text-main dark:text-white" x-text="option.title"></p>
-                            <p class="text-xs text-text-secondary dark:text-gray-400 mt-1 leading-relaxed" x-text="option.desc"></p>
+                            <p class="font-bold text-sm font-instrumentsans text-slate-900 dark:text-white" x-text="option.title"></p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed" x-text="option.desc"></p>
                         </div>
                     </button>
                 </template>
@@ -197,9 +197,11 @@
             <div class="pt-4 flex justify-end">
                 <button type="button" 
                         @click="nextStep"
-                        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-sm transition-all shadow-lg shadow-primary/20">
-                    <span>{{ __('Continue') }}</span>
-                    <x-app-icon name="arrow_forward" class="w-4 h-4" />
+                        class="rr-btn">
+                    <span class="btn-wrap">
+                        <span class="text-one">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-two">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                    </span>
                 </button>
             </div>
         </div>
@@ -207,8 +209,8 @@
         <!-- ================= STEP 2: Current Stage ================= -->
         <div x-show="currentStep === 2" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-6" x-cloak>
             <div>
-                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">{{ __('2. What stage is your project in right now?') }}</h3>
-                <p class="text-xs text-text-secondary dark:text-gray-400">{{ __('Helps us understand how much preparation is needed:') }}</p>
+                <h3 class="text-lg font-bold font-instrumentsans text-slate-900 dark:text-white mb-1">{{ __('2. What stage is your project in right now?') }}</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400">{{ __('Helps us understand how much preparation is needed:') }}</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -216,27 +218,29 @@
                     <button type="button" 
                             @click="formData.project_stage = stage.title"
                             :class="formData.project_stage === stage.title 
-                                ? 'border-primary bg-primary/5 dark:bg-primary/10 shadow-md ring-2 ring-primary/20' 
-                                : 'border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark hover:border-primary/50'"
+                                ? 'border-teal-500 bg-teal-500/10 shadow-md ring-2 ring-teal-500/20' 
+                                : 'border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-slate-800/60 hover:border-teal-500/50'"
                             class="p-4 rounded-xl border text-left transition-all duration-200 flex items-start gap-3 group">
-                        <div class="p-2 rounded-lg bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark text-primary shrink-0 group-hover:scale-105 transition-transform">
+                        <div class="p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 text-teal-600 dark:text-teal-400 shrink-0 group-hover:scale-105 transition-transform">
                             <x-app-icon name="flag" class="w-5 h-5" />
                         </div>
                         <div>
-                            <p class="font-bold text-sm text-text-main dark:text-white" x-text="stage.title"></p>
-                            <p class="text-xs text-text-secondary dark:text-gray-400 mt-1 leading-relaxed" x-text="stage.desc"></p>
+                            <p class="font-bold text-sm font-instrumentsans text-slate-900 dark:text-white" x-text="stage.title"></p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed" x-text="stage.desc"></p>
                         </div>
                     </button>
                 </template>
             </div>
 
             <div class="pt-4 flex justify-between items-center">
-                <button type="button" @click="prevStep" class="px-5 py-3 rounded-xl border border-border-light dark:border-border-dark text-text-secondary dark:text-gray-300 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <button type="button" @click="prevStep" class="px-5 py-3 rounded-xl border border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     {{ __('Back') }}
                 </button>
-                <button type="button" @click="nextStep" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-sm transition-all shadow-lg shadow-primary/20">
-                    <span>{{ __('Continue') }}</span>
-                    <x-app-icon name="arrow_forward" class="w-4 h-4" />
+                <button type="button" @click="nextStep" class="rr-btn">
+                    <span class="btn-wrap">
+                        <span class="text-one">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-two">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                    </span>
                 </button>
             </div>
         </div>
@@ -244,20 +248,20 @@
         <!-- ================= STEP 3: Timeline & Tech Preference ================= -->
         <div x-show="currentStep === 3" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-6" x-cloak>
             <div>
-                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">{{ __('3. Estimated timeline & preferences') }}</h3>
-                <p class="text-xs text-text-secondary dark:text-gray-400">{{ __('When do you ideally need this live or delivered?') }}</p>
+                <h3 class="text-lg font-bold font-instrumentsans text-slate-900 dark:text-white mb-1">{{ __('3. Estimated timeline & preferences') }}</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400">{{ __('When do you ideally need this live or delivered?') }}</p>
             </div>
 
             <div class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-text-secondary dark:text-gray-300 mb-2">{{ __('Desired Timeline') }}</label>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">{{ __('Desired Timeline') }}</label>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                         <template x-for="t in timelineOptions" :key="t">
                             <button type="button" 
                                     @click="formData.timeline = t"
                                     :class="formData.timeline === t 
-                                        ? 'border-primary bg-primary text-white font-bold shadow-md' 
-                                        : 'border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-main dark:text-gray-200 hover:border-primary/50'"
+                                        ? 'border-teal-500 bg-teal-600 text-white font-bold shadow-md' 
+                                        : 'border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-slate-800/60 text-slate-800 dark:text-slate-200 hover:border-teal-500/50'"
                                     class="py-3 px-4 rounded-xl border text-xs text-center transition-all">
                                 <span x-text="t"></span>
                             </button>
@@ -267,18 +271,18 @@
 
                 <div class="pt-2">
                     <div class="flex items-center justify-between mb-2">
-                        <label class="text-xs font-bold uppercase tracking-wider text-text-secondary dark:text-gray-300">
+                        <label class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                             {{ __('Tipe Sistem & Deployment') }} <span class="text-gray-400 lowercase font-normal">({{ __('optional') }})</span>
                         </label>
-                        <span class="text-[11px] text-primary font-medium">Boutique Architecture</span>
+                        <span class="text-[11px] text-teal-600 dark:text-teal-400 font-medium">Boutique Architecture</span>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
                         <template x-for="tech in techOptions" :key="tech">
                             <button type="button" 
                                     @click="formData.tech_preference = tech"
                                     :class="formData.tech_preference === tech 
-                                        ? 'border-primary bg-primary/10 text-primary font-bold border-2' 
-                                        : 'border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-text-secondary dark:text-gray-300 hover:border-primary/40'"
+                                        ? 'border-teal-500 bg-teal-500/10 text-teal-600 dark:text-teal-400 font-bold border-2' 
+                                        : 'border-slate-200/80 dark:border-white/10 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-300 hover:border-teal-500/40'"
                                     class="py-2.5 px-3 rounded-lg border text-xs text-center transition-all truncate">
                                 <span x-text="tech"></span>
                             </button>
@@ -288,12 +292,14 @@
             </div>
 
             <div class="pt-4 flex justify-between items-center">
-                <button type="button" @click="prevStep" class="px-5 py-3 rounded-xl border border-border-light dark:border-border-dark text-text-secondary dark:text-gray-300 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <button type="button" @click="prevStep" class="px-5 py-3 rounded-xl border border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     {{ __('Back') }}
                 </button>
-                <button type="button" @click="nextStep" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary hover:bg-primary-hover text-white font-bold text-sm transition-all shadow-lg shadow-primary/20">
-                    <span>{{ __('Next: Review & Contact') }}</span>
-                    <x-app-icon name="arrow_forward" class="w-4 h-4" />
+                <button type="button" @click="nextStep" class="rr-btn">
+                    <span class="btn-wrap">
+                        <span class="text-one">{{ __('Next: Review & Contact') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-two">{{ __('Next: Review & Contact') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                    </span>
                 </button>
             </div>
         </div>
@@ -301,83 +307,83 @@
         <!-- ================= STEP 4: Review & Direct Submission ================= -->
         <div x-show="currentStep === 4" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="space-y-6" x-cloak>
             <div>
-                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">{{ __('4. Where should we send your estimate?') }}</h3>
-                <p class="text-xs text-text-secondary dark:text-gray-400">{{ __('Receive your estimate via direct WhatsApp or email:') }}</p>
+                <h3 class="text-lg font-bold font-instrumentsans text-slate-900 dark:text-white mb-1">{{ __('4. Where should we send your estimate?') }}</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400">{{ __('Receive your estimate via direct WhatsApp or email:') }}</p>
             </div>
 
             <!-- Turnaround Guidance Card -->
-            <div class="rounded-xl border border-primary/20 bg-primary/5 dark:bg-primary/10 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <div class="rounded-xl border border-teal-500/20 bg-teal-500/10 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div class="flex items-center gap-3">
-                    <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                    <div class="flex size-9 shrink-0 items-center justify-center rounded-lg bg-teal-500/20 text-teal-600 dark:text-teal-400">
                         <x-app-icon name="schedule" class="w-5 h-5" />
                     </div>
                     <div>
-                        <div class="text-xs font-bold uppercase tracking-wider text-primary">
+                        <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
                             {{ __('Estimasi Waktu Pengerjaan') }}
                         </div>
-                        <p class="text-xs text-text-muted dark:text-slate-400">
+                        <p class="text-xs text-slate-600 dark:text-slate-400">
                             {{ __('Rata-rata turnaround MVP & modul operasional siap uji:') }}
                         </p>
                     </div>
                 </div>
-                <span class="inline-flex items-center rounded-full bg-primary text-white text-xs font-bold px-3 py-1 shadow-sm shrink-0">
+                <span class="inline-flex items-center rounded-full bg-teal-600 text-white text-xs font-bold px-3 py-1 shadow-sm shrink-0">
                     {{ __('Target Waktu: 3-5 Minggu') }}
                 </span>
             </div>
 
             <!-- Scoping Summary Box -->
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-background-dark border border-border-light dark:border-border-dark text-xs space-y-1.5">
-                <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-xs space-y-1.5">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
                     <span>{{ $locale === 'id' ? 'Kebutuhan:' : 'Project Scope:' }}</span>
-                    <strong class="text-text-main dark:text-white" x-text="formData.service_interest"></strong>
+                    <strong class="text-slate-900 dark:text-white" x-text="formData.service_interest"></strong>
                 </div>
-                <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
                     <span>{{ $locale === 'id' ? 'Tahap Kesiapan:' : 'Readiness Stage:' }}</span>
-                    <strong class="text-text-main dark:text-white" x-text="formData.project_stage"></strong>
+                    <strong class="text-slate-900 dark:text-white" x-text="formData.project_stage"></strong>
                 </div>
-                <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
                     <span>{{ $locale === 'id' ? 'Estimasi Waktu Pengerjaan:' : 'Estimated Turnaround:' }}</span>
-                    <strong class="text-text-main dark:text-white" x-text="formData.timeline"></strong>
+                    <strong class="text-slate-900 dark:text-white" x-text="formData.timeline"></strong>
                 </div>
-                <div class="flex items-center justify-between text-text-secondary dark:text-gray-400">
+                <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
                     <span>{{ $locale === 'id' ? 'Tipe Deployment:' : 'Deployment Type:' }}</span>
-                    <strong class="text-primary font-bold" x-text="formData.tech_preference"></strong>
+                    <strong class="text-teal-600 dark:text-teal-400 font-bold" x-text="formData.tech_preference"></strong>
                 </div>
             </div>
 
             <!-- Contact Inputs -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <label class="block">
-                    <span class="block text-xs font-bold uppercase tracking-wider text-text-main dark:text-gray-200 mb-1.5">{{ __('Your Name') }} *</span>
+                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-1.5">{{ __('Your Name') }} *</span>
                     <input type="text" name="name" x-model="formData.name" required
                            placeholder="Nova Triansyah"
-                           class="w-full rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                           class="w-full rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all">
                 </label>
                 <label class="block">
-                    <span class="block text-xs font-bold uppercase tracking-wider text-text-main dark:text-gray-200 mb-1.5">{{ __('Email Address') }} *</span>
+                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-1.5">{{ __('Email Address') }} *</span>
                     <input type="email" name="email" x-model="formData.email" required
                            placeholder="nova@company.com"
-                           class="w-full rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                           class="w-full rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all">
                 </label>
                 <label class="block">
-                    <span class="block text-xs font-bold uppercase tracking-wider text-text-main dark:text-gray-200 mb-1.5">{{ __('WhatsApp / Phone') }}</span>
+                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-1.5">{{ __('WhatsApp / Phone') }}</span>
                     <input type="text" name="phone" x-model="formData.phone"
                            placeholder="+62 812 3456 7890"
-                           class="w-full rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                           class="w-full rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all">
                 </label>
                 <label class="block">
-                    <span class="block text-xs font-bold uppercase tracking-wider text-text-main dark:text-gray-200 mb-1.5">{{ __('Company / Brand') }}</span>
+                    <span class="block text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-1.5">{{ __('Company / Brand') }}</span>
                     <input type="text" name="company" x-model="formData.company"
                            placeholder="PT Digital Mandiri"
-                           class="w-full rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all">
+                           class="w-full rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-white h-11 px-4 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all">
                 </label>
             </div>
 
             <label class="block">
-                <span class="block text-xs font-bold uppercase tracking-wider text-text-main dark:text-gray-200 mb-1.5">{{ __('Project Notes') }} <span class="text-gray-400 lowercase font-normal">({{ __('optional') }})</span></span>
+                <span class="block text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-1.5">{{ __('Project Notes') }} <span class="text-gray-400 lowercase font-normal">({{ __('optional') }})</span></span>
                 <textarea name="message" x-model="formData.message" rows="2"
                           placeholder="{{ $locale === 'id' ? 'Catatan tambahan, tautan referensi, atau fitur khusus yang diinginkan...' : 'Any specific features, reference links, or notes...' }}"
-                          class="w-full rounded-xl bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-main dark:text-white p-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-y"></textarea>
+                          class="w-full rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-white p-3 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all resize-y"></textarea>
             </label>
 
             <!-- Dual Conversion Buttons -->
@@ -401,10 +407,10 @@
             </div>
 
             <div class="flex justify-between items-center pt-2">
-                <button type="button" @click="prevStep" class="text-xs text-text-secondary dark:text-gray-400 hover:text-primary transition-colors">
+                <button type="button" @click="prevStep" class="text-xs text-slate-600 dark:text-slate-400 hover:text-teal-600 transition-colors">
                     &larr; {{ __('Back') }}
                 </button>
-                <p class="text-[11px] text-gray-400 text-right">
+                <p class="text-[11px] text-slate-400 text-right">
                     {{ __('Zero spam guarantee. 100% confidential.') }}
                 </p>
             </div>

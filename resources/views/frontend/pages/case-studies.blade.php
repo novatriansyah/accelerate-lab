@@ -3,43 +3,43 @@
 @section('content')
     <main class="flex-grow">
         <section id="case-studies-header"
-            class="relative isolate overflow-hidden bg-background-light dark:bg-background-dark px-6 py-24 sm:py-32 lg:px-8">
+            class="relative isolate overflow-hidden bg-white dark:bg-[#090D16] px-6 py-24 sm:py-32 lg:px-8">
             <div
                 class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.teal.100),white)] opacity-20 dark:opacity-5">
             </div>
             <div
-                class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background-light dark:bg-background-dark shadow-xl shadow-teal-600/10 ring-1 ring-teal-50 dark:ring-teal-900/20 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
+                class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white dark:bg-[#090D16] shadow-xl shadow-teal-600/10 ring-1 ring-teal-50 dark:ring-teal-900/20 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
             </div>
             <div class="mx-auto max-w-7xl text-center">
                 <div class="mx-auto max-w-2xl">
                     <div class="mb-8 flex justify-center">
                         <div
-                            class="relative rounded-full px-3 py-1 text-sm leading-6 text-text-secondary ring-1 ring-text-secondary/20 hover:ring-text-secondary/40">
+                            class="relative rounded-full px-3 py-1 text-sm leading-6 text-slate-600 dark:text-slate-400 ring-1 ring-slate-200 dark:ring-white/10 hover:ring-primary/40">
                             {{ __('Pioneering Digital Solutions') }} <a class="font-semibold text-primary" href="/blog"><span
                                     aria-hidden="true" class="absolute inset-0"></span>{{ __('Read our manifesto') }} <span
                                     aria-hidden="true">→</span></a>
                         </div>
                     </div>
-                    <h1 class="text-4xl font-black tracking-tight text-text-main dark:text-white sm:text-6xl">
+                    <h1 class="text-4xl font-black tracking-tight font-instrumentsans text-slate-900 dark:text-white sm:text-6xl">
                         {{ __('Studi Kasus & Hasil Nyata') }}
                     </h1>
-                    <p class="mt-6 text-lg leading-8 text-text-main/70 dark:text-gray-300">
+                    <p class="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-300">
                         {{ __('Meningkatkan efisiensi operasional dan keandalan sistem bisnis melalui rekayasa software kustom yang tepat sasaran.') }}
                     </p>
                 </div>
             </div>
         </section>
         <section
-            class="sticky top-16 z-40 border-b border-gray-100 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm py-4">
+            class="sticky top-16 z-40 border-b border-slate-200/80 dark:border-white/10 bg-white/95 dark:bg-[#090D16]/95 backdrop-blur-sm py-4">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
                     <a href="{{ route('case-studies') }}"
-                        class="shrink-0 rounded-full {{ !$currentIndustry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white dark:bg-surface-dark border border-gray-200 dark:border-slate-700 text-text-main dark:text-white hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
+                        class="shrink-0 rounded-full {{ !$currentIndustry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
                         {{ __('All Industries') }}
                     </a>
                     @foreach ($industries as $industry)
                         <a href="{{ route('case-studies', ['industry' => $industry]) }}"
-                            class="shrink-0 rounded-full {{ $currentIndustry === $industry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white dark:bg-surface-dark border border-gray-200 dark:border-slate-700 text-text-main dark:text-white hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
+                            class="shrink-0 rounded-full {{ $currentIndustry === $industry ? 'bg-primary text-white hover:bg-teal-600' : 'bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:border-primary hover:text-primary' }} px-5 py-2 text-sm font-medium shadow-sm transition-all">
                             {{ __($industry) }}
                         </a>
                     @endforeach
@@ -49,10 +49,10 @@
         @if ($featuredProject)
             <section class="py-12 md:py-16">
                 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-text-secondary dark:text-gray-400 mb-6">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-6">
                         {{ __('Featured Project') }}</h3>
                     <div
-                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark shadow-lg transition-all hover:shadow-xl border border-gray-100 dark:border-slate-700">
+                        class="group relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-lg transition-all hover:shadow-xl border border-slate-200/80 dark:border-white/10">
                         <div class="flex flex-col lg:flex-row">
                             <div class="flex flex-1 flex-col justify-center p-8 lg:p-12 order-2 lg:order-1">
                                 <div class="flex flex-wrap items-center gap-2 mb-4">
@@ -66,18 +66,18 @@
                                         </span>
                                     @endif
                                 </div>
-                                <h2 class="text-2xl font-bold text-text-main dark:text-white sm:text-3xl mb-4">
+                                <h2 class="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl mb-4">
                                     {{ $featuredProject->title }}</h2>
-                                <p class="text-text-secondary dark:text-gray-400 mb-6 leading-relaxed line-clamp-3">
+                                <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed line-clamp-3">
                                     {{ $featuredProject->description }}
                                 </p>
                                 @if ($featuredProject->stats)
                                     <div
-                                        class="grid grid-cols-2 gap-6 mb-8 border-t border-gray-100 dark:border-slate-700 pt-6">
+                                        class="grid grid-cols-2 gap-6 mb-8 border-t border-slate-200/80 dark:border-white/10 pt-6">
                                         @foreach (array_slice($featuredProject->stats, 0, 2) as $stat)
                                             <div>
                                                 <p class="text-3xl font-black text-primary">{{ $stat['value'] }}</p>
-                                                <p class="text-sm font-medium text-text-secondary dark:text-gray-400">
+                                                <p class="text-sm font-medium text-slate-600 dark:text-slate-400">
                                                     {{ __($stat['label']) }}</p>
                                             </div>
                                         @endforeach
@@ -110,7 +110,7 @@
                 </div>
             </section>
         @endif
-        <section id="case-studies-grid" class="py-12 bg-white dark:bg-background-dark border-t border-gray-200 dark:border-slate-800">
+        <section id="case-studies-grid" class="py-12 bg-white dark:bg-[#070b12] border-t border-slate-200/80 dark:border-white/10">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach ($projects as $project)
@@ -147,16 +147,16 @@
                                     @if ($project->technology_tags)
                                         @foreach (array_slice(is_array($project->technology_tags) ? $project->technology_tags : explode(',', $project->technology_tags), 0, 1) as $tag)
                                             <span
-                                                class="text-xs text-gray-500 dark:text-gray-400 font-medium">{{ $tag }}</span>
+                                                class="text-xs text-slate-500 dark:text-slate-400 font-medium">{{ $tag }}</span>
                                         @endforeach
                                     @endif
                                 </div>
                                 <a href="{{ route('project', $project) }}">
                                     <h3
-                                        class="text-xl font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">
+                                        class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">
                                         {{ $project->title }}</h3>
                                 </a>
-                                <p class="text-sm text-text-secondary dark:text-gray-400 line-clamp-2">
+                                <p class="text-sm text-slate-600 dark:text-slate-400 line-clamp-2">
                                     {{ $project->description }}
                                 </p>
                                 <a href="{{ route('project', $project) }}" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-primary-dark mt-1 transition-all">
@@ -165,21 +165,19 @@
                             </div>
                         </div>
                     @endforeach
-
-
                 </div>
             </div>
         </section>
 
         {{-- Blueprint Solusi Operasional UKM --}}
-        <section class="py-20 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200 dark:border-slate-800" aria-labelledby="blueprints-heading" x-data="{ activeTab: 'inventory' }">
+        <section class="py-20 bg-slate-50 dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-white/10" aria-labelledby="blueprints-heading" x-data="{ activeTab: 'inventory' }">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-14">
                     <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
                         <x-app-icon name="architecture" class="w-3.5 h-3.5" />
                         {{ __('Arsitektur Siap Pakai') }}
                     </span>
-                    <h2 id="blueprints-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    <h2 id="blueprints-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white font-instrumentsans">
                         {{ __('Blueprint Solusi Operasional') }}
                     </h2>
                     <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
@@ -188,7 +186,7 @@
                 </div>
 
                 <div class="flex justify-center mb-10">
-                    <div class="inline-flex p-1.5 bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm gap-2">
+                    <div class="inline-flex p-1.5 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-white/10 shadow-sm gap-2">
                         <button @click="activeTab = 'inventory'" :class="activeTab === 'inventory' ? 'bg-primary text-white shadow-md' : 'text-slate-600 dark:text-slate-300 hover:text-primary'" class="px-5 py-2.5 rounded-xl text-sm font-bold transition-all flex items-center gap-2">
                             <x-app-icon name="inventory_2" class="w-4 h-4" />
                             <span>{{ __('Inventori Multi-Gudang') }}</span>
@@ -204,11 +202,11 @@
                     </div>
                 </div>
 
-                <div x-show="activeTab === 'inventory'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-surface-dark rounded-2xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-lg">
+                <div x-show="activeTab === 'inventory'" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl p-8 sm:p-10 border border-slate-200/80 dark:border-white/10 shadow-lg">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div class="space-y-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-primary">Modul Logistik &amp; Gudang</span>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Alur Inventori Multi-Gudang &amp; Barcode Scanner</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-instrumentsans">Alur Inventori Multi-Gudang &amp; Barcode Scanner</h3>
                             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                 Kontrol penuh pergerakan stok antar-lokasi tanpa selisih. Staf gudang cukup memindai barcode menggunakan kamera handphone atau scanner nirkabel.
                             </p>
@@ -248,11 +246,11 @@
                     </div>
                 </div>
 
-                <div x-show="activeTab === 'invoicing'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-surface-dark rounded-2xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-lg">
+                <div x-show="activeTab === 'invoicing'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl p-8 sm:p-10 border border-slate-200/80 dark:border-white/10 shadow-lg">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div class="space-y-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-primary">Modul Keuangan &amp; Penagihan</span>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Invoicing Otomatis &amp; Rekonsiliasi Instan</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-instrumentsans">Invoicing Otomatis &amp; Rekonsiliasi Instan</h3>
                             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                 Hentikan pembuatan invoice manual satu per satu. Sistem otomatis menerbitkan tagihan PDF ber-barcode dan mengirimkan pengingat jatuh tempo.
                             </p>
@@ -292,11 +290,11 @@
                     </div>
                 </div>
 
-                <div x-show="activeTab === 'monitoring'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-surface-dark rounded-2xl p-8 sm:p-10 border border-slate-200 dark:border-slate-800 shadow-lg">
+                <div x-show="activeTab === 'monitoring'" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-2xl p-8 sm:p-10 border border-slate-200/80 dark:border-white/10 shadow-lg">
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div class="space-y-4">
                             <span class="text-xs font-bold uppercase tracking-wider text-primary">Modul Eksekutif &amp; Manajemen</span>
-                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Dashboard Monitoring Kinerja Cabang</h3>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-instrumentsans">Dashboard Monitoring Kinerja Cabang</h3>
                             <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                                 Pantau operasional seluruh titik usaha secara real-time dari satu aplikasi. Pemilik bisnis memiliki kepastian data harian tanpa perlu menunggu laporan manual.
                             </p>
@@ -342,19 +340,24 @@
                 data-alt="Abstract dark technological geometric patterns"
                 style="background-image: radial-gradient(#14b8a7 1px, transparent 1px); background-size: 32px 32px;"></div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">{{ __('Ready to launch or upgrade your software?') }}</h2>
-                <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-gray-300">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl font-instrumentsans">{{ __('Ready to launch or upgrade your software?') }}</h2>
+                <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-300">
                     {{ __('Whether you have a new app idea or need to modernize an existing system, get an honest evaluation and timeline from our Principal Architect.') }}
                 </p>
-                <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <a class="rounded-md bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400 transition-all"
-                        href="/contact">
-                        {{ __('Estimate Your Project') }}
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a class="rr-btn" href="/contact">
+                        <span class="btn-wrap">
+                            <span class="text-one">{{ __('Estimate Your Project') }}</span>
+                            <span class="text-two">{{ __('Estimate Your Project') }}</span>
+                        </span>
                     </a>
                     <button type="button" 
                         @click="$dispatch('open-consultation-modal')"
-                        class="text-sm font-semibold leading-6 text-slate-900 dark:text-white hover:text-primary transition-colors">
-                        {{ __('Book 15-Min Free Call') }} <span aria-hidden="true">→</span>
+                        class="rr-btn btn-border">
+                        <span class="btn-wrap">
+                            <span class="text-one">{{ __('Book 15-Min Free Call') }}</span>
+                            <span class="text-two">{{ __('Book 15-Min Free Call') }}</span>
+                        </span>
                     </button>
                 </div>
             </div>

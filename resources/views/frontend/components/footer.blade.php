@@ -1,11 +1,11 @@
-<footer class="bg-surface-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 pt-16 pb-8" role="contentinfo">
+<footer class="bg-white dark:bg-[#070b12] border-t border-slate-200/80 dark:border-white/10 pt-16 pb-8" role="contentinfo">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div class="space-y-4">
-                <a href="/" class="flex items-center gap-1 text-slate-700 dark:text-white" aria-label="Accelerate Lab - Home">
-                    <span class="text-xl font-bold tracking-tighter">Accelerate</span>
-                    <span class="text-xl font-light text-primary" aria-hidden="true">/&gt;</span>
-                    <span class="text-xl font-bold tracking-tighter">Lab</span>
+                <a href="/" class="flex items-center gap-1 font-instrumentsans text-xl font-bold tracking-tight text-slate-900 dark:text-white" aria-label="Accelerate Lab - Home">
+                    <span>Accelerate</span>
+                    <span class="text-teal-500 dark:text-teal-400 font-mono font-normal" aria-hidden="true">/&gt;</span>
+                    <span>Lab</span>
                 </a>
                 <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                     {{ __('Building the future of digital products with precision, speed, and cutting-edge technology.') }}

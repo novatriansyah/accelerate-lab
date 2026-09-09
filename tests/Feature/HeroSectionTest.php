@@ -14,14 +14,12 @@ class HeroSectionTest extends TestCase
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify hero classes
+        // Verify hero classes and brand emblem
         $response->assertSee('hero-area', false);
-        $response->assertSee('circle-text-wrapper', false);
-        $response->assertSee('circle-text', false);
-
-        // Verify SVG text rotation structure
-        $response->assertSee('viewBox="0 0 100 100"', false);
-        $response->assertSee('textPath', false);
+        $response->assertSee('Accelerate', false);
+        $response->assertSee('Lab', false);
+        $response->assertSee('/&gt;', false);
+        $response->assertSee('Engineering Studio', false);
 
         // Verify metrics counters
         $response->assertSee('98%');

@@ -11,31 +11,31 @@ window.ScrollTrigger = ScrollTrigger;
 
 Alpine.start();
 
+window.toggleTheme = function() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    try {
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch (e) {}
+    window.dispatchEvent(new CustomEvent('theme-changed', { detail: { theme: isDark ? 'dark' : 'light' } }));
+};
+
 function initTheme() {
-    const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
-
-    if (localStorage.getItem('theme') === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
-
-    themeToggleBtns.forEach(btn => {
-        const newBtn = btn.cloneNode(true);
-        btn.parentNode.replaceChild(newBtn, btn);
-
-        newBtn.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        });
-    });
+    try {
+        if (localStorage.getItem('theme') === 'dark' ||
+            (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    } catch (e) {}
 }
+
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.theme-toggle-btn');
+    if (btn) {
+        window.toggleTheme();
+    }
+});
 
 function initScrollAnimations() {
     if (typeof window === 'undefined') return;

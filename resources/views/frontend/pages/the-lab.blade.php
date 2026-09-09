@@ -12,20 +12,24 @@
                             {{ __('The Lab') }}
                         </div>
                         <h1
-                            class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-slate-900 dark:text-white">
+                            class="text-4xl md:text-6xl font-black leading-tight tracking-tight text-slate-900 dark:text-white font-instrumentsans">
                             {{ __('The Lab: Where Innovation Meets Execution') }}
                         </h1>
                         <p class="text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
                             {{ __('Innovation isn\'t accidental. It\'s engineered. Our "Lab" methodology combines agile sprints with deep technical research to solve problems others can\'t.') }}
                         </p>
                         <div class="flex flex-wrap gap-4 pt-4">
-                            <a href="/blog"
-                                class="flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-teal-600 transition-all shadow-lg shadow-primary/25">
-                                {{ __('Blog') }}
+                            <a href="/blog" class="rr-btn">
+                                <span class="btn-wrap">
+                                    <span class="text-one">{{ __('Blog') }}</span>
+                                    <span class="text-two">{{ __('Blog') }}</span>
+                                </span>
                             </a>
-                            <a href="/about"
-                                class="flex items-center justify-center rounded-lg h-12 px-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
-                                {{ __('About Us') }}
+                            <a href="/about" class="rr-btn btn-border">
+                                <span class="btn-wrap">
+                                    <span class="text-one">{{ __('About Us') }}</span>
+                                    <span class="text-two">{{ __('About Us') }}</span>
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -39,7 +43,7 @@
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             width="600" height="500" loading="eager" decoding="async">
                         <div
-                            class="absolute bottom-6 left-6 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 dark:border-slate-700 shadow-lg">
+                            class="absolute bottom-6 left-6 z-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm p-4 rounded-xl border border-white/20 dark:border-white/10 shadow-lg">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white">
                                     <x-app-icon name="code" class="w-5 h-5" />
@@ -57,7 +61,7 @@
             </div>
         </div>
     </section>
-    <section class="border-y border-slate-200 dark:border-slate-800 bg-white dark:bg-surface-dark/50">
+    <section class="border-y border-slate-200/80 dark:border-white/10 bg-white dark:bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div class="flex flex-col gap-1 border-l-4 border-primary pl-4">
@@ -87,39 +91,39 @@
     </section>
     <div id="lab-experiments-grid" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Latest Insights</h3>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white font-instrumentsans">Latest Insights</h3>
             <div class="flex flex-wrap gap-2">
                 <button
                     class="h-9 px-4 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium transition-transform hover:scale-105">
                     All Content
                 </button>
                 <button
-                    class="h-9 px-4 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                    class="h-9 px-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                     Engineering
                 </button>
                 <button
-                    class="h-9 px-4 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                    class="h-9 px-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                     Design Systems
                 </button>
                 <button
-                    class="h-9 px-4 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                    class="h-9 px-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                     Product Strategy
                 </button>
                 <button
-                    class="h-9 px-4 rounded-full bg-white dark:bg-surface-dark border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
+                    class="h-9 px-4 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-medium hover:border-primary hover:text-primary transition-all">
                     Open Source
                 </button>
             </div>
         </div>
         <div
-            class="mb-16 bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm">
+            class="mb-16 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-white/10 overflow-hidden shadow-sm">
             <div class="grid grid-cols-1 md:grid-cols-2">
                 <div class="p-8 md:p-12 flex flex-col justify-center gap-6">
                     <div class="flex items-center gap-2 text-primary font-bold text-sm uppercase tracking-wider">
                         <x-app-icon name="star" class="w-5 h-5" />
                         Spotlight
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight font-instrumentsans">
                         Deep Dive: Server Components Architecture
                     </h2>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
@@ -127,9 +131,11 @@
                         leveraging server-side rendering for maximum performance and user experience.
                     </p>
                     <div class="flex items-center gap-4 mt-2">
-                        <a href="/case-studies"
-                            class="flex items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold tracking-wide hover:bg-teal-600 transition-colors">
-                            Read Case Study
+                        <a href="/case-studies" class="rr-btn">
+                            <span class="btn-wrap">
+                                <span class="text-one">Read Case Study</span>
+                                <span class="text-two">Read Case Study</span>
+                            </span>
                         </a>
                         <span class="text-slate-400 dark:text-slate-500 text-sm font-medium">8 min read</span>
                     </div>
@@ -164,7 +170,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <article
-                class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-white/10 overflow-hidden hover:shadow-xl hover:border-primary/50 transition-all duration-300 cursor-pointer">
                 <div class="h-48 overflow-hidden relative">
                     <div
                         class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 z-10 transition-colors duration-300">
@@ -192,7 +198,7 @@
                 </div>
             </article>
             <article
-                class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-white/10 overflow-hidden hover:shadow-xl hover:border-primary/50 transition-all duration-300 cursor-pointer">
                 <div class="h-48 overflow-hidden relative">
                     <div
                         class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 z-10 transition-colors duration-300">
@@ -220,7 +226,7 @@
                 </div>
             </article>
             <article
-                class="group flex flex-col bg-white dark:bg-surface-dark rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl hover:border-primary/50 transition-all duration-300 cursor-pointer">
+                class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-white/10 overflow-hidden hover:shadow-xl hover:border-primary/50 transition-all duration-300 cursor-pointer">
                 <div class="h-48 overflow-hidden relative">
                     <div
                         class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 z-10 transition-colors duration-300">

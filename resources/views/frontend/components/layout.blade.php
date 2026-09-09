@@ -18,6 +18,20 @@
     <link rel="canonical" href="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
     <link rel="icon" type="image/png" href="{{ asset('favicon.ico') }}">
 
+    <!-- Pre-hydration Theme Detection (Prevents FOUC) -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="{{ $ogType ?? 'website' }}">
     <meta property="og:url" content="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
@@ -85,7 +99,7 @@
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-300">
+    class="bg-white dark:bg-[#090D16] text-slate-800 dark:text-slate-200 font-sans transition-colors duration-300">
 
     <!-- Skip to content link (accessibility) -->
     <a href="#main-content" class="skip-link">Skip to main content</a>

@@ -37,7 +37,7 @@
          x-cloak>
         
         <div @click.outside="open = false" 
-             class="relative transform overflow-hidden rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 p-6 sm:p-8 text-left shadow-2xl transition-all sm:w-full sm:max-w-lg">
+             class="relative transform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 p-6 sm:p-8 text-left shadow-2xl transition-all sm:w-full sm:max-w-lg">
             
             <!-- Close Button -->
             <button @click="open = false" 
@@ -48,12 +48,12 @@
             </button>
 
             <!-- Header Badge -->
-            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 text-xs font-bold uppercase tracking-wider mb-3">
                 <x-app-icon name="calendar_today" class="w-3.5 h-3.5" />
                 {{ __('15-Min Free Call') }}
             </div>
 
-            <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
+            <h3 class="text-xl sm:text-2xl font-black font-instrumentsans text-slate-900 dark:text-white leading-tight">
                 {{ $locale === 'id' ? 'Diskusi Langsung dengan Principal Architect' : 'Talk Directly with our Principal Architect' }}
             </h3>
 
@@ -64,7 +64,7 @@
             </p>
 
             <!-- Trust Highlights -->
-            <div class="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-background-dark/60 border border-gray-100 dark:border-gray-800 space-y-2 text-xs">
+            <div class="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 space-y-2 text-xs">
                 <div class="flex items-center gap-2 text-slate-700 dark:text-gray-300">
                     <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
                     <span><strong>{{ $locale === 'id' ? '100% Gratis & Rahasia' : '100% Free & Confidential' }}</strong>: {{ $locale === 'id' ? 'Tanpa komitmen apapun' : 'Zero obligations' }}</span>
@@ -92,7 +92,7 @@
                 </a>
 
                 <a href="/contact" 
-                   class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-gray-200 dark:border-gray-700 text-slate-700 dark:text-gray-200 font-semibold text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                   class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl border border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-200 font-semibold text-sm hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     <x-app-icon name="mail" class="w-4 h-4" />
                     <span>{{ $locale === 'id' ? 'Gunakan Kalkulator Estimasi Proyek' : 'Use the Interactive Scoping Wizard' }}</span>
                 </a>

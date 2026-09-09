@@ -19,7 +19,7 @@
          x-transition:leave-end="opacity-0 translate-y-4 scale-95"
          @click.outside="open = false"
          x-cloak
-         class="pointer-events-auto mb-4 w-80 sm:w-96 rounded-2xl bg-white dark:bg-surface-dark border border-gray-100 dark:border-gray-800 shadow-2xl shadow-emerald-500/10 overflow-hidden">
+         class="pointer-events-auto mb-4 w-80 sm:w-96 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-white/10 shadow-2xl shadow-emerald-500/10 overflow-hidden">
         
         <!-- Header -->
         <div class="bg-gradient-to-r from-[#075E54] to-[#128C7E] p-4 text-white flex items-center justify-between">
@@ -31,7 +31,7 @@
                     <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-[#128C7E] rounded-full"></span>
                 </div>
                 <div>
-                    <h3 class="font-bold text-sm leading-tight text-white">Accelerate Lab</h3>
+                    <h3 class="font-bold text-sm leading-tight text-white font-instrumentsans">Accelerate Lab</h3>
                     <p class="text-[11px] text-emerald-100 opacity-90 flex items-center gap-1 mt-0.5">
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                         {{ __('Typically replies in a few minutes') }}
@@ -46,8 +46,8 @@
         </div>
 
         <!-- Chat Body / Message Card -->
-        <div class="p-4 bg-slate-50 dark:bg-background-dark/50 space-y-3">
-            <div class="bg-white dark:bg-surface-dark p-3.5 rounded-xl rounded-tl-none border border-gray-100 dark:border-gray-800 shadow-sm max-w-[90%]">
+        <div class="p-4 bg-slate-50 dark:bg-slate-950/60 space-y-3">
+            <div class="bg-white dark:bg-slate-900 p-3.5 rounded-xl rounded-tl-none border border-slate-200/80 dark:border-white/10 shadow-sm max-w-[90%]">
                 <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                     {{ __('Hello! 👋 How can we help build or accelerate your digital product today?') }}
                 </p>
@@ -56,7 +56,7 @@
         </div>
 
         <!-- CTA Action Footer -->
-        <div class="p-3 bg-white dark:bg-surface-dark border-t border-gray-100 dark:border-gray-800">
+        <div class="p-3 bg-white dark:bg-slate-900 border-t border-slate-200/80 dark:border-white/10">
             <a href="{{ $waUrl }}" 
                target="_blank" 
                rel="noopener noreferrer" 
@@ -88,7 +88,7 @@
             <!-- Badge counter / online status -->
             <span class="absolute top-0 right-0 flex h-3.5 w-3.5">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400 border-2 border-white dark:border-surface-dark"></span>
+                <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400 border-2 border-white dark:border-slate-900"></span>
             </span>
         </button>
     </div>

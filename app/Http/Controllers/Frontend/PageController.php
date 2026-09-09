@@ -16,7 +16,11 @@ class PageController extends Controller
 {
     public function home()
     {
-        $recentProjects = Project::latest()->take(3)->get();
+        $recentProjects = Project::latest()->take(4)->get();
+        $services = Service::where('is_active', true)->orderBy('sort_order')->take(4)->get();
+        if ($services->isEmpty()) {
+            $services = Service::orderBy('sort_order')->take(4)->get();
+        }
 
         $heroStats = HomepageStat::where('section', 'hero')->orderBy('sort_order')->take(3)->get();
         $capabilityStats = HomepageStat::where('section', 'capabilities')->orderBy('sort_order')->take(3)->get();
@@ -26,6 +30,7 @@ class PageController extends Controller
             'title' => 'Accelerate Lab - Digital Innovation Agency',
             'description' => 'Accelerate Lab is a full-service digital innovation agency offering custom software, cloud solutions, and strategic design.',
             'recentProjects' => $recentProjects,
+            'services' => $services,
             'heroStats' => $heroStats,
             'capabilityStats' => $capabilityStats,
             'testimonials' => $testimonials,
