@@ -155,4 +155,39 @@ class MonolithicDesignEngineTest extends TestCase
         $genericResponse->assertSee('Cybersecurity Strategy');
         $genericResponse->assertSee('Zero-trust perimeter architecture.', false);
     }
+
+    public function test_case_studies_and_project_detail_render(): void
+    {
+        $project = Project::create([
+            'title' => 'Autonomous Logistics Dispatcher',
+            'slug' => 'autonomous-logistics-dispatcher',
+            'client' => 'PT LOGISTIK GLOBAL',
+            'industry' => 'Supply Chain',
+            'description' => 'Real-time telemetry and route dispatch engine.',
+            'challenge' => '<p>Route computation was taking over 4 minutes.</p>',
+            'solution' => '<p>Parallelized genetic pathfinding in Rust microservice.</p>',
+            'technology_tags' => ['Laravel', 'Rust', 'PostgreSQL'],
+            'stats' => [
+                ['value' => '94%', 'label' => 'Latency Reduction'],
+            ],
+            'is_featured' => true,
+            'sort_order' => 1,
+        ]);
+
+        // 1. Overview
+        $listResponse = $this->get('/case-studies');
+        $listResponse->assertStatus(200);
+        $listResponse->assertSee('Autonomous Logistics Dispatcher');
+        $listResponse->assertSee('PT LOGISTIK GLOBAL');
+        $listResponse->assertSee('rr-btn');
+
+        // 2. Detail
+        $detailResponse = $this->get('/case-studies/autonomous-logistics-dispatcher');
+        $detailResponse->assertStatus(200);
+        $detailResponse->assertSee('Autonomous Logistics Dispatcher');
+        $detailResponse->assertSee('PT LOGISTIK GLOBAL');
+        $detailResponse->assertSee('Route computation was taking over 4 minutes.', false);
+        $detailResponse->assertSee('94%');
+        $detailResponse->assertSee('Latency Reduction');
+    }
 }
