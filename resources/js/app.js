@@ -1,14 +1,19 @@
 import './bootstrap';
 import Alpine from 'alpinejs';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 window.Alpine = Alpine;
-Alpine.start();
+window.gsap = gsap;
+window.ScrollTrigger = ScrollTrigger;
 
+Alpine.start();
 
 function initTheme() {
     const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
 
-    // Check local storage or system preference
     if (localStorage.getItem('theme') === 'dark' ||
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
@@ -32,4 +37,30 @@ function initTheme() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', initTheme);
+function initScrollAnimations() {
+    if (typeof window === 'undefined') return;
+
+    // Subtle entrance animation for elements with data-reveal
+    const revealElements = document.querySelectorAll('[data-reveal]');
+    if (revealElements.length > 0 && window.gsap) {
+        window.gsap.fromTo(revealElements, 
+            { opacity: 0, y: 30 },
+            { 
+                opacity: 1, 
+                y: 0, 
+                duration: 0.8, 
+                stagger: 0.15, 
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: revealElements[0],
+                    start: 'top 85%',
+                }
+            }
+        );
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    initScrollAnimations();
+});
