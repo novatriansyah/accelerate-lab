@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="flex-grow">
-        <section
+        <section id="case-studies-header"
             class="relative isolate overflow-hidden bg-background-light dark:bg-background-dark px-6 py-24 sm:py-32 lg:px-8">
             <div
                 class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.teal.100),white)] opacity-20 dark:opacity-5">
@@ -110,7 +110,7 @@
                 </div>
             </section>
         @endif
-        <section class="py-12 bg-white dark:bg-background-dark border-t border-gray-200 dark:border-slate-800">
+        <section id="case-studies-grid" class="py-12 bg-white dark:bg-background-dark border-t border-gray-200 dark:border-slate-800">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach ($projects as $project)

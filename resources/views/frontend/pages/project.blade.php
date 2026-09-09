@@ -49,7 +49,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 overflow-hidden bg-background-light dark:bg-background-dark">
+    <section id="project-hero-section" class="relative pt-32 pb-20 overflow-hidden bg-background-light dark:bg-background-dark">
         <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent dark:from-primary/10"></div>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl">
@@ -107,7 +107,7 @@
     @endif
 
     <!-- Challenge & Solution -->
-    <section class="py-16 bg-white dark:bg-background-dark">
+    <section id="project-architecture-overview" class="py-16 bg-white dark:bg-background-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16">
                 <!-- Content -->
@@ -173,7 +173,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     @foreach ($project->gallery as $image)
                         <div class="rounded-xl overflow-hidden shadow-lg border border-gray-100 dark:border-slate-800">
-                            <img src="{{ Storage::url($image) }}" alt="Project Screenshot"
+                            <img src="{{ Storage::url($image) }}" alt="{{ $project->title }} Screenshot"
                                 class="w-full h-auto hover:scale-105 transition-transform duration-500">
                         </div>
                     @endforeach
