@@ -1,7 +1,7 @@
 @extends('frontend.components.layout')
 
 @section('content')
-    <main class="relative flex-1 bg-grid-pattern min-h-[calc(100vh-65px)]">
+    <main id="contact-hero-section" class="relative flex-1 bg-grid-pattern min-h-[calc(100vh-65px)]">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-24">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
                 <div class="lg:col-span-5 flex flex-col gap-10">
@@ -121,7 +121,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="lg:col-span-7">
+                <div id="contact-form" class="lg:col-span-7">
                     <x-project-estimator :settings="$settings ?? []" />
                 </div>
             </div>

@@ -53,7 +53,7 @@
 
 @section('content')
     <main class="flex-1 flex flex-col items-center w-full">
-        <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-12 text-center">
+        <section id="careers-hero-section" class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-12 text-center">
             <h1
                 class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-slate-dark dark:text-white mb-6">
                 {{ __('Join Our Team') }}
@@ -63,7 +63,7 @@
             </p>
         </section>
 
-        <section class="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pb-20">
+        <section id="open-roles-section" class="w-full max-w-4xl px-4 sm:px-6 lg:px-8 pb-20">
             @if ($jobs->count() > 0)
                 <div class="flex flex-col gap-4">
                     @foreach ($jobs as $job)

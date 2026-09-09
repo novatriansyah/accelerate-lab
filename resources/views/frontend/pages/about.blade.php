@@ -1,7 +1,7 @@
 @extends('frontend.components.layout')
 
 @section('content')
-    <section class="relative pt-24 pb-20 lg:pt-32 lg:pb-28">
+    <section id="about-hero-section" class="relative pt-24 pb-20 lg:pt-32 lg:pb-28">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
                 <div class="flex flex-col justify-center space-y-8">
@@ -156,7 +156,7 @@
             </div>
         </div>
     </section>
-    <section class="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
+    <section id="company-manifesto" class="py-20 lg:py-28 bg-background-light dark:bg-background-dark">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="mb-16 md:text-center max-w-3xl mx-auto">
                 <h2 class="text-3xl font-bold tracking-tight text-text-main dark:text-white sm:text-4xl">{{ __('Our DNA') }}</h2>
