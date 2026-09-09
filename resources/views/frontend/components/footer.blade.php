@@ -1,6 +1,10 @@
 @php
     $currentLocale = app()->getLocale();
     $footerServices = \App\Models\Service::orderBy('sort_order')->take(6)->get();
+    $footerEmail = \App\Models\SiteSetting::get('contact_email', 'hello@acceleratelab.id');
+    $footerCity = \App\Models\SiteSetting::get('registered_city', \App\Models\SiteSetting::get('contact_address', 'South Jakarta & Tangerang, Indonesia'));
+    $footerLinkedin = \App\Models\SiteSetting::get('linkedin_url', 'https://linkedin.com');
+    $legalName = \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri');
 @endphp
 
 <footer class="relative mt-24 border-t border-slate-200/80 dark:border-white/10 bg-white/60 dark:bg-[#070A11] transition-colors duration-300">
@@ -30,9 +34,9 @@
                             <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Proyek Sekarang' : 'Start Your Project Now' }}</span>
                         </span>
                     </a>
-                    <a href="mailto:hello@acceleratelab.id" class="rr-btn rr-btn-border px-6 py-3 text-sm font-medium text-white border-white/20 hover:border-[#00BFA5]">
+                    <a href="mailto:{{ $footerEmail }}" class="rr-btn rr-btn-border px-6 py-3 text-sm font-medium text-white border-white/20 hover:border-[#00BFA5]">
                         <span class="btn-wrap">
-                            <span class="text-1">hello@acceleratelab.id</span>
+                            <span class="text-1">{{ $footerEmail }}</span>
                             <span class="text-2">{{ $currentLocale === 'id' ? 'Kirim Email' : 'Send an Email' }}</span>
                         </span>
                     </a>
@@ -59,9 +63,9 @@
                         : 'Accelerate Lab is an elite digital engineering studio crafting scalable software architectures, custom cloud platforms, and modern web applications.' }}
                 </p>
                 <div class="text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1 pt-1 font-mono">
-                    <span>Legal Entity: <strong>PT Akselerasi Digital Mandiri</strong></span>
-                    <span>Locations: South Jakarta & Tangerang, Indonesia</span>
-                    <span class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">Accelerate Lab adalah merek dagang dan studio inovasi teknologi di bawah naungan PT Akselerasi Digital Mandiri.</span>
+                    <span>Legal Entity: <strong>{{ $legalName }}</strong></span>
+                    <span>Locations: {{ $footerCity }}</span>
+                    <span class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">Accelerate Lab adalah merek dagang dan studio inovasi teknologi di bawah naungan {{ $legalName }}.</span>
                 </div>
             </div>
 
@@ -114,7 +118,7 @@
                     <li><a href="{{ route('privacy-policy') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Kebijakan Privasi' : 'Privacy Policy' }}</a></li>
                     <li><a href="{{ route('terms-of-service') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Syarat Ketentuan' : 'Terms of Service' }}</a></li>
                     <li class="pt-2 flex items-center gap-3">
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-[#00BFA5] hover:bg-slate-100 dark:hover:bg-white/5 transition-colors" aria-label="LinkedIn">
+                        <a href="{{ $footerLinkedin }}" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-[#00BFA5] hover:bg-slate-100 dark:hover:bg-white/5 transition-colors" aria-label="LinkedIn">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
                         </a>
                         <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-[#00BFA5] hover:bg-slate-100 dark:hover:bg-white/5 transition-colors" aria-label="GitHub">
@@ -132,7 +136,7 @@
                 <span>All Engine Systems Operational</span>
             </div>
             <div>
-                &copy; {{ date('Y') }} PT Akselerasi Digital Mandiri. All rights reserved.
+                &copy; {{ date('Y') }} {{ $legalName }}. All rights reserved.
             </div>
         </div>
     </div>
