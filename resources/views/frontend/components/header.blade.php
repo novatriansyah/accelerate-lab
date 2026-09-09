@@ -21,54 +21,69 @@
         <nav aria-label="Main navigation" class="hidden md:flex items-center gap-1">
             <a href="{{ route('home') }}"
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('home') ? 'bg-white/10 text-white' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
-                {{ __('Home') }}
+                {{ $currentLocale === 'id' ? 'Beranda' : 'Home' }}
             </a>
             <a href="{{ route('about') }}"
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('about') ? 'bg-white/10 text-white' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
-                {{ __('About') }}
+                {{ $currentLocale === 'id' ? 'Tentang' : 'About' }}
             </a>
             <a href="{{ route('services') }}"
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('services') || request()->routeIs('service') ? 'bg-white/10 text-white' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
-                {{ __('Services') }}
+                {{ $currentLocale === 'id' ? 'Layanan' : 'Services' }}
             </a>
             <a href="{{ route('case-studies') }}"
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('case-studies') || request()->routeIs('project') ? 'bg-white/10 text-white' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
-                {{ __('Case Studies') }}
+                {{ $currentLocale === 'id' ? 'Studi Kasus' : 'Case Studies' }}
             </a>
             <a href="{{ route('contact') }}"
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('contact') ? 'bg-white/10 text-white' : 'text-slate-300 hover:text-white hover:bg-white/5' }}">
-                {{ __('Contact') }}
+                {{ $currentLocale === 'id' ? 'Kontak' : 'Contact' }}
             </a>
         </nav>
 
-        {{-- Right Actions: Locale Toggle & Redox Kinetic .rr-btn --}}
-        <div class="flex items-center gap-3">
+        {{-- Right Actions: Locale Toggle, Consultation, Theme & Redox Kinetic .rr-btn --}}
+        <div class="flex items-center gap-2 sm:gap-3">
             {{-- Language Switcher Toggle --}}
             <div class="inline-flex items-center bg-slate-800/80 p-0.5 rounded-full border border-white/10 text-xs font-bold">
-                <a href="{{ route('lang.switch', 'id') }}" 
+                <a href="/lang/id" 
                    aria-label="Switch language to Indonesian"
-                   class="px-2.5 py-1 rounded-full transition-colors {{ $currentLocale === 'id' ? 'bg-teal-500 text-slate-900 shadow-sm font-bold' : 'text-slate-400 hover:text-white' }}">
+                   class="min-h-[44px] min-w-[44px] flex items-center justify-center px-2.5 py-1 rounded-full transition-colors {{ $currentLocale === 'id' ? 'bg-teal-500 text-slate-900 shadow-sm font-bold' : 'text-slate-400 hover:text-white' }}">
                     ID
                 </a>
-                <a href="{{ route('lang.switch', 'en') }}" 
+                <a href="/lang/en" 
                    aria-label="Switch language to English"
-                   class="px-2.5 py-1 rounded-full transition-colors {{ $currentLocale === 'en' ? 'bg-teal-500 text-slate-900 shadow-sm font-bold' : 'text-slate-400 hover:text-white' }}">
+                   class="min-h-[44px] min-w-[44px] flex items-center justify-center px-2.5 py-1 rounded-full transition-colors {{ $currentLocale === 'en' ? 'bg-teal-500 text-slate-900 shadow-sm font-bold' : 'text-slate-400 hover:text-white' }}">
                     EN
                 </a>
             </div>
 
+            {{-- Consultation Modal Trigger --}}
+            <button type="button" 
+                    @click="$dispatch('open-consultation-modal')" 
+                    class="hidden xl:inline-flex items-center gap-1.5 text-xs font-bold text-slate-300 hover:text-teal-400 px-3 py-1.5 rounded-full hover:bg-white/5 transition-all">
+                <x-app-icon name="calendar_today" class="size-3.5 text-teal-400" />
+                <span>{{ __('15-Min Free Call') }}</span>
+            </button>
+
+            {{-- Dark Mode Toggle --}}
+            <button type="button"
+                    class="theme-toggle-btn p-2 rounded-full hover:bg-white/10 text-slate-300 hover:text-teal-400 transition-colors"
+                    aria-label="Toggle dark mode">
+                <x-app-icon name="brightness_4" class="size-4 text-slate-300" />
+            </button>
+
             {{-- Redox Kinetic CTA Button --}}
             <a href="{{ route('contact') }}" id="nav-contact-btn" class="rr-btn hidden sm:inline-flex text-xs !py-2.5 !px-5">
                 <span class="btn-wrap">
-                    <span class="text-one">{{ __('Let\'s Talk') }}</span>
-                    <span class="text-two">{{ __('Let\'s Talk') }}</span>
+                    <span class="text-one">{{ $currentLocale === 'id' ? 'Konsultasi Proyek' : 'Project Consultation' }}</span>
+                    <span class="text-two">{{ $currentLocale === 'id' ? 'Konsultasi Proyek' : 'Project Consultation' }}</span>
                 </span>
             </a>
 
             {{-- Mobile Hamburger Button --}}
             <button @click="isOpen = !isOpen"
                     type="button"
-                    class="md:hidden text-slate-300 hover:text-white p-1.5 rounded-full hover:bg-white/10 focus:outline-none"
+                    class="md:hidden text-slate-300 hover:text-white p-2 rounded-full hover:bg-white/10 focus:outline-none"
                     aria-label="Toggle navigation menu"
                     x-bind:aria-expanded="isOpen.toString()">
                 <x-app-icon name="menu" class="size-6 text-slate-300" />
@@ -87,29 +102,29 @@
              class="md:hidden absolute top-full left-0 right-0 mt-3 p-4 rounded-3xl bg-slate-900/95 backdrop-blur-2xl border border-white/10 shadow-2xl space-y-2">
             <a href="{{ route('home') }}"
                class="block px-4 py-3 rounded-2xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-teal-400 transition-colors">
-                {{ __('Home') }}
+                {{ $currentLocale === 'id' ? 'Beranda' : 'Home' }}
             </a>
             <a href="{{ route('about') }}"
                class="block px-4 py-3 rounded-2xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-teal-400 transition-colors">
-                {{ __('About') }}
+                {{ $currentLocale === 'id' ? 'Tentang' : 'About' }}
             </a>
             <a href="{{ route('services') }}"
                class="block px-4 py-3 rounded-2xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-teal-400 transition-colors">
-                {{ __('Services') }}
+                {{ $currentLocale === 'id' ? 'Layanan' : 'Services' }}
             </a>
             <a href="{{ route('case-studies') }}"
                class="block px-4 py-3 rounded-2xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-teal-400 transition-colors">
-                {{ __('Case Studies') }}
+                {{ $currentLocale === 'id' ? 'Studi Kasus' : 'Case Studies' }}
             </a>
             <a href="{{ route('contact') }}"
                class="block px-4 py-3 rounded-2xl text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-teal-400 transition-colors">
-                {{ __('Contact') }}
+                {{ $currentLocale === 'id' ? 'Kontak' : 'Contact' }}
             </a>
             <div class="pt-2 border-t border-white/10">
                 <a href="{{ route('contact') }}" class="rr-btn w-full text-center !py-3 !text-sm">
                     <span class="btn-wrap">
-                        <span class="text-one">{{ __('Let\'s Talk') }}</span>
-                        <span class="text-two">{{ __('Let\'s Talk') }}</span>
+                        <span class="text-one">{{ $currentLocale === 'id' ? 'Konsultasi Proyek' : 'Project Consultation' }}</span>
+                        <span class="text-two">{{ $currentLocale === 'id' ? 'Konsultasi Proyek' : 'Project Consultation' }}</span>
                     </span>
                 </a>
             </div>

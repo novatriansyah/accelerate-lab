@@ -19,7 +19,7 @@
 
 @section('content')
     {{-- =========================================================================
-         1. HERO AREA (Authentic Redox Lines 213-270)
+         1. HERO AREA (Authentic Redox Lines 213-270 + Business Architecture Preview)
          ========================================================================= --}}
     <section class="hero-area pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden bg-slate-950 text-white" aria-labelledby="hero-heading">
         {{-- Ambient Background Glow --}}
@@ -47,17 +47,154 @@
                         </div>
                     </div>
 
-                    {{-- Hero Headline --}}
-                    <div class="section-header max-w-4xl">
-                        <h1 id="hero-heading" class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.08] font-instrumentsans">
-                            Accelerate your brand with 
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-teal-400 to-emerald-400">precision engineering</span>
-                            and high-impact design.
-                        </h1>
+                    {{-- Hero Headline & Visual Layout --}}
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 shadow-sm mb-6">
+                                <span class="relative flex h-2 w-2" aria-hidden="true">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-400"></span>
+                                </span>
+                                <span class="text-xs font-bold text-teal-400 tracking-wide uppercase">{{ __('Tersedia untuk Proyek Baru Kuartal Ini') }}</span>
+                            </div>
+
+                            <h1 id="hero-heading" class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.12] font-instrumentsans mb-6">
+                                {{ __('Dari Website Bisnis Berkelas hingga Sistem Operasional Kustom yang Mempercepat Pertumbuhan Usaha Anda') }}
+                            </h1>
+
+                            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+                                {{ __('Tinggalkan sistem manual yang kaku dan spreadsheet yang tercecer. Kami merancang website profil berkonversi tinggi dan portal bisnis modern yang rapi, cepat, dan menjadi aset milik Anda selamanya.') }}
+                            </p>
+
+                            @php
+                                $heroWaPhone = preg_replace('/[^0-9]/', '', ($settings['contact_whatsapp'] ?? null) ?: (($settings['contact_phone'] ?? null) ?: '6287721312985'));
+                                $heroWaMsg = __('Halo Accelerate Lab! Saya ingin konsultasi mengenai pembuatan sistem software kustom untuk bisnis saya.');
+                            @endphp
+
+                            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                                <a href="https://wa.me/{{ $heroWaPhone }}?text={{ urlencode($heroWaMsg) }}" target="_blank" rel="noopener noreferrer" id="hero-cta-primary"
+                                   class="rr-btn !bg-[#25D366] hover:!bg-[#20ba5a] text-white border-0 shadow-lg shadow-emerald-500/20">
+                                    <span class="btn-wrap">
+                                        <span class="text-one text-white flex items-center gap-2">
+                                            <x-app-icon name="chat" class="size-4 fill-current" />
+                                            {{ __('Konsultasi Gratis via WhatsApp') }}
+                                        </span>
+                                        <span class="text-two text-white flex items-center gap-2">
+                                            <x-app-icon name="chat" class="size-4 fill-current" />
+                                            {{ __('Konsultasi Gratis via WhatsApp') }}
+                                        </span>
+                                    </span>
+                                </a>
+
+                                <a href="{{ route('contact') }}" id="hero-cta-secondary"
+                                   class="rr-btn btn-border">
+                                    <span class="btn-wrap">
+                                        <span class="text-one flex items-center gap-2">
+                                            <x-app-icon name="calculate" class="size-4 text-teal-400" />
+                                            {{ __('Hitung Estimasi Kebutuhan') }}
+                                        </span>
+                                        <span class="text-two flex items-center gap-2">
+                                            <x-app-icon name="calculate" class="size-4 text-slate-900" />
+                                            {{ __('Hitung Estimasi Kebutuhan') }}
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            {{-- Trust Anchors --}}
+                            <div class="flex flex-wrap items-center gap-y-3 gap-x-6 text-xs font-semibold text-slate-300">
+                                <div class="flex items-center gap-1.5">
+                                    <x-app-icon name="check_circle" class="size-4 text-teal-400" />
+                                    <span>{{ __('Konsultasi Langsung dengan Principal Architect') }}</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <x-app-icon name="check_circle" class="size-4 text-teal-400" />
+                                    <span>{{ __('100% Source Code dan Database Hak Milik Anda') }}</span>
+                                </div>
+                                <div class="flex items-center gap-1.5">
+                                    <x-app-icon name="check_circle" class="size-4 text-teal-400" />
+                                    <span>{{ __('Resmi PT Akselerasi Digital Mandiri') }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Right Column: Interactive Business Dashboard Preview Graphic --}}
+                        <div class="lg:col-span-5 relative w-full" aria-hidden="true">
+                            <div class="relative w-full max-w-md mx-auto bg-slate-900/90 rounded-[20px] shadow-2xl border border-white/10 overflow-hidden">
+                                <div class="flex items-center justify-between px-6 py-4 bg-slate-800/80 border-b border-white/10">
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-8 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400">
+                                            <x-app-icon name="dashboard" class="size-4" />
+                                        </div>
+                                        <div>
+                                            <h2 class="text-xs font-bold uppercase tracking-wider text-white">Portal Operasional Bisnis</h2>
+                                            <p class="text-[11px] text-slate-400">Sinkronisasi Multi-Gudang &amp; Cabang</p>
+                                        </div>
+                                    </div>
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                        <span class="size-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                                        Live Sync
+                                    </span>
+                                </div>
+
+                                <div class="p-6 space-y-5">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="p-4 rounded-xl bg-slate-800/50 border border-white/10">
+                                            <p class="text-xs text-slate-400 font-medium mb-1">Pesanan Terproses</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-2xl font-black text-white">1,420+</span>
+                                                <span class="text-xs font-bold text-teal-400">+18% bln ini</span>
+                                            </div>
+                                            <div class="mt-2 w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                                                <div class="bg-teal-400 h-full rounded-full" style="width: 82%"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="p-4 rounded-xl bg-slate-800/50 border border-white/10">
+                                            <p class="text-xs text-slate-400 font-medium mb-1">Akurasi Inventori</p>
+                                            <div class="flex items-baseline gap-2">
+                                                <span class="text-2xl font-black text-white">99.8%</span>
+                                                <span class="text-xs font-bold text-teal-400">Optimal</span>
+                                            </div>
+                                            <div class="mt-2 w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+                                                <div class="bg-teal-400 h-full rounded-full" style="width: 99.8%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2.5 text-xs font-mono">
+                                        <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/40 border border-white/5">
+                                            <div class="flex items-center gap-2.5">
+                                                <div class="size-2 rounded-full bg-emerald-400"></div>
+                                                <span class="text-slate-300">Invoicing otomatis terkirim</span>
+                                            </div>
+                                            <span class="text-slate-500">Baru saja</span>
+                                        </div>
+                                        <div class="flex items-center justify-between p-3 rounded-lg bg-slate-800/40 border border-white/5">
+                                            <div class="flex items-center gap-2.5">
+                                                <div class="size-2 rounded-full bg-teal-400"></div>
+                                                <span class="text-slate-300">Notifikasi stok menipis</span>
+                                            </div>
+                                            <span class="text-teal-400">12 item</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="absolute -bottom-4 -left-4 bg-slate-900 rounded-full shadow-xl border border-white/10 py-2.5 px-5 flex items-center gap-3 z-30">
+                                <span class="relative flex h-2.5 w-2.5">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                                </span>
+                                <div class="text-xs font-semibold text-slate-200">
+                                    Status: <span class="text-teal-400 font-bold">Sistem Aktif 24/7</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    {{-- Metrics & Intro Content --}}
-                    <div class="section-content mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+                    {{-- Metrics & Intro Statistics (Redox Counters) --}}
+                    <div class="section-content mt-16 pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
                         <div class="md:col-span-6 flex items-center gap-10">
                             <div class="feature-box">
                                 <span class="block text-4xl sm:text-5xl font-bold text-white font-mono">98%</span>
@@ -70,17 +207,17 @@
                             </div>
                         </div>
 
-                        <div class="md:col-span-6 flex flex-col sm:flex-row items-start sm:items-center justify-end gap-5">
-                            <p class="text-slate-400 text-sm sm:text-base max-w-md leading-relaxed">
-                                We architect high-performance web applications, enterprise software, and conversion-optimized digital systems for ambitious teams.
-                            </p>
-                            <a href="{{ route('contact') }}" class="rr-btn shrink-0">
-                                <span class="btn-wrap">
-                                    <span class="text-one">Start a Project</span>
-                                    <span class="text-two">Start a Project</span>
-                                </span>
-                            </a>
+                        {{-- Dynamic Homepage Stats when available --}}
+                        @if (isset($heroStats) && count($heroStats) > 0)
+                        <div class="md:col-span-6 flex flex-wrap items-center justify-end gap-8">
+                            @foreach ($heroStats as $stat)
+                                <div>
+                                    <p class="text-3xl font-extrabold text-white font-mono">{{ $stat->value }}<span class="text-teal-400 text-xl">{{ $stat->unit }}</span></p>
+                                    <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold mt-0.5">{{ __($stat->label) }}</p>
+                                </div>
+                            @endforeach
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -120,10 +257,10 @@
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-14">
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest bg-teal-500/10 text-teal-400 border border-teal-500/20 mb-4">
-                    Why Accelerate Lab
+                    {{ __('Mengapa Accelerate Lab?') }}
                 </span>
                 <h2 id="bento-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-instrumentsans max-w-2xl">
-                    More than developers: your long-term technology partners
+                    {{ __('Lebih dari Sekadar Pembuat Kode, Kami Mitra Rekayasa Teknologi Anda') }}
                 </h2>
             </div>
 
@@ -154,11 +291,11 @@
                 <div class="col-span-12 md:col-span-6 lg:col-span-4 rounded-[20px] bg-slate-900/90 border border-white/10 p-8 flex flex-col justify-between">
                     <div>
                         <span class="size-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-6">
-                            <x-app-icon name="brand-rocket" class="size-6 text-teal-400" />
+                            <x-app-icon name="verified" class="size-6 text-teal-400" />
                         </span>
                         <h3 class="text-xl font-bold text-white mb-2 font-instrumentsans">Reliable &amp; Scalable Code</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Every system is engineered to handle 10x traffic spikes with sub-100ms response latencies.
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            {{ __('Tested for High Reliability') }}: Every system is engineered to handle 10x traffic spikes with sub-100ms response latencies.
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
@@ -167,20 +304,20 @@
                     </div>
                 </div>
 
-                {{-- Bento Card 3: 4-col Security Card --}}
+                {{-- Bento Card 3: 4-col Full IP Ownership Card --}}
                 <div class="col-span-12 md:col-span-6 lg:col-span-4 rounded-[20px] bg-slate-900/90 border border-white/10 p-8 flex flex-col justify-between">
                     <div>
                         <span class="size-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 mb-6">
-                            <x-app-icon name="check_circle" class="size-6 text-teal-400" />
+                            <x-app-icon name="lock" class="size-6 text-teal-400" />
                         </span>
-                        <h3 class="text-xl font-bold text-white mb-2 font-instrumentsans">Hardened Security by Design</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            End-to-end encryption, strict role-based access control, and automated vulnerability scanning built-in.
+                        <h3 class="text-xl font-bold text-white mb-2 font-instrumentsans">{{ __('Kepemilikan Penuh Tanpa Keterikatan') }}</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                            100% Source Code, konfigurasi database, dan hak akses server sepenuhnya diserahkan menjadi aset sah milik bisnis Anda tanpa biaya lisensi tersembunyi.
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-xs font-mono text-slate-400">Security Audit</span>
-                        <span class="text-xs font-mono text-teal-400 font-bold">Passed</span>
+                        <span class="text-xs font-mono text-slate-400">Ownership</span>
+                        <span class="text-xs font-mono text-teal-400 font-bold">100% Client Asset</span>
                     </div>
                 </div>
 
@@ -207,22 +344,96 @@
         </div>
     </section>
 
+    {{-- Operational Transformation: Tantangan Manual vs. Sistem Kustom --}}
+    <section class="py-24 bg-slate-900/60 border-t border-white/5" aria-labelledby="comparison-heading">
+        <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-mono uppercase tracking-widest mb-3">
+                    <x-app-icon name="compare_arrows" class="size-3.5" />
+                    {{ __('Transformasi Operasional Bisnis') }}
+                </span>
+                <h2 id="comparison-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-instrumentsans">
+                    {{ __('Tantangan Manual vs. Sistem Kustom') }}
+                </h2>
+                <p class="mt-3 text-base sm:text-lg text-slate-400">
+                    {{ __('Bandingkan bagaimana sistem kustom terintegrasi menyelesaikan kendala operasional yang sering menghambat bisnis berkembang.') }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {{-- Column 1: Manual / Spreadsheet Tercecer --}}
+                <div class="p-8 rounded-[20px] bg-rose-950/20 border border-rose-900/40 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center">
+                            <x-app-icon name="warning" class="size-5" />
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">{{ __('Tantangan Spreadsheet & Sistem Manual') }}</h3>
+                            <p class="text-xs text-rose-400 font-medium">{{ __('Membatasi kecepatan dan rawan human error') }}</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-slate-300">
+                            <x-app-icon name="close" class="size-5 text-rose-400 shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Spreadsheet Tercecer') }}</strong>: {{ __('File bertumpuk di berbagai komputer, rawan terhapus atau tertukar versi rumus perhitungan.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-300">
+                            <x-app-icon name="close" class="size-5 text-rose-400 shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Rekap Lambat') }}</strong>: {{ __('Staf menghabiskan 2-3 jam setiap sore hanya untuk mencocokkan nota manual dan laporan omzet harian.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-300">
+                            <x-app-icon name="close" class="size-5 text-rose-400 shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Stok Gudang Selisih') }}</strong>: {{ __('Data barang di catatan admin tidak sesuai dengan kondisi riil di gudang fisik.') }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                {{-- Column 2: Custom Solution / Database Terpusat --}}
+                <div class="p-8 rounded-[20px] bg-teal-950/20 border border-teal-500/30 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="size-10 rounded-xl bg-teal-500/10 text-teal-400 flex items-center justify-center">
+                            <x-app-icon name="check_circle" class="size-5" />
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">{{ __('Solusi Sistem Kustom Terintegrasi') }}</h3>
+                            <p class="text-xs text-teal-400 font-medium">{{ __('Otomatis, presisi, dan aset milik Anda 100%') }}</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-slate-300">
+                            <x-app-icon name="check_circle" class="size-5 text-teal-400 shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Database Terpusat') }}</strong>: {{ __('Seluruh transaksi tercatat otomatis di satu database aman dengan hak akses per karyawan.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-300">
+                            <x-app-icon name="check_circle" class="size-5 text-teal-400 shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Invoicing Otomatis') }}</strong>: {{ __('Tagihan, surat jalan, dan laporan keuangan terbit seketika tanpa perlu rekap ulang manual.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-300">
+                            <x-app-icon name="check_circle" class="size-5 text-teal-400 shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Sinkronisasi Real-Time') }}</strong>: {{ __('Stok berkurang otomatis begitu pesanan terkonfirmasi, terintegrasi barcode scanner.') }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- =========================================================================
          3. COMPLEX PROFICIENCY SERVICES LIST (Authentic Redox Lines 500-580)
          ========================================================================= --}}
-    <section class="service-area py-24 bg-slate-900/40 border-t border-white/5 relative" aria-labelledby="services-heading">
+    <section class="service-area py-24 bg-slate-950 border-t border-white/5 relative" aria-labelledby="services-heading">
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
                     <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest bg-teal-500/10 text-teal-400 border border-teal-500/20 mb-4">
-                        Core Capabilities
+                        {{ __('Kapabilitas Utama') }}
                     </span>
                     <h2 id="services-heading" class="text-4xl sm:text-5xl font-bold tracking-tight text-white font-instrumentsans">
-                        Complex Proficiency
+                        {{ __('Solusi Rekayasa Perangkat Lunak dari Hulu ke Hilir') }}
                     </h2>
                 </div>
                 <p class="text-slate-400 text-sm sm:text-base max-w-md leading-relaxed">
-                    End-to-end technical execution across modern web platforms, mobile architecture, cloud infrastructure, and product strategy.
+                    {{ __('Semua yang Anda butuhkan untuk meluncurkan, mengoptimasi, dan menskalakan sistem digital bisnis Anda dengan standar performa tertinggi.') }}
                 </p>
             </div>
 
@@ -236,18 +447,18 @@
                         <div class="content">
                             <h3 class="title">
                                 <a href="{{ route('services') }}" class="hover:text-teal-400 transition-colors">
-                                    Full-Stack Web Development
+                                    {{ __('Web Application Development') }}
                                 </a>
                             </h3>
                             <ul class="service-list">
+                                <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">{{ __('Strategi Produk') }}</a></li>
+                                <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">{{ __('Custom Development') }}</a></li>
                                 <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">Laravel 12 Architecture</a></li>
-                                <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">React &amp; Vue SPAs</a></li>
-                                <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">High-Throughput REST &amp; GraphQL APIs</a></li>
-                                <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">Database Optimization</a></li>
+                                <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">{{ __('Learn more') }}</a></li>
                             </ul>
                         </div>
                         <div class="thumb">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80" alt="Full-Stack Web Development">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&auto=format&fit=crop&q=80" alt="Web Application Development">
                         </div>
                     </div>
 
@@ -259,7 +470,7 @@
                         <div class="content">
                             <h3 class="title">
                                 <a href="{{ route('services') }}" class="hover:text-teal-400 transition-colors">
-                                    Mobile Application Engineering
+                                    {{ __('Mobile App Development') }}
                                 </a>
                             </h3>
                             <ul class="service-list">
@@ -270,7 +481,7 @@
                             </ul>
                         </div>
                         <div class="thumb">
-                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&auto=format&fit=crop&q=80" alt="Mobile Application Engineering">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&auto=format&fit=crop&q=80" alt="Mobile App Development">
                         </div>
                     </div>
 
@@ -282,7 +493,7 @@
                         <div class="content">
                             <h3 class="title">
                                 <a href="{{ route('services') }}" class="hover:text-teal-400 transition-colors">
-                                    Product Design &amp; UI/UX Systems
+                                    {{ __('UI/UX Design & Conversion Systems') }}
                                 </a>
                             </h3>
                             <ul class="service-list">
@@ -293,7 +504,7 @@
                             </ul>
                         </div>
                         <div class="thumb">
-                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=80" alt="Product Design & UI/UX Systems">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&auto=format&fit=crop&q=80" alt="UI/UX Design">
                         </div>
                     </div>
 
@@ -305,7 +516,7 @@
                         <div class="content">
                             <h3 class="title">
                                 <a href="{{ route('services') }}" class="hover:text-teal-400 transition-colors">
-                                    Cloud Architecture &amp; DevOps
+                                    {{ __('Cloud Architecture & Optimization') }}
                                 </a>
                             </h3>
                             <ul class="service-list">
@@ -316,18 +527,29 @@
                             </ul>
                         </div>
                         <div class="thumb">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80" alt="Cloud Architecture & DevOps">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&auto=format&fit=crop&q=80" alt="Cloud Architecture">
                         </div>
                     </div>
                 </div>
             </div>
+
+            @if (isset($capabilityStats) && count($capabilityStats) > 0)
+                <div class="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-8">
+                    @foreach ($capabilityStats as $stat)
+                        <div>
+                            <p class="text-3xl font-extrabold text-white font-mono">{{ $stat->value }}<span class="text-teal-400 text-xl">{{ $stat->unit }}</span></p>
+                            <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold mt-0.5">{{ __($stat->label) }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </section>
 
     {{-- =========================================================================
          4. FEATURED WORK GRID SECTION (Authentic Redox Lines 370-480)
          ========================================================================= --}}
-    <section class="work-area py-24 bg-slate-950 border-t border-white/5 relative" aria-labelledby="work-heading">
+    <section class="work-area py-24 bg-slate-900/60 border-t border-white/5 relative" aria-labelledby="work-heading">
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="section-header mb-14 flex items-end justify-between">
                 <div>
@@ -335,7 +557,7 @@
                         Case Studies
                     </span>
                     <h2 id="work-heading" class="text-4xl sm:text-5xl font-bold tracking-tight text-white font-instrumentsans">
-                        Featured Work
+                        {{ __('Our Recent Projects') }}
                     </h2>
                 </div>
                 <div class="hidden sm:block">
@@ -343,95 +565,135 @@
                 </div>
             </div>
 
+            @php
+                $displayProjects = (isset($featuredProjects) && count($featuredProjects) > 0) ? $featuredProjects : ($recentProjects ?? collect());
+            @endphp
+
             <div class="works-wrapper-box">
                 <div class="works-wrapper-1">
-                    {{-- Work Box 1 --}}
-                    <div class="work-box group">
-                        <div class="thumb">
-                            <div class="image scale">
-                                <a href="{{ route('case-studies') }}">
-                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80" alt="Fintech Intelligence Engine">
-                                </a>
+                    @if ($displayProjects->count() > 0)
+                        @foreach ($displayProjects as $project)
+                            <div class="work-box group">
+                                <div class="thumb">
+                                    <div class="image scale">
+                                        <a href="/case-studies/{{ $project->slug }}">
+                                            @if ($project->featured_image)
+                                                <img src="{{ asset($project->featured_image) }}" alt="{{ $project->title }}">
+                                            @else
+                                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80" alt="{{ $project->title }}">
+                                            @endif
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h3 class="title">
+                                        <a href="/case-studies/{{ $project->slug }}" class="text-white hover:text-teal-400 transition-colors">
+                                            {{ $project->title }}
+                                        </a>
+                                    </h3>
+                                    @if ($project->challenge || $project->solution)
+                                        <div class="mt-2 text-xs text-slate-400 space-y-1">
+                                            @if ($project->challenge)
+                                                <p><strong class="text-slate-300">{{ __('Tantangan') }}:</strong> {{ Str::limit($project->challenge, 60) }}</p>
+                                            @endif
+                                            @if ($project->solution)
+                                                <p><strong class="text-teal-400">{{ __('Solusi') }}:</strong> {{ Str::limit($project->solution, 60) }}</p>
+                                            @endif
+                                        </div>
+                                    @endif
+                                    <div class="meta">
+                                        <span class="tag">{{ $project->client ?? 'Enterprise Client' }}</span>
+                                        <span class="date">2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @else
+                        {{-- Default Curated Work Boxes --}}
+                        <div class="work-box group">
+                            <div class="thumb">
+                                <div class="image scale">
+                                    <a href="{{ route('case-studies') }}">
+                                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80" alt="Core Banking Portal">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3 class="title">
+                                    <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
+                                        Core Banking Portal
+                                    </a>
+                                </h3>
+                                <div class="meta">
+                                    <span class="tag">Financial Architecture</span>
+                                    <span class="date">2025</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="content">
-                            <h3 class="title">
-                                <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
-                                    Fintech Intelligence Engine
-                                </a>
-                            </h3>
-                            <div class="meta">
-                                <span class="tag">Laravel &amp; Vue</span>
-                                <span class="date">2025</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    {{-- Work Box 2 --}}
-                    <div class="work-box group">
-                        <div class="thumb">
-                            <div class="image scale">
-                                <a href="{{ route('case-studies') }}">
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Telehealth Analytics Portal">
-                                </a>
+                        <div class="work-box group">
+                            <div class="thumb">
+                                <div class="image scale">
+                                    <a href="{{ route('case-studies') }}">
+                                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Telehealth Analytics Portal">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3 class="title">
+                                    <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
+                                        Telehealth Analytics Portal
+                                    </a>
+                                </h3>
+                                <div class="meta">
+                                    <span class="tag">Healthcare</span>
+                                    <span class="date">2025</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="content">
-                            <h3 class="title">
-                                <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
-                                    Telehealth Analytics Portal
-                                </a>
-                            </h3>
-                            <div class="meta">
-                                <span class="tag">Healthcare</span>
-                                <span class="date">2025</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    {{-- Work Box 3 --}}
-                    <div class="work-box group">
-                        <div class="thumb">
-                            <div class="image scale">
-                                <a href="{{ route('case-studies') }}">
-                                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80" alt="Cybersecurity Threat Map">
-                                </a>
+                        <div class="work-box group">
+                            <div class="thumb">
+                                <div class="image scale">
+                                    <a href="{{ route('case-studies') }}">
+                                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80" alt="Cybersecurity Threat Map">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3 class="title">
+                                    <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
+                                        Cybersecurity Threat Map
+                                    </a>
+                                </h3>
+                                <div class="meta">
+                                    <span class="tag">Real-Time Data</span>
+                                    <span class="date">2025</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="content">
-                            <h3 class="title">
-                                <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
-                                    Cybersecurity Threat Map
-                                </a>
-                            </h3>
-                            <div class="meta">
-                                <span class="tag">Real-Time Data</span>
-                                <span class="date">2025</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    {{-- Work Box 4 --}}
-                    <div class="work-box group">
-                        <div class="thumb">
-                            <div class="image scale">
-                                <a href="{{ route('case-studies') }}">
-                                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80" alt="Enterprise Logistics Suite">
-                                </a>
+                        <div class="work-box group">
+                            <div class="thumb">
+                                <div class="image scale">
+                                    <a href="{{ route('case-studies') }}">
+                                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&fit=crop&q=80" alt="Enterprise Logistics Suite">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <h3 class="title">
+                                    <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
+                                        Enterprise Logistics Suite
+                                    </a>
+                                </h3>
+                                <div class="meta">
+                                    <span class="tag">Cloud Architecture</span>
+                                    <span class="date">2025</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="content">
-                            <h3 class="title">
-                                <a href="{{ route('case-studies') }}" class="text-white hover:text-teal-400 transition-colors">
-                                    Enterprise Logistics Suite
-                                </a>
-                            </h3>
-                            <div class="meta">
-                                <span class="tag">Cloud Architecture</span>
-                                <span class="date">2025</span>
-                            </div>
-                        </div>
-                    </div>
+                    @endif
                 </div>
             </div>
 
@@ -446,18 +708,56 @@
         </div>
     </section>
 
-    {{-- Two-Tier Commercial Offer Ladder Section --}}
-    <section class="py-24 bg-slate-900/60 border-t border-white/5" aria-labelledby="pricing-heading">
+    {{-- Execution Process Indicator (NextSaaS Process Section) --}}
+    <section id="process-step-indicator" class="py-24 bg-slate-950 border-t border-white/5" aria-labelledby="process-heading">
+        <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-14">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest bg-teal-500/10 text-teal-400 border border-teal-500/20 mb-4">
+                    {{ __('How We Work') }}
+                </span>
+                <h2 id="process-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-instrumentsans">
+                    Dari Perencanaan Arsitektur hingga Peluncuran Produksi
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-[20px] bg-slate-900 border border-white/10 space-y-4">
+                    <span class="text-2xl font-mono font-bold text-teal-400">01</span>
+                    <h3 class="text-xl font-bold text-white">Discovery &amp; Arsitektur</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span class="text-slate-200 font-semibold">{{ __('Audit Alur Kerja') }} &amp; {{ __('Pemetaan Masalah') }}:</span> Analisis mendalam proses bisnis, perancangan skema database relasional, dan penyusunan spesifikasi teknis tanpa asumsi.
+                    </p>
+                </div>
+                <div class="p-8 rounded-[20px] bg-slate-900 border border-white/10 space-y-4">
+                    <span class="text-2xl font-mono font-bold text-teal-400">02</span>
+                    <h3 class="text-xl font-bold text-white">Engineering Sprints</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Pembangunan modul fitur terisolasi dengan Strict TDD, continuous integration, dan demo bertahap setiap 2 minggu.
+                    </p>
+                </div>
+                <div class="p-8 rounded-[20px] bg-slate-900 border border-white/10 space-y-4">
+                    <span class="text-2xl font-mono font-bold text-teal-400">03</span>
+                    <h3 class="text-xl font-bold text-white">Testing &amp; Handover</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Uji beban concurrency, audit keamanan, penyerahan full source code repository, dan pendampingan peluncuran server produksi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Retainer & Commercial Offer Ladder Section --}}
+    <section id="retainer-scope-matrix" class="py-24 bg-slate-900/60 border-t border-white/5" aria-labelledby="pricing-heading">
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="inline-block px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 text-xs font-mono uppercase tracking-widest border border-teal-500/20 mb-4">
-                    Transparent Engagement
+                    {{ __('Pilihan Solusi Sesuai Kebutuhan Bisnis Anda') }}
                 </span>
                 <h2 id="pricing-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white font-instrumentsans">
-                    Model Kerja Sama Fleksibel dan Transparan
+                    {{ __('Model Kerja Sama Fleksibel dan Transparan') }}
                 </h2>
                 <p class="text-slate-400 text-base sm:text-lg mt-3">
-                    Mulai dari landing page kilat hingga sistem portal operasional terintegrasi penuh.
+                    Mulai dari paket kilat untuk bisnis lokal hingga sistem portal operasional terintegrasi penuh.
                 </p>
             </div>
 
@@ -466,10 +766,11 @@
                 <div class="p-8 sm:p-10 rounded-[20px] bg-slate-900 border border-white/10 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20">Product Sprint</span>
-                            <span class="text-xs text-slate-400 font-mono">1-2 Minggu</span>
+                            <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20">Website Bisnis Express</span>
+                            <span class="text-xs text-teal-400 font-mono font-bold">24-48 Jam</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 font-instrumentsans">Website Bisnis &amp; Landing Page</h3>
+                        <h3 class="text-2xl font-bold text-white mb-1 font-instrumentsans">Website Bisnis Express</h3>
+                        <p class="text-2xl font-extrabold text-white font-mono mb-3">Rp 1.500.000</p>
                         <p class="text-slate-400 text-sm leading-relaxed mb-6">
                             Website profil berkonversi tinggi, desain custom elegan, mobile responsif, dan siap meluncurkan bisnis Anda ke publik.
                         </p>
@@ -506,9 +807,9 @@
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs font-mono font-bold uppercase tracking-wider text-teal-400 bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20">Custom Platform</span>
-                            <span class="text-xs text-slate-400 font-mono">Bespoke Engineering</span>
+                            <span class="text-xs text-slate-400 font-mono">Konsultasi Kebutuhan</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-2 font-instrumentsans">Portal Bisnis &amp; Sistem Internal</h3>
+                        <h3 class="text-2xl font-bold text-white mb-2 font-instrumentsans">Portal Operasional dan Sistem Kustom</h3>
                         <p class="text-slate-400 text-sm leading-relaxed mb-6">
                             Rekayasa sistem operasional back-office, multi-cabang, otomasi invoice, dan integrasi database menyeluruh.
                         </p>
@@ -530,8 +831,8 @@
                     <div class="mt-8 pt-6 border-t border-white/10">
                         <a href="{{ route('contact') }}" class="rr-btn w-full text-center">
                             <span class="btn-wrap">
-                                <span class="text-one">Mulai Proyek Kustom</span>
-                                <span class="text-two">Mulai Proyek Kustom</span>
+                                <span class="text-one">Konsultasi Kebutuhan</span>
+                                <span class="text-two">Konsultasi Kebutuhan</span>
                             </span>
                         </a>
                     </div>
@@ -540,7 +841,7 @@
         </div>
     </section>
 
-    {{-- FAQ Section --}}
+    {{-- Objection Busting FAQ Section --}}
     <section class="py-24 bg-slate-950 border-t border-white/5" aria-labelledby="faq-heading">
         <div class="max-w-[860px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -548,38 +849,48 @@
                     Pertanyaan Umum
                 </span>
                 <h2 id="faq-heading" class="text-3xl sm:text-4xl font-bold tracking-tight text-white font-instrumentsans">
-                    Frequently Asked Questions
+                    Pertanyaan yang Sering Diajukan
                 </h2>
             </div>
 
             <div class="space-y-4" x-data="{ active: null }">
                 <div class="rounded-2xl bg-slate-900 border border-white/10 overflow-hidden">
                     <button @click="active = (active === 1 ? null : 1)" class="w-full p-6 text-left flex items-center justify-between text-white font-semibold focus:outline-none">
-                        <span>Berapa lama estimasi pengerjaan proyek software atau website?</span>
+                        <span>Apakah ada biaya langganan bulanan tersembunyi?</span>
                         <x-app-icon name="keyboard_arrow_down" class="size-5 text-teal-400 transition-transform duration-200" ::class="{ 'rotate-180': active === 1 }" />
                     </button>
                     <div x-show="active === 1" x-collapse class="px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4">
-                        Untuk landing page dan website profil bisnis, sprint rata-rata memakan waktu 7 hingga 14 hari kerja. Untuk sistem portal operasional kustom terintegrasi, waktu pengerjaan berkisar antara 4 hingga 8 minggu tergantung kompleksitas modul.
+                        Tidak ada biaya tersembunyi. Anda membayar sesuai kesepakatan ruang lingkup proyek. Setelah serah terima selesai, sistem dan source code 100% menjadi milik Anda tanpa kewajiban lisensi berulang.
                     </div>
                 </div>
 
                 <div class="rounded-2xl bg-slate-900 border border-white/10 overflow-hidden">
                     <button @click="active = (active === 2 ? null : 2)" class="w-full p-6 text-left flex items-center justify-between text-white font-semibold focus:outline-none">
-                        <span>Apakah source code dan database menjadi hak milik penuh klien?</span>
+                        <span>Berapa lama waktu pengerjaannya?</span>
                         <x-app-icon name="keyboard_arrow_down" class="size-5 text-teal-400 transition-transform duration-200" ::class="{ 'rotate-180': active === 2 }" />
                     </button>
                     <div x-show="active === 2" x-collapse class="px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4">
-                        Ya, 100%. Kami menyerahkan seluruh source code di Git repository privat Anda, konfigurasi database, dan hak akses server. Anda memiliki aset digital tersebut selamanya tanpa biaya langganan software proprietary.
+                        Untuk landing page dan website profil bisnis, sprint rata-rata memakan waktu 7 hingga 14 hari kerja. Untuk sistem portal operasional kustom terintegrasi, waktu pengerjaan berkisar antara 4 hingga 8 minggu tergantung kompleksitas modul.
                     </div>
                 </div>
 
                 <div class="rounded-2xl bg-slate-900 border border-white/10 overflow-hidden">
                     <button @click="active = (active === 3 ? null : 3)" class="w-full p-6 text-left flex items-center justify-between text-white font-semibold focus:outline-none">
-                        <span>Bagaimana Accelerate Lab menjamin kualitas dan stabilitas kode?</span>
+                        <span>Siapa yang memegang hak cipta source code dan database?</span>
                         <x-app-icon name="keyboard_arrow_down" class="size-5 text-teal-400 transition-transform duration-200" ::class="{ 'rotate-180': active === 3 }" />
                     </button>
                     <div x-show="active === 3" x-collapse class="px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4">
-                        Kami menerapkan Strict Test-Driven Development (TDD) dengan suite pengujian otomatis PHPUnit, validasi keamanan, pemeriksaan aksesibilitas WCAG 2.2 AA, dan optimasi performa Core Web Vitals pada setiap rilis produksi.
+                        100% Hak cipta, source code di repository privat, dan data di server sepenuhnya milik Anda. Kami tidak mengunci data atau membuat Anda ketergantungan pada vendor.
+                    </div>
+                </div>
+
+                <div class="rounded-2xl bg-slate-900 border border-white/10 overflow-hidden">
+                    <button @click="active = (active === 4 ? null : 4)" class="w-full p-6 text-left flex items-center justify-between text-white font-semibold focus:outline-none">
+                        <span>Apakah kerja sama dilengkapi kontrak dan legalitas resmi?</span>
+                        <x-app-icon name="keyboard_arrow_down" class="size-5 text-teal-400 transition-transform duration-200" ::class="{ 'rotate-180': active === 4 }" />
+                    </button>
+                    <div x-show="active === 4" x-collapse class="px-6 pb-6 text-sm text-slate-400 leading-relaxed border-t border-white/5 pt-4">
+                        Ya, seluruh transaksi dan kerja sama diikat dengan kontrak perjanjian kerja sama resmi di bawah badan hukum PT Akselerasi Digital Mandiri lengkap dengan Non-Disclosure Agreement (NDA).
                     </div>
                 </div>
             </div>
@@ -587,8 +898,11 @@
     </section>
 
     {{-- Final Action CTA Banner --}}
-    <section class="py-24 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border-t border-white/10 relative text-center">
+    <section id="closing-cta-section" class="py-24 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 border-t border-white/10 relative text-center">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <span class="inline-block px-3.5 py-1.5 rounded-full bg-teal-500/10 text-teal-400 text-xs font-mono uppercase tracking-widest border border-teal-500/20 mb-4">
+                {{ __('Ready to Accelerate?') }}
+            </span>
             <h2 class="text-3xl sm:text-5xl font-bold text-white font-instrumentsans mb-6">
                 Siap Melipatgandakan Efisiensi Digital Bisnis Anda?
             </h2>
