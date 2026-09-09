@@ -190,4 +190,119 @@ class MonolithicDesignEngineTest extends TestCase
         $detailResponse->assertSee('94%');
         $detailResponse->assertSee('Latency Reduction');
     }
+
+    public function test_about_careers_contact_and_supporting_pages_render(): void
+    {
+        // 1. About Page Data
+        \App\Models\TeamMember::create([
+            'name' => 'Nova Triansyah Azis',
+            'role' => 'Founder & Chief Architect',
+            'bio' => 'Engineering distributed systems and high-throughput monoliths.',
+            'sort_order' => 1,
+        ]);
+
+        \App\Models\CompanyMilestone::create([
+            'year' => '2024',
+            'title' => 'Accelerate Lab Founded',
+            'description' => 'Established with a mission of uncompromising software craftsmanship.',
+            'sort_order' => 1,
+        ]);
+
+        \App\Models\CoreValue::create([
+            'title' => 'Extreme Engineering Rigor',
+            'description' => 'We reject quick hacks and build durable, observable software.',
+            'sort_order' => 1,
+        ]);
+
+        \App\Models\HomepageStat::create([
+            'value' => '15+',
+            'unit' => 'Specialists',
+            'label' => 'Engineers & Architects',
+            'section' => 'about',
+            'sort_order' => 1,
+        ]);
+
+        $aboutResponse = $this->get('/about');
+        $aboutResponse->assertStatus(200);
+        $aboutResponse->assertSee('Nova Triansyah Azis');
+        $aboutResponse->assertSee('Founder & Chief Architect');
+        $aboutResponse->assertSee('Accelerate Lab Founded');
+        $aboutResponse->assertSee('Extreme Engineering Rigor');
+        $aboutResponse->assertSee('15+');
+        $aboutResponse->assertSee('rr-btn');
+
+        // 2. Careers Page Data
+        \App\Models\JobPosting::create([
+            'title' => 'Senior Distributed Systems Engineer',
+            'slug' => 'senior-distributed-systems-engineer',
+            'department' => 'Engineering',
+            'location' => 'Remote, Indonesia',
+            'type' => 'Full-time',
+            'description' => 'Architect high-throughput Laravel micro-monoliths.',
+            'is_active' => true,
+        ]);
+
+        $careersResponse = $this->get('/careers');
+        $careersResponse->assertStatus(200);
+        $careersResponse->assertSee('Senior Distributed Systems Engineer');
+        $careersResponse->assertSee('Remote, Indonesia');
+        $careersResponse->assertSee('rr-btn');
+
+        // 3. Contact Page
+        $contactResponse = $this->get('/contact');
+        $contactResponse->assertStatus(200);
+        $contactResponse->assertSee('name="name"', false);
+        $contactResponse->assertSee('name="email"', false);
+        $contactResponse->assertSee('PT Akselerasi Digital Mandiri');
+        $contactResponse->assertSee('rr-btn');
+
+        // 4. Legal Pages
+        $privacyResponse = $this->get('/privacy-policy');
+        $privacyResponse->assertStatus(200);
+        $privacyResponse->assertSee('Privacy Policy');
+        $privacyResponse->assertSee('PT Akselerasi Digital Mandiri');
+
+        $termsResponse = $this->get('/terms-of-service');
+        $termsResponse->assertStatus(200);
+        $termsResponse->assertSee('Terms of Service');
+        $termsResponse->assertSee('PT Akselerasi Digital Mandiri');
+
+        // 5. Blog & Article
+        $category = \App\Models\Category::create([
+            'name' => 'Architecture',
+            'slug' => 'architecture',
+        ]);
+
+        $author = \App\Models\User::factory()->create([
+            'name' => 'Nova Triansyah Azis',
+        ]);
+
+        $article = \App\Models\Article::create([
+            'title' => 'The Resurgence of the Majestic Monolith',
+            'slug' => 'resurgence-of-majestic-monolith',
+            'content' => '<p>Why monolithic architecture wins for fast-paced modern engineering teams.</p>',
+            'category_id' => $category->id,
+            'user_id' => $author->id,
+            'is_featured' => true,
+            'published_at' => now()->subDay(),
+        ]);
+
+        $blogResponse = $this->get('/blog');
+        $blogResponse->assertStatus(200);
+        $blogResponse->assertSee('The Resurgence of the Majestic Monolith');
+        $blogResponse->assertSee('Architecture');
+        $blogResponse->assertSee('rr-btn');
+
+        $articleResponse = $this->get('/blog/resurgence-of-majestic-monolith');
+        $articleResponse->assertStatus(200);
+        $articleResponse->assertSee('The Resurgence of the Majestic Monolith');
+        $articleResponse->assertSee('Why monolithic architecture wins for fast-paced modern engineering teams.', false);
+
+        // 6. 404 Error Page
+        $notFoundResponse = $this->get('/non-existent-route-404-check');
+        $notFoundResponse->assertStatus(404);
+        $notFoundResponse->assertSee('404');
+        $notFoundResponse->assertSee('rr-btn');
+    }
 }
+
