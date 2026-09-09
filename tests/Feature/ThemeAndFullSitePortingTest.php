@@ -47,7 +47,6 @@ class ThemeAndFullSitePortingTest extends TestCase
             'slug' => 'custom-enterprise-erp-suite',
             'category' => 'development',
             'sort_order' => 1,
-            'is_active' => true,
             'features' => [
                 ['title' => 'Automated Ledger Sync'],
                 ['title' => 'Warehouse Realtime Tracking'],
@@ -101,7 +100,6 @@ class ThemeAndFullSitePortingTest extends TestCase
                     'title' => $data['title'],
                     'category' => $data['category'],
                     'has_custom_page' => $data['has_custom_page'],
-                    'is_active' => true,
                     'short_description' => 'Professional engineering service by Accelerate Lab.',
                     'content' => '<p>High performance digital development and architecture.</p>',
                     'features' => [['title' => 'Continuous Integration', 'icon' => 'check_circle']],
