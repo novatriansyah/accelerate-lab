@@ -53,4 +53,9 @@ class Project extends Model
     {
         return strip_tags(html_entity_decode($this->solution));
     }
+
+    public function getImageAttribute(): ?string
+    {
+        return $this->image_path;
+    }
 }

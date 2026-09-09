@@ -377,8 +377,11 @@ AnalitikAplikasi::evaluasi([
                 <div class="bento-card group relative overflow-hidden bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-xl">
                     {{-- Project Image / Visual Container --}}
                     <div class="relative h-64 sm:h-80 w-full overflow-hidden bg-slate-950">
-                        @if(!empty($project->image))
-                            <img src="{{ asset('storage/' . $project->image) }}"
+                        @php
+                            $projectImage = $project->image_path ?? $project->image;
+                        @endphp
+                        @if(!empty($projectImage))
+                            <img src="{{ asset('storage/' . $projectImage) }}"
                                  alt="{{ $project->title }}"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         @else
@@ -388,11 +391,16 @@ AnalitikAplikasi::evaluasi([
                         @endif
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
                         
-                        {{-- Client Tag --}}
-                        <div class="absolute top-4 left-4">
+                        {{-- Client Tag & Industry --}}
+                        <div class="absolute top-4 left-4 flex items-center gap-2">
                             <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-black/60 text-[#00BFA5] backdrop-blur-md border border-white/10">
                                 {{ $project->client ?? 'ENTERPRISE CLIENT' }}
                             </span>
+                            @if(!empty($project->industry))
+                                <span class="px-3 py-1 rounded-full text-xs font-mono font-medium bg-white/10 text-white backdrop-blur-md border border-white/10">
+                                    {{ $project->industry }}
+                                </span>
+                            @endif
                         </div>
                     </div>
 
