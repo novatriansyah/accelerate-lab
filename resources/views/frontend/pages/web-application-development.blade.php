@@ -1,6 +1,6 @@
 @extends('frontend.components.layout', [
-    'title' => 'Web Application Development (Laravel, Next.js, Cloud) - Accelerate Lab',
-    'description' => 'Custom full-stack web applications, internal enterprise tools, API ecosystems, and SaaS architectures built by Accelerate Lab.'
+    'title' => 'Web Application Development - Accelerate Lab',
+    'description' => 'Custom enterprise web applications, operational portals, API ecosystems, and scalable platforms built by Accelerate Lab.'
 ])
 
 @section('content')
@@ -66,7 +66,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
                 <span class="text-xs font-mono text-[#00BFA5] uppercase">MODERN MONOLITH</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">High-Throughput Laravel Core</h3>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">High-Throughput Application Core</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                     Zero-bloat modular architecture with optimized Eloquent ORM, background queues, and sub-50ms server response latency.
                 </p>

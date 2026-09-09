@@ -1,6 +1,6 @@
 @extends('frontend.components.layout', [
     'title' => 'Mobile App Development (iOS & Android) - Accelerate Lab',
-    'description' => 'Native and cross-platform enterprise mobile applications engineered with Flutter and React Native by Accelerate Lab.'
+    'description' => 'Native and cross-platform enterprise mobile applications engineered for peak performance and customer retention by Accelerate Lab.'
 ])
 
 @section('content')
@@ -66,7 +66,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
                 <span class="text-xs font-mono text-[#00BFA5] uppercase">ENGINEERING</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Flutter & Native Bridges</h3>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Unified Cross-Platform Core</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                     Single unified codebase deploying native compiled arm64 binaries for both Apple App Store and Google Play Store.
                 </p>

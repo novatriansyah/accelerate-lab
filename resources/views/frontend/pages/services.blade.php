@@ -27,8 +27,8 @@
 
             <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
                 {{ $currentLocale === 'id'
-                    ? 'Dari arsitektur monolit modern dan cloud Kubernetes hingga aplikasi seluler berlatensi rendah. Setiap sistem dibangun dengan standar kode bebas utang teknis.'
-                    : 'From modern monolithic web architectures and resilient cloud infrastructures to high-concurrency mobile platforms. We engineer digital products without technical debt.' }}
+                    ? 'Dari sistem web terintegrasi dan infrastruktur komputasi tangguh hingga aplikasi seluler berkinerja tinggi. Setiap solusi dirancang untuk pertumbuhan bisnis tanpa beban teknis.'
+                    : 'From integrated enterprise web platforms and resilient cloud infrastructures to high-concurrency mobile solutions. Engineered for measurable business growth.' }}
             </p>
         </div>
     </div>

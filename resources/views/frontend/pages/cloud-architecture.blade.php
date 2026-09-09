@@ -80,8 +80,8 @@
 
             <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl">
                 {{ $currentLocale === 'id'
-                    ? 'Merancang dan mengoperasikan infrastruktur cloud skala enterprise dengan toleransi kegagalan nol, otomatisasi CI/CD, dan efisiensi biaya komputasi maksimal.'
-                    : 'Architecting and operating fault-tolerant enterprise cloud environments with automated CI/CD pipelines, Kubernetes orchestration, and optimized multi-cloud efficiency.' }}
+                    ? 'Merancang dan mengoperasikan infrastruktur cloud skala enterprise dengan toleransi kegagalan nol, otomatisasi alur kerja, dan efisiensi biaya komputasi maksimal.'
+                    : 'Architecting and operating fault-tolerant enterprise cloud environments with automated deployment workflows, resilient orchestration, and optimized efficiency.' }}
             </p>
 
             <div class="flex flex-wrap items-center gap-4">
@@ -110,37 +110,37 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {{-- Bento Card 1 --}}
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
-                <span class="text-xs font-mono text-[#00BFA5] uppercase">CONTAINERIZATION</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Docker & Kubernetes Engine</h3>
+                <span class="text-xs font-mono text-[#00BFA5] uppercase">INFRASTRUKTUR TANGGUH</span>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Keandalan Komputasi Berkelanjutan</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                    Zero-downtime rolling deployments, automated pod autoscaling, ingress load balancing, and multi-node resilience.
+                    Penyebaran sistem tanpa henti operasional, penyeimbangan beban lalu lintas otomatis, dan ketahanan multi-zona.
                 </p>
             </div>
 
             {{-- Bento Card 2 --}}
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
-                <span class="text-xs font-mono text-[#00BFA5] uppercase">CI/CD AUTOMATION</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Zero-Downtime Migration</h3>
+                <span class="text-xs font-mono text-[#00BFA5] uppercase">OTOMASI SISTEM</span>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Pembaruan Tanpa Gangguan</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                    Automated GitHub Actions pipelines with pre-merge linting, security audits, database migration locks, and instant rollback.
+                    Alur rilis otomatis dengan audit keamanan menyeluruh, integritas basis data, dan kemampuan pemulihan instan.
                 </p>
             </div>
 
             {{-- Bento Card 3 --}}
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
-                <span class="text-xs font-mono text-[#00BFA5] uppercase">HIGH AVAILABILITY</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Multi-Region Disaster Recovery</h3>
+                <span class="text-xs font-mono text-[#00BFA5] uppercase">KETAHANAN TINGGI</span>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Pemulihan Bencana Multi-Region</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                    Automated offsite database replication, encrypted snapshots, Redis sentinel clustering, and SLA-backed recovery objectives.
+                    Replikasi data cadangan otomatis, enkripsi tingkat perbankan, dan komitmen SLA operasional terbaik.
                 </p>
             </div>
         </div>
 
-        {{-- Tech Stack Badges --}}
+        {{-- Business Pillars --}}
         <div class="mt-12 p-8 bento-card bg-slate-100/60 dark:bg-slate-900/40 border border-slate-200/80 dark:border-white/10">
-            <span class="text-xs font-mono font-semibold uppercase text-slate-400 block mb-4">Supported Cloud Stacks</span>
+            <span class="text-xs font-mono font-semibold uppercase text-slate-400 block mb-4">Pilar Ketahanan Komputasi</span>
             <div class="flex flex-wrap gap-3">
-                @foreach(['AWS EC2 & ECS', 'Google Cloud Platform', 'DigitalOcean Kubernetes', 'Docker Swarm', 'Terraform (IaC)', 'Cloudflare Enterprise WAF', 'Nginx High-Concurrency', 'Redis Cluster'] as $stack)
+                @foreach(['Kesiapan Skala Dinamis', 'Proteksi Serangan Siber', 'Enkripsi Data Perbankan', 'Audit Pemulihan Bencana', 'Telemetri Real-time', 'Optimasi Biaya Komputasi', 'Jaminan Uptime 99.99%', 'Pencadangan Otomatis'] as $stack)
                     <span class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/10 shadow-sm">
                         {{ $stack }}
                     </span>
