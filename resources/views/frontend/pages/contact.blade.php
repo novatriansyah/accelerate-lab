@@ -28,6 +28,14 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
+            @php
+                $contactEmail = \App\Models\SiteSetting::get('contact_email', 'hello@acceleratelab.id');
+                $contactPhone = \App\Models\SiteSetting::get('contact_whatsapp', \App\Models\SiteSetting::get('contact_phone', '+62 821-2559-0020'));
+                $cleanPhone = preg_replace('/[^0-9]/', '', $contactPhone);
+                $studioLocation = \App\Models\SiteSetting::get('registered_city', \App\Models\SiteSetting::get('contact_address', 'Jakarta & Bandung, Indonesia'));
+                $legalName = \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri');
+            @endphp
+
             {{-- Left Column: Direct Contact & Entity Info --}}
             <div class="lg:col-span-5 space-y-8">
                 <div class="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0E1526] border border-slate-200 dark:border-white/10 shadow-xl relative overflow-hidden">
@@ -36,7 +44,7 @@
                     <div class="space-y-6">
                         <div>
                             <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">Operating Entity / Entitas Legal</span>
-                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">PT Akselerasi Digital Mandiri</h2>
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">{{ $legalName }}</h2>
                             <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">Accelerate Lab Engineering Studio</p>
                         </div>
 
@@ -49,8 +57,8 @@
                                 </div>
                                 <div>
                                     <div class="text-xs font-mono uppercase text-slate-500 dark:text-slate-400">Electronic Mail</div>
-                                    <a href="mailto:hello@acceleratelab.id" class="text-base font-semibold text-slate-900 dark:text-white hover:text-[#00BFA5] transition-colors">
-                                        hello@acceleratelab.id
+                                    <a href="mailto:{{ $contactEmail }}" class="text-base font-semibold text-slate-900 dark:text-white hover:text-[#00BFA5] transition-colors">
+                                        {{ $contactEmail }}
                                     </a>
                                 </div>
                             </div>
@@ -61,8 +69,8 @@
                                 </div>
                                 <div>
                                     <div class="text-xs font-mono uppercase text-slate-500 dark:text-slate-400">WhatsApp Hotline</div>
-                                    <a href="https://wa.me/6282125590020" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-slate-900 dark:text-white hover:text-[#00BFA5] transition-colors">
-                                        +62 821-2559-0020
+                                    <a href="https://wa.me/{{ $cleanPhone }}" target="_blank" rel="noopener noreferrer" class="text-base font-semibold text-slate-900 dark:text-white hover:text-[#00BFA5] transition-colors">
+                                        {{ $contactPhone }}
                                     </a>
                                 </div>
                             </div>
@@ -74,7 +82,7 @@
                                 <div>
                                     <div class="text-xs font-mono uppercase text-slate-500 dark:text-slate-400">Studio Location</div>
                                     <div class="text-base font-semibold text-slate-900 dark:text-white">
-                                        Jakarta & Bandung, Indonesia
+                                        {{ $studioLocation }}
                                     </div>
                                     <div class="text-xs text-slate-500 dark:text-slate-400">Operating across GMT+7 / Asia-Pacific</div>
                                 </div>
@@ -167,10 +175,16 @@
                                 </label>
                                 <select id="service_interest" name="service_interest"
                                     class="w-full px-4 py-3.5 rounded-xl bg-slate-50 dark:bg-[#090D16] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white focus:outline-none focus:border-[#00BFA5] focus:ring-1 focus:ring-[#00BFA5] transition-all text-sm">
-                                    <option value="Custom Web Applications" {{ old('service_interest') == 'Custom Web Applications' ? 'selected' : '' }}>Custom Web Applications</option>
-                                    <option value="Mobile App Development" {{ old('service_interest') == 'Mobile App Development' ? 'selected' : '' }}>Mobile App Development</option>
-                                    <option value="Cloud Architecture & DevOps" {{ old('service_interest') == 'Cloud Architecture & DevOps' ? 'selected' : '' }}>Cloud Architecture & DevOps</option>
-                                    <option value="UI/UX Product Design" {{ old('service_interest') == 'UI/UX Product Design' ? 'selected' : '' }}>UI/UX Product Design</option>
+                                    @if(isset($services) && $services->isNotEmpty())
+                                        @foreach($services as $srv)
+                                            <option value="{{ $srv->title }}" {{ old('service_interest') == $srv->title ? 'selected' : '' }}>{{ $srv->title }}</option>
+                                        @endforeach
+                                    @else
+                                        <option value="Custom Web Applications" {{ old('service_interest') == 'Custom Web Applications' ? 'selected' : '' }}>Custom Web Applications</option>
+                                        <option value="Mobile App Development" {{ old('service_interest') == 'Mobile App Development' ? 'selected' : '' }}>Mobile App Development</option>
+                                        <option value="Cloud Architecture & DevOps" {{ old('service_interest') == 'Cloud Architecture & DevOps' ? 'selected' : '' }}>Cloud Architecture & DevOps</option>
+                                        <option value="UI/UX Product Design" {{ old('service_interest') == 'UI/UX Product Design' ? 'selected' : '' }}>UI/UX Product Design</option>
+                                    @endif
                                     <option value="Enterprise Modernization" {{ old('service_interest') == 'Enterprise Modernization' ? 'selected' : '' }}>Enterprise Modernization</option>
                                 </select>
                             </div>

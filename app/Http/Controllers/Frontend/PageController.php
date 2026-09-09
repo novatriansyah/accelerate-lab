@@ -113,9 +113,12 @@ class PageController extends Controller
 
     public function contact()
     {
+        $services = Service::orderBy('sort_order')->get();
+
         return view('frontend.pages.contact', [
             'title' => 'Contact Us - Accelerate Lab',
             'description' => 'Get in touch with Accelerate Lab. Start a project, request a consultation, or ask about our custom software development and cloud services.',
+            'services' => $services,
         ]);
     }
 
