@@ -1,7 +1,7 @@
-# Homepage Redesign (70% Redox + 30% NextSaaS) Implementation Plan
+# Homepage Redesign (70% Accelerate + 30% DesignEngine) Implementation Plan
 
 > **For agentic workers:**  
-> **Goal:** Transform Accelerate Lab's homepage from generic "AI slop" into a tier-1 modern digital agency experience by curating proven UI/UX structures from `redox` (70% visual soul & layout rhythm) and `nextsaas` (30% technical bento grids & engineering proof), fully harmonized to Accelerate Lab's Teal `#00BFA5` and Slate-900 `#0F172A` brand palette.  
+> **Goal:** Transform Accelerate Lab's homepage from generic "AI slop" into a tier-1 modern digital agency experience by curating proven UI/UX structures from `Accelerate` (70% visual soul & layout rhythm) and `DesignEngine` (30% technical bento grids & engineering proof), fully harmonized to Accelerate Lab's Teal `#00BFA5` and Slate-900 `#0F172A` brand palette.  
 > **Architecture:** Clean monolithic Laravel 12 application with Tailwind CSS v4, Blade components, Alpine.js, GSAP + ScrollTrigger, and strict SQLite in-memory automated tests.  
 > **Tech Stack:** Laravel 12.x, PHP 8.3, Tailwind CSS v4, Alpine.js 3.x, GSAP 3.x with ScrollTrigger, Vite 7, PHPUnit 11.  
 
@@ -157,7 +157,7 @@ git commit -m "feat(assets): install and register gsap with scrolltrigger"
 
 ---
 
-### Task 2: Redox-Inspired High-Impact Hero Section
+### Task 2: Accelerate-Inspired High-Impact Hero Section
 
 **Files:**
 * Modify: `resources/views/frontend/pages/home.blade.php:21-120`
@@ -165,7 +165,7 @@ git commit -m "feat(assets): install and register gsap with scrolltrigger"
 
 **Interfaces:**
 * Consumes: `$heroStats` (database collection), `$settings` (contact whatsapp/phone), translations from `lang/`.
-* Produces: Tier-1 digital agency hero layout inspired by `redox/dark/digital-agency.html` with dark/light editorial typography, active availability badge, dual CTA, and principal architect trust anchors.
+* Produces: Tier-1 digital agency hero layout inspired by `Accelerate/dark/digital-agency.html` with dark/light editorial typography, active availability badge, dual CTA, and principal architect trust anchors.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -220,14 +220,14 @@ class HomepageHeroRedesignTest extends TestCase
 
 Run: `php artisan test --filter=HomepageHeroRedesignTest`
 
-- [ ] **Step 3: Implement minimal Redox-inspired Hero in `resources/views/frontend/pages/home.blade.php`**
+- [ ] **Step 3: Implement minimal Accelerate-inspired Hero in `resources/views/frontend/pages/home.blade.php`**
 
 Replace lines 21-120 in `resources/views/frontend/pages/home.blade.php` with the enhanced layout featuring:
 1. Editorial typography headline with subtle gradient highlight on primary keywords.
 2. Clean status pill: "Tersedia untuk Proyek Baru Kuartal Ini" with animated pulse indicator.
 3. Dual high-contrast buttons (`#hero-cta-primary` WhatsApp and `#hero-cta-secondary` Estimator).
 4. Three distinct trust anchors rendered with `<x-app-icon name="check_circle" />`.
-5. Redox-style technical preview card on the right column (interactive system metrics, real response times, and clean terminal/dashboard snippet rather than vague floating shapes).
+5. Accelerate-style technical preview card on the right column (interactive system metrics, real response times, and clean terminal/dashboard snippet rather than vague floating shapes).
 6. `$heroStats` rendered cleanly in a border-separated metric bar.
 
 - [ ] **Step 4: Run test to verify it passes**
@@ -239,12 +239,12 @@ Expected: PASS
 
 ```bash
 git add resources/views/frontend/pages/home.blade.php tests/Feature/HomepageHeroRedesignTest.php
-git commit -m "feat(home): elevate hero section with redox editorial layout"
+git commit -m "feat(home): elevate hero section with Accelerate editorial layout"
 ```
 
 ---
 
-### Task 3: Redox Clean Client & Partner Proof Marquee
+### Task 3: Accelerate Clean Client & Partner Proof Marquee
 
 **Files:**
 * Modify: `resources/views/frontend/pages/home.blade.php`
@@ -291,7 +291,7 @@ class HomepageMarqueeTest extends TestCase
 Run: `php artisan test --filter=HomepageMarqueeTest`  
 Expected: FAIL with `trusted-partners-marquee` not found.
 
-- [ ] **Step 3: Implement Redox-style Marquee in `home.blade.php`**
+- [ ] **Step 3: Implement Accelerate-style Marquee in `home.blade.php`**
 
 Add the `#trusted-partners-marquee` section immediately below the hero with pure Tailwind v4 `animate-marquee` and smooth opacity mask on left and right edges.
 
@@ -309,7 +309,7 @@ git commit -m "feat(home): add accessible pure-css partner proof marquee"
 
 ---
 
-### Task 4: NextSaaS App-Dev Sticky Services & Architecture Bento Grid
+### Task 4: DesignEngine App-Dev Sticky Services & Architecture Bento Grid
 
 **Files:**
 * Modify: `resources/views/frontend/pages/home.blade.php`
@@ -319,8 +319,8 @@ git commit -m "feat(home): add accessible pure-css partner proof marquee"
 **Interfaces:**
 * Consumes: Services from `App\Models\Service` or curated core offerings (Web Applications, Cloud Architecture, UI/UX Design, MVP/Internal Systems).
 * Produces:
-  1. Sticky left-column header ("Kapabilitas Utama" / "Core Capabilities") with right-column stacked service cards (inspired by `nextsaas/app-development/index.html:2325-2405`).
-  2. 4-card Engineering Bento Grid ("Mengapa Accelerate Lab?" / *Strategy First, Scalable Code, Full-Cycle Testing, Transparent Communication* inspired by `nextsaas/app-development/index.html:2500-2650`).
+  1. Sticky left-column header ("Kapabilitas Utama" / "Core Capabilities") with right-column stacked service cards (inspired by `DesignEngine/app-development/index.html:2325-2405`).
+  2. 4-card Engineering Bento Grid ("Mengapa Accelerate Lab?" / *Strategy First, Scalable Code, Full-Cycle Testing, Transparent Communication* inspired by `DesignEngine/app-development/index.html:2500-2650`).
 
 - [ ] **Step 1: Write the failing test**
 
@@ -385,12 +385,12 @@ Expected: PASS
 
 ```bash
 git add resources/views/frontend/pages/home.blade.php lang/id.json lang/en.json tests/Feature/HomepageServicesBentoTest.php
-git commit -m "feat(home): implement nextsaas sticky services and technical bento grid"
+git commit -m "feat(home): implement DesignEngine sticky services and technical bento grid"
 ```
 
 ---
 
-### Task 5: Redox Agency Showcase for Featured Case Studies
+### Task 5: Accelerate Agency Showcase for Featured Case Studies
 
 **Files:**
 * Modify: `resources/views/frontend/pages/home.blade.php`
@@ -398,7 +398,7 @@ git commit -m "feat(home): implement nextsaas sticky services and technical bent
 
 **Interfaces:**
 * Consumes: `$featuredProjects` from controller (`App\Models\Project`).
-* Produces: Redox-inspired portfolio showcase cards (`redox/dark/agency-portfolio.html`) featuring project category badges, measurable business impact metrics, and responsive image previews with zero missing `alt` attributes.
+* Produces: Accelerate-inspired portfolio showcase cards (`Accelerate/dark/agency-portfolio.html`) featuring project category badges, measurable business impact metrics, and responsive image previews with zero missing `alt` attributes.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -418,7 +418,7 @@ class HomepageShowcaseTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function homepage_renders_redox_style_featured_case_studies()
+    public function homepage_renders_Accelerate_style_featured_case_studies()
     {
         $project = Project::factory()->create([
             'title' => 'Enterprise Logistics Portal',
@@ -442,7 +442,7 @@ class HomepageShowcaseTest extends TestCase
 Run: `php artisan test --filter=HomepageShowcaseTest`  
 Expected: FAIL with `featured-showcase-grid` not found.
 
-- [ ] **Step 3: Implement Redox Showcase Grid in `home.blade.php`**
+- [ ] **Step 3: Implement Accelerate Showcase Grid in `home.blade.php`**
 
 Style the featured case studies section with container `id="featured-showcase-grid"`, subtle border glows on hover, tag pills, client name, and link to case study detail or live system demo.
 
@@ -455,12 +455,12 @@ Expected: PASS
 
 ```bash
 git add resources/views/frontend/pages/home.blade.php tests/Feature/HomepageShowcaseTest.php
-git commit -m "feat(home): adapt redox portfolio showcase for featured case studies"
+git commit -m "feat(home): adapt Accelerate portfolio showcase for featured case studies"
 ```
 
 ---
 
-### Task 6: NextSaaS 3-Step Engineering Process & Retainer Comparison Matrix
+### Task 6: DesignEngine 3-Step Engineering Process & Retainer Comparison Matrix
 
 **Files:**
 * Modify: `resources/views/frontend/pages/home.blade.php`
@@ -471,7 +471,7 @@ git commit -m "feat(home): adapt redox portfolio showcase for featured case stud
 * Consumes: Accelerate Lab commercial offerings (Express Starter, Custom Enterprise, Dedicated Monthly Retainer).
 * Produces:
   1. 3-Step Engineering Process with progress indicator bars (`01 Discovery & Audit`, `02 Architecture & Strict TDD`, `03 Launch & SLA Retainer`).
-  2. Clear comparison matrix table (inspired by `nextsaas/app-development/app-development-pricing.html`) detailing what is included in project-based development vs monthly retainer partnerships.
+  2. Clear comparison matrix table (inspired by `DesignEngine/app-development/app-development-pricing.html`) detailing what is included in project-based development vs monthly retainer partnerships.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -531,7 +531,7 @@ git commit -m "feat(home): add 3-step engineering flow and retainer scope matrix
 
 ---
 
-### Task 7: Redox High-Impact Closing CTA & Quality Verification
+### Task 7: Accelerate High-Impact Closing CTA & Quality Verification
 
 **Files:**
 * Modify: `resources/views/frontend/pages/home.blade.php`

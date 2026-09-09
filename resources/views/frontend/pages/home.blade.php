@@ -19,7 +19,7 @@
 
 @section('content')
     {{-- =========================================================================
-         1. HERO AREA (Authentic Redox Lines 213-270 + Business Architecture Preview)
+         1. HERO AREA (Business Architecture Preview)
          ========================================================================= --}}
     <section class="hero-area pt-36 pb-20 md:pt-48 md:pb-28 relative overflow-hidden bg-slate-950 text-white" aria-labelledby="hero-heading">
         {{-- Ambient Background Glow --}}
@@ -28,7 +28,7 @@
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="hero-area-inner">
                 <div class="hero-content">
-                    {{-- Rotating Circle Badge (Redox Signature) --}}
+                    {{-- Rotating Circle Badge --}}
                     <div class="award-wrapper mb-8">
                         <div class="circle-text-wrapper">
                             <div class="circle-text">
@@ -193,7 +193,7 @@
                         </div>
                     </div>
 
-                    {{-- Metrics & Intro Statistics (Redox Counters) --}}
+                    {{-- Metrics & Intro Statistics --}}
                     <div class="section-content mt-16 pt-12 border-t border-white/10 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
                         <div class="md:col-span-6 flex items-center gap-10">
                             <div class="feature-box">
@@ -251,7 +251,7 @@
     </div>
 
     {{-- =========================================================================
-         2. NEXTSAAS TECHNICAL BENTO GRID SECTION (Lines 2480-2580)
+         2. TECHNICAL BENTO GRID SECTION
          ========================================================================= --}}
     <section class="py-24 bg-slate-950 relative" aria-labelledby="bento-heading">
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -419,7 +419,7 @@
     </section>
 
     {{-- =========================================================================
-         3. COMPLEX PROFICIENCY SERVICES LIST (Authentic Redox Lines 500-580)
+         3. CORE CAPABILITIES SERVICES LIST
          ========================================================================= --}}
     <section class="service-area py-24 bg-slate-950 border-t border-white/5 relative" aria-labelledby="services-heading">
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -547,7 +547,7 @@
     </section>
 
     {{-- =========================================================================
-         4. FEATURED WORK GRID SECTION (Authentic Redox Lines 370-480)
+         4. FEATURED WORK GRID SECTION
          ========================================================================= --}}
     <section class="work-area py-24 bg-slate-900/60 border-t border-white/5 relative" aria-labelledby="work-heading">
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -708,7 +708,7 @@
         </div>
     </section>
 
-    {{-- Execution Process Indicator (NextSaaS Process Section) --}}
+    {{-- Execution Process Indicator --}}
     <section id="process-step-indicator" class="py-24 bg-slate-950 border-t border-white/5" aria-labelledby="process-heading">
         <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-14">

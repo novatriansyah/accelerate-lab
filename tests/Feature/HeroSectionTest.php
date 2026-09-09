@@ -5,16 +5,16 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class RedoxHeroSectionTest extends TestCase
+class HeroSectionTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_hero_section_renders_redox_structures(): void
+    public function test_hero_section_renders_hero_structures(): void
     {
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify authentic Redox hero classes
+        // Verify hero classes
         $response->assertSee('hero-area', false);
         $response->assertSee('circle-text-wrapper', false);
         $response->assertSee('circle-text', false);

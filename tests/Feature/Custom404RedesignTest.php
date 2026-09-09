@@ -11,13 +11,13 @@ class Custom404RedesignTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function custom_404_page_renders_redox_typography_and_navigation()
+    public function custom_404_page_renders_typography_and_navigation()
     {
         $response = $this->get('/non-existent-route-for-testing-404');
 
         $response->assertStatus(404);
         $response->assertSee('404');
-        $response->assertSee('redox-error-container', false);
+        $response->assertSee('error-404-container', false);
         $response->assertSee(route('home'), false);
         $response->assertSee(route('services'), false);
         $response->assertSee(route('contact'), false);

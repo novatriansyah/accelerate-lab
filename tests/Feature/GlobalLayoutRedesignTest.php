@@ -11,7 +11,7 @@ class GlobalLayoutRedesignTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function global_layout_includes_gsap_and_redox_shell_elements()
+    public function global_layout_includes_gsap_and_shell_elements()
     {
         $appJsPath = resource_path('js/app.js');
         $this->assertFileExists($appJsPath);

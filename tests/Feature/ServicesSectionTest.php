@@ -5,16 +5,16 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class RedoxServicesSectionTest extends TestCase
+class ServicesSectionTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_services_section_renders_authentic_redox_numbered_structure(): void
+    public function test_services_section_renders_numbered_structure(): void
     {
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify authentic Redox service list classes
+        // Verify service list classes
         $response->assertSee('services-wrapper-1', false);
         $response->assertSee('service-box', false);
 

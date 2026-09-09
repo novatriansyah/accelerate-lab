@@ -13,7 +13,7 @@ class HomepageFullRedesignTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function homepage_renders_all_curated_redox_and_nextsaas_sections()
+    public function homepage_renders_all_curated_sections()
     {
         HomepageStat::factory()->create([
             'section' => 'hero',

@@ -2,7 +2,7 @@
 @php
     $currentLocale = app()->getLocale();
 @endphp
-    {{-- NextSaaS Authentic Floating Island Capsule Navbar --}}
+    {{-- Floating Island Capsule Navbar --}}
     <div id="floating-island-navbar"
          x-data="{ isOpen: false }"
          class="fixed top-5 left-1/2 -translate-x-1/2 z-50 mx-auto flex w-[92%] max-w-[1140px] items-center justify-between rounded-full bg-slate-900/85 backdrop-blur-xl border border-white/10 px-4 sm:px-6 py-2.5 shadow-2xl transition-all duration-300">
@@ -41,7 +41,7 @@
             </a>
         </nav>
 
-        {{-- Right Actions: Locale Toggle, Consultation, Theme & Redox Kinetic .rr-btn --}}
+        {{-- Right Actions: Locale Toggle, Consultation, Theme & Kinetic CTA --}}
         <div class="flex items-center gap-2 sm:gap-3">
             {{-- Language Switcher Toggle --}}
             <div class="inline-flex items-center bg-slate-800/80 p-0.5 rounded-full border border-white/10 text-xs font-bold">
@@ -72,7 +72,7 @@
                 <x-app-icon name="brightness_4" class="size-4 text-slate-300" />
             </button>
 
-            {{-- Redox Kinetic CTA Button --}}
+            {{-- Kinetic CTA Button --}}
             <a href="{{ route('contact') }}" id="nav-contact-btn" class="rr-btn hidden sm:inline-flex text-xs !py-2.5 !px-5">
                 <span class="btn-wrap">
                     <span class="text-one">{{ $currentLocale === 'id' ? 'Konsultasi Proyek' : 'Project Consultation' }}</span>

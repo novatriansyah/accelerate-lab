@@ -5,16 +5,16 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class NextsaasBentoGridTest extends TestCase
+class BentoGridTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_bento_grid_renders_authentic_nextsaas_layout(): void
+    public function test_bento_grid_renders_bento_layout(): void
     {
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify NextSaaS bento grid classes
+        // Verify bento grid classes
         $response->assertSee('grid grid-cols-12', false);
         $response->assertSee('lg:col-span-8', false);
         $response->assertSee('lg:col-span-4', false);

@@ -4,7 +4,7 @@
 ])
 
 @section('content')
-    <div id="redox-error-container" class="relative min-h-[80vh] flex items-center justify-center py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-background-light dark:bg-background-dark">
+    <div id="error-404-container" class="relative min-h-[80vh] flex items-center justify-center py-28 px-4 sm:px-6 lg:px-8 overflow-hidden bg-background-light dark:bg-background-dark">
         <!-- Background Ambient Glow -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none -z-10" aria-hidden="true"></div>
         <div class="absolute top-1/3 left-1/3 w-72 h-72 bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none -z-10" aria-hidden="true"></div>
@@ -16,7 +16,7 @@
                 <span>{{ __('Error Code 404') }} : {{ __('Resource Not Found') }}</span>
             </div>
 
-            <!-- Massive Kinetic 404 Headline (Redox Inspired) -->
+            <!-- Massive Kinetic 404 Headline -->
             <h1 class="text-8xl sm:text-[11rem] lg:text-[13rem] font-black tracking-tighter text-slate-900 dark:text-white leading-none select-none">
                 404
             </h1>

@@ -1,7 +1,7 @@
-# Full Website Redesign (70% Redox + 30% NextSaaS) Implementation Plan
+# Full Website Redesign (70% Accelerate + 30% DesignEngine) Implementation Plan
 
 > **For agentic workers:**  
-> **Goal:** Completely eliminate "AI slop" across the entire Accelerate Lab web application by adopting human-designed agency architecture from `redox` (70% visual soul, typography, editorial layouts) and `nextsaas` (30% technical bento grids, architecture diagrams, retainer tables), covering ALL public routes and the 404 error page.  
+> **Goal:** Completely eliminate "AI slop" across the entire Accelerate Lab web application by adopting human-designed agency architecture from `Accelerate` (70% visual soul, typography, editorial layouts) and `DesignEngine` (30% technical bento grids, architecture diagrams, retainer tables), covering ALL public routes and the 404 error page.  
 > **Architecture:** Monolithic Laravel 12 application with Tailwind CSS v4, Blade components, Alpine.js, GSAP 3 + ScrollTrigger via Vite, and strict SQLite in-memory automated tests.  
 > **Tech Stack:** Laravel 12.x, PHP 8.3, Tailwind CSS v4, Alpine.js 3.x, GSAP 3.x with ScrollTrigger, Vite 7, PHPUnit 11.  
 
@@ -35,7 +35,7 @@
 
 **Interfaces:**
 * Consumes: Vite bundle, Alpine.js theme store, Tailwind v4 theme colors.
-* Produces: Global layout shell with smooth GSAP entrance animations, accessible mobile navigation, and unified Redox-inspired header and footer.
+* Produces: Global layout shell with smooth GSAP entrance animations, accessible mobile navigation, and unified Accelerate-inspired header and footer.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -51,7 +51,7 @@ use PHPUnit\Framework\Attributes\Test;
 class GlobalLayoutRedesignTest extends TestCase
 {
     #[Test]
-    public function global_layout_includes_gsap_and_redox_shell_elements()
+    public function global_layout_includes_gsap_and_Accelerate_shell_elements()
     {
         $appJs = file_get_contents(resource_path('js/app.js'));
         $this->assertStringContainsString('gsap', $appJs);
@@ -83,7 +83,7 @@ Expected: FAIL with assertion string contains "gsap".
 npm install gsap
 ```
 2. Update `resources/js/app.js` to register GSAP and ScrollTrigger.
-3. Update `resources/views/frontend/components/header.blade.php` and `footer.blade.php` to match Redox agency navigation (clean glassmorphism backdrop, bold brand typography, fast mobile drawer with Alpine.js).
+3. Update `resources/views/frontend/components/header.blade.php` and `footer.blade.php` to match Accelerate agency navigation (clean glassmorphism backdrop, bold brand typography, fast mobile drawer with Alpine.js).
 
 - [ ] **Step 4: Run test to verify it passes**
 
@@ -95,12 +95,12 @@ Expected: PASS
 ```bash
 npm run build
 git add package.json package-lock.json resources/js/app.js resources/views/frontend/components/header.blade.php resources/views/frontend/components/footer.blade.php tests/Feature/GlobalLayoutRedesignTest.php
-git commit -m "feat(layout): integrate gsap animations and redox navigation shell"
+git commit -m "feat(layout): integrate gsap animations and Accelerate navigation shell"
 ```
 
 ---
 
-### Task 2: Homepage Overhaul (70% Redox + 30% NextSaaS)
+### Task 2: Homepage Overhaul (70% Accelerate + 30% DesignEngine)
 
 **Files:**
 * Modify: `resources/views/frontend/pages/home.blade.php`
@@ -110,13 +110,13 @@ git commit -m "feat(layout): integrate gsap animations and redox navigation shel
 **Interfaces:**
 * Consumes: `$heroStats`, `$featuredProjects`, `$settings`.
 * Produces: High-converting, anti-slop homepage featuring:
-  1. Redox Editorial Hero + Availability Badge + Dual CTAs + Trust Anchors.
+  1. Accelerate Editorial Hero + Availability Badge + Dual CTAs + Trust Anchors.
   2. Pure CSS Client/Partner Marquee.
-  3. NextSaaS Sticky Services Showcase ("Kapabilitas Utama" with stacked cards).
-  4. NextSaaS 4-card Technical Bento Grid ("Mengapa Accelerate Lab?").
-  5. Redox Featured Portfolio Grid.
-  6. NextSaaS 3-Step Engineering Flow & Retainer Scope Matrix.
-  7. Redox High-Impact Closing CTA.
+  3. DesignEngine Sticky Services Showcase ("Kapabilitas Utama" with stacked cards).
+  4. DesignEngine 4-card Technical Bento Grid ("Mengapa Accelerate Lab?").
+  5. Accelerate Featured Portfolio Grid.
+  6. DesignEngine 3-Step Engineering Flow & Retainer Scope Matrix.
+  7. Accelerate High-Impact Closing CTA.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -137,7 +137,7 @@ class HomepageFullRedesignTest extends TestCase
     use RefreshDatabase;
 
     #[Test]
-    public function homepage_renders_all_curated_redox_and_nextsaas_sections()
+    public function homepage_renders_all_curated_Accelerate_and_DesignEngine_sections()
     {
         HomepageStat::factory()->create([
             'section' => 'hero',
@@ -196,7 +196,7 @@ git commit -m "feat(home): complete 70/30 redesign of homepage"
 
 ---
 
-### Task 3: Redox High-Impact 404 Error Page
+### Task 3: Accelerate High-Impact 404 Error Page
 
 **Files:**
 * Modify: `resources/views/errors/404.blade.php`
@@ -204,7 +204,7 @@ git commit -m "feat(home): complete 70/30 redesign of homepage"
 
 **Interfaces:**
 * Consumes: Base frontend layout, route helpers (`route('home')`, `route('services')`, `route('contact')`).
-* Produces: Redox-inspired dramatic 404 page (`redox/dark/404.html`) featuring large bold typography, clean terminal-like error badge, and direct breadcrumb-style return actions.
+* Produces: Accelerate-inspired dramatic 404 page (`Accelerate/dark/404.html`) featuring large bold typography, clean terminal-like error badge, and direct breadcrumb-style return actions.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -220,13 +220,13 @@ use PHPUnit\Framework\Attributes\Test;
 class Custom404RedesignTest extends TestCase
 {
     #[Test]
-    public function custom_404_page_renders_redox_typography_and_navigation()
+    public function custom_404_page_renders_Accelerate_typography_and_navigation()
     {
         $response = $this->get('/non-existent-route-for-testing-404');
 
         $response->assertStatus(404);
         $response->assertSee('404');
-        $response->assertSee('redox-error-container', false);
+        $response->assertSee('Accelerate-error-container', false);
         $response->assertSee(route('home'), false);
         $response->assertSee(route('services'), false);
         $response->assertSee(route('contact'), false);
@@ -242,12 +242,12 @@ class Custom404RedesignTest extends TestCase
 - [ ] **Step 2: Run test to verify it fails**
 
 Run: `php artisan test --filter=Custom404RedesignTest`  
-Expected: FAIL with `redox-error-container` not found.
+Expected: FAIL with `Accelerate-error-container` not found.
 
-- [ ] **Step 3: Implement Redox 404 Page in `resources/views/errors/404.blade.php`**
+- [ ] **Step 3: Implement Accelerate 404 Page in `resources/views/errors/404.blade.php`**
 
-Transform `resources/views/errors/404.blade.php` into an architectural Redox layout:
-* Container `id="redox-error-container"`.
+Transform `resources/views/errors/404.blade.php` into an architectural Accelerate layout:
+* Container `id="Accelerate-error-container"`.
 * Kinetic huge "404" headline in `text-8xl lg:text-[12rem] font-black text-slate-100 dark:text-slate-900 tracking-tighter`.
 * Status badge: "Error 404 : Resource Not Found".
 * Action pills: "Kembali ke Beranda", "Eksplorasi Layanan", "Hubungi Tim".
@@ -261,7 +261,7 @@ Expected: PASS
 
 ```bash
 git add resources/views/errors/404.blade.php tests/Feature/Custom404RedesignTest.php
-git commit -m "feat(errors): redesign 404 page with bold redox typography"
+git commit -m "feat(errors): redesign 404 page with bold Accelerate typography"
 ```
 
 ---
@@ -278,7 +278,7 @@ git commit -m "feat(errors): redesign 404 page with bold redox typography"
 
 **Interfaces:**
 * Consumes: Service models, capability metadata, technology icons.
-* Produces: Editorial service directory and deep-dive technical service pages based on `nextsaas/app-development/app-development-services.html` and `redox/dark/service-details.html`, featuring architecture diagrams, tech stack pills, and deliverables breakdown.
+* Produces: Editorial service directory and deep-dive technical service pages based on `DesignEngine/app-development/app-development-services.html` and `Accelerate/dark/service-details.html`, featuring architecture diagrams, tech stack pills, and deliverables breakdown.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -351,7 +351,7 @@ git commit -m "feat(services): upgrade services directory and 4 technical detail
 
 **Interfaces:**
 * Consumes: Database models `App\Models\Project`, tags, client data, and image attachments.
-* Produces: Engineering post-mortem style case study layouts inspired by `redox/dark/portfolio-details.html` and `nextsaas/app-development/app-development-case-study.html` featuring:
+* Produces: Engineering post-mortem style case study layouts inspired by `Accelerate/dark/portfolio-details.html` and `DesignEngine/app-development/app-development-case-study.html` featuring:
   1. Business context and initial bottlenecks.
   2. Technical architecture decisions (why this stack).
   3. Measured outcomes (latencies, load capacity, revenue impact).
@@ -405,7 +405,7 @@ Expected: FAIL.
 
 - [ ] **Step 3: Redesign `case-studies.blade.php` and `project.blade.php`**
 
-Apply Redox portfolio filtering & grid layout in `case-studies.blade.php` (`id="case-studies-grid"`).
+Apply Accelerate portfolio filtering & grid layout in `case-studies.blade.php` (`id="case-studies-grid"`).
 In `project.blade.php`, implement the structured engineering showcase (`id="project-architecture-overview"`), including metric stat counters, architecture diagram slots, challenge vs solution comparison, and client testimonial quote.
 
 - [ ] **Step 4: Run test to verify it passes**
@@ -430,7 +430,7 @@ git commit -m "feat(case-studies): elevate case studies and project details to e
 
 **Interfaces:**
 * Consumes: Open-source repositories, internal tool prototypes, experimental benchmarks.
-* Produces: NextSaaS-inspired sandbox & tool directory (`nextsaas/app-development/index.html`), positioning Accelerate Lab as a deep tech laboratory rather than a conventional agency.
+* Produces: DesignEngine-inspired sandbox & tool directory (`DesignEngine/app-development/index.html`), positioning Accelerate Lab as a deep tech laboratory rather than a conventional agency.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -497,7 +497,7 @@ git commit -m "feat(lab): redesign the-lab page with technical experiment cards"
 
 **Interfaces:**
 * Consumes: Company values, engineering principles, official PT legal data, contact settings.
-* Produces: Clean Redox-style About, Contact, and Careers pages (`redox/dark/about.html`, `redox/dark/contact.html`).
+* Produces: Clean Accelerate-style About, Contact, and Careers pages (`Accelerate/dark/about.html`, `Accelerate/dark/contact.html`).
 
 - [ ] **Step 1: Write the failing test**
 
@@ -513,7 +513,7 @@ use PHPUnit\Framework\Attributes\Test;
 class CompanyPagesRedesignTest extends TestCase
 {
     #[Test]
-    public function company_pages_render_redox_layouts_and_legal_anchors()
+    public function company_pages_render_Accelerate_layouts_and_legal_anchors()
     {
         $aboutResponse = $this->get('/about');
         $aboutResponse->assertStatus(200);
@@ -566,7 +566,7 @@ git commit -m "feat(company): redesign about, contact, and careers pages"
 **Interfaces:**
 * Consumes: Entire frontend routing table and database models.
 * Produces:
-  1. Editorial tech publication layout for Blog and Single Article (`redox/dark/blog.html`, `redox/dark/blog-details.html`).
+  1. Editorial tech publication layout for Blog and Single Article (`Accelerate/dark/blog.html`, `Accelerate/dark/blog-details.html`).
   2. 100% test pass rate across the entire repository test suite.
   3. Production asset compilation with zero errors.
 
@@ -641,7 +641,7 @@ Expected: FAIL.
 
 - [ ] **Step 3: Redesign `blog.blade.php` and `article.blade.php`**
 
-* In `blog.blade.php`, apply Redox editorial publication layout (featured engineering essay at top, grid of deep technical articles below).
+* In `blog.blade.php`, apply Accelerate editorial publication layout (featured engineering essay at top, grid of deep technical articles below).
 * In `article.blade.php`, format the reading experience with crisp typography, code block syntax styling, table of contents, and author bio.
 
 - [ ] **Step 4: Run full automated test suite**

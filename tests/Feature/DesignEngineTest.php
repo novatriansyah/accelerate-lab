@@ -4,11 +4,11 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class RedoxDesignEngineTest extends TestCase
+class DesignEngineTest extends TestCase
 {
-    public function test_redox_css_file_exists_and_contains_authentic_classes(): void
+    public function test_design_engine_css_file_exists_and_contains_authentic_classes(): void
     {
-        $cssPath = resource_path('css/redox.css');
+        $cssPath = resource_path('css/design-engine.css');
         $this->assertFileExists($cssPath);
 
         $cssContent = file_get_contents($cssPath);
@@ -23,9 +23,9 @@ class RedoxDesignEngineTest extends TestCase
         $this->assertStringContainsString('#00BFA5', $cssContent);
     }
 
-    public function test_app_css_imports_redox_css(): void
+    public function test_app_css_imports_design_engine_css(): void
     {
         $appCss = file_get_contents(resource_path('css/app.css'));
-        $this->assertStringContainsString('@import "./redox.css";', $appCss);
+        $this->assertStringContainsString('@import "./design-engine.css";', $appCss);
     }
 }

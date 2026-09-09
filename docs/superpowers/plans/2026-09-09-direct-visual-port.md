@@ -1,15 +1,15 @@
-# Direct Visual Port: Redox (70%) + NextSaaS (30%) Implementation Plan
+# Direct Visual Port: Accelerate (70%) + DesignEngine (30%) Implementation Plan
 
 > **For agentic workers:** 
-**Goal:** Direct visual port of authentic HTML markup, CSS classes, typography, and interactive components from Redox (`references/redox/dark/index.html`) and NextSaaS (`references/nextsaas/app-development/index.html`) into the Accelerate Lab Laravel 12 application.
-**Architecture:** Monolithic Laravel Blade architecture augmented by a bespoke `resources/css/redox.css` design engine for complex animations (.rr-btn kinetic hover, spinning circle badge, service lists) combined with Tailwind CSS v4 and NextSaaS floating capsule navigation.
+**Goal:** Direct visual port of authentic HTML markup, CSS classes, typography, and interactive components from Accelerate (`references/Accelerate/dark/index.html`) and DesignEngine (`references/DesignEngine/app-development/index.html`) into the Accelerate Lab Laravel 12 application.
+**Architecture:** Monolithic Laravel Blade architecture augmented by a bespoke `resources/css/Accelerate.css` design engine for complex animations (.rr-btn kinetic hover, spinning circle badge, service lists) combined with Tailwind CSS v4 and DesignEngine floating capsule navigation.
 **Tech Stack:** Laravel 12.x, Blade components, Tailwind CSS v4 (@tailwindcss/vite), Alpine.js, PHPUnit 11.
 
 ## Global Constraints
 
 - **Strict TDD:** Red -> Green -> Refactor cycle enforced for every task. Tests written and verified failing before any implementation.
 - **Visual Authenticity:** Direct replication of exact reference markup and CSS rules; absolutely NO generic Tailwind card approximations.
-- **Color Mapping:** Primary Teal `#00BFA5` / `#009688` replaces Redox orange `#FF6A3A`. Canvas Dark `#0F172A`, Surface Dark `#1E293B`, Borders `rgba(255, 255, 255, 0.1)`.
+- **Color Mapping:** Primary Teal `#00BFA5` / `#009688` replaces Accelerate orange `#FF6A3A`. Canvas Dark `#0F172A`, Surface Dark `#1E293B`, Borders `rgba(255, 255, 255, 0.1)`.
 - **Typography:** Instrument Sans / Plus Jakarta Sans display hierarchy, `clamp()` fluid headings, uppercase mono accents.
 - **Zero Em-Dashes:** Never use `—` or `–` in any code, view, or test; use standard hyphens (`-`) or colons (`:`).
 - **Icons:** 100% inline SVG via `<x-app-icon>` (no external font stylesheets or FontAwesome CDN).
@@ -21,27 +21,27 @@
 
 | File Path | Responsibility |
 |---|---|
-| `resources/css/redox.css` | Authentic Redox CSS: `.rr-btn` double-text kinetic slide, `.circle-text` 8s rotation keyframe, `.work-box` scale, `.service-box` 3-column layout. |
-| `resources/css/app.css` | Tailwind v4 entrypoint importing `redox.css` and custom design tokens. |
-| `resources/views/frontend/components/header.blade.php` | NextSaaS floating capsule navbar (`max-w-[1140px] rounded-full bg-slate-900/85 backdrop-blur-xl`). |
-| `resources/views/frontend/pages/home.blade.php` | Assembled homepage: Redox Hero + NextSaaS Bento Grid + Redox Services List + Redox Featured Works. |
-| `tests/Feature/RedoxDesignEngineTest.php` | TDD suite verifying Redox CSS compilation, button classes, and keyframe animations. |
-| `tests/Feature/FloatingIslandNavbarTest.php` | TDD suite verifying NextSaaS floating capsule header markup and navigation items. |
-| `tests/Feature/RedoxHeroSectionTest.php` | TDD suite verifying Redox rotating badge, display typography, and metric counters. |
-| `tests/Feature/NextsaasBentoGridTest.php` | TDD suite verifying 12-column bento asymmetrical layout (8-col + 4-col). |
-| `tests/Feature/RedoxServicesSectionTest.php` | TDD suite verifying numbered service list `(01)` to `(04)` with hover thumbnail layout. |
-| `tests/Feature/RedoxPortfolioSectionTest.php` | TDD suite verifying `.work-box` project grid with metadata tags and `.scale` thumbnail. |
+| `resources/css/Accelerate.css` | Authentic Accelerate CSS: `.rr-btn` double-text kinetic slide, `.circle-text` 8s rotation keyframe, `.work-box` scale, `.service-box` 3-column layout. |
+| `resources/css/app.css` | Tailwind v4 entrypoint importing `Accelerate.css` and custom design tokens. |
+| `resources/views/frontend/components/header.blade.php` | DesignEngine floating capsule navbar (`max-w-[1140px] rounded-full bg-slate-900/85 backdrop-blur-xl`). |
+| `resources/views/frontend/pages/home.blade.php` | Assembled homepage: Accelerate Hero + DesignEngine Bento Grid + Accelerate Services List + Accelerate Featured Works. |
+| `tests/Feature/AccelerateDesignEngineTest.php` | TDD suite verifying Accelerate CSS compilation, button classes, and keyframe animations. |
+| `tests/Feature/FloatingIslandNavbarTest.php` | TDD suite verifying DesignEngine floating capsule header markup and navigation items. |
+| `tests/Feature/AccelerateHeroSectionTest.php` | TDD suite verifying Accelerate rotating badge, display typography, and metric counters. |
+| `tests/Feature/DesignEngineBentoGridTest.php` | TDD suite verifying 12-column bento asymmetrical layout (8-col + 4-col). |
+| `tests/Feature/AccelerateServicesSectionTest.php` | TDD suite verifying numbered service list `(01)` to `(04)` with hover thumbnail layout. |
+| `tests/Feature/AcceleratePortfolioSectionTest.php` | TDD suite verifying `.work-box` project grid with metadata tags and `.scale` thumbnail. |
 
 ---
 
 ## Tasks
 
-### Task 1: Core Design Engine & CSS Port (`redox.css`)
+### Task 1: Core Design Engine & CSS Port (`Accelerate.css`)
 
 **Files:**
-- Create: `resources/css/redox.css`
+- Create: `resources/css/Accelerate.css`
 - Modify: `resources/css/app.css`
-- Test: `tests/Feature/RedoxDesignEngineTest.php`
+- Test: `tests/Feature/AccelerateDesignEngineTest.php`
 
 **Interfaces:**
 - Consumes: Tailwind v4 build pipeline via `@tailwindcss/vite`
@@ -56,11 +56,11 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class RedoxDesignEngineTest extends TestCase
+class AccelerateDesignEngineTest extends TestCase
 {
-    public function test_redox_css_file_exists_and_contains_authentic_classes(): void
+    public function test_Accelerate_css_file_exists_and_contains_authentic_classes(): void
     {
-        $cssPath = resource_path('css/redox.css');
+        $cssPath = resource_path('css/Accelerate.css');
         $this->assertFileExists($cssPath);
 
         $cssContent = file_get_contents($cssPath);
@@ -75,24 +75,24 @@ class RedoxDesignEngineTest extends TestCase
         $this->assertStringContainsString('#00BFA5', $cssContent);
     }
 
-    public function test_app_css_imports_redox_css(): void
+    public function test_app_css_imports_Accelerate_css(): void
     {
         $appCss = file_get_contents(resource_path('css/app.css'));
-        $this->assertStringContainsString('@import "./redox.css";', $appCss);
+        $this->assertStringContainsString('@import "./Accelerate.css";', $appCss);
     }
 }
 ```
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `php artisan test --filter=RedoxDesignEngineTest`
-Expected: FAIL with "File resources/css/redox.css does not exist"
+Run: `php artisan test --filter=AccelerateDesignEngineTest`
+Expected: FAIL with "File resources/css/Accelerate.css does not exist"
 
 - [ ] **Step 3: Write minimal implementation**
 
-Create `resources/css/redox.css`:
+Create `resources/css/Accelerate.css`:
 ```css
-/* Accelerate Lab - Redox Authentic Design Engine */
+/* Accelerate Lab - Accelerate Authentic Design Engine */
 :root {
   --primary: #00BFA5;
   --primary-hover: #009688;
@@ -394,23 +394,23 @@ Create `resources/css/redox.css`:
 }
 ```
 
-Prepend `@import "./redox.css";` to `resources/css/app.css`.
+Prepend `@import "./Accelerate.css";` to `resources/css/app.css`.
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `php artisan test --filter=RedoxDesignEngineTest`
+Run: `php artisan test --filter=AccelerateDesignEngineTest`
 Expected: PASS (2 tests, 10 assertions)
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add resources/css/redox.css resources/css/app.css tests/Feature/RedoxDesignEngineTest.php
-git commit -m "feat(css): implement authentic redox design engine and button system"
+git add resources/css/Accelerate.css resources/css/app.css tests/Feature/AccelerateDesignEngineTest.php
+git commit -m "feat(css): implement authentic Accelerate design engine and button system"
 ```
 
 ---
 
-### Task 2: NextSaaS Floating Island Capsule Navbar (`header.blade.php`)
+### Task 2: DesignEngine Floating Island Capsule Navbar (`header.blade.php`)
 
 **Files:**
 - Modify: `resources/views/frontend/components/header.blade.php`
@@ -463,7 +463,7 @@ Expected: FAIL with missing `#floating-island-navbar` or capsule classes
 
 - [ ] **Step 3: Write minimal implementation**
 
-Update `resources/views/frontend/components/header.blade.php` with genuine NextSaaS floating capsule container and Redox `.rr-btn` CTA:
+Update `resources/views/frontend/components/header.blade.php` with genuine DesignEngine floating capsule container and Accelerate `.rr-btn` CTA:
 
 ```blade
 <header class="relative z-50">
@@ -533,16 +533,16 @@ Expected: PASS
 
 ```bash
 git add resources/views/frontend/components/header.blade.php tests/Feature/FloatingIslandNavbarTest.php
-git commit -m "feat(header): port authentic nextsaas floating capsule navbar"
+git commit -m "feat(header): port authentic DesignEngine floating capsule navbar"
 ```
 
 ---
 
-### Task 3: Redox Hero Section with Rotating Circle Badge (`home.blade.php`)
+### Task 3: Accelerate Hero Section with Rotating Circle Badge (`home.blade.php`)
 
 **Files:**
 - Modify: `resources/views/frontend/pages/home.blade.php`
-- Test: `tests/Feature/RedoxHeroSectionTest.php`
+- Test: `tests/Feature/AccelerateHeroSectionTest.php`
 
 **Interfaces:**
 - Consumes: `.circle-text`, `@keyframes textRotation`, `.rr-btn`, `<x-app-icon>`
@@ -557,14 +557,14 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class RedoxHeroSectionTest extends TestCase
+class AccelerateHeroSectionTest extends TestCase
 {
-    public function test_hero_section_renders_redox_structures(): void
+    public function test_hero_section_renders_Accelerate_structures(): void
     {
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify authentic Redox hero classes
+        // Verify authentic Accelerate hero classes
         $response->assertSee('hero-area', false);
         $response->assertSee('circle-text-wrapper', false);
         $response->assertSee('circle-text', false);
@@ -582,15 +582,15 @@ class RedoxHeroSectionTest extends TestCase
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `php artisan test --filter=RedoxHeroSectionTest`
+Run: `php artisan test --filter=AccelerateHeroSectionTest`
 Expected: FAIL with missing `circle-text-wrapper` or `textPath`
 
 - [ ] **Step 3: Write minimal implementation**
 
-Port the Redox lines 213–270 into `resources/views/frontend/pages/home.blade.php`:
+Port the Accelerate lines 213–270 into `resources/views/frontend/pages/home.blade.php`:
 
 ```blade
-{{-- Hero Area (Authentic Redox) --}}
+{{-- Hero Area (Authentic Accelerate) --}}
 <section class="hero-area pt-36 pb-20 md:pt-44 md:pb-28 relative overflow-hidden">
     <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="hero-area-inner">
@@ -657,23 +657,23 @@ Port the Redox lines 213–270 into `resources/views/frontend/pages/home.blade.p
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `php artisan test --filter=RedoxHeroSectionTest`
+Run: `php artisan test --filter=AccelerateHeroSectionTest`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add resources/views/frontend/pages/home.blade.php tests/Feature/RedoxHeroSectionTest.php
-git commit -m "feat(hero): port authentic redox hero with rotating circular badge"
+git add resources/views/frontend/pages/home.blade.php tests/Feature/AccelerateHeroSectionTest.php
+git commit -m "feat(hero): port authentic Accelerate hero with rotating circular badge"
 ```
 
 ---
 
-### Task 4: NextSaaS Technical Bento Grid Section (`home.blade.php`)
+### Task 4: DesignEngine Technical Bento Grid Section (`home.blade.php`)
 
 **Files:**
 - Modify: `resources/views/frontend/pages/home.blade.php`
-- Test: `tests/Feature/NextsaasBentoGridTest.php`
+- Test: `tests/Feature/DesignEngineBentoGridTest.php`
 
 **Interfaces:**
 - Consumes: 12-column grid layout with 8-col hero card and 4-col feature cards
@@ -688,14 +688,14 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class NextsaasBentoGridTest extends TestCase
+class DesignEngineBentoGridTest extends TestCase
 {
-    public function test_bento_grid_renders_authentic_nextsaas_layout(): void
+    public function test_bento_grid_renders_authentic_DesignEngine_layout(): void
     {
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify NextSaaS bento grid classes
+        // Verify DesignEngine bento grid classes
         $response->assertSee('grid grid-cols-12', false);
         $response->assertSee('lg:col-span-8', false);
         $response->assertSee('lg:col-span-4', false);
@@ -710,15 +710,15 @@ class NextsaasBentoGridTest extends TestCase
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `php artisan test --filter=NextsaasBentoGridTest`
+Run: `php artisan test --filter=DesignEngineBentoGridTest`
 Expected: FAIL with missing 12-column bento classes
 
 - [ ] **Step 3: Write minimal implementation**
 
-Port the NextSaaS Bento section (lines 2480–2580) into `resources/views/frontend/pages/home.blade.php`:
+Port the DesignEngine Bento section (lines 2480–2580) into `resources/views/frontend/pages/home.blade.php`:
 
 ```blade
-{{-- NextSaaS Technical Bento Grid Section --}}
+{{-- DesignEngine Technical Bento Grid Section --}}
 <section class="py-20 bg-slate-900/50 border-y border-white/5 relative">
     <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-14">
@@ -812,27 +812,27 @@ Port the NextSaaS Bento section (lines 2480–2580) into `resources/views/fronte
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `php artisan test --filter=NextsaasBentoGridTest`
+Run: `php artisan test --filter=DesignEngineBentoGridTest`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add resources/views/frontend/pages/home.blade.php tests/Feature/NextsaasBentoGridTest.php
-git commit -m "feat(bento): implement authentic nextsaas 12-col bento grid section"
+git add resources/views/frontend/pages/home.blade.php tests/Feature/DesignEngineBentoGridTest.php
+git commit -m "feat(bento): implement authentic DesignEngine 12-col bento grid section"
 ```
 
 ---
 
-### Task 5: Redox Numbered Service List Section (`home.blade.php`)
+### Task 5: Accelerate Numbered Service List Section (`home.blade.php`)
 
 **Files:**
 - Modify: `resources/views/frontend/pages/home.blade.php`
-- Test: `tests/Feature/RedoxServicesSectionTest.php`
+- Test: `tests/Feature/AccelerateServicesSectionTest.php`
 
 **Interfaces:**
 - Consumes: `.services-wrapper-1`, `.service-box`, `.count > .number`, `.service-list`
-- Produces: Authentic Redox 3-column service list with numbered indices `(01)` through `(04)`
+- Produces: Authentic Accelerate 3-column service list with numbered indices `(01)` through `(04)`
 
 - [ ] **Step 1: Write the failing test**
 
@@ -843,14 +843,14 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class RedoxServicesSectionTest extends TestCase
+class AccelerateServicesSectionTest extends TestCase
 {
-    public function test_services_section_renders_authentic_redox_numbered_structure(): void
+    public function test_services_section_renders_authentic_Accelerate_numbered_structure(): void
     {
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify authentic Redox service list classes
+        // Verify authentic Accelerate service list classes
         $response->assertSee('services-wrapper-1', false);
         $response->assertSee('service-box', false);
 
@@ -868,15 +868,15 @@ class RedoxServicesSectionTest extends TestCase
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `php artisan test --filter=RedoxServicesSectionTest`
+Run: `php artisan test --filter=AccelerateServicesSectionTest`
 Expected: FAIL with missing `services-wrapper-1` or `(01)`
 
 - [ ] **Step 3: Write minimal implementation**
 
-Port Redox lines 500–580 into `resources/views/frontend/pages/home.blade.php`:
+Port Accelerate lines 500–580 into `resources/views/frontend/pages/home.blade.php`:
 
 ```blade
-{{-- Redox Numbered Service List Section --}}
+{{-- Accelerate Numbered Service List Section --}}
 <section class="service-area py-24 relative">
     <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-header mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -994,27 +994,27 @@ Port Redox lines 500–580 into `resources/views/frontend/pages/home.blade.php`:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `php artisan test --filter=RedoxServicesSectionTest`
+Run: `php artisan test --filter=AccelerateServicesSectionTest`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add resources/views/frontend/pages/home.blade.php tests/Feature/RedoxServicesSectionTest.php
-git commit -m "feat(services): implement authentic redox numbered service list section"
+git add resources/views/frontend/pages/home.blade.php tests/Feature/AccelerateServicesSectionTest.php
+git commit -m "feat(services): implement authentic Accelerate numbered service list section"
 ```
 
 ---
 
-### Task 6: Redox Featured Work Grid Section (`home.blade.php`)
+### Task 6: Accelerate Featured Work Grid Section (`home.blade.php`)
 
 **Files:**
 - Modify: `resources/views/frontend/pages/home.blade.php`
-- Test: `tests/Feature/RedoxPortfolioSectionTest.php`
+- Test: `tests/Feature/AcceleratePortfolioSectionTest.php`
 
 **Interfaces:**
 - Consumes: `.works-wrapper-1`, `.work-box`, `.thumb > .image.scale`, `.meta`
-- Produces: Authentic Redox 2-column portfolio grid with hover zoom and tag pills
+- Produces: Authentic Accelerate 2-column portfolio grid with hover zoom and tag pills
 
 - [ ] **Step 1: Write the failing test**
 
@@ -1025,14 +1025,14 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class RedoxPortfolioSectionTest extends TestCase
+class AcceleratePortfolioSectionTest extends TestCase
 {
-    public function test_portfolio_section_renders_authentic_redox_work_boxes(): void
+    public function test_portfolio_section_renders_authentic_Accelerate_work_boxes(): void
     {
         $response = $this->get(route('home'));
         $response->assertStatus(200);
 
-        // Verify authentic Redox work-box classes
+        // Verify authentic Accelerate work-box classes
         $response->assertSee('works-wrapper-1', false);
         $response->assertSee('work-box', false);
         $response->assertSee('image scale', false);
@@ -1046,15 +1046,15 @@ class RedoxPortfolioSectionTest extends TestCase
 
 - [ ] **Step 2: Run test to verify it fails**
 
-Run: `php artisan test --filter=RedoxPortfolioSectionTest`
+Run: `php artisan test --filter=AcceleratePortfolioSectionTest`
 Expected: FAIL with missing `works-wrapper-1` or `work-box`
 
 - [ ] **Step 3: Write minimal implementation**
 
-Port Redox lines 370–480 into `resources/views/frontend/pages/home.blade.php`:
+Port Accelerate lines 370–480 into `resources/views/frontend/pages/home.blade.php`:
 
 ```blade
-{{-- Redox Featured Work Grid Section --}}
+{{-- Accelerate Featured Work Grid Section --}}
 <section class="work-area py-24 border-t border-white/5 relative">
     <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="section-header mb-14 flex items-end justify-between">
@@ -1177,14 +1177,14 @@ Port Redox lines 370–480 into `resources/views/frontend/pages/home.blade.php`:
 
 - [ ] **Step 4: Run test to verify it passes**
 
-Run: `php artisan test --filter=RedoxPortfolioSectionTest`
+Run: `php artisan test --filter=AcceleratePortfolioSectionTest`
 Expected: PASS
 
 - [ ] **Step 5: Commit**
 
 ```bash
-git add resources/views/frontend/pages/home.blade.php tests/Feature/RedoxPortfolioSectionTest.php
-git commit -m "feat(portfolio): port authentic redox featured work grid section"
+git add resources/views/frontend/pages/home.blade.php tests/Feature/AcceleratePortfolioSectionTest.php
+git commit -m "feat(portfolio): port authentic Accelerate featured work grid section"
 ```
 
 ---
@@ -1218,5 +1218,5 @@ Expected: Cache cleared successfully.
 
 ```bash
 git add .
-git commit -m "chore(release): complete authentic redox and nextsaas visual port"
+git commit -m "chore(release): complete authentic Accelerate and DesignEngine visual port"
 ```
