@@ -23,32 +23,32 @@
 
             {{-- Display Headline (Instrument Sans) --}}
             <h1 class="font-instrumentsans text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.08] mb-6">
-                {{ $currentLocale === 'id' ? 'Membangun' : 'Engineering' }}
+                {{ $currentLocale === 'id' ? 'Mitra Inovasi Digital untuk' : 'Strategic Innovation Partner for' }}
                 <span class="bg-gradient-to-r from-[#00BFA5] via-[#00D5B5] to-[#00E5C0] bg-clip-text text-transparent">
-                    {{ $currentLocale === 'id' ? 'Perangkat Lunak Berkinerja Tinggi' : 'High-Impact Software' }}
+                    {{ $currentLocale === 'id' ? 'Akselerasi Pertumbuhan' : 'Business Growth' }}
                 </span>
-                {{ $currentLocale === 'id' ? '& Sistem Digital Strategis.' : '& Strategic Digital Systems.' }}
+                {{ $currentLocale === 'id' ? '& Efisiensi Bisnis.' : '& Enterprise Scalability.' }}
             </h1>
 
             {{-- Sub-Headline --}}
             <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl max-w-2xl leading-relaxed mb-10">
                 {{ $currentLocale === 'id'
-                    ? 'Kami bermitra dengan perusahaan visioner dan scale-up untuk merancang, merekayasa, dan meluncurkan arsitektur web kustom, sistem cloud, dan aplikasi mobile kelas dunia.'
-                    : 'We partner with visionary enterprises and high-growth scale-ups to design, architect, and deploy world-class web applications, cloud systems, and mobile architectures.' }}
+                    ? 'Kami bermitra dengan para pemimpin industri dan bisnis bertumbuh untuk merancang sistem digital yang memecahkan masalah nyata, meningkatkan pendapatan, dan mengotomasi alur kerja operasional.'
+                    : 'We partner with industry leaders and high-growth businesses to engineer digital systems that solve real problems, accelerate revenue, and automate operational workflows.' }}
             </p>
 
             {{-- Dual Kinetic CTA Buttons --}}
             <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
                 <a href="{{ route('contact') }}" class="rr-btn rr-btn-primary px-8 py-4 text-sm font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-1">{{ $currentLocale === 'id' ? 'Jadwalkan Konsultasi Teknis' : 'Schedule Technical Consultation' }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Bersama Kami' : 'Let\'s Build Together' }}</span>
+                        <span class="text-1">{{ $currentLocale === 'id' ? 'Konsultasi Solusi Bisnis' : 'Schedule Business Consultation' }}</span>
+                        <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Diskusi' : 'Start Conversation' }}</span>
                     </span>
                 </a>
                 <a href="{{ route('case-studies') }}" class="rr-btn rr-btn-border px-7 py-4 text-sm font-medium">
                     <span class="btn-wrap">
-                        <span class="text-1">{{ $currentLocale === 'id' ? 'Lihat Studi Kasus' : 'Explore Case Studies' }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Portfolio Unggulan' : 'Featured Work' }}</span>
+                        <span class="text-1">{{ $currentLocale === 'id' ? 'Pelajari Hasil Nyata' : 'Explore Proven Impact' }}</span>
+                        <span class="text-2">{{ $currentLocale === 'id' ? 'Portofolio Klien' : 'Featured Case Studies' }}</span>
                     </span>
                 </a>
             </div>
@@ -87,19 +87,19 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
                         <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-                            <span class="text-xs font-mono text-slate-400 uppercase">Architecture</span>
-                            <p class="text-base font-semibold text-white mt-1">Monolithic Precision</p>
-                            <span class="text-xs text-emerald-400 mt-2 block">Zero Latency • Alpine.js + Livewire</span>
+                            <span class="text-xs font-mono text-slate-400 uppercase">Pilar Dampak</span>
+                            <p class="text-base font-semibold text-white mt-1">Pertumbuhan Omzet</p>
+                            <span class="text-xs text-emerald-400 mt-2 block">Otomasi Konversi • Transaksi Tanpa Hambatan</span>
                         </div>
                         <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-                            <span class="text-xs font-mono text-slate-400 uppercase">Cloud Pipeline</span>
-                            <p class="text-base font-semibold text-white mt-1">Docker CI/CD Automated</p>
-                            <span class="text-xs text-cyan-400 mt-2 block">Auto-healing • 99.99% Availability</span>
+                            <span class="text-xs font-mono text-slate-400 uppercase">Pilar Dampak</span>
+                            <p class="text-base font-semibold text-white mt-1">Efisiensi Operasional</p>
+                            <span class="text-xs text-cyan-400 mt-2 block">Integrasi Sistem • Hemat Jam Kerja Manual</span>
                         </div>
                         <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-                            <span class="text-xs font-mono text-slate-400 uppercase">Product Design</span>
-                            <p class="text-base font-semibold text-white mt-1">Modern Bento Ergonomics</p>
-                            <span class="text-xs text-teal-400 mt-2 block">Dark Void • Micro-Kinetic State</span>
+                            <span class="text-xs font-mono text-slate-400 uppercase">Pilar Dampak</span>
+                            <p class="text-base font-semibold text-white mt-1">Keamanan & Keandalan</p>
+                            <span class="text-xs text-teal-400 mt-2 block">Perlindungan Enterprise • Kesiapan Skala Penuh</span>
                         </div>
                     </div>
                 </div>
@@ -264,85 +264,84 @@
             {{-- Web Tab --}}
             <div x-show="activeTab === 'web'" x-transition class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                    <span class="text-xs font-mono text-[#00BFA5] uppercase">MODERN MONOLITH & HYBRID SPA</span>
+                    <span class="text-xs font-mono text-[#00BFA5] uppercase">SOLUSI PLATFORM DIGITAL</span>
                     <h3 class="font-instrumentsans text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-4">
-                        High-Speed Laravel 12 + Tailwind v4 + Alpine.js
+                        Platform Web Berkinerja Tinggi & Otomasi Transaksi Bisnis
                     </h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
-                        Menghilangkan kompleksitas microservices yang berlebihan dengan arsitektur monolit modern teroptimasi. Rendering server-side instan, SEO sempurna, dan interaktivitas reaktif tanpa overhead framework JavaScript yang membengkak.
+                        Menghadirkan portal web dan sistem transaksi interaktif yang cepat, aman, dan siap menangani jutaan pengguna. Arsitektur teroptimasi memastikan konversi maksimal tanpa hambatan teknis.
                     </p>
                     <div class="grid grid-cols-2 gap-4 text-xs font-mono text-slate-600 dark:text-slate-300">
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Response Time &lt; 50ms</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Strict TDD Test Suite</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Filament v3 CMS Powered</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ 100% WCAG 2.2 Accessible</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Waktu Respon Cepat &lt; 50ms</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Perlindungan Keamanan Enterprise</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Dasbor Manajemen Bisnis Intuitif</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ 100% Aksesibel & Siap Konversi</div>
                     </div>
                 </div>
                 <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-emerald-400 overflow-x-auto">
-                    <pre><code>// Production Architecture Benchmark
-App::environment('production');
-Benchmark::measure([
-    'SSR Blade Hydration' => fn () => View::make('portal')->render(),
-    'ORM Query Caching'   => fn () => Cache::tags(['services'])->remember(),
+                    <pre><code>// Indikator Kinerja & Dampak Bisnis
+StatusSistem::pantau([
+    'Waktu Muat Rata-rata' => '42ms',
+    'Tingkat Sukses Transaksi' => '99.99%',
+    'Peningkatan Konversi Penjualan' => '+148%',
 ]);
-// Results: 100% Success, 0 Memory Leaks</code></pre>
+// Hasil: Efisiensi Maksimal, Bebas Hambatan Operasional</code></pre>
                 </div>
             </div>
 
             {{-- Cloud Tab --}}
             <div x-show="activeTab === 'cloud'" x-transition class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                    <span class="text-xs font-mono text-[#00BFA5] uppercase">CLOUD & AUTOMATION</span>
+                    <span class="text-xs font-mono text-[#00BFA5] uppercase">KEANDALAN INFRASTRUKTUR</span>
                     <h3 class="font-instrumentsans text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-4">
-                        Automated Docker CI/CD & Zero-Downtime Rollouts
+                        Infrastruktur Cloud Tangguh & Ketahanan Operasional Bisnis
                     </h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
-                        Infrastruktur cloud tangguh dengan kontainerisasi Docker, deployment tanpa downtime (*blue/green*), monitoring real-time, dan proteksi DDoS tingkat lanjut.
+                        Fondasi komputasi berdaya tahan tinggi yang siap bertumbuh seiring ekspansi bisnis Anda. Memastikan layanan Anda selalu online tanpa interupsi, bahkan saat lonjakan transaksi jutaan pengguna.
                     </p>
                     <div class="grid grid-cols-2 gap-4 text-xs font-mono text-slate-600 dark:text-slate-300">
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Automated SSL & WAF</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Daily Offsite Backups</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Multi-region Scaling</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ 99.99% Guaranteed SLA</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Perlindungan Data & Keamanan Siber</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Pencadangan Data Harian Otomatis</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Skalabilitas Fleksibel Tanpa Batas</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Jaminan Uptime Layanan 99.99%</div>
                     </div>
                 </div>
                 <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-cyan-400 overflow-x-auto">
-                    <pre><code># Deployment Pipeline
-stages: [lint, test, build, deploy]
-pipeline:
-  - run: php artisan test --parallel
-  - run: docker build --target production -t app:prod
-  - run: deploy:rolling --zero-downtime
-# Status: DEPLOYED in 18.4s</code></pre>
+                    <pre><code># Telemetri Ketahanan Operasional
+parameter_keandalan:
+  - metrik: waktu_aktif_tahunan
+    nilai: 99.99%
+  - pemulihan_otomatis: aktif
+  - enkripsi_data: standar_perbankan
+# Status: 100% OPERASIONAL SEMPURNA</code></pre>
                 </div>
             </div>
 
             {{-- Mobile Tab --}}
             <div x-show="activeTab === 'mobile'" x-transition class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                 <div>
-                    <span class="text-xs font-mono text-[#00BFA5] uppercase">CROSS-PLATFORM MOBILE</span>
+                    <span class="text-xs font-mono text-[#00BFA5] uppercase">APLIKASI PENGGUNA</span>
                     <h3 class="font-instrumentsans text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-4">
-                        Flutter & React Native Enterprise Engineering
+                        Aplikasi Seluler Responsif untuk Retensi & Kepuasan Pelanggan
                     </h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
-                        Aplikasi seluler berkinerja tinggi untuk iOS dan Android dengan basis kode tunggal yang efisien. Animasi 60 FPS halus, integrasi pembayaran digital, dan sinkronisasi data offline.
+                        Membangun kehadiran merek Anda langsung di genggaman pelanggan dengan pengalaman seluler yang mulus dan intuitif di iOS dan Android. Mendorong loyalitas, frekuensi transaksi, dan kepuasan pengguna.
                     </p>
                     <div class="grid grid-cols-2 gap-4 text-xs font-mono text-slate-600 dark:text-slate-300">
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Native Device Hardware API</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Offline-first Sync</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Biometric Security</div>
-                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ App Store Automated Delivery</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Antarmuka Pengguna Halus & Responsif</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Notifikasi Promo & Update Langsung</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Keamanan Autentikasi Biometrik</div>
+                        <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Integrasi Alur Pembayaran Digital</div>
                     </div>
                 </div>
                 <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-teal-400 overflow-x-auto">
-                    <pre><code>// Mobile Synchronization Stream
-StreamBuilder<DeviceState>(
-  stream: HardwareService.observeBiometrics(),
-  builder: (context, snapshot) => FastSecureGateway(
-    latency: Duration(milliseconds: 14),
-    status: SecurityStatus.authenticated,
-  ),
-);</code></pre>
+                    <pre><code>// Metrik Pengalaman & Retensi Pelanggan
+AnalitikAplikasi::evaluasi([
+    'Rating Kepuasan Pengguna' => '4.9 / 5.0',
+    'Waktu Alur Transaksi' => '3 Detik',
+    'Peningkatan Transaksi Berulang' => '+215%',
+]);
+// Status: Pengalaman Pengguna Optimal</code></pre>
                 </div>
             </div>
         </div>
