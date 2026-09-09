@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Article;
 use App\Models\CompanyMilestone;
 use App\Models\CoreValue;
 use App\Models\HomepageStat;
@@ -22,6 +23,11 @@ class PageController extends Controller
         $heroStats = HomepageStat::where('section', 'hero')->orderBy('sort_order')->take(3)->get();
         $capabilityStats = HomepageStat::where('section', 'capabilities')->orderBy('sort_order')->take(3)->get();
         $testimonials = Testimonial::active()->orderBy('sort_order')->take(3)->get();
+        $latestArticles = Article::with(['category', 'author'])
+            ->where('published_at', '<=', now())
+            ->latest('published_at')
+            ->take(3)
+            ->get();
 
         return view('frontend.pages.home', [
             'title' => 'Accelerate Lab - Digital Innovation Agency',
@@ -31,6 +37,7 @@ class PageController extends Controller
             'heroStats' => $heroStats,
             'capabilityStats' => $capabilityStats,
             'testimonials' => $testimonials,
+            'latestArticles' => $latestArticles,
         ]);
     }
 

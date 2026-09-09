@@ -434,6 +434,65 @@ AnalitikAplikasi::evaluasi([
 
 
 {{-- ========================================================================
+     LATEST INSIGHTS & DISPATCHES (Accelerate Technical Papers Matrix)
+     ======================================================================== --}}
+@if(isset($latestArticles) && $latestArticles->isNotEmpty())
+<section class="py-20 border-t border-slate-200/80 dark:border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">
+                    03 // {{ $currentLocale === 'id' ? 'WAWASAN & RISET' : 'LATEST INSIGHTS' }}
+                </span>
+                <h2 class="font-instrumentsans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">
+                    {{ $currentLocale === 'id' ? 'Catatan Rekayasa & Praktik Terbaik' : 'Engineering Notes & Architectural Field Notes' }}
+                </h2>
+            </div>
+            <a href="{{ route('blog') }}" class="rr-btn rr-btn-border px-5 py-2.5 text-xs font-medium self-start md:self-auto">
+                <span class="btn-wrap">
+                    <span class="text-1">{{ $currentLocale === 'id' ? 'Lihat Semua Artikel' : 'View All Insights' }}</span>
+                    <span class="text-2">{{ $currentLocale === 'id' ? 'Jelajahi Wawasan' : 'Explore Articles' }}</span>
+                </span>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            @foreach($latestArticles as $art)
+                <div class="bento-card p-6 sm:p-7 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 text-xs font-mono">
+                            @if($art->category)
+                                <span class="px-2.5 py-1 rounded-md bg-[#00BFA5]/10 text-[#00BFA5] font-semibold">
+                                    {{ $art->category->name }}
+                                </span>
+                            @endif
+                            <span class="text-slate-400">
+                                {{ $art->published_at ? $art->published_at->format('M d, Y') : '' }}
+                            </span>
+                        </div>
+                        <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mb-2 hover:text-[#00BFA5] transition-colors">
+                            <a href="{{ route('article', $art->slug) }}">
+                                {{ $art->title }}
+                            </a>
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-2">
+                            {{ \Illuminate\Support\Str::limit(strip_tags($art->content), 100) }}
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 dark:border-white/5">
+                        <a href="{{ route('article', $art->slug) }}" class="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#00BFA5] hover:underline">
+                            <span>{{ $currentLocale === 'id' ? 'Baca Artikel' : 'Read Paper' }}</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+{{-- ========================================================================
      CLIENT TESTIMONIALS (Accelerate Client Feedback Cards)
      ======================================================================== --}}
 @if($testimonials->isNotEmpty())
@@ -441,7 +500,7 @@ AnalitikAplikasi::evaluasi([
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
                 <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">
-                    03 // {{ $currentLocale === 'id' ? 'TESTIMONI REKANAN' : 'CLIENT EXPERIENCES' }}
+                    04 // {{ $currentLocale === 'id' ? 'TESTIMONI REKANAN' : 'CLIENT EXPERIENCES' }}
                 </span>
                 <h2 class="font-instrumentsans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">
                     {{ $currentLocale === 'id' ? 'Dipercaya oleh Para Pemimpin Bisnis' : 'Trusted by Visionary Leaders' }}
