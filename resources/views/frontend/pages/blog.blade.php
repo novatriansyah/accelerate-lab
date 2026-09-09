@@ -2,7 +2,7 @@
 
 @section('content')
     <main class="flex-1 flex flex-col items-center w-full">
-        <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-6" aria-labelledby="blog-heading">
+        <section id="blog-hero-section" class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-6" aria-labelledby="blog-heading">
             <div class="flex flex-col gap-4 max-w-3xl">
                 <h1 id="blog-heading"
                     class="text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em] text-slate-dark dark:text-white">
@@ -72,7 +72,7 @@
             <!-- Optional Category Filter could go here later -->
         </section>
 
-        <section class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-16" aria-label="Latest articles">
+        <section id="articles-grid" class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-16" aria-label="Latest articles">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach ($latest as $article)
                     <article

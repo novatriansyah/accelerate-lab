@@ -269,10 +269,18 @@
                             {{ __('Portal operasional terintegrasi, back-office custom, dan sistem internal monolitik modern berbasis Laravel 12 yang stabil dan terbukti cepat.') }}
                         </p>
                         <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs font-medium text-slate-500">
+                            <span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-semibold">{{ __('Strategi Produk') }}</span>
+                            <span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-semibold">{{ __('Custom Development') }}</span>
                             <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Laravel 12</span>
                             <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Tailwind v4</span>
                             <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">Livewire & Alpine</span>
                             <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800">PostgreSQL</span>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/60">
+                            <a href="/services/web-application-development" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:gap-2 transition-all">
+                                <span>{{ __('Learn more') }}</span>
+                                <x-app-icon name="arrow_forward" class="w-3.5 h-3.5" />
+                            </a>
                         </div>
                     </div>
 
@@ -405,7 +413,7 @@
                             <x-app-icon name="verified" class="w-6 h-6" />
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">
-                            {{ __('Pengujian Menyeluruh') }}
+                            {{ __('Tested for High Reliability') }}
                         </h3>
                         <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                             {{ __('Penerapan Strict Test-Driven Development (TDD) menjamin setiap logika bisnis dan skenario transaksi teruji sebelum dideploy.') }}
@@ -423,16 +431,90 @@
                             <x-app-icon name="lock" class="w-6 h-6" />
                         </div>
                         <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">
-                            {{ __('Transparansi Mutlak') }}
+                            {{ __('100% Full IP Ownership') }}
                         </h3>
                         <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-lg">
                             {{ __('100% Source Code, konfigurasi database, dan hak akses server sepenuhnya diserahkan menjadi aset sah milik bisnis Anda tanpa biaya lisensi tersembunyi.') }}
                         </p>
                     </div>
                     <div class="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex items-center gap-4 text-xs text-slate-500">
-                        <span class="font-semibold text-slate-700 dark:text-slate-300">Hak Milik Penuh:</span>
+                        <span class="font-semibold text-slate-700 dark:text-slate-300">{{ __('Kepemilikan Penuh Tanpa Keterikatan') }}:</span>
                         <span>Source Code</span> • <span>Database</span> • <span>Domain & Server</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Operational Transformation: Tantangan Manual vs. Sistem Kustom -->
+    <section class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800" aria-labelledby="comparison-heading">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3">
+                    <x-app-icon name="compare_arrows" class="w-3.5 h-3.5" />
+                    {{ __('Transformasi Operasional Bisnis') }}
+                </span>
+                <h2 id="comparison-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                    {{ __('Tantangan Manual vs. Sistem Kustom') }}
+                </h2>
+                <p class="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-400">
+                    {{ __('Bandingkan bagaimana sistem kustom terintegrasi menyelesaikan kendala operasional yang sering menghambat bisnis berkembang.') }}
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Column 1: Manual / Spreadsheet Tercecer -->
+                <div class="p-8 rounded-2xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 flex items-center justify-center">
+                            <x-app-icon name="warning" class="w-5 h-5" />
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ __('Tantangan Spreadsheet & Sistem Manual') }}</h3>
+                            <p class="text-xs text-rose-600 dark:text-rose-400 font-medium">{{ __('Membatasi kecepatan dan rawan human error') }}</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="close" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Spreadsheet Tercecer') }}</strong>: {{ __('File bertumpuk di berbagai komputer, rawan terhapus atau tertukar versi rumus perhitungan.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="close" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Rekap Lambat') }}</strong>: {{ __('Staf menghabiskan 2-3 jam setiap sore hanya untuk mencocokkan nota manual dan laporan omzet harian.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="close" class="w-5 h-5 text-rose-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Stok Gudang Selisih') }}</strong>: {{ __('Data barang di catatan admin tidak sesuai dengan kondisi riil di gudang fisik.') }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Custom Solution / Database Terpusat -->
+                <div class="p-8 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-900/40 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
+                            <x-app-icon name="check_circle" class="w-5 h-5" />
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ __('Solusi Sistem Kustom Terintegrasi') }}</h3>
+                            <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">{{ __('Otomatis, presisi, dan aset milik Anda 100%') }}</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Database Terpusat') }}</strong>: {{ __('Seluruh transaksi tercatat otomatis di satu database aman dengan hak akses per karyawan.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Invoicing Otomatis') }}</strong>: {{ __('Tagihan, surat jalan, dan laporan keuangan terbit seketika tanpa perlu rekap ulang manual.') }}</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm text-slate-700 dark:text-slate-300">
+                            <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                            <span><strong>{{ __('Sinkronisasi Real-Time') }}</strong>: {{ __('Stok berkurang otomatis begitu pesanan terkonfirmasi, terintegrasi barcode scanner.') }}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -444,7 +526,7 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div>
                     <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider border border-primary/20 mb-4">
-                        {{ __('Studi Kasus & Hasil Nyata') }}
+                        {{ __('Our Recent Projects') }}
                     </span>
                     <h2 id="portfolio-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
                         {{ __('Karya Rekayasa Pilihan') }}
@@ -659,7 +741,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mb-16">
                 <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider border border-primary/20 mb-4">
-                    {{ __('Alur Rekayasa') }}
+                    {{ __('How We Work') }}
                 </span>
                 <h2 id="process-heading" class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
                     {{ __('Dari Konsep hingga Produksi Tanpa Birokrasi') }}
@@ -676,7 +758,7 @@
                         <div class="bg-primary h-full w-full rounded-full"></div>
                     </div>
                     <span class="text-sm font-mono font-bold text-primary">01</span>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ __('Audit & Arsitektur') }}</h3>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">{{ __('Audit Alur Kerja') }} & {{ __('Pemetaan Masalah') }}</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                         {{ __('Analisis mendalam proses bisnis, penentuan skema basis data, dan estimasi transparan langsung dengan principal architect.') }}
                     </p>
@@ -792,7 +874,7 @@
                         {{ __('Mulai Transformasi Digital') }}
                     </span>
                     <h2 id="cta-heading" class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-                        {{ __('Siap Mempercepat Pertumbuhan dan Efisiensi Bisnis Anda?') }}
+                        {{ __('Ready to Accelerate?') }}
                     </h2>
                     <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
                         {{ __('Diskusikan kendala operasional Anda langsung dengan principal architect kami. Tanpa perantara sales, tanpa basa-basi teknis.') }}
