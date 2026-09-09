@@ -16,7 +16,7 @@ class ArticleResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Blog Page';
+    protected static ?string $navigationGroup = 'Wawasan & Publikasi';
 
     public static function form(Form $form): Form
     {

@@ -20,7 +20,7 @@ class LeadResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-inbox';
 
-    protected static ?string $navigationGroup = 'Admin';
+    protected static ?string $navigationGroup = 'Inbox & Calon Klien';
 
     protected static ?string $navigationLabel = 'Leads / Inbox';
 

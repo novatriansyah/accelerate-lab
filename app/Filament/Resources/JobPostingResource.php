@@ -16,7 +16,7 @@ class JobPostingResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
-    protected static ?string $navigationGroup = 'Careers Page';
+    protected static ?string $navigationGroup = 'Pengaturan & Organisasi';
 
     public static function form(Form $form): Form
     {
