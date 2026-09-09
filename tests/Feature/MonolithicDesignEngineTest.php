@@ -108,4 +108,51 @@ class MonolithicDesignEngineTest extends TestCase
         $response->assertSee('NextGen Core Banking Gateway');
         $response->assertSee('BANK CENTRAL NUSANTARA');
     }
+
+    public function test_services_overview_and_dedicated_service_pages_render_blueprint(): void
+    {
+        $cloudService = Service::create([
+            'title' => 'Cloud Architecture',
+            'slug' => 'cloud-architecture',
+            'category' => 'development',
+            'has_custom_page' => true,
+            'sort_order' => 1,
+            'short_description' => 'Enterprise cloud architecture and Kubernetes orchestration.',
+            'features' => [['title' => 'Zero-Downtime Migration']],
+            'technologies' => [['name' => 'AWS'], ['name' => 'Docker']],
+            'process' => [['title' => 'Infrastructure Audit', 'description' => 'Comprehensive review']],
+        ]);
+
+        $genericService = Service::create([
+            'title' => 'Cybersecurity Strategy',
+            'slug' => 'cybersecurity-strategy',
+            'category' => 'strategy',
+            'has_custom_page' => false,
+            'sort_order' => 2,
+            'short_description' => 'Offensive defense security strategy.',
+            'content' => '<p>Zero-trust perimeter architecture.</p>',
+            'benefits' => [['benefit' => 'SOC2 Compliance']],
+            'technologies' => [['name' => 'HashiCorp Vault']],
+        ]);
+
+        // 1. Test Services Overview
+        $overviewResponse = $this->get('/services');
+        $overviewResponse->assertStatus(200);
+        $overviewResponse->assertSee('Cloud Architecture');
+        $overviewResponse->assertSee('Cybersecurity Strategy');
+        $overviewResponse->assertSee('rr-btn');
+
+        // 2. Test Custom Dedicated Page
+        $customResponse = $this->get('/services/cloud-architecture');
+        $customResponse->assertStatus(200);
+        $customResponse->assertSee('Cloud Architecture');
+        $customResponse->assertSee('Zero-Downtime Migration');
+        $customResponse->assertSee('rr-btn');
+
+        // 3. Test Generic Service Page
+        $genericResponse = $this->get('/services/cybersecurity-strategy');
+        $genericResponse->assertStatus(200);
+        $genericResponse->assertSee('Cybersecurity Strategy');
+        $genericResponse->assertSee('Zero-trust perimeter architecture.', false);
+    }
 }
