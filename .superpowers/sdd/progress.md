@@ -1,22 +1,22 @@
 # Subagent-Driven Development Progress Ledger
 
-## Sprint: Customer-Centric Copywriting, Filament CMS Pruning, Copyright Sanitization, and Kinetic Motion Engine
-- Plan: `docs/superpowers/plans/2026-09-09-customer-centric-copy-cms-streamline-and-motion-engine.md`
-- Base Commit: `765c4da`
+## Sprint: CMS Integration & Motion Engine Activation
+- Plan: `docs/superpowers/plans/2026-09-10-cms-integration-and-motion-activation.md`
+- Base Commit: `5b0797d`
 - Current Status: Complete
 
 ### Tasks:
-- [x] Task 1: Filament CMS Pruning & Navigation Restructuring (complete, commit b7b24c6)
-- [x] Task 2: Copyright Sanitization (Purge all "Redox" and "NextSaaS" Mentions) (complete, commit 61c077b)
-- [x] Task 3: Implement Accelerate Lab Kinetic JS Motion Engine (complete, commit 249d1d3)
-- [x] Task 4: Customer-Centric Copywriting & Tech-Stack Purge (Homepage & Global Shell) (complete, commit ea1a43c)
-- [x] Task 5: Customer-Centric Copywriting for Services & 4 Blueprint Hubs (complete, commit 4d00bf1)
-- [x] Task 6: Customer-Centric Copywriting for Company, Portfolio, and Lab Pages (complete, commit 189aeca)
-- [x] Task 7: Master Quality Gate, Production Build & Git Synchronization (complete)
+- [x] Task 1: Fix Project Image Path & Wire Project Capabilities on Landing Page (complete, commit d954fa3)
+- [x] Task 2: Connect Contact Page to Existing CMS Data (ServiceResource & SiteSettingResource) (complete, commit 64ec8d2)
+- [x] Task 3: Connect Shell & Footer to SiteSettingResource (complete, commit 5de0a4d)
+- [x] Task 4: Showcase Latest Insights (ArticleResource) on Landing Page (complete, commit 00f6484)
+- [x] Task 5: Activate Kinetic Motion Engine (.fade-anim & .t-counter) on Landing & Contact Pages (complete, commit 01416b5)
+- [x] Task 6: Master Quality Gate, Production Build & Git Synchronization (complete)
 
 ---
 
 ### Previous Sprints (Archived):
+- Sprint 2 (Customer-Centric Copy, CMS Pruning, Motion Engine): complete (commits b7b24c6..5b0797d)
 - Task 0: complete (commit a321237, purge legacy assets and views)
 - Task 1: complete (commit 9b541d9, kinetic engine foundation and design tokens)
 - Task 2 & 3: complete (commit 550e0b9, global shell and dynamic 70/30 homepage)
