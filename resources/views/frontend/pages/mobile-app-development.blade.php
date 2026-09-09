@@ -45,7 +45,7 @@
 @endpush
 
 @section('content')
-    <div class="relative flex h-auto w-full flex-col">
+    <section id="service-hero-section" class="relative flex h-auto w-full flex-col">
         <div class="layout-container flex h-full grow flex-col">
             <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
                 <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
@@ -112,7 +112,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <div class="relative flex h-auto w-full flex-col">
         <div class="layout-container flex h-full grow flex-col">
             <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">

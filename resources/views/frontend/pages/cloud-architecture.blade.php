@@ -45,7 +45,7 @@
 @endpush
 
 @section('content')
-    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 hero-gradient bg-grid-pattern">
+    <section id="service-hero-section" class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32 hero-gradient bg-grid-pattern">
         <div class="absolute inset-0 bg-white/60 dark:bg-background-dark/90 pointer-events-none"></div>
         <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">

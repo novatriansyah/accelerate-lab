@@ -46,7 +46,7 @@
 
 @section('content')
     <main class="flex-grow">
-        <section class="relative px-4 py-12 md:py-20 lg:py-28 max-w-7xl mx-auto w-full">
+        <section id="service-hero-section" class="relative px-4 py-12 md:py-20 lg:py-28 max-w-7xl mx-auto w-full">
             <div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl opacity-50">
             </div>
             <div class="flex flex-col gap-10 md:flex-row md:items-center">
