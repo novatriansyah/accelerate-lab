@@ -164,19 +164,5 @@
             </div>
         @endif
     </section>
-
-    {{-- Bottom CTA --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-anim" data-direction="bottom">
-        <div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-slate-900 via-[#0A1A2F] to-[#090D16] text-white border border-white/10 shadow-2xl text-center">
-            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">Want to Collaborate as a Client?</h2>
-            <p class="text-slate-300 max-w-2xl mx-auto text-base mb-8">If you have a digital initiative that requires our engineering squad, start a conversation with us.</p>
-            <a href="{{ url('/contact') }}" class="rr-btn rr-btn-primary">
-                <span class="btn-wrap">
-                    <span class="text-1">Get in Touch</span>
-                    <span class="text-2">Get in Touch</span>
-                </span>
-            </a>
-        </div>
-    </section>
 </main>
 @endsection

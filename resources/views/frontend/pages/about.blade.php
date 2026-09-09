@@ -227,37 +227,7 @@
                 @endforeach
             </div>
         </section>
+        </section>
     @endif
-
-    {{-- Accelerate Studio Full-Width CTA Banner --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-anim" data-direction="bottom">
-        <div class="rounded-3xl p-8 sm:p-16 bg-gradient-to-r from-slate-900 via-[#0A1A2F] to-[#090D16] text-white border border-white/10 shadow-2xl relative overflow-hidden text-center">
-            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#00BFA5]/20 via-transparent to-transparent pointer-events-none"></div>
-
-            <div class="relative z-10 max-w-3xl mx-auto">
-                <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase mb-4 block">Take the Next Step</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">
-                    Siap Mengakselerasi Pertumbuhan Bisnis Anda?
-                </h2>
-                <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
-                    Baik Anda membutuhkan modernisasi platform, otomasi alur kerja, maupun arsitektur sistem enterprise, tim konsultan dan rekayasa kami siap membantu mengevaluasi kebutuhan spesifik Anda.
-                </p>
-                <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="{{ url('/contact') }}" class="rr-btn rr-btn-primary">
-                        <span class="btn-wrap">
-                            <span class="text-1">Jadwalkan Konsultasi Solusi</span>
-                            <span class="text-2">Jadwalkan Konsultasi Solusi</span>
-                        </span>
-                    </a>
-                    <a href="{{ url('/case-studies') }}" class="rr-btn rr-btn-outline">
-                        <span class="btn-wrap">
-                            <span class="text-1">Lihat Hasil & Studi Kasus</span>
-                            <span class="text-2">Lihat Hasil & Studi Kasus</span>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 </main>
 @endsection
