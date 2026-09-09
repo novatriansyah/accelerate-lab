@@ -73,4 +73,67 @@ class GlobalMotionEngineAuditTest extends TestCase
             $blueprintResponse->assertDontSee('–', false);
         }
     }
+
+    public function test_portfolio_blog_and_footer_contain_motion_hooks(): void
+    {
+        $project = \App\Models\Project::create([
+            'title' => 'Enterprise Cloud Migration Platform',
+            'slug' => 'enterprise-cloud-migration',
+            'client' => 'Global Logistics Inc',
+            'industry' => 'Logistics & Supply Chain',
+            'description' => 'Real-time telemetry and microservices architecture at enterprise scale.',
+            'challenge' => '<p>Legacy monolith systems faced synchronization bottlenecks.</p>',
+            'solution' => '<p>Engineered zero-downtime distributed cloud architecture.</p>',
+            'technology_tags' => ['Kubernetes', 'Go', 'PostgreSQL'],
+            'stats' => [
+                ['value' => '99.99%', 'label' => 'Service Availability'],
+                ['value' => '4.2x', 'label' => 'Throughput Scale'],
+            ],
+            'is_featured' => true,
+        ]);
+
+        $portfolioResponse = $this->get('/case-studies');
+        $portfolioResponse->assertStatus(200);
+        $portfolioResponse->assertSee('fade-anim', false);
+        $portfolioResponse->assertDontSee('—', false);
+        $portfolioResponse->assertDontSee('–', false);
+
+        $detailResponse = $this->get('/case-studies/' . $project->slug);
+        $detailResponse->assertStatus(200);
+        $detailResponse->assertSee('fade-anim', false);
+        $detailResponse->assertSee('t-counter', false);
+        $detailResponse->assertDontSee('—', false);
+        $detailResponse->assertDontSee('–', false);
+
+        $category = \App\Models\Category::create([
+            'name' => 'Architecture',
+            'slug' => 'architecture',
+        ]);
+
+        $author = \App\Models\User::factory()->create([
+            'name' => 'Nova Triansyah Azis',
+        ]);
+
+        $article = \App\Models\Article::create([
+            'title' => 'Engineering High Concurrency Distributed Architectures',
+            'slug' => 'engineering-high-concurrency-architectures',
+            'content' => '<p>Practical benchmarks from our production engagements.</p>',
+            'category_id' => $category->id,
+            'user_id' => $author->id,
+            'is_featured' => true,
+            'published_at' => now(),
+        ]);
+
+        $blogResponse = $this->get('/blog');
+        $blogResponse->assertStatus(200);
+        $blogResponse->assertSee('fade-anim', false);
+        $blogResponse->assertDontSee('—', false);
+        $blogResponse->assertDontSee('–', false);
+
+        $articleResponse = $this->get('/blog/' . $article->slug);
+        $articleResponse->assertStatus(200);
+        $articleResponse->assertSee('fade-anim', false);
+        $articleResponse->assertDontSee('—', false);
+        $articleResponse->assertDontSee('–', false);
+    }
 }

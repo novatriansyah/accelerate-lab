@@ -13,7 +13,7 @@
      ======================================================================== --}}
 <section class="relative pt-6 pb-16 md:pt-12 md:pb-20 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
+        <div class="max-w-3xl fade-anim" data-direction="bottom">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-6">
                 <span>✦ PORTFOLIO & PROVEN RESULTS</span>
             </div>
@@ -40,7 +40,7 @@
 <section class="py-12 border-t border-slate-200/80 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Filter Bar --}}
-        <div class="flex flex-wrap items-center justify-between gap-4 mb-12">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-12 fade-anim" data-direction="bottom">
             <div class="flex flex-wrap items-center gap-2">
                 <a href="{{ route('case-studies') }}"
                    class="px-4 py-2 rounded-full text-xs font-semibold transition-all {{ empty($currentIndustry) ? 'bg-[#00BFA5] text-[#090D16] shadow-md shadow-[#00BFA5]/20' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10' }}">
@@ -59,7 +59,7 @@
         {{-- Projects Grid --}}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             @forelse($projects as $project)
-                <div class="bento-card group relative overflow-hidden bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-xl flex flex-col justify-between">
+                <div class="bento-card group relative overflow-hidden bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-xl flex flex-col justify-between fade-anim" data-direction="bottom">
                     <div>
                         {{-- Project Visual Container --}}
                         <div class="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-950">

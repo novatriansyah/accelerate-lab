@@ -9,7 +9,7 @@
     <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#00BFA5]/15 via-[#00BFA5]/5 to-transparent blur-3xl -z-10"></div>
 
     {{-- Hero Section --}}
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-16 lg:mb-20">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-16 lg:mb-20 fade-anim" data-direction="bottom">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00BFA5]/10 border border-[#00BFA5]/25 text-[#00BFA5] text-xs font-mono font-semibold tracking-wider uppercase mb-8 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
             <span>Engineering Dispatches & Field Notes</span>
@@ -27,7 +27,7 @@
     {{-- Featured Article Showcase --}}
     @if(isset($featured) && $featured)
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 lg:mb-24">
-            <div class="rounded-3xl p-6 sm:p-10 lg:p-12 bg-white dark:bg-[#0E1526] border border-slate-200 dark:border-white/10 shadow-xl hover:border-[#00BFA5]/40 transition-all duration-300 relative overflow-hidden">
+            <div class="rounded-3xl p-6 sm:p-10 lg:p-12 bg-white dark:bg-[#0E1526] border border-slate-200 dark:border-white/10 shadow-xl hover:border-[#00BFA5]/40 transition-all duration-300 relative overflow-hidden fade-anim" data-direction="bottom">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     
                     {{-- Cover Media --}}
@@ -91,7 +91,7 @@
 
     {{-- Latest Articles Grid --}}
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
-        <div class="flex items-center justify-between mb-12">
+        <div class="flex items-center justify-between mb-12 fade-anim" data-direction="bottom">
             <div>
                 <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">Archive</span>
                 <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white mt-1">Latest Publications</h2>
@@ -101,7 +101,7 @@
         @if(isset($latest) && $latest->isNotEmpty())
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($latest as $article)
-                    <article class="group rounded-3xl overflow-hidden bg-white dark:bg-[#0E1526] border border-slate-200 dark:border-white/10 shadow-lg hover:border-[#00BFA5]/50 transition-all duration-300 flex flex-col justify-between">
+                    <article class="group rounded-3xl overflow-hidden bg-white dark:bg-[#0E1526] border border-slate-200 dark:border-white/10 shadow-lg hover:border-[#00BFA5]/50 transition-all duration-300 flex flex-col justify-between fade-anim" data-direction="bottom">
                         <div>
                             {{-- Cover / Fallback --}}
                             <div class="h-48 bg-slate-900 relative overflow-hidden">

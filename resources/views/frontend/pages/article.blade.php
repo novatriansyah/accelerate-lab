@@ -77,47 +77,49 @@
             </span>
         </div>
 
-        {{-- Article Title --}}
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-8">
-            {{ $article->title }}
-        </h1>
+        {{-- Article Header --}}
+        <header class="fade-anim" data-direction="bottom">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-8">
+                {{ $article->title }}
+            </h1>
 
-        {{-- Metadata Row --}}
-        <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-10 border-b border-slate-200 dark:border-white/10">
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-[#00BFA5]/15 border border-[#00BFA5]/30 flex items-center justify-center font-mono font-bold text-[#00BFA5]">
-                    {{ substr($article->author?->name ?? 'A', 0, 1) }}
+            {{-- Metadata Row --}}
+            <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-10 border-b border-slate-200 dark:border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#00BFA5]/15 border border-[#00BFA5]/30 flex items-center justify-center font-mono font-bold text-[#00BFA5]">
+                        {{ substr($article->author?->name ?? 'A', 0, 1) }}
+                    </div>
+                    <div>
+                        <div class="text-sm font-bold text-slate-900 dark:text-white">
+                            {{ $article->author?->name ?? 'Accelerate Lab Engineering' }}
+                        </div>
+                        <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                            {{ $article->published_at ? $article->published_at->format('F d, Y') : now()->format('F d, Y') }}
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <div class="text-sm font-bold text-slate-900 dark:text-white">
-                        {{ $article->author?->name ?? 'Accelerate Lab Engineering' }}
-                    </div>
-                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
-                        {{ $article->published_at ? $article->published_at->format('F d, Y') : now()->format('F d, Y') }}
-                    </div>
+
+                <div class="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+                    <svg class="w-4 h-4 text-[#00BFA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    <span>{{ max(1, round(str_word_count(strip_tags($article->content ?? '')) / 200)) }} min read</span>
                 </div>
             </div>
-
-            <div class="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
-                <svg class="w-4 h-4 text-[#00BFA5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                <span>{{ max(1, round(str_word_count(strip_tags($article->content ?? '')) / 200)) }} min read</span>
-            </div>
-        </div>
+        </header>
 
         {{-- Featured Image if present --}}
         @if(!empty($article->image_path))
-            <div class="rounded-3xl overflow-hidden mb-12 shadow-xl border border-slate-200 dark:border-white/10">
+            <div class="rounded-3xl overflow-hidden mb-12 shadow-xl border border-slate-200 dark:border-white/10 fade-anim" data-direction="bottom">
                 <img src="{{ \Illuminate\Support\Facades\Storage::url($article->image_path) }}" alt="{{ $article->title }}" class="w-full h-auto max-h-[500px] object-cover">
             </div>
         @endif
 
         {{-- Article Content --}}
-        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed font-sans space-y-6">
+        <div class="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed font-sans space-y-6 fade-anim" data-direction="bottom">
             {!! $article->content !!}
         </div>
 
         {{-- Post Article Footnote & Navigation --}}
-        <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-6">
+        <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-6 fade-anim" data-direction="bottom">
             <a href="{{ route('blog') }}" class="rr-btn rr-btn-outline">
                 <span class="btn-wrap">
                     <span class="text-1">&larr; Return to Blog</span>
