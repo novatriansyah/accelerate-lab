@@ -20,7 +20,7 @@
         </h1>
 
         <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
-            Accelerate Lab is a modern high-performance engineering studio. We architect high-throughput monolithic systems, resilient cloud infrastructures, and digital products for industry leaders who cannot afford second best.
+            Accelerate Lab adalah studio rekayasa solusi digital dan transformasi teknologi modern. Kami merancang platform bisnis berkinerja tinggi, sistem transaksi terintegrasi, dan arsitektur enterprise bagi para pemimpin industri yang mengutamakan reliabilitas, pertumbuhan, dan efisiensi operasional.
         </p>
 
         {{-- Dynamic Stats Grid --}}
@@ -50,10 +50,10 @@
                 <div class="lg:col-span-5">
                     <span class="text-[#00BFA5] font-mono text-sm font-bold tracking-wider uppercase block mb-3">Our Core Manifesto</span>
                     <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-6">
-                        We Reject Sloppy Code and Disposable Prototypes.
+                        Kualitas Rekayasa Tanpa Kompromi untuk Hasil Bisnis Nyata.
                     </h2>
                     <p class="text-slate-300 leading-relaxed text-base mb-6">
-                        Most digital agencies rush MVP releases with fragile duct-tape code that falls apart under enterprise load. We take the opposite stance: mathematically sound architecture, strict test coverage, and clean craftsmanship from day one.
+                        Banyak inisiatif digital terhambat oleh solusi instan yang rapuh saat volume transaksi membesar. Di Accelerate Lab, kami menerapkan disiplin rekayasa ketat, kepatuhan arsitektur teruji, dan standar kualitas enterprise sejak hari pertama agar investasi teknologi Anda memberikan return optimal jangka panjang.
                     </p>
                     <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-[#00BFA5]">
                         <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">Zero Tech Debt Policy</span>
@@ -65,26 +65,26 @@
                 <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
                         <div class="w-10 h-10 rounded-xl bg-[#00BFA5]/20 flex items-center justify-center text-[#00BFA5] mb-4 font-mono font-bold">01</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Monolithic Speed</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Single unified domain models that eliminate distributed latency and serialization overhead while keeping development velocity ultra-fast.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Kecepatan & Efisiensi</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Arsitektur terintegrasi yang menghilangkan latensi antar modul dan mempercepat respons transaksi bisnis.</p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
                         <div class="w-10 h-10 rounded-xl bg-[#00BFA5]/20 flex items-center justify-center text-[#00BFA5] mb-4 font-mono font-bold">02</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Architectural Observability</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Telemetry, APM instrumentation, and actionable error tracking baked right into every system endpoint.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Ketahanan & Keamanan</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Pemantauan proaktif dan proteksi data berkelanjutan demi menjaga kelangsungan operasional 24/7 tanpa henti.</p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
                         <div class="w-10 h-10 rounded-xl bg-[#00BFA5]/20 flex items-center justify-center text-[#00BFA5] mb-4 font-mono font-bold">03</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Bespoke Design Systems</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">We design custom typography, fluid tokens, and micro-animations tailored uniquely to your brand identity, never cookie-cutter templates.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Desain Konversi Tinggi</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Pengalaman antarmuka intuitif dan interaksi mulus yang terbukti meningkatkan retensi dan konversi pelanggan.</p>
                     </div>
 
                     <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
                         <div class="w-10 h-10 rounded-xl bg-[#00BFA5]/20 flex items-center justify-center text-[#00BFA5] mb-4 font-mono font-bold">04</div>
-                        <h3 class="text-lg font-bold text-white mb-2">Radical Transparency</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed">Weekly demos, direct access to the engineers building your software, and clear measurable ROI on every sprint.</p>
+                        <h3 class="text-lg font-bold text-white mb-2">Transparansi & Dampak ROI</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Komunikasi berkala, akuntabilitas tinggi, dan fokus pada metrik nyata yang mendorong pertumbuhan pendapatan.</p>
                     </div>
                 </div>
             </div>
@@ -208,22 +208,22 @@
             <div class="relative z-10 max-w-3xl mx-auto">
                 <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase mb-4 block">Take the Next Step</span>
                 <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">
-                    Ready to Partner with Accelerate Lab?
+                    Siap Mengakselerasi Pertumbuhan Bisnis Anda?
                 </h2>
                 <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
-                    Whether you require a complete monolithic rewrite, cloud infrastructure hardening, or a custom digital product, our architects are ready to evaluate your requirements.
+                    Baik Anda membutuhkan modernisasi platform, otomasi alur kerja, maupun arsitektur sistem enterprise, tim konsultan dan rekayasa kami siap membantu mengevaluasi kebutuhan spesifik Anda.
                 </p>
                 <div class="flex flex-wrap items-center justify-center gap-4">
                     <a href="{{ url('/contact') }}" class="rr-btn rr-btn-primary">
                         <span class="btn-wrap">
-                            <span class="text-1">Schedule Technical Consultation</span>
-                            <span class="text-2">Schedule Technical Consultation</span>
+                            <span class="text-1">Jadwalkan Konsultasi Solusi</span>
+                            <span class="text-2">Jadwalkan Konsultasi Solusi</span>
                         </span>
                     </a>
                     <a href="{{ url('/case-studies') }}" class="rr-btn rr-btn-outline">
                         <span class="btn-wrap">
-                            <span class="text-1">Explore Case Studies</span>
-                            <span class="text-2">Explore Case Studies</span>
+                            <span class="text-1">Lihat Hasil & Studi Kasus</span>
+                            <span class="text-2">Lihat Hasil & Studi Kasus</span>
                         </span>
                     </a>
                 </div>

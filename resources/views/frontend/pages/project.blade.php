@@ -129,10 +129,10 @@
             {{-- Challenge Card --}}
             <div class="bento-card p-8 sm:p-10 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
                 <span class="text-xs font-mono font-semibold uppercase text-red-500 dark:text-red-400 tracking-wider">
-                    01 // THE TECHNICAL CHALLENGE
+                    01 // THE BUSINESS CHALLENGE
                 </span>
                 <h3 class="font-instrumentsans text-2xl font-bold text-slate-900 dark:text-white mt-2 mb-4">
-                    Architectural Bottlenecks & Legacy Constraints
+                    Tantangan Bisnis & Kendala Sistem
                 </h3>
                 <div class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed prose dark:prose-invert max-w-none">
                     {!! $project->challenge !!}
@@ -142,10 +142,10 @@
             {{-- Solution Card --}}
             <div class="bento-card p-8 sm:p-10 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
                 <span class="text-xs font-mono font-semibold uppercase text-[#00BFA5] tracking-wider">
-                    02 // THE ACCELERATE LAB SOLUTION
+                    02 // STRATEGIC SOLUTION
                 </span>
                 <h3 class="font-instrumentsans text-2xl font-bold text-slate-900 dark:text-white mt-2 mb-4">
-                    High-Concurrence Modern Architecture
+                    Solusi Terintegrasi & Rekayasa Skalabel
                 </h3>
                 <div class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed prose dark:prose-invert max-w-none">
                     {!! $project->solution !!}
@@ -153,10 +153,10 @@
             </div>
         </div>
 
-        {{-- Technologies Used --}}
+        {{-- Capabilities & Methodologies --}}
         @if(!empty($project->technology_tags) && is_array($project->technology_tags))
             <div class="p-8 bento-card bg-slate-100/60 dark:bg-slate-900/40 border border-slate-200/80 dark:border-white/10 mb-16">
-                <span class="text-xs font-mono font-semibold uppercase text-slate-400 block mb-4">Stack Employed</span>
+                <span class="text-xs font-mono font-semibold uppercase text-slate-400 block mb-4">Capabilities & Methodologies</span>
                 <div class="flex flex-wrap gap-2.5">
                     @foreach($project->technology_tags as $tag)
                         <span class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/10 shadow-sm">

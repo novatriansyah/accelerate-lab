@@ -118,7 +118,7 @@
                         <a href="{{ route('project', $project->slug) }}" class="rr-btn rr-btn-primary px-4 py-2 text-xs font-semibold">
                             <span class="btn-wrap">
                                 <span class="text-1">{{ $currentLocale === 'id' ? 'Buka Studi Kasus' : 'View Case Study' }}</span>
-                                <span class="text-2">{{ $currentLocale === 'id' ? 'Lihat Arsitektur' : 'Inspect Specs' }}</span>
+                                <span class="text-2">{{ $currentLocale === 'id' ? 'Lihat Solusi & Hasil' : 'Explore Impact' }}</span>
                             </span>
                         </a>
                     </div>

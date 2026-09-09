@@ -12,15 +12,15 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-16 lg:mb-20">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00BFA5]/10 border border-[#00BFA5]/25 text-[#00BFA5] text-xs font-mono font-semibold tracking-wider uppercase mb-8 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
-            <span>Let's Engineer Something Exceptional</span>
+            <span>Konsultasi Strategis & Inovasi Digital</span>
         </div>
 
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white max-w-5xl mx-auto leading-[1.1] mb-8">
-            Start a <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00BFA5] via-teal-300 to-[#009688]">Technical Conversation</span>
+            Mulai Diskusi <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00BFA5] via-teal-300 to-[#009688]">Kebutuhan Bisnis Anda</span>
         </h1>
 
         <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Have an upcoming project, legacy modernization initiative, or architecture review? Connect directly with our engineering team for an initial scoping consultation.
+            Apakah Anda merencanakan transformasi digital, modernisasi alur kerja, atau pengembangan produk baru? Hubungi tim kami untuk konsultasi strategi dan estimasi solusi yang tepat sasaran.
         </p>
     </section>
 
