@@ -5,10 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'Accelerate Lab - Digital Innovation Agency' }}</title>
-    <meta name="description" content="{{ $description ?? 'Accelerate Lab is a premier digital innovation agency delivering bespoke software, high-performance cloud architectures, and user-centric design.' }}">
+    @php
+        $pageTitle = $title ?? 'Accelerate Lab - Digital Innovation Agency';
+        $pageDescription = $description ?? 'Accelerate Lab is a premier digital innovation agency delivering bespoke software, high-performance cloud architectures, and user-centric design.';
+        $path = request()->getPathInfo();
+        $pageCanonical = $canonical ?? (rtrim(config('app.url'), '/') . ($path === '/' ? '' : $path));
+        $pageOgType = $ogType ?? 'website';
+        $pageOgImage = !empty($ogImage) ? $ogImage : asset('images/og-cover.png');
+    @endphp
+
+    <title>{{ $pageTitle }}</title>
+    <meta name="description" content="{{ $pageDescription }}">
     <meta property="og:locale" content="{{ app()->getLocale() === 'id' ? 'id_ID' : 'en_US' }}">
-    <link rel="canonical" href="{{ $canonical ?? (rtrim(config('app.url'), '/') . request()->getPathInfo()) }}">
+    <link rel="canonical" href="{{ $pageCanonical }}">
+
+    {{-- OpenGraph Protocol (Facebook, LinkedIn, WhatsApp) --}}
+    <meta property="og:site_name" content="Accelerate Lab">
+    <meta property="og:type" content="{{ $pageOgType }}">
+    <meta property="og:title" content="{{ $pageTitle }}">
+    <meta property="og:description" content="{{ $pageDescription }}">
+    <meta property="og:url" content="{{ $pageCanonical }}">
+    <meta property="og:image" content="{{ $pageOgImage }}">
+    <meta property="og:image:secure_url" content="{{ $pageOgImage }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+
+    {{-- Twitter Cards Protocol (X / Twitter) --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $pageTitle }}">
+    <meta name="twitter:description" content="{{ $pageDescription }}">
+    <meta name="twitter:image" content="{{ $pageOgImage }}">
 
     {{-- Anti-Flash Theme Pre-Hydration Engine --}}
     <script>
