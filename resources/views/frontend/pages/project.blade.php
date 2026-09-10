@@ -1,6 +1,7 @@
 @extends('frontend.components.layout', [
     'title' => $title ?? ($project->title . ' - Case Study | Accelerate Lab'),
-    'description' => $description ?? ($project->description ?? 'Case study by Accelerate Lab.')
+    'description' => $description ?? ($project->description ?? 'Case study by Accelerate Lab.'),
+    'ogImage' => !empty($ogImage) ? $ogImage : ($project->image_path ? url(\Illuminate\Support\Facades\Storage::url($project->image_path)) : asset('images/og-cover.png')),
 ])
 
 @push('schema')

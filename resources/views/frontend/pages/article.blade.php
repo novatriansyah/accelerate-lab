@@ -1,6 +1,8 @@
 @extends('frontend.components.layout', [
     'title' => ($article->title ?? 'Article') . ' - Accelerate Lab',
-    'description' => \Illuminate\Support\Str::limit(strip_tags($article->content ?? ''), 160)
+    'description' => \Illuminate\Support\Str::limit(strip_tags($article->content ?? ''), 160),
+    'ogType' => 'article',
+    'ogImage' => !empty($ogImage) ? $ogImage : ($article->image_path ? url(\Illuminate\Support\Facades\Storage::url($article->image_path)) : asset('images/og-cover.png')),
 ])
 
 @push('schema')

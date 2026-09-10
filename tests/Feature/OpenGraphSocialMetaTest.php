@@ -31,4 +31,40 @@ class OpenGraphSocialMetaTest extends TestCase
         $response->assertSee('<meta name="twitter:title" content="Accelerate Lab - Digital Innovation Agency">', false);
         $response->assertSee('<meta name="twitter:image" content="http://localhost/images/og-cover.png">', false);
     }
+
+    public function test_article_page_renders_article_og_type_and_custom_image(): void
+    {
+        $author = \App\Models\User::factory()->create();
+        $category = \App\Models\Category::factory()->create();
+        $article = \App\Models\Article::factory()->create([
+            'title' => 'Building Fast Laravel Monoliths',
+            'slug' => 'fast-laravel-monoliths',
+            'image_path' => 'articles/cover-sample.jpg',
+            'user_id' => $author->id,
+            'category_id' => $category->id,
+            'published_at' => now()->subHour(),
+        ]);
+
+        $response = $this->get("/blog/{$article->slug}");
+
+        $response->assertStatus(200);
+        $response->assertSee('<meta property="og:type" content="article">', false);
+        $response->assertSee('Building Fast Laravel Monoliths', false);
+        $response->assertSee('cover-sample.jpg', false);
+    }
+
+    public function test_project_page_renders_custom_og_image_when_available(): void
+    {
+        $project = \App\Models\Project::factory()->create([
+            'title' => 'Telaah LegalTech Platform',
+            'slug' => 'telaah-legaltech',
+            'image_path' => 'projects/telaah-preview.jpg',
+        ]);
+
+        $response = $this->get("/case-studies/{$project->slug}");
+
+        $response->assertStatus(200);
+        $response->assertSee('Telaah LegalTech Platform', false);
+        $response->assertSee('telaah-preview.jpg', false);
+    }
 }
