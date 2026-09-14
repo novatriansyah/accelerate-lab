@@ -34,19 +34,19 @@
                 </p>
 
                 <div class="pt-2 flex flex-wrap items-center gap-4">
-                    <a href="{{ $footerWaUrl }}" target="_blank" rel="noopener noreferrer" class="rr-btn rr-btn-primary px-7 py-3 text-sm font-semibold bg-[#25D366] border-[#25D366] hover:bg-[#20ba5a] text-white">
+                    <a href="{{ $footerWaUrl }}" target="_blank" rel="noopener noreferrer" class="rr-btn rr-btn-primary px-7 py-3 text-sm font-semibold !bg-[#25D366] !border-[#25D366] hover:!bg-[#20ba5a] !text-white shadow-lg shadow-emerald-500/20">
                         <span class="btn-wrap">
                             <span class="text-1">{{ $currentLocale === 'id' ? 'Chat WhatsApp' : 'Chat via WhatsApp' }}</span>
                             <span class="text-2">{{ $currentLocale === 'id' ? 'Respons < 2 Jam' : 'Response < 2 Hours' }}</span>
                         </span>
                     </a>
-                    <a href="{{ route('contact') }}" class="rr-btn rr-btn-border px-7 py-3 text-sm font-semibold text-white border-white/20 hover:border-[#00BFA5]">
+                    <a href="{{ route('contact') }}" class="rr-btn rr-btn-border px-7 py-3 text-sm font-semibold !text-white !border-white/25 hover:!border-[#00BFA5] hover:!text-[#00BFA5] hover:bg-white/5">
                         <span class="btn-wrap">
                             <span class="text-1">{{ $currentLocale === 'id' ? 'Formulir Konsultasi' : 'Consultation Form' }}</span>
                             <span class="text-2">{{ $currentLocale === 'id' ? 'Detail Kebutuhan' : 'Project Details' }}</span>
                         </span>
                     </a>
-                    <a href="mailto:{{ $footerEmail }}" class="rr-btn rr-btn-border px-6 py-3 text-sm font-medium text-white border-white/20 hover:border-[#00BFA5]">
+                    <a href="mailto:{{ $footerEmail }}" class="rr-btn rr-btn-border px-6 py-3 text-sm font-medium !text-white !border-white/25 hover:!border-[#00BFA5] hover:!text-[#00BFA5] hover:bg-white/5">
                         <span class="btn-wrap">
                             <span class="text-1">{{ $footerEmail }}</span>
                             <span class="text-2">{{ $currentLocale === 'id' ? 'Kirim Email' : 'Send an Email' }}</span>

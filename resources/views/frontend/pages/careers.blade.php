@@ -138,7 +138,7 @@
                             </div>
 
                             <div class="flex-shrink-0">
-                                <a href="mailto:{{ $careersEmail }}?subject=Application for {{ rawurlencode($job->title) }}" class="rr-btn rr-btn-primary">
+                                <a href="mailto:{{ $careersEmail }}?subject=Application for {{ rawurlencode($job->title) }}" class="rr-btn rr-btn-primary px-6 py-2.5 text-xs font-semibold">
                                     <span class="btn-wrap">
                                         <span class="text-1">Apply For Role</span>
                                         <span class="text-2">Apply For Role</span>
@@ -158,7 +158,7 @@
                 <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-base mb-8">
                     We are not actively recruiting for a specific desk today, but we are always eager to talk to exceptional talent who want to build high-grade software.
                 </p>
-                <a href="mailto:{{ $careersEmail }}?subject=Unsolicited Engineering Inquiry" class="rr-btn rr-btn-outline">
+                <a href="mailto:{{ $careersEmail }}?subject=Unsolicited Engineering Inquiry" class="rr-btn rr-btn-outline px-6 py-3 text-sm font-medium">
                     <span class="btn-wrap">
                         <span class="text-1">Send Unsolicited CV</span>
                         <span class="text-2">Send Unsolicited CV</span>

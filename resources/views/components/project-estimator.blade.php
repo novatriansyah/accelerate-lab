@@ -119,7 +119,7 @@
         </div>
     @endif
 
-    @if ($errors->any())
+    @if (isset($errors) && $errors->any())
         <div class="bg-red-500/10 border border-red-500/30 text-red-600 dark:text-red-400 px-4 py-3 rounded-xl mb-6">
             <ul class="text-xs space-y-1">
                 @foreach ($errors->all() as $error)
@@ -197,10 +197,10 @@
             <div class="pt-4 flex justify-end">
                 <button type="button" 
                         @click="nextStep"
-                        class="rr-btn">
+                        class="rr-btn rr-btn-primary px-6 py-3 text-xs font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-one">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
-                        <span class="text-two">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-1">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-2">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
                     </span>
                 </button>
             </div>
@@ -236,10 +236,10 @@
                 <button type="button" @click="prevStep" class="px-5 py-3 rounded-xl border border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     {{ __('Back') }}
                 </button>
-                <button type="button" @click="nextStep" class="rr-btn">
+                <button type="button" @click="nextStep" class="rr-btn rr-btn-primary px-6 py-3 text-xs font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-one">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
-                        <span class="text-two">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-1">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-2">{{ __('Continue') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
                     </span>
                 </button>
             </div>
@@ -295,10 +295,10 @@
                 <button type="button" @click="prevStep" class="px-5 py-3 rounded-xl border border-slate-200/80 dark:border-white/10 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     {{ __('Back') }}
                 </button>
-                <button type="button" @click="nextStep" class="rr-btn">
+                <button type="button" @click="nextStep" class="rr-btn rr-btn-primary px-6 py-3 text-xs font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-one">{{ __('Next: Review & Contact') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
-                        <span class="text-two">{{ __('Next: Review & Contact') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-1">{{ __('Next: Review & Contact') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
+                        <span class="text-2">{{ __('Next: Review & Contact') }} <x-app-icon name="arrow_forward" class="w-4 h-4 inline" /></span>
                     </span>
                 </button>
             </div>

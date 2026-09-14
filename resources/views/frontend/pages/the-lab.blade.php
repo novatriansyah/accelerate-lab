@@ -23,13 +23,13 @@
         </p>
 
         <div class="flex items-center justify-center gap-4">
-            <a href="{{ url('/case-studies') }}" class="rr-btn rr-btn-primary">
+            <a href="{{ url('/case-studies') }}" class="rr-btn rr-btn-primary px-7 py-3.5 text-sm font-semibold">
                 <span class="btn-wrap">
                     <span class="text-1">Lihat Hasil Studi Kasus</span>
                     <span class="text-2">Lihat Hasil Studi Kasus</span>
                 </span>
             </a>
-            <a href="{{ url('/blog') }}" class="rr-btn rr-btn-outline">
+            <a href="{{ url('/blog') }}" class="rr-btn rr-btn-outline px-7 py-3.5 text-sm font-medium">
                 <span class="btn-wrap">
                     <span class="text-1">Baca Wawasan & Riset</span>
                     <span class="text-2">Baca Wawasan & Riset</span>

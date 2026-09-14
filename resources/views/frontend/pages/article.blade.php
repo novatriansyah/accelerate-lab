@@ -122,14 +122,14 @@
 
         {{-- Post Article Footnote & Navigation --}}
         <div class="mt-16 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-6 fade-anim" data-direction="bottom">
-            <a href="{{ route('blog') }}" class="rr-btn rr-btn-outline">
+            <a href="{{ route('blog') }}" class="rr-btn rr-btn-outline px-6 py-3 text-sm font-medium">
                 <span class="btn-wrap">
                     <span class="text-1">&larr; Return to Blog</span>
                     <span class="text-2">&larr; Return to Blog</span>
                 </span>
             </a>
 
-            <a href="{{ url('/contact') }}" class="rr-btn rr-btn-primary">
+            <a href="{{ url('/contact') }}" class="rr-btn rr-btn-primary px-6 py-3 text-sm font-semibold">
                 <span class="btn-wrap">
                     <span class="text-1">Discuss Project Architecture</span>
                     <span class="text-2">Discuss Project Architecture</span>

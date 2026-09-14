@@ -22,6 +22,8 @@
     justify-content: center;
     overflow: hidden;
     border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    font-size: 0.875rem;
     font-weight: 600;
     line-height: 1;
     text-decoration: none;
@@ -70,18 +72,51 @@
     box-shadow: 0 6px 28px rgba(0, 191, 165, 0.4);
 }
 
-.rr-btn-border {
+/* Primary buttons with explicit text-white (e.g. WhatsApp green button) */
+.rr-btn-primary.text-white,
+.rr-btn-primary[class*="text-white"] {
+    color: #FFFFFF !important;
+}
+
+/* Outline / Border Variant */
+.rr-btn-border,
+.rr-btn-outline {
     background-color: transparent;
-    border: 1px solid rgba(148, 163, 184, 0.3);
+    border: 1px solid rgba(148, 163, 184, 0.35);
     color: #0F172A;
 }
-:is(.dark) .rr-btn-border {
-    border-color: rgba(255, 255, 255, 0.15);
+:is(.dark) .rr-btn-border,
+:is(.dark) .rr-btn-outline {
+    border-color: rgba(255, 255, 255, 0.2);
     color: #FFFFFF;
 }
-.rr-btn-border:hover {
+.rr-btn-border:hover,
+.rr-btn-outline:hover {
     border-color: #00BFA5;
     color: #00BFA5;
+    background-color: rgba(0, 191, 165, 0.05);
+}
+:is(.dark) .rr-btn-border:hover,
+:is(.dark) .rr-btn-outline:hover {
+    border-color: #00BFA5;
+    color: #00BFA5;
+    background-color: rgba(0, 191, 165, 0.12);
+}
+
+/* Dark surface context or explicit text-white on outline/border buttons (regardless of html dark mode) */
+:is([class*="bg-slate-900"], [class*="bg-slate-950"], [class*="bg-black"], [class*="from-slate-900"], .bg-slate-900) :is(.rr-btn-border, .rr-btn-outline),
+:is(.rr-btn-border, .rr-btn-outline).text-white,
+:is(.rr-btn-border, .rr-btn-outline)[class*="text-white"] {
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+}
+
+:is([class*="bg-slate-900"], [class*="bg-slate-950"], [class*="bg-black"], [class*="from-slate-900"], .bg-slate-900) :is(.rr-btn-border, .rr-btn-outline):hover,
+:is(.rr-btn-border, .rr-btn-outline).text-white:hover,
+:is(.rr-btn-border, .rr-btn-outline)[class*="text-white"]:hover {
+    border-color: #00BFA5;
+    color: #00BFA5;
+    background-color: rgba(0, 191, 165, 0.12);
 }
 
 /* --------------------------------------------------------------------------

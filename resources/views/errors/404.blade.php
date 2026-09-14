@@ -49,13 +49,13 @@
 
             {{-- Action Buttons with Kinetic Engine --}}
             <div class="flex flex-wrap items-center justify-center gap-4">
-                <a href="{{ url('/') }}" class="rr-btn rr-btn-primary">
+                <a href="{{ url('/') }}" class="rr-btn rr-btn-primary px-7 py-3.5 text-sm font-semibold">
                     <span class="btn-wrap">
                         <span class="text-1">Return to Main Grid</span>
                         <span class="text-2">Return to Main Grid</span>
                     </span>
                 </a>
-                <a href="{{ url('/contact') }}" class="rr-btn rr-btn-outline">
+                <a href="{{ url('/contact') }}" class="rr-btn rr-btn-outline px-7 py-3.5 text-sm font-medium">
                     <span class="btn-wrap">
                         <span class="text-1">Contact Engineering</span>
                         <span class="text-2">Contact Engineering</span>
