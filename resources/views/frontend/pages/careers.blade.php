@@ -35,6 +35,9 @@
 @endpush
 
 @section('content')
+@php
+    $careersEmail = \App\Models\SiteSetting::get('careers_email', \App\Models\SiteSetting::get('contact_email', 'careers@acceleratelab.id'));
+@endphp
 <main class="relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
     {{-- Ambient Glow --}}
     <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#00BFA5]/15 via-[#00BFA5]/5 to-transparent blur-3xl -z-10"></div>
@@ -135,7 +138,7 @@
                             </div>
 
                             <div class="flex-shrink-0">
-                                <a href="mailto:careers@acceleratelab.id?subject=Application for {{ rawurlencode($job->title) }}" class="rr-btn rr-btn-primary">
+                                <a href="mailto:{{ $careersEmail }}?subject=Application for {{ rawurlencode($job->title) }}" class="rr-btn rr-btn-primary">
                                     <span class="btn-wrap">
                                         <span class="text-1">Apply For Role</span>
                                         <span class="text-2">Apply For Role</span>
@@ -155,7 +158,7 @@
                 <p class="text-slate-600 dark:text-slate-400 max-w-md mx-auto text-base mb-8">
                     We are not actively recruiting for a specific desk today, but we are always eager to talk to exceptional talent who want to build high-grade software.
                 </p>
-                <a href="mailto:careers@acceleratelab.id?subject=Unsolicited Engineering Inquiry" class="rr-btn rr-btn-outline">
+                <a href="mailto:{{ $careersEmail }}?subject=Unsolicited Engineering Inquiry" class="rr-btn rr-btn-outline">
                     <span class="btn-wrap">
                         <span class="text-1">Send Unsolicited CV</span>
                         <span class="text-2">Send Unsolicited CV</span>

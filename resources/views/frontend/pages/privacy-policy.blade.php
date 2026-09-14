@@ -4,6 +4,12 @@
 ])
 
 @section('content')
+@php
+    $legalName = \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri');
+    $contactEmail = \App\Models\SiteSetting::get('contact_email', 'legal@acceleratelab.id');
+    $contactPhone = \App\Models\SiteSetting::get('contact_whatsapp', \App\Models\SiteSetting::get('contact_phone', '+62 821-2559-0020'));
+    $location = \App\Models\SiteSetting::get('registered_city', \App\Models\SiteSetting::get('contact_address', 'Greater Area Jakarta Raya, Indonesia'));
+@endphp
 <main class="relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
     {{-- Ambient Light --}}
     <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#00BFA5]/10 to-transparent blur-3xl -z-10"></div>
@@ -26,7 +32,7 @@
             <div>
                 <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-3">1. Operating Entity & Scope</h2>
                 <p>
-                    This Privacy Policy applies to the digital platforms, software services, and websites operated by <strong>PT Akselerasi Digital Mandiri</strong> ("Accelerate Lab", "we", "us", or "our"). We are committed to safeguarding the privacy of visitors, clients, and partners who interact with our services.
+                    This Privacy Policy applies to the digital platforms, software services, and websites operated by <strong>{{ $legalName }}</strong> ("Accelerate Lab", "we", "us", or "our"). We are committed to safeguarding the privacy of visitors, clients, and partners who interact with our services.
                 </p>
             </div>
 
@@ -77,10 +83,10 @@
                     If you have questions regarding this Privacy Policy or our engineering security standards, contact us at:
                 </p>
                 <div class="mt-3 p-4 rounded-2xl bg-slate-50 dark:bg-white/5 font-mono text-xs text-slate-700 dark:text-slate-300 space-y-1">
-                    <div><strong>PT Akselerasi Digital Mandiri</strong></div>
-                    <div>Email: <a href="mailto:legal@acceleratelab.id" class="text-[#00BFA5]">legal@acceleratelab.id</a></div>
-                    <div>WhatsApp: +62 821-2559-0020</div>
-                    <div>Location: Jakarta & Bandung, Indonesia</div>
+                    <div><strong>{{ $legalName }}</strong></div>
+                    <div>Email: <a href="mailto:{{ $contactEmail }}" class="text-[#00BFA5]">{{ $contactEmail }}</a></div>
+                    <div>WhatsApp: {{ $contactPhone }}</div>
+                    <div>Location: {{ $location }}</div>
                 </div>
             </div>
 

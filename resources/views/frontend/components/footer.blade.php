@@ -5,6 +5,12 @@
     $footerCity = \App\Models\SiteSetting::get('registered_city', \App\Models\SiteSetting::get('contact_address', 'South Jakarta & Tangerang, Indonesia'));
     $footerLinkedin = \App\Models\SiteSetting::get('linkedin_url', 'https://linkedin.com');
     $legalName = \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri');
+    $footerWhatsapp = \App\Models\SiteSetting::get('contact_whatsapp', \App\Models\SiteSetting::get('contact_phone', '+62 821-2559-0020'));
+    $cleanFooterWa = preg_replace('/[^0-9]/', '', $footerWhatsapp);
+    $footerWaMsg = $currentLocale === 'id' 
+        ? 'Halo Accelerate Lab! Saya ingin berdiskusi mengenai kebutuhan proyek software dan arsitektur digital.'
+        : 'Hello Accelerate Lab! I would like to discuss a software engineering and digital architecture project.';
+    $footerWaUrl = "https://wa.me/{$cleanFooterWa}?text=" . urlencode($footerWaMsg);
 @endphp
 
 <footer class="relative mt-24 border-t border-slate-200/80 dark:border-white/10 bg-white/60 dark:bg-[#070A11] transition-colors duration-300">
@@ -28,10 +34,16 @@
                 </p>
 
                 <div class="pt-2 flex flex-wrap items-center gap-4">
-                    <a href="{{ route('contact') }}" class="rr-btn rr-btn-primary px-7 py-3 text-sm font-semibold">
+                    <a href="{{ $footerWaUrl }}" target="_blank" rel="noopener noreferrer" class="rr-btn rr-btn-primary px-7 py-3 text-sm font-semibold bg-[#25D366] border-[#25D366] hover:bg-[#20ba5a] text-white">
                         <span class="btn-wrap">
-                            <span class="text-1">{{ $currentLocale === 'id' ? 'Jadwalkan Konsultasi Teknis' : 'Schedule Technical Consultation' }}</span>
-                            <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Proyek Sekarang' : 'Start Your Project Now' }}</span>
+                            <span class="text-1">{{ $currentLocale === 'id' ? 'Chat WhatsApp' : 'Chat via WhatsApp' }}</span>
+                            <span class="text-2">{{ $currentLocale === 'id' ? 'Respons < 2 Jam' : 'Response < 2 Hours' }}</span>
+                        </span>
+                    </a>
+                    <a href="{{ route('contact') }}" class="rr-btn rr-btn-border px-7 py-3 text-sm font-semibold text-white border-white/20 hover:border-[#00BFA5]">
+                        <span class="btn-wrap">
+                            <span class="text-1">{{ $currentLocale === 'id' ? 'Formulir Konsultasi' : 'Consultation Form' }}</span>
+                            <span class="text-2">{{ $currentLocale === 'id' ? 'Detail Kebutuhan' : 'Project Details' }}</span>
                         </span>
                     </a>
                     <a href="mailto:{{ $footerEmail }}" class="rr-btn rr-btn-border px-6 py-3 text-sm font-medium text-white border-white/20 hover:border-[#00BFA5]">

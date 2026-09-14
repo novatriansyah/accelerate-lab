@@ -45,12 +45,12 @@
                         <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Diskusi' : 'Start Conversation' }}</span>
                     </span>
                 </a>
-                <a href="{{ route('case-studies') }}" class="rr-btn rr-btn-border px-7 py-4 text-sm font-medium">
+                <button type="button" @click="$dispatch('open-consultation-modal')" class="rr-btn rr-btn-border px-7 py-4 text-sm font-medium">
                     <span class="btn-wrap">
-                        <span class="text-1">{{ $currentLocale === 'id' ? 'Pelajari Hasil Nyata' : 'Explore Proven Impact' }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Portofolio Klien' : 'Featured Case Studies' }}</span>
+                        <span class="text-1">{{ $currentLocale === 'id' ? 'Diskusi via WhatsApp' : 'Chat via WhatsApp' }}</span>
+                        <span class="text-2">{{ $currentLocale === 'id' ? 'Langsung dengan Arsitek' : 'Direct with Architect' }}</span>
                     </span>
-                </a>
+                </button>
             </div>
 
             {{-- Hero Visual Canvas Frame with Rotating Emblem --}}
@@ -116,23 +116,36 @@
                         <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ __($stat->label) }}</span>
                     </div>
                 @empty
+                    {{-- Honest methodology pillars — no fabricated client/deployment numbers --}}
                     <div class="flex flex-col items-center">
-                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white t-counter">99.9%</span>
-                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Garansi Uptime' : 'Uptime Guarantee' }}</span>
+                        <div class="flex items-baseline gap-1 font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                            <span>TDD</span>
+                        </div>
+                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Pendekatan Test-First' : 'Test-First Engineering' }}</span>
                     </div>
                     <div class="flex flex-col items-center">
-                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white t-counter">50+</span>
-                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Implementasi Enterprise' : 'Enterprise Deployments' }}</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span class="font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white t-counter">100%</span>
+                        <div class="flex items-baseline gap-1 font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                            <span class="t-counter">100</span>
+                            <span class="text-sm font-mono text-[#00BFA5]">%</span>
+                        </div>
                         <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Kepemilikan Kode Klien' : 'Client Code Ownership' }}</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flex items-baseline gap-1 font-instrumentsans text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                            <span>NDA</span>
+                        </div>
+                        <span class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-medium">{{ $currentLocale === 'id' ? 'Tersedia untuk Semua Proyek' : 'Available for All Projects' }}</span>
                     </div>
                 @endforelse
             </div>
         </div>
     </div>
 </section>
+
+{{-- ========================================================================
+     TRUST & COMPLIANCE SIGNALS STRIP (PDP Law, Legal Entity, NDA, 100% Code Ownership)
+     ======================================================================== --}}
+@include('frontend.components.trust-signals')
 
 
 {{-- ========================================================================
@@ -207,7 +220,7 @@
                     </div>
 
                     <div class="pt-4 flex items-center justify-between border-t border-slate-100 dark:border-white/5">
-                        <span class="text-xs font-mono text-slate-400">Enterprise Standard</span>
+                        <span class="text-xs font-mono text-slate-400">{{ $currentLocale === 'id' ? 'NDA Tersedia · Kode 100% Milik Klien' : 'NDA Ready · 100% Client Code Ownership' }}</span>
                         <a href="{{ route('service', $service->slug) }}" class="rr-btn rr-btn-primary px-4 py-2 text-xs font-semibold">
                             <span class="btn-wrap">
                                 <span class="text-1">{{ $currentLocale === 'id' ? 'Detail Layanan' : 'View Details' }}</span>
@@ -279,13 +292,13 @@
                     </div>
                 </div>
                 <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-emerald-400 overflow-x-auto">
-                    <pre><code>// Indikator Kinerja & Dampak Bisnis
-StatusSistem::pantau([
-    'Waktu Muat Rata-rata' => '42ms',
-    'Tingkat Sukses Transaksi' => '99.99%',
-    'Peningkatan Konversi Penjualan' => '+148%',
+                    <pre><code>// Standar Rekayasa & Metodologi Pengembangan
+StandarProyek::terapkan([
+    'Pendekatan'       => 'Test-Driven Development',
+    'Arsitektur'       => 'Clean Architecture',
+    'Kualitas Kode'    => 'Zero Tech Debt Policy',
 ]);
-// Hasil: Efisiensi Maksimal, Bebas Hambatan Operasional</code></pre>
+// Status: Siap Produksi Sejak Hari Pertama</code></pre>
                 </div>
             </div>
 
@@ -335,13 +348,13 @@ parameter_keandalan:
                     </div>
                 </div>
                 <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-teal-400 overflow-x-auto">
-                    <pre><code>// Metrik Pengalaman & Retensi Pelanggan
-AnalitikAplikasi::evaluasi([
-    'Rating Kepuasan Pengguna' => '4.9 / 5.0',
-    'Waktu Alur Transaksi' => '3 Detik',
-    'Peningkatan Transaksi Berulang' => '+215%',
+                    <pre><code>// Standar Pengalaman & Aksesibilitas Aplikasi
+StandarMobile::terapkan([
+    'Antarmuka'        => 'Human Interface Guidelines',
+    'Autentikasi'      => 'Biometric & Secure Enclave',
+    'Kepemilikan Kode' => '100% Milik Klien',
 ]);
-// Status: Pengalaman Pengguna Optimal</code></pre>
+// Status: Pengalaman Pengguna Berstandar Industri</code></pre>
                 </div>
             </div>
         </div>

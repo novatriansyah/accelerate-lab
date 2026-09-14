@@ -4,6 +4,9 @@
 ])
 
 @section('content')
+@php
+    $currentLocale = app()->getLocale();
+@endphp
 <main class="relative z-10 pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden">
     {{-- Ambient Lighting Orbs --}}
     <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-[#00BFA5]/15 via-[#00BFA5]/5 to-transparent blur-3xl -z-10"></div>
@@ -38,37 +41,40 @@
                     </div>
                 @endforeach
             @else
+                {{-- Honest methodology pillars — no fabricated delivery/uptime numbers --}}
                 <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
-                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
-                        <span class="t-counter">99.9</span>
-                        <span class="text-sm font-mono text-[#00BFA5]">%</span>
+                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                        TDD
                     </div>
-                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Uptime Reliability</div>
-                </div>
-                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
-                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
-                        <span class="t-counter">50</span>
-                        <span class="text-sm font-mono text-[#00BFA5]">+</span>
-                    </div>
-                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Enterprise Releases</div>
-                </div>
-                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
-                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
-                        <span class="t-counter">15</span>
-                        <span class="text-sm font-mono text-[#00BFA5]">m</span>
-                    </div>
-                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Mean Response Time</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">{{ $currentLocale === 'id' ? 'Rekayasa Test-First' : 'Test-First Engineering' }}</div>
                 </div>
                 <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
                     <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight flex items-baseline justify-center gap-1">
                         <span class="t-counter">100</span>
                         <span class="text-sm font-mono text-[#00BFA5]">%</span>
                     </div>
-                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">Client Code Ownership</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">{{ $currentLocale === 'id' ? 'Kepemilikan Kode Klien' : 'Client Code Ownership' }}</div>
+                </div>
+                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
+                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                        NDA
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">{{ $currentLocale === 'id' ? 'Tersedia untuk Semua Proyek' : 'Available for All Projects' }}</div>
+                </div>
+                <div class="p-6 text-center rounded-2xl bg-white/60 dark:bg-[#0E1526]/60 border border-slate-200/50 dark:border-white/5">
+                    <div class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+                        Zero
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">{{ $currentLocale === 'id' ? 'Kebijakan Zero Tech Debt' : 'Zero Tech Debt Policy' }}</div>
                 </div>
             @endif
         </div>
     </section>
+
+    {{-- Trust & Compliance Signals Strip --}}
+    <div class="mb-24 lg:mb-32">
+        @include('frontend.components.trust-signals')
+    </div>
 
     {{-- The Manifesto Section --}}
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32 fade-anim" data-direction="bottom">
@@ -87,7 +93,7 @@
                     <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-[#00BFA5]">
                         <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">Zero Tech Debt Policy</span>
                         <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">Strict TDD Enforced</span>
-                        <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">Entitas Hukum Resmi: PT Akselerasi Digital Mandiri</span>
+                        <span class="px-3 py-1 rounded-md bg-[#00BFA5]/10 border border-[#00BFA5]/20">{{ $currentLocale === 'id' ? 'Entitas Hukum Resmi: ' : 'Official Legal Entity: ' }}{{ \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri') }}</span>
                     </div>
                 </div>
 
@@ -118,6 +124,11 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    {{-- Company Profile Download Section (Gracefully renders if PDF configured) --}}
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 lg:mb-32">
+        @include('frontend.components.company-profile-download')
     </section>
 
     {{-- Dynamic Core Values Section --}}

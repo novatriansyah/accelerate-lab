@@ -114,7 +114,7 @@
                     </div>
 
                     <div class="pt-6 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
-                        <span class="text-xs font-mono text-slate-400">Strict SLA Supported</span>
+                        <span class="text-xs font-mono text-slate-400">{{ $currentLocale === 'id' ? 'NDA Siap · Kode 100% Milik Klien' : 'NDA Ready · 100% Client Code Ownership' }}</span>
                         <a href="{{ route('service', $service->slug) }}" class="rr-btn rr-btn-primary px-5 py-2.5 text-xs font-semibold">
                             <span class="btn-wrap">
                                 <span class="text-1">{{ $currentLocale === 'id' ? 'Buka Spesifikasi' : 'View Blueprint' }}</span>
