@@ -30,7 +30,7 @@
                 </h2>
 
                 <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-                    {{ $currentLocale === 'id' ? 'Dari rancang bangun web enterprise, cloud devops, hingga aplikasi mobile presisi tinggi. Diskusikan roadmap teknis Anda bersama kami.' : 'From enterprise web systems and cloud microservices to mobile applications. Partner with our senior engineering squad today.' }}
+                    {{ $currentLocale === 'id' ? 'Dari rancang bangun web enterprise, integrasi alur kerja, hingga sistem transaksi presisi tinggi. Diskusikan kebutuhan bisnis Anda langsung dengan Senior Architect.' : 'From custom operational web systems to automated business workflows. Partner directly with our Senior Architect today.' }}
                 </p>
 
                 <div class="pt-2 flex flex-wrap items-center gap-4">
@@ -111,9 +111,8 @@
                     <li><a href="{{ route('about') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Tentang Kami' : 'About Us' }}</a></li>
                     <li><a href="{{ route('case-studies') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Studi Kasus' : 'Case Studies' }}</a></li>
                     <li>
-                        <a href="{{ route('careers') }}" class="inline-flex items-center gap-2 hover:text-[#00BFA5] transition-colors">
-                            <span>{{ $currentLocale === 'id' ? 'Karir' : 'Careers' }}</span>
-                            <span class="px-1.5 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#00BFA5]/15 text-[#00BFA5]">HIRING</span>
+                        <a href="{{ route('careers') }}" class="hover:text-[#00BFA5] transition-colors">
+                            {{ $currentLocale === 'id' ? 'Karir' : 'Careers' }}
                         </a>
                     </li>
                     <li><a href="{{ url('/the-lab') }}" class="hover:text-[#00BFA5] transition-colors">The Lab</a></li>

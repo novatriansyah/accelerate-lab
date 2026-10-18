@@ -23,10 +23,6 @@
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('home') ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-semibold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5' }}">
                 {{ $currentLocale === 'id' ? 'Beranda' : 'Home' }}
             </a>
-            <a href="{{ route('about') }}"
-               class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('about') ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-semibold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5' }}">
-                {{ $currentLocale === 'id' ? 'Tentang' : 'About' }}
-            </a>
             <a href="{{ route('services') }}"
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('services') || request()->routeIs('service') ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-semibold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5' }}">
                 {{ $currentLocale === 'id' ? 'Layanan' : 'Services' }}
@@ -35,9 +31,9 @@
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('case-studies') || request()->routeIs('project') ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-semibold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5' }}">
                 {{ $currentLocale === 'id' ? 'Studi Kasus' : 'Case Studies' }}
             </a>
-            <a href="{{ route('careers') }}"
-               class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('careers') ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-semibold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5' }}">
-                {{ $currentLocale === 'id' ? 'Karir' : 'Careers' }}
+            <a href="{{ route('about') }}"
+               class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('about') ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-semibold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5' }}">
+                {{ $currentLocale === 'id' ? 'Tentang' : 'About' }}
             </a>
             <a href="{{ route('contact') }}"
                class="px-4 py-2 rounded-full text-sm font-medium transition-all {{ request()->routeIs('contact') ? 'bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-semibold' : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/60 dark:hover:bg-white/5' }}">
@@ -110,17 +106,14 @@
             <a href="{{ route('home') }}" @click="isOpen = false" class="py-2 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-[#00BFA5]">
                 {{ $currentLocale === 'id' ? 'Beranda' : 'Home' }}
             </a>
-            <a href="{{ route('about') }}" @click="isOpen = false" class="py-2 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-[#00BFA5]">
-                {{ $currentLocale === 'id' ? 'Tentang' : 'About' }}
-            </a>
             <a href="{{ route('services') }}" @click="isOpen = false" class="py-2 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-[#00BFA5]">
                 {{ $currentLocale === 'id' ? 'Layanan' : 'Services' }}
             </a>
             <a href="{{ route('case-studies') }}" @click="isOpen = false" class="py-2 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-[#00BFA5]">
                 {{ $currentLocale === 'id' ? 'Studi Kasus' : 'Case Studies' }}
             </a>
-            <a href="{{ route('careers') }}" @click="isOpen = false" class="py-2 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-[#00BFA5]">
-                {{ $currentLocale === 'id' ? 'Karir' : 'Careers' }}
+            <a href="{{ route('about') }}" @click="isOpen = false" class="py-2 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-[#00BFA5]">
+                {{ $currentLocale === 'id' ? 'Tentang' : 'About' }}
             </a>
             <a href="{{ route('contact') }}" @click="isOpen = false" class="py-2 text-base font-medium text-slate-800 dark:text-slate-200 hover:text-[#00BFA5]">
                 {{ $currentLocale === 'id' ? 'Kontak' : 'Contact' }}

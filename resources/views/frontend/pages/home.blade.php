@@ -17,28 +17,28 @@
             
             {{-- Status Pill Badge --}}
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-6">
-                <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
-                <span>✦ ACCELERATE LAB // DIGITAL INNOVATION AGENCY</span>
+                <span class="w-2 h-2 rounded-full bg-[#00BFA5]"></span>
+                <span>{{ $currentLocale === 'id' ? 'STUDIO REKAYASA SISTEM BISNIS' : 'BOUTIQUE DIGITAL ENGINEERING STUDIO' }}</span>
             </div>
 
             {{-- Display Headline (Instrument Sans) --}}
             <h1 class="font-instrumentsans text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.08] mb-6">
-                {{ $currentLocale === 'id' ? 'Mitra Inovasi Digital untuk' : 'Strategic Innovation Partner for' }}
+                {{ $currentLocale === 'id' ? 'Sistem Software Kustom &' : 'Custom Software Systems &' }}
                 <span class="bg-gradient-to-r from-[#00BFA5] via-[#00D5B5] to-[#00E5C0] bg-clip-text text-transparent">
-                    {{ $currentLocale === 'id' ? 'Akselerasi Pertumbuhan' : 'Business Growth' }}
+                    {{ $currentLocale === 'id' ? 'Otomasi Operasional Bisnis' : 'Operational Automation' }}
                 </span>
-                {{ $currentLocale === 'id' ? '& Efisiensi Bisnis.' : '& Enterprise Scalability.' }}
+                {{ $currentLocale === 'id' ? 'untuk Efisiensi & Pertumbuhan.' : 'for Measurable Growth.' }}
             </h1>
 
             {{-- Sub-Headline --}}
             <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl max-w-2xl leading-relaxed mb-10">
                 {{ $currentLocale === 'id'
-                    ? 'Kami bermitra dengan para pemimpin industri dan bisnis bertumbuh untuk merancang sistem digital yang memecahkan masalah nyata, meningkatkan pendapatan, dan mengotomasi alur kerja operasional.'
-                    : 'We partner with industry leaders and high-growth businesses to engineer digital systems that solve real problems, accelerate revenue, and automate operational workflows.' }}
+                    ? 'Dikerjakan langsung oleh Senior Architect tanpa perantara sales. Mengotomasi alur kerja manual, mencegah kebocoran inventori, dan menjamin 100% Hak Milik source code serta database menjadi aset perusahaan Anda.'
+                    : 'Engineered directly by a Senior Architect with zero sales intermediaries. Automating manual workflows, eliminating operational leakages, and ensuring 100% client code and database ownership.' }}
             </p>
 
             {{-- Dual Kinetic CTA Buttons --}}
-            <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-14">
                 <a href="{{ route('contact') }}" class="rr-btn rr-btn-primary px-8 py-4 text-sm font-semibold">
                     <span class="btn-wrap">
                         <span class="text-1">{{ $currentLocale === 'id' ? 'Konsultasi Solusi Bisnis' : 'Schedule Business Consultation' }}</span>
@@ -53,54 +53,31 @@
                 </button>
             </div>
 
-            {{-- Hero Visual Canvas Frame with Rotating Emblem --}}
-            <div class="relative w-full max-w-5xl rounded-3xl border border-slate-200/80 dark:border-white/10 bg-slate-900/5 dark:bg-slate-900/40 backdrop-blur-xl p-3 sm:p-5 shadow-2xl overflow-visible">
-                
-                {{-- Authentic Rotating Brand Emblem (.badge-spin) --}}
-                <div class="absolute -top-10 -right-4 sm:-top-12 sm:-right-8 z-30 pointer-events-none select-none">
-                    <svg class="badge-spin w-24 h-24 sm:w-32 sm:h-32" viewBox="0 0 160 160">
-                        <path id="curve-circle" fill="transparent" d="M 80, 80 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" />
-                        <text class="text-[10px] font-mono font-bold tracking-[0.22em] fill-slate-800 dark:fill-slate-200 uppercase">
-                            <textPath xlink:href="#curve-circle" startOffset="0%">
-                                • ACCELERATE LAB • ENGINEERING STUDIO • 2026 •
-                            </textPath>
-                        </text>
-                    </svg>
-                    <div class="absolute inset-0 flex items-center justify-center pointer-events-auto">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#00BFA5] text-[#090D16] flex items-center justify-center font-mono font-bold text-xs shadow-lg">
-                            /&gt;
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Inner Frame Mockup / Blueprint --}}
-                <div class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 p-6 sm:p-10 text-left">
-                    <div class="flex items-center justify-between pb-6 border-b border-slate-800 text-xs font-mono text-slate-400">
-                        <div class="flex items-center gap-2">
-                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
-                            <span class="ml-2 text-slate-500">accelerate-engine://v2.4.0</span>
-                        </div>
-                        <span class="text-[#00BFA5]">🟢 CLUSTER ACTIVE</span>
+            {{-- Hero Visual Value Proposition Frame (No AI Slop Terminals) --}}
+            <div class="relative w-full max-w-5xl rounded-3xl border border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl p-4 sm:p-6 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200/60 dark:border-white/5">
+                        <div class="w-9 h-9 rounded-xl bg-[#00BFA5]/15 text-[#00BFA5] flex items-center justify-center font-bold text-sm mb-3">01</div>
+                        <h2 class="text-base font-bold text-slate-900 dark:text-white">{{ $currentLocale === 'id' ? 'Tanpa Perantara Sales' : 'Direct Architect Access' }}</h2>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                            {{ $currentLocale === 'id' ? 'Anda berdiskusi dan merancang sistem langsung bersama Principal Architect yang mengeksekusi kode Anda.' : 'Direct collaboration with the technical decision maker building your product.' }}
+                        </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-                            <span class="text-xs font-mono text-slate-400 uppercase">Pilar Dampak</span>
-                            <p class="text-base font-semibold text-white mt-1">Pertumbuhan Omzet</p>
-                            <span class="text-xs text-emerald-400 mt-2 block">Otomasi Konversi • Transaksi Tanpa Hambatan</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-                            <span class="text-xs font-mono text-slate-400 uppercase">Pilar Dampak</span>
-                            <p class="text-base font-semibold text-white mt-1">Efisiensi Operasional</p>
-                            <span class="text-xs text-cyan-400 mt-2 block">Integrasi Sistem • Hemat Jam Kerja Manual</span>
-                        </div>
-                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
-                            <span class="text-xs font-mono text-slate-400 uppercase">Pilar Dampak</span>
-                            <p class="text-base font-semibold text-white mt-1">Keamanan & Keandalan</p>
-                            <span class="text-xs text-teal-400 mt-2 block">Perlindungan Enterprise • Kesiapan Skala Penuh</span>
-                        </div>
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200/60 dark:border-white/5">
+                        <div class="w-9 h-9 rounded-xl bg-[#00BFA5]/15 text-[#00BFA5] flex items-center justify-center font-bold text-sm mb-3">02</div>
+                        <h2 class="text-base font-bold text-slate-900 dark:text-white">{{ $currentLocale === 'id' ? '100% Hak Milik Aset' : '100% Client Ownership' }}</h2>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                            {{ $currentLocale === 'id' ? 'Seluruh source code, basis data, dan dokumentasi menjadi aset sah perusahaan Anda tanpa vendor lock-in.' : 'Full ownership of all repositories, databases, and deployment keys with zero lock-in.' }}
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200/60 dark:border-white/5">
+                        <div class="w-9 h-9 rounded-xl bg-[#00BFA5]/15 text-[#00BFA5] flex items-center justify-center font-bold text-sm mb-3">03</div>
+                        <h2 class="text-base font-bold text-slate-900 dark:text-white">{{ $currentLocale === 'id' ? 'Selesai dalam 2-4 Minggu' : 'Rapid 2-4 Weeks Delivery' }}</h2>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                            {{ $currentLocale === 'id' ? 'Metodologi rekayasa teruji dengan standar pengujian otomatis untuk kesiapan produksi sejak hari pertama.' : 'Tested development cycles with automated test suites for instant production readiness.' }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -291,14 +268,25 @@
                         <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ 100% Aksesibel & Siap Konversi</div>
                     </div>
                 </div>
-                <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-emerald-400 overflow-x-auto">
-                    <pre><code>// Standar Rekayasa & Metodologi Pengembangan
-StandarProyek::terapkan([
-    'Pendekatan'       => 'Test-Driven Development',
-    'Arsitektur'       => 'Clean Architecture',
-    'Kualitas Kode'    => 'Zero Tech Debt Policy',
-]);
-// Status: Siap Produksi Sejak Hari Pertama</code></pre>
+                <div class="rounded-2xl bg-slate-900/95 dark:bg-slate-950 p-6 sm:p-7 border border-slate-800 shadow-xl">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-5">
+                        <span class="text-xs font-mono font-bold text-[#00BFA5] tracking-wider uppercase">STANDAR DELIVERABLE WEB</span>
+                        <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">SIAP OPERASIONAL</span>
+                    </div>
+                    <ul class="space-y-4 text-slate-300 text-xs sm:text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Arsitektur Bersih & Dokumentasi Lengkap:</strong> Kode terstruktur rapi yang siap dikembangkan oleh tim internal Anda kapan saja.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">100% Hak Milik Repositori:</strong> Seluruh aset, repositori kode, dan lisensi menjadi hak milik penuh perusahaan Anda.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Kecepatan & Optimasi Konversi:</strong> Waktu respon instan tanpa beban plugin pihak ketiga yang memperlambat transaksi.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -319,14 +307,25 @@ StandarProyek::terapkan([
                         <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Jaminan Uptime Layanan 99.99%</div>
                     </div>
                 </div>
-                <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-cyan-400 overflow-x-auto">
-                    <pre><code># Telemetri Ketahanan Operasional
-parameter_keandalan:
-  - metrik: waktu_aktif_tahunan
-    nilai: 99.99%
-  - pemulihan_otomatis: aktif
-  - enkripsi_data: standar_perbankan
-# Status: 100% OPERASIONAL SEMPURNA</code></pre>
+                <div class="rounded-2xl bg-slate-900/95 dark:bg-slate-950 p-6 sm:p-7 border border-slate-800 shadow-xl">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-5">
+                        <span class="text-xs font-mono font-bold text-[#00BFA5] tracking-wider uppercase">STANDAR INFRASTRUKTUR BISNIS</span>
+                        <span class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">TERKONTROL PENUH</span>
+                    </div>
+                    <ul class="space-y-4 text-slate-300 text-xs sm:text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="text-cyan-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Akun Dedicated Milik Klien:</strong> Dikonfigurasi langsung pada akun resmi perusahaan Anda, bukan server bersama pihak ketiga.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-cyan-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Pencadangan Otomatis & Pemulihan Bencana:</strong> Keamanan data terjamin dengan mekanisme backup terenkripsi secara harian.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-cyan-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Efisiensi Biaya Operasional:</strong> Arsitektur tepat guna tanpa pembengkakan biaya langganan yang tidak diperlukan.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -347,14 +346,25 @@ parameter_keandalan:
                         <div class="p-3 rounded-xl bg-slate-100 dark:bg-white/5">✓ Integrasi Alur Pembayaran Digital</div>
                     </div>
                 </div>
-                <div class="rounded-2xl bg-slate-950 p-6 border border-slate-800 text-xs font-mono text-teal-400 overflow-x-auto">
-                    <pre><code>// Standar Pengalaman & Aksesibilitas Aplikasi
-StandarMobile::terapkan([
-    'Antarmuka'        => 'Human Interface Guidelines',
-    'Autentikasi'      => 'Biometric & Secure Enclave',
-    'Kepemilikan Kode' => '100% Milik Klien',
-]);
-// Status: Pengalaman Pengguna Berstandar Industri</code></pre>
+                <div class="rounded-2xl bg-slate-900/95 dark:bg-slate-950 p-6 sm:p-7 border border-slate-800 shadow-xl">
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-5">
+                        <span class="text-xs font-mono font-bold text-[#00BFA5] tracking-wider uppercase">STANDAR APLIKASI SELULER</span>
+                        <span class="text-xs font-mono text-teal-400 bg-teal-500/10 px-2.5 py-1 rounded-full border border-teal-500/20">SIAP DISTRIBUSI</span>
+                    </div>
+                    <ul class="space-y-4 text-slate-300 text-xs sm:text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Performa Responsif di Jaringan Lokal:</strong> Navigasi ringan dan hemat kuota untuk menjangkau pengguna di seluruh pelosok.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Keamanan Akses Terintegrasi:</strong> Mendukung verifikasi biometrik dan proteksi data privasi pengguna berstandar tinggi.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-teal-400 font-bold shrink-0 mt-0.5">✓</span>
+                            <span><strong class="text-white">Kepemilikan Akun Toko Aplikasi:</strong> Aplikasi didistribusikan langsung di bawah nama entitas resmi bisnis Anda.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -549,5 +559,98 @@ StandarMobile::terapkan([
         </div>
     </section>
 @endif
+
+{{-- ========================================================================
+     FAQ SECTION (Direct Answers for Business Decision Makers)
+     ======================================================================== --}}
+<section class="py-20 border-t border-slate-200/80 dark:border-white/5 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="text-xs font-mono font-semibold tracking-wider text-[#00BFA5] uppercase">
+                05 // {{ $currentLocale === 'id' ? 'TRANSPARANSI & TANYA JAWAB' : 'TRANSPARENCY & FAQ' }}
+            </span>
+            <h2 class="font-instrumentsans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">
+                {{ $currentLocale === 'id' ? 'Pertanyaan yang Sering Diajukan' : 'Frequently Asked Questions' }}
+            </h2>
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed mt-3">
+                {{ $currentLocale === 'id' ? 'Jawaban transparan seputar cara kerja, kepemilikan aset, dan jaminan kualitas untuk bisnis Anda.' : 'Straightforward answers about our workflow, code ownership, and engineering quality.' }}
+            </p>
+        </div>
+
+        <div x-data="{ openFaq: 1 }" class="space-y-4">
+            {{-- FAQ 1: Who builds it? --}}
+            <div class="bento-card p-6 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-md">
+                <button @click="openFaq = openFaq === 1 ? null : 1" 
+                        class="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
+                        :aria-expanded="openFaq === 1">
+                    <span class="font-instrumentsans text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                        {{ $currentLocale === 'id' ? 'Siapa yang akan mengerjakan proyek saya secara langsung?' : 'Who will directly engineer and lead my project?' }}
+                    </span>
+                    <span class="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 text-sm font-mono font-bold transition-transform duration-200"
+                          :class="{ 'rotate-180': openFaq === 1 }">
+                        ↓
+                    </span>
+                </button>
+                <div x-show="openFaq === 1" x-transition class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    {{ $currentLocale === 'id' ? 'Proyek Anda dipimpin dan dikerjakan langsung oleh Senior Architect dan insinyur senior berpengalaman, tanpa perantara sales atau delegasi ke junior lepasan. Anda berdiskusi dan mengambil keputusan teknis langsung dengan perancang arsitektur sistem Anda.' : 'Your project is directly led and executed by a Senior Architect, with zero sales intermediaries or handoffs to junior interns. You discuss architecture directly with the engineer building your system.' }}
+                </div>
+            </div>
+
+            {{-- FAQ 2: IP and Source Code Ownership --}}
+            <div class="bento-card p-6 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-md">
+                <button @click="openFaq = openFaq === 2 ? null : 2" 
+                        class="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
+                        :aria-expanded="openFaq === 2">
+                    <span class="font-instrumentsans text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                        {{ $currentLocale === 'id' ? 'Siapa pemilik hak cipta dan kode sumber setelah proyek selesai?' : 'Who owns the intellectual property and code repository upon completion?' }}
+                    </span>
+                    <span class="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 text-sm font-mono font-bold transition-transform duration-200"
+                          :class="{ 'rotate-180': openFaq === 2 }">
+                        ↓
+                    </span>
+                </button>
+                <div x-show="openFaq === 2" x-transition class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    {{ $currentLocale === 'id' ? '100% Hak Milik adalah milik perusahaan Anda seutuhnya. Setelah serah terima, seluruh repositori kode, skema database, dan dokumentasi diserahkan tanpa biaya lisensi tahunan berbayar atau lock-in vendor.' : '100% full intellectual property and source code belongs entirely to your company. All code repositories, database schemas, and documentation are transferred with zero recurring royalties or vendor lock-in.' }}
+                </div>
+            </div>
+
+            {{-- FAQ 3: Delivery Timeline --}}
+            <div class="bento-card p-6 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-md">
+                <button @click="openFaq = openFaq === 3 ? null : 3" 
+                        class="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
+                        :aria-expanded="openFaq === 3">
+                    <span class="font-instrumentsans text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                        {{ $currentLocale === 'id' ? 'Berapa lama estimasi waktu pengerjaan sistem atau aplikasi?' : 'What is the typical delivery timeline for a project?' }}
+                    </span>
+                    <span class="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 text-sm font-mono font-bold transition-transform duration-200"
+                          :class="{ 'rotate-180': openFaq === 3 }">
+                        ↓
+                    </span>
+                </button>
+                <div x-show="openFaq === 3" x-transition class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    {{ $currentLocale === 'id' ? 'Mayoritas prototipe operasional, platform bisnis, atau perbaikan sistem kami selesaikan dalam rentang 2 hingga 4 minggu melalui sprint mingguan terukur dengan sesi demo berkala yang transparan.' : 'Most functional business platforms, operational portals, and system improvements are delivered within 2 to 4 weeks through structured weekly sprints with transparent demo sessions.' }}
+                </div>
+            </div>
+
+            {{-- FAQ 4: Legal Protection --}}
+            <div class="bento-card p-6 bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/80 dark:border-white/10 shadow-md">
+                <button @click="openFaq = openFaq === 4 ? null : 4" 
+                        class="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
+                        :aria-expanded="openFaq === 4">
+                    <span class="font-instrumentsans text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+                        {{ $currentLocale === 'id' ? 'Apakah kerja sama ini dinaungi oleh entitas legal resmi?' : 'Is our engagement protected by an official corporate legal entity?' }}
+                    </span>
+                    <span class="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 text-sm font-mono font-bold transition-transform duration-200"
+                          :class="{ 'rotate-180': openFaq === 4 }">
+                        ↓
+                    </span>
+                </button>
+                <div x-show="openFaq === 4" x-transition class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                    {{ $currentLocale === 'id' ? 'Ya. Seluruh kerja sama diikat secara hukum melalui PT Akselerasi Digital Mandiri lengkap dengan Perjanjian Kerahasiaan Data (NDA) serta Surat Perjanjian Kerja (SPK) resmi untuk melindungi hak dan kerahasiaan bisnis Anda.' : 'Yes. All engagements are legally contracted under PT Akselerasi Digital Mandiri with comprehensive Non-Disclosure Agreements (NDA) and formal service contracts protecting your confidentiality and business interests.' }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
