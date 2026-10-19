@@ -30,7 +30,7 @@
                 </h2>
 
                 <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-                    {{ $currentLocale === 'id' ? 'Dari rancang bangun web enterprise, integrasi alur kerja, hingga sistem transaksi presisi tinggi. Diskusikan kebutuhan bisnis Anda langsung dengan Senior Architect.' : 'From custom operational web systems to automated business workflows. Partner directly with our Senior Architect today.' }}
+                    {{ $currentLocale === 'id' ? 'Dari rancang bangun web enterprise, integrasi alur kerja, hingga sistem transaksi presisi tinggi. Diskusikan kebutuhan bisnis Anda bersama tim rekayasa teknologi kami hari ini.' : 'From custom operational web systems to automated business workflows. Partner with our dedicated engineering team today.' }}
                 </p>
 
                 <div class="pt-2 flex flex-wrap items-center gap-4">

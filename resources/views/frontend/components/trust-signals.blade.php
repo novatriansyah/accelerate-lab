@@ -71,15 +71,15 @@
                     </div>
                 </div>
 
-                {{-- Direct Founder/Architect Access --}}
+                {{-- Dedicated Engineering Support --}}
                 <div class="flex items-center gap-2.5 text-slate-700 dark:text-slate-300">
                     <span class="w-2 h-2 rounded-full bg-[#00BFA5]"></span>
                     <div>
                         <div class="font-bold text-slate-900 dark:text-white">
-                            {{ $currentLocale === 'id' ? 'Akses Arsitek Langsung' : 'Direct Senior Access' }}
+                            {{ $currentLocale === 'id' ? 'Dukungan Teknis Berdedikasi' : 'Dedicated Engineering Support' }}
                         </div>
                         <div class="text-[11px] text-slate-500 dark:text-slate-400">
-                            {{ $currentLocale === 'id' ? 'Respons WhatsApp < 2 Jam' : 'Response < 2 Hours' }}
+                            {{ $currentLocale === 'id' ? 'SLA Respons Terjamin < 2 Jam' : 'Guaranteed Response < 2 Hours' }}
                         </div>
                     </div>
                 </div>

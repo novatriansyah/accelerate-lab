@@ -3,9 +3,14 @@
 
 @config "../../tailwind.config.js";
 
-/* Smooth scroll for anchor links */
+/* Smooth scroll for anchor links and horizontal overflow prevention */
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
+}
+
+body {
+    overflow-x: clip;
 }
 
 /* Focus-visible outlines for keyboard navigation (accessibility) */

@@ -39,7 +39,7 @@ class AntiSlopDesignSystemTest extends TestCase
 
         // Honest, high-converting value propositions for Indonesian B2B clients
         $response->assertSee('Senior Architect', false);
-        $response->assertSee('Tanpa Perantara Sales', false);
+        $response->assertSee('Presisi Rekayasa Sejak Hari Pertama', false);
         $response->assertSee('Hak Milik', false);
 
         // FAQ section addressing buyer friction points

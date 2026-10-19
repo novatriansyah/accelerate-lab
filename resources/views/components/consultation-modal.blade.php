@@ -59,8 +59,8 @@
 
             <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                 {{ $locale === 'id' 
-                    ? 'Tanpa tekanan sales, tanpa istilah teknis yang membingungkan. Obrolan santai 15 menit untuk mengeksplorasi ide, waktu pengerjaan, dan estimasi biaya.' 
-                    : 'No aggressive sales pitches, no technical jargon. Just an honest 15-minute chat to explore your idea, realistic timeline, and cost estimate.' }}
+                    ? 'Sesi eksplorasi teknis dan bisnis selama 15 menit bersama tim ahli kami. Kami memetakan kebutuhan sistem Anda, estimasi waktu pengerjaan, serta skenario biaya yang transparan dan realistis.' 
+                    : 'A 15-minute technical and strategic discovery session with our senior team. We outline your system architecture, implementation timeline, and realistic cost projections.' }}
             </p>
 
             <!-- Trust Highlights -->
@@ -71,7 +71,7 @@
                 </div>
                 <div class="flex items-center gap-2 text-slate-700 dark:text-gray-300">
                     <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span><strong>{{ $locale === 'id' ? 'Insight Arsitek Langsung' : 'Direct Architect Insight' }}</strong>: {{ $locale === 'id' ? 'Bukan account manager' : 'No junior account managers' }}</span>
+                    <span><strong>{{ $locale === 'id' ? 'Konsultasi Teknis Mendalam' : 'Direct Technical Alignment' }}</strong>: {{ $locale === 'id' ? 'Terhubung langsung dengan tim perancang solusi sistem' : 'High-level architectural consultation with senior systems engineers' }}</span>
                 </div>
                 <div class="flex items-center gap-2 text-slate-700 dark:text-gray-300">
                     <x-app-icon name="check_circle" class="w-4 h-4 text-emerald-500 shrink-0" />

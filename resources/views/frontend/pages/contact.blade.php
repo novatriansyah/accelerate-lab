@@ -54,7 +54,7 @@
                         </div>
                         <div>
                             <div class="text-xs font-mono font-bold uppercase text-[#00BFA5]">Respon Cepat via WhatsApp</div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400">Langsung dengan Principal Architect</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">{{ $currentLocale === 'id' ? 'Konsultasi Solusi bersama Tim Teknis' : 'Direct Consultation with Technical Lead' }}</div>
                         </div>
                     </div>
                     <a href="{{ $contactWaUrl }}" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-md transition-all">

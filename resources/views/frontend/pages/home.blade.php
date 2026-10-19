@@ -33,8 +33,8 @@
             {{-- Sub-Headline --}}
             <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl max-w-2xl leading-relaxed mb-10">
                 {{ $currentLocale === 'id'
-                    ? 'Dikerjakan langsung oleh Senior Architect tanpa perantara sales. Mengotomasi alur kerja manual, mencegah kebocoran inventori, dan menjamin 100% Hak Milik source code serta database menjadi aset perusahaan Anda.'
-                    : 'Engineered directly by a Senior Architect with zero sales intermediaries. Automating manual workflows, eliminating operational leakages, and ensuring 100% client code and database ownership.' }}
+                    ? 'Direkayasa oleh tim insinyur senior dan arsitek sistem terbaik kami. Mengotomasi alur kerja manual, mengeliminasi kebocoran operasional, dan menjamin 100% Hak Milik source code serta database menjadi aset permanen perusahaan Anda.'
+                    : 'Engineered by our dedicated team of senior architects and systems engineers. Automating manual workflows, eliminating operational leakages, and ensuring 100% client code and database ownership.' }}
             </p>
 
             {{-- Dual Kinetic CTA Buttons --}}
@@ -48,7 +48,7 @@
                 <button type="button" @click="$dispatch('open-consultation-modal')" class="rr-btn rr-btn-border px-7 py-4 text-sm font-medium">
                     <span class="btn-wrap">
                         <span class="text-1">{{ $currentLocale === 'id' ? 'Diskusi via WhatsApp' : 'Chat via WhatsApp' }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Langsung dengan Arsitek' : 'Direct with Architect' }}</span>
+                        <span class="text-2">{{ $currentLocale === 'id' ? 'Konsultasi Solusi Tim Teknis' : 'Consult with Engineering Team' }}</span>
                     </span>
                 </button>
             </div>
@@ -58,9 +58,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
                     <div class="p-5 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-200/60 dark:border-white/5">
                         <div class="w-9 h-9 rounded-xl bg-[#00BFA5]/15 text-[#00BFA5] flex items-center justify-center font-bold text-sm mb-3">01</div>
-                        <h2 class="text-base font-bold text-slate-900 dark:text-white">{{ $currentLocale === 'id' ? 'Tanpa Perantara Sales' : 'Direct Architect Access' }}</h2>
+                        <h2 class="text-base font-bold text-slate-900 dark:text-white">{{ $currentLocale === 'id' ? 'Presisi Rekayasa Sejak Hari Pertama' : 'Architectural Precision from Day One' }}</h2>
                         <p class="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                            {{ $currentLocale === 'id' ? 'Anda berdiskusi dan merancang sistem langsung bersama Principal Architect yang mengeksekusi kode Anda.' : 'Direct collaboration with the technical decision maker building your product.' }}
+                            {{ $currentLocale === 'id' ? 'Setiap keputusan sistem dirancang dan dikaji langsung oleh tim arsitek senior kami untuk memastikan keandalan, skalabilitas, dan efisiensi investasi teknologi Anda.' : 'Every system decision is scoped and reviewed directly by our senior engineering leadership to guarantee scalability, security, and maximum ROI.' }}
                         </p>
                     </div>
 
@@ -584,7 +584,7 @@
                         class="w-full flex items-center justify-between text-left gap-4 cursor-pointer"
                         :aria-expanded="openFaq === 1">
                     <span class="font-instrumentsans text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-                        {{ $currentLocale === 'id' ? 'Siapa yang akan mengerjakan proyek saya secara langsung?' : 'Who will directly engineer and lead my project?' }}
+                        {{ $currentLocale === 'id' ? 'Bagaimana komposisi dan standar tim yang menangani proyek saya?' : 'What team composition and engineering standards will handle my project?' }}
                     </span>
                     <span class="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0 text-sm font-mono font-bold transition-transform duration-200"
                           :class="{ 'rotate-180': openFaq === 1 }">
@@ -592,7 +592,7 @@
                     </span>
                 </button>
                 <div x-show="openFaq === 1" x-transition class="mt-4 pt-4 border-t border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                    {{ $currentLocale === 'id' ? 'Proyek Anda dipimpin dan dikerjakan langsung oleh Senior Architect dan insinyur senior berpengalaman, tanpa perantara sales atau delegasi ke junior lepasan. Anda berdiskusi dan mengambil keputusan teknis langsung dengan perancang arsitektur sistem Anda.' : 'Your project is directly led and executed by a Senior Architect, with zero sales intermediaries or handoffs to junior interns. You discuss architecture directly with the engineer building your system.' }}
+                    {{ $currentLocale === 'id' ? 'Setiap proyek ditangani langsung oleh tim rekayasa terbaik yang kami miliki, dipimpin oleh Senior Architect dan didukung oleh insinyur perangkat lunak senior berdedikasi. Kami menerapkan pengujian otomatis terstandar (Strict TDD) dan tinjauan arsitektur berlapis, sehingga Anda selalu berdiskusi dan mengambil keputusan strategis bersama para pakar teknis yang benar-benar memahami sistem Anda.' : 'Your project is engineered by our premier technical team, led by Senior Systems Architects and seasoned software engineers. With rigorous automated testing (Strict TDD) and multi-tier architectural reviews, you collaborate directly with technical experts dedicated to building high-performance systems for your business.' }}
                 </div>
             </div>
 

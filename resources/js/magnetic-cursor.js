@@ -9,6 +9,7 @@ export function initMagneticCursor() {
     const cursor = document.querySelector('.cb-cursor');
     const cursorText = document.querySelector('.cb-cursor-text');
     if (!cursor) return;
+    if (cursor.classList.contains('hidden') || window.getComputedStyle(cursor).display === 'none') return;
 
     let mouseX = -100;
     let mouseY = -100;

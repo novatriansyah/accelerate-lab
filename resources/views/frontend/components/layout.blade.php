@@ -91,10 +91,10 @@
     </script>
     @stack('schema')
 </head>
-<body class="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#090D16] text-slate-900 dark:text-white font-sans antialiased selection:bg-[#00BFA5]/20 selection:text-[#00BFA5] transition-colors duration-300">
+<body class="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-[#090D16] text-slate-900 dark:text-white font-sans antialiased selection:bg-[#00BFA5]/20 selection:text-[#00BFA5] transition-colors duration-300 overflow-x-clip">
 
-    {{-- Magnetic Cursor DOM --}}
-    <div class="cb-cursor" aria-hidden="true">
+    {{-- Magnetic Cursor DOM (hidden to prevent layout overflow per anti-slop standards) --}}
+    <div class="cb-cursor hidden pointer-events-none" aria-hidden="true">
         <div class="cb-cursor-text"></div>
     </div>
 
