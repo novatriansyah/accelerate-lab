@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             ProjectSeeder::class,
             TeamMemberSeeder::class,
             CompanyMilestoneSeeder::class,
+            CoreValueSeeder::class,
             DemoSeeder::class,
         ]);
     }

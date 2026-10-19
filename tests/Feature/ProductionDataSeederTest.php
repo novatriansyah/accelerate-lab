@@ -145,5 +145,18 @@ class ProductionDataSeederTest extends TestCase
         foreach (Demo::all() as $demo) {
             $this->assertStringNotContainsString('—', $demo->title);
         }
+        foreach (\App\Models\CoreValue::all() as $value) {
+            $this->assertStringNotContainsString('—', $value->title);
+            $this->assertStringNotContainsString('–', $value->title);
+            $this->assertStringNotContainsString('—', $value->description);
+            $this->assertStringNotContainsString('–', $value->description);
+        }
+
+        // 11. Core Values
+        $this->assertEquals(4, \App\Models\CoreValue::count());
+        $this->assertDatabaseHas('core_values', ['title' => 'Quality Over Hype']);
+        $this->assertDatabaseHas('core_values', ['title' => 'Honest & Clear Communication']);
+        $this->assertDatabaseHas('core_values', ['title' => '100% Client Ownership']);
+        $this->assertDatabaseHas('core_values', ['title' => 'Reliability & Care']);
     }
 }

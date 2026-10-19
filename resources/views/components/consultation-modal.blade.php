@@ -8,10 +8,11 @@
     $consultationWaUrl = "https://wa.me/{$cleanPhone}?text=" . urlencode($consultationMsg);
 @endphp
 
-<div x-data="{ open: false }" 
+<div id="consultation-modal"
+     x-cloak
+     x-data="{ open: false }" 
      @open-consultation-modal.window="open = true"
      @keydown.escape.window="open = false"
-     id="consultation-modal"
      class="relative z-50">
     
     <!-- Modal Backdrop -->

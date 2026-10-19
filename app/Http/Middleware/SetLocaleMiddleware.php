@@ -16,7 +16,7 @@ class SetLocaleMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $locale = session('locale', $request->cookie('accelerate_locale', config('app.locale', 'id')));
+        $locale = session('locale', $request->cookie('accelerate_locale', config('app.locale', 'en')));
 
         if (in_array($locale, ['id', 'en'])) {
             App::setLocale($locale);

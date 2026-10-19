@@ -51,6 +51,11 @@
         })();
     </script>
 
+    {{-- Alpine.js x-cloak Anti-FOUC Guard (Prevents modal glitch/flash before hydration) --}}
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+
     @if (!empty($settings['google_site_verification'] ?? null))
     <meta name="google-site-verification" content="{{ $settings['google_site_verification'] }}">
     @endif

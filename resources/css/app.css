@@ -62,3 +62,9 @@ body {
         scroll-behavior: auto !important;
     }
 }
+
+/* Alpine.js cloak - hide elements before hydration to prevent modal flicker/glitch */
+[x-cloak] {
+    display: none !important;
+}
+

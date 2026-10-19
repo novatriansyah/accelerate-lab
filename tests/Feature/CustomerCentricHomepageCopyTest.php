@@ -30,8 +30,12 @@ class CustomerCentricHomepageCopyTest extends TestCase
             $response->assertDontSee($tech, false);
         }
 
-        $response->assertSee('Pertumbuhan', false);
-        $response->assertSee('Efisiensi', false);
+        $response->assertSee('Growth', false);
         $response->assertSee('PT Akselerasi Digital Mandiri', false);
+
+        $idResponse = $this->withSession(['locale' => 'id'])->get('/');
+        $idResponse->assertStatus(200);
+        $idResponse->assertSee('Pertumbuhan', false);
+        $idResponse->assertSee('Efisiensi', false);
     }
 }
