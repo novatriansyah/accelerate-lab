@@ -114,4 +114,18 @@ class CompanyIdentityAndEnglishTransitionTest extends TestCase
             $this->assertStringNotContainsString('–', $value->description);
         }
     }
+
+    #[Test]
+    public function navbar_has_zero_language_switchers_or_id_en_toggles(): void
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+
+        // Zero language toggle links or labels
+        $response->assertDontSee('/lang/id', false);
+        $response->assertDontSee('/lang/en', false);
+        $response->assertDontSee('>ID</a>', false);
+        $response->assertDontSee('>EN</a>', false);
+        $response->assertDontSee('Language:', false);
+    }
 }
