@@ -48,9 +48,6 @@
 @endpush
 
 @section('content')
-@php
-    $currentLocale = app()->getLocale();
-@endphp
 
 {{-- ========================================================================
      SERVICE HERO (Accelerate Studio Header)
@@ -82,8 +79,8 @@
             <div class="flex flex-wrap items-center gap-4">
                 <a href="{{ route('contact') }}" class="rr-btn rr-btn-primary px-7 py-3.5 text-sm font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-1">{{ $service->cta_text ?? ($currentLocale === 'id' ? 'Mulai Proyek Ini' : 'Initiate Project') }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Hubungi Tim Rekayasa' : 'Talk with Architects' }}</span>
+                        <span class="text-1">{{ $service->cta_text ?? 'Initiate Project' }}</span>
+                        <span class="text-2">Talk with Architects</span>
                     </span>
                 </a>
                 <a href="{{ route('contact') }}" class="rr-btn rr-btn-border px-6 py-3.5 text-sm font-medium">
@@ -153,28 +150,24 @@
                     </div>
                 @endif
 
-                {{-- Direct Contact Box — WhatsApp First --}}
+                {{-- Direct Contact Box: WhatsApp First --}}
                 @php
                     $sidebarPhone = preg_replace('/[^0-9]/', '', \App\Models\SiteSetting::where('key', 'contact_whatsapp')->first()?->value ?? config('services.whatsapp.number', '6285156543820'));
-                    $sidebarWaMsg = urlencode($currentLocale === 'id'
-                        ? 'Halo Accelerate Lab, saya ingin mendiskusikan kebutuhan ' . ($service->title ?? 'pengembangan teknologi') . ' untuk bisnis kami.'
-                        : 'Hello Accelerate Lab, I would like to discuss ' . ($service->title ?? 'a project') . ' for my business.');
+                    $sidebarWaMsg = urlencode('Hello Accelerate Lab, I would like to discuss ' . ($service->title ?? 'a project') . ' for my business.');
                     $sidebarWaUrl = "https://wa.me/{$sidebarPhone}?text={$sidebarWaMsg}";
                 @endphp
                 <div class="bento-card p-6 bg-slate-900 text-white border border-slate-800 shadow-xl">
-                    <span class="text-xs font-mono text-[#00BFA5] uppercase">{{ $currentLocale === 'id' ? 'MULAI DISKUSI?' : 'READY TO BUILD?' }}</span>
-                    <h3 class="font-instrumentsans text-xl font-bold mt-1 mb-3">{{ $currentLocale === 'id' ? 'Chat langsung via WhatsApp' : 'Chat directly via WhatsApp' }}</h3>
+                    <span class="text-xs font-mono text-[#00BFA5] uppercase">READY TO BUILD?</span>
+                    <h3 class="font-instrumentsans text-xl font-bold mt-1 mb-3">Chat directly via WhatsApp</h3>
                     <p class="text-xs text-slate-300 leading-relaxed mb-6">
-                        {{ $currentLocale === 'id'
-                            ? 'Diskusi kebutuhan proyek Anda langsung dengan tim teknis. Respons cepat, tanpa formulir panjang.'
-                            : 'Discuss your project needs directly with our engineering team. Fast response, no lengthy forms.' }}
+                        Discuss your project needs directly with our engineering team. Fast response, no lengthy forms.
                     </p>
                     <a href="{{ $sidebarWaUrl }}"
                        target="_blank"
                        rel="noopener noreferrer"
                        class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs shadow-md transition-all">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.03-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.79.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.16-.48-.29z"/></svg>
-                        <span>{{ $currentLocale === 'id' ? 'Chat via WhatsApp Sekarang' : 'Chat via WhatsApp Now' }}</span>
+                        <span>Chat via WhatsApp Now</span>
                     </a>
                 </div>
             </div>

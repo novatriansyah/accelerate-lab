@@ -89,6 +89,6 @@ class TrustSignalsAndCtaTest extends TestCase
         $response->assertStatus(200);
 
         // Contact page quick action card for rapid WhatsApp inquiry
-        $response->assertSee('Chat WhatsApp Langsung', false);
+        $response->assertSee('WhatsApp Hotline', false);
     }
 }

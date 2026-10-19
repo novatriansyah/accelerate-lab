@@ -4,9 +4,6 @@
 ])
 
 @section('content')
-@php
-    $currentLocale = app()->getLocale();
-@endphp
 
 {{-- ========================================================================
      HERO SECTION (Accelerate Studio Header)
@@ -35,16 +32,14 @@
             </h1>
 
             <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl">
-                {{ $currentLocale === 'id'
-                    ? 'Membangun aplikasi web tangguh dan portal operasional yang cepat, aman, dan siap menangani jutaan transaksi bersama tim rekayasa senior kami.'
-                    : 'Engineering robust web applications, operational portals, and mission-critical SaaS platforms that execute with blistering speed and bank-grade security.' }}
+                Engineering robust web applications, operational portals, and mission-critical SaaS platforms that execute with blistering speed and bank-grade security.
             </p>
 
             <div class="flex flex-wrap items-center gap-4">
                 <a href="{{ route('contact') }}" class="rr-btn rr-btn-primary px-8 py-4 text-sm font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-1">{{ $currentLocale === 'id' ? 'Konsultasi Web Aplikasi' : 'Discuss Web Architecture' }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Bersama Kami' : 'Build Custom Solution' }}</span>
+                        <span class="text-1">Discuss Web Architecture</span>
+                        <span class="text-2">Build Custom Solution</span>
                     </span>
                 </a>
                 <a href="{{ route('case-studies') }}" class="rr-btn rr-btn-border px-7 py-4 text-sm font-medium">

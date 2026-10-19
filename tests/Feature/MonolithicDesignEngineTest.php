@@ -146,7 +146,7 @@ class MonolithicDesignEngineTest extends TestCase
         $customResponse = $this->get('/services/cloud-architecture');
         $customResponse->assertStatus(200);
         $customResponse->assertSee('Cloud Architecture');
-        $customResponse->assertSee('Pembaruan Tanpa Gangguan');
+        $customResponse->assertSee('Disruption-Free Releases');
         $customResponse->assertSee('rr-btn');
 
         // 3. Test Generic Service Page

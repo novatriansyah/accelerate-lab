@@ -45,7 +45,7 @@ class LegalEntityAlignmentTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('PT Akselerasi Digital Mandiri');
-        $response->assertSee('Accelerate Lab adalah merek dagang dan studio inovasi teknologi di bawah naungan PT Akselerasi Digital Mandiri.');
+        $response->assertSee('Accelerate Lab is a registered trademark and digital engineering studio operated by PT Akselerasi Digital Mandiri.');
     }
 
     #[Test]
@@ -62,7 +62,7 @@ class LegalEntityAlignmentTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('PT Akselerasi Digital Mandiri');
-        $response->assertSee('Entitas Hukum Resmi');
+        $response->assertSee('Registered Entity');
     }
 
     #[Test]
@@ -79,6 +79,6 @@ class LegalEntityAlignmentTest extends TestCase
 
         $response->assertStatus(200);
         $response->assertSee('PT Akselerasi Digital Mandiri');
-        $response->assertSee('Entitas Legal');
+        $response->assertSee('Operating Legal Entity');
     }
 }

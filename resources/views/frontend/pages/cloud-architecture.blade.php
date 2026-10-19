@@ -48,9 +48,6 @@
 @endpush
 
 @section('content')
-@php
-    $currentLocale = app()->getLocale();
-@endphp
 
 {{-- ========================================================================
      HERO SECTION (Accelerate Studio Header)
@@ -79,16 +76,14 @@
             </h1>
 
             <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl">
-                {{ $currentLocale === 'id'
-                    ? 'Merancang dan mengoperasikan infrastruktur cloud skala enterprise dengan toleransi kegagalan nol, otomatisasi alur kerja, dan efisiensi biaya komputasi maksimal.'
-                    : 'Architecting and operating fault-tolerant enterprise cloud environments with automated deployment workflows, resilient orchestration, and optimized efficiency.' }}
+                Architecting and operating fault-tolerant enterprise cloud environments with automated deployment workflows, resilient orchestration, and optimized efficiency.
             </p>
 
             <div class="flex flex-wrap items-center gap-4">
                 <a href="{{ route('contact') }}" class="rr-btn rr-btn-primary px-8 py-4 text-sm font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-1">{{ $currentLocale === 'id' ? 'Konsultasi Cloud Arsitektur' : 'Consult with Cloud Architect' }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Audit Infrastruktur' : 'Request Infrastructure Audit' }}</span>
+                        <span class="text-1">Consult with Cloud Architect</span>
+                        <span class="text-2">Request Infrastructure Audit</span>
                     </span>
                 </a>
                 <a href="{{ route('case-studies') }}" class="rr-btn rr-btn-border px-7 py-4 text-sm font-medium">
@@ -110,37 +105,37 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 fade-anim" data-direction="bottom">
             {{-- Bento Card 1 --}}
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
-                <span class="text-xs font-mono text-[#00BFA5] uppercase">INFRASTRUKTUR TANGGUH</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Keandalan Komputasi Berkelanjutan</h3>
+                <span class="text-xs font-mono text-[#00BFA5] uppercase">RESILIENT INFRASTRUCTURE</span>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Continuous Operational Reliability</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                    Penyebaran sistem tanpa henti operasional, penyeimbangan beban lalu lintas otomatis, dan ketahanan multi-zona.
+                    Zero-downtime deployment pipelines, automated traffic load balancing, and multi-zone fault tolerance.
                 </p>
             </div>
 
             {{-- Bento Card 2 --}}
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
-                <span class="text-xs font-mono text-[#00BFA5] uppercase">OTOMASI SISTEM</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Pembaruan Tanpa Gangguan</h3>
+                <span class="text-xs font-mono text-[#00BFA5] uppercase">SYSTEM AUTOMATION</span>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Disruption-Free Releases</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                    Alur rilis otomatis dengan audit keamanan menyeluruh, integritas basis data, dan kemampuan pemulihan instan.
+                    Automated release engineering with end-to-end security audits, database migration integrity, and instant rollback capabilities.
                 </p>
             </div>
 
             {{-- Bento Card 3 --}}
             <div class="bento-card p-8 bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-white/10 shadow-lg">
-                <span class="text-xs font-mono text-[#00BFA5] uppercase">KETAHANAN TINGGI</span>
-                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Pemulihan Bencana Multi-Region</h3>
+                <span class="text-xs font-mono text-[#00BFA5] uppercase">HIGH AVAILABILITY</span>
+                <h3 class="font-instrumentsans text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3">Multi-Region Disaster Recovery</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                    Replikasi data cadangan otomatis, enkripsi tingkat perbankan, dan komitmen SLA operasional terbaik.
+                    Automated data replication, bank-grade encryption at rest and in transit, and reliable 99.99% uptime service level agreements.
                 </p>
             </div>
         </div>
 
         {{-- Business Pillars --}}
         <div class="mt-12 p-8 bento-card bg-slate-100/60 dark:bg-slate-900/40 border border-slate-200/80 dark:border-white/10">
-            <span class="text-xs font-mono font-semibold uppercase text-slate-400 block mb-4">Pilar Ketahanan Komputasi</span>
+            <span class="text-xs font-mono font-semibold uppercase text-slate-400 block mb-4">Computational Resilience Pillars</span>
             <div class="flex flex-wrap gap-3">
-                @foreach(['Kesiapan Skala Dinamis', 'Proteksi Serangan Siber', 'Enkripsi Data Perbankan', 'Audit Pemulihan Bencana', 'Telemetri Real-time', 'Optimasi Biaya Komputasi', 'Jaminan Uptime 99.99%', 'Pencadangan Otomatis'] as $stack)
+                @foreach(['Dynamic Auto-Scaling', 'Cyber Attack Protection', 'Bank-Grade Encryption', 'Disaster Recovery Audits', 'Real-Time Telemetry', 'Cloud Cost Optimization', '99.99% Uptime SLA', 'Automated Daily Backups'] as $stack)
                     <span class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-white/10 shadow-sm">
                         {{ $stack }}
                     </span>

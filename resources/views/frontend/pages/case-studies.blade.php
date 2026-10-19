@@ -4,9 +4,6 @@
 ])
 
 @section('content')
-@php
-    $currentLocale = app()->getLocale();
-@endphp
 
 {{-- ========================================================================
      PORTFOLIO HERO (Accelerate Studio Header)
@@ -15,20 +12,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl fade-anim" data-direction="bottom">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-6">
-                <span>✦ PORTFOLIO & PROVEN RESULTS</span>
+                <span>✦ PORTFOLIO &amp; PROVEN RESULTS</span>
             </div>
 
             <h1 class="font-instrumentsans text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
-                {{ $currentLocale === 'id' ? 'Karya Rekayasa Nyata,' : 'Engineered Solutions,' }}
+                Engineered Solutions,
                 <span class="bg-gradient-to-r from-[#00BFA5] via-[#00D5B5] to-[#00E5C0] bg-clip-text text-transparent">
-                    {{ $currentLocale === 'id' ? 'Dampak Terukur.' : 'Measurable Impact.' }}
+                    Measurable Impact.
                 </span>
             </h1>
 
             <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
-                {{ $currentLocale === 'id'
-                    ? 'Jelajahi studi kasus sistem digital, arsitektur cloud, dan aplikasi web berskala enterprise yang telah kami luncurkan bersama mitra bisnis.'
-                    : 'Explore technical case studies of mission-critical platforms, cloud architectures, and digital systems successfully deployed in production.' }}
+                Explore technical case studies of mission-critical platforms, cloud architectures, and digital systems successfully deployed in production.
             </p>
         </div>
     </div>
@@ -117,8 +112,8 @@
                         <span class="text-xs font-mono text-slate-400">Production Deployed</span>
                         <a href="{{ route('project', $project->slug) }}" class="rr-btn rr-btn-primary px-4 py-2 text-xs font-semibold">
                             <span class="btn-wrap">
-                                <span class="text-1">{{ $currentLocale === 'id' ? 'Buka Studi Kasus' : 'View Case Study' }}</span>
-                                <span class="text-2">{{ $currentLocale === 'id' ? 'Lihat Solusi & Hasil' : 'Explore Impact' }}</span>
+                                <span class="text-1">View Case Study</span>
+                                <span class="text-2">Explore Impact</span>
                             </span>
                         </a>
                     </div>

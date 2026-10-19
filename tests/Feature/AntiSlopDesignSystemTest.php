@@ -34,16 +34,16 @@ class AntiSlopDesignSystemTest extends TestCase
 
     public function test_homepage_highlights_senior_architect_direct_and_business_outcomes(): void
     {
-        $response = $this->withSession(['locale' => 'id'])->get('/');
+        $response = $this->get('/');
         $response->assertStatus(200);
 
-        // Honest, high-converting value propositions for Indonesian B2B clients
-        $response->assertSee('Senior Architect', false);
-        $response->assertSee('Presisi Rekayasa Sejak Hari Pertama', false);
-        $response->assertSee('Hak Milik', false);
+        // Honest, high-converting value propositions for enterprise B2B clients
+        $response->assertSee('senior architects and systems engineers', false);
+        $response->assertSee('Architectural Precision from Day One', false);
+        $response->assertSee('100% Client Ownership', false);
 
         // FAQ section addressing buyer friction points
-        $response->assertSee('Pertanyaan yang Sering Diajukan', false);
+        $response->assertSee('Frequently Asked Questions', false);
     }
 
     public function test_floating_navbar_is_focused_on_conversion_without_careers_link(): void

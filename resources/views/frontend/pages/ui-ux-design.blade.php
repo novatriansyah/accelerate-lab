@@ -4,9 +4,6 @@
 ])
 
 @section('content')
-@php
-    $currentLocale = app()->getLocale();
-@endphp
 
 {{-- ========================================================================
      HERO SECTION (Accelerate Studio Header)
@@ -35,16 +32,14 @@
             </h1>
 
             <p class="text-slate-600 dark:text-slate-400 text-lg sm:text-xl leading-relaxed mb-8 max-w-3xl">
-                {{ $currentLocale === 'id'
-                    ? 'Merancang antarmuka digital yang memikat, intuitif, dan terukur. Kami mentransformasi kompleksitas bisnis menjadi alur pengguna yang anggun dan konversi tinggi.'
-                    : 'Crafting captivating, intuitive, and scalable digital interfaces. We turn complex enterprise workflows into elegant user experiences with rigorous usability testing.' }}
+                Crafting captivating, intuitive, and scalable digital interfaces. We turn complex enterprise workflows into elegant user experiences with rigorous usability testing.
             </p>
 
             <div class="flex flex-wrap items-center gap-4">
                 <a href="{{ route('contact') }}" class="rr-btn rr-btn-primary px-8 py-4 text-sm font-semibold">
                     <span class="btn-wrap">
-                        <span class="text-1">{{ $currentLocale === 'id' ? 'Konsultasi Desain UI/UX' : 'Consult Design Leads' }}</span>
-                        <span class="text-2">{{ $currentLocale === 'id' ? 'Mulai Sesi Desain' : 'Start UI/UX Sprint' }}</span>
+                        <span class="text-1">Consult Design Leads</span>
+                        <span class="text-2">Start UI/UX Sprint</span>
                     </span>
                 </a>
                 <a href="{{ route('case-studies') }}" class="rr-btn rr-btn-border px-7 py-4 text-sm font-medium">

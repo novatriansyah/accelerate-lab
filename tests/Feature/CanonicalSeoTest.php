@@ -37,14 +37,9 @@ class CanonicalSeoTest extends TestCase
 
     public function test_html_lang_and_og_locale_reflect_active_locale(): void
     {
-        $idResponse = $this->withSession(['locale' => 'id'])->get('/');
-        $idResponse->assertStatus(200);
-        $idResponse->assertSee('<html lang="id">', false);
-        $idResponse->assertSee('<meta property="og:locale" content="id_ID">', false);
-
-        $enResponse = $this->withSession(['locale' => 'en'])->get('/');
-        $enResponse->assertStatus(200);
-        $enResponse->assertSee('<html lang="en">', false);
-        $enResponse->assertSee('<meta property="og:locale" content="en_US">', false);
+        $response = $this->get('/');
+        $response->assertStatus(200);
+        $response->assertSee('<html lang="en">', false);
+        $response->assertSee('<meta property="og:locale" content="en_US">', false);
     }
 }

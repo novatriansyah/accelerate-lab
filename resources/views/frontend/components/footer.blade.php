@@ -1,5 +1,4 @@
 @php
-    $currentLocale = app()->getLocale();
     $footerServices = \App\Models\Service::orderBy('sort_order')->take(6)->get();
     $footerEmail = \App\Models\SiteSetting::get('contact_email', 'hello@acceleratelab.id');
     $footerCity = \App\Models\SiteSetting::get('registered_city', \App\Models\SiteSetting::get('contact_address', 'South Jakarta & Tangerang, Indonesia'));
@@ -7,9 +6,7 @@
     $legalName = \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri');
     $footerWhatsapp = \App\Models\SiteSetting::get('contact_whatsapp', \App\Models\SiteSetting::get('contact_phone', '+62 821-2559-0020'));
     $cleanFooterWa = preg_replace('/[^0-9]/', '', $footerWhatsapp);
-    $footerWaMsg = $currentLocale === 'id' 
-        ? 'Halo Accelerate Lab! Saya ingin berdiskusi mengenai kebutuhan proyek software dan arsitektur digital.'
-        : 'Hello Accelerate Lab! I would like to discuss a software engineering and digital architecture project.';
+    $footerWaMsg = 'Hello Accelerate Lab! I would like to discuss a software engineering and digital architecture project.';
     $footerWaUrl = "https://wa.me/{$cleanFooterWa}?text=" . urlencode($footerWaMsg);
 @endphp
 
@@ -22,34 +19,34 @@
             <div class="relative z-10 max-w-3xl flex flex-col items-start gap-6">
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/15 text-[#00BFA5] border border-[#00BFA5]/30">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#00BFA5] animate-ping"></span>
-                    {{ $currentLocale === 'id' ? 'KOLABORASI TEKNOLOGI' : 'ENGINEERING PARTNERSHIP' }}
+                    ENGINEERING PARTNERSHIP
                 </span>
                 
                 <h2 class="font-instrumentsans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
-                    {{ $currentLocale === 'id' ? 'Siap mengakselerasi arsitektur digital & software perusahaan Anda?' : 'Ready to engineer your next high-impact digital breakthrough?' }}
+                    Ready to engineer your next high-impact digital breakthrough?
                 </h2>
 
                 <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-                    {{ $currentLocale === 'id' ? 'Dari rancang bangun web enterprise, integrasi alur kerja, hingga sistem transaksi presisi tinggi. Diskusikan kebutuhan bisnis Anda bersama tim rekayasa teknologi kami hari ini.' : 'From custom operational web systems to automated business workflows. Partner with our dedicated engineering team today.' }}
+                    From custom operational web systems to automated business workflows. Partner with our dedicated engineering team today.
                 </p>
 
                 <div class="pt-2 flex flex-wrap items-center gap-4">
                     <a href="{{ $footerWaUrl }}" target="_blank" rel="noopener noreferrer" class="rr-btn rr-btn-primary px-7 py-3 text-sm font-semibold !bg-[#25D366] !border-[#25D366] hover:!bg-[#20ba5a] !text-white shadow-lg shadow-emerald-500/20">
                         <span class="btn-wrap">
                             <span class="text-1">Chat WhatsApp</span>
-                            <span class="text-2">{{ $currentLocale === 'id' ? 'Respons < 2 Jam' : 'Response < 2 Hours' }}</span>
+                            <span class="text-2">Response &lt; 2 Hours</span>
                         </span>
                     </a>
                     <a href="{{ route('contact') }}" class="rr-btn rr-btn-border px-7 py-3 text-sm font-semibold !text-white !border-white/25 hover:!border-[#00BFA5] hover:!text-[#00BFA5] hover:bg-white/5">
                         <span class="btn-wrap">
-                            <span class="text-1">{{ $currentLocale === 'id' ? 'Formulir Konsultasi' : 'Consultation Form' }}</span>
-                            <span class="text-2">{{ $currentLocale === 'id' ? 'Detail Kebutuhan' : 'Project Details' }}</span>
+                            <span class="text-1">Consultation Form</span>
+                            <span class="text-2">Project Details</span>
                         </span>
                     </a>
                     <a href="mailto:{{ $footerEmail }}" class="rr-btn rr-btn-border px-6 py-3 text-sm font-medium !text-white !border-white/25 hover:!border-[#00BFA5] hover:!text-[#00BFA5] hover:bg-white/5">
                         <span class="btn-wrap">
                             <span class="text-1">{{ $footerEmail }}</span>
-                            <span class="text-2">{{ $currentLocale === 'id' ? 'Kirim Email' : 'Send an Email' }}</span>
+                            <span class="text-2">Send an Email</span>
                         </span>
                     </a>
                 </div>
@@ -70,21 +67,19 @@
                     </div>
                 </a>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-sm">
-                    {{ $currentLocale === 'id' 
-                        ? 'Accelerate Lab adalah agensi inovasi digital dan studio rekayasa perangkat lunak berkinerja tinggi yang berpusat di Indonesia.' 
-                        : 'Accelerate Lab is an elite digital engineering studio crafting scalable software architectures, custom cloud platforms, and modern web applications.' }}
+                    Accelerate Lab is an elite digital engineering studio crafting scalable software architectures, custom cloud platforms, and modern web applications.
                 </p>
                 <div class="text-xs text-slate-500 dark:text-slate-400 flex flex-col gap-1 pt-1 font-mono">
                     <span>Legal Entity: <strong>{{ $legalName }}</strong></span>
                     <span>Locations: {{ $footerCity }}</span>
-                    <span class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">Accelerate Lab adalah merek dagang dan studio inovasi teknologi di bawah naungan {{ $legalName }}.</span>
+                    <span class="text-[11px] text-slate-400 dark:text-slate-500 mt-1">Accelerate Lab is a registered trademark and digital engineering studio operated by {{ $legalName }}.</span>
                 </div>
             </div>
 
             {{-- Col 2: Dynamic Services --}}
             <div class="flex flex-col gap-3">
                 <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                    {{ $currentLocale === 'id' ? 'Layanan Kami' : 'Capabilities' }}
+                    Capabilities
                 </h4>
                 <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                     @forelse($footerServices as $service)
@@ -105,29 +100,29 @@
             {{-- Col 3: Company Navigation --}}
             <div class="flex flex-col gap-3">
                 <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                    {{ $currentLocale === 'id' ? 'Perusahaan' : 'Studio' }}
+                    Studio
                 </h4>
                 <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                    <li><a href="{{ route('about') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Tentang Kami' : 'About Us' }}</a></li>
-                    <li><a href="{{ route('case-studies') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Studi Kasus' : 'Case Studies' }}</a></li>
+                    <li><a href="{{ route('about') }}" class="hover:text-[#00BFA5] transition-colors">About Us</a></li>
+                    <li><a href="{{ route('case-studies') }}" class="hover:text-[#00BFA5] transition-colors">Case Studies</a></li>
                     <li>
                         <a href="{{ route('careers') }}" class="hover:text-[#00BFA5] transition-colors">
-                            {{ $currentLocale === 'id' ? 'Karir' : 'Careers' }}
+                            Careers
                         </a>
                     </li>
                     <li><a href="{{ url('/the-lab') }}" class="hover:text-[#00BFA5] transition-colors">The Lab</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Kontak' : 'Contact' }}</a></li>
+                    <li><a href="{{ route('contact') }}" class="hover:text-[#00BFA5] transition-colors">Contact</a></li>
                 </ul>
             </div>
 
             {{-- Col 4: Legal & Connect --}}
             <div class="flex flex-col gap-3">
                 <h4 class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                    {{ $currentLocale === 'id' ? 'Legal & Sosials' : 'Legal & Connect' }}
+                    Legal &amp; Connect
                 </h4>
                 <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                    <li><a href="{{ route('privacy-policy') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Kebijakan Privasi' : 'Privacy Policy' }}</a></li>
-                    <li><a href="{{ route('terms-of-service') }}" class="hover:text-[#00BFA5] transition-colors">{{ $currentLocale === 'id' ? 'Syarat Ketentuan' : 'Terms of Service' }}</a></li>
+                    <li><a href="{{ route('privacy-policy') }}" class="hover:text-[#00BFA5] transition-colors">Privacy Policy</a></li>
+                    <li><a href="{{ route('terms-of-service') }}" class="hover:text-[#00BFA5] transition-colors">Terms of Service</a></li>
                     <li class="pt-2 flex items-center gap-3">
                         <a href="{{ $footerLinkedin }}" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-[#00BFA5] hover:bg-slate-100 dark:hover:bg-white/5 transition-colors" aria-label="LinkedIn">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>

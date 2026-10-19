@@ -1,77 +1,75 @@
 @php
     $rawPhone = ($settings['contact_whatsapp'] ?? null) ?: (($settings['contact_phone'] ?? null) ?: '+6281234567890');
     $cleanPhone = preg_replace('/[^0-9]/', '', $rawPhone);
-    $locale = app()->getLocale();
 
     $step1Options = [
         [
             'id' => 'portal',
-            'title' => __('Portal Operasional & Dashboard Manajemen'),
-            'desc' => __('Sistem terpusat untuk kelola data internal, multi-cabang, dan analisa performa real-time.')
+            'title' => 'Operational Portal & Management Dashboard',
+            'desc' => 'Centralized system for enterprise internal data, multi-branch operations, and real-time analytics.'
         ],
         [
             'id' => 'inventory',
-            'title' => __('Sistem Inventori, Penjualan, & Penagihan'),
-            'desc' => __('Otomasi stok barang gudang, kasir/POS, penerbitan invoice instan, dan rekonsiliasi pembayaran.')
+            'title' => 'Inventory, Commerce & Billing System',
+            'desc' => 'Automated warehouse stock control, POS, instant automated invoicing, and payment reconciliation.'
         ],
         [
             'id' => 'partner',
-            'title' => __('Portal Layanan Mandiri Pelanggan / Mitra'),
-            'desc' => __('Akses khusus klien, reseller, atau vendor untuk tracking pesanan dan transaksi mandiri.')
+            'title' => 'Client & Partner Self-Service Portal',
+            'desc' => 'Dedicated workspace for clients, vendors, and partners to track workflows and execute transactions.'
         ],
         [
             'id' => 'mobile',
-            'title' => __('Aplikasi Mobile Tim Lapangan'),
-            'desc' => __('Aplikasi smartphone yang praktis dan responsif untuk tim penjualan atau operasional lapangan.')
+            'title' => 'Field Team & Customer Mobile App',
+            'desc' => 'Responsive, offline-first smartphone applications engineered for field operations and customer retention.'
         ],
         [
             'id' => 'modernize',
-            'title' => __('Modernisasi Software Lama yang Lambat'),
-            'desc' => __('Perbaikan performa, peremajaan antarmuka, atau migrasi data tanpa mengganggu operasional.')
+            'title' => 'Legacy System Modernization & Migration',
+            'desc' => 'Performance optimization, UI overhaul, and seamless database migration with zero operational downtime.'
         ]
     ];
 
     $step2Options = [
         [
             'id' => 'spreadsheet',
-            'title' => __('Masih menggunakan spreadsheet / catatan manual'),
-            'desc' => __('Proses bisnis masih dicatat di Excel, Google Sheets, atau buku catatan fisik.')
+            'title' => 'Operating on spreadsheets or manual workflows',
+            'desc' => 'Current business operations rely on spreadsheets, manual files, or ad-hoc tools.'
         ],
         [
             'id' => 'ready',
-            'title' => __('Alur kerja dan desain sudah siap dibangun'),
-            'desc' => __('Kebutuhan fitur sudah jelas, siap untuk fase perancangan arsitektur dan coding.')
+            'title' => 'Specifications and workflows ready to build',
+            'desc' => 'Feature requirements and business logic are defined, ready for architecture and engineering.'
         ],
         [
             'id' => 'existing',
-            'title' => __('Sistem lama berjalan tapi sering bermasalah'),
-            'desc' => __('Aplikasi lambat, sering error, atau sulit ditambah fitur baru sesuai pertumbuhan bisnis.')
+            'title' => 'Existing system is slow, brittle, or outdated',
+            'desc' => 'Current platform struggles with performance bottlenecks, bugs, or scalability limits.'
         ],
         [
             'id' => 'consultation',
-            'title' => __('Butuh konsultasi pemetaan alur kerja'),
-            'desc' => __('Ingin berdiskusi dulu dengan Principal Architect untuk menentukan roadmap terbaik.')
+            'title' => 'Seeking technical guidance & architecture roadmap',
+            'desc' => 'Looking to consult with a Principal Architect to define an optimal engineering strategy.'
         ]
     ];
 
     $timelineOptions = [
-        $locale === 'id' ? '⚡ Cepat (3-5 Minggu)' : '⚡ Fast-Track (3-5 Weeks)',
-        $locale === 'id' ? '🗓️ Standar (2-3 Bulan)' : '🗓️ Standard (2-3 Months)',
-        $locale === 'id' ? '☕ Fleksibel / Tahap Diskusi' : '☕ Flexible / Phased Roadmaps'
+        '⚡ Fast-Track (3-5 Weeks)',
+        '🗓️ Standard (2-3 Months)',
+        '☕ Flexible / Phased Roadmap'
     ];
 
     $techOptions = [
-        __('Rekomendasi Arsitek Terbaik'),
-        __('Cloud Web App Terpusat'),
-        __('Aplikasi Mobile iOS & Android'),
-        __('Integrasi Database Lokal / On-Premise'),
-        __('Sistem Multi-Platform Terpadu')
+        'Principal Architect Recommendation',
+        'Centralized Cloud Web Platform',
+        'Native iOS & Android Mobile Apps',
+        'On-Premise / Enterprise Database Integration',
+        'Unified Multi-Platform Ecosystem'
     ];
 @endphp
 
 <div x-data="projectEstimator({ 
         targetPhone: '{{ $cleanPhone }}',
-        locale: '{{ $locale }}',
         step1Options: {{ Js::from($step1Options) }},
         step2Options: {{ Js::from($step2Options) }},
         timelineOptions: {{ Js::from($timelineOptions) }},
@@ -88,17 +86,17 @@
             <div>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-bold uppercase tracking-wider">
                     <span class="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></span>
-                    {{ __('Interactive Scoping Wizard') }}
+                    Interactive Scoping Wizard
                 </span>
                 <h2 class="text-2xl sm:text-3xl font-black font-instrumentsans text-slate-900 dark:text-white mt-2">
-                    {{ __('Estimate Your Project') }}
+                    Estimate Your Project
                 </h2>
                 <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">
-                    {{ __('Plain language, zero jargon. Get a fast, tailored scope & cost estimate in 30 seconds.') }}
+                    Plain language, zero jargon. Get a fast, tailored scope & cost estimate in 30 seconds.
                 </p>
             </div>
             <div class="text-right">
-                <span class="text-xs font-bold text-teal-600 dark:text-teal-400" x-text="locale === 'id' ? `Langkah ${currentStep} dari 4` : `Step ${currentStep} of 4`"></span>
+                <span class="text-xs font-bold text-teal-600 dark:text-teal-400" x-text="`Step ${currentStep} of 4`"></span>
             </div>
         </div>
 
@@ -113,7 +111,7 @@
         <div class="bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 px-4 py-3 rounded-xl mb-6 flex items-center gap-3">
             <x-app-icon name="check_circle" class="w-5 h-5 text-emerald-500 shrink-0" />
             <div>
-                <p class="font-bold text-sm">{{ $locale === 'id' ? 'Permintaan Terkirim!' : 'Inquiry Received!' }}</p>
+                <p class="font-bold text-sm">Inquiry Received!</p>
                 <p class="text-xs mt-0.5">{{ session('success') }}</p>
             </div>
         </div>
@@ -137,19 +135,19 @@
         
         <!-- Accessible / Crawler Scoping Overview for Screen Readers & SEO -->
         <div class="sr-only">
-            <h3>{{ __('Pilihan Kebutuhan Rekayasa:') }}</h3>
+            <h3>Engineering Capabilities &amp; Needs:</h3>
             <ul>
                 @foreach ($step1Options as $option)
                     <li>{{ $option['title'] }}</li>
                 @endforeach
             </ul>
-            <h3>{{ __('Tahap Kesiapan Bisnis:') }}</h3>
+            <h3>Project Readiness Stages:</h3>
             <ul>
                 @foreach ($step2Options as $option)
                     <li>{{ $option['title'] }}</li>
                 @endforeach
             </ul>
-            <h3>{{ __('Opsi Deployment & Arsitektur:') }}</h3>
+            <h3>Deployment &amp; Architecture Options:</h3>
             <ul>
                 @foreach ($techOptions as $option)
                     <li>{{ $option }}</li>
@@ -272,7 +270,7 @@
                 <div class="pt-2">
                     <div class="flex items-center justify-between mb-2">
                         <label class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
-                            {{ __('Tipe Sistem & Deployment') }} <span class="text-gray-400 lowercase font-normal">({{ __('optional') }})</span>
+                            System Architecture &amp; Deployment <span class="text-gray-400 lowercase font-normal">(optional)</span>
                         </label>
                         <span class="text-[11px] text-teal-600 dark:text-teal-400 font-medium">Boutique Architecture</span>
                     </div>
@@ -319,34 +317,34 @@
                     </div>
                     <div>
                         <div class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                            {{ __('Estimasi Waktu Pengerjaan') }}
+                            Estimated Delivery Timeline
                         </div>
                         <p class="text-xs text-slate-600 dark:text-slate-400">
-                            {{ __('Rata-rata turnaround MVP & modul operasional siap uji:') }}
+                            Average turnaround for validated MVP and operational releases:
                         </p>
                     </div>
                 </div>
                 <span class="inline-flex items-center rounded-full bg-teal-600 text-white text-xs font-bold px-3 py-1 shadow-sm shrink-0">
-                    {{ __('Target Waktu: 3-5 Minggu') }}
+                    Target Delivery: 3-5 Weeks
                 </span>
             </div>
 
             <!-- Scoping Summary Box -->
             <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-xs space-y-1.5">
                 <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
-                    <span>{{ $locale === 'id' ? 'Kebutuhan:' : 'Project Scope:' }}</span>
+                    <span>Project Scope:</span>
                     <strong class="text-slate-900 dark:text-white" x-text="formData.service_interest"></strong>
                 </div>
                 <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
-                    <span>{{ $locale === 'id' ? 'Tahap Kesiapan:' : 'Readiness Stage:' }}</span>
+                    <span>Readiness Stage:</span>
                     <strong class="text-slate-900 dark:text-white" x-text="formData.project_stage"></strong>
                 </div>
                 <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
-                    <span>{{ $locale === 'id' ? 'Estimasi Waktu Pengerjaan:' : 'Estimated Turnaround:' }}</span>
+                    <span>Estimated Turnaround:</span>
                     <strong class="text-slate-900 dark:text-white" x-text="formData.timeline"></strong>
                 </div>
                 <div class="flex items-center justify-between text-slate-600 dark:text-slate-400">
-                    <span>{{ $locale === 'id' ? 'Tipe Deployment:' : 'Deployment Type:' }}</span>
+                    <span>Deployment Type:</span>
                     <strong class="text-teal-600 dark:text-teal-400 font-bold" x-text="formData.tech_preference"></strong>
                 </div>
             </div>
@@ -382,7 +380,7 @@
             <label class="block">
                 <span class="block text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-slate-200 mb-1.5">{{ __('Project Notes') }} <span class="text-gray-400 lowercase font-normal">({{ __('optional') }})</span></span>
                 <textarea name="message" x-model="formData.message" rows="2"
-                          placeholder="{{ $locale === 'id' ? 'Catatan tambahan, tautan referensi, atau fitur khusus yang diinginkan...' : 'Any specific features, reference links, or notes...' }}"
+                          placeholder="Any specific features, reference links, or notes..."
                           class="w-full rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-white/10 text-slate-900 dark:text-white p-3 text-sm focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 transition-all resize-y"></textarea>
             </label>
 
@@ -422,17 +420,16 @@
 function projectEstimator(config) {
     return {
         currentStep: 1,
-        locale: config.locale || 'en',
         targetPhone: config.targetPhone || '6281234567890',
         step1Options: config.step1Options || [],
         step2Options: config.step2Options || [],
         timelineOptions: config.timelineOptions || [],
         techOptions: config.techOptions || [],
         formData: {
-            service_interest: config.step1Options && config.step1Options[0] ? config.step1Options[0].title : 'Portal Operasional & Dashboard Manajemen',
-            project_stage: config.step2Options && config.step2Options[0] ? config.step2Options[0].title : 'Masih menggunakan spreadsheet / catatan manual',
-            timeline: config.timelineOptions && config.timelineOptions[0] ? config.timelineOptions[0] : '⚡ Cepat (3-5 Minggu)',
-            tech_preference: config.techOptions && config.techOptions[0] ? config.techOptions[0] : 'Rekomendasi Arsitek Terbaik',
+            service_interest: config.step1Options && config.step1Options[0] ? config.step1Options[0].title : 'Operational Portal & Management Dashboard',
+            project_stage: config.step2Options && config.step2Options[0] ? config.step2Options[0].title : 'Operating on spreadsheets or manual workflows',
+            timeline: config.timelineOptions && config.timelineOptions[0] ? config.timelineOptions[0] : '⚡ Fast-Track (3-5 Weeks)',
+            tech_preference: config.techOptions && config.techOptions[0] ? config.techOptions[0] : 'Principal Architect Recommendation',
             name: '',
             email: '',
             phone: '',
@@ -450,13 +447,7 @@ function projectEstimator(config) {
             }
         },
         compileWhatsAppMessage() {
-            let isId = this.locale === 'id';
-            let nameStr = this.formData.name ? (isId ? ` Nama saya ${this.formData.name}.` : ` My name is ${this.formData.name}.`) : '';
-            
-            if (isId) {
-                return `Halo Accelerate Lab!${nameStr}\n\nSaya menggunakan kalkulator estimasi di website Anda:\n• Kebutuhan: ${this.formData.service_interest}\n• Kesiapan: ${this.formData.project_stage}\n• Target Waktu: ${this.formData.timeline}\n• Tipe Sistem: ${this.formData.tech_preference}\n\nBisa kita jadwalkan diskusi untuk estimasi kebutuhan dan biaya?`;
-            }
-
+            let nameStr = this.formData.name ? ` My name is ${this.formData.name}.` : '';
             return `Hello Accelerate Lab!${nameStr}\n\nI used the project estimator on your website:\n• Scope: ${this.formData.service_interest}\n• Stage: ${this.formData.project_stage}\n• Timeline: ${this.formData.timeline}\n• Deployment: ${this.formData.tech_preference}\n\nCan we discuss scope and pricing?`;
         },
         openWhatsApp() {

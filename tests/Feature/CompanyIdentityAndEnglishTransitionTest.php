@@ -128,4 +128,66 @@ class CompanyIdentityAndEnglishTransitionTest extends TestCase
         $response->assertDontSee('>EN</a>', false);
         $response->assertDontSee('Language:', false);
     }
+
+    #[Test]
+    public function frontend_views_contain_zero_current_locale_or_ternary_conditionals(): void
+    {
+        $viewFiles = [
+            resource_path('views/frontend/pages/home.blade.php'),
+            resource_path('views/frontend/pages/about.blade.php'),
+            resource_path('views/frontend/pages/services.blade.php'),
+            resource_path('views/frontend/pages/service.blade.php'),
+            resource_path('views/frontend/pages/case-studies.blade.php'),
+            resource_path('views/frontend/pages/project.blade.php'),
+            resource_path('views/frontend/pages/contact.blade.php'),
+            resource_path('views/frontend/pages/web-application-development.blade.php'),
+            resource_path('views/frontend/pages/mobile-app-development.blade.php'),
+            resource_path('views/frontend/pages/cloud-architecture.blade.php'),
+            resource_path('views/frontend/pages/ui-ux-design.blade.php'),
+            resource_path('views/frontend/components/trust-signals.blade.php'),
+            resource_path('views/frontend/components/footer.blade.php'),
+            resource_path('views/frontend/components/company-profile-download.blade.php'),
+            resource_path('views/frontend/components/layout.blade.php'),
+            resource_path('views/components/consultation-modal.blade.php'),
+            resource_path('views/components/project-estimator.blade.php'),
+        ];
+
+        foreach ($viewFiles as $filePath) {
+            $this->assertFileExists($filePath);
+            $content = file_get_contents($filePath);
+
+            $this->assertStringNotContainsString('$currentLocale', $content, "File {$filePath} contains residual \$currentLocale variable.");
+            $this->assertStringNotContainsString("app()->getLocale() === 'id'", $content, "File {$filePath} contains residual dual-locale conditional.");
+            $this->assertStringNotContainsString("\$locale === 'id'", $content, "File {$filePath} contains residual \$locale conditional.");
+        }
+    }
+
+    #[Test]
+    public function architecture_switcher_renders_in_professional_english_with_zero_em_dashes(): void
+    {
+        $response = $this->get('/');
+        $response->assertStatus(200);
+
+        // Architecture Switcher Headings & Details in Pure English
+        $response->assertSee('High-Performance Web Platforms &amp; Business Automation', false);
+        $response->assertSee('Fast Response Time &lt; 50ms', false);
+        $response->assertSee('Enterprise Security Protection', false);
+        $response->assertSee('Clean Architecture &amp; Complete Documentation', false);
+        $response->assertSee('100% Repository Ownership', false);
+
+        // Cloud Tab
+        $response->assertSee('Resilient Cloud Infrastructure &amp; Operational Continuity', false);
+        $response->assertSee('Automated Daily Backups &amp; Disaster Recovery', false);
+        $response->assertSee('99.99% Service Uptime SLA', false);
+
+        // Mobile Tab
+        $response->assertSee('Responsive Mobile Applications for Customer Retention', false);
+        $response->assertSee('Biometric Authentication Security', false);
+        $response->assertSee('Dedicated Client App Store Ownership', false);
+
+        // Zero em-dash and en-dash
+        $response->assertDontSee('—', false);
+        $response->assertDontSee('–', false);
+    }
 }
+

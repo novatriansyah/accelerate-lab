@@ -16,7 +16,7 @@
 
     <title>{{ $pageTitle }}</title>
     <meta name="description" content="{{ $pageDescription }}">
-    <meta property="og:locale" content="{{ app()->getLocale() === 'id' ? 'id_ID' : 'en_US' }}">
+    <meta property="og:locale" content="en_US">
     <link rel="canonical" href="{{ $pageCanonical }}">
 
     {{-- OpenGraph Protocol (Facebook, LinkedIn, WhatsApp) --}}

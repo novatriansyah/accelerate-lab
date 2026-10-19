@@ -12,15 +12,15 @@
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative mb-16 lg:mb-20">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00BFA5]/10 border border-[#00BFA5]/25 text-[#00BFA5] text-xs font-mono font-semibold tracking-wider uppercase mb-8 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-[#00BFA5] animate-ping"></span>
-            <span>Konsultasi Strategis & Inovasi Digital</span>
+            <span>Strategic Consultation &amp; Digital Innovation</span>
         </div>
 
         <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white max-w-5xl mx-auto leading-[1.1] mb-8">
-            Mulai Diskusi <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00BFA5] via-teal-300 to-[#009688]">Kebutuhan Bisnis Anda</span>
+            Start a Conversation <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00BFA5] via-teal-300 to-[#009688]">About Your Project</span>
         </h1>
 
         <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Apakah Anda merencanakan transformasi digital, modernisasi alur kerja, atau pengembangan produk baru? Hubungi tim kami untuk konsultasi strategi dan estimasi solusi yang tepat sasaran.
+            Planning a digital transformation, custom software system, or cloud infrastructure project? Talk directly with our senior engineering team to scope your architecture, timeline, and investment.
         </p>
     </section>
 
@@ -34,10 +34,7 @@
                 $cleanPhone = preg_replace('/[^0-9]/', '', $contactPhone);
                 $studioLocation = \App\Models\SiteSetting::get('registered_city', \App\Models\SiteSetting::get('contact_address', 'Jakarta & Bandung, Indonesia'));
                 $legalName = \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri');
-                $currentLocale = app()->getLocale();
-                $contactWaMsg = $currentLocale === 'id' 
-                    ? 'Halo Accelerate Lab! Saya ingin berdiskusi mengenai kebutuhan proyek baru.' 
-                    : 'Hello Accelerate Lab! I would like to discuss a new project.';
+                $contactWaMsg = 'Hello Accelerate Lab! I would like to discuss a new project.';
                 $contactWaUrl = "https://wa.me/{$cleanPhone}?text=" . urlencode($contactWaMsg);
             @endphp
 
@@ -53,12 +50,12 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="text-xs font-mono font-bold uppercase text-[#00BFA5]">Respon Cepat via WhatsApp</div>
-                            <div class="text-xs text-slate-500 dark:text-slate-400">{{ $currentLocale === 'id' ? 'Konsultasi Solusi bersama Tim Teknis' : 'Direct Consultation with Technical Lead' }}</div>
+                            <div class="text-xs font-mono font-bold uppercase text-[#00BFA5]">Fast Response via WhatsApp</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Direct Consultation with Technical Lead</div>
                         </div>
                     </div>
                     <a href="{{ $contactWaUrl }}" target="_blank" rel="noopener noreferrer" class="w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-sm shadow-md transition-all">
-                        <span>Chat WhatsApp Langsung</span>
+                        <span>Chat Directly via WhatsApp</span>
                     </a>
                 </div>
 
@@ -67,7 +64,7 @@
 
                     <div class="space-y-6">
                         <div>
-                            <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">Operating Entity / Entitas Legal</span>
+                            <span class="text-[#00BFA5] font-mono text-xs font-bold tracking-widest uppercase">Operating Legal Entity</span>
                             <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-1">{{ $legalName }}</h2>
                             <p class="text-xs font-mono text-slate-500 dark:text-slate-400 mt-1">Accelerate Lab Engineering Studio</p>
                         </div>

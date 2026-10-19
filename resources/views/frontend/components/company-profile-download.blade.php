@@ -1,5 +1,4 @@
 @php
-    $currentLocale = app()->getLocale();
     $pdfUrl = \App\Models\SiteSetting::get('company_profile_pdf_url', null);
 @endphp
 
@@ -14,15 +13,13 @@
             </div>
             <div>
                 <span class="text-xs font-mono uppercase text-[#00BFA5] font-semibold tracking-wider">
-                    {{ $currentLocale === 'id' ? 'Dokumen Resmi Studio' : 'Official Studio Document' }}
+                    Official Studio Document
                 </span>
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-0.5">
-                    {{ $currentLocale === 'id' ? 'Company Profile Accelerate Lab' : 'Accelerate Lab Company Profile' }}
+                    Accelerate Lab Company Profile
                 </h3>
                 <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-md">
-                    {{ $currentLocale === 'id' 
-                        ? 'Ringkasan metodologi rekayasa perangkat lunak, kapabilitas teknis, dan profil tim pendiri dalam format PDF siap cetak.' 
-                        : 'Overview of our engineering methodology, technical capabilities, and founder-led studio structure in printable PDF format.' }}
+                    Overview of our engineering methodology, technical capabilities, and founder-led studio structure in printable PDF format.
                 </p>
             </div>
         </div>
@@ -35,7 +32,7 @@
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
             </svg>
-            <span>{{ $currentLocale === 'id' ? 'Unduh Company Profile (PDF)' : 'Download Company Profile (PDF)' }}</span>
+            <span>Download Company Profile (PDF)</span>
         </a>
     </div>
 </div>

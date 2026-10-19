@@ -48,9 +48,6 @@
 @endpush
 
 @section('content')
-@php
-    $currentLocale = app()->getLocale();
-@endphp
 
 {{-- ========================================================================
      PROJECT CASE STUDY HERO (Accelerate Studio Header)

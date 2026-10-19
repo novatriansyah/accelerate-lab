@@ -4,9 +4,6 @@
 ])
 
 @section('content')
-@php
-    $currentLocale = app()->getLocale();
-@endphp
 
 {{-- ========================================================================
      SERVICES HERO (Accelerate Studio Header)
@@ -15,20 +12,18 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl fade-anim" data-direction="bottom">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium tracking-wide uppercase bg-[#00BFA5]/10 text-[#00BFA5] border border-[#00BFA5]/25 shadow-sm mb-6">
-                <span>✦ CAPABILITIES & SPECIALIZATIONS</span>
+                <span>✦ CAPABILITIES &amp; SPECIALIZATIONS</span>
             </div>
 
             <h1 class="font-instrumentsans text-4xl sm:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-[1.1] mb-6">
-                {{ $currentLocale === 'id' ? 'Direkayasa untuk Skala Besar,' : 'Architected for Scale,' }}
+                Architected for Scale,
                 <span class="bg-gradient-to-r from-[#00BFA5] via-[#00D5B5] to-[#00E5C0] bg-clip-text text-transparent">
-                    {{ $currentLocale === 'id' ? 'Dibangun untuk Kinerja Tinggi.' : 'Built for Extreme Performance.' }}
+                    Built for Extreme Performance.
                 </span>
             </h1>
 
             <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
-                {{ $currentLocale === 'id'
-                    ? 'Dari sistem web terintegrasi dan infrastruktur komputasi tangguh hingga aplikasi seluler berkinerja tinggi. Setiap solusi dirancang untuk pertumbuhan bisnis tanpa beban teknis.'
-                    : 'From integrated enterprise web platforms and resilient cloud infrastructures to high-concurrency mobile solutions. Engineered for measurable business growth.' }}
+                From integrated enterprise web platforms and resilient cloud infrastructures to high-concurrency mobile solutions. Engineered for measurable business growth.
             </p>
         </div>
     </div>
@@ -47,7 +42,7 @@
                         type="button"
                         class="px-5 py-2 rounded-full text-xs font-semibold transition-all"
                         :class="activeFilter === 'all' ? 'bg-[#00BFA5] text-[#090D16] shadow-md shadow-[#00BFA5]/20' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10'">
-                    {{ $currentLocale === 'id' ? 'Semua Layanan' : 'All Capabilities' }}
+                    All Capabilities
                 </button>
                 <button @click="activeFilter = 'development'"
                         type="button"
@@ -114,11 +109,11 @@
                     </div>
 
                     <div class="pt-6 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
-                        <span class="text-xs font-mono text-slate-400">{{ $currentLocale === 'id' ? 'NDA Siap · Kode 100% Milik Klien' : 'NDA Ready · 100% Client Code Ownership' }}</span>
+                        <span class="text-xs font-mono text-slate-400">NDA Ready · 100% Client Code Ownership</span>
                         <a href="{{ route('service', $service->slug) }}" class="rr-btn rr-btn-primary px-5 py-2.5 text-xs font-semibold">
                             <span class="btn-wrap">
-                                <span class="text-1">{{ $currentLocale === 'id' ? 'Buka Spesifikasi' : 'View Blueprint' }}</span>
-                                <span class="text-2">{{ $currentLocale === 'id' ? 'Pelajari Arsitektur' : 'Explore Service' }}</span>
+                                <span class="text-1">View Blueprint</span>
+                                <span class="text-2">Explore Service</span>
                             </span>
                         </a>
                     </div>
@@ -138,7 +133,7 @@
                 ENGINEERING METHODOLOGY
             </span>
             <h2 class="font-instrumentsans text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 dark:text-white mt-2">
-                {{ $currentLocale === 'id' ? 'Disiplin Rekayasa Dari Konsep ke Produksi' : 'How We Engineer & Deliver Systems' }}
+                How We Engineer &amp; Deliver Systems
             </h2>
         </div>
 

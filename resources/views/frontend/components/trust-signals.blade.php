@@ -1,5 +1,4 @@
 @php
-    $currentLocale = app()->getLocale();
     $legalName = \App\Models\SiteSetting::get('legal_name', 'PT Akselerasi Digital Mandiri');
 @endphp
 
@@ -20,11 +19,11 @@
                             {{ $legalName }}
                         </span>
                         <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-                            {{ $currentLocale === 'id' ? 'Entitas Terdaftar' : 'Registered Entity' }}
+                            Registered Entity
                         </span>
                     </div>
                     <p class="text-xs text-slate-500 dark:text-slate-400">
-                        {{ $currentLocale === 'id' ? 'Studio Rekayasa Perangkat Lunak & Inovasi Digital' : 'Digital Innovation & Software Engineering Studio' }}
+                        Digital Innovation &amp; Software Engineering Studio
                     </p>
                 </div>
             </div>
@@ -37,10 +36,10 @@
                     <span class="w-2 h-2 rounded-full bg-[#00BFA5]"></span>
                     <div>
                         <div class="font-bold text-slate-900 dark:text-white">
-                            {{ $currentLocale === 'id' ? 'Kepatuhan UU PDP' : 'PDP Law Compliant' }}
+                            PDP Law Compliant
                         </div>
                         <div class="text-[11px] text-slate-500 dark:text-slate-400">
-                            {{ $currentLocale === 'id' ? 'Perlindungan Data Pribadi' : 'Data Privacy Standard' }}
+                            Data Privacy Standard
                         </div>
                     </div>
                 </div>
@@ -50,10 +49,10 @@
                     <span class="w-2 h-2 rounded-full bg-[#00BFA5]"></span>
                     <div>
                         <div class="font-bold text-slate-900 dark:text-white">
-                            {{ $currentLocale === 'id' ? 'NDA Tersedia' : 'Bilateral NDA Ready' }}
+                            Bilateral NDA Ready
                         </div>
                         <div class="text-[11px] text-slate-500 dark:text-slate-400">
-                            {{ $currentLocale === 'id' ? 'Kerahasiaan Terjamin' : 'Full Confidentiality' }}
+                            Full Confidentiality
                         </div>
                     </div>
                 </div>
@@ -63,10 +62,10 @@
                     <span class="w-2 h-2 rounded-full bg-[#00BFA5]"></span>
                     <div>
                         <div class="font-bold text-slate-900 dark:text-white">
-                            {{ $currentLocale === 'id' ? '100% Milik Klien' : '100% Client Code Ownership' }}
+                            100% Client Code Ownership
                         </div>
                         <div class="text-[11px] text-slate-500 dark:text-slate-400">
-                            {{ $currentLocale === 'id' ? 'Tanpa Vendor Lock-in' : 'Zero Vendor Lock-in' }}
+                            Zero Vendor Lock-in
                         </div>
                     </div>
                 </div>
@@ -76,10 +75,10 @@
                     <span class="w-2 h-2 rounded-full bg-[#00BFA5]"></span>
                     <div>
                         <div class="font-bold text-slate-900 dark:text-white">
-                            {{ $currentLocale === 'id' ? 'Dukungan Teknis Berdedikasi' : 'Dedicated Engineering Support' }}
+                            Dedicated Engineering Support
                         </div>
                         <div class="text-[11px] text-slate-500 dark:text-slate-400">
-                            {{ $currentLocale === 'id' ? 'SLA Respons Terjamin < 2 Jam' : 'Guaranteed Response < 2 Hours' }}
+                            Guaranteed Response &lt; 2 Hours
                         </div>
                     </div>
                 </div>

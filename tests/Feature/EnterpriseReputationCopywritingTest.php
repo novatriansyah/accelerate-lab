@@ -11,17 +11,18 @@ class EnterpriseReputationCopywritingTest extends TestCase
 
     public function test_homepage_hero_and_bento_proclaim_team_excellence_without_defensive_phrasing(): void
     {
-        $response = $this->withSession(['locale' => 'id'])->get('/');
+        $response = $this->get('/');
         $response->assertStatus(200);
 
         // Positive enterprise value propositions
-        $response->assertSee('tim insinyur senior dan arsitek sistem terbaik kami', false);
-        $response->assertSee('Presisi Rekayasa Sejak Hari Pertama', false);
-        $response->assertSee('Konsultasi Solusi Tim Teknis', false);
+        $response->assertSee('dedicated team of senior architects and systems engineers', false);
+        $response->assertSee('Architectural Precision from Day One', false);
+        $response->assertSee('Consult with Engineering Team', false);
 
         // Defensive phrases must be eliminated
         $response->assertDontSee('Tanpa Perantara Sales', false);
-        $response->assertDontSee('tanpa perantara sales', false);
+        $response->assertDontSee('zero sales intermediaries', false);
+        $response->assertDontSee('Direct Architect Access', false);
     }
 
     public function test_homepage_english_locale_reflects_team_collective_authority(): void
@@ -41,30 +42,30 @@ class EnterpriseReputationCopywritingTest extends TestCase
 
     public function test_homepage_faq_and_footer_project_collective_authority(): void
     {
-        $response = $this->withSession(['locale' => 'id'])->get('/');
+        $response = $this->get('/');
         $response->assertStatus(200);
 
         // FAQ 1 should highlight best engineering team with strict standards
-        $response->assertSee('tim rekayasa terbaik yang kami miliki', false);
-        $response->assertSee('Diskusikan kebutuhan bisnis Anda bersama tim rekayasa teknologi kami', false);
+        $response->assertSee('Your project is engineered by our premier technical team', false);
+        $response->assertSee('Partner with our dedicated engineering team today', false);
 
-        // Ensure no mention of junior lepasan or sales intermediaries
+        // Ensure no mention of junior interns or sales intermediaries
         $response->assertDontSee('junior lepasan', false);
         $response->assertDontSee('handoffs to junior interns', false);
     }
 
     public function test_consultation_modal_and_trust_signals_use_enterprise_framing(): void
     {
-        $response = $this->withSession(['locale' => 'id'])->get('/');
+        $response = $this->get('/');
         $response->assertStatus(200);
 
         // Trust Signals Strip
-        $response->assertSee('Dukungan Teknis Berdedikasi', false);
-        $response->assertSee('SLA Respons Terjamin', false);
+        $response->assertSee('Dedicated Engineering Support', false);
+        $response->assertSee('Guaranteed Response &lt; 2 Hours', false);
 
         // Consultation Modal copy
-        $response->assertSee('Sesi eksplorasi teknis dan bisnis selama 15 menit', false);
-        $response->assertSee('Konsultasi Teknis Mendalam', false);
+        $response->assertSee('15-minute technical and strategic discovery session', false);
+        $response->assertSee('Direct Technical Alignment', false);
 
         // Elimination of negative priming
         $response->assertDontSee('Tanpa tekanan sales', false);
@@ -75,9 +76,9 @@ class EnterpriseReputationCopywritingTest extends TestCase
 
     public function test_contact_page_uses_collaborative_engineering_copy(): void
     {
-        $response = $this->withSession(['locale' => 'id'])->get('/contact');
+        $response = $this->get('/contact');
         $response->assertStatus(200);
 
-        $response->assertSee('Konsultasi Solusi bersama Tim Teknis', false);
+        $response->assertSee('Direct Consultation with Technical Lead', false);
     }
 }
